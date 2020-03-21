@@ -132,24 +132,38 @@
 		\section{M\"obiusの反転公式}
 			\begin{shadebox}
 				$f,g$を自然数から複素数への写像とする。
-				任意の自然数$n$に対して$g(n) = \sum_{d \mid n}f(d)$が成り立つならば$f(n) = \sum_{d \mid n} \mu(d)g(n/d) = \sum_{d \mid n} \mu(n/d)g(n)$が成り立つ。
+				\begin{enumerate}
+					\item 任意の自然数$n$に対して$g(n) = \sum_{d \mid n}f(d)$が成り立つならば$f(n) = \sum_{d \mid n} \mu(d)g(n/d) = \sum_{d \mid n} \mu(n/d)g(n)$が成り立つ。
+					\item 任意の自然数$n$に対して$g(n) = \prod_{d \mid n}f(d)$が成り立つならば$f(n) = \prod_{d \mid n} g(n/d)^{\mu(d)} = \prod_{d \mid n} g(d)^{\mu(n/d)}$が成り立つ。
+				\end{enumerate}
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
+				(1について)
+				\par
 				結論の式の左から2つ目の等号は約数の意味から明らかである。
 				1つ目の等号成立を示す。
 				\begin{align*}
 					\sum_{d \mid n} \mu(d)g(n/d) &= \sum_{d \mid n} \mu(d)\sum_{e \mid n/d} f(e) = \sum_{d \mid n} \sum_{e \mid n/d} \mu(d)f(e) = \sum_{\genfrac{}{}{0pt}{}{d,e}{de \mid n}} \mu(d)f(e) \\
 					&= \sum_{e \mid n} \sum_{d \mid n/e} \mu(d)f(e) = \sum_{e \mid n} f(e) \sum_{d \mid n/e} \mu(d) = \sum_{e \mid n} f(e) \indII{e=n} = f(n)
 				\end{align*}
+				\newline
+				\newline
+				(2について)
+				\par
+				\begin{align*}
+					\prod_{d \mid n} g(n/d)^{\mu(d)} &= \prod_{d \mid n} \left(\prod_{e \mid n/d} f(e)\right)^{\mu(d)} = \prod_{d \mid n} \prod_{e \mid n/d} f(e)^{\mu(d)} = \prod_{\genfrac{}{}{0pt}{}{d,e}{de \mid n}} f(e)^{\mu(d)} \\
+					&= \prod_{e \mid n} \prod_{d \mid n/e} f(e)^{\mu(d)} = \prod_{e \mid n} f(e)^{\sum_{d \mid n/e} \mu(d)} = \prod_{e \mid n} f(e)^{\indII{e=n}} = f(n)
+				\end{align*}
 			\end{proof}
 	\chapter{数え上げ}
-		\section{``for $i=1, \cdots, n(\in \naturalNumbers)$''は``for $d \mid n, \text{ for } i=1,\cdots,n \text{ where } \gcd(i,n)=d$''と同じ}
-			1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、主張が成り立つ。
+		\section{``for $i=1, \cdots, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\cdots,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\cdots,n/d \text{ where } \gcd(j,n/d)=1$''}
+			1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、最初の$\iff$が成り立つ。
+			2つ目の$\iff$については$i=dj$なる変数変換を施すことで分かる。
 			次のような使い方が考えられる。
 			\begin{itemize}
-				\item $\sum_{i=1}^n f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i)$
-				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i)$
+				\item $\sum_{i=1}^n f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{j=1, \cdots, n/d}{\gcd(j,n/d)=1}} f(dj)$
+				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{j=1, \cdots, n/d}{\gcd(j,n/d)=1}} f(dj)$
 			\end{itemize}
 		\section{包除原理}
 			\subsection{補題: $A\subseteq U \Rightarrow |A| = \sum_{x\in U}{|A\cap\{x\}|}$}
@@ -158,113 +172,113 @@
 					\quad\par
 					当たり前すぎて証明に困る。$U$の各要素について、それが$A$に含まれるかどうかを虱潰しに調べているだけ。
 				\end{commentary}
-			{
-				\newcommand{\numset}{{\{1,\cdots,n\}}}
-				\begin{shadebox}
-					任意の集合$A_1,\cdots,A_n$に対して次の等式が成り立つ。
-					\begin{align*}
-						|A_1\cup\cdots\cup A_n| &= |A_1|+\cdots +|A_n| \\
-						&- |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| \\
-						&+ |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| \\
-						&- \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|
-					\end{align*}
-					すなわち
-					\begin{equation}
-						\abs{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\abs{\bigcap_{i\in I}A_i}}
-					\end{equation}
-					もっと短く書けば
-					\[\abs{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}}{(-1)^{|I|-1}\abs{\bigcap_{i\in I}A_i}}\]
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					式(1)を証明する。
-					$U:=\bigcup_{i=1}^n A_i$とする。
-					補題\ref{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}より
-					\begin{align*}
-						\textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\left(\bigcup_{i=1}^n A_i\right)\cap\{x\}}} = \sum_{x\in U}1 \\
-						\textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}} \\
-						&= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
-						&= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
-						&= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) := \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
-					\end{align*}
-					任意の$x\in U$に対して$c(x)=1$であることを示す。
-					各$x$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
-					\begin{center}
-						「$x$は$m(x)$個の集合$A_{i_1},\cdots,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
-					\end{center}
-					従って、$c(x)$の$\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
-					\[c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}}{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}\]
-					上式の$\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから、$c(x)$はさらに次のように書き直される。
-					\begin{align*}
-						c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\cdots,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
-						&= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
-						&= -\left((1-1)^{m(x)} - 1\right) = 1
-					\end{align*}
-				\end{proof}
-				\subsection{あの等式をどうやって思いついたか}
-					包除原理の等式を証明することはできたが、一番最初にあの等式を思い付いた人は何を考えたのだろうか。
-					ここでは、あの等式を導き出す自然なアルゴリズムを考えてみる。
-					\par
-					まず我々は「メモリ」を\textcolor{red}{1つ}用意して0で初期化する。
-					次に、$U:=\bigcup_{i=1}^n A_i$とし、$U$の\textcolor{red}{各}要素に「カウンタ」を取り付けて0で初期化する。
-					\par
-					まず次の操作を実行する。
-					「任意の$A_i$について、$A_i$に属する各要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を$i=1,\cdots,n$すべてに対して行う。」
-					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n|$になっている。
-					そしてカウンタの値は次のようになっている。
-					\begin{itemize}
-						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
-						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは2
-						\item $\cdots$
-						\item $n$個の集合に属している要素のカウンタは$n$
-					\end{itemize}
-					当然だ。複数の集合が被さっている部分の要素はオーバーカウントされている。
-					\par
-					そこで、「2つの集合に属しており、3つ以上の集合に属していない要素」のオーバーカウントを解消するために次の操作を行う。
-					「任意の2つの集合$A_i,A_j$について、$A_i\cap A_j$に属する要素のカウンタを-1する。カウンタを操作する度にメモリも-1する。この操作を全ての$\{i,j\}\in\combi{\numset}{2}$に対して行う。」
-					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n|$になっている。
-					そしてカウンタの値は次のようになっている。
-					\begin{itemize}
-						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
-						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
-						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}=\textcolor{red}{0}$
-						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}=-2$
-						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}=-5$
-						\item $\cdots$
-						\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} < 0$
-					\end{itemize}
-					(※ $\combi{?}{2}$が現れる理由は次のとおり。
-					例えば「3つの集合に属しており、4つ以上の集合に属していない要素」は、上述の操作により、自分が属している3つの集合から2つを選んで作られた$\combi{3}{2}$通りの集合のパターンの数だけカウンタが-1される。)
-					\par
-					やりすぎたようだ。3つ以上の集合に属している要素をアンダーカウントしている。
-					\par
-					そこで、「3つの集合に属しており、4つ以上の集合に属していない要素」を数え直すために次の操作を実行する。
-					「任意の3つの集合$A_i,A_j,A_k$について、$A_i\cap A_j\cap A_k$に属する要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を全ての$\{i,j,k\}\in\combi{\numset}{3}$に対して行う。」
-					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n|$になっている。
-					そしてカウンタの値は次のようになっている。
-					\begin{itemize}
-						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
-						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
-						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
-						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}=2$
-						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}=5$
-						\item $\cdots$
-						\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} +\combi{n}{3} > 0$
-					\end{itemize}
-					4つ以上の集合に含まれる要素はオーバーカウントされている。
-					\par
-					もう気づいたと思うが、これまでやってきたように「足しすぎては引き、引きすぎては足し、$\cdots$」を繰り返すと最終的にメモリの値は包除原理の主張である$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| - \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|$になり、カウンタの値は次のようになる。
-					\begin{itemize}
-						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
-						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
-						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
-						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}-\combi{4}{4}=1$
-						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}-\combi{5}{4}+\combi{5}{5}=1$
-						\item $\cdots$
-						\item $n$個の集合に属している要素のカウンタは$n + \sum_{i=2}^n{(-1)^{i-1}\combi{n}{i}} = -\sum_{i=1}^n{(-1)^i\combi{n}{i}} = -\left(\sum_{i=0}^n{(-1)^i\combi{n}{i}} - 1\right) = -\left((1-1)^n - 1\right) = 1$
-					\end{itemize}
-					全ての要素を過不足無くカウントできていることがわかる。
-			}
+				{
+					\newcommand{\numset}{{\{1,\cdots,n\}}}
+					\begin{shadebox}
+						任意の集合$A_1,\cdots,A_n$に対して次の等式が成り立つ。
+						\begin{align*}
+							|A_1\cup\cdots\cup A_n| &= |A_1|+\cdots +|A_n| \\
+							&- |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| \\
+							&+ |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| \\
+							&- \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|
+						\end{align*}
+						すなわち
+						\begin{equation}
+							\abs{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\abs{\bigcap_{i\in I}A_i}}
+						\end{equation}
+						もっと短く書けば
+						\[\abs{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}}{(-1)^{|I|-1}\abs{\bigcap_{i\in I}A_i}}\]
+					\end{shadebox}
+					\begin{proof}
+						\quad\par
+						式(1)を証明する。
+						$U:=\bigcup_{i=1}^n A_i$とする。
+						補題\ref{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}より
+						\begin{align*}
+							\textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\left(\bigcup_{i=1}^n A_i\right)\cap\{x\}}} = \sum_{x\in U}1 \\
+							\textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}} \\
+							&= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+							&= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+							&= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) := \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
+						\end{align*}
+						任意の$x\in U$に対して$c(x)=1$であることを示す。
+						各$x$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
+						\begin{center}
+							「$x$は$m(x)$個の集合$A_{i_1},\cdots,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
+						\end{center}
+						従って、$c(x)$の$\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
+						\[c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}}{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}\]
+						上式の$\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから、$c(x)$はさらに次のように書き直される。
+						\begin{align*}
+							c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\cdots,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
+							&= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
+							&= -\left((1-1)^{m(x)} - 1\right) = 1
+						\end{align*}
+					\end{proof}
+					\subsection{あの等式をどうやって思いついたか}
+						包除原理の等式を証明することはできたが、一番最初にあの等式を思い付いた人は何を考えたのだろうか。
+						ここでは、あの等式を導き出す自然なアルゴリズムを考えてみる。
+						\par
+						まず我々は「メモリ」を\textcolor{red}{1つ}用意して0で初期化する。
+						次に、$U:=\bigcup_{i=1}^n A_i$とし、$U$の\textcolor{red}{各}要素に「カウンタ」を取り付けて0で初期化する。
+						\par
+						まず次の操作を実行する。
+						「任意の$A_i$について、$A_i$に属する各要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を$i=1,\cdots,n$すべてに対して行う。」
+						この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n|$になっている。
+						そしてカウンタの値は次のようになっている。
+						\begin{itemize}
+							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+							\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは2
+							\item $\cdots$
+							\item $n$個の集合に属している要素のカウンタは$n$
+						\end{itemize}
+						当然だ。複数の集合が被さっている部分の要素はオーバーカウントされている。
+						\par
+						そこで、「2つの集合に属しており、3つ以上の集合に属していない要素」のオーバーカウントを解消するために次の操作を行う。
+						「任意の2つの集合$A_i,A_j$について、$A_i\cap A_j$に属する要素のカウンタを-1する。カウンタを操作する度にメモリも-1する。この操作を全ての$\{i,j\}\in\combi{\numset}{2}$に対して行う。」
+						この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n|$になっている。
+						そしてカウンタの値は次のようになっている。
+						\begin{itemize}
+							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+							\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+							\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}=\textcolor{red}{0}$
+							\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}=-2$
+							\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}=-5$
+							\item $\cdots$
+							\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} < 0$
+						\end{itemize}
+						(※ $\combi{?}{2}$が現れる理由は次のとおり。
+						例えば「3つの集合に属しており、4つ以上の集合に属していない要素」は、上述の操作により、自分が属している3つの集合から2つを選んで作られた$\combi{3}{2}$通りの集合のパターンの数だけカウンタが-1される。)
+						\par
+						やりすぎたようだ。3つ以上の集合に属している要素をアンダーカウントしている。
+						\par
+						そこで、「3つの集合に属しており、4つ以上の集合に属していない要素」を数え直すために次の操作を実行する。
+						「任意の3つの集合$A_i,A_j,A_k$について、$A_i\cap A_j\cap A_k$に属する要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を全ての$\{i,j,k\}\in\combi{\numset}{3}$に対して行う。」
+						この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n|$になっている。
+						そしてカウンタの値は次のようになっている。
+						\begin{itemize}
+							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+							\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+							\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
+							\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}=2$
+							\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}=5$
+							\item $\cdots$
+							\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} +\combi{n}{3} > 0$
+						\end{itemize}
+						4つ以上の集合に含まれる要素はオーバーカウントされている。
+						\par
+						もう気づいたと思うが、これまでやってきたように「足しすぎては引き、引きすぎては足し、$\cdots$」を繰り返すと最終的にメモリの値は包除原理の主張である$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| - \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|$になり、カウンタの値は次のようになる。
+						\begin{itemize}
+							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+							\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+							\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
+							\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}-\combi{4}{4}=1$
+							\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}-\combi{5}{4}+\combi{5}{5}=1$
+							\item $\cdots$
+							\item $n$個の集合に属している要素のカウンタは$n + \sum_{i=2}^n{(-1)^{i-1}\combi{n}{i}} = -\sum_{i=1}^n{(-1)^i\combi{n}{i}} = -\left(\sum_{i=0}^n{(-1)^i\combi{n}{i}} - 1\right) = -\left((1-1)^n - 1\right) = 1$
+						\end{itemize}
+						全ての要素を過不足無くカウントできていることがわかる。
+				}
 		\section{配列の飛び飛びマーキング}
 			\begin{shadebox}
 				$m<n$を互いに素な自然数とする。
