@@ -1,0 +1,347 @@
+﻿\part{ベクトル解析}
+	\newcommand{\hth}{h_{\theta}}
+	\newcommand{\hph}{h_{\varphi}}
+	\newcommand{\dx}{\textrm{d}x}
+	\newcommand{\dy}{\textrm{d}y}
+	\newcommand{\dz}{\textrm{d}z}
+	\newcommand{\ix}{\bm{i}_x}
+	\newcommand{\iy}{\bm{i}_y}
+	\newcommand{\iz}{\bm{i}_z}
+	\newcommand{\ir}{\bm{i}_r}
+	\newcommand{\ith}{\bm{i}_{\theta}}
+	\newcommand{\iph}{\bm{i}_\varphi}
+	\newcommand{\vr}{\bm{r}}
+	\newcommand{\dc}{\textrm{d}\bm{c}}
+	\newcommand{\dS}{\textrm{d}\bm{S}}
+	\newcommand{\sinth}{\sin{\theta}}
+	\newcommand{\costh}{\cos{\theta}}
+	\newcommand{\sinph}{\sin{\varphi}}
+	\newcommand{\cosph}{\cos{\varphi}}
+	
+	\newcommand {\dthv} [3] {\begin{bmatrix}#1\\#2\\#3\end{bmatrix}}	%3次元ベクトル
+	
+	\newcommand{\ppx}{\partDeriv{}{x}{}}
+	\newcommand{\ppy}{\partDeriv{}{y}{}}
+	\newcommand{\ppz}{\partDeriv{}{z}{}}
+	\newcommand{\ppr}{\partDeriv{}{r}{}}
+	\newcommand{\ppth}{\partDeriv{}{\theta}{}}
+	\newcommand{\ppph}{\partDeriv{}{\varphi}{}}
+	
+	\chapter{直角座標系}
+		\section{諸公式}
+			\subsection{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}
+				\begin{shadebox}
+					$\bm{v}$を定数ベクトルとするとき
+					\[\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}\]
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					\[\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
+					であるから
+					\[
+						\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left[
+							\begin{array}{c}
+								\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_1}{}\\
+								\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_2}{}\\
+								\vdots\\
+								\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_n}{}
+							\end{array}
+						\right] = \left[
+							\begin{array}{c}
+								\left[\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\cdots,\partDerivIIHetero{f}{x_1}{x_n}\right]\bm{v}\\
+								\vdots\\
+								\left[\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\cdots,\partDeriv{f}{x_n}{2}\right]\bm{v}
+							\end{array}
+						\right] = \left(\nabla^2f\right)\bm{v}
+					\]
+				\end{proof}
+			\subsection{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}
+			\begin{proof}
+				\quad\par
+				ベクトル三重積の公式を利用する。
+				\[ \inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inprod{a}{\inprod{\bm{d}}{\bm{b}}\bm{c} - \inprod{\bm{b}}{\bm{c}}\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}} \]
+			\end{proof}
+			\subsection{(系)\;$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}
+				%実は直前の公式よりもこちらの方を先に思いついた。直前の公式から直ちに導かれるが、当時思いついた証明を書き残しておく。
+				\begin{proof}
+					直前の公式から直ちに導ける。
+					% \begin{align*}
+					% 	\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} &= (a_2b_1 - a_1b_2) (a_2c_1 - a_1c_2) + (a_3b_1 - a_1b_3) (a_3c_1 - a_1c_3) + (a_3b_2 - a_2b_3) (a_3c_2 - a_2c_3) \\
+					% 	&=  {a_1}^2 b_2 c_2 + {a_1}^2 b_3 c_3 - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 + {a_2}^2 b_1 c_1 \\
+					% 	&\quad + {a_2}^2 b_3 c_3 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 + {a_3}^2 b_1 c_1 + {a_3}^2 b_2 c_2 \\
+					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - {a_1}^2b_1c_1 - {a_2}^2b_2c_2 - {a_3}^2b_3c_3 \\
+					% 	&\quad - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 \\
+					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - (a_1b_1 + a_2b_2 + a_3b_3)(a_1c_1 + a_2c_2 + a_3c_3) \\
+					% 	&= \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}
+					% \end{align*}
+				\end{proof}
+		\section{諸定理}
+			\subsection{非負領域の共通部分の非負領域}
+				\begin{shadebox}
+					$\realSpace^n$上で考える。$\bm{v}_1,\cdots,\bm{v}_m\;(m\leq n)$は一次独立であるとし、$\bm{v}$の非負領域を
+					\[P(\bm{v}):=\left\{\bm{w}|\inprod{\bm{v}}{\bm{w}}\geq0\right\})\]
+					で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の非負領域にある、すなわち
+					\[\inprod{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\]
+					であるとき、$\bm{u}$は適当な定数$a_i\geq0(i=1,\cdots,m)$によって
+					\[\bm{u} = \sum_{i=1}^{m}{a_i\bm{v}_i}\]
+					と表せる。
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+						まず$\bm{u}$が$\bm{v}_1,\cdots,\bm{v}_m$の一次結合で表せることを示す。\\
+						$W := \Span{\bm{v}_1,\cdots,\bm{v}_m}$とすると$\realSpace^n = W\oplus W^\bot$であるから、適当な定数$c_1,\cdots,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
+						\begin{equation}
+							\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i} + \bm{w}_t
+						\end{equation}
+						と表せる。$\bm{p}$を$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の任意のベクトルとすると
+						\[\inprod{\bm{v}_i}{\bm{p}}\geq0,\forall\bm{v}_i\in W\]
+						また、$\bm{w}_{t2}$を$W^\bot$の任意のベクトルとすると
+						\[\inprod{\bm{v}_i}{\bm{w}_{t2}}=0,\forall\bm{v}_i\in W\]
+						従って$\bm{p}' := \bm{p}+\bm{w}_{t2}$とすると
+						\[\inprod{\bm{v}_i}{\bm{p}'}\geq0,\forall\bm{v}_i\in W\]
+						であるから$\bm{p'}$もまた$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$のベクトルである。従って$\inprod{\bm{u}}{\bm{p}'}\geq0$であるから
+						\[0\leq\inprod{\bm{u}}{\bm{p}'} = \inprod{\sum_{i=1}^{m}{c_i\bm{v}_i}}{\bm{p}} + \inprod{\bm{w}_{t1}}{\bm{w}_{t2}}\]
+						である。然るに$\bm{w}_{t2}\in W^\bot$は任意であるから、$\bm{w}_{t1}=\bm{0}$でない限り$\inprod{\bm{w}_{t1}}{\bm{w}_{t2}}$の値をいくらでも小さくできる。
+						よって上式が成り立つためには$\bm{w}_{t1}=\bm{0}$でなくてはならならず、式(1)より結局
+						\[\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i}\]
+						と表せることになる。
+						\par
+						次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はクロネッカーのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
+						$\bm{v}_1,\cdots,\bm{v}_m\;(m\leq n)$は一次独立であったから次の行列
+						\[
+							A = \left[
+								\begin{array}{c}
+									{\bm{v}_1}^\textrm{T}\\
+									{\bm{v}_2}^\textrm{T}\\
+									\vdots\\
+									{\bm{v}_m}^\textrm{T}
+								\end{array}
+							\right]
+						\]
+						の階数は$m$である。従って次の方程式
+						\[
+							A\bm{x} = \left[
+								\begin{array}{c}
+									0\\
+									\vdots\\
+									1\\
+									\vdots\\
+									0
+								\end{array}
+							\right]
+							\begin{array}{c}
+								\quad\\
+								\quad\\
+								\leftarrow i\\
+								\quad\\
+								\quad
+							\end{array}
+						\]
+						は解を持つ。この解を$\bm{d}_i$とすれば$\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}$であるから$\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}$。
+						よって
+						\[0\leq\inprod{\bm{u}}{\bm{d}_i} = c_i\]
+				\end{proof}
+		\subsection{Stokesの定理}
+			\begin{shadebox}
+				$c$を空間上の任意の$C^1$級の閉曲線、$S$を、$c$を周$\partial S$とする任意の$C^2$級の曲面, $A$を$C^1$級のベクトル場とするとき
+				\[
+					\oint_c{A\cdot\dc} = \iint_S{\nabla\times A}\cdot\dS
+				\]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$S$が$S(x,y)$の如く$x,y$の関数で表せる場合について証明すれば十分である。
+				なぜなら、$S$が複雑な場合は$S(s,y),S(y,z),S(z,x)$いずれかの型の2変数関数で表せる曲面に分割して、各部分で、これから証明する$S(x,y)$型の場合と同じ手続きを踏んで最後に合計すれば全体の結果になるからである。
+				領域分割を行う場合は分割境界でも線積分を行うことになるが、その回数は2で、互いに逆向きであるから、合計する段階で相殺して0になるため最終的な結果には現れない。
+				\begin{figure}[H]
+					\centering
+					\includegraphics[keepaspectratio, scale=0.4]
+					{parts/vectorCalculus/imgs/Stokes-theorem/divide.eps}
+					\caption{$S$の分割}
+				\end{figure}
+				以降$S$は$S(x,y)$型の曲面とする。$\partial S$を$t$をパラメータとする閉曲線とする。
+				すなわち
+				\[\partial S\;:\;x=\phi(t), y=\psi(t), t\;:\;0\rightarrow1\]
+				また、$xy$平面への$S$の射影を$\Omega$とする。
+				\begin{figure}[H]
+					\centering
+					\includegraphics[keepaspectratio, scale=0.4]
+					{parts/vectorCalculus/imgs/Stokes-theorem/illust.eps}
+					\caption{状況}
+				\end{figure}
+				では証明しよう。
+				線積分で表された定理の左辺を変形して面積分に置き換えて、定理の右辺と見比べる流れで行く。
+				\par
+				関数の引数を全部書いていてはスペースがいくらあっても足りないので省略して書くことになる(例えば$A_x(x,y,z)$を単に$A_x$と書いたり)のだが、こうすると独立変数と従属変数の関係を見誤る危険が生じるため注意が必要だ。
+				迂闊に計算すると罠にはまる。
+				特に危ない所では敢えて引数を明示する。
+				\begin{align*}
+					\oint_c{A\cdot\dc} &= \oint_{\partial S}{\left(\ix A_x+\iy A_y+\iz A_z\right)\cdot\left(\ix \dx+\iy \dy+\iz \dz\right)} \\
+					&= \oint_{\partial S}{\left(A_x\dx+A_y\dy\right)} + \oint_{\partial S}{A_z\dz} \\
+					&= \underbrace{\oint_{\partial \textcolor{red}{\Omega}}{\left(A_x(x,y,S(x,y))\dx+A_y(x,y,S(x,y))\dy\right)}}_{\ctext{A}} + \underbrace{\oint_{\partial S}{A_z\dz}}_{\ctext{B}}
+				\end{align*}
+				\ctext{A}で積分経路が$\partial S$から$\partial\Omega$に変更されたことに注意。Greenの定理を使いたいから$xy$平面に落としたのだ。
+				Greenの定理より
+				\[
+					\ctext{A} = \iint_\Omega{\left[\underbrace{\partDerivLong{A_y(x,y,S(x,y))}{x}{}}_{\ctext{C}}-\underbrace{\partDerivLong{A_x(x,y,S(x,y))}{y}{}}_{\ctext{D}}\right]\dx\dy}
+				\]
+				\ctext{C}が罠だ。引数を明示していないと$\left.\partDeriv{A_y}{x}{}\right|_{(x,y,z)=(x,y,S(x,y))}$と勘違いしてしまう。
+				\textcolor{red}{$\partDerivLong{A_y(x,y,S(x,y))}{x}{}$と$\left.\partDeriv{A_y}{x}{}\right|_{(x,y,z)=(x,y,S(x,y))}$は別物}であることに注意せなばならぬ。
+				連鎖律に注意して
+				\begin{align*}
+					\ctext{C} &= \left.\partDeriv{A_y}{x}{}\right|_{(x,y,z)=(x,y,S(x,y))}\partDeriv{x}{x}{} + \left.\partDeriv{A_y}{y}{}\right|_{(x,y,z)=(x,y,S(x,y))}\partDeriv{y}{x}{} + \left.\partDeriv{A_y}{z}{}\right|_{(x,y,z)=(x,y,S(x,y))}\partDeriv{S}{x}{} \\
+					&= \partDeriv{A_y}{x}{} + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{}
+				\end{align*}
+				同様にして
+				\[\ctext{D} = \partDeriv{A_x}{y}{} + \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\]
+				よって結局
+				\begin{align*}
+					\ctext{A} &= \iint_\Omega{\left[\partDeriv{A_y}{x}{} + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{y}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\right]\dx\dy} \\
+					&= \iint_\Omega{\left[\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right) + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\right]\dx\dy}
+				\end{align*}
+				次に\ctext{B}を見る。$t$による偏微分を$\dot{}$で表すことにする。線積分の定義に従って
+				\begin{align*}
+					\ctext{B} &= \integ{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{t} \\
+					&= \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{t} + \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{t} \\
+					&= \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx} + \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy} \\
+					&= \oint_{\partial \Omega}{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx + A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy\right)}
+				\end{align*}
+				これにGreenの定理を適用して、連鎖律に注意して偏微分していく。
+				\begin{align*}
+					\ctext{B} &= \iint_\Omega{\left[\partDerivLong{\left(A_z(x,y,S(x,y))\partDeriv{S}{y}{}\right)}{x}{} - \partDerivLong{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\right)}{y}{}\right]\dx\dy} \\
+					&= \iint_\Omega{\left(\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} + \partDeriv{A_z}{z}{}\partDeriv{S}{x}{}\partDeriv{S}{y}{} + A_z\partDerivIIHetero{S}{y}{x} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{} - \partDeriv{nA_z}{z}{}\partDeriv{S}{y}{}\partDeriv{S}{x}{} - A_z\partDerivIIHetero{S}{x}{y}\right)\dx\dy} \\
+					&= \iint_\Omega{\left(\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{}\right)\dx\dy}\quad\left(\because\;\text{$S$は$C^2$級と仮定したから$\partDerivIIHetero{S}{y}{x} = \partDerivIIHetero{S}{x}{y}$}\right)
+				\end{align*}
+				以上より
+				\begin{align*}
+					\oint_c{A\cdot\dc} &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy}
+				\end{align*}
+				\par
+				これが定理の右辺と等しいことを示せば良い。
+				まず$\dS$の正体を暴こう。感覚的には、$\dS$とは、$S$上で$x,y$が微小量$\dx,\dy$だけ動いた時に舐める$S$の面積をノルムに持ち、向きはその微小面上の任意の代表点での上向きの法線ベクトルに一致するようなベクトルであった。
+				所謂「面積ベクトル」である。
+				\par
+				厳密にはRiemann和を取る段階で定義され、$S$上の点$(x,y,S(x,y))$における接平面のうち、その射影が$xy$平面上の矩形$\dx\dy$に収まる部分(3次元上の平行四辺形)の面積をノルムに持ち、向きは接平面の上向き法線ベクトルと一致するようなベクトルである。
+				\[\dS = \left(\ix\dx+\iz\partDeriv{S}{x}{}\dx\right)\times\left(\iy\dy+\iz\partDeriv{S}{y}{}\dy\right) = \left(-\ix\partDeriv{S}{x}{} - \iy\partDeriv{S}{y}{} + \iz\right)\dx\dy\]
+				よって定理の右辺は
+				\begin{align*}
+					\iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\left[\ix\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)+\iy\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)+\iz\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\cdot\dS} \\
+					&= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy} \\
+					&= \oint_c{A\cdot\dc}
+				\end{align*}
+			\end{proof}
+	\chapter{円柱座標系}
+		\section{計量係数}
+			\begin{shadebox}
+				\[h_r = 1, \hph = r, h_z = 1\]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				位置ベクトルは
+				\[\vr = \dthv{r\cosph}{r\sinph}{z}\]
+				よって
+				\begin{align*}
+					h_r &:= \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
+					\hph &:= \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
+					h_z &:= \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
+				\end{align*}
+			\end{proof}
+		\section{単位ベクトルに関する直角座標系との関係}
+			\begin{shadebox}
+				\begin{align*}
+					\ir &= \ix\cosph + \iy\sinph\\
+					\iph &= -\ix\sinph + \iy\cosph
+				\end{align*}
+				\begin{align*}
+					\ix &= \ir\cosph - \iph\sinph\\
+					\iy &= \ir\sinph + \iph\cosph
+				\end{align*}
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				位置ベクトルは
+				\[\vr = \dthv{r\cosph}{r\sinph}{z}\]
+				よって
+				\begin{align}
+					\ir &:= \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \ix\cosph+\iy\sinph \\
+					\iph &:= \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\ix\sinph+\iy\cosph
+				\end{align}
+				これを逆に解いてみる。\\
+				$(1)\times\cosph-(2)\times\sinph$より$\ix = \ir\cosph - \iph\sinph$\\
+				$(1)\times\sinph+(2)\times\cosph$より$\iy = \ir\sinph + \iph\cosph$\\
+				を得る。
+			\end{proof}
+		\section{微分演算に関する直交座標系との関係}
+			\begin{shadebox}
+				\begin{align*}
+					\partDeriv{}{x}{} &= \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\\
+					\partDeriv{}{y}{} &= \sinph\partDeriv{}{r}{} + \frac{\cosph}{r}\partDeriv{}{\varphi}{}
+				\end{align*}
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				スカラー関数$\phi(x,y,z)$を微分することを考える。
+				\def \phr {\partDeriv{\phi}{r}{}}
+				\def \php {\partDeriv{\phi}{\varphi}{}}
+				\def \phz {\partDeriv{\phi}{z}{}}
+				$d\phi := \phr dr + \php d\varphi + \phz dz$であるから
+				\begin{align*}
+					\partDeriv{\phi}{x}{} &= \phr\partDeriv{r}{x}{} + \php\partDeriv{\varphi}{x}{} + \phz\partDeriv{z}{x}{}\\
+					&= \phr\ppx{\sqrt{x^2+y^2}} + \php\ppx{\varphi}
+				\end{align*}
+				第1項に関して
+				\[\ppx{\sqrt{x^2+y^2}} = \frac{x}{\sqrt{x^2+y^2}} = \frac{r\cosph}{r} = \cosph\]
+				第2項に関して
+				\[\ppx{\varphi} = \ppx\atanEx{x}{y} = \frac{-y}{x^2+y^2} = \frac{-r\sin{\phi}}{r^2} = -\frac{\sin{\phi}}{r}\]
+				以上より
+				\[\partDeriv{}{x}{} = \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\]
+				$y$に関しても全く同様にして導出できる。
+			\end{proof}
+	\chapter{球座標系}
+		\section{計量係数}
+			\begin{shadebox}
+				\[h_r = 1, \hth = r, \hph = r\sinth\]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				位置ベクトルは
+				\[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
+				よって
+				\begin{align*}
+					h_r &:= \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\sinth\cosph}{\sinth\sinph}{\costh}} = 1\\
+					\hth &:= \norm{\partDeriv{\vr}{\theta}{}} = \norm{\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth}} = r\\
+					\hph &:= \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\sinth\sinph}{r\sinth\cosph}{0}} = r\sinth
+				\end{align*}
+			\end{proof}
+		\section{単位ベクトルに関する直角座標系との関係}
+			\begin{shadebox}
+				\begin{align*}
+					\ir &= \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh\\
+					\ith &= \ix\costh\cosph + \iy\costh\sinph - \iz\sinth\\
+					\iph &= -\ix\sinph + \iy\cosph
+				\end{align*}
+				\begin{align*}
+					\ix &= \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph\\
+					\iy &= \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph\\
+					\iz &= \ir\costh - \ith\sinth
+				\end{align*}
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				位置ベクトルは
+				\[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
+				よって
+				\begin{align}
+					\ir &:= \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh \\
+					\ith &:= \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \ix\costh\cosph + \iy\costh\sinph - \iz\sinth \\
+					\iph &:= \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\ix\sinph + \iy\cosph
+				\end{align}
+				これを逆に解いてみる。\\
+				$(1)\times\costh-(2)\times\sinth$より$\iz = \ir\costh - \ith\sinth$\\
+				$(1)\times\sinth+(2)\times\costh$より
+				\begin{equation}
+					\ir\sinth+\ith\costh = \ix\cosph+\iy\sinph
+				\end{equation}
+				$(4)\times\costh-(3)\times\sinth$より$\ix = \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph$\\
+				$(3)\times\cosph+(4)\times\sinph$より$\iy = \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph$
+			\end{proof}

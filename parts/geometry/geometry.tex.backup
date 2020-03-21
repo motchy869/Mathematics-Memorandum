@@ -1,0 +1,37 @@
+﻿\part{幾何学}
+	\setcounter{section}{0}
+	\section{諸公式}
+		\subsection{ヘロンの公式}
+			\begin{shadebox}
+				辺の長さが$a,b,c$なる三角形の面積$S$は
+				\[S = \sqrt{s(s-a)(s-b)(s-c)}\]
+				但し
+				\[s = \frac{a+b+c}{2}\]
+			\end{shadebox}
+			\begin{proof}
+				余弦定理を用いて
+				\[\cos{C} = \frac{a^2+b^2-c^2}{2ab}\]
+				\[\therefore \; \sin{C} = \sqrt{1-\cos^2{C}} = \frac{\sqrt{4a^2b^2-{\left(a^2+b^2-c^2\right)}^2}}{2ab}\]
+				\begin{eqnarray}
+					S &=& \frac{1}{2}ab\sin{C} \nonumber \\
+					&=& \frac{1}{2}\sqrt{4a^2b^2-{\left(a^2+b^2-c^2\right)}^2} \nonumber
+				\end{eqnarray}
+				ここで
+				\begin{eqnarray}
+					&\;& 4a^2b^2-{\left(a^2+b^2-c^2\right)}^2 \nonumber \\
+					&=& -\left(a^4+b^4+c^4-2a^2b^2-2b^2c^2-2c^2a^2\right) \nonumber \\
+					&=& -\left[a^4 - 2(b^2+c^2)a^2 + b^4+c^4 -2b^2c^2\right] \nonumber \\
+					&=& -\left[a^4 - 2(b^2+c^2)a^2 + (b^2+c^2)^2 -4b^2c^2\right] \nonumber \\
+					&=& -\left\{\left[a^2-(b^2+c^2)^2\right]^2-(2bc)^2\right\} \nonumber \\
+					&=& -\left[a^2-(b^2+c^2)+2bc\right]\left[a^2-(b^2+c^2)-2bc\right] \nonumber \\
+					&=& -\left[a^2-(b-c)^2\right]\left[a^2-(b+c)^2\right] \nonumber \\
+					&=& (a+b+c)(-a+b+c)(a-b+c)(a+b-c) \nonumber
+				\end{eqnarray}
+				よって
+				\begin{eqnarray}
+					S &=& \sqrt{\frac{a+b+c}{2}\times\frac{-a+b+c}{2}\times\frac{a-b+c}{2}\times\frac{a+b-c}{2}} \nonumber \\
+					&=& \sqrt{s(s-a)(s-b)(s-c)} \nonumber
+				\end{eqnarray}
+				但し
+				\[s = \frac{a+b+c}{2}\]
+			\end{proof}

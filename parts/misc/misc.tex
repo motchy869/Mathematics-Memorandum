@@ -1,0 +1,24 @@
+\part{寄せ集め}
+	\chapter{無限級数公式集}
+		\section{$\sum_{k=1}^{\infty}{\frac{\sin{k}}{k}} = \frac{\pi-1}{2}$}
+			\begin{proof}
+				\quad\par
+				下図のような鋸波$y=f(x)$をフーリエ級数展開して求める。
+				\begin{figure}[H]
+					\centering
+					\includegraphics[keepaspectratio, scale=0.5]
+					{parts/complexAnalysis/imgs/series_frac{sin(n)}{n}/pic.eps}
+					\caption{鋸波}
+				\end{figure}
+				$f(x)$は奇関数なので$\cos$成分はゼロ、つまり$\forall n, a_n=0$。$\sin(nx)$の係数は
+				\[b_n=\frac{1}{\pi}\integ{-\pi}{\pi}{x\sin(nx)}{x}=\frac{2}{\pi}\integ{-\pi}{0}{x\sin(nx)}{x}=(-1)^{n-1}\frac{2}{n}\]
+				よって
+				\[x\sim2\left(\frac{\sin x}{1}-\frac{\sin 2x}{2}+\frac{\sin 3x}{3}-\cdots\right)\]
+				$x$を$x-\pi$で置き換えると
+				\[x-\pi \sim -2\left(\frac{\sin x}{1}+\frac{\sin2x}{2}+\frac{\sin3x}{3}+\cdots\right)\]
+				特に$x$=1とすれば公式を得る。
+			\end{proof}
+		\section{$\sum_{n=1}^\infty{\frac{1}{1+n^2}}=\frac{-1}{2}+\frac{\pi}{2}\coth{\pi}$}
+			大阪大学 大学院 工学研究科 平成21年度 院試 数学 問題4 の解答を参照。
+		\section{$\sum_{n=1}^\infty{\frac{1}{(1+n^2)^2}}=\frac{-1}{2}+\frac{\pi^2}{4\sinh^2{\pi}}+\frac{\pi}{4}\coth\pi$}
+			大阪大学 大学院 工学研究科 平成20年度 院試 数学 問題4 の解答を参照。

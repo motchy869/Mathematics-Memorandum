@@ -1,0 +1,404 @@
+\part{離散数学}
+	\chapter{表記}
+		\begin{itemize}
+			\item $\range{m}{n}$ : $m$以上$n$以下の整数の集合
+			\item $\combi{A}{k}\quad($A$は集合)$ : $A$の$k$元部分集合全体から成る集合族を表す。\\
+			例えば$A=\{1,2,3\}$に対して$\combi{A}{2}=\{\{1,2\},\{2,3\},\{3,1\}\}$
+		\end{itemize}
+	\chapter{整数の合同}
+		\section{定数倍と加減乗除}
+			$n$を2以上の整数とする。$x_1\equiv_n x_2$かつ$y_1\equiv_n y_2$であるとき次が成り立つ。
+			\begin{itemize}
+				\item 任意の整数$a$に対して$a x_1 \equiv_n a x_2$
+				\item $x_1+y_1 \equiv_n x_2+y_2$
+				\item $x_1y_1 \equiv_n x_2y_2$
+				\item $x_1,\;x_2$が共に整数$m$で割り切れて$m$と$n$が互いに素ならば$x_1/m \equiv_n x_2/m$
+			\end{itemize}
+		\section{$a,m\in \naturalNumbers$が互いに素であるとき、$0,a,2a,\cdots,a(m-1)$を$m$で割った余りは全て異なる}
+			\label{a,mが互いに素のとき、0,a,...a(m-1)をmで割った余りは全て異なる}
+			\begin{proof}
+				\quad\par
+				$b_1,b_2\;(0 \leq b_1 < b_2 \leq m-1)$を任意にとる。$a$と$m$が互いに素であるから$(m/\gcd(b_2-b_1, m)) \nmid (a(b_2-b_1)/\gcd(b_2-b_1, m))$であるので$m \nmid a(b_2-b_1)$、すなわち$ab_1 \not \equiv_m ab_2$である。
+			\end{proof}
+		\section{和のべき乗を展開}
+			\label{整数の合同:和のべき乗を展開}
+			$x,\;y$を整数、$p$を素数とするとき次が成り立つ。
+			\begin{enumerate}
+				\item $(x+y)^p \equiv_p x^p + y^p$
+				\item $(x+y)^p \equiv_p x^p + y$
+			\end{enumerate}
+			\begin{proof}
+				\quad\par
+				まず1を示す。
+				\[(x+y)^p \equiv_p x^p + \sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k + y^p\]
+				であるが$\sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k$は$p$の倍数である。何故ならば
+				\[ \combi{p}{k} =\frac{p!}{k!(p-k)!} \quad (k=1,\cdots,p-1) \]
+				において$p$は素数であり$k<p$なので分子の$p$は約分されないから。
+				よって次式より1が成り立つ。
+				\[ x^p + \sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k + y^p \equiv_p x^p + y^p \]
+				次に2を示す。
+				$p=2$のときは、左辺と右辺の差は$(x+y)^2 - (x^2+y) = y(y-1+2x)$なので$y$の偶奇に関わらず$p$の倍数である。
+				以下では$p$は3以上の素数とする。$y$が0のときは明らかに成り立つ。
+				1の結果を用いると、$y$が自然数のときは
+				\[(x+y)^p = [(x+y-1) + 1]^p \equiv_p (x+y-1)^p + 1 \equiv_p (x+y-2)^p + 2 \equiv_p \cdots \equiv_p x^p + y \]
+				より成り立つ。$y$が負の整数のときも
+				\[(x+y)^p = [(x+y+1) - 1]^p \equiv_p (x+y+1)^p - 1 \equiv_p (x+y+2)^p - 2 \equiv_p \cdots \equiv_p x^p + (-y)(-1) = x^p + y \]
+				より成り立つ。
+			\end{proof}
+		\section{Fermatの小定理}
+			\begin{shadebox}
+				素数$p$と整数$a$が互いに素であるとき、$a^{p-1} \equiv_p 1$である。
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				「\textcolor{red}{任意の}整数$a$に対して$a^p \equiv_p a$」を示し、$a$と$p$が互いに素である場合に限定して両辺を$a$で割れば良いので、これを示す。
+				$p=2$のときは$a$の偶奇で場合分けすれば簡単に示せる。以下では$p$は3以上の素数であるとする。
+				まず$a=0$のときは明らかに成り立つ。\ref{整数の合同:和のべき乗を展開}を用いると、$a$が自然数のときは
+				\[ a^p \equiv_p [(a-1)+1]^p \equiv_p (a-1)^p + 1 \equiv_p [(a-2) + 1]^p + 1 \equiv_p (a-2)^p + 1 + 1 \equiv_p \cdots \equiv_p a\]
+				となり、成り立つ。$a$が負の整数のときは
+				\[ a^p \equiv_p [(a+1)-1]^p \equiv_p (a+1)^p - 1 \equiv_p [(a+2) - 1]^p - 1 \equiv_p (a+2)^p - 1 - 1 \equiv_p \cdots \equiv_p (-a)(-1) \equiv_p a \]
+				となり、やはり成り立つ。
+			\end{proof}
+	\chapter{$r$進法}
+		\section{$1/10$が2進表記で無限小数になることの証明}
+			\begin{proof}
+				\quad\par
+				$\frac{1}{10}=\frac{1}{2}\times\frac{1}{5}$なので$1/5$が2進表記で無限小数になることを示せば十分。
+				背理法で示す。
+				ある適当な自然数$m$を用いて$\frac{1}{5} = \sum_{i=1}^m a_i 2^{-i} \quad (a_i\in\{0,1\})$と表せると仮定する。
+				両辺に$2^m\times 5$を掛けて$2^m = 5\sum_{i=1}^m a_i 2^{m-i} = 5\sum_{i=0}^{m-1}a_{m-i}2^i$となる。
+				左辺は5で割り切れないが右辺は割り切れるので矛盾している。
+			\end{proof}
+	\chapter{群}
+		\section{剰余類}
+			\subsection{定義}
+				$G$を群とし、$H$をその任意の部分群とする。
+				$g\in G$を任意にとる。
+				\par
+				「$G$に於ける$H$の左剰余類 (the left coset of $H$ in $G$)」とは次の集合族のことを言う。
+				\[ \set{gH}{g \in G} = \set{\set{gh}{h \in H}}{g \in G} \]
+				また、「$G$に於ける$H$の右剰余類」とは次の集合族のことを言う。
+				\[ \set{Hg}{g \in G} = \set{\set{hg}{h \in H}}{g \in G} \]
+				特に、$gH\;(g \in G)$を「$G$に於ける$g$に関する$H$の左剰余類 (the left coset of $H$ in $G$ with respect to $g$)」と呼び、$Hg\;(g \in G)$を「$G$に於ける$g$に関する$H$の右剰余類」と呼ぶ。
+			\subsection{群$G$の部分群$H$の全ての剰余類は互いに素である}
+				\begin{proof}
+					\quad\par
+					左剰余類について示す。
+					右剰余類についても同様にして示せる。
+					\par
+					命題の対偶「2つの左剰余類$R=gH,\;R'=g'H\;(g\in G)$の共通部分が非空ならば$R=R'$」を示す。
+					$R$と$R'$の共通部分を$gh = g'h'\;(h,h'\in H)$とすると$g' = ghh'^{-1}$だから$\forall h'' \in H,\;(R' \ni) g'h'' = ghh'^{-1}h'' \in gH = R\;(\because\;hh'^{-1}h'' \in H)$であり$R'\subseteq R$となる。
+					同様に$R' \supseteq R$も示せるから$R=R'$となる。
+				\end{proof}
+			\subsection{2つの元が同じ剰余類に属する必要十分条件}
+				$G$を群とし、$H$をその部分群とする。
+				$s_1,s_2\in G$が$H$の同じ左剰余類に属する必要十分条件は$s_1^{-1}s_2\in H$である。
+				また、同じ右剰余類に属する必要十分条件は$s_1s_2^{-1}\in H$である。
+				\begin{proof}
+					\quad\par
+					左剰余類について示す。
+					右剰余類についても同様にして示せる。\\
+					($\Rightarrow$)
+					\par
+					仮定より$\exists g \in G,\;h_1,h_2 \in H \st s_1 = gh_1,\;s_2 = gh_2$。
+					よって$s_1^{-1}s_2 = h_1^{-1}g^{-1}gh_2 = h_1^{-1}h_2 \in H$\\
+					($\Leftarrow$)
+					\par
+					仮定より$\exists h \in H \st s_1^{-1}s_2 = h$。
+					直前に示した定理より$H$の剰余類は$G$を分割するから、$\exists g\in G,\;h_1\in H \st s_1 = gh_1 (\in gH)$。
+					よって$s_2 = s_1h = gh_1h \in gH\;(\because\; h_1h \in H)$
+				\end{proof}
+			\section{$\mathbb{Z}_p$ ($p: $素数)に乗法群としての位数$r$の元があれば$p-1$は$r$の倍数}
+				\begin{proof}
+					\quad\par
+					論題の元を$a$とする。
+					$r$は$a^r \equiv_p 1$となる最小の自然数であるから、$k\in\naturalNumbers$に対して$a^k \equiv_p 1$となるのは$k$が$r$の倍数であるとき、かつそのときに限る。
+					Fermatの小定理から$a^{p-1} \equiv_p 1$であるので、$p-1$は$r$の倍数である。
+				\end{proof}
+	\chapter{公式}
+		\section{$1\cdot3\cdot5\cdots(2n-1)2n = (2n)!/n!$}
+			\begin{proof}
+				\begin{align*}
+					1\cdot3\cdot5\cdots(2n-1)2n = \frac{1\cdot2\cdot3\cdot4\cdot5\cdot6\cdot7\cdots(2n-2)(2n-1)2n}{\underbrace{2\cdot4\cdot6\cdots(2n-2)2n}_{n\text{個}}}2^n = \frac{(2n)!}{1\cdot2\cdot3\cdots(n-1)n} = \frac{(2n)!}{n!}
+				\end{align*}
+			\end{proof}
+		\section{$a^n-b^n = (a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k$}
+			\begin{proof}
+				\begin{align*}
+					(a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k &= \sum_{k=0}^{n-1} a^{n-k}b^k - \sum_{k=0}^{n-1} a^{n-1-k}b^{k+1} \\
+					&= a^n + \sum_{k=1}^{n-1} a^{n-k}b^k - \sum_{k=1}^{n} a^{n-k}b^{k} = a^n - b^n
+				\end{align*}
+			\end{proof}
+		\section{M\"obiusの反転公式}
+			\begin{shadebox}
+				$f,g$を自然数から複素数への写像とする。
+				任意の自然数$n$に対して$g(n) = \sum_{d \mid n}f(d)$が成り立つならば$f(n) = \sum_{d \mid n} \mu(d)g(n/d) = \sum_{d \mid n} \mu(n/d)g(n)$が成り立つ。
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				結論の式の左から2つ目の等号は約数の意味から明らかである。
+				1つ目の等号成立を示す。
+				\begin{align*}
+					\sum_{d \mid n} \mu(d)g(n/d) &= \sum_{d \mid n} \mu(d)\sum_{e \mid n/d} f(e) = \sum_{d \mid n} \sum_{e \mid n/d} \mu(d)f(e) = \sum_{d,e \atop de \mid n} \mu(d)f(e) \\
+					&= \sum_{e \mid n} \sum_{d \mid n/e} \mu(d)f(e) = \sum_{e \mid n} f(e) \sum_{d \mid n/e} \mu(d) = \sum_{e \mid n} f(e) \indII{e=n} = f(n)
+				\end{align*}
+			\end{proof}
+	\chapter{数え上げ}
+		\section{``for $i=1, \cdots, n(\in \naturalNumbers)$''は``for $d \mid n, \text{ for } i=1,\cdots,n \text{ where } \gcd(i,n)=d$''と同じ}
+			1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、主張が成り立つ。
+			次のような使い方が考えられる。
+			\begin{itemize}
+				\item $\sum_{i=1}^n f(i) = \sum_{d \mid n} \sum_{i=1, \cdots, n \atop \gcd(i,n)=d} f(i)$
+				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{i=1, \cdots, n \atop \gcd(i,n)=d} f(i)$
+			\end{itemize}
+		\section{包除原理}
+			\subsection{補題: $A\subseteq U \Rightarrow |A| = \sum_{x\in U}{|A\cap\{x\}|}$}
+				\label{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}
+				\begin{commentary}
+					\quad\par
+					当たり前すぎて証明に困る。$U$の各要素について、それが$A$に含まれるかどうかを虱潰しに調べているだけ。
+				\end{commentary}
+			{
+				\newcommand{\numset}{{\{1,\cdots,n\}}}
+				\begin{shadebox}
+					任意の集合$A_1,\cdots,A_n$に対して次の等式が成り立つ。
+					\begin{align*}
+						|A_1\cup\cdots\cup A_n| &= |A_1|+\cdots +|A_n| \\
+						&- |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| \\
+						&+ |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| \\
+						&- \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|
+					\end{align*}
+					すなわち
+					\begin{equation}
+						\abs{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\abs{\bigcap_{i\in I}A_i}}
+					\end{equation}
+					もっと短く書けば
+					\[\abs{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}}{(-1)^{|I|-1}\abs{\bigcap_{i\in I}A_i}}\]
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					式(1)を証明する。
+					$U:=\bigcup_{i=1}^n A_i$とする。
+					補題\ref{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}より
+					\begin{align*}
+						\textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\left(\bigcup_{i=1}^n A_i\right)\cap\{x\}}} = \sum_{x\in U}1 \\
+						\textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}} \\
+						&= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+						&= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+						&= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) := \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
+					\end{align*}
+					任意の$x\in U$に対して$c(x)=1$であることを示す。
+					各$x$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
+					\begin{center}
+						「$x$は$m(x)$個の集合$A_{i_1},\cdots,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
+					\end{center}
+					従って、$c(x)$の$\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
+					\[c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}}{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}\]
+					上式の$\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから、$c(x)$はさらに次のように書き直される。
+					\begin{align*}
+						c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\cdots,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
+						&= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
+						&= -\left((1-1)^{m(x)} - 1\right) = 1
+					\end{align*}
+				\end{proof}
+				\subsection{あの等式をどうやって思いついたか}
+					包除原理の等式を証明することはできたが、一番最初にあの等式を思い付いた人は何を考えたのだろうか。
+					ここでは、あの等式を導き出す自然なアルゴリズムを考えてみる。
+					\par
+					まず我々は「メモリ」を\textcolor{red}{1つ}用意して0で初期化する。
+					次に、$U:=\bigcup_{i=1}^n A_i$とし、$U$の\textcolor{red}{各}要素に「カウンタ」を取り付けて0で初期化する。
+					\par
+					まず次の操作を実行する。
+					「任意の$A_i$について、$A_i$に属する各要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を$i=1,\cdots,n$すべてに対して行う。」
+					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n|$になっている。
+					そしてカウンタの値は次のようになっている。
+					\begin{itemize}
+						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは2
+						\item $\cdots$
+						\item $n$個の集合に属している要素のカウンタは$n$
+					\end{itemize}
+					当然だ。複数の集合が被さっている部分の要素はオーバーカウントされている。
+					\par
+					そこで、「2つの集合に属しており、3つ以上の集合に属していない要素」のオーバーカウントを解消するために次の操作を行う。
+					「任意の2つの集合$A_i,A_j$について、$A_i\cap A_j$に属する要素のカウンタを-1する。カウンタを操作する度にメモリも-1する。この操作を全ての$\{i,j\}\in\combi{\numset}{2}$に対して行う。」
+					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n|$になっている。
+					そしてカウンタの値は次のようになっている。
+					\begin{itemize}
+						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}=\textcolor{red}{0}$
+						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}=-2$
+						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}=-5$
+						\item $\cdots$
+						\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} < 0$
+					\end{itemize}
+					(※ $\combi{?}{2}$が現れる理由は次のとおり。
+					例えば「3つの集合に属しており、4つ以上の集合に属していない要素」は、上述の操作により、自分が属している3つの集合から2つを選んで作られた$\combi{3}{2}$通りの集合のパターンの数だけカウンタが-1される。)
+					\par
+					やりすぎたようだ。3つ以上の集合に属している要素をアンダーカウントしている。
+					\par
+					そこで、「3つの集合に属しており、4つ以上の集合に属していない要素」を数え直すために次の操作を実行する。
+					「任意の3つの集合$A_i,A_j,A_k$について、$A_i\cap A_j\cap A_k$に属する要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を全ての$\{i,j,k\}\in\combi{\numset}{3}$に対して行う。」
+					この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n|$になっている。
+					そしてカウンタの値は次のようになっている。
+					\begin{itemize}
+						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
+						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}=2$
+						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}=5$
+						\item $\cdots$
+						\item $n$個の集合に属している要素のカウンタは$n - \combi{n}{2} +\combi{n}{3} > 0$
+					\end{itemize}
+					4つ以上の集合に含まれる要素はオーバーカウントされている。
+					\par
+					もう気づいたと思うが、これまでやってきたように「足しすぎては引き、引きすぎては足し、$\cdots$」を繰り返すと最終的にメモリの値は包除原理の主張である$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| - \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|$になり、カウンタの値は次のようになる。
+					\begin{itemize}
+						\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
+						\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$
+						\item 3つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$3-\combi{3}{2}+\combi{3}{3}=1$
+						\item 4つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}-\combi{4}{4}=1$
+						\item 5つの集合に属しており、4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}-\combi{5}{4}+\combi{5}{5}=1$
+						\item $\cdots$
+						\item $n$個の集合に属している要素のカウンタは$n + \sum_{i=2}^n{(-1)^{i-1}\combi{n}{i}} = -\sum_{i=1}^n{(-1)^i\combi{n}{i}} = -\left(\sum_{i=0}^n{(-1)^i\combi{n}{i}} - 1\right) = -\left((1-1)^n - 1\right) = 1$
+					\end{itemize}
+					全ての要素を過不足無くカウントできていることがわかる。
+			}
+		\section{配列の飛び飛びマーキング}
+			\begin{shadebox}
+				$m<n$を互いに素な自然数とする。
+				自然数$k$を1から順番に増やしながら、長さ$n$の配列Aの$km\%n$番目の要素をマークしていけば、$k=n$の時にすべての要素を丁度1回ずつマーク完了する。
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$m,n$は互いに素であるから、A[$n-1$]が初めてマークされるのは$km=$lcm($m,n$)、すなわち$k=n$の時である。
+				仮に、それまでのある時刻でA[0]$\sim$A[$n-2$]のどれかが2回マークされたとすると、動作の周期性から、$k$をどれだけ増やしていってっも、それまでにマークされた要素を何度もマークするだけで、A[$n-1$]はいつまでもマークされない。これは不合理である。
+				また、仮に$k=n$の時点で未マークの要素があるとすると、鳩の巣原理から少なくとも1つの要素が2回マークされていることになり、不合理である。
+			\end{proof}
+	\chapter{多項式}
+		\section{規約}
+			以降の説明に於いて多項式中に特別の断りなく現れる$x$は不定元を意味する。
+		\section{既約多項式$\iff$最小多項式}
+			\begin{shadebox}
+				$P$を体$K$上の多項式とする。
+				$P$が既約であることと、$P$がその任意の根の最小多項式であることは同値である。
+			\end{shadebox}
+			\begin{proof}
+				\quad\newline\noindent
+				($\Rightarrow$)
+				\par
+				背理法で示す。
+				$\alpha$を$P$の任意の根とする。
+				仮に$P$より低次の$K$上の多項式$P_2$が存在して$P_2(\alpha)=0$であるとする。
+				$P$を$P_2$で割った商を$Q_2$, 余りを$P_3$とすると、$0 = P_1(\alpha) = Q_2(\alpha)P_2(\alpha) + P_3(\alpha)$より$P_3(\alpha) = 0$である。
+				同じ要領で$P_i$を$P_{i+1}$で割った商を$Q_{i+1}$, 余りを$P_{i+2}$とすると$0 = P(\alpha) = P_2(\alpha) = P_3(\alpha) = \cdots$となる。
+				$P_i$の次数は$i$の増加と共に真に減少するため、次のいずれかが成り立つ。
+				\begin{enumerate}
+					\item ある$i$で$P_{i+1} \mid P_i$
+					\item ある$i$で$\deg(P_i)=0$となる
+				\end{enumerate}
+				Euclidの互除法により、1.の場合は$\gcd(P,P_2) = \gcd(P_2,P_3) = \cdots = \gcd(P_i,P_{i+1}) = P_{i+1}$となり、$P$が規約であるという前提に矛盾する。
+				2.の場合も先述の通り$P_i(\alpha)=0$であり、$\deg(P_i)=0$に注意して$P_i=0$であるので$P_{i-1} \mid P_{i-2}$であり、1.と同様に矛盾が生じる。
+				\newline\newline
+				($\Leftarrow$)
+				\par
+				背理法で示す。
+				$\alpha$を$P$の任意の根とする。
+				仮に$P$が既約でないとすると$K$上の$P$より低次な2つの多項式$P_2,P_3$を用いて$P=P_2P_3$と表せる。
+				$\alpha$は$P$の根であるから$0 = P(\alpha) = P_2(\alpha)P_3(\alpha)$より$P_2(\alpha) = 0$または$P_3(\alpha) = 0$であるが、これは$P$が$\alpha$の最小多項式であることに矛盾する。
+			\end{proof}
+	\chapter{有限体}
+		\section{素数位数の有限体の構成法}
+			$p$を素数とし、$S:=\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+			\begin{itemize}
+				\item $a+'b = (a+b)\% p$
+				\item $a*'b = (ab)\% p$
+			\end{itemize}
+			このようにすると代数構造$(S,+',*')$が体を成すことを説明する。
+			\par
+			まず$+'$に関する結合法則, 単位元と唯一の逆元の存在、$*'$に関する結合法則と単位元の存在、また、$*'$が$+'$の上に分配的であることは合同式の基本的な知識があれば明らかであろう。
+			あとは、$*'$に関する唯一の逆元が存在すること、すなわち任意の$a\in S$に対して唯一の$b\in S$が存在して$a*'b=1$となることを示せばよいのだが、\ref{a,mが互いに素のとき、0,a,...a(m-1)をmで割った余りは全て異なる}より、それが保証される。
+			\par
+			有限体はGalois体とも呼ばれ、位数$p$の有限体を$\GaloisField{p}$と表す。
+		\section{位数が素数の冪乗である有限体の構成法}
+			\subsection{既約多項式を用いる方法}
+				$p$を素数とする。$\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
+				$S$を、$\GaloisField{p}$上の次数$m-1$以下の全ての多項式の集合を$S$とする($|S|=p^m$)。
+				$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+				\begin{itemize}
+					\item $a+'b = (a+b)\% P$
+					\item $a*'b = (ab)\% P$
+				\end{itemize}
+				このようにすると代数構造$(S,+',*')$が体を成すことを説明する。
+				\par
+				まず$+'$に関する結合法則, 単位元と唯一の逆元の存在、$*'$に関する結合法則と単位元の存在、また、$*'$が$+'$の上に分配的であることは合同式, 素数位数の有限体の基本的な知識があれば明らかであろう。
+				あとは、$*'$に関する唯一の逆元が存在すること、すなわち任意の$a\in S$に対して唯一の$b\in S$が存在して$a*'b=1$となることを示せばよい。
+				少なくとも一つ存在することはBezoutの等式により保証される。
+				唯一であることを背理法で示す。
+				仮に異なる$b_1,b_2 \in S$が存在して$a*'b_1 = a*'b_2 = 1$であるとすると$a*'(b_1 - b_2) = 0$であるが、これは$P$は既約であることと矛盾する。
+				なぜならば$a,b_1,b_2$は$P$と互いに素であるから、$P \nmid a*'(b_1 - b_2)$であるからである。
+			\subsection{既約多項式の根を用いる方法(根体)}
+				$p$を素数とする。
+				$\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
+				$\alpha$を$P$の任意の根とする。
+				$S := \set{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\cdots,a_{m-1} \in \GaloisField{p}}$とする。
+				$S$上の演算として$\GaloisField{p}$上の多項式に対する加法と乗法をそのまま使うと、$S$とこの演算の組が体を成すことを説明する。
+				\par
+				まず加法に関する結合法則, 単位元と唯一の逆元の存在、乗法に関する結合法則と単位元の存在、また、乗法が加法の上に分配的であることは$P(\alpha) = 0$であること, 素数位数の有限体, 多項式の除法の基本的な知識があれば明らかであろう。
+				あとは、乗法に関する唯一の逆元が存在すること、すなわち任意の$a\in S$に対して唯一の$b\in S$が存在して$ab=1$となることを示せばよい。
+				少なくとも一つ存在することは、$a$に現れる$\alpha$を不定元$x$で置換して多項式に戻してからBezoutの等式を考えることで理解できる。
+				唯一であることは背理法で示せる。
+				仮に異なる$b_1,b_2 \in S$が存在して$ab_1 = ab_2 = 1$であるとすると$a(b_1 - b_2) = 0$であるが、一方で$a, b_1 - b_2 \neq 0$だから$a(b_1 - b_2) \neq 0$であり、矛盾している。
+	\chapter{有限幾何学}
+		\section{有限射影平面}
+			\subsection{位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}
+				\begin{proof}
+					\newcommand{\np}{n_\textrm{p}}
+					\newcommand{\nl}{n_\textrm{l}}
+					\newcommand{\nb}{n_\textrm{b}}
+					\quad\par
+					念の為、「位数が$n$である」というのは各直線が丁度$n+1$個の点を含むこととして定義されていることを断っておく。
+					求めたい点の数を$\np$、直線の数を$\nl$とし、各点が$\nb$本の直線に含まれるとして$\np,\nl,\nb$を求める。
+					\par
+					まず$\nb$が点に依らず一定であることを示す。
+					任意の点$p$を選び、それを含む直線の数を$\nb(p)$とする。
+					この$\nb(p)$本の直線によって全ての点がカバーされる。
+					なぜならば、もしカバーされない点が存在すれば、有限射影平面の公理1「2つの異なる任意の点が与えられたとき、それらを含むような直線が唯1つだけ存在する。」によりその点と$p$を結ぶ直線が存在して、それは先述の$\nb(p)$本の直線のどれとも一致しない。
+					次に公理2「2つの異なる任意の直線の交わりは唯1つの点を含む。」より、$p$は先述の$\nb(p)$本の直線の唯一つの共有点であり、各直線は$p$以外に$n$個の点を含むから
+					\[ n \nb(p) + 1 = \np \quad \therefore \nb(p) = (p-1)/n \]
+					となり、$\nb(p)$の値は$p$に依存しない。
+					この値を$\nb$と表すことにする。
+					よって次式が成り立つ。
+					\begin{equation}
+						n \nb + 1= \np
+					\end{equation}
+					\par
+					次に、$\nl$本の直線から2本を選ぶ方法の数を2通りに表して方程式を1本立てる。
+					1つ目の表し方は明らかに$\binom{\nl}{2}$である。
+					公理2より、2本の直線を選ぶと、その共有点として対応する1点が決まる。
+					これは一対一対応ではなく、先述のように1点に対してそれを含む直線が$\nb$本存在するので、各点に於いてそれらの直線から2本を選ぶ操作を全ての点に対して行えば、全ての直線から2本の直線を選ぶ方法を網羅できる。
+					つまり次式が成り立つ。
+					\begin{equation}
+						\binom{\nl}{2} = \np\binom{\nb}{2}
+					\end{equation}
+					\par
+					次に、$\np$個の点から2つを選ぶ方法の数を2通りに表して方程式を1本立てる。
+					1つ目の表し方は明らかに$\binom{\np}{2}$である。
+					公理1より、2個の点を選ぶと、それらを含む直線が1つ決まる。
+					これは一対一対応ではなく、先述のように1直線に対してそれに含まれる点が$n+1$個存在するので、各直線に於いてそれが含む点から2つを選ぶ操作を全ての直線に対して行えば、全ての点から2つの点を選ぶ方法を網羅できる。
+					つまり次式が成り立つ。
+					\begin{equation}
+						\binom{\np}{2} = \nl\binom{n+1}{2}
+					\end{equation}
+					式(3)より
+					\begin{equation}
+						\nl = \frac{\np(\np-1)}{n(n+1)}
+					\end{equation}
+					となる。これを式(2)に代入して整理すると
+					\[ \frac{\np-1}{n(n+1)}\left(\frac{\np(\np-1)}{n(n+1)} - 1\right) \]
+					となる。これに式(1)を適用して整理すると$(\nb-1)(\nb-n-1) = 0$を得る。
+					公理3「どの3点も同一直線上にないような4点集合が存在する」より$\nb=1$は不適なので$\nb=n+1$である。
+					これと式(1)より$\np = n^2+n+1$である。
+					これと式(4)より$\nl = n^2+n+1 = \np$である。
+				\end{proof}

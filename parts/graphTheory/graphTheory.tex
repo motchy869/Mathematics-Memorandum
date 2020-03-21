@@ -1,0 +1,296 @@
+\part{グラフ理論}
+	\chapter{定義}
+		\begin{itemize}
+			\item $n$個の頂点の集合$\nu=\{i_1,i_2,\cdots,i_n\}$と辺集合$\varepsilon\in\nu\times\nu$からなるグラフ$G$を$G(\nu,\varepsilon)$と表記する。$\nu$の要素数を$|\nu|$と表記する($|\nu|=n$)。
+			\item 歩道,道,小道 : \cite{離散数学}の定義に従う。
+		\end{itemize}
+	\chapter{連結グラフ}
+		\section{諸定理}
+			\subsection{頂点の連結グラフは少なくとも$n-1$本の辺をもつ}
+				\begin{indentation}{1zw}{0zw}
+					\begin{proof}
+					\quad\par
+						$n$に関する帰納法で示す。$n=2$の時は明らか。$n-1$まで成り立つと仮定して$n$のとき成り立つことを示す。
+						\par
+						グラフから辺を任意に1本ずつ取り去ってゆき、$c$本目で初めて非連結になったとする。このときグラフは2つの連結成分$A,B$に分かれる(3つ以上に分かれることはない。3つ以上の連結成分を1本の辺で橋渡しするなど不可能である)。両者の点数をそれぞれ$a,n-a\;(1\leq a\leq n-1)$とすると帰納法の仮定より$A$は$a-1$本以上の、$B$は$n-a-1$本以上の辺をそれぞれもつ。よって元々のグラフは$(a-1)+(n-a-1)+c = n-2+c \geq n-1$本以上の辺をもっていたことになる。
+					\end{proof}
+				\end{indentation}
+			\subsection{$n$頂点グラフが$\frac{1}{2}(n-1)(n-2)$本より多くの辺を持つなら連結である}
+				\begin{indentation}{1zw}{0zw}
+					\begin{proof}
+						\quad\par
+						$n$に関する帰納法で示す。$n=1,2$のときは明らかに成り立つ。$n=m-1\;(m\geq3)$のとき成り立つものとして$n=m$のとき成り立つことを示す。
+						\par
+						$n=m$のときのグラフを$G$とする。辺の数$k$について$k>\frac{1}{2}(m-1)(m-2)$という前提のもとで仮に$G$が非連結であるとする。$k>0$なので次数が1以上の点が必ず存在するので任意に1つ選んで$v$とし、$G$から$v$とそれに接続する辺を取り去ったグラフを$G'$とするとこれは非連結である($\cdots$\textcircled{1})。(※$\deg(v)\geq1$であるところがミソ。$\deg(v)=0$だと、もし不運なことに$v$が唯一の孤立点だったら$G'$が連結になってしまう。)$G'$は非連結であるから$\deg(v)\leq m-2$である(もし$\deg(v)=m-1$なら$v$は他の全ての頂点と隣接していることになり、$G$が連結になってしまう)。$G'$の辺の数は$k'=k-\deg(v)$であり、
+						\[k' = k-\deg(v) > \frac{1}{2}(m-1)(m-2) - \deg(v) > \frac{1}{2}(m-1)(m-2) - (m-2)\]
+						ここで
+						\[\left[\frac{1}{2}(m-1)(m-2) - (m-2)\right] - \frac{1}{2}[(m-1)-1][(m-1)-2] = m-2 - (m-2) = 0\]
+						であるから
+						\[k' > \frac{1}{2}[(m-1)-1][(m-1)-2]\]
+						これと帰納法の仮定から$G'$は連結でなくてはならないが、このことは\textcircled{1}と矛盾する。よって$G$が非連結であるという仮定は否定される。
+					\end{proof}
+				\end{indentation}
+			\subsection{Oreの定理}
+				\begin{indentation}{1zw}{0zw}
+					\begin{shadebox}
+						Oreの定理\\
+						$n(\geq3)$点以上からなる単純グラフ$G$の隣接していない任意の2点$v,w$について$\deg(v)+\deg(w)\geq n$であれば$G$はハミルトングラフである。
+					\end{shadebox}
+					\begin{proof}
+						\quad\par
+						まず、$G$が連結であることを示そう。仮に$G$が2つの連結成分から成るとする。一方($A$とする)の点数を$a$とすれば他方($B$とする)の点数は$n-a$である。$A,B$から任意の点を1つずつ選んで$v,w$とすると$\deg(v)\leq a-1,\;\;\deg(w)\leq n-a-1$であるから$\deg(v)+\deg(w)\leq n-2$となって定理の仮定に反する。このように$G$が2つの連結成分から成る場合でさえ許されないのだから、3つ以上など以ての外である。よって$G$は連結である。
+						\par
+						次に$G$がハミルトングラフであることを示す。$G$の単純で最長な道を$p : (u_0,u_1,\cdots,u_{k-1},u_k)$とする。この中の点は全て異なるので$k+1\leq n$である。この道は最長だから$u_0$および$u_k$の隣接接点は全てこの道の中にある。集合$A:\{0\leq i\leq k-1|u_{i+1}\text{は}u_0\text{の隣接接点}\}$、$B:\{0\leq i\leq k-1|u_i\text{は}u_k\text{の隣接接点}\}$を考えると、当然$n(A\cup B)\leq k\leq n-1$である。然るに定理の仮定から$n(A)+n(B)\geq n$であるので$A$と$B$は共通部分を持つ,すなわち、ある$i\;(0\leq i\leq k-1)$が存在して$u_i$は$u_k$の隣接接点で、$u_{i+1}$は$u_0$の隣接接点である。
+						\begin{figure}[H]
+							\centering
+							\includegraphics[keepaspectratio, scale=0.5]
+							{parts/graphTheory/imgs/OreTheorem/OreTheorem.eps}
+							\caption{様子}
+						\end{figure}
+						ここで閉路$c : (u_0,u_{i+1})+p[u_{i+1},u_k]+(u_k,u_i)+p[u_i,u_0]$を考える。但し$p[u,v]$は道$p$の$u$から$v$への部分を表す。実はこの閉路$c$がハミルトン閉路になっている。
+						\par
+						$c$がハミルトン閉路であることを示そう。仮にこれがハミルトン閉路でないとすると、$G$上のある点$v$が存在してこれは$c$に含まれない。先述の如く$G$は連結なので$v$はどうにかして$c$と繋がっている,すなわち、これまたある点$w$が存在して(※たまたま$v$と一致することもある)これは$c$に属さないが$c$上のある点$u_t$に隣接している。このとき、$(w,u_t)$から始めて$c$を上手く回って$u_t$の手前まで行く単純な道を考えると(※簡単に考えられる。例えば上の図で$w$が$u_2$に隣接している場合を考えてみればいい。)これは$p$より長くなってしまうので、$p$が最長であったという前提に矛盾する。よって$G$上の点で$c$に含まれないものは無かったということになる。以上より$c$はハミルトン閉路である。
+					\end{proof}
+				\end{indentation}
+	\chapter{木}
+		\section{諸定理}
+			\subsection{木は2部グラフである}
+				\label{subsec:木は2部グラフである}
+				\begin{indentation}{1zw}{0zw}
+					\begin{proof}
+						\quad\par
+						木の任意の1点$v_{0,0}$を選んでこれを赤く塗る。次に$v_{0,0}$に隣接する全ての接点$v_{1,0},v_{1,1},\cdots,v_{1,k}$を白く塗る。そして$v_{1,0},v_{1,1},\cdots,v_{1,k}$に隣接する全ての無色の接点$v_{2,0},v_{2,1},\cdots,v_{2,l}$を赤く塗る。そして$v_{2,0},v_{2,1},\cdots,v_{2,l}$に隣接する全ての無色の接点を白く塗る。そして...。これを繰り返す。
+						\par
+						ある点$v_{i,j}$に色を塗るとき、$v_{0,0}$から$v_{i,j}$への道は唯一だから塗り方は唯一に決まる(道の上で赤→白→赤→白→$\cdots$と繰り返す)。
+						\par
+						全ての点に色がつくまでこれを繰り返せば木は赤と白の2つの部分に分けられる2部グラフであることがわかる。
+					\end{proof}
+				\end{indentation}
+			\subsection{1本以上の辺を持つ有限な木は次数1の枝を少なくとも2個持つ}
+				\begin{indentation}{1zw}{0zw}
+					\begin{proof}
+						\quad\par
+						\ref{subsec:木は2部グラフである}と同じように色を塗ることを考える。点数$n$が有限なので有限時間内に塗り終わる。塗り終わる(色塗りの旅(複数に分岐することもある)が行き止まりになって終わる)のは必ず次数1の点である。$v_{0,0}$の次数が1であれば塗り終わりの点(次数1)が必ず1つ以上ある。$v_{0,0}$の次数が2以上であれば色塗りの旅は2本以上に分岐するが、全て必ず終わるので塗り終わりの点(次数1)が$v_{0,0}$の次数以上必ずある。いずれにせよ次数1の点が少なくとも2個ある。
+					\end{proof}
+				\end{indentation}
+			\subsection{どこへでも行ける点が1個あればその点を根として木を作れる}
+				\begin{shadebox}
+					グラフ$G(\nu,\varepsilon)$にある点$i$があり、そこから$G$の任意の点への有向道があるとき、$G$は$i$を根とする全域木を持つ。
+				\end{shadebox}
+				\begin{indentation}{1zw}{0zw}
+					\begin{proof}
+						\quad\par
+						$G$の全ての点と辺を白く塗る。
+						件の点を$i$とし、それ以外の点を1つ任意に選んで$j_0$とする。
+						仮定より$i$から$j_0$への有向道が存在するから、その点と辺を全て黒く塗ると、その部分は木たる条件を満たしている。
+						$G$に白い点が残っていなければ証明は完了。
+						残っていればそこから1つ任意に選んでそれを$j_1$と呼ぶ。
+						仮定より$i$から$j_1$への有向道$l_1$が存在する。$l_1$の末尾の連続した最長の白い部分(別の言い方をすれば、「$j_1$から$i$に向かって$l_1$を(逆向きに)歩いたときに初めて黒い点に踏み込む一歩手前の白い点」から$j_1$までの道)を黒く塗ると、$G$の黒い点と辺だけを通って$i$から$j_1$まで行けるようになっているし、黒い部分は依然として木たる条件を満たす。
+						\par
+						以上の操作を白い点がなくなるまで繰り返した暁には、黒い点と辺から成る木が出来上がっている。
+					\end{proof}
+				\end{indentation}
+			\subsection{$\mathcal{I}$ : グラフ$G$の非閉路部分グラフ全体の集合。$I_1,I_2\in \mathcal{I},\;|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}
+				\begin{proof}
+					\quad\par
+					背理法で示す。
+					$I_2$のどの辺を$I_1$に加えても$I_1$に閉路ができると仮定する。
+					そのような辺数最小の$I_1$は、下図のように$I_2$に含まれない1点から$I_2$の各点に1本ずつ辺を伸ばしたものである。
+					\begin{figure}[H]
+						\centering
+						\includegraphics[keepaspectratio, scale=0.4]
+						{parts/graphTheory/imgs/Matroid/independentsetwise-property.eps}
+						\caption{最小の$I_1$}
+					\end{figure}
+					このとき$|I_1| = |I_2| + 1$となる。よって仮定が正しくない。
+				\end{proof}
+			\subsection{$\mathcal{T}$ : グラフ$G$の全域木の集合。$T_1,T_2\in\mathcal{T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 \st (T_1\setminus a_1) \cup a_2 \in \mathcal{T}$}
+				\begin{proof}
+					\quad\par
+					全域木の性質より、$T_2$に$a_1$を加えると$T_2$に閉路$C$がただ１つできる。
+					その閉路上に、$T_1$に属さない辺が少なくとも1つ存在する(そうでなければ$T_1$がその閉路を含んでしまう)。
+					それを$a_2$とする。$T_1$は木だから、$a_1$の両端点から$C$上の各点に至る経路がそれぞれただ1つずつ存在する。
+					いくつかは$C$と共通しているかもしれない。
+					\begin{figure}[H]
+						\centering
+						\includegraphics[keepaspectratio, scale=0.6]
+						{parts/graphTheory/imgs/Matroid/matroidwise-property.eps}
+						\caption{辺を取り替えて新しい$T_1$を作る}
+					\end{figure}
+					$T_1$から$a_1$を除去して$a_2$を加えると新しい木ができる。
+				\end{proof}
+	\chapter{有向グラフ}
+		\section{諸定理}
+			\subsection{$G_1=(\nu,\varepsilon_1),G_2=(\nu,\varepsilon_2)$に対して${G_1}^{|\nu-1|} = {G_2}^{|\nu-1|}$であるとき、$G_1$が全域木を持つ$\iff\;G_2$が〃}
+				\begin{proof}
+					\begin{align*}
+						G_1\textrm{が全域木を持つ} &\iff ^\exists i\in\nu\st^\forall j\in\nu,\;^\exists(i,j)\in{\varepsilon_1}^{|\nu-1|}\quad(\because\textrm{\cite{マルチエージェントシステムの制御}定理2.17}) \\
+						&\iff ^\exists i\in\nu\st^\forall j\in\nu,\;^\exists(i,j)\in{\varepsilon_2}^{|\nu-1|}\quad(\because\textrm{仮定より}{\varepsilon_2}^{|\nu-1|}={\varepsilon_1}^{|\nu-1|}) \\
+						&\iff G_2\textrm{が全域木を持つ}
+					\end{align*}
+				\end{proof}
+			\subsection{非閉路的ならばpruningのアルゴリズムはデッドロックしない}
+				\begin{indentation}{1zw}{0zw}
+					前提として、対象としているグラフD内の任意の点はスタート点から到達可能であるとする。Dが非閉路的ならpruningのアルゴリズムはデッドロック(ある段階で未決定点ばかりになって先に進まなくなること)しないことを示す。
+					\begin{proof}
+						\quad\par
+						対偶「デッドロックするなら閉路が存在する」を示す。デッドロックが起こって$m$個の未知点$u_1,u_2,\cdots,u_m$が残ったとする。$u_1$に進入する未知点が$\{u_2,\cdots,u_m\}$の中に少なくとも1つある(そうでなければ$u_1$はもはや未知ではない)。必要ならば$u_2$以降の番号を振り直して、$u_1$に進入する未知点の１つを$u_2$とする。するとやはり$u_2$に進入する未知点が1つ以上ある。もしそれが$u_1$であれば閉路$(u_1,u_2,u_1)$が発生して証明は終了する。そうでないとき必要ならば$u_3$以降の番号を振り直して、$u_2$に進入する未知点の１つを$u_3$とする。するとやはり$u_3$に進入する未知点が1つ以上ある。もしそれが$\{u_1,u_2\}$の中にあれば閉路が発生して証明は終了する。そうでないとき必要ならば$u_4$以降の番号を振り直して、$u_3$に進入する未知点の１つを$u_4$とする...。これを$m-1$回繰り返すと、途中で閉路が発生して証明が終了するか、或いは$u_{m-1}$に進入する未知点が$u_m$であるというところまでくる。やはり$u_m$に進入する未知点が1つ以上あるのだが、それは$u_1,u_2,\cdots,u_{m-1}$の中のどれかである。もう他に選択肢がない。ここまでの議論で道$(u_{m-1},u_{m-2},\cdots,u_2,u_1)$が存在するから、$u_m$に進入する未知点がどれであろうと必ず閉路が発生する。
+					\end{proof}
+				\end{indentation}
+			\subsection{スタートからゴールへの全ての道の連鎖重みの総和は1以下}
+				\begin{shadebox}
+					有向グラフ$G(V,E)$を考える。ある点集合$S = \{s_1,\cdots,s_{N_s}\}\in V$と、ある一つの頂点$g\in V$を選ぶ。
+					$S$と$g$は次の条件を満たすものとする。
+					\begin{itemize}
+						\item $S$のある1点から$S$の1点(自分自身も含む)へ至る道は存在しない
+						\item $g$を含む閉路が存在したとしても、その閉路上に$S$の点は存在しない
+					\end{itemize}
+					このとき、$S$の点から$g$へ至る経路全ての連鎖重みを足し上げると、結果は1以下である。
+				\end{shadebox}
+				「連鎖重み」というのは、辺を通過するたびにその辺の重みを掛け算していくという意味である。
+				$G$に閉路がなければ、例えば$s_1$から$g$へ至るパスは有限通りしかない。
+				しかし$g$を含む閉路が存在すると、一度$g$へ到着してから閉路を何度か回って$g$に落ち着く場合があるので、パターンは無限通りある。
+				しかし閉路を通る毎に重みが掛け算されてどんどん小さくなっていくので、総和が収束しそうである。
+				上の定理の主張は、閉路があっても総和が収束し、しかも1以下になるということである。
+				\begin{proof}
+					\quad\par
+					まず重要な要素を網羅する具体例を挙げ、それを解析して、証明すべき核心要素を炙り出そう。
+					どうやら閉路が重要そうだ。
+					\begin{figure}[H]
+						\centering
+						\includegraphics[keepaspectratio, scale=0.6]
+						{parts/graphTheory/imgs/SumOfChainedWeightPath/G_orig.eps}
+						\caption{$G(V,E)$}
+					\end{figure}
+					上のグラフは閉路を含んでいる。$g\rightarrow 8\rightarrow 9\rightarrow g$はまぁなんとかなりそうだ。
+					しかし$g\rightarrow 7\rightarrow 6\rightarrow 5\rightarrow g$では5において4経由で$s_1$からの入り込みがあってヤバい感じがする。
+					\par
+					今求めたい総和というのは結局次のものと同じである。
+					まず$s_1,\cdots,s_3$に立ったプレーヤーが初めLIFE1を持っており、そこから出発して$g$に向かうとして、辺を通る度にプレーヤーのLIFEに重みを掛け算していき、$g$に落ち着いた時点でのプレーヤーのLIFEを評価する。
+					プレーヤーの可能な道の通り方全てについて評価点を足し算した値が今求めたい総和である。
+					\par
+					このグラフを次のように5段階で変形していく。各段階で何をやっているかは下で説明する。
+					\begin{figure}[H]
+						\begin{minipage}{0.33\hsize}
+							\centering
+							\includegraphics[keepaspectratio, scale=0.6]
+							{parts/graphTheory/imgs/SumOfChainedWeightPath/step1.eps}
+							\caption{step1}
+						\end{minipage}
+						\begin{minipage}{0.33\hsize}
+							\centering
+							\includegraphics[keepaspectratio, scale=0.6]
+							{parts/graphTheory/imgs/SumOfChainedWeightPath/step2.eps}
+							\caption{step2}
+						\end{minipage}
+						\begin{minipage}{0.33\hsize}
+							\centering
+							\includegraphics[keepaspectratio, scale=0.6]
+							{parts/graphTheory/imgs/SumOfChainedWeightPath/step3.eps}
+							\caption{step3}
+						\end{minipage}
+					\end{figure}
+					\begin{figure}[H]
+						\begin{minipage}{0.33\hsize}
+							\centering
+							\includegraphics[keepaspectratio, scale=0.6]
+							{parts/graphTheory/imgs/SumOfChainedWeightPath/step4.eps}
+							\caption{step4}
+						\end{minipage}
+						\begin{minipage}{0.33\hsize}
+							\centering
+							\includegraphics[keepaspectratio, scale=0.6]
+							{parts/graphTheory/imgs/SumOfChainedWeightPath/step5.eps}
+							\caption{step5}
+						\end{minipage}
+					\end{figure}
+					\noindent
+					\textbf{Step1}
+					\par
+					$s_1$から$g$へ至るパスを考えると、4へ着いた時点でのLIFEに、4から$g$までのパスの重みを掛け算することになる。
+					だから最初から$s_1$を4に移動させておけばいい。ここでは新しいノード$s_4$で4を置き換えている。
+					\par
+					$s_2$から$g$へのパスと$s_3$から$g$へのパスのパターンをもし全部列挙したなら、1に着いてから先は両者で共通である。
+					今扱っている問題では総和を考えているから、グラフ上で$s_2$と$s_3$を統合しても計算結果は変わらない。
+					ここでは新しいノード$s_5$を作っている。\\
+					\noindent
+					\textbf{Step2}
+					\par
+					$s_4$から$g$へのパスを考えると、重み1/2の辺を通る場合と1/4の辺を通る場合を別々に考えることができる。
+					しかも$s_4$を一度離れるともう戻ってこない。
+					だからグラフ上で$s_4$からの行き先の数だけ$s_4$のコピーを作っても計算結果は変わらない。
+					ここでは新しく$s_6,s_7$を作っている。\\
+					\noindent
+					\textbf{Step3}
+					\par
+					ここが一番ややこしい。$s_7$から$g$へのパスを考えると、$s_5$を経由して$g$に着いてそこでお終いというパターンと、その後で閉路に入って何度か回って$g$に落ち着くパターンがある。
+					全てのパターンは別々に計算されるから、グラフ上で5をコピーして2つにしても計算結果は変わらない。
+					ここでは新しく10,11ノードを作っている。
+					\par
+					同じことを1ノードに対しても行っている。ここでは新しく12,13ノードを作っている。\\
+					\noindent
+					\textbf{Step4}
+					\par
+					$s_7$からは必ず10を通るから、グラフ上で$s_7\rightarrow 10$を予め計算しておいても問題ない。
+					$s_5$についても同じことをしている。
+					\par
+					図4には3つのループがあるが、ループ上に割り込みが無いので、グラフ上で1本の辺に単純化しても計算結果は変わらない。\\
+					\noindent
+					\textbf{Step5}
+					\par
+					$s_6$と$s_7$を統合して$s_8$を作った。Step1でやったことと同じ。\\
+					\quad\par
+					ここまでくると、次のことが証明できれば定理が証明できたことになるのがわかる。\\
+					\begin{shadebox}
+						有向グラフ$G(V,E)$を考える。ある頂点$s$と$g$を選ぶ。これらは次の条件を満たすものとする。
+						\begin{itemize}
+							\item $s$は$g$に隣接する。
+							\item $g$を含む閉路が存在したとしても、その閉路上に$s$は存在しない
+						\end{itemize}
+						このとき、$S$の点から$g$へ至る経路全ての連鎖重みを足し上げると、結果は1以下である。
+						\begin{figure}[H]
+							\centering
+							\includegraphics[keepaspectratio, scale=0.7]
+							{parts/graphTheory/imgs/LemmaForSumOfChaignedWeightPath/img.eps}
+							\caption{$G(V,E)$}
+						\end{figure}
+					\end{shadebox}
+					この補題の証明は次の小小節で行う。ここではこの補題を認めることにする。
+					この補題を図6の2ノードに対して適用すると、$s_5$ノードから2ノードへの全てのパスについて連鎖的重みを足し合わせると1になることがわかる。
+					よって2ノードを新しく、例えば$s_9$で置き換えてから、さらに$s_8$と統合させて再び補題を適用すると定理が証明できたことになる。
+					\par
+					上の図の場合は連鎖的重みの全ての経路についての総和がちょうど1になったが、これは$S$の点から$g$への全ての経路上のノードにおいて、「$S$からも$g$からも入れないような経路」からの割り込みがなかったからである。
+					もし、例えば8に$x$ノードが隣接し、$x$の入次数が0であると、辺$x\rightarrow8$の重みのせいで他の辺の重みが下がる(重み和は1でないといけなかった！)から結果は1を下回る。
+				\end{proof}
+			\subsection{(補題) ゴールに隣接する1つのスタート地点からの全ての経路の連鎖重みの総和は1以下}
+			\begin{shadebox}
+				有向グラフ$G(V,E)$を考える。ある頂点$s$と$g$を選ぶ。これらは次の条件を満たすものとする。
+				\begin{itemize}
+					\item $s$は$g$に隣接する。
+					\item $g$を含む閉路が存在したとしても、その閉路上に$s$は存在しない
+				\end{itemize}
+				このとき、$S$の点から$g$へ至る経路全ての連鎖重みを足し上げると、結果は1以下である。
+			\end{shadebox}
+			状況を図に表すと次のようになる。
+			\begin{figure}[H]
+				\centering
+				\includegraphics[keepaspectratio, scale=0.7]
+				{parts/graphTheory/imgs/LemmaForSumOfChaignedWeightPath/img.eps}
+				\caption{$G(V,E)$}
+			\end{figure}
+			ゴール$g$に隣接するスタート$s$があり、$g$を含む閉路が$l$本存在する。
+			もちろん$w_s + \sum_{i=1}^{l}{w_i} \leq 1$である。
+			\begin{proof}
+				\quad\par
+				まず$s$から$g$へ来てそれでお終いというパターンの重みは$w_s$である。
+				次に、一旦$g$へ来てから閉路を何度か回るパターンを全列挙するには、
+				$l$本の閉路から重複を許して$k$本選んで回るパターンを$k=1,\cdots,\infty$まで考えればよい。
+				各パターンの重みは、最初に$s\rightarrow g$を通っていることに注意すると
+				\begin{align*}
+					w_s\sum_{k=1}^\infty{(w_1+\cdots+w_l)^k} &= w_s\left(\frac{1}{1-(w_1+\cdots+w_l)}-1\right) = w_s\frac{w_1+\cdots+w_l}{1-(w_1+\cdots+w_l)}\\
+					&\leq w_s\frac{w_1+\cdots+w_l}{w_s}\quad(\because\;w_s+w_1+\cdots+w_l\leq 1)\\
+					&= w_1+\cdots+w_l
+				\end{align*}
+				よって、最初に考えた$s\rightarrow g$で終わりのパターンと合わせると総和は$w_s+w_1+\cdots+w_l\leq 1$となる。
+			\end{proof}
+
