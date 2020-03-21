@@ -1,11 +1,11 @@
 ﻿\part{複素解析}
 	\chapter{複素数}
 		\section{複素数の定義}
-			任意の2つの実数$a,b\in\realSpace$に対する2項組$(a,b)$\;(※ここでは(,)という記号を用いているが、どんな記号を用いるかはどうでもいい。別の記号を使っても差し支えない。)を「\textcolor{red}{複素数}」と\underline{名付ける}。
+			任意の2つの実数$a,b\in\realNumbers$に対する2項組$(a,b)$\;(※ここでは(,)という記号を用いているが、どんな記号を用いるかはどうでもいい。別の記号を使っても差し支えない。)を「\textcolor{red}{複素数}」と\underline{名付ける}。
 			複素数$(a,b)$の第1要素$a$を「\textcolor{red}{実部}」、第2要素$b$を「\textcolor{red}{虚部}」と\underline{名付ける}。
-			複素数全体の集合を$\complexSpace$と表記することにする。
+			複素数全体の集合を$\complexNumbers$と表記することにする。
 			\par
-			任意の2つの複素数$(a_1,b_1),(a_2,b_2)\in\complexSpace$に対して演算「和(+)」,「実数倍(スカラー倍)」及び「積($\times$)」を次のように\textcolor{red}{定義}する。
+			任意の2つの複素数$(a_1,b_1),(a_2,b_2)\in\complexNumbers$に対して演算「和(+)」,「実数倍(スカラー倍)」及び「積($\times$)」を次のように\textcolor{red}{定義}する。
 			\begin{align*}
 				\textrm{和} &: (a_1,b_1)+(a_2,b_2) = (a_1+a_2,\;b_1+b_2)\\
 				\textrm{実数倍}\;(a\in\mathbb{R}) &: a(a_1,b_1) = (aa_1,\;ab_1)\\
@@ -59,10 +59,10 @@
 				しかし数学的に「ちゃんとした」理論を作るためには、既存の枠組みのままでは不可能だと分かり次第、思い切ってルールを拡張し、所望の性質が得られるように理屈を先回りして演算を機械的に定義するような break through が必要なこともある。
 				その際に、既存の理論に矛盾しないように構築しなければならないのは言うまでもない。
 		\section{諸公式}
-			\subsection{$x>0,\;z\in\complexSpace$のとき$|x^z|=x^\Re{z}$}
+			\subsection{$x>0,\;z\in\complexNumbers$のとき$|x^z|=x^\Re{z}$}
 				\begin{proof}
 					\quad\par
-					$z = a + bi\;(a,b\in\realSpace)$とする。
+					$z = a + bi\;(a,b\in\realNumbers)$とする。
 					\[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |e^{bi\log{x}}| = x^\Re{z} \]]
 				\end{proof}
 			\subsection{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}
@@ -87,7 +87,7 @@
 				\end{solution}
 	\chapter{特殊関数}
 		\section{Gamma関数}
-			\subsection{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexSpace, \Re{z} > 0)$}
+			\subsection{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}
 				Wikipediaで紹介されている無限乗積表示の導出過程でこの主張が使われているが、その根拠が薄かったので自力で証明してみた。
 				\begin{proof}
 					\quad\par
@@ -112,7 +112,7 @@
 				\end{proof}
 	\chapter{複素積分}
 		\section{例題}
-			\subsection{$\integ{0}{2\pi}{\Log(1-a\exp(i\theta))}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realSpace)$}
+			\subsection{$\integ{0}{2\pi}{\Log(1-a\exp(i\theta))}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}
 				\begin{solution}
 					\quad\par
 					$a=0$のときは明らかに成り立つ。$a\neq0$のときは$z=e^{i\theta}$とすると
@@ -257,7 +257,7 @@
 		}
 	\chapter{Bessel関数}
 		\section{定義}
-			$x\in\realSpace,\;z\in\complexSpace$に対して$e^{iz\sin x}$のFourier級数展開により「$n$次の第一種Bessel関数$J_n(z)$」を次のように定義する。
+			$x\in\realNumbers,\;z\in\complexNumbers$に対して$e^{iz\sin x}$のFourier級数展開により「$n$次の第一種Bessel関数$J_n(z)$」を次のように定義する。
 			\begin{equation}
 				\label{eqn:implicit definition of 1st kind n-th Bessel function}
 				e^{iz\sin x} = \sum_{n = -\infty}^\infty J_n(z)e^{inx}

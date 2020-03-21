@@ -1,8 +1,8 @@
 \part{実解析}
 	\chapter{表記}
 		\begin{itemize}
-			\item $\realSpace_+ := \{x\in\realSpace|x\geq 0\}$ : 非負の実数全体の集合
-			\item $\realSpace_{++} := \{x\in\realSpace|x > 0\}$ : 正の実数全体の集合
+			\item $\realNumbers_+ := \{x\in\realNumbers|x\geq 0\}$ : 非負の実数全体の集合
+			\item $\realNumbers_{++} := \{x\in\realNumbers|x > 0\}$ : 正の実数全体の集合
 			\item $\bm{1}_n$ : 要素が全て1である$n$次元列ベクトル
 			\item $\bm{0}_n$ : 要素が全て0である$n$次元列ベクトル
 			\item $\bm{x}[i]$ : 列(行)ベクトルの第$i$成分
@@ -13,14 +13,14 @@
 			\item $A_{i,j}$ : 行列$A$の第$i$行$j$列を取り除いた行列
 		\end{itemize}
 	\chapter{床関数と天井関数}
-		\section{$\forall x\in\realSpace,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}
+		\section{$\forall x\in\realNumbers,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}
 			\begin{proof}
 				\quad\\
 				前者は次のようにして示せる。
 				\[ n = \floor{-x} \iff n\in\integers,\; -x-1 < n \leq -x \iff n\in\integers,\; x \leq -n \leq x+1 \iff -n = \ceil{x} \iff n = -\ceil{x} \]
 				前者の式で$x$を$-x$で置き換えれば後者が得られる。
 			\end{proof}
-		\section{$^\forall x,y\in\realSpace,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}
+		\section{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}
 			\begin{proof}
 				\quad\\
 				($\floor{x}+\floor{y}\leq\floor{x+y}$の証明)\\
@@ -227,7 +227,7 @@
 			\begin{proof}
 				\quad\par
 				$a_i=0$となる$i\in\naturalNumbers$が存在する場合は命題の主張は明らかに成り立つので、以下では$a_i\in(0,1]$とする。
-				$b_i=-\log a_i$とすると$a_i=e^{-b_i}$であり、$\forall x\in\realSpace,\;1-e^{-x}\leq x$より$1-a_i=1-e^{-b_i}\leq b_i$なので次式が成り立つ。
+				$b_i=-\log a_i$とすると$a_i=e^{-b_i}$であり、$\forall x\in\realNumbers,\;1-e^{-x}\leq x$より$1-a_i=1-e^{-b_i}\leq b_i$なので次式が成り立つ。
 				\[ \infty = \sum_{i=1}^\infty (1-a_i) \leq \sum_{i=1}^\infty b_i \]
 				よって
 				\[ \prod_{i=1}^\infty a_i = \prod_{i=1}^\infty e^{-b_i} = \exp\left(-\sum_{i=1}^\infty b_i\right) = 0 \]
@@ -293,8 +293,8 @@
 				\begin{proof}
 					\quad\par
 					最高次の係数を常に1として一般性を失わないので方程式は
-					\[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realSpace\]
-					と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realSpace$がこれの解であるから当然
+					\[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realNumbers\]
+					と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
 					\[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
 					両辺の複素共役をとると
 					\begin{align*}
@@ -342,7 +342,7 @@
 			工学的な道具として使うための恣意的な関数を考えてみる。
 			ここでは滑らかに0から1に変化するステップ状の関数を考えてみる。
 			\subsection{$C^{n-1}$級の soft-step 関数}
-				$\sigma>0, n\in\naturalNumbers$とする。次の関数は$\realSpace$上で$C^{n-1}$級である。
+				$\sigma>0, n\in\naturalNumbers$とする。次の関数は$\realNumbers$上で$C^{n-1}$級である。
 				\[
 					f(x) =
 					\begin{cases}
@@ -373,7 +373,7 @@
 		\section{$e^{-x^2}$は全域でTaylor展開可能}
 			\begin{proof}
 				\quad\par
-				$f(x) = e^{-x^2}\;(x\in\realSpace)$とする。
+				$f(x) = e^{-x^2}\;(x\in\realNumbers)$とする。
 				これ自体は$f$が複素関数として全平面で解析的であることを示して結果を実数に限定することで容易に示せるが、ここでは敢えて実解析の範囲で剰余項の評価を評価することでTaylor展開可能であることを示す。
 				$f$の$n$階微分は$x$の$n$次多項式と$e^{-x^2}$の積になり、多項式の係数の最大の絶対値が$2^n$であることは容易に確かめられる。
 				よって
@@ -580,14 +580,14 @@
 			\subsection{$J_{G\circ F}=J_GJ_F$}
 				\label{subsec:合成関数のJacobi行列}
 				\begin{shadebox}
-					$F:\realSpace^l\to\realSpace^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realSpace^m\to\realSpace^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
+					$F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
 				\end{shadebox}
 				\begin{proof}
 					\[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = J_G[i][*]J_F[*][j] \]
 				\end{proof}
 			\subsection{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}
 			\begin{shadebox}
-				$\bm{f},\bm{g}:\realSpace^m\to\realSpace^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると、$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
+				$\bm{f},\bm{g}:\realNumbers^m\to\realNumbers^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると、$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
 			\end{shadebox}
 			\begin{proof}
 				\begin{align*}
@@ -598,14 +598,14 @@
 		\section{勾配とHessian}
 			\subsection{$\nabla(G\circ F) = \nabla F \nabla G$}
 				\begin{shadebox}
-					$F:\realSpace^l\to\realSpace^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realSpace^m\to\realSpace^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$に対して$F,G$の合成写像$G\circ F$の勾配は$\nabla(G\circ F) = \nabla F \nabla G$である。
+					$F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$に対して$F,G$の合成写像$G\circ F$の勾配は$\nabla(G\circ F) = \nabla F \nabla G$である。
 				\end{shadebox}
 				\begin{proof}
 					$\nabla F = {J_F}^\top$であることと\ref{subsec:合成関数のJacobi行列}より直ちに従う。
 				\end{proof}
 			\subsection{$\nabla_\bm{xy}^2 f = (\nabla_\bm{yx}^2 f)^\top$}
 				\begin{shadebox}
-					$\bm{x}\in\realSpace^{n_1}, \bm{y}\in\realSpace^{n_2}$とし、$f:(\bm{x},\bm{y})\in\realSpace^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realSpace$とするとき、次が成り立つ。
+					$\bm{x}\in\realNumbers^{n_1}, \bm{y}\in\realNumbers^{n_2}$とし、$f:(\bm{x},\bm{y})\in\realNumbers^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realNumbers$とするとき、次が成り立つ。
 					\[ \nabla_\bm{xy}^2 f = (\nabla_\bm{yx}^2 f)^\top \]
 				\end{shadebox}
 				\begin{proof}
@@ -672,7 +672,7 @@
 				\end{itemize}
 		\section{逆関数定理}
 			\begin{shadebox}
-				$F\in C^1(\realSpace^n\to\realSpace^n),\;\bm{x}\mapsto\bm{y}(\bm{x})$のJacobi行列を$J_F(\bm{x})$とする。
+				$F\in C^1(\realNumbers^n\to\realNumbers^n),\;\bm{x}\mapsto\bm{y}(\bm{x})$のJacobi行列を$J_F(\bm{x})$とする。
 				ある$\bm{a}\in\dom{F}$に対して$J_F(\bm{a})$が正則なら$F(\bm{a})$の近傍で$\textcolor{red}{C^1}$級の$F$の逆写像$F^{-1}$が存在して$J_{F^{-1}}(F(\bm{a})) = J_F(\bm{a})^{-1}$
 			\end{shadebox}
 			\newcommand{\xhat}{\hat{\bm{x}}}
@@ -686,12 +686,12 @@
 				\par
 				$F = [f_1,\cdots,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat := [x_1,\cdots,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
 				\par
-				$J_F(\bm{a})\in\realSpace^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
-				一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realSpace^m\to\realSpace$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
+				$J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
+				一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
 				この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
 				\par
 				$\fhat_i(\xhat) := f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) := [\fhat_i(\xhat),\cdots,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
-				帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realSpace^m\to\realSpace^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
+				帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
 				すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
 				\par
 				\[ J_{\Fhat}(\ahat)[*][j] = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
@@ -714,7 +714,7 @@
 				そして$F^{-1}\circ F$は恒等写像だから$I_n = J_{F^{-1}\circ F}(\bm{a}) = J_{F^{-1}}(\bm{a})J_F(\bm{a})$より$J_{F^{-1}}(\bm{a}) = J_F(\bm{a})^{-1}$となる。
 			\end{proof}
 		\section{2次形式}
-			\subsection{$^\forall A\in\realSpace^{n\times n},\bm{x}\in\realSpace^n,\;^\exists$対称行列$B\in\realSpace^{n\times n} \text{ s.t. } \bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}$}
+			\subsection{$^\forall A\in\realNumbers^{n\times n},\bm{x}\in\realNumbers^n,\;^\exists$対称行列$B\in\realNumbers^{n\times n} \text{ s.t. } \bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}$}
 				\begin{proof}
 					\quad\par
 					\[\bm{x}^\top A\bm{x} = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A\bm{x}\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \left(\bm{x}^\top A\bm{x}\right)^\top\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A^\top\bm{x}\right) = \bm{x}^\top\frac{A+A^\top}{2}\bm{x}\]
@@ -821,16 +821,16 @@
 					Jordan外測度の定義より$E$のある分割$\Delta$が存在して$S(\ind{A}{\cdot},\Delta) < \mJo{A} + \varepsilon$となる。
 					$A \subset \bigcup_{r\in\Delta,r\cap A\neq\emptyset}r$なので$\mLebO{A} \leq \sum_{r\in\Delta,r\cap A\neq\emptyset}|r| = S(\ind{A}{\cdot},\Delta) < \mJo{A} + \varepsilon < \mLebO{A}$となり矛盾。
 				\end{proof}
-			\subsection{有界閉集合$A\subset\realSpace^n$に対して$\mLebO{A}=0 \iff \mJordan{A}=0$}
+			\subsection{有界閉集合$A\subset\realNumbers^n$に対して$\mLebO{A}=0 \iff \mJordan{A}=0$}
 				\begin{proof}
 					\quad\par
 					$\Leftarrow$は直前の定理より明らか。$\Rightarrow$を示す。
 					$\mLebO{A}=0$より、任意の$\varepsilon>0$に対してある直方体集合$R=\bigcup_{n=1}^\infty E_n$が存在して$A\subset R,\;|R|<\varepsilon/2$を満たす。
 					任意の直方体$r$に対して、その中心を保ったまま$k$倍に相似拡大した直方体を$kr$と書くことにする。
-					$\bigcup_{n=1}^\infty \textrm{Int}(2E_n)$は$A$の開被覆であり、$A$は$\realSpace^n$の有界閉集合なのでコンパクトであるから、ある$N\in\naturalNumbers$が存在して$A\subset \bigcup_{n=1}^N \textrm{Int}(2E_n)$となる。
+					$\bigcup_{n=1}^\infty \textrm{Int}(2E_n)$は$A$の開被覆であり、$A$は$\realNumbers^n$の有界閉集合なのでコンパクトであるから、ある$N\in\naturalNumbers$が存在して$A\subset \bigcup_{n=1}^N \textrm{Int}(2E_n)$となる。
 					$\bigcup_{n=1}^N \textrm{Int}(2E_n)$を包含する十分大きな直方体$B$を考え、$2E_n\;(n=1,\cdots,N)$を非交差的になるように適当に分割した直方体群を全て要素に持つような$B$の分割$\Delta$に対して$S(A,\Delta) \leq 2|R| <\varepsilon$となるから$\mJo{A}<\varepsilon$となる。
 				\end{proof}
-			\subsection{$A\subset\realSpace^n$とする。任意の直方体$E$に対して$\mLebO{A\cap E} + \mLebO{A^\complement\cap E} = \mLebO{E} \iff$任意の$B\subset\realSpace^n$に対して$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} = \mLebO{B}$}
+			\subsection{$A\subset\realNumbers^n$とする。任意の直方体$E$に対して$\mLebO{A\cap E} + \mLebO{A^\complement\cap E} = \mLebO{E} \iff$任意の$B\subset\realNumbers^n$に対して$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} = \mLebO{B}$}
 				\begin{proof}
 					\quad\par
 					$\Leftarrow$は明らか。$\Rightarrow$を示す。
@@ -840,7 +840,7 @@
 					$B\subset R$なので$A\cap B\subset A\cap R,\;A^\complement\cap B\subset A^\complement\cap R$だから$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} \leq \mLebO{A\cap R} + \mLebO{A^\complement\cap R} = \mLebO{R} = |R|$となる。
 					これと$|R| < \mLebO{B}+\varepsilon < \mLebO{A\cap B} + \mLebO{A^\complement\cap B}$より$|R|<|R|$となり矛盾。
 				\end{proof}
-			\subsection{有界集合$A\subset\realSpace^n$がJordan可測ならばLebesgue可測であり、$\mLeb{A}=\mJordan{A}$}
+			\subsection{有界集合$A\subset\realNumbers^n$がJordan可測ならばLebesgue可測であり、$\mLeb{A}=\mJordan{A}$}
 				\begin{proof}
 					\quad\par
 					$A$を包含する任意の直方体$R$に対して
@@ -854,10 +854,10 @@
 					と$\mLebO{A} \geq |R| - \mLebO{A^\complement\cap R}$より$\mLebO{A} = |R| - \mLebO{A^\complement\cap R}$なので$A$はLebesgue可測である。
 					以上より$\mLeb{A}=\mLebO{A}=\mJordan{A}$
 				\end{proof}
-			\subsection{$A_1,A_2\in\realSpace^n$がLebesgue可測なら$A_1\cup A_2$もLebesgue可測}
+			\subsection{$A_1,A_2\in\realNumbers^n$がLebesgue可測なら$A_1\cup A_2$もLebesgue可測}
 				\begin{proof}
 					\quad\par
-					$B\in\realSpace^n$を任意の集合とする。
+					$B\in\realNumbers^n$を任意の集合とする。
 					$\mLebO{(A_1\cup A_2)\cap B} + \mLebO{(A_1\cup A_2)^\complement\cap B} = \mLebO{B}$を示せばよい。
 					$\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
 					\begin{align*}
@@ -868,11 +868,11 @@
 						&= \mLebO{B} \quad(\because A_1\text{は可測})
 					\end{align*}
 				\end{proof}
-			\subsection{系: $A_1,\cdots,A_n\in\realSpace^n$がLebesgue可測なら$A_1\cup A_2\cup\cdots\cup A_n$もLebesgue可測}
+			\subsection{系: $A_1,\cdots,A_n\in\realNumbers^n$がLebesgue可測なら$A_1\cup A_2\cup\cdots\cup A_n$もLebesgue可測}
 				\begin{proof}
 					直前の定理を繰り返し用いる。
 				\end{proof}
-			\subsection{Lebesgue可測集合$A_1,A_2\in\realSpace^n$が非交差的なら$\mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2}$}
+			\subsection{Lebesgue可測集合$A_1,A_2\in\realNumbers^n$が非交差的なら$\mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2}$}
 				\begin{proof}
 					\quad\par
 					直前の定理の証明の式の3行目第2項で$A_2\cap A_1^\complement\cap B = A_2\cap B$となるので
@@ -882,20 +882,20 @@
 					\end{align*}
 					すなわち
 					\[ \mLebO{(A_1\sqcup A_2)\cap B} = \mLebO{A_1\cap B} + \mLebO{A_2\cap B} \]
-					$B$は任意なので$B=\realSpace^n$とすると$\mLebO{A_1\sqcup A_2} = \mLebO{A_1} + \mLebO{A_2}$となるが、$A_1,A_2, A_1\sqcup A_2$が可測であるので外測度=測度であるから結局
+					$B$は任意なので$B=\realNumbers^n$とすると$\mLebO{A_1\sqcup A_2} = \mLebO{A_1} + \mLebO{A_2}$となるが、$A_1,A_2, A_1\sqcup A_2$が可測であるので外測度=測度であるから結局
 					\[ \mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2} \]
 				\end{proof}
 			\subsection{系: Lebesgue測度の有限加法性}
-				Lebesgue可測集合$A_1,\cdots,A_n\in\realSpace^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^n A_i} = \sum_{i=1}^n \mLeb{A_i}$
+				Lebesgue可測集合$A_1,\cdots,A_n\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^n A_i} = \sum_{i=1}^n \mLeb{A_i}$
 				\begin{proof}
 					直前の定理を繰り返し用いる。
 				\end{proof}
 			\subsection{Lebesgue測度の$\sigma$--加法性}
-				Lebesgue可測集合$A_1,A_2,\cdots\in\realSpace^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
+				Lebesgue可測集合$A_1,A_2,\cdots\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
 				\begin{proof}
 					\quad\par
 					$B_n := \bigsqcup_{i=1}^n A_i,\;B := \bigsqcup_{i=1}^\infty A_i$とする。
-					任意の集合$S\in\realSpace^n$に対して
+					任意の集合$S\in\realNumbers^n$に対して
 					\[ \mLebO{S\cap B} + \mLebO{S\cap B^\complement} = \mLebO{S} \]
 					となることを示す。$\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
 					Lebesgue測度の有限加法性より
@@ -910,7 +910,7 @@
 						&\geq \mLebO{S\cap B} + \mLebO{S\cap B^\complement} \quad(\because\text{Lebesgue外測度の劣加法性}) \\
 						&\geq \mLebO{S}
 					\end{align*}
-					よって$B$はLebesgue可測であり$\mLebO{S\cap B} = \sum_{i=1}^\infty \mLebO{S\cap A_i}$である。$S=\realSpace^n$とすると
+					よって$B$はLebesgue可測であり$\mLebO{S\cap B} = \sum_{i=1}^\infty \mLebO{S\cap A_i}$である。$S=\realNumbers^n$とすると
 					$\mLeb{B} = \mLeb{S\cap B} = \mLebO{S\cap B} = \sum_{i=1}^\infty \mLebO{S\cap A_i} = \sum_{i=1}^\infty \mLeb{S\cap A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
 				\end{proof}
 			\subsection{Lebesgue可測の直感的理解}
@@ -991,7 +991,7 @@
 	\chapter{重積分}
 		\section{平均値の定理}
 			\begin{shadebox}
-				$\Omega\in\realSpace^n$を体積確定の有界閉領域、$f:\Omega\to\realSpace$を連続関数とすると、$^\exists\bm{x}'\st\integ{\Omega}{}{f(\bm{x})}{\bm{x}} = f(\bm{x}')|\Omega|$
+				$\Omega\in\realNumbers^n$を体積確定の有界閉領域、$f:\Omega\to\realNumbers$を連続関数とすると、$^\exists\bm{x}'\st\integ{\Omega}{}{f(\bm{x})}{\bm{x}} = f(\bm{x}')|\Omega|$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -1001,8 +1001,8 @@
 			\end{proof}
 		\section{$C^1$級の変換による面積0の集合の像の面積もまた0}
 			\begin{shadebox}
-				閉超直方体$R\subset\realSpace^n$を含む開集合$D$上で定義された$C^1$級の\textcolor{red}{変換}$F:D\to\realSpace^n$を考える。
-				集合$C\subset\realSpace^n$の面積が0であるとき、$F(C)\subset\realSpace^n$の面積もまた0である。
+				閉超直方体$R\subset\realNumbers^n$を含む開集合$D$上で定義された$C^1$級の\textcolor{red}{変換}$F:D\to\realNumbers^n$を考える。
+				集合$C\subset\realNumbers^n$の面積が0であるとき、$F(C)\subset\realNumbers^n$の面積もまた0である。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -1017,19 +1017,19 @@
 				よって$F(C)$は$\set{R'_{i_1,\cdots,i_n}}{R_{i_1,\cdots,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
 				\[ \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} |R'_{i_1,\cdots,i_n}| \leq \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
 			\end{proof}
-		\section{関数$f,g$が$\realSpace$上で有界,連続で$\integ{-\infty}{\infty}{f(x)}{x},\;\integ{-\infty}{\infty}{g(x)}{x}$が絶対収束するなら畳み込み$f*g$は$\realSpace$上で連続で絶対可積分である。}
+		\section{関数$f,g$が$\realNumbers$上で有界,連続で$\integ{-\infty}{\infty}{f(x)}{x},\;\integ{-\infty}{\infty}{g(x)}{x}$が絶対収束するなら畳み込み$f*g$は$\realNumbers$上で連続で絶対可積分である。}
 			\begin{proof}
 				\quad\\
 				(連続であること):
 				\par
-				$\varepsilon>0,\;x\in\realSpace,\;h\in(-1,1)$を任意にとる。
+				$\varepsilon>0,\;x\in\realNumbers,\;h\in(-1,1)$を任意にとる。
 				\begin{align*}
 					\abs{(f*g)(x+h) - (f*g)(x)} &= \abs{\integ{-\infty}{\infty}{\left[f(x-y+h) - f(x-y)\right]g(y)}{y}} \\
 					&\leq \integ{-\infty}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y}
 				\end{align*}
 				$f$の有界性と$g$の絶対可積分性より、ある$a$が存在して
 				\[ \integ{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y},\;\integ{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y} < \varepsilon/3 \]
-				となる。$f$は$\realSpace$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
+				となる。$f$は$\realNumbers$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
 				よって$h$を十分小さくすれば
 				\[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L := \integ{-\infty}{\infty}{|g(y)|}{y} \right) \]
 				となり、
@@ -1052,7 +1052,7 @@
 			\end{proof}
 	\chapter{線積分}
 		\section{定義}
-			$\realSpace^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\cdots,n)$軸方向の線積分を以下のようにして定義する。
+			$\realNumbers^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\cdots,n)$軸方向の線積分を以下のようにして定義する。
 			\par
 			$C$上にその向きに沿って$n+1$個の分点\quad$\text{始点} = P_0, P_1, \cdots, P_n = \text{終点}$\quad をとる。
 			添字の意味で隣接する2点$P_{i-1},P_i$は重ならないようにする。さらに添字の順番が曲線の向きと逆行しないようにする。
@@ -1062,7 +1062,7 @@
 			級数$S(f,\Delta,\{\bm{\xi}_i\}) := \sum_{i=1}^n f(\bm{\xi}_i)(\Delta x_d)_i$を考え、これを$f$の$\Delta, \{\bm{\xi}_i\}$に関する\textbf{Riemann和}と呼ぶ。
 			分割を任意のやり方で細かくして$|\Delta|\to 0$としたときに$S(f,\Delta,\{\bm{\xi}\})$が収束するとき、これを$\integ{C}{}{f(\bm{x})}{x_d}$と表し、\textbf{$x_d$方向の線積分}という。
 		\section{計算法}
-			$f$が$C$に関して線積分可能であるとし、パラメータ$t$を用いて$\bm{x}=\bm{\phi}(t)=[\phi_1(t),\cdots,\phi_n(t)]^\top,\; \bm{\phi} \in C^1(\realSpace\to\realSpace^n),\;t:a\to b$と表せる場合は次が成り立つ。
+			$f$が$C$に関して線積分可能であるとし、パラメータ$t$を用いて$\bm{x}=\bm{\phi}(t)=[\phi_1(t),\cdots,\phi_n(t)]^\top,\; \bm{\phi} \in C^1(\realNumbers\to\realNumbers^n),\;t:a\to b$と表せる場合は次が成り立つ。
 			\[ \integ{C}{}{f(\bm{x})}{x_d} = \integ{a}{b}{f(\bm{\phi}(t))\phi_d'(t)}{t} \]
 			その理由を以下で説明する。
 			\par
@@ -1294,8 +1294,8 @@
 			\end{proof}
 	\chapter{図形への応用}
 		\section{ある超平面から距離$d$だけ離れた超平面の方程式}
-			$n\in\naturalNumbers,\;\bm{w}\in\realSpace^n\neq\bm{0},\;c\in\realSpace$とする。
-			写像$f:\bm{x}\in\realSpace^n\mapsto \bm{w}^\top\bm{x} + c \in \realSpace$が定める$\realSpace^n$上の超平面$f(\bm{x})=0$
+			$n\in\naturalNumbers,\;\bm{w}\in\realNumbers^n\neq\bm{0},\;c\in\realNumbers$とする。
+			写像$f:\bm{x}\in\realNumbers^n\mapsto \bm{w}^\top\bm{x} + c \in \realNumbers$が定める$\realNumbers^n$上の超平面$f(\bm{x})=0$
 			から距離$d>0$だけ離れた2枚の超平面を求める方法を述べる。
 			\par
 			新しい写像$g = f/\norm{\bm{w}}_2$を考えると、$\nabla g = \bm{w}/\norm{w}_2,\;\norm{\nabla g}_2 = 1$であるので、超平面$g(\bm{x})=0$(これは超平面$f(\bm{x})=0$と一致)からそれと直角な方向、すなわち$\pm\nabla g$に距離$d$だけ進んだ位置では$g$の値が$\pm d$だけ変化する。
@@ -1307,7 +1307,7 @@
 		\section{$n$次元単位球の体積$V_n$は$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}
 			\begin{proof}
 				\quad\par
-				$\Omega(n,r)\;(r\in\realSpace) := \set{\bm{x}\in\realSpace^n}{\norm{\bm{x}}_{2}\leq r}$とすると
+				$\Omega(n,r)\;(r\in\realNumbers) := \set{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
 				\begin{align*}
 					V_n &= \integ{\Omega(n,1)}{}{1}{\bm{x}} = \integ{-1}{1}{\left(\integ{\Omega(n-1,1-{x_n}^2)}{}{1}{\bm{x}}\right)}{x_n} = \integ{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{x_n} \\
 						&= V_{n-1}\integ{-1}{1}{(1-x^2)^{(n-1)/2}}{x} = 2V_{n-1} \integ{0}{1}{(1-x^2)^{(n-1)/2}}{x} \\

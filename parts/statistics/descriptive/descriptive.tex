@@ -2,7 +2,7 @@
 	\newcommand{\DS}{\textrm{DS}}
 	\chapter{諸定義}
 		\section{平均, 分散, 共分散}
-			$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realSpace^n\}_{d=1}^D$に対して「平均$\overline{\bm{x}}$」,「分散$\Var{}{\DS}$」を次のように定義する。
+			$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realNumbers^n\}_{d=1}^D$に対して「平均$\overline{\bm{x}}$」,「分散$\Var{}{\DS}$」を次のように定義する。
 			\begin{itemize}
 				\item $\overline{\bm{x}} := \frac{1}{S}\sum_{d=1}^D{\bm{x}_d}$
 				\item $\Var{}{\DS} := \frac{1}{D}\sum_{d=1}^D{\norm{\bm{x}_d-\overline{\bm{x}}}^2} = \frac{1}{D}\sum_{d=1}^D{(\bm{x}_d-\overline{\bm{x}})^\top(\bm{x}_d-\overline{\bm{x}})}$
@@ -22,23 +22,23 @@
 		\section{分散共分散行列は半正定。特に分散が正なら正定。}
 			\label{分散共分散行列の定値性}
 			\begin{shadebox}
-				$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realSpace^n\}_{d=1}^D$の分散共分散行列$\Sigma_{\DS}$は半正定である。
+				$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realNumbers^n\}_{d=1}^D$の分散共分散行列$\Sigma_{\DS}$は半正定である。
 				特に$\Var{}{\DS}>0$ならば$\Sigma_{\DS}$は正定である。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				任意の$\bm{v}\in\realSpace^n\setminus{\bm{0}_n}$に対して
+				任意の$\bm{v}\in\realNumbers^n\setminus{\bm{0}_n}$に対して
 				\[\bm{v}^\top\Sigma_{\DS}\bm{v} = \frac{1}{D}\sum_{d=1}^D{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})(\bm{x}_d-\overline{\bm{x}})^\top\bm{v}} = \frac{1}{D}\sum_{d=1}^D{\norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2} \geq 0\]
 				であるから少なくとも半正定である。さらに
 				\begin{align*}
-					\textrm{等号成立} &\iff \norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2 = 0,\;^\forall d\in\{1,\cdots,D\},\;^\forall \bm{v}\in\realSpace^n\setminus{\bm{0}_n} \iff \bm{x}_d = \overline{\bm{x}},\;^\forall d\in{1,\cdots,D} \\
+					\textrm{等号成立} &\iff \norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2 = 0,\;^\forall d\in\{1,\cdots,D\},\;^\forall \bm{v}\in\realNumbers^n\setminus{\bm{0}_n} \iff \bm{x}_d = \overline{\bm{x}},\;^\forall d\in{1,\cdots,D} \\
 					&\iff \Var{}{\DS} = 0
 				\end{align*}
 			\end{proof}
 	\chapter{主成分分析}
 		\section{分散共分散行列の対角化}
 			%\newcommand{\nev}{{n_{\textrm{ev}}}}
-			$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realSpace^n\}_{d=1}^D$を考える。
+			$D$個の$n$次元ベクトルから成るデータ集合$\DS := \{\bm{x}_d\in\realNumbers^n\}_{d=1}^D$を考える。
 			\ref{分散共分散行列の定値性}より、分散共分散行列$\Sigma_{\DS}$は半正定であり、特に$\Var{}{\DS}>0$であれば正定である。
 			従って、$\Sigma_{\DS}$は直交行列で対角化でき、対角行列には固有値が並ぶ。しかも固有値は全て実数である。
 			\par
@@ -52,7 +52,7 @@
 			\[\Sigma_{\DS} = P\Lambda P^\top\]
 		\section{データセットの射影}
 			\begin{shadebox}
-				任意の$\bm{x}_d\in\DS$の、単位ベクトル$\bm{u}\in\realSpace^n$方向成分$y_d:=\bm{u}^\top\bm{x}_d$から成るデータ集合$\DS_y:=\{y_d\}_{d=1}^D$の分散$\Var{}{\DS_y}$は$\bm{u}^\top\Sigma_\DS\bm{u}$である。
+				任意の$\bm{x}_d\in\DS$の、単位ベクトル$\bm{u}\in\realNumbers^n$方向成分$y_d:=\bm{u}^\top\bm{x}_d$から成るデータ集合$\DS_y:=\{y_d\}_{d=1}^D$の分散$\Var{}{\DS_y}$は$\bm{u}^\top\Sigma_\DS\bm{u}$である。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par

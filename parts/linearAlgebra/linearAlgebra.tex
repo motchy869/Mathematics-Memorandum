@@ -83,7 +83,7 @@
 					&= \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} = (AB)[i][j]
 				\end{align*}
 			\end{proof}
-		\section{$\realSpace^{\textcolor{red}{2}}$の対称行列同士の積は対称}
+		\section{$\realNumbers^{\textcolor{red}{2}}$の対称行列同士の積は対称}
 			\begin{proof}
 				$
 					A = \begin{bmatrix}
@@ -104,7 +104,7 @@
 				$
 			\end{proof}
 			\begin{attention}
-				$\realSpace^3$以上では成り立たない。
+				$\realNumbers^3$以上では成り立たない。
 			\end{attention}
 	\chapter{ベクトル空間}
 		\section{基底}
@@ -123,9 +123,9 @@
 			\subsection{諸定理}
 				\subsubsection{三角関数ベクトルによる直交展開}
 					\begin{shadebox}
-						$\complexSpace^n$を考える。$n$本のベクトルの集合
+						$\complexNumbers^n$を考える。$n$本のベクトルの集合
 						\[\left\{\bm{v}_1,\cdots,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
-						は$\complexSpace^n$の正規直交基底を成す。
+						は$\complexNumbers^n$の正規直交基底を成す。
 					\end{shadebox}
 					\begin{proof}
 						\quad\par
@@ -229,28 +229,28 @@
 				$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$が一次独立とは限らない
 			}
 				\begin{proof}
-					例えば$\realSpace^3$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
+					例えば$\realNumbers^3$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
 				\end{proof}
 			\subsection{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\cdots,n\},\;i\neq j)$であっても$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$とは限らない}
 				\begin{proof}
 					\quad\par
-					例えば$W_1,W_2,W_3\subseteq\realSpace^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
+					例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
 				\end{proof}
 			\subsection{$W=V\oplus X,\;W=V\oplus Y$でも$X=Y$とは限らない}
 				\begin{proof}
-					例えば$W=\realSpace^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
+					例えば$W=\realNumbers^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
 				\end{proof}
 			\subsection{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$とは限らない}
 				\begin{proof}
 					\quad\par
-					例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realSpace^3$のとき、
-					$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}}$は$\realSpace^3$から第1要素が0である点だけを抜いたものであり、$[x,*,*]^\top,\;x\neq 0$のような点は残っている。
+					例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realNumbers^3$のとき、
+					$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}}$は$\realNumbers^3$から第1要素が0である点だけを抜いたものであり、$[x,*,*]^\top,\;x\neq 0$のような点は残っている。
 					このような点は$\Span{\bm{c}}$には属さない。
 				\end{proof}
 	\chapter{線形写像}
 		\section{表記の規則}
 			\subsection{一般のベクトルを要素とする配列と行列の積}
-				$\bm{v}_1,\cdots,\bm{v}_n$をベクトルとする($\realSpace^n$や$\complexSpace^n$の要素とは限らないことに注意)。
+				$\bm{v}_1,\cdots,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
 				これと$m\times n$行列$A=[a_{ij}]_{m\times n}$, $n\times m$行列$B=[b_{ij}]_{n\times m}$に対して次のように演算を定義する。
 				\[
 					A
@@ -319,7 +319,7 @@
 			\begin{proof}
 				\quad\par
 				$n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\cdots,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\cdots,\bm{w}_n\}$を$W$の基底とする。
-				写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\cdots,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realSpace,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
+				写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\cdots,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
 				さらに単射であることが次のようにして確かめられる。
 				\par
 				$\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
@@ -389,7 +389,7 @@
 	\chapter{双対空間}
 		\section{基底変換と座標変換の関係}
 			\begin{shadebox}
-				$V$を$n$次元ベクトル空間とし($\realSpace^n$や$\complexSpace^n$とは限らないことに注意)、$\{\bm{v}_1,\cdots,\bm{v}_n\}$と$\{{\bm{v}_1}',\cdots,{\bm{v}_n}'\}$を$V$の基底とする。
+				$V$を$n$次元ベクトル空間とし($\realNumbers^n$や$\complexNumbers^n$とは限らないことに注意)、$\{\bm{v}_1,\cdots,\bm{v}_n\}$と$\{{\bm{v}_1}',\cdots,{\bm{v}_n}'\}$を$V$の基底とする。
 				これらが$n$次正則行列$A$により次の関係式に従うとする。
 				\[
 					\begin{bmatrix}
@@ -475,7 +475,7 @@
 				\end{align*}
 			\end{proof}
 			\end{comment}
-			\section{$A\in\realSpace^{n\times m}, B\in\realSpace^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}
+			\section{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}
 				\begin{proof}
 					\[
 						M := \begin{bmatrix}
@@ -518,7 +518,7 @@
 				\end{proof}
 			\section{系: $\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}
 				\begin{shadebox}
-					$\bm{v} \in \complexSpace^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
+					$\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
 				\end{shadebox}
 				\begin{comment}
 				\begin{proof}
@@ -560,12 +560,12 @@
 		\section{上(下)三角行列が逆行列をもてば、それも上(下)三角行列である}
 			\begin{proof}
 				\quad\par
-				$A\in \complexSpace^{n\times n}$を正則な上三角行列とすると、$A$の対角成分は全て非零である(さもなくば$\det{A}=0$となり、正則でない)ので、
+				$A\in \complexNumbers^{n\times n}$を正則な上三角行列とすると、$A$の対角成分は全て非零である(さもなくば$\det{A}=0$となり、正則でない)ので、
 				$[A|I_n]$の簡約化による逆行列の計算を考えれば、$A^{-1}$も上三角行列であることが容易にわかる。
 				$A$が下三角行列である場合は、$A^\top$について簡約化による逆行列の計算を行えば$(A^\top)^{-1} = (A^{-1})^\top$が上三角行列になり、$A^{-1}$は下三角行列になる。
 			\end{proof}
 		\section{1列(or 1行)だけ置き換えた行列の逆行列}
-			$A=[\bm{a}_1,\cdots,\bm{a}_n]\in\complexSpace^{n\times n}$を正則な行列とし、$c$列目を置き換えた行列$A'=[\bm{a}_1,\cdots,\bm{a}'_c,\cdots,\bm{a}_n]$も正則であるとする。
+			$A=[\bm{a}_1,\cdots,\bm{a}_n]\in\complexNumbers^{n\times n}$を正則な行列とし、$c$列目を置き換えた行列$A'=[\bm{a}_1,\cdots,\bm{a}'_c,\cdots,\bm{a}_n]$も正則であるとする。
 			$A^{-1}$が既知であれば$A'^{-1}$を以下のようにして少ない手間で計算できる。
 			\par
 			まず$A^{-1}A'$は$c$列目以外は単位行列と同じである、次のような行列になる。
@@ -616,7 +616,7 @@
 					\vdots \\
 					\bm{a}_n
 				\end{bmatrix}
-				\in\complexSpace^{n\times n}
+				\in\complexNumbers^{n\times n}
 			$
 			を正則行列とし、第$c$行を入れ替えてできる行列
 			$
@@ -628,7 +628,7 @@
 					\vdots \\
 					\bm{a}_n
 				\end{bmatrix}
-				\in\complexSpace^{n\times n}
+				\in\complexNumbers^{n\times n}
 			$
 			も正則であるとする。
 			まず$A'A^{-1}$は第$c$列以外は単位行列と同じである、次のような行列になる。
@@ -743,7 +743,7 @@
 			\end{proof}
 		\section{フルランク条件}
 			\begin{shadebox}
-				行列$A\in\complexSpace^{m\times n}(m\leq n)$の階数が$m$である(=$A$がフルランク)$\Leftrightarrow$($\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$)
+				行列$A\in\complexNumbers^{m\times n}(m\leq n)$の階数が$m$である(=$A$がフルランク)$\Leftrightarrow$($\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$)
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -843,7 +843,7 @@
 		\section{優対角正方行列は正則}
 			\begin{proof}
 				\quad\par
-				$A=[a_{ij}]\in\complexSpace^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\cdots,x_n]^\top\in\complexSpace^n$とおく。
+				$A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\cdots,x_n]^\top\in\complexNumbers^n$とおく。
 				$A\bm{x}$の第1成分の絶対値について
 				\[ |a_{11}x_1 + \cdots a_{1n}x_n| \geq |a_{11}||x_1| - \cdots - |a_{1n}||x_n| \]
 				が成り立つが、ここで仮に$|x_1| > |x_2|,\cdots,|x_n|$とすると、$A$の優対角性から
@@ -890,7 +890,7 @@
 			\subsection{相異なる固有値に対応する固有ベクトルは一次独立}
 				\label{相異なる固有値に対応する固有ベクトルは一次独立}
 				\begin{shadebox}
-					$A\in\complexSpace^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\cdots,p)$に対応する固有ベクトルを$\bm{v}_i$とすると$\bm{v}_1,\cdots,\bm{v}_p$は一次独立である。
+					$A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\cdots,p)$に対応する固有ベクトルを$\bm{v}_i$とすると$\bm{v}_1,\cdots,\bm{v}_p$は一次独立である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -1132,7 +1132,7 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$A$は正方行列であるから適当なユニタリ行列$P\in\complexSpace^{n\times n}$により次のように上三角化できる。
+				$A$は正方行列であるから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$により次のように上三角化できる。
 				\[A = PUP^\top\]
 				但し$U$は第$i$対角成分が$\lambda_i$である上三角行列である($P$はユニタリだから$A^n = PU^nP^\top$となることに注意せよ)。
 				$f(s)$の次数を$m$とし、$k$次の係数を$c_k$とする($f(s) = \sum_{k=0}^{m}c_{k}s^k$)。
@@ -1162,7 +1162,7 @@
 				\end{proof}
 			%\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
 			%	\begin{shadebox}
-			%		$\lambda_i \neq \lambda_j$を$A\in\complexSpace^{n\times n}$の異なる固有値とし、その代数的重複度を$n_i,n_j$とする。
+			%		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし、その代数的重複度を$n_i,n_j$とする。
 			%		一般固有空間を$F_i:=\Ker{(A-\lambda_i)^{n_i}},\;F_j:=\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
 			%	\end{shadebox}
 			\subsection{一般固有空間への直和分解}
@@ -1259,7 +1259,7 @@
 				\begin{proof}
 					直前の定理より$\nu_i = \dim{F_A(\lambda)}$であることと、$F_A(\lambda) \supseteq E_A(\lambda)$であることより従う。
 				\end{proof}
-			\subsection{$AB=O$でも$\realSpace^{n\times n} = \Ker{A} + \Ker{B}$とは限らない}
+			\subsection{$AB=O$でも$\realNumbers^{n\times n} = \Ker{A} + \Ker{B}$とは限らない}
 				\begin{proof}
 					例えば
 					$
@@ -1312,7 +1312,7 @@
 								\bm{0}_n^\top & \lambda
 							\end{bmatrix}
 							,\quad
-							\bm{b} = [0\cdots0\;1]^\top \in \complexSpace^n
+							\bm{b} = [0\cdots0\;1]^\top \in \complexNumbers^n
 						\]
 						と表すと、これの逆行列は次のように表される(\cite{入門線形代数} 問題2.4.8)。
 						\[
@@ -1472,8 +1472,8 @@
 		\section{正定対称行列の逆行列も正定}
 			\begin{proof}
 				\quad\par
-				$A\in\realSpace^{n\times n}$を正定対称行列とし、重複を含めた$n$個の固有値を$\lambda_1,\cdots,\lambda_n > 0$とする。
-				$A$は実対称だから適当な直交行列$P\in\realSpace^{n\times n}$が存在して$A = P\diag{\lambda_1,\cdots,\lambda_n}P^\top$と表せるので
+				$A\in\realNumbers^{n\times n}$を正定対称行列とし、重複を含めた$n$個の固有値を$\lambda_1,\cdots,\lambda_n > 0$とする。
+				$A$は実対称だから適当な直交行列$P\in\realNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\cdots,\lambda_n}P^\top$と表せるので
 				$A^{-1} = P\diag{\lambda_1,\cdots,\lambda_n}^{-1}P^\top = P\diag{1/\lambda_1,\cdots,1/\lambda_n}P^\top$である。
 				よって$A^{-1}$は対称で固有値が全て正なので正定である。
 			\end{proof}
@@ -1482,14 +1482,14 @@
 				\quad\par
 				$A$を$n\times n$実対称行列とする。
 				$A$を対角化する実直交行列を$P = [\bm{p}_1,\cdots,\bm{p}_n]$とし、$\bm{p}_i$に対応する固有値を$\lambda_i$とすると、$A$が半正定だから$\lambda_i\geq 0$である。
-				$\bm{x}$を$\realSpace^n$の正規直交基底$\{\bm{p}_1,\cdots,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
+				$\bm{x}$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\cdots,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
 				ゆえに$\bm{x}$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
 			\end{proof}
 		\section{Gram行列は半正定}
 			\begin{proof}
 				\quad\par
 				$V$を内積空間とし、$\bm{v}_1,\cdots,\bm{v}_n\in V$のGram行列を$G=[\inprod{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
-				$\bm{x}\in \complexSpace^n$に対して
+				$\bm{x}\in \complexNumbers^n$に対して
 				\[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inprod{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inprod{x_i\bm{v}_i}{x_j\bm{v}_j} = \inprod{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
 			\end{proof}
 		\section{正定値行列同士の積は正定値とは限らない}
@@ -1536,7 +1536,7 @@
 			\end{proof}
 	\chapter{ノルム}
 		\section{諸定理}
-			\subsection{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realSpace^n,\;p\geq 1,\;a\geq 0)$}
+			\subsection{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realNumbers^n,\;p\geq 1,\;a\geq 0)$}
 				\begin{proof}
 					\quad\par
 					$a=0$のときは明らか。$a>0$のときを考える。
@@ -1552,10 +1552,10 @@
 						&\iff \sum_{i=1}^r w_i\log w_i < 0 \quad \left( \because\;\sum_{i=1}^r w_i = 1 \right) \quad = \text{true} \quad (\because\; 0<w_i<1)
 					\end{align*}
 				\end{proof}
-			\subsection{$1\leq p\leq q,\;\bm{x}\in\complexSpace^n$のとき$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}
+			\subsection{$1\leq p\leq q,\;\bm{x}\in\complexNumbers^n$のとき$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}
 				\begin{proof}
 					\quad\par
-					$\bm{a},\bm{b}\in\complexSpace^n$とする。$r=q/p, s=q/(q-p)$とすると$1\leq r,s$および$1/r+1/s=1$を満たすのでヘルダーの不等式より次式が成り立つ。
+					$\bm{a},\bm{b}\in\complexNumbers^n$とする。$r=q/p, s=q/(q-p)$とすると$1\leq r,s$および$1/r+1/s=1$を満たすのでヘルダーの不等式より次式が成り立つ。
 					\[ \sum_{i=1}^n|a_ib_i| \leq \left(\sum_{i=1}^n|a_i|^r\right)^\frac{1}{r}\left(\sum_{i=1}^n|b_i|^s\right)^\frac{1}{s} \]
 					$|a_i| = |x_i|^p,\;b_i=1$とすると次式を得る。
 					\[ \sum_{i=1}^n|x_i|^p \leq \left(\sum_{i=1}^n|x_i|^q\right)^\frac{p}{q}n^{1-p/q} \]
@@ -1600,7 +1600,7 @@
 					\[\therefore\; \norm{\sum_{i=1}^{m}{\bm{x}_i}} = \norm{\bm{x}_k+\bm{x}_l} + \sum_{i\neq k,l}{\norm{\bm{x}_i}} = \sum_{i=1}^{m}{\norm{\bm{x}_i}}\]
 					\[\therefore\; \norm{\bm{x}_k+\bm{x}_l} = \norm{\bm{x}_k}+\norm{\bm{x}_l}\]
 				\end{proof}
-			\subsection{$\bm{x}\in\realSpace^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
+			\subsection{$\bm{x}\in\realNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
 				\label{th:単位球面上の点の座標の絶対値の総和の最大値}
 				\begin{proof}
 					\quad\par
@@ -1619,18 +1619,18 @@
 		\section{2-ノルム(2-演算子ノルム)}
 			\subsection{定義}
 				\begin{shadebox}
-					$A\in\complexSpace^{m\times n}$の2-ノルム(「2-演算子ノルム」とも呼ばれる)$\norm{A}_2$は次の3つの等価な式で定義される。\\
+					$A\in\complexNumbers^{m\times n}$の2-ノルム(「2-演算子ノルム」とも呼ばれる)$\norm{A}_2$は次の3つの等価な式で定義される。\\
 					\begin{align*}
 						\norm{A}_2 &= \max\left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\}\\
 						&= \max\{\norm{A\vx}_2:\norm{\vx}_2=1\}\\
-						&= \min\{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexSpace^n\}
+						&= \min\{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}
 					\end{align*}
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					上述の3式が等しいことを示す。
 					第1,2,3式の与える値を$c_1,c_2,c_3$とし、3つの式に対応する集合を3つ定義する。
-					\[S_1 := \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 := \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 := \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexSpace^n\}\]
+					\[S_1 := \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 := \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 := \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
 					まず
 					\[S_2 = \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\norm{\vx}_2=1\right\}\subseteq S_1\]
 					より$c_1\geq c_2$である。
@@ -1647,7 +1647,7 @@
 				以降、特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
 			\subsection{スペクトル半径の上界}
 				\begin{shadebox}
-					$A\in\complexSpace^{n\times n}$について$\rho(A)\leq\norm{A}$
+					$A\in\complexNumbers^{n\times n}$について$\rho(A)\leq\norm{A}$
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -1656,17 +1656,17 @@
 				\end{proof}
 			\subsection{実対称行列の最大固有値の絶対値はノルムと一致する}
 				\begin{shadebox}
-					$A\in\realSpace^{n\times n}$が対称行列であるとき$|\lambda_\mathrm{max}| = \norm{A}$
+					$A\in\realNumbers^{n\times n}$が対称行列であるとき$|\lambda_\mathrm{max}| = \norm{A}$
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					$A$は実対称行列であるから固有値は全て実数で、$A$は実直交行列で対角化できることは既知とする。
 					$A$の異なる固有値を大きい順に$\lambda_1,\lambda_2,\cdots,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
 					$\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$とすると
-					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\realSpace^n$の正規直交基底である。
+					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\realNumbers^n$の正規直交基底である。
 					\par
 					$\norm{A}$の定義は$\norm{A} := \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
-					任意の$\vx\in\realSpace^n,\quad\norm{\vx}=1$は適当な実数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{{c_{k,i}}^2}}=1$を用いて
+					任意の$\vx\in\realNumbers^n,\quad\norm{\vx}=1$は適当な実数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{{c_{k,i}}^2}}=1$を用いて
 					$\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
 					\[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
 					よって
@@ -1676,7 +1676,7 @@
 				\end{proof}
 			\subsection{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}$}
 				\begin{shadebox}
-					実正方行列$A \in \realSpace^{n\times n}$と実ベクトル$\vx \in \realSpace^n$について
+					実正方行列$A \in \realNumbers^{n\times n}$と実ベクトル$\vx \in \realNumbers^n$について
 					\[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}\]
 				\end{shadebox}
 				\begin{proof}
@@ -1686,7 +1686,7 @@
 					であり、$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から、固有値は全て実数であり、固有空間の基底に正規直交基を選べる。\\
 					$\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i := \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
 					$\mbox{\boldmath $b$}_{i1},\mbox{\boldmath $b$}_{i2},\dots,\mbox{\boldmath $b$}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると、
-					ノルムが1であるような任意のベクトル$\vx \in \realSpace^n$は適当な実数$c_{ij}$を用いて
+					ノルムが1であるような任意のベクトル$\vx \in \realNumbers^n$は適当な実数$c_{ij}$を用いて
 					\[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
 					と表現できる。但し、$\displaystyle \sum_{ij}{{c_{ij}}^2} = 1 \cdots(\text{i})$。\\
 					よって
@@ -1716,20 +1716,20 @@
 				\end{proof}
 			\subsection{逆行列のノルムは元の行列の最小特異値の逆数と等しい}
 				\begin{shadebox}
-					正則行列$A\in\complexSpace^{n\times n}$の特異値を$\sigma_1\geq\cdots\geq\sigma_n>0$とすると$\norm{A^{-1}}_2=1/\sigma_n$
+					正則行列$A\in\complexNumbers^{n\times n}$の特異値を$\sigma_1\geq\cdots\geq\sigma_n>0$とすると$\norm{A^{-1}}_2=1/\sigma_n$
 				\end{shadebox}
 				\begin{proof}
 					$A$の特異値分解より明らか。
 				\end{proof}
-			\subsection{$A\in\realSpace^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
+			\subsection{$A\in\realNumbers^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
 				\label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
 				\begin{proof}
 					\quad\par
-					$A$の第$i$列ベクトルを$\bm{a}_i$とし、$\bm{x}\in\realSpace^n,\norm{\bm{x}}_2=1$とすると
+					$A$の第$i$列ベクトルを$\bm{a}_i$とし、$\bm{x}\in\realNumbers^n,\norm{\bm{x}}_2=1$とすると
 					\[\norm{A\bm{x}}_2=\norm{x_1\bm{a}_1+\cdots+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \cdots + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\cdots+|x_n|)a\]
 					これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\cdots+|x_n|\leq\sqrt{n}$なので定理が従う。
 				\end{proof}
-				\subsubsection{系:\quad$A\in\realSpace^{m\times n}$の全要素の絶対値が$\varepsilon$以下であれば$\norm{A}_2\leq \varepsilon\sqrt{mn}$}
+				\subsubsection{系:\quad$A\in\realNumbers^{m\times n}$の全要素の絶対値が$\varepsilon$以下であれば$\norm{A}_2\leq \varepsilon\sqrt{mn}$}
 					\begin{proof}
 						$A$の各列ベクトルのノルムが高々$\varepsilon\sqrt{m}$なので直前の定理より従う。
 					\end{proof}
@@ -1755,7 +1755,7 @@
 	\chapter{既約性}
 		\section{非負行列が既約であるための必要十分条件}
 			\begin{shadebox}
-				$A\in\realSpace^{n\times n},\;A\geq O$が既約であるための必要十分条件は$\left(I+A\right)^{n-1}>O$
+				$A\in\realNumbers^{n\times n},\;A\geq O$が既約であるための必要十分条件は$\left(I+A\right)^{n-1}>O$
 			\end{shadebox}
 			\begin{proof}
 				\quad\\
@@ -1792,7 +1792,7 @@
 	\chapter{漏れ確率行列}
 		\section{定義}
 			\begin{shadebox}
-				正方行列$A\in\realSpace^{n\times n}$が次の条件を満たすとき、$A$を$o(r)$の漏れ確率行列と呼ぶことにする。
+				正方行列$A\in\realNumbers^{n\times n}$が次の条件を満たすとき、$A$を$o(r)$の漏れ確率行列と呼ぶことにする。
 				\begin{itemize}
 					\item 各要素が0以上1未満
 					\item 各行ベクトルの1ノルムが$r<1$以下である。

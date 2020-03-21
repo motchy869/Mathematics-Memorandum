@@ -45,8 +45,8 @@
 			\item $\Omega_X$: 標本空間。ここからの標本$X$は、我々が推定したいパラメータ$\Theta$の値$\theta$により決まる分布に従う。
 			\item $\Omega_\Theta$: パラメータ$\Theta$が属する確率空間。
 			\item $p(x,\theta)$: $X$と$\Theta$の同時確率密度
-			\item $\delta: \Omega_X\to\realSpace$: 推定関数。標本$X$を入力すると$\theta$の推定値を返す。
-			\item $L(\theta,x): \realSpace^2\to\realSpace_+$: 損失関数。$\theta$の推定値$x$に対して「損失」を返す。通常、$\theta$と$x$の差が大きいほど損失も大きくなるような損失関数を想定する。
+			\item $\delta: \Omega_X\to\realNumbers$: 推定関数。標本$X$を入力すると$\theta$の推定値を返す。
+			\item $L(\theta,x): \realNumbers^2\to\realNumbers_+$: 損失関数。$\theta$の推定値$x$に対して「損失」を返す。通常、$\theta$と$x$の差が大きいほど損失も大きくなるような損失関数を想定する。
 		\end{itemize}
 		以上の準備の下で、事前分布$\pi(\theta)$と推定関数$\delta$に対する期待損失$\E{\Theta,X}{L(\Theta,\delta(X))}$は次のように定義される。
 		\[\E{\Theta,X}{L(\Theta,\delta(X))} := \integ{\Omega_X}{}{\integ{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{\theta}}{x}\]
