@@ -4,469 +4,473 @@
 \contentsline {subsection}{\numberline {I.0.2.1}2進Grayコードへの変換}{10}%
 \contentsline {part}{第II部\hspace {1zw}離散数学}{11}%
 \contentsline {chapter}{\numberline {第II.1章}表記}{12}%
-\contentsline {chapter}{\numberline {第II.2章}整数の合同}{13}%
-\contentsline {section}{\numberline {II.2.1}定数倍と加減乗除}{13}%
-\contentsline {section}{\numberline {II.2.2}$a,m\in \mathbb {N}$が互いに素であるとき、$0,a,2a,\cdots ,a(m-1)$を$m$で割った余りは全て異なる}{13}%
-\contentsline {section}{\numberline {II.2.3}和のべき乗を展開}{13}%
-\contentsline {section}{\numberline {II.2.4}Fermatの小定理}{14}%
-\contentsline {chapter}{\numberline {第II.3章}$r$進法}{15}%
-\contentsline {section}{\numberline {II.3.1}$1/10$が2進表記で無限小数になることの証明}{15}%
-\contentsline {chapter}{\numberline {第II.4章}群}{16}%
-\contentsline {section}{\numberline {II.4.1}剰余類}{16}%
-\contentsline {subsection}{\numberline {II.4.1.1}定義}{16}%
-\contentsline {subsection}{\numberline {II.4.1.2}群$G$の部分群$H$の全ての剰余類は互いに素である}{16}%
-\contentsline {subsection}{\numberline {II.4.1.3}2つの元が同じ剰余類に属する必要十分条件}{16}%
-\contentsline {section}{\numberline {II.4.2}$\mathbb {Z}_p$ ($p: $素数)に乗法群としての位数$r$の元があれば$p-1$は$r$の倍数}{17}%
-\contentsline {chapter}{\numberline {第II.5章}公式}{18}%
-\contentsline {section}{\numberline {II.5.1}$1\cdot 3\cdot 5\cdots (2n-1)2n = (2n)!/n!$}{18}%
-\contentsline {section}{\numberline {II.5.2}$a^n-b^n = (a-b)\DOTSB \sum@ \slimits@ _{k=0}^{n-1} a^{n-1-k}b^k$}{18}%
-\contentsline {section}{\numberline {II.5.3}M\"obiusの反転公式}{18}%
-\contentsline {chapter}{\numberline {第II.6章}数え上げ}{20}%
-\contentsline {section}{\numberline {II.6.1}``for $i=1, \cdots , n(\in \mathbb {N})$''$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$``for $d \mid n, \text { for } i=1,\cdots ,n \text { where } \qopname \relax m{gcd}(i,n)=d$''$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$``for $d \mid n, \text { for } j=1,\cdots ,n/d \text { where } \qopname \relax m{gcd}(j,n/d)=1$''}{20}%
-\contentsline {section}{\numberline {II.6.2}包除原理}{20}%
-\contentsline {subsection}{\numberline {II.6.2.1}補題: $A\subseteq U \Rightarrow |A| = \DOTSB \sum@ \slimits@ _{x\in U}{|A\cap \{x\}|}$}{20}%
-\contentsline {subsection}{\numberline {II.6.2.2}あの等式をどうやって思いついたか}{22}%
-\contentsline {section}{\numberline {II.6.3}配列の飛び飛びマーキング}{23}%
-\contentsline {chapter}{\numberline {第II.7章}多項式}{25}%
-\contentsline {section}{\numberline {II.7.1}規約}{25}%
-\contentsline {section}{\numberline {II.7.2}既約多項式$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$最小多項式}{25}%
-\contentsline {chapter}{\numberline {第II.8章}有限体}{26}%
-\contentsline {section}{\numberline {II.8.1}素数位数の有限体の構成法}{26}%
-\contentsline {section}{\numberline {II.8.2}位数が素数の冪乗である有限体の構成法}{26}%
-\contentsline {subsection}{\numberline {II.8.2.1}既約多項式を用いる方法}{26}%
-\contentsline {subsection}{\numberline {II.8.2.2}既約多項式の根を用いる方法(根体)}{27}%
-\contentsline {chapter}{\numberline {第II.9章}有限幾何学}{28}%
-\contentsline {section}{\numberline {II.9.1}有限射影平面}{28}%
-\contentsline {subsection}{\numberline {II.9.1.1}位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}{28}%
-\contentsline {part}{第III部\hspace {1zw}実解析}{30}%
-\contentsline {chapter}{\numberline {第III.1章}表記}{31}%
-\contentsline {chapter}{\numberline {第III.2章}床関数と天井関数}{32}%
-\contentsline {section}{\numberline {III.2.1}$\forall x\in \mathbb {R},\tmspace +\thickmuskip {.2777em}\left \lfloor -x\right \rfloor = -\left \lceil x\right \rceil ,\tmspace +\thickmuskip {.2777em}\left \lceil -x\right \rceil = -\left \lfloor x\right \rfloor $}{32}%
-\contentsline {section}{\numberline {III.2.2}$^\forall x,y\in \mathbb {R},\tmspace +\thickmuskip {.2777em}\left \lfloor x\right \rfloor +\left \lfloor y\right \rfloor \leq \left \lfloor x+y\right \rfloor ,\tmspace +\thickmuskip {.2777em}\left \lceil x\right \rceil +\left \lceil y\right \rceil \geq \left \lceil x+y\right \rceil $}{32}%
-\contentsline {chapter}{\numberline {第III.3章}数列}{33}%
-\contentsline {section}{\numberline {III.3.1}単調性}{33}%
-\contentsline {subsection}{\numberline {III.3.1.1}$\left (1-\frac {t}{n}\right )^n\tmspace +\thickmuskip {.2777em}(t\in [0,n])$は$n$に関して単調増加}{33}%
-\contentsline {section}{\numberline {III.3.2}極限}{33}%
-\contentsline {subsection}{\numberline {III.3.2.1}$\qopname \relax m{lim}_{n\rightarrow \infty }\left (1+1/n+\DOTSB \sum@ \slimits@ _{k=2}^\infty \frac {c_k}{n^k}\right )^n = e\hskip 1em\relax (\DOTSB \sum@ \slimits@ _{k=2}^\infty c_k\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\mathrm {converges})$}{33}%
-\contentsline {subsection}{\numberline {III.3.2.2}$\qopname \relax m{lim}_{n\rightarrow \infty }\left (1+1/n+o(1/n)\right )^n = e$}{34}%
-\contentsline {section}{\numberline {III.3.3}漸化式}{34}%
-\contentsline {subsection}{\numberline {III.3.3.1}Fibonacci数列}{34}%
-\contentsline {subsubsection}{\numberline {III.3.3.1.1}つがいの増殖からの漸化式の導出}{34}%
-\contentsline {subsection}{\numberline {III.3.3.2}$a_{n+1}=ra_n + p(n),\tmspace +\thickmuskip {.2777em}(r\neq 1 ,\tmspace +\thickmuskip {.2777em}p(n):\tmspace +\thickmuskip {.2777em}d\text {次多項式})$の一般項は$a_n = Ar^n + q(n),\tmspace +\thickmuskip {.2777em}(A:\text { 定数},\tmspace +\thickmuskip {.2777em}q(n):\tmspace +\thickmuskip {.2777em}d\text {次多項式})$}{34}%
-\contentsline {chapter}{\numberline {第III.4章}級数}{35}%
-\contentsline {section}{\numberline {III.4.1}$S_l = \DOTSB \sum@ \slimits@ _{k=0}^\infty k^l r^k$を逐次的に求める}{35}%
-\contentsline {section}{\numberline {III.4.2}Abelの総和公式 : $\DOTSB \sum@ \slimits@ _{i=1}^n a_ib_i = A_nb_n - \DOTSB \sum@ \slimits@ _{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{35}%
-\contentsline {section}{\numberline {III.4.3}FKG不等式(離散) : 単調増加列$\{a_n\},\{b_n\}$について、$\left (\DOTSB \sum@ \slimits@ _{i=1}^n a_i\right )\left (\DOTSB \sum@ \slimits@ _{i=1}^n b_i\right ) \leq n\DOTSB \sum@ \slimits@ _{i=1}^n a_ib_i$}{36}%
-\contentsline {section}{\numberline {III.4.4}等比級数と0収束列の畳み込み: {\nag@@warning@xxiii \fontsize {10\jsc@mpt }{16\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 11\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \belowdisplayshortskip \belowdisplayskip \let \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax $|r|<1,\qopname \relax m{lim}_{n\to \infty }a_n=0 \Rightarrow \qopname \relax m{lim}_{t\to \infty }\DOTSB \sum@ \slimits@ _{\tau =0}^t{r^{t-\tau }a_\tau }=0$}}{37}%
-\contentsline {section}{\numberline {III.4.5}$\DOTSB \sum@ \slimits@ _{k=1}^n \qopname \relax o{cos}kx = -\frac {1}{2} + \frac {\qopname \relax o{sin}(n+1/2)x}{2\qopname \relax o{sin}(x/2)} \hskip 1em\relax (x\neq 0)$}{37}%
-\contentsline {section}{\numberline {III.4.6}$\DOTSB \sum@ \slimits@ _{k=1}^n \qopname \relax o{sin}kx = \frac {\qopname \relax o{sin}\frac {nx}{2}\qopname \relax o{sin}\frac {(n+1)x}{2}}{2\qopname \relax o{sin}(x/2)} \hskip 1em\relax (x\neq 0)$}{38}%
-\contentsline {chapter}{\numberline {第III.5章}乗積}{39}%
-\contentsline {section}{\numberline {III.5.1}$a_i\geq 0\tmspace +\thickmuskip {.2777em}(i=1,2,\cdots ),\tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{i=1}^\infty (1-a_i) = \infty \Rightarrow \DOTSB \prod@ \slimits@ _{i=1}^\infty a_i = 0$}{39}%
-\contentsline {chapter}{\numberline {第III.6章}位相空間}{40}%
-\contentsline {section}{\numberline {III.6.1}$A \subseteq B \Rightarrow \operatorname {cl}A \subseteq \operatorname {cl}B$}{40}%
-\contentsline {chapter}{\numberline {第III.7章}部分分数分解}{41}%
-\contentsline {section}{\numberline {III.7.1}諸公式}{41}%
-\contentsline {subsection}{\numberline {III.7.1.1}$\frac {1}{(x^2-1)^2} = \frac {1}{4}\left [\frac {1}{x+1}-\frac {1}{x-1}+\frac {1}{(x+1)^2}+\frac {1}{(x-1)^2}\right ]$}{41}%
-\contentsline {section}{\numberline {III.7.2}諸定理}{41}%
-\contentsline {subsection}{\numberline {III.7.2.1}定理III.7.2.1.0}{41}%
-\contentsline {chapter}{\numberline {第III.8章}代数方程式}{43}%
-\contentsline {section}{\numberline {III.8.1}諸定理}{43}%
-\contentsline {subsection}{\numberline {III.8.1.1}係数が次数に関して対称な奇数次の多項式$f(x)$を$(x+1)$で除したものも係数が次数に関して対称になる}{43}%
-\contentsline {subsection}{\numberline {III.8.1.2}実係数$n$次方程式が複素数解$s=\alpha +i\beta $を解に持つならばその複素共役$s^* = \alpha -i\beta $もまた解である}{43}%
-\contentsline {chapter}{\numberline {第III.9章}指示関数}{45}%
-\contentsline {section}{\numberline {III.9.1}諸定理}{45}%
-\contentsline {subsection}{\numberline {III.9.1.1}$\Omega $を定義域とする写像$f,g,T$に対して$^\forall x\in \Omega ,^\forall t\in T(\Omega ),\tmspace +\thickmuskip {.2777em} \mathbbm {1}\left \{T(x)=t\right \}f(x) = \mathbbm {1}\left \{T(x)=t\right \}g(x) \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}^\forall x\in \Omega ,\tmspace +\thickmuskip {.2777em}f(x)=g(x)$}{45}%
-\contentsline {chapter}{\numberline {第III.10章}微分}{46}%
-\contentsline {section}{\numberline {III.10.1}$f(a)<0<f(b) \Rightarrow \tmspace +\thickmuskip {.2777em}^\exists x \in (a,b) {\textrm { s.t. }}f(x)=0, f'(x)\geq 0$}{46}%
-\contentsline {section}{\numberline {III.10.2}$\qopname \relax m{lim}_{x\to \infty }{f(x)}=0$であっても$\displaystyle \qopname \relax m{lim}_{x\to 0}{f'(x)} = 0$とは限らない}{46}%
-\contentsline {section}{\numberline {III.10.3}soft-step 関数}{46}%
-\contentsline {subsection}{\numberline {III.10.3.1}$C^{n-1}$級の soft-step 関数}{47}%
-\contentsline {chapter}{\numberline {第III.11章}Taylor展開}{48}%
-\contentsline {section}{\numberline {III.11.1}$e^{-x^2}$は全域でTaylor展開可能}{48}%
-\contentsline {chapter}{\numberline {第III.12章}凸関数}{49}%
-\contentsline {section}{\numberline {III.12.1}諸定理}{49}%
-\contentsline {subsection}{\numberline {III.12.1.1}$f_1,f_2$が凸なら$\qopname \relax m{max}\{f_1,f_2\}$は凸}{49}%
-\contentsline {subsection}{\numberline {III.12.1.2}Jensenの不等式}{49}%
-\contentsline {subsection}{\numberline {III.12.1.3}重み付き相加,相乗平均の関係とヤングの不等式}{50}%
-\contentsline {chapter}{\numberline {第III.13章}諸定理}{52}%
-\contentsline {section}{\numberline {III.13.1}偶関数と奇関数への分解}{52}%
-\contentsline {section}{\numberline {III.13.2}$\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}(f({\boldsymbol {x}})+g({\boldsymbol {x}})) \leq \qopname \relax m{sup}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}) + \qopname \relax m{sup}_{{\boldsymbol {x}}\in X}g({\boldsymbol {x}}),\tmspace +\thickmuskip {.2777em}\qopname \relax m{inf}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}) + \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}g({\boldsymbol {x}}) \leq \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}(f({\boldsymbol {x}})+g({\boldsymbol {x}}))$}{53}%
-\contentsline {section}{\numberline {III.13.3}$\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}(-f({\boldsymbol {x}})) = -\qopname \relax m{inf}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}),\tmspace +\thickmuskip {.2777em} \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}(-f({\boldsymbol {x}})) = -\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}})$}{53}%
-\contentsline {section}{\numberline {III.13.4}ヘルダーの不等式}{53}%
-\contentsline {section}{\numberline {III.13.5}Minkowskiの不等式(三角不等式の一般化)}{54}%
-\contentsline {chapter}{\numberline {第III.14章}2変数関数}{55}%
-\contentsline {section}{\numberline {III.14.1}4象限逆正接 : $\operatorname {{Tan}^{-1}}{\left (x,y\right )}$}{55}%
-\contentsline {chapter}{\numberline {第III.15章}多変数関数}{56}%
-\contentsline {section}{\numberline {III.15.1}Jacobi行列}{56}%
-\contentsline {subsection}{\numberline {III.15.1.1}$J_{G\circ F}=J_GJ_F$}{56}%
-\contentsline {subsection}{\numberline {III.15.1.2}$J_{{\boldsymbol {f}}^\top {\boldsymbol {g}}} = {\boldsymbol {g}}^\top J_{\boldsymbol {f}} + {\boldsymbol {f}}^\top J_{\boldsymbol {g}}$}{56}%
-\contentsline {section}{\numberline {III.15.2}勾配とHessian}{56}%
-\contentsline {subsection}{\numberline {III.15.2.1}$\nabla (G\circ F) = \nabla F \nabla G$}{56}%
-\contentsline {subsection}{\numberline {III.15.2.2}$\nabla _{\boldsymbol {xy}}^2 f = (\nabla _{\boldsymbol {yx}}^2 f)^\top $}{57}%
-\contentsline {subsection}{\numberline {III.15.2.3}勾配ベクトルが等値面の接平面と直交することの証明}{57}%
-\contentsline {subsection}{\numberline {III.15.2.4}$\nabla A{\boldsymbol {x}} = A^\top $}{57}%
-\contentsline {subsection}{\numberline {III.15.2.5}$\nabla {\boldsymbol {x}}^\top {\boldsymbol {x}} = 2{\boldsymbol {x}}$}{57}%
-\contentsline {subsection}{\numberline {III.15.2.6}$\nabla {\boldsymbol {x}}^\top A{\boldsymbol {x}} = (A+A^\top ){\boldsymbol {x}}$}{58}%
-\contentsline {subsection}{\numberline {III.15.2.7}$\nabla \left \|A{\boldsymbol {x}}+{\boldsymbol {b}}\right \|_2^2 = 2A^\top (A{\boldsymbol {x}}+{\boldsymbol {b}})$}{58}%
-\contentsline {subsection}{\numberline {III.15.2.8}$\nabla (A{\boldsymbol {x}}+{\boldsymbol {b}})^\top B(A{\boldsymbol {x}}+{\boldsymbol {b}}) = A^\top (B+B^\top )(A{\boldsymbol {x}}+{\boldsymbol {b}})$}{58}%
-\contentsline {subsection}{\numberline {III.15.2.9}$\nabla ^2 {\boldsymbol {x}}^\top A{\boldsymbol {x}} = A+A^\top $}{58}%
-\contentsline {subsection}{\numberline {III.15.2.10}公式集}{58}%
-\contentsline {section}{\numberline {III.15.3}逆関数定理}{59}%
-\contentsline {section}{\numberline {III.15.4}2次形式}{60}%
-\contentsline {subsection}{\numberline {III.15.4.1}$^\forall A\in \mathbb {R}^{n\times n},{\boldsymbol {x}}\in \mathbb {R}^n,\tmspace +\thickmuskip {.2777em}^\exists $対称行列$B\in \mathbb {R}^{n\times n} \text { s.t. } {\boldsymbol {x}}^\top A{\boldsymbol {x}} = {\boldsymbol {x}}^\top B{\boldsymbol {x}}$}{60}%
-\contentsline {chapter}{\numberline {第III.16章}測度}{61}%
-\contentsline {section}{\numberline {III.16.1}$\sigma $--加法族}{61}%
-\contentsline {subsection}{\numberline {III.16.1.1}2つの$\sigma $--加法族の和集合は$\sigma $--加法族になるとは限らない}{61}%
-\contentsline {subsection}{\numberline {III.16.1.2}$\sigma $--加法族の要素同士の直積集合の族は$\sigma $--加法族になるとは限らない}{61}%
-\contentsline {subsection}{\numberline {III.16.1.3}$X$を集合とする。$A,B\subset 2^X,\tmspace +\thickmuskip {.2777em}A\subset B\Rightarrow \sigma (A)\subset \sigma (B)$}{61}%
-\contentsline {section}{\numberline {III.16.2}Jordan測度}{61}%
-\contentsline {subsection}{\numberline {III.16.2.1}Jordan測度の有限加法性}{62}%
-\contentsline {subsection}{\numberline {III.16.2.2}$A\subset E$($E$は直方体)のとき$\underline {m}_\textrm {J}\left (A\right ) = |E| - \overline {m}_\textrm {J}\left (A^\mathrm {c}\cap E\right )$}{62}%
-\contentsline {subsection}{\numberline {III.16.2.3}系: $A\subset E$($E$は直方体)がJordan可測のとき$A^\mathrm {c}\cap E$もJordan可測である}{62}%
-\contentsline {section}{\numberline {III.16.3}Lebesgue測度}{63}%
-\contentsline {subsection}{\numberline {III.16.3.1}$A\subset B$ならば$\overline {m}_\textrm {L}\left (A\right )\leq \overline {m}_\textrm {L}\left (B\right )$}{63}%
-\contentsline {subsection}{\numberline {III.16.3.2}$\overline {m}_\textrm {L}\left (A\cup B\right )\leq \overline {m}_\textrm {L}\left (A\right ) + \overline {m}_\textrm {L}\left (B\right )$}{63}%
-\contentsline {subsection}{\numberline {III.16.3.3}Lebesgue外測度の劣加法性: $\overline {m}_\textrm {L}\left (\DOTSB \bigcup@ \slimits@ _{n=1}^\infty A_n\right ) \leq \DOTSB \sum@ \slimits@ _{n=1}^\infty \overline {m}_\textrm {L}\left (A_n\right )$}{63}%
-\contentsline {subsection}{\numberline {III.16.3.4}有界集合$A$に対して$\overline {m}_\textrm {L}\left (A\right )\leq \overline {m}_\textrm {J}\left (A\right )$}{63}%
-\contentsline {subsection}{\numberline {III.16.3.5}有界閉集合$A\subset \mathbb {R}^n$に対して$\overline {m}_\textrm {L}\left (A\right )=0 \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}m_\textrm {J}\left (A\right )=0$}{64}%
-\contentsline {subsection}{\numberline {III.16.3.6}$A\subset \mathbb {R}^n$とする。任意の直方体$E$に対して$\overline {m}_\textrm {L}\left (A\cap E\right ) + \overline {m}_\textrm {L}\left (A^\mathrm {c}\cap E\right ) = \overline {m}_\textrm {L}\left (E\right ) \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$任意の$B\subset \mathbb {R}^n$に対して$\overline {m}_\textrm {L}\left (A\cap B\right ) + \overline {m}_\textrm {L}\left (A^\mathrm {c}\cap B\right ) = \overline {m}_\textrm {L}\left (B\right )$}{64}%
-\contentsline {subsection}{\numberline {III.16.3.7}有界集合$A\subset \mathbb {R}^n$がJordan可測ならばLebesgue可測であり、$m_\textrm {L}\left (A\right )=m_\textrm {J}\left (A\right )$}{64}%
-\contentsline {subsection}{\numberline {III.16.3.8}$A_1,A_2\in \mathbb {R}^n$がLebesgue可測なら$A_1\cup A_2$もLebesgue可測}{64}%
-\contentsline {subsection}{\numberline {III.16.3.9}系: $A_1,\cdots ,A_n\in \mathbb {R}^n$がLebesgue可測なら$A_1\cup A_2\cup \cdots \cup A_n$もLebesgue可測}{65}%
-\contentsline {subsection}{\numberline {III.16.3.10}Lebesgue可測集合$A_1,A_2\in \mathbb {R}^n$が非交差的なら$m_\textrm {L}\left (A_1\sqcup A_2\right ) = m_\textrm {L}\left (A_1\right ) + m_\textrm {L}\left (A_2\right )$}{65}%
-\contentsline {subsection}{\numberline {III.16.3.11}系: Lebesgue測度の有限加法性}{65}%
-\contentsline {subsection}{\numberline {III.16.3.12}Lebesgue測度の$\sigma $--加法性}{65}%
-\contentsline {subsection}{\numberline {III.16.3.13}Lebesgue可測の直感的理解}{66}%
-\contentsline {subsection}{\numberline {III.16.3.14}Jordan測度とLebesgue測度の違い}{66}%
-\contentsline {section}{\numberline {III.16.4}包除原理}{67}%
-\contentsline {chapter}{\numberline {第III.17章}積分}{69}%
-\contentsline {section}{\numberline {III.17.1}変数変換 : $\DOTSI \intop \ilimits@ _{x(t_0)}^{x(t)}{f(x)}\mathrm {d}x = \DOTSI \intop \ilimits@ _{t_0}^{t}{f(x)x'(t)}\mathrm {d}t$}{69}%
-\contentsline {section}{\numberline {III.17.2}FKG不等式 : 可積分な単調増加関数$f,g$に対して$\left (\DOTSI \intop \ilimits@ _{0}^{1}{f(x)}\mathrm {d}x\right )\left (\DOTSI \intop \ilimits@ _{0}^{1}{g(x)}\mathrm {d}x\right ) \leq \DOTSI \intop \ilimits@ _{0}^{1}{f(x)g(x)}\mathrm {d}x$}{69}%
-\contentsline {chapter}{\numberline {第III.18章}重積分}{70}%
-\contentsline {section}{\numberline {III.18.1}平均値の定理}{70}%
-\contentsline {section}{\numberline {III.18.2}$C^1$級の変換による面積0の集合の像の面積もまた0}{70}%
-\contentsline {section}{\numberline {III.18.3}関数$f,g$が$\mathbb {R}$上で有界,連続で$\DOTSI \intop \ilimits@ _{-\infty }^{\infty }{f(x)}\mathrm {d}x,\tmspace +\thickmuskip {.2777em}\DOTSI \intop \ilimits@ _{-\infty }^{\infty }{g(x)}\mathrm {d}x$が絶対収束するなら畳み込み$f*g$は$\mathbb {R}$上で連続で絶対可積分である。}{71}%
-\contentsline {chapter}{\numberline {第III.19章}線積分}{72}%
-\contentsline {section}{\numberline {III.19.1}定義}{72}%
-\contentsline {section}{\numberline {III.19.2}計算法}{72}%
-\contentsline {chapter}{\numberline {第III.20章}変数変換}{74}%
-\contentsline {section}{\numberline {III.20.1}三角関数}{74}%
-\contentsline {subsection}{\numberline {III.20.1.1}$x^2+y^2=1\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}x=\qopname \relax o{cos}{\theta },y=\qopname \relax o{sin}{\theta }$}{74}%
-\contentsline {section}{\numberline {III.20.2}極座標表示}{74}%
-\contentsline {subsection}{\numberline {III.20.2.1}極方程式から曲線を導くときの注意 : $r\theta $空間の2つの異なる集合から$xy$空間へ写像した2つの集合の排他的論理和が$\emptyset $なら$xy$空間において両者の違いは無い}{74}%
-\contentsline {chapter}{\numberline {第III.21章}Beta関数}{75}%
-\contentsline {section}{\numberline {III.21.1}Beta関数とGamma関数の関係}{75}%
-\contentsline {section}{\numberline {III.21.2}多変量Beta関数}{75}%
-\contentsline {section}{\numberline {III.21.3}多変量Beta関数とGamma関数の関係}{76}%
-\contentsline {chapter}{\numberline {第III.22章}微分と積分の関係}{77}%
-\contentsline {section}{\numberline {III.22.1}$\qopname \relax m{lim}_{x\to \infty }{f(x)}$が存在すれば$\DOTSI \intop \ilimits@ _{0}^{\infty }{f'(x) dx} = f(\infty )-f(0)$}{77}%
-\contentsline {section}{\numberline {III.22.2}$\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\DOTSI \intop \ilimits@ _{a}^{x}{f(x)}\mathrm {d}x = f(x)$}{77}%
-\contentsline {section}{\numberline {III.22.3} 畳み込みの微分\\ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\DOTSI \intop \ilimits@ _{s=0}^{x}{f(s)g(x-s)}\mathrm {d}s = f(x)g(0) + \DOTSI \intop \ilimits@ _{s=0}^{x}{f(s)\left .\frac {\operatorname {d}^{}g(x)}{\operatorname {d}{x}^{}}\right |_{x=x-s}}\mathrm {d}s$ }{78}%
-\contentsline {section}{\numberline {III.22.4} 重積分の微分 \\ \nag@@warning@xxi \fontsize {9\jsc@mpt }{13\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip \abovedisplayskip \belowdisplayshortskip \belowdisplayskip \def \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax {\leftmargin \leftmargini \topsep \z@ \parsep \z@ \itemsep \parsep }{ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\left (\DOTSI \intop \ilimits@ _{x_1=0}^{x}{\cdots \DOTSI \intop \ilimits@ _{x_n=0}^{x-x_1-\cdots -x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}\mathrm {d}x_n\cdots }\mathrm {d}x_1\right )$ \\ $= \DOTSI \intop \ilimits@ _{x_1=0}^x\cdots \DOTSI \intop \ilimits@ _{x_{n-1}=0}^{x-x_1-\cdots -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1}) \mathrm {d}x_{n-1}\cdots \mathrm {d}x_{1}$ } }{78}%
-\contentsline {section}{\numberline {III.22.5} 系\\ \nag@@warning@xxi \fontsize {9\jsc@mpt }{13\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip \abovedisplayskip \belowdisplayshortskip \belowdisplayskip \def \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax {\leftmargin \leftmargini \topsep \z@ \parsep \z@ \itemsep \parsep }{ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\left (\DOTSI \intop \ilimits@ _{x_1=-\infty }^{\infty }{\cdots \DOTSI \intop \ilimits@ _{x_n=-\infty }^{x-x_1-\cdots -x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}\mathrm {d}x_n\cdots }\mathrm {d}x_1\right )$\\ $= \DOTSI \intop \ilimits@ _{x_1=-\infty }^{\infty }{\cdots \DOTSI \intop \ilimits@ _{x_{n-1}=-\infty }^{x-x_1-\cdots -x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1})}\mathrm {d}x_{n-1}\cdots }\mathrm {d}x_1$ } }{80}%
-\contentsline {chapter}{\numberline {第III.23章}図形への応用}{82}%
-\contentsline {section}{\numberline {III.23.1}ある超平面から距離$d$だけ離れた超平面の方程式}{82}%
-\contentsline {section}{\numberline {III.23.2}$n$次元単位球の体積$V_n$は$\pi ^{n/2}(\Gamma \left (1+n/2\right ))^{-1}$}{82}%
-\contentsline {part}{第IV部\hspace {1zw}複素解析}{84}%
-\contentsline {chapter}{\numberline {第IV.1章}複素数}{85}%
-\contentsline {section}{\numberline {IV.1.1}複素数の定義}{85}%
-\contentsline {subsection}{\numberline {IV.1.1.1}注意}{86}%
-\contentsline {subsection}{\numberline {IV.1.1.2}コラム $i^2=-1\tmspace +\thickmuskip {.2777em}?$}{86}%
-\contentsline {section}{\numberline {IV.1.2}諸公式}{86}%
-\contentsline {subsection}{\numberline {IV.1.2.1}$x>0,\tmspace +\thickmuskip {.2777em}z\in \mathbb {C}$のとき$|x^z|=x^{\operatorname {Re}{\left (z\right )}}$}{86}%
-\contentsline {subsection}{\numberline {IV.1.2.2}$^\forall n\nmid k,\tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{l=1}^n{\qopname \relax o{exp}\left (i\frac {k}{n}2\pi l\right )} = 0$}{87}%
-\contentsline {section}{\numberline {IV.1.3}例題}{87}%
-\contentsline {subsection}{\numberline {IV.1.3.1}$z^n+z^{n-1}+\dots +z^2+z+1 = 0$}{87}%
-\contentsline {chapter}{\numberline {第IV.2章}特殊関数}{88}%
-\contentsline {section}{\numberline {IV.2.1}Gamma関数}{88}%
-\contentsline {subsection}{\numberline {IV.2.1.1}$\qopname \relax m{lim}_{n\to \infty } \DOTSI \intop \ilimits@ _{0}^{n}{t^{z-1}(1+t/n)^n}\mathrm {d}t = \Gamma (z)\tmspace +\thickmuskip {.2777em}(z\in \mathbb {C}, {\operatorname {Re}{\left (z\right )}} > 0)$}{88}%
-\contentsline {chapter}{\numberline {第IV.3章}複素積分}{89}%
-\contentsline {section}{\numberline {IV.3.1}例題}{89}%
-\contentsline {subsection}{\numberline {IV.3.1.1}$\DOTSI \intop \ilimits@ _{0}^{2\pi }{\operatorname {Log}{(}1-a\qopname \relax o{exp}(i\theta ))}\mathrm {d}\theta =0\hskip 1em\relax (C\text {: 原点中心の単位円},\tmspace +\thickmuskip {.2777em}a\in \mathbb {R})$}{89}%
-\contentsline {chapter}{\numberline {第IV.4章}Fourier級数}{90}%
-\contentsline {section}{\numberline {IV.4.1}連続関数のFourier級数の高周波成分は0に収束する}{90}%
-\contentsline {section}{\numberline {IV.4.2}$\DOTSI \intop \ilimits@ _{-\pi }^{\pi }{\frac {\qopname \relax o{sin}nx}{2\qopname \relax o{tan}\frac {x}{2}}}\mathrm {d}x = \pi \tmspace +\thickmuskip {.2777em}(n\in \mathbb {N})$}{91}%
-\contentsline {section}{\numberline {IV.4.3}Fourier級数の応用}{91}%
-\contentsline {subsection}{\numberline {IV.4.3.1}$\DOTSI \intop \ilimits@ _{0}^{\infty }{\frac {\qopname \relax o{sin}x}{x}}\mathrm {d}x = \pi /2$}{91}%
-\contentsline {chapter}{\numberline {第IV.5章}Fourier変換}{93}%
-\contentsline {section}{\numberline {IV.5.1}余弦,正弦変換}{93}%
-\contentsline {chapter}{\numberline {第IV.6章}Bessel関数}{95}%
-\contentsline {section}{\numberline {IV.6.1}定義}{95}%
-\contentsline {subsection}{\numberline {IV.6.1.1}簡単化}{95}%
-\contentsline {section}{\numberline {IV.6.2}Maclaurin展開}{95}%
-\contentsline {part}{第V部\hspace {1zw}線形代数}{97}%
-\contentsline {chapter}{\numberline {第V.1章}表記}{98}%
-\contentsline {chapter}{\numberline {第V.2章}行列の演算}{99}%
-\contentsline {section}{\numberline {V.2.1}結合則}{99}%
-\contentsline {section}{\numberline {V.2.2}上(下)三角行列のべき乗}{99}%
-\contentsline {section}{\numberline {V.2.3}列ベクトルと行ベクトルの積の和}{100}%
-\contentsline {section}{\numberline {V.2.4}巡回行列の可換則}{100}%
-\contentsline {section}{\numberline {V.2.5}$\mathbb {R}^{\textcolor {red}{2}}$の対称行列同士の積は対称}{101}%
-\contentsline {chapter}{\numberline {第V.3章}ベクトル空間}{102}%
-\contentsline {section}{\numberline {V.3.1}基底}{102}%
-\contentsline {subsection}{\numberline {V.3.1.1}基底変換}{102}%
-\contentsline {subsection}{\numberline {V.3.1.2}諸定理}{102}%
-\contentsline {subsubsection}{\numberline {V.3.1.2.1}三角関数ベクトルによる直交展開}{102}%
-\contentsline {section}{\numberline {V.3.2}一般のベクトル空間と配列型ベクトル空間の橋渡し}{103}%
-\contentsline {subsection}{\numberline {V.3.2.1}合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}{103}%
-\contentsline {section}{\numberline {V.3.3}諸定理}{103}%
-\contentsline {subsection}{\numberline {V.3.3.1}ベクトル空間$V$の部分空間$V_1,V_2$について、「$V_1\cup V_2$がベクトル空間である」$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$「$V_1\subseteq V_2$または$V_1 \supseteq V_2$」}{103}%
-\contentsline {subsection}{\numberline {V.3.3.2}$\DOTSB \bigoplus@ \slimits@ _{i=1}^n{W_i}=\DOTSB \bigoplus@ \slimits@ _{i=1}^n{V_i},\tmspace +\thickmuskip {.2777em}V_i \subseteq W_i\hskip 1em\relax \Rightarrow W_i=V_i$}{104}%
-\contentsline {subsection}{\numberline {V.3.3.3}一次独立なベクトル${\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\in V$に${\boldsymbol {v}}\in V$を加えたものが一次独立 $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ ${\boldsymbol {v}}$が${\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\in V$の一次結合で表せない}{104}%
-\contentsline {subsection}{\numberline {V.3.3.4}$A_v:=\{{\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\}$と$A_w:=\{{\boldsymbol {w}}_1,\cdots ,{\boldsymbol {w}}_l\}$が各々一次独立で$k>l\tmspace +\thickmuskip {.2777em} \Rightarrow \tmspace +\thickmuskip {.2777em} ^\exists {\boldsymbol {v}}\in A_v {\textrm { s.t. }}{\boldsymbol {w}}_1,\cdots ,{\boldsymbol {w}}_l,{\boldsymbol {v}}$が一次独立}{104}%
-\contentsline {section}{\numberline {V.3.4}諸注意}{105}%
-\contentsline {subsection}{\numberline {V.3.4.1} $\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2\},\{{\boldsymbol {w}}_1,{\boldsymbol {w}}_2\},\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_1\},\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_2\}$が各々一次独立でも \\ $\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_1,{\boldsymbol {w}}_2\}$が一次独立とは限らない}{105}%
-\contentsline {subsection}{\numberline {V.3.4.2}$W_i\cap W_j=\{{\boldsymbol {0}}\}\tmspace +\thickmuskip {.2777em}(i\in \{1,\cdots ,n\},\tmspace +\thickmuskip {.2777em}i\neq j)$であっても$W_1+\cdots +W_n = W_1\oplus \cdots \oplus W_n$とは限らない}{105}%
-\contentsline {subsection}{\numberline {V.3.4.3}$W=V\oplus X,\tmspace +\thickmuskip {.2777em}W=V\oplus Y$でも$X=Y$とは限らない}{105}%
-\contentsline {subsection}{\numberline {V.3.4.4}$\operatorname {span}\left [{\boldsymbol {a}},{\boldsymbol {b}},{\boldsymbol {c}}\right ]/\operatorname {span}\left [{\boldsymbol {a}},{\boldsymbol {b}}\right ] = \operatorname {span}\left [{\boldsymbol {c}}\right ]$とは限らない}{105}%
-\contentsline {chapter}{\numberline {第V.4章}線形写像}{106}%
-\contentsline {section}{\numberline {V.4.1}表記の規則}{106}%
-\contentsline {subsection}{\numberline {V.4.1.1}一般のベクトルを要素とする配列と行列の積}{106}%
-\contentsline {subsection}{\numberline {V.4.1.2}一般のベクトルを要素とする行列同士の積}{106}%
-\contentsline {section}{\numberline {V.4.2}$\qopname \relax o{dim}(V)=\qopname \relax o{dim}(W),\tmspace +\thickmuskip {.2777em}f:V\to W$であるとき、$f$が単射であることと全射であることは同値。}{106}%
-\contentsline {section}{\numberline {V.4.3}$\qopname \relax o{dim}{V}=\qopname \relax o{dim}{W}$ならば全単射線形写像$f:V\to W$が存在する}{107}%
-\contentsline {section}{\numberline {V.4.4}不変部分空間と表現行列}{108}%
-\contentsline {subsection}{\numberline {V.4.4.1}正規直交基底間での座標変換は直交変換}{108}%
-\contentsline {chapter}{\numberline {第V.5章}双対空間}{110}%
-\contentsline {section}{\numberline {V.5.1}基底変換と座標変換の関係}{110}%
-\contentsline {chapter}{\numberline {第V.6章}行列式}{111}%
-\contentsline {section}{\numberline {V.6.1}$A\in \mathbb {R}^{n\times m}, B\in \mathbb {R}^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}{111}%
-\contentsline {section}{\numberline {V.6.2}系: $\left |I_n-{\boldsymbol {v}}{\boldsymbol {v}}^\top \right | = 1-\left \|{\boldsymbol {v}}\right \|_2^2$}{111}%
-\contentsline {chapter}{\numberline {第V.7章}逆行列}{112}%
-\contentsline {section}{\numberline {V.7.1}$[{\boldsymbol {\phi }}_1,\cdots ,{\boldsymbol {\phi }}_n]^{-1}{\boldsymbol {\phi }}_i={\boldsymbol {e}}_i$}{112}%
-\contentsline {section}{\numberline {V.7.2}(系)結合係数の抽出}{112}%
-\contentsline {section}{\numberline {V.7.3}上(下)三角行列が逆行列をもてば、それも上(下)三角行列である}{112}%
-\contentsline {section}{\numberline {V.7.4}1列(or 1行)だけ置き換えた行列の逆行列}{113}%
-\contentsline {section}{\numberline {V.7.5}列(or 行)を入れ替えた行列の逆行列}{114}%
-\contentsline {chapter}{\numberline {第V.8章}特性多項式}{115}%
-\contentsline {section}{\numberline {V.8.1}逆行列の特性多項式: $\phi _{A^{-1}}(\lambda ) = |A|^{-1}(-\lambda )^n\phi _A(1/\lambda )$}{115}%
-\contentsline {chapter}{\numberline {第V.9章}ユニタリ行列}{116}%
-\contentsline {section}{\numberline {V.9.1}ユニタリ行列の複素共役はユニタリ行列}{116}%
-\contentsline {chapter}{\numberline {第V.10章}行列の階数}{117}%
-\contentsline {section}{\numberline {V.10.1}$T$が正則でも$\operatorname {rank}\left (ATB\right )=\operatorname {rank}\left (AB\right )$とは限らない}{117}%
-\contentsline {section}{\numberline {V.10.2}フルランク条件}{117}%
-\contentsline {section}{\numberline {V.10.3}$A\in \mathbb {F}^{m\times n}$の階数が$n$ならば$A^\top A$は正則}{117}%
-\contentsline {section}{\numberline {V.10.4}(系)\hskip 1em\relax $A\in \mathbb {F}^{m\times n}$が行フルランクならば$AA^\top $は正則}{118}%
-\contentsline {section}{\numberline {V.10.5}$A\in \mathbb {F}^{m\times n}$の階数が$r$であるなら、ある正則行列$T_x\in \mathbb {F}^{n\times n},\hskip 1em\relax T_y\in \mathbb {F}^{m\times m}$が存在して...}{118}%
-\contentsline {section}{\numberline {V.10.6}同じ型の行列の階数が等しいための必要十分条件}{119}%
-\contentsline {section}{\numberline {V.10.7}優対角正方行列は正則}{119}%
-\contentsline {section}{\numberline {V.10.8}最大ランク分解}{120}%
-\contentsline {chapter}{\numberline {第V.11章}固有値,固有ベクトル}{121}%
-\contentsline {section}{\numberline {V.11.1}諸定理}{121}%
-\contentsline {subsection}{\numberline {V.11.1.1}相異なる固有値に対応する固有ベクトルは一次独立}{121}%
-\contentsline {subsection}{\numberline {V.11.1.2}$n\times n$行列$A$の全要素が$a$であるなら非零固有値は$an$のみ}{122}%
-\contentsline {subsection}{\numberline {V.11.1.3}転置行列の固有値,固有ベクトル}{122}%
-\contentsline {subsection}{\numberline {V.11.1.4}逆行列の固有値,固有ベクトル}{122}%
-\contentsline {subsection}{\numberline {V.11.1.5}コンパニオン行列}{123}%
-\contentsline {subsection}{\numberline {V.11.1.6}Hadamard行列の固有値}{123}%
-\contentsline {subsection}{\numberline {V.11.1.7}最小消去多項式が最小多項式と一致するベクトルの存在}{124}%
-\contentsline {section}{\numberline {V.11.2}スペクトル写像定理}{125}%
-\contentsline {section}{\numberline {V.11.3}一般固有空間}{125}%
-\contentsline {subsection}{\numberline {V.11.3.1}一般固有空間の階数の頭打ち}{125}%
-\contentsline {subsection}{\numberline {V.11.3.2}一般固有空間への直和分解}{126}%
-\contentsline {subsection}{\numberline {V.11.3.3}代数的重複度$\geq $幾何学的重複度}{127}%
-\contentsline {subsection}{\numberline {V.11.3.4}$AB=O$でも$\mathbb {R}^{n\times n} = \operatorname {Ker}\left (A\right ) + \operatorname {Ker}\left (B\right )$とは限らない}{128}%
-\contentsline {section}{\numberline {V.11.4}Jordan標準形}{128}%
-\contentsline {subsection}{\numberline {V.11.4.1}Jordanブロックの逆行列}{128}%
-\contentsline {subsection}{\numberline {V.11.4.2}Jordanブロックの指数行列}{129}%
-\contentsline {section}{\numberline {V.11.5}Perronの定理}{130}%
-\contentsline {section}{\numberline {V.11.6}置換行列}{131}%
-\contentsline {subsection}{\numberline {V.11.6.1}定義}{131}%
-\contentsline {subsection}{\numberline {V.11.6.2}諸定理}{131}%
-\contentsline {subsubsection}{\numberline {V.11.6.2.1}行と列の同期入れ替え}{131}%
-\contentsline {subsubsection}{\numberline {V.11.6.2.2}置換行列は直交行列}{132}%
-\contentsline {chapter}{\numberline {第V.12章}トレース}{133}%
-\contentsline {section}{\numberline {V.12.1}$\operatorname {tr}{AB}=\operatorname {tr}{BA}$}{133}%
-\contentsline {chapter}{\numberline {第V.13章}定値性}{134}%
-\contentsline {section}{\numberline {V.13.1}正定対称行列の逆行列も正定}{134}%
-\contentsline {section}{\numberline {V.13.2}$A$が半正定で${\boldsymbol {x}}^\top A{\boldsymbol {x}}=0$ならば${\boldsymbol {x}}\in \operatorname {Ker}\left (A\right )$}{134}%
-\contentsline {section}{\numberline {V.13.3}Gram行列は半正定}{134}%
-\contentsline {section}{\numberline {V.13.4}正定値行列同士の積は正定値とは限らない}{134}%
-\contentsline {section}{\numberline {V.13.5}対角成分が全て非負の対称行列が半正定とは限らない}{135}%
-\contentsline {section}{\numberline {V.13.6}非対称行列は固有値が全て正でも正定とは限らない}{135}%
-\contentsline {chapter}{\numberline {第V.14章}ノルム}{136}%
-\contentsline {section}{\numberline {V.14.1}諸定理}{136}%
-\contentsline {subsection}{\numberline {V.14.1.1}$\left \|{\boldsymbol {x}}\right \|_{p+a} \leq \left \|{\boldsymbol {x}}\right \|_p\tmspace +\thickmuskip {.2777em}({\boldsymbol {x}}\in \mathbb {R}^n,\tmspace +\thickmuskip {.2777em}p\geq 1,\tmspace +\thickmuskip {.2777em}a\geq 0)$}{136}%
-\contentsline {subsection}{\numberline {V.14.1.2}$1\leq p\leq q,\tmspace +\thickmuskip {.2777em}{\boldsymbol {x}}\in \mathbb {C}^n$のとき$\left \|{\boldsymbol {x}}\right \|_p \leq n^{1/p-1/q}\left \|{\boldsymbol {x}}\right \|_q$}{136}%
-\contentsline {subsection}{\numberline {V.14.1.3}和のノルムとノルムの和が等しい時}{137}%
-\contentsline {subsection}{\numberline {V.14.1.4}和のノルムとノルムの和が等しい時(2)}{137}%
-\contentsline {subsection}{\numberline {V.14.1.5}${\boldsymbol {x}}\in \mathbb {R}^n,\left \|{\boldsymbol {x}}\right \|_2=1\tmspace +\thickmuskip {.2777em}\Rightarrow \tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{i=1}^n{|x_i|}\leq \sqrt {n}$}{138}%
-\contentsline {section}{\numberline {V.14.2}応用}{138}%
-\contentsline {subsection}{\numberline {V.14.2.1}超平面と点の距離公式の直感的説明}{138}%
-\contentsline {chapter}{\numberline {第V.15章}行列のノルム}{139}%
-\contentsline {section}{\numberline {V.15.1}2-ノルム(2-演算子ノルム)}{139}%
-\contentsline {subsection}{\numberline {V.15.1.1}定義}{139}%
-\contentsline {subsection}{\numberline {V.15.1.2}スペクトル半径の上界}{140}%
-\contentsline {subsection}{\numberline {V.15.1.3}実対称行列の最大固有値の絶対値はノルムと一致する}{140}%
-\contentsline {subsection}{\numberline {V.15.1.4}$\qopname \relax m{max}_{\|x\|=1} \|A{\boldsymbol {x}}\| = \sqrt {\lambda _{\text {max}}\{A^\top A\}}$}{140}%
-\contentsline {subsection}{\numberline {V.15.1.5}逆行列のノルムは元の行列の最小特異値の逆数と等しい}{142}%
-\contentsline {subsection}{\numberline {V.15.1.6}$A\in \mathbb {R}^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\left \|A\right \|_2\leq a\sqrt {n}$}{142}%
-\contentsline {subsubsection}{\numberline {V.15.1.6.1}系:\hskip 1em\relax $A\in \mathbb {R}^{m\times n}$の全要素の絶対値が$\varepsilon $以下であれば$\left \|A\right \|_2\leq \varepsilon \sqrt {mn}$}{142}%
-\contentsline {subsubsection}{\numberline {V.15.1.6.2}系:\hskip 1em\relax $n$次確率行列のノルムは高々$\sqrt {n}$}{142}%
-\contentsline {chapter}{\numberline {第V.16章}凸領域}{143}%
-\contentsline {section}{\numberline {V.16.1}凸領域内のベクトルの凸結合は元の凸領域に属す}{143}%
-\contentsline {chapter}{\numberline {第V.17章}既約性}{144}%
-\contentsline {section}{\numberline {V.17.1}非負行列が既約であるための必要十分条件}{144}%
-\contentsline {chapter}{\numberline {第V.18章}漏れ確率行列}{145}%
-\contentsline {section}{\numberline {V.18.1}定義}{145}%
-\contentsline {section}{\numberline {V.18.2}漏れ確率行列のべき乗は$O$に収束する}{145}%
-\contentsline {section}{\numberline {V.18.3}$o(r)$の漏れ確率行列$A$のノイマン級数は収束し、各要素の和は$\frac {1}{1-r}$以下である。}{145}%
-\contentsline {chapter}{\numberline {第V.19章}発想, 技巧}{146}%
-\contentsline {section}{\numberline {V.19.1}演算}{146}%
-\contentsline {subsection}{\numberline {V.19.1.1}積和の階数を拡張する}{146}%
-\contentsline {part}{第VI部\hspace {1zw}ベクトル解析}{147}%
-\contentsline {chapter}{\numberline {第VI.1章}直角座標系}{148}%
-\contentsline {section}{\numberline {VI.1.1}諸公式}{148}%
-\contentsline {subsection}{\numberline {VI.1.1.1}$\nabla \left (\left \langle \nabla f,{\boldsymbol {v}}\right \rangle \right ) = \left (\nabla ^2f\right ){\boldsymbol {v}}$}{148}%
-\contentsline {subsection}{\numberline {VI.1.1.2}$\left \langle {\boldsymbol {a}}\times {\boldsymbol {b}},{\boldsymbol {c}}\times {\boldsymbol {d}}\right \rangle = \left \langle {\boldsymbol {a}},{\boldsymbol {c}}\right \rangle \left \langle {\boldsymbol {b}},{\boldsymbol {d}}\right \rangle - \left \langle {\boldsymbol {a}},{\boldsymbol {d}}\right \rangle \left \langle {\boldsymbol {b}},{\boldsymbol {c}}\right \rangle $}{148}%
-\contentsline {subsection}{\numberline {VI.1.1.3}(系)\tmspace +\thickmuskip {.2777em}$\left \langle {\boldsymbol {a}}\times {\boldsymbol {b}},{\boldsymbol {a}}\times {\boldsymbol {c}}\right \rangle = \left \|{\boldsymbol {a}}\right \|^2\left \langle {\boldsymbol {b}},{\boldsymbol {c}}\right \rangle - \left \langle {\boldsymbol {a}},{\boldsymbol {b}}\right \rangle \left \langle {\boldsymbol {a}},{\boldsymbol {c}}\right \rangle $}{148}%
-\contentsline {section}{\numberline {VI.1.2}諸定理}{149}%
-\contentsline {subsection}{\numberline {VI.1.2.1}非負領域の共通部分の非負領域}{149}%
-\contentsline {subsection}{\numberline {VI.1.2.2}Stokesの定理}{150}%
-\contentsline {chapter}{\numberline {第VI.2章}円柱座標系}{153}%
-\contentsline {section}{\numberline {VI.2.1}計量係数}{153}%
-\contentsline {section}{\numberline {VI.2.2}単位ベクトルに関する直角座標系との関係}{153}%
-\contentsline {section}{\numberline {VI.2.3}微分演算に関する直交座標系との関係}{154}%
-\contentsline {chapter}{\numberline {第VI.3章}球座標系}{155}%
-\contentsline {section}{\numberline {VI.3.1}計量係数}{155}%
-\contentsline {section}{\numberline {VI.3.2}単位ベクトルに関する直角座標系との関係}{155}%
-\contentsline {part}{第VII部\hspace {1zw}幾何学}{157}%
-\contentsline {chapter}{\numberline {第VII.1章}Euclid幾何学}{158}%
-\contentsline {section}{\numberline {VII.1.1}諸公式}{158}%
-\contentsline {subsection}{\numberline {VII.1.1.1}ヘロンの公式}{158}%
-\contentsline {chapter}{\numberline {第VII.2章}球面幾何学}{160}%
-\contentsline {section}{\numberline {VII.2.1}余弦定理,正弦定理について}{160}%
-\contentsline {section}{\numberline {VII.2.2}極三角形の極三角形が元の三角形になること}{160}%
-\contentsline {section}{\numberline {VII.2.3}元の三角形$ABC$の極三角形$A'B'C'$について$A'=\pi -a,\tmspace +\thickmuskip {.2777em}B'=\pi -b,\tmspace +\thickmuskip {.2777em}C'=\pi -c$となること($a=BC,\tmspace +\thickmuskip {.2777em}b=CA,\tmspace +\thickmuskip {.2777em}c=AB$)}{161}%
-\contentsline {part}{第VIII部\hspace {1zw}確率論}{162}%
-\contentsline {chapter}{\numberline {第VIII.1章}表記}{163}%
-\contentsline {chapter}{\numberline {第VIII.2章}独立性に関する諸定理}{164}%
-\contentsline {section}{\numberline {VIII.2.1}$A_1,\cdots ,A_n$が独立ならば、そのうちどれか1つ$A_l$を$A_l^\mathrm {c}$に置き換えたものも独立である}{164}%
-\contentsline {section}{\numberline {VIII.2.2}$A_1,\cdots ,A_n$が独立ならば$A_1^\mathrm {c},\cdots ,A_n^\mathrm {c}$も独立である}{164}%
-\contentsline {section}{\numberline {VIII.2.3}$A_1,\cdots ,A_n$が独立ならば、そのうちどれか2つ$A_p,A_q$を合併したものも独立である。}{165}%
-\contentsline {section}{\numberline {VIII.2.4}$A_1,\cdots ,A_n$が独立ならば、$I_1\sqcup I_2 = \{1:n\}$なる$I_1,I_2$に対して$\DOTSB \bigcup@ \slimits@ _{i\in I_1}A_i$と$\DOTSB \bigcup@ \slimits@ _{j\in I_2}A_j$は独立である。}{165}%
-\contentsline {part}{第IX部\hspace {1zw}記述統計}{166}%
-\contentsline {chapter}{\numberline {第IX.1章}諸定義}{167}%
-\contentsline {section}{\numberline {IX.1.1}平均, 分散, 共分散}{167}%
-\contentsline {section}{\numberline {IX.1.2}分散共分散行列}{167}%
-\contentsline {chapter}{\numberline {第IX.2章}諸定理}{168}%
-\contentsline {section}{\numberline {IX.2.1}分散共分散行列は半正定。特に分散が正なら正定。}{168}%
-\contentsline {chapter}{\numberline {第IX.3章}主成分分析}{169}%
-\contentsline {section}{\numberline {IX.3.1}分散共分散行列の対角化}{169}%
-\contentsline {section}{\numberline {IX.3.2}データセットの射影}{169}%
-\contentsline {section}{\numberline {IX.3.3}主成分}{170}%
-\contentsline {subsection}{\numberline {IX.3.3.1}主成分の分散共分散行列}{170}%
-\contentsline {chapter}{\numberline {第IX.4章}Fisherの線形判別分析}{171}%
-\contentsline {section}{\numberline {IX.4.1}クラス間分散とクラス内分散の比を最大にする${\boldsymbol {w}}$の導出}{171}%
-\contentsline {part}{第X部\hspace {1zw}頻度論的統計}{173}%
-\contentsline {chapter}{\numberline {第X.1章}一般の分布}{174}%
-\contentsline {section}{\numberline {X.1.1}${\boldsymbol {x}}$の分散共分散行列を$V=\operatorname {Var}_{}\left [{\boldsymbol {x}}\right ]$とすると$\operatorname {Var}_{}\left [{\boldsymbol {v}}^\top {\boldsymbol {x}}\right ] = {\boldsymbol {v}}^\top V{\boldsymbol {v}}$}{174}%
-\contentsline {section}{\numberline {X.1.2}ベクトル確率変数の線形写像の像の期待値と分散共分散行列}{174}%
-\contentsline {section}{\numberline {X.1.3}スコア関数}{175}%
-\contentsline {subsection}{\numberline {X.1.3.1}$\operatorname {E}_{{\boldsymbol {X}}}\left [V({\boldsymbol {X}},\theta )\right ] = 0$}{175}%
-\contentsline {section}{\numberline {X.1.4}Cram\'er-Raoの不等式}{175}%
-\contentsline {section}{\numberline {X.1.5}条件付き確率}{176}%
-\contentsline {subsection}{\numberline {X.1.5.1}$\operatorname {Pr}\left [A\right ]=\DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A,B_k\right ]} = \DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A\left | B_k\right .\right ]\operatorname {Pr}\left [B_k\right ]}$}{176}%
-\contentsline {subsection}{\numberline {X.1.5.2}$\operatorname {Pr}\left [A,B\left | C\right .\right ]=\operatorname {Pr}\left [A\left | B,C\right .\right ]\operatorname {Pr}\left [B\left | C\right .\right ]$\hskip 1em\relax (スライディング)}{176}%
-\contentsline {subsection}{\numberline {X.1.5.3}$\operatorname {Pr}\left [A\left | C\right .\right ] = \DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A\left | B_k,C\right .\right ]\operatorname {Pr}\left [B_k\left | C\right .\right ]}$}{176}%
-\contentsline {section}{\numberline {X.1.6}条件付き確率密度関数}{177}%
-\contentsline {section}{\numberline {X.1.7}条件付き期待値}{177}%
-\contentsline {subsection}{\numberline {X.1.7.1}$\operatorname {E}_{X,Y}\left [\operatorname {E}_{Y}\left [Y|X\right ]\right ] = \operatorname {E}_{X,Y}\left [Y\right ]$}{177}%
-\contentsline {section}{\numberline {X.1.8}確率不等式}{178}%
-\contentsline {subsection}{\numberline {X.1.8.1}マルコフの不等式}{178}%
-\contentsline {subsection}{\numberline {X.1.8.2}チェビシェフの不等式}{178}%
-\contentsline {subsection}{\numberline {X.1.8.3}ヘフディングの補題}{179}%
-\contentsline {subsection}{\numberline {X.1.8.4}ヘフディングの不等式}{180}%
-\contentsline {section}{\numberline {X.1.9}中心極限定理}{181}%
-\contentsline {chapter}{\numberline {第X.2章}多項分布}{182}%
-\contentsline {section}{\numberline {X.2.1}周辺分布は2項分布}{182}%
-\contentsline {section}{\numberline {X.2.2}共分散}{183}%
-\contentsline {chapter}{\numberline {第X.3章}幾何分布}{184}%
-\contentsline {section}{\numberline {X.3.1}無記憶性からの導出}{184}%
-\contentsline {chapter}{\numberline {第X.4章}指数分布}{185}%
-\contentsline {section}{\numberline {X.4.1}定義}{185}%
-\contentsline {section}{\numberline {X.4.2}解釈}{185}%
-\contentsline {section}{\numberline {X.4.3}無記憶性からの導出}{185}%
-\contentsline {section}{\numberline {X.4.4}特性関数}{186}%
-\contentsline {chapter}{\numberline {第X.5章}Erlang分布}{187}%
-\contentsline {section}{\numberline {X.5.1}定義}{187}%
-\contentsline {section}{\numberline {X.5.2}解釈}{187}%
-\contentsline {section}{\numberline {X.5.3}指数分布との関係:\hskip 1em\relax $X_1,\cdots ,X_k (\text {独立}) \sim \operatorname {ExpDist}\left (\mu \right ) \Rightarrow X_1+\cdots X_k \sim \operatorname {ErlangDist}\left (k,\mu \right )$}{187}%
-\contentsline {chapter}{\numberline {第X.6章}Poisson分布}{189}%
-\contentsline {section}{\numberline {X.6.1}定義}{189}%
-\contentsline {section}{\numberline {X.6.2}解釈}{189}%
-\contentsline {subsection}{\numberline {X.6.2.1}指数分布からの導出}{189}%
-\contentsline {section}{\numberline {X.6.3}Erlang分布との関係}{189}%
-\contentsline {section}{\numberline {X.6.4}再生性}{190}%
-\contentsline {chapter}{\numberline {第X.7章}Beta分布}{191}%
-\contentsline {section}{\numberline {X.7.1}Beta分布に従う確率変数の生成}{191}%
-\contentsline {subsection}{\numberline {X.7.1.1}$X\sim \operatorname {Gamma}\left (\alpha ,1\right ),Y\sim \operatorname {Gamma}\left (\beta ,1\right )\Rightarrow \frac {X}{X+Y}\sim \operatorname {Beta}\left (\alpha ,\beta \right )$}{191}%
-\contentsline {chapter}{\numberline {第X.8章}正規分布}{192}%
-\contentsline {section}{\numberline {X.8.1}裾確率の評価}{192}%
-\contentsline {section}{\numberline {X.8.2}スケール変換とシフト}{193}%
-\contentsline {section}{\numberline {X.8.3}再生性}{194}%
-\contentsline {section}{\numberline {X.8.4}一次結合}{195}%
-\contentsline {section}{\numberline {X.8.5}分散$\sigma ^2$,平均$\mu $のときの累積分布関数は$\Phi (\frac {z-\mu }{\sigma })$}{195}%
-\contentsline {section}{\numberline {X.8.6}零平均,同分散の正規分布に独立に従う$n$個の確率変数の直交変換もまた同じ分布に従う}{195}%
-\contentsline {section}{\numberline {X.8.7}多変量正規分布}{196}%
-\contentsline {subsection}{\numberline {X.8.7.1}定義}{196}%
-\contentsline {subsection}{\numberline {X.8.7.2}密度関数の全空間積分が1になることの確認}{196}%
-\contentsline {subsection}{\numberline {X.8.7.3}期待値の導出}{197}%
-\contentsline {subsection}{\numberline {X.8.7.4}共分散行列の導出}{197}%
-\contentsline {subsection}{\numberline {X.8.7.5}特性関数は$\phi _{{\boldsymbol {X}}}({\boldsymbol {t}})=\qopname \relax o{exp}(i{\boldsymbol {t}}^\top {\boldsymbol {\mu }} - {\boldsymbol {t}}^\top \Sigma {\boldsymbol {t}}/2)$}{197}%
-\contentsline {subsection}{\numberline {X.8.7.6}特性関数を用いた期待値と分散の導出}{198}%
-\contentsline {subsection}{\numberline {X.8.7.7}線形写像 : $A{\boldsymbol {X}}+{\boldsymbol {b}} \sim N(A{\boldsymbol {\mu }}+{\boldsymbol {b}}, A\Sigma A^\top )$}{199}%
-\contentsline {subsection}{\numberline {X.8.7.8}周辺分布 : $X_i \sim N(\mu _i, {\sigma _i}^2)$}{199}%
-\contentsline {chapter}{\numberline {第X.9章}$\chi ^2$分布}{200}%
-\contentsline {section}{\numberline {X.9.1}定義}{200}%
-\contentsline {section}{\numberline {X.9.2}$X \sim N(0,1) \hskip 1em\relax \Rightarrow \hskip 1em\relax X^2 \sim \chi ^2_1$}{200}%
-\contentsline {section}{\numberline {X.9.3}$X_i \sim N(0,1) \hskip 1em\relax \Rightarrow \hskip 1em\relax Z_n = \DOTSB \sum@ \slimits@ _{i=1}^{n}{{X_i}^2} \sim {\chi ^2}_n$}{200}%
-\contentsline {section}{\numberline {X.9.4}$X \sim {\chi ^2}_n \hskip 1em\relax \Rightarrow \hskip 1em\relax E[X] = n,\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}V[x] = 2n$}{201}%
-\contentsline {section}{\numberline {X.9.5}再生性}{202}%
-\contentsline {section}{\numberline {X.9.6}$X_1,\cdots ,X_n\sim N(\mu ,\sigma ^2) \Rightarrow \frac {1}{\sigma ^2}\DOTSB \sum@ \slimits@ _{i=1}^n{(X_i-\overline {X})^2} \sim \chi ^2_{n-1}$}{202}%
-\contentsline {chapter}{\numberline {第X.10章}$t$分布}{204}%
-\contentsline {section}{\numberline {X.10.1}定義}{204}%
-\contentsline {section}{\numberline {X.10.2}X.10.2.0\hskip 1em\relax $X,Y : \text {indep},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X \sim N(0,1),\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}Y \sim {\chi ^2}_n \hskip 1em\relax \Rightarrow \hskip 1em\relax T := \frac {X}{\sqrt {\frac {Y}{2}}} \sim t_n$}{204}%
-\contentsline {section}{\numberline {X.10.3}X.10.3.0\hskip 1em\relax $t$分布の期待値}{205}%
-\contentsline {section}{\numberline {X.10.4}X.10.4.0\hskip 1em\relax $t$分布の分散}{205}%
-\contentsline {chapter}{\numberline {第X.11章}$F$分布}{207}%
-\contentsline {section}{\numberline {X.11.1}定義}{207}%
-\contentsline {section}{\numberline {X.11.2}$X_1,X_2 : \text {indep},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X_1 \sim {\chi ^2}_{\nu _1},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X_2 \sim {\chi ^2}_{\nu _2} \hspace {10pt} \Rightarrow \hspace {10pt} F:= \frac {\frac {X_1}{\nu _1}}{\frac {X_2}{\nu _2}} \sim F_{\nu _2}^{\nu _1}$}{207}%
-\contentsline {section}{\numberline {X.11.3}自由度$(\nu _1,\nu _2)$の$F$分布$F_{\nu _2}^{\nu _1}$は$\nu _2 \geq 3$の時に限り期待値が定義できてその値は$\frac {\nu _2}{\nu _2-2}$である。}{208}%
-\contentsline {section}{\numberline {X.11.4}自由度$(\nu _1,\nu _2)$の$F$分布$F_{\nu _2}^{\nu _1}$の分散は$\nu _2 \leq 4$の場合$\infty $、$\nu _2 \geq 5$の場合$\displaystyle \frac {2{\nu _2}^2(\nu _1+\nu _2-2)}{\nu _1(\nu _2-2)^2(\nu _2-4)}$である。}{209}%
-\contentsline {chapter}{\numberline {第X.12章}推定}{210}%
-\contentsline {section}{\numberline {X.12.1}標本分散}{210}%
-\contentsline {subsection}{\numberline {X.12.1.1}$\operatorname {E}_{}\left [\frac {1}{n}\DOTSB \sum@ \slimits@ _{i=1}^{n}{(X_i-\overline {X})^2}\right ] = \frac {n-1}{n}\sigma ^2$}{210}%
-\contentsline {part}{第XI部\hspace {1zw}ベイズ統計}{212}%
-\contentsline {section}{\numberline {XI.0.1}事前分布と事後分布の考え方}{213}%
-\contentsline {subsection}{\numberline {XI.0.1.1}離散型}{213}%
-\contentsline {subsection}{\numberline {XI.0.1.2}連続型}{213}%
-\contentsline {section}{\numberline {XI.0.2}ベイズ推定量}{214}%
-\contentsline {section}{\numberline {XI.0.3}事前分布と事後分布の例}{215}%
-\contentsline {subsection}{\numberline {XI.0.3.1}正規分布の事後分布}{215}%
-\contentsline {part}{第XII部\hspace {1zw}グラフ理論}{216}%
-\contentsline {chapter}{\numberline {第XII.1章}定義}{217}%
-\contentsline {chapter}{\numberline {第XII.2章}連結グラフ}{218}%
-\contentsline {section}{\numberline {XII.2.1}諸定理}{218}%
-\contentsline {subsection}{\numberline {XII.2.1.1}頂点の連結グラフは少なくとも$n-1$本の辺をもつ}{218}%
-\contentsline {subsection}{\numberline {XII.2.1.2}$n$頂点グラフが$\frac {1}{2}(n-1)(n-2)$本より多くの辺を持つなら連結である}{218}%
-\contentsline {subsection}{\numberline {XII.2.1.3}Oreの定理}{219}%
-\contentsline {chapter}{\numberline {第XII.3章}木}{221}%
-\contentsline {section}{\numberline {XII.3.1}諸定理}{221}%
-\contentsline {subsection}{\numberline {XII.3.1.1}木は2部グラフである}{221}%
-\contentsline {subsection}{\numberline {XII.3.1.2}1本以上の辺を持つ有限な木は次数1の枝を少なくとも2個持つ}{221}%
-\contentsline {subsection}{\numberline {XII.3.1.3}どこへでも行ける点が1個あればその点を根として木を作れる}{221}%
-\contentsline {subsection}{\numberline {XII.3.1.4}$\mathcal {I}$ : グラフ$G$の非閉路部分グラフ全体の集合。$I_1,I_2\in \mathcal {I},\tmspace +\thickmuskip {.2777em}|I_1|<|I_2| \Rightarrow \tmspace +\thickmuskip {.2777em} ^\exists a \in I_2 {\textrm { s.t. }}I_1 \cup \{a\} \in \mathcal {I}$}{222}%
-\contentsline {subsection}{\numberline {XII.3.1.5}$\mathcal {T}$ : グラフ$G$の全域木の集合。$T_1,T_2\in \mathcal {T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 {\textrm { s.t. }}(T_1\setminus a_1) \cup a_2 \in \mathcal {T}$}{222}%
-\contentsline {chapter}{\numberline {第XII.4章}有向グラフ}{223}%
-\contentsline {section}{\numberline {XII.4.1}諸定理}{223}%
-\contentsline {subsection}{\numberline {XII.4.1.1}$G_1=(\nu ,\varepsilon _1),G_2=(\nu ,\varepsilon _2)$に対して${G_1}^{|\nu -1|} = {G_2}^{|\nu -1|}$であるとき、$G_1$が全域木を持つ$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}G_2$が〃}{223}%
-\contentsline {subsection}{\numberline {XII.4.1.2}非閉路的ならばpruningのアルゴリズムはデッドロックしない}{223}%
-\contentsline {subsection}{\numberline {XII.4.1.3}スタートからゴールへの全ての道の連鎖重みの総和は1以下}{224}%
-\contentsline {subsection}{\numberline {XII.4.1.4}(補題) ゴールに隣接する1つのスタート地点からの全ての経路の連鎖重みの総和は1以下}{226}%
-\contentsline {part}{第XIII部\hspace {1zw}寄せ集め}{228}%
-\contentsline {chapter}{\numberline {第XIII.1章}無限級数公式集}{229}%
-\contentsline {section}{\numberline {XIII.1.1}$\DOTSB \sum@ \slimits@ _{k=1}^{\infty }{\frac {\qopname \relax o{sin}{k}}{k}} = \frac {\pi -1}{2}$}{229}%
-\contentsline {section}{\numberline {XIII.1.2}$\DOTSB \sum@ \slimits@ _{n=1}^\infty {\frac {1}{1+n^2}}=\frac {-1}{2}+\frac {\pi }{2}\qopname \relax o{coth}{\pi }$}{229}%
-\contentsline {section}{\numberline {XIII.1.3}$\DOTSB \sum@ \slimits@ _{n=1}^\infty {\frac {1}{(1+n^2)^2}}=\frac {-1}{2}+\frac {\pi ^2}{4\qopname \relax o{sinh}^2{\pi }}+\frac {\pi }{4}\qopname \relax o{coth}\pi $}{230}%
-\contentsline {chapter}{参考文献}{231}%
+\contentsline {chapter}{\numberline {第II.2章}算術}{13}%
+\contentsline {section}{\numberline {II.2.1}Extended Euclidean Algorithm}{13}%
+\contentsline {chapter}{\numberline {第II.3章}整数の合同}{15}%
+\contentsline {section}{\numberline {II.3.1}定数倍と加減乗除}{15}%
+\contentsline {section}{\numberline {II.3.2}$a,m\in \mathbb {N}$が互いに素であるとき、$0,a,2a,\cdots ,a(m-1)$を$m$で割った余りは全て異なる}{15}%
+\contentsline {section}{\numberline {II.3.3}和のべき乗を展開}{15}%
+\contentsline {section}{\numberline {II.3.4}Fermatの小定理}{16}%
+\contentsline {chapter}{\numberline {第II.4章}$r$進法}{17}%
+\contentsline {section}{\numberline {II.4.1}$1/10$が2進表記で無限小数になることの証明}{17}%
+\contentsline {chapter}{\numberline {第II.5章}群}{18}%
+\contentsline {section}{\numberline {II.5.1}剰余類}{18}%
+\contentsline {subsection}{\numberline {II.5.1.1}定義}{18}%
+\contentsline {subsection}{\numberline {II.5.1.2}群$G$の部分群$H$の全ての剰余類は互いに素である}{18}%
+\contentsline {subsection}{\numberline {II.5.1.3}2つの元が同じ剰余類に属する必要十分条件}{18}%
+\contentsline {section}{\numberline {II.5.2}$\mathbb {Z}_p$ ($p: $素数)に乗法群としての位数$r$の元があれば$p-1$は$r$の倍数}{19}%
+\contentsline {chapter}{\numberline {第II.6章}公式}{20}%
+\contentsline {section}{\numberline {II.6.1}$1\cdot 3\cdot 5\cdots (2n-1)2n = (2n)!/n!$}{20}%
+\contentsline {section}{\numberline {II.6.2}$a^n-b^n = (a-b)\DOTSB \sum@ \slimits@ _{k=0}^{n-1} a^{n-1-k}b^k$}{20}%
+\contentsline {section}{\numberline {II.6.3}M\"obiusの反転公式}{20}%
+\contentsline {chapter}{\numberline {第II.7章}数え上げ}{22}%
+\contentsline {section}{\numberline {II.7.1}``for $i=1, \cdots , n(\in \mathbb {N})$''$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$``for $d \mid n, \text { for } i=1,\cdots ,n \text { where } \qopname \relax m{gcd}(i,n)=d$''$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$``for $d \mid n, \text { for } j=1,\cdots ,n/d \text { where } \qopname \relax m{gcd}(j,n/d)=1$''}{22}%
+\contentsline {section}{\numberline {II.7.2}包除原理}{22}%
+\contentsline {subsection}{\numberline {II.7.2.1}補題: $A\subseteq U \Rightarrow |A| = \DOTSB \sum@ \slimits@ _{x\in U}{|A\cap \{x\}|}$}{22}%
+\contentsline {subsection}{\numberline {II.7.2.2}あの等式をどうやって思いついたか}{24}%
+\contentsline {section}{\numberline {II.7.3}配列の飛び飛びマーキング}{25}%
+\contentsline {chapter}{\numberline {第II.8章}多項式}{27}%
+\contentsline {section}{\numberline {II.8.1}規約}{27}%
+\contentsline {section}{\numberline {II.8.2}既約多項式$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$最小多項式}{27}%
+\contentsline {chapter}{\numberline {第II.9章}有限体}{28}%
+\contentsline {section}{\numberline {II.9.1}素数位数の有限体の構成法}{28}%
+\contentsline {section}{\numberline {II.9.2}位数が素数の冪乗である有限体の構成法}{28}%
+\contentsline {subsection}{\numberline {II.9.2.1}既約多項式を用いる方法}{28}%
+\contentsline {subsection}{\numberline {II.9.2.2}既約多項式の根を用いる方法(根体)}{29}%
+\contentsline {chapter}{\numberline {第II.10章}有限幾何学}{30}%
+\contentsline {section}{\numberline {II.10.1}有限射影平面}{30}%
+\contentsline {subsection}{\numberline {II.10.1.1}位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}{30}%
+\contentsline {part}{第III部\hspace {1zw}実解析}{32}%
+\contentsline {chapter}{\numberline {第III.1章}表記}{33}%
+\contentsline {chapter}{\numberline {第III.2章}離散数学との関係}{34}%
+\contentsline {section}{\numberline {III.2.1}DirichletのDiophantine近似定理}{34}%
+\contentsline {section}{\numberline {III.2.2}床関数と天井関数}{34}%
+\contentsline {subsection}{\numberline {III.2.2.1}$\forall x\in \mathbb {R},\tmspace +\thickmuskip {.2777em}\left \lfloor -x\right \rfloor = -\left \lceil x\right \rceil ,\tmspace +\thickmuskip {.2777em}\left \lceil -x\right \rceil = -\left \lfloor x\right \rfloor $}{34}%
+\contentsline {subsection}{\numberline {III.2.2.2}$^\forall x,y\in \mathbb {R},\tmspace +\thickmuskip {.2777em}\left \lfloor x\right \rfloor +\left \lfloor y\right \rfloor \leq \left \lfloor x+y\right \rfloor ,\tmspace +\thickmuskip {.2777em}\left \lceil x\right \rceil +\left \lceil y\right \rceil \geq \left \lceil x+y\right \rceil $}{34}%
+\contentsline {chapter}{\numberline {第III.3章}数列}{36}%
+\contentsline {section}{\numberline {III.3.1}単調性}{36}%
+\contentsline {subsection}{\numberline {III.3.1.1}$\left (1-\frac {t}{n}\right )^n\tmspace +\thickmuskip {.2777em}(t\in [0,n])$は$n$に関して単調増加}{36}%
+\contentsline {section}{\numberline {III.3.2}極限}{36}%
+\contentsline {subsection}{\numberline {III.3.2.1}$\qopname \relax m{lim}_{n\rightarrow \infty }\left (1+1/n+\DOTSB \sum@ \slimits@ _{k=2}^\infty \frac {c_k}{n^k}\right )^n = e\hskip 1em\relax (\DOTSB \sum@ \slimits@ _{k=2}^\infty c_k\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\mathrm {converges})$}{36}%
+\contentsline {subsection}{\numberline {III.3.2.2}$\qopname \relax m{lim}_{n\rightarrow \infty }\left (1+1/n+o(1/n)\right )^n = e$}{37}%
+\contentsline {section}{\numberline {III.3.3}漸化式}{37}%
+\contentsline {subsection}{\numberline {III.3.3.1}Fibonacci数列}{37}%
+\contentsline {subsubsection}{\numberline {III.3.3.1.1}つがいの増殖からの漸化式の導出}{37}%
+\contentsline {subsection}{\numberline {III.3.3.2}$a_{n+1}=ra_n + p(n),\tmspace +\thickmuskip {.2777em}(r\neq 1 ,\tmspace +\thickmuskip {.2777em}p(n):\tmspace +\thickmuskip {.2777em}d\text {次多項式})$の一般項は$a_n = Ar^n + q(n),\tmspace +\thickmuskip {.2777em}(A:\text { 定数},\tmspace +\thickmuskip {.2777em}q(n):\tmspace +\thickmuskip {.2777em}d\text {次多項式})$}{37}%
+\contentsline {chapter}{\numberline {第III.4章}級数}{38}%
+\contentsline {section}{\numberline {III.4.1}$S_l = \DOTSB \sum@ \slimits@ _{k=0}^\infty k^l r^k$を逐次的に求める}{38}%
+\contentsline {section}{\numberline {III.4.2}Abelの総和公式 : $\DOTSB \sum@ \slimits@ _{i=1}^n a_ib_i = A_nb_n - \DOTSB \sum@ \slimits@ _{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{38}%
+\contentsline {section}{\numberline {III.4.3}FKG不等式(離散) : 単調増加列$\{a_n\},\{b_n\}$について、$\left (\DOTSB \sum@ \slimits@ _{i=1}^n a_i\right )\left (\DOTSB \sum@ \slimits@ _{i=1}^n b_i\right ) \leq n\DOTSB \sum@ \slimits@ _{i=1}^n a_ib_i$}{39}%
+\contentsline {section}{\numberline {III.4.4}等比級数と0収束列の畳み込み: {\nag@@warning@xxiii \fontsize {10\jsc@mpt }{16\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 11\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \belowdisplayshortskip \belowdisplayskip \let \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax $|r|<1,\qopname \relax m{lim}_{n\to \infty }a_n=0 \Rightarrow \qopname \relax m{lim}_{t\to \infty }\DOTSB \sum@ \slimits@ _{\tau =0}^t{r^{t-\tau }a_\tau }=0$}}{40}%
+\contentsline {section}{\numberline {III.4.5}$\DOTSB \sum@ \slimits@ _{k=1}^n \qopname \relax o{cos}kx = -\frac {1}{2} + \frac {\qopname \relax o{sin}(n+1/2)x}{2\qopname \relax o{sin}(x/2)} \hskip 1em\relax (x\neq 0)$}{40}%
+\contentsline {section}{\numberline {III.4.6}$\DOTSB \sum@ \slimits@ _{k=1}^n \qopname \relax o{sin}kx = \frac {\qopname \relax o{sin}\frac {nx}{2}\qopname \relax o{sin}\frac {(n+1)x}{2}}{2\qopname \relax o{sin}(x/2)} \hskip 1em\relax (x\neq 0)$}{41}%
+\contentsline {chapter}{\numberline {第III.5章}乗積}{42}%
+\contentsline {section}{\numberline {III.5.1}$a_i\geq 0\tmspace +\thickmuskip {.2777em}(i=1,2,\cdots ),\tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{i=1}^\infty (1-a_i) = \infty \Rightarrow \DOTSB \prod@ \slimits@ _{i=1}^\infty a_i = 0$}{42}%
+\contentsline {chapter}{\numberline {第III.6章}位相空間}{43}%
+\contentsline {section}{\numberline {III.6.1}$A \subseteq B \Rightarrow \operatorname {cl}A \subseteq \operatorname {cl}B$}{43}%
+\contentsline {chapter}{\numberline {第III.7章}部分分数分解}{44}%
+\contentsline {section}{\numberline {III.7.1}諸公式}{44}%
+\contentsline {subsection}{\numberline {III.7.1.1}$\frac {1}{(x^2-1)^2} = \frac {1}{4}\left [\frac {1}{x+1}-\frac {1}{x-1}+\frac {1}{(x+1)^2}+\frac {1}{(x-1)^2}\right ]$}{44}%
+\contentsline {section}{\numberline {III.7.2}諸定理}{44}%
+\contentsline {subsection}{\numberline {III.7.2.1}定理III.7.2.1.0}{44}%
+\contentsline {chapter}{\numberline {第III.8章}代数方程式}{46}%
+\contentsline {section}{\numberline {III.8.1}諸定理}{46}%
+\contentsline {subsection}{\numberline {III.8.1.1}係数が次数に関して対称な奇数次の多項式$f(x)$を$(x+1)$で除したものも係数が次数に関して対称になる}{46}%
+\contentsline {subsection}{\numberline {III.8.1.2}実係数$n$次方程式が複素数解$s=\alpha +i\beta $を解に持つならばその複素共役$s^* = \alpha -i\beta $もまた解である}{46}%
+\contentsline {chapter}{\numberline {第III.9章}指示関数}{48}%
+\contentsline {section}{\numberline {III.9.1}諸定理}{48}%
+\contentsline {subsection}{\numberline {III.9.1.1}$\Omega $を定義域とする写像$f,g,T$に対して$^\forall x\in \Omega ,^\forall t\in T(\Omega ),\tmspace +\thickmuskip {.2777em} \mathbbm {1}\left \{T(x)=t\right \}f(x) = \mathbbm {1}\left \{T(x)=t\right \}g(x) \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}^\forall x\in \Omega ,\tmspace +\thickmuskip {.2777em}f(x)=g(x)$}{48}%
+\contentsline {chapter}{\numberline {第III.10章}微分}{49}%
+\contentsline {section}{\numberline {III.10.1}$f(a)<0<f(b) \Rightarrow \tmspace +\thickmuskip {.2777em}^\exists x \in (a,b) {\textrm { s.t. }}f(x)=0, f'(x)\geq 0$}{49}%
+\contentsline {section}{\numberline {III.10.2}$\qopname \relax m{lim}_{x\to \infty }{f(x)}=0$であっても$\displaystyle \qopname \relax m{lim}_{x\to 0}{f'(x)} = 0$とは限らない}{49}%
+\contentsline {section}{\numberline {III.10.3}soft-step 関数}{49}%
+\contentsline {subsection}{\numberline {III.10.3.1}$C^{n-1}$級の soft-step 関数}{50}%
+\contentsline {chapter}{\numberline {第III.11章}Taylor展開}{51}%
+\contentsline {section}{\numberline {III.11.1}$e^{-x^2}$は全域でTaylor展開可能}{51}%
+\contentsline {chapter}{\numberline {第III.12章}凸関数}{52}%
+\contentsline {section}{\numberline {III.12.1}諸定理}{52}%
+\contentsline {subsection}{\numberline {III.12.1.1}$f_1,f_2$が凸なら$\qopname \relax m{max}\{f_1,f_2\}$は凸}{52}%
+\contentsline {subsection}{\numberline {III.12.1.2}Jensenの不等式}{52}%
+\contentsline {subsection}{\numberline {III.12.1.3}重み付き相加,相乗平均の関係とヤングの不等式}{53}%
+\contentsline {chapter}{\numberline {第III.13章}諸定理}{55}%
+\contentsline {section}{\numberline {III.13.1}偶関数と奇関数への分解}{55}%
+\contentsline {section}{\numberline {III.13.2}$\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}(f({\boldsymbol {x}})+g({\boldsymbol {x}})) \leq \qopname \relax m{sup}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}) + \qopname \relax m{sup}_{{\boldsymbol {x}}\in X}g({\boldsymbol {x}}),\tmspace +\thickmuskip {.2777em}\qopname \relax m{inf}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}) + \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}g({\boldsymbol {x}}) \leq \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}(f({\boldsymbol {x}})+g({\boldsymbol {x}}))$}{56}%
+\contentsline {section}{\numberline {III.13.3}$\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}(-f({\boldsymbol {x}})) = -\qopname \relax m{inf}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}}),\tmspace +\thickmuskip {.2777em} \qopname \relax m{inf}_{{\boldsymbol {x}}\in X}(-f({\boldsymbol {x}})) = -\qopname \relax m{sup}_{{\boldsymbol {x}}\in X}f({\boldsymbol {x}})$}{56}%
+\contentsline {section}{\numberline {III.13.4}ヘルダーの不等式}{56}%
+\contentsline {section}{\numberline {III.13.5}Minkowskiの不等式(三角不等式の一般化)}{57}%
+\contentsline {chapter}{\numberline {第III.14章}2変数関数}{58}%
+\contentsline {section}{\numberline {III.14.1}4象限逆正接 : $\operatorname {{Tan}^{-1}}{\left (x,y\right )}$}{58}%
+\contentsline {chapter}{\numberline {第III.15章}多変数関数}{59}%
+\contentsline {section}{\numberline {III.15.1}Jacobi行列}{59}%
+\contentsline {subsection}{\numberline {III.15.1.1}$J_{G\circ F}=J_GJ_F$}{59}%
+\contentsline {subsection}{\numberline {III.15.1.2}$J_{{\boldsymbol {f}}^\top {\boldsymbol {g}}} = {\boldsymbol {g}}^\top J_{\boldsymbol {f}} + {\boldsymbol {f}}^\top J_{\boldsymbol {g}}$}{59}%
+\contentsline {section}{\numberline {III.15.2}勾配とHessian}{59}%
+\contentsline {subsection}{\numberline {III.15.2.1}$\nabla (G\circ F) = \nabla F \nabla G$}{59}%
+\contentsline {subsection}{\numberline {III.15.2.2}$\nabla _{\boldsymbol {xy}}^2 f = (\nabla _{\boldsymbol {yx}}^2 f)^\top $}{60}%
+\contentsline {subsection}{\numberline {III.15.2.3}勾配ベクトルが等値面の接平面と直交することの証明}{60}%
+\contentsline {subsection}{\numberline {III.15.2.4}$\nabla A{\boldsymbol {x}} = A^\top $}{60}%
+\contentsline {subsection}{\numberline {III.15.2.5}$\nabla {\boldsymbol {x}}^\top {\boldsymbol {x}} = 2{\boldsymbol {x}}$}{60}%
+\contentsline {subsection}{\numberline {III.15.2.6}$\nabla {\boldsymbol {x}}^\top A{\boldsymbol {x}} = (A+A^\top ){\boldsymbol {x}}$}{61}%
+\contentsline {subsection}{\numberline {III.15.2.7}$\nabla \left \|A{\boldsymbol {x}}+{\boldsymbol {b}}\right \|_2^2 = 2A^\top (A{\boldsymbol {x}}+{\boldsymbol {b}})$}{61}%
+\contentsline {subsection}{\numberline {III.15.2.8}$\nabla (A{\boldsymbol {x}}+{\boldsymbol {b}})^\top B(A{\boldsymbol {x}}+{\boldsymbol {b}}) = A^\top (B+B^\top )(A{\boldsymbol {x}}+{\boldsymbol {b}})$}{61}%
+\contentsline {subsection}{\numberline {III.15.2.9}$\nabla ^2 {\boldsymbol {x}}^\top A{\boldsymbol {x}} = A+A^\top $}{61}%
+\contentsline {subsection}{\numberline {III.15.2.10}公式集}{61}%
+\contentsline {section}{\numberline {III.15.3}逆関数定理}{62}%
+\contentsline {section}{\numberline {III.15.4}2次形式}{63}%
+\contentsline {subsection}{\numberline {III.15.4.1}$^\forall A\in \mathbb {R}^{n\times n},{\boldsymbol {x}}\in \mathbb {R}^n,\tmspace +\thickmuskip {.2777em}^\exists $対称行列$B\in \mathbb {R}^{n\times n} \text { s.t. } {\boldsymbol {x}}^\top A{\boldsymbol {x}} = {\boldsymbol {x}}^\top B{\boldsymbol {x}}$}{63}%
+\contentsline {chapter}{\numberline {第III.16章}測度}{64}%
+\contentsline {section}{\numberline {III.16.1}$\sigma $--加法族}{64}%
+\contentsline {subsection}{\numberline {III.16.1.1}2つの$\sigma $--加法族の和集合は$\sigma $--加法族になるとは限らない}{64}%
+\contentsline {subsection}{\numberline {III.16.1.2}$\sigma $--加法族の要素同士の直積集合の族は$\sigma $--加法族になるとは限らない}{64}%
+\contentsline {subsection}{\numberline {III.16.1.3}$X$を集合とする。$A,B\subset 2^X,\tmspace +\thickmuskip {.2777em}A\subset B\Rightarrow \sigma (A)\subset \sigma (B)$}{64}%
+\contentsline {section}{\numberline {III.16.2}Jordan測度}{64}%
+\contentsline {subsection}{\numberline {III.16.2.1}Jordan測度の有限加法性}{65}%
+\contentsline {subsection}{\numberline {III.16.2.2}$A\subset E$($E$は直方体)のとき$\underline {m}_\textrm {J}\left (A\right ) = |E| - \overline {m}_\textrm {J}\left (A^\mathrm {c}\cap E\right )$}{65}%
+\contentsline {subsection}{\numberline {III.16.2.3}系: $A\subset E$($E$は直方体)がJordan可測のとき$A^\mathrm {c}\cap E$もJordan可測である}{65}%
+\contentsline {section}{\numberline {III.16.3}Lebesgue測度}{66}%
+\contentsline {subsection}{\numberline {III.16.3.1}$A\subset B$ならば$\overline {m}_\textrm {L}\left (A\right )\leq \overline {m}_\textrm {L}\left (B\right )$}{66}%
+\contentsline {subsection}{\numberline {III.16.3.2}$\overline {m}_\textrm {L}\left (A\cup B\right )\leq \overline {m}_\textrm {L}\left (A\right ) + \overline {m}_\textrm {L}\left (B\right )$}{66}%
+\contentsline {subsection}{\numberline {III.16.3.3}Lebesgue外測度の劣加法性: $\overline {m}_\textrm {L}\left (\DOTSB \bigcup@ \slimits@ _{n=1}^\infty A_n\right ) \leq \DOTSB \sum@ \slimits@ _{n=1}^\infty \overline {m}_\textrm {L}\left (A_n\right )$}{66}%
+\contentsline {subsection}{\numberline {III.16.3.4}有界集合$A$に対して$\overline {m}_\textrm {L}\left (A\right )\leq \overline {m}_\textrm {J}\left (A\right )$}{66}%
+\contentsline {subsection}{\numberline {III.16.3.5}有界閉集合$A\subset \mathbb {R}^n$に対して$\overline {m}_\textrm {L}\left (A\right )=0 \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}m_\textrm {J}\left (A\right )=0$}{67}%
+\contentsline {subsection}{\numberline {III.16.3.6}$A\subset \mathbb {R}^n$とする。任意の直方体$E$に対して$\overline {m}_\textrm {L}\left (A\cap E\right ) + \overline {m}_\textrm {L}\left (A^\mathrm {c}\cap E\right ) = \overline {m}_\textrm {L}\left (E\right ) \DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$任意の$B\subset \mathbb {R}^n$に対して$\overline {m}_\textrm {L}\left (A\cap B\right ) + \overline {m}_\textrm {L}\left (A^\mathrm {c}\cap B\right ) = \overline {m}_\textrm {L}\left (B\right )$}{67}%
+\contentsline {subsection}{\numberline {III.16.3.7}有界集合$A\subset \mathbb {R}^n$がJordan可測ならばLebesgue可測であり、$m_\textrm {L}\left (A\right )=m_\textrm {J}\left (A\right )$}{67}%
+\contentsline {subsection}{\numberline {III.16.3.8}$A_1,A_2\in \mathbb {R}^n$がLebesgue可測なら$A_1\cup A_2$もLebesgue可測}{67}%
+\contentsline {subsection}{\numberline {III.16.3.9}系: $A_1,\cdots ,A_n\in \mathbb {R}^n$がLebesgue可測なら$A_1\cup A_2\cup \cdots \cup A_n$もLebesgue可測}{68}%
+\contentsline {subsection}{\numberline {III.16.3.10}Lebesgue可測集合$A_1,A_2\in \mathbb {R}^n$が非交差的なら$m_\textrm {L}\left (A_1\sqcup A_2\right ) = m_\textrm {L}\left (A_1\right ) + m_\textrm {L}\left (A_2\right )$}{68}%
+\contentsline {subsection}{\numberline {III.16.3.11}系: Lebesgue測度の有限加法性}{68}%
+\contentsline {subsection}{\numberline {III.16.3.12}Lebesgue測度の$\sigma $--加法性}{68}%
+\contentsline {subsection}{\numberline {III.16.3.13}Lebesgue可測の直感的理解}{69}%
+\contentsline {subsection}{\numberline {III.16.3.14}Jordan測度とLebesgue測度の違い}{69}%
+\contentsline {section}{\numberline {III.16.4}包除原理}{70}%
+\contentsline {chapter}{\numberline {第III.17章}積分}{72}%
+\contentsline {section}{\numberline {III.17.1}変数変換 : $\DOTSI \intop \ilimits@ _{x(t_0)}^{x(t)}{f(x)}\mathrm {d}x = \DOTSI \intop \ilimits@ _{t_0}^{t}{f(x)x'(t)}\mathrm {d}t$}{72}%
+\contentsline {section}{\numberline {III.17.2}FKG不等式 : 可積分な単調増加関数$f,g$に対して$\left (\DOTSI \intop \ilimits@ _{0}^{1}{f(x)}\mathrm {d}x\right )\left (\DOTSI \intop \ilimits@ _{0}^{1}{g(x)}\mathrm {d}x\right ) \leq \DOTSI \intop \ilimits@ _{0}^{1}{f(x)g(x)}\mathrm {d}x$}{72}%
+\contentsline {chapter}{\numberline {第III.18章}重積分}{73}%
+\contentsline {section}{\numberline {III.18.1}平均値の定理}{73}%
+\contentsline {section}{\numberline {III.18.2}$C^1$級の変換による面積0の集合の像の面積もまた0}{73}%
+\contentsline {section}{\numberline {III.18.3}関数$f,g$が$\mathbb {R}$上で有界,連続で$\DOTSI \intop \ilimits@ _{-\infty }^{\infty }{f(x)}\mathrm {d}x,\tmspace +\thickmuskip {.2777em}\DOTSI \intop \ilimits@ _{-\infty }^{\infty }{g(x)}\mathrm {d}x$が絶対収束するなら畳み込み$f*g$は$\mathbb {R}$上で連続で絶対可積分である。}{74}%
+\contentsline {chapter}{\numberline {第III.19章}線積分}{75}%
+\contentsline {section}{\numberline {III.19.1}定義}{75}%
+\contentsline {section}{\numberline {III.19.2}計算法}{75}%
+\contentsline {chapter}{\numberline {第III.20章}変数変換}{77}%
+\contentsline {section}{\numberline {III.20.1}三角関数}{77}%
+\contentsline {subsection}{\numberline {III.20.1.1}$x^2+y^2=1\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}x=\qopname \relax o{cos}{\theta },y=\qopname \relax o{sin}{\theta }$}{77}%
+\contentsline {section}{\numberline {III.20.2}極座標表示}{77}%
+\contentsline {subsection}{\numberline {III.20.2.1}極方程式から曲線を導くときの注意 : $r\theta $空間の2つの異なる集合から$xy$空間へ写像した2つの集合の排他的論理和が$\emptyset $なら$xy$空間において両者の違いは無い}{77}%
+\contentsline {chapter}{\numberline {第III.21章}Beta関数}{78}%
+\contentsline {section}{\numberline {III.21.1}Beta関数とGamma関数の関係}{78}%
+\contentsline {section}{\numberline {III.21.2}多変量Beta関数}{78}%
+\contentsline {section}{\numberline {III.21.3}多変量Beta関数とGamma関数の関係}{79}%
+\contentsline {chapter}{\numberline {第III.22章}微分と積分の関係}{80}%
+\contentsline {section}{\numberline {III.22.1}$\qopname \relax m{lim}_{x\to \infty }{f(x)}$が存在すれば$\DOTSI \intop \ilimits@ _{0}^{\infty }{f'(x) dx} = f(\infty )-f(0)$}{80}%
+\contentsline {section}{\numberline {III.22.2}$\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\DOTSI \intop \ilimits@ _{a}^{x}{f(x)}\mathrm {d}x = f(x)$}{80}%
+\contentsline {section}{\numberline {III.22.3} 畳み込みの微分\\ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\DOTSI \intop \ilimits@ _{s=0}^{x}{f(s)g(x-s)}\mathrm {d}s = f(x)g(0) + \DOTSI \intop \ilimits@ _{s=0}^{x}{f(s)\left .\frac {\operatorname {d}^{}g(x)}{\operatorname {d}{x}^{}}\right |_{x=x-s}}\mathrm {d}s$ }{81}%
+\contentsline {section}{\numberline {III.22.4} 重積分の微分 \\ \nag@@warning@xxi \fontsize {9\jsc@mpt }{13\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip \abovedisplayskip \belowdisplayshortskip \belowdisplayskip \def \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax {\leftmargin \leftmargini \topsep \z@ \parsep \z@ \itemsep \parsep }{ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\left (\DOTSI \intop \ilimits@ _{x_1=0}^{x}{\cdots \DOTSI \intop \ilimits@ _{x_n=0}^{x-x_1-\cdots -x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}\mathrm {d}x_n\cdots }\mathrm {d}x_1\right )$ \\ $= \DOTSI \intop \ilimits@ _{x_1=0}^x\cdots \DOTSI \intop \ilimits@ _{x_{n-1}=0}^{x-x_1-\cdots -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1}) \mathrm {d}x_{n-1}\cdots \mathrm {d}x_{1}$ } }{81}%
+\contentsline {section}{\numberline {III.22.5} 系\\ \nag@@warning@xxi \fontsize {9\jsc@mpt }{13\jsc@mpt }\selectfont \parindent =1zw \kanjiskip =0zw plus .1zw minus .01zw \xkanjiskip =0.25em plus 0.15em minus 0.06em \abovedisplayskip 9\jsc@mpt plus3\jsc@mpt minus4\jsc@mpt \abovedisplayshortskip \z@ plus3\jsc@mpt \belowdisplayskip \abovedisplayskip \belowdisplayshortskip \belowdisplayskip \def \leftmargin \leftmargini \parsep \z@ \topsep 0.5\baselineskip \itemsep \z@ \relax {\leftmargin \leftmargini \topsep \z@ \parsep \z@ \itemsep \parsep }{ $\frac {\operatorname {d}^{}}{\operatorname {d}{x}^{}}\left (\DOTSI \intop \ilimits@ _{x_1=-\infty }^{\infty }{\cdots \DOTSI \intop \ilimits@ _{x_n=-\infty }^{x-x_1-\cdots -x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}\mathrm {d}x_n\cdots }\mathrm {d}x_1\right )$\\ $= \DOTSI \intop \ilimits@ _{x_1=-\infty }^{\infty }{\cdots \DOTSI \intop \ilimits@ _{x_{n-1}=-\infty }^{x-x_1-\cdots -x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1})}\mathrm {d}x_{n-1}\cdots }\mathrm {d}x_1$ } }{83}%
+\contentsline {chapter}{\numberline {第III.23章}図形への応用}{85}%
+\contentsline {section}{\numberline {III.23.1}ある超平面から距離$d$だけ離れた超平面の方程式}{85}%
+\contentsline {section}{\numberline {III.23.2}$n$次元単位球の体積$V_n$は$\pi ^{n/2}(\Gamma \left (1+n/2\right ))^{-1}$}{85}%
+\contentsline {part}{第IV部\hspace {1zw}複素解析}{87}%
+\contentsline {chapter}{\numberline {第IV.1章}複素数}{88}%
+\contentsline {section}{\numberline {IV.1.1}複素数の定義}{88}%
+\contentsline {subsection}{\numberline {IV.1.1.1}注意}{89}%
+\contentsline {subsection}{\numberline {IV.1.1.2}コラム $i^2=-1\tmspace +\thickmuskip {.2777em}?$}{89}%
+\contentsline {section}{\numberline {IV.1.2}諸公式}{89}%
+\contentsline {subsection}{\numberline {IV.1.2.1}$x>0,\tmspace +\thickmuskip {.2777em}z\in \mathbb {C}$のとき$|x^z|=x^{\operatorname {Re}{\left (z\right )}}$}{89}%
+\contentsline {subsection}{\numberline {IV.1.2.2}$^\forall n\nmid k,\tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{l=1}^n{\qopname \relax o{exp}\left (i\frac {k}{n}2\pi l\right )} = 0$}{90}%
+\contentsline {section}{\numberline {IV.1.3}例題}{90}%
+\contentsline {subsection}{\numberline {IV.1.3.1}$z^n+z^{n-1}+\dots +z^2+z+1 = 0$}{90}%
+\contentsline {chapter}{\numberline {第IV.2章}特殊関数}{91}%
+\contentsline {section}{\numberline {IV.2.1}Gamma関数}{91}%
+\contentsline {subsection}{\numberline {IV.2.1.1}$\qopname \relax m{lim}_{n\to \infty } \DOTSI \intop \ilimits@ _{0}^{n}{t^{z-1}(1+t/n)^n}\mathrm {d}t = \Gamma (z)\tmspace +\thickmuskip {.2777em}(z\in \mathbb {C}, {\operatorname {Re}{\left (z\right )}} > 0)$}{91}%
+\contentsline {chapter}{\numberline {第IV.3章}複素積分}{92}%
+\contentsline {section}{\numberline {IV.3.1}例題}{92}%
+\contentsline {subsection}{\numberline {IV.3.1.1}$\DOTSI \intop \ilimits@ _{0}^{2\pi }{\operatorname {Log}{(}1-a\qopname \relax o{exp}(i\theta ))}\mathrm {d}\theta =0\hskip 1em\relax (C\text {: 原点中心の単位円},\tmspace +\thickmuskip {.2777em}a\in \mathbb {R})$}{92}%
+\contentsline {chapter}{\numberline {第IV.4章}Fourier級数}{93}%
+\contentsline {section}{\numberline {IV.4.1}連続関数のFourier級数の高周波成分は0に収束する}{93}%
+\contentsline {section}{\numberline {IV.4.2}$\DOTSI \intop \ilimits@ _{-\pi }^{\pi }{\frac {\qopname \relax o{sin}nx}{2\qopname \relax o{tan}\frac {x}{2}}}\mathrm {d}x = \pi \tmspace +\thickmuskip {.2777em}(n\in \mathbb {N})$}{94}%
+\contentsline {section}{\numberline {IV.4.3}Fourier級数の応用}{94}%
+\contentsline {subsection}{\numberline {IV.4.3.1}$\DOTSI \intop \ilimits@ _{0}^{\infty }{\frac {\qopname \relax o{sin}x}{x}}\mathrm {d}x = \pi /2$}{94}%
+\contentsline {chapter}{\numberline {第IV.5章}Fourier変換}{96}%
+\contentsline {section}{\numberline {IV.5.1}余弦,正弦変換}{96}%
+\contentsline {chapter}{\numberline {第IV.6章}Bessel関数}{98}%
+\contentsline {section}{\numberline {IV.6.1}定義}{98}%
+\contentsline {subsection}{\numberline {IV.6.1.1}簡単化}{98}%
+\contentsline {section}{\numberline {IV.6.2}Maclaurin展開}{98}%
+\contentsline {part}{第V部\hspace {1zw}線形代数}{100}%
+\contentsline {chapter}{\numberline {第V.1章}表記}{101}%
+\contentsline {chapter}{\numberline {第V.2章}行列の演算}{102}%
+\contentsline {section}{\numberline {V.2.1}結合則}{102}%
+\contentsline {section}{\numberline {V.2.2}上(下)三角行列のべき乗}{102}%
+\contentsline {section}{\numberline {V.2.3}列ベクトルと行ベクトルの積の和}{103}%
+\contentsline {section}{\numberline {V.2.4}巡回行列の可換則}{103}%
+\contentsline {section}{\numberline {V.2.5}$\mathbb {R}^{\textcolor {red}{2}}$の対称行列同士の積は対称}{104}%
+\contentsline {chapter}{\numberline {第V.3章}ベクトル空間}{105}%
+\contentsline {section}{\numberline {V.3.1}基底}{105}%
+\contentsline {subsection}{\numberline {V.3.1.1}基底変換}{105}%
+\contentsline {subsection}{\numberline {V.3.1.2}諸定理}{105}%
+\contentsline {subsubsection}{\numberline {V.3.1.2.1}三角関数ベクトルによる直交展開}{105}%
+\contentsline {section}{\numberline {V.3.2}一般のベクトル空間と配列型ベクトル空間の橋渡し}{106}%
+\contentsline {subsection}{\numberline {V.3.2.1}合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}{106}%
+\contentsline {section}{\numberline {V.3.3}諸定理}{106}%
+\contentsline {subsection}{\numberline {V.3.3.1}ベクトル空間$V$の部分空間$V_1,V_2$について、「$V_1\cup V_2$がベクトル空間である」$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$「$V_1\subseteq V_2$または$V_1 \supseteq V_2$」}{106}%
+\contentsline {subsection}{\numberline {V.3.3.2}$\DOTSB \bigoplus@ \slimits@ _{i=1}^n{W_i}=\DOTSB \bigoplus@ \slimits@ _{i=1}^n{V_i},\tmspace +\thickmuskip {.2777em}V_i \subseteq W_i\hskip 1em\relax \Rightarrow W_i=V_i$}{107}%
+\contentsline {subsection}{\numberline {V.3.3.3}一次独立なベクトル${\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\in V$に${\boldsymbol {v}}\in V$を加えたものが一次独立 $\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}$ ${\boldsymbol {v}}$が${\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\in V$の一次結合で表せない}{107}%
+\contentsline {subsection}{\numberline {V.3.3.4}$A_v:=\{{\boldsymbol {v}}_1,\cdots ,{\boldsymbol {v}}_k\}$と$A_w:=\{{\boldsymbol {w}}_1,\cdots ,{\boldsymbol {w}}_l\}$が各々一次独立で$k>l\tmspace +\thickmuskip {.2777em} \Rightarrow \tmspace +\thickmuskip {.2777em} ^\exists {\boldsymbol {v}}\in A_v {\textrm { s.t. }}{\boldsymbol {w}}_1,\cdots ,{\boldsymbol {w}}_l,{\boldsymbol {v}}$が一次独立}{107}%
+\contentsline {section}{\numberline {V.3.4}諸注意}{108}%
+\contentsline {subsection}{\numberline {V.3.4.1} $\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2\},\{{\boldsymbol {w}}_1,{\boldsymbol {w}}_2\},\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_1\},\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_2\}$が各々一次独立でも \\ $\{{\boldsymbol {v}}_1,{\boldsymbol {v}}_2,{\boldsymbol {w}}_1,{\boldsymbol {w}}_2\}$が一次独立とは限らない}{108}%
+\contentsline {subsection}{\numberline {V.3.4.2}$W_i\cap W_j=\{{\boldsymbol {0}}\}\tmspace +\thickmuskip {.2777em}(i\in \{1,\cdots ,n\},\tmspace +\thickmuskip {.2777em}i\neq j)$であっても$W_1+\cdots +W_n = W_1\oplus \cdots \oplus W_n$とは限らない}{108}%
+\contentsline {subsection}{\numberline {V.3.4.3}$W=V\oplus X,\tmspace +\thickmuskip {.2777em}W=V\oplus Y$でも$X=Y$とは限らない}{108}%
+\contentsline {subsection}{\numberline {V.3.4.4}$\operatorname {span}\left [{\boldsymbol {a}},{\boldsymbol {b}},{\boldsymbol {c}}\right ]/\operatorname {span}\left [{\boldsymbol {a}},{\boldsymbol {b}}\right ] = \operatorname {span}\left [{\boldsymbol {c}}\right ]$とは限らない}{108}%
+\contentsline {chapter}{\numberline {第V.4章}線形写像}{109}%
+\contentsline {section}{\numberline {V.4.1}表記の規則}{109}%
+\contentsline {subsection}{\numberline {V.4.1.1}一般のベクトルを要素とする配列と行列の積}{109}%
+\contentsline {subsection}{\numberline {V.4.1.2}一般のベクトルを要素とする行列同士の積}{109}%
+\contentsline {section}{\numberline {V.4.2}$\qopname \relax o{dim}(V)=\qopname \relax o{dim}(W),\tmspace +\thickmuskip {.2777em}f:V\to W$であるとき、$f$が単射であることと全射であることは同値。}{109}%
+\contentsline {section}{\numberline {V.4.3}$\qopname \relax o{dim}{V}=\qopname \relax o{dim}{W}$ならば全単射線形写像$f:V\to W$が存在する}{110}%
+\contentsline {section}{\numberline {V.4.4}不変部分空間と表現行列}{111}%
+\contentsline {subsection}{\numberline {V.4.4.1}正規直交基底間での座標変換は直交変換}{111}%
+\contentsline {chapter}{\numberline {第V.5章}双対空間}{113}%
+\contentsline {section}{\numberline {V.5.1}基底変換と座標変換の関係}{113}%
+\contentsline {chapter}{\numberline {第V.6章}行列式}{114}%
+\contentsline {section}{\numberline {V.6.1}$A\in \mathbb {R}^{n\times m}, B\in \mathbb {R}^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}{114}%
+\contentsline {section}{\numberline {V.6.2}系: $\left |I_n-{\boldsymbol {v}}{\boldsymbol {v}}^\top \right | = 1-\left \|{\boldsymbol {v}}\right \|_2^2$}{114}%
+\contentsline {chapter}{\numberline {第V.7章}逆行列}{115}%
+\contentsline {section}{\numberline {V.7.1}$[{\boldsymbol {\phi }}_1,\cdots ,{\boldsymbol {\phi }}_n]^{-1}{\boldsymbol {\phi }}_i={\boldsymbol {e}}_i$}{115}%
+\contentsline {section}{\numberline {V.7.2}(系)結合係数の抽出}{115}%
+\contentsline {section}{\numberline {V.7.3}上(下)三角行列が逆行列をもてば、それも上(下)三角行列である}{115}%
+\contentsline {section}{\numberline {V.7.4}1列(or 1行)だけ置き換えた行列の逆行列}{116}%
+\contentsline {section}{\numberline {V.7.5}列(or 行)を入れ替えた行列の逆行列}{117}%
+\contentsline {chapter}{\numberline {第V.8章}特性多項式}{118}%
+\contentsline {section}{\numberline {V.8.1}逆行列の特性多項式: $\phi _{A^{-1}}(\lambda ) = |A|^{-1}(-\lambda )^n\phi _A(1/\lambda )$}{118}%
+\contentsline {chapter}{\numberline {第V.9章}ユニタリ行列}{119}%
+\contentsline {section}{\numberline {V.9.1}ユニタリ行列の複素共役はユニタリ行列}{119}%
+\contentsline {chapter}{\numberline {第V.10章}行列の階数}{120}%
+\contentsline {section}{\numberline {V.10.1}$T$が正則でも$\operatorname {rank}\left (ATB\right )=\operatorname {rank}\left (AB\right )$とは限らない}{120}%
+\contentsline {section}{\numberline {V.10.2}フルランク条件}{120}%
+\contentsline {section}{\numberline {V.10.3}$A\in \mathbb {F}^{m\times n}$の階数が$n$ならば$A^\top A$は正則}{120}%
+\contentsline {section}{\numberline {V.10.4}(系)\hskip 1em\relax $A\in \mathbb {F}^{m\times n}$が行フルランクならば$AA^\top $は正則}{121}%
+\contentsline {section}{\numberline {V.10.5}$A\in \mathbb {F}^{m\times n}$の階数が$r$であるなら、ある正則行列$T_x\in \mathbb {F}^{n\times n},\hskip 1em\relax T_y\in \mathbb {F}^{m\times m}$が存在して...}{121}%
+\contentsline {section}{\numberline {V.10.6}同じ型の行列の階数が等しいための必要十分条件}{122}%
+\contentsline {section}{\numberline {V.10.7}優対角正方行列は正則}{122}%
+\contentsline {section}{\numberline {V.10.8}最大ランク分解}{123}%
+\contentsline {chapter}{\numberline {第V.11章}固有値,固有ベクトル}{124}%
+\contentsline {section}{\numberline {V.11.1}諸定理}{124}%
+\contentsline {subsection}{\numberline {V.11.1.1}相異なる固有値に対応する固有ベクトルは一次独立}{124}%
+\contentsline {subsection}{\numberline {V.11.1.2}$n\times n$行列$A$の全要素が$a$であるなら非零固有値は$an$のみ}{125}%
+\contentsline {subsection}{\numberline {V.11.1.3}転置行列の固有値,固有ベクトル}{125}%
+\contentsline {subsection}{\numberline {V.11.1.4}逆行列の固有値,固有ベクトル}{125}%
+\contentsline {subsection}{\numberline {V.11.1.5}コンパニオン行列}{126}%
+\contentsline {subsection}{\numberline {V.11.1.6}Hadamard行列の固有値}{126}%
+\contentsline {subsection}{\numberline {V.11.1.7}最小消去多項式が最小多項式と一致するベクトルの存在}{127}%
+\contentsline {section}{\numberline {V.11.2}スペクトル写像定理}{128}%
+\contentsline {section}{\numberline {V.11.3}一般固有空間}{128}%
+\contentsline {subsection}{\numberline {V.11.3.1}一般固有空間の階数の頭打ち}{128}%
+\contentsline {subsection}{\numberline {V.11.3.2}一般固有空間への直和分解}{129}%
+\contentsline {subsection}{\numberline {V.11.3.3}代数的重複度$\geq $幾何学的重複度}{130}%
+\contentsline {subsection}{\numberline {V.11.3.4}$AB=O$でも$\mathbb {R}^{n\times n} = \operatorname {Ker}\left (A\right ) + \operatorname {Ker}\left (B\right )$とは限らない}{131}%
+\contentsline {section}{\numberline {V.11.4}Jordan標準形}{131}%
+\contentsline {subsection}{\numberline {V.11.4.1}Jordanブロックの逆行列}{131}%
+\contentsline {subsection}{\numberline {V.11.4.2}Jordanブロックの指数行列}{132}%
+\contentsline {section}{\numberline {V.11.5}Perronの定理}{133}%
+\contentsline {section}{\numberline {V.11.6}置換行列}{134}%
+\contentsline {subsection}{\numberline {V.11.6.1}定義}{134}%
+\contentsline {subsection}{\numberline {V.11.6.2}諸定理}{134}%
+\contentsline {subsubsection}{\numberline {V.11.6.2.1}行と列の同期入れ替え}{134}%
+\contentsline {subsubsection}{\numberline {V.11.6.2.2}置換行列は直交行列}{135}%
+\contentsline {chapter}{\numberline {第V.12章}トレース}{136}%
+\contentsline {section}{\numberline {V.12.1}$\operatorname {tr}{AB}=\operatorname {tr}{BA}$}{136}%
+\contentsline {chapter}{\numberline {第V.13章}定値性}{137}%
+\contentsline {section}{\numberline {V.13.1}正定対称行列の逆行列も正定}{137}%
+\contentsline {section}{\numberline {V.13.2}$A$が半正定で${\boldsymbol {x}}^\top A{\boldsymbol {x}}=0$ならば${\boldsymbol {x}}\in \operatorname {Ker}\left (A\right )$}{137}%
+\contentsline {section}{\numberline {V.13.3}Gram行列は半正定}{137}%
+\contentsline {section}{\numberline {V.13.4}正定値行列同士の積は正定値とは限らない}{137}%
+\contentsline {section}{\numberline {V.13.5}対角成分が全て非負の対称行列が半正定とは限らない}{138}%
+\contentsline {section}{\numberline {V.13.6}非対称行列は固有値が全て正でも正定とは限らない}{138}%
+\contentsline {chapter}{\numberline {第V.14章}ノルム}{139}%
+\contentsline {section}{\numberline {V.14.1}諸定理}{139}%
+\contentsline {subsection}{\numberline {V.14.1.1}$\left \|{\boldsymbol {x}}\right \|_{p+a} \leq \left \|{\boldsymbol {x}}\right \|_p\tmspace +\thickmuskip {.2777em}({\boldsymbol {x}}\in \mathbb {R}^n,\tmspace +\thickmuskip {.2777em}p\geq 1,\tmspace +\thickmuskip {.2777em}a\geq 0)$}{139}%
+\contentsline {subsection}{\numberline {V.14.1.2}$1\leq p\leq q,\tmspace +\thickmuskip {.2777em}{\boldsymbol {x}}\in \mathbb {C}^n$のとき$\left \|{\boldsymbol {x}}\right \|_p \leq n^{1/p-1/q}\left \|{\boldsymbol {x}}\right \|_q$}{139}%
+\contentsline {subsection}{\numberline {V.14.1.3}和のノルムとノルムの和が等しい時}{140}%
+\contentsline {subsection}{\numberline {V.14.1.4}和のノルムとノルムの和が等しい時(2)}{140}%
+\contentsline {subsection}{\numberline {V.14.1.5}${\boldsymbol {x}}\in \mathbb {R}^n,\left \|{\boldsymbol {x}}\right \|_2=1\tmspace +\thickmuskip {.2777em}\Rightarrow \tmspace +\thickmuskip {.2777em}\DOTSB \sum@ \slimits@ _{i=1}^n{|x_i|}\leq \sqrt {n}$}{141}%
+\contentsline {section}{\numberline {V.14.2}応用}{141}%
+\contentsline {subsection}{\numberline {V.14.2.1}超平面と点の距離公式の直感的説明}{141}%
+\contentsline {chapter}{\numberline {第V.15章}行列のノルム}{142}%
+\contentsline {section}{\numberline {V.15.1}2-ノルム(2-演算子ノルム)}{142}%
+\contentsline {subsection}{\numberline {V.15.1.1}定義}{142}%
+\contentsline {subsection}{\numberline {V.15.1.2}スペクトル半径の上界}{143}%
+\contentsline {subsection}{\numberline {V.15.1.3}実対称行列の最大固有値の絶対値はノルムと一致する}{143}%
+\contentsline {subsection}{\numberline {V.15.1.4}$\qopname \relax m{max}_{\|x\|=1} \|A{\boldsymbol {x}}\| = \sqrt {\lambda _{\text {max}}\{A^\top A\}}$}{143}%
+\contentsline {subsection}{\numberline {V.15.1.5}逆行列のノルムは元の行列の最小特異値の逆数と等しい}{145}%
+\contentsline {subsection}{\numberline {V.15.1.6}$A\in \mathbb {R}^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\left \|A\right \|_2\leq a\sqrt {n}$}{145}%
+\contentsline {subsubsection}{\numberline {V.15.1.6.1}系:\hskip 1em\relax $A\in \mathbb {R}^{m\times n}$の全要素の絶対値が$\varepsilon $以下であれば$\left \|A\right \|_2\leq \varepsilon \sqrt {mn}$}{145}%
+\contentsline {subsubsection}{\numberline {V.15.1.6.2}系:\hskip 1em\relax $n$次確率行列のノルムは高々$\sqrt {n}$}{145}%
+\contentsline {chapter}{\numberline {第V.16章}凸領域}{146}%
+\contentsline {section}{\numberline {V.16.1}凸領域内のベクトルの凸結合は元の凸領域に属す}{146}%
+\contentsline {chapter}{\numberline {第V.17章}既約性}{147}%
+\contentsline {section}{\numberline {V.17.1}非負行列が既約であるための必要十分条件}{147}%
+\contentsline {chapter}{\numberline {第V.18章}漏れ確率行列}{148}%
+\contentsline {section}{\numberline {V.18.1}定義}{148}%
+\contentsline {section}{\numberline {V.18.2}漏れ確率行列のべき乗は$O$に収束する}{148}%
+\contentsline {section}{\numberline {V.18.3}$o(r)$の漏れ確率行列$A$のノイマン級数は収束し、各要素の和は$\frac {1}{1-r}$以下である。}{148}%
+\contentsline {chapter}{\numberline {第V.19章}発想, 技巧}{149}%
+\contentsline {section}{\numberline {V.19.1}演算}{149}%
+\contentsline {subsection}{\numberline {V.19.1.1}積和の階数を拡張する}{149}%
+\contentsline {part}{第VI部\hspace {1zw}ベクトル解析}{150}%
+\contentsline {chapter}{\numberline {第VI.1章}直角座標系}{151}%
+\contentsline {section}{\numberline {VI.1.1}諸公式}{151}%
+\contentsline {subsection}{\numberline {VI.1.1.1}$\nabla \left (\left \langle \nabla f,{\boldsymbol {v}}\right \rangle \right ) = \left (\nabla ^2f\right ){\boldsymbol {v}}$}{151}%
+\contentsline {subsection}{\numberline {VI.1.1.2}$\left \langle {\boldsymbol {a}}\times {\boldsymbol {b}},{\boldsymbol {c}}\times {\boldsymbol {d}}\right \rangle = \left \langle {\boldsymbol {a}},{\boldsymbol {c}}\right \rangle \left \langle {\boldsymbol {b}},{\boldsymbol {d}}\right \rangle - \left \langle {\boldsymbol {a}},{\boldsymbol {d}}\right \rangle \left \langle {\boldsymbol {b}},{\boldsymbol {c}}\right \rangle $}{151}%
+\contentsline {subsection}{\numberline {VI.1.1.3}(系)\tmspace +\thickmuskip {.2777em}$\left \langle {\boldsymbol {a}}\times {\boldsymbol {b}},{\boldsymbol {a}}\times {\boldsymbol {c}}\right \rangle = \left \|{\boldsymbol {a}}\right \|^2\left \langle {\boldsymbol {b}},{\boldsymbol {c}}\right \rangle - \left \langle {\boldsymbol {a}},{\boldsymbol {b}}\right \rangle \left \langle {\boldsymbol {a}},{\boldsymbol {c}}\right \rangle $}{151}%
+\contentsline {section}{\numberline {VI.1.2}諸定理}{152}%
+\contentsline {subsection}{\numberline {VI.1.2.1}非負領域の共通部分の非負領域}{152}%
+\contentsline {subsection}{\numberline {VI.1.2.2}Stokesの定理}{153}%
+\contentsline {chapter}{\numberline {第VI.2章}円柱座標系}{156}%
+\contentsline {section}{\numberline {VI.2.1}計量係数}{156}%
+\contentsline {section}{\numberline {VI.2.2}単位ベクトルに関する直角座標系との関係}{156}%
+\contentsline {section}{\numberline {VI.2.3}微分演算に関する直交座標系との関係}{157}%
+\contentsline {chapter}{\numberline {第VI.3章}球座標系}{158}%
+\contentsline {section}{\numberline {VI.3.1}計量係数}{158}%
+\contentsline {section}{\numberline {VI.3.2}単位ベクトルに関する直角座標系との関係}{158}%
+\contentsline {part}{第VII部\hspace {1zw}幾何学}{160}%
+\contentsline {chapter}{\numberline {第VII.1章}Euclid幾何学}{161}%
+\contentsline {section}{\numberline {VII.1.1}諸公式}{161}%
+\contentsline {subsection}{\numberline {VII.1.1.1}ヘロンの公式}{161}%
+\contentsline {chapter}{\numberline {第VII.2章}球面幾何学}{163}%
+\contentsline {section}{\numberline {VII.2.1}余弦定理,正弦定理について}{163}%
+\contentsline {section}{\numberline {VII.2.2}極三角形の極三角形が元の三角形になること}{163}%
+\contentsline {section}{\numberline {VII.2.3}元の三角形$ABC$の極三角形$A'B'C'$について$A'=\pi -a,\tmspace +\thickmuskip {.2777em}B'=\pi -b,\tmspace +\thickmuskip {.2777em}C'=\pi -c$となること($a=BC,\tmspace +\thickmuskip {.2777em}b=CA,\tmspace +\thickmuskip {.2777em}c=AB$)}{164}%
+\contentsline {part}{第VIII部\hspace {1zw}確率論}{165}%
+\contentsline {chapter}{\numberline {第VIII.1章}表記}{166}%
+\contentsline {chapter}{\numberline {第VIII.2章}独立性に関する諸定理}{167}%
+\contentsline {section}{\numberline {VIII.2.1}$A_1,\cdots ,A_n$が独立ならば、そのうちどれか1つ$A_l$を$A_l^\mathrm {c}$に置き換えたものも独立である}{167}%
+\contentsline {section}{\numberline {VIII.2.2}$A_1,\cdots ,A_n$が独立ならば$A_1^\mathrm {c},\cdots ,A_n^\mathrm {c}$も独立である}{167}%
+\contentsline {section}{\numberline {VIII.2.3}$A_1,\cdots ,A_n$が独立ならば、そのうちどれか2つ$A_p,A_q$を合併したものも独立である。}{168}%
+\contentsline {section}{\numberline {VIII.2.4}$A_1,\cdots ,A_n$が独立ならば、$I_1\sqcup I_2 = \{1:n\}$なる$I_1,I_2$に対して$\DOTSB \bigcup@ \slimits@ _{i\in I_1}A_i$と$\DOTSB \bigcup@ \slimits@ _{j\in I_2}A_j$は独立である。}{168}%
+\contentsline {part}{第IX部\hspace {1zw}記述統計}{169}%
+\contentsline {chapter}{\numberline {第IX.1章}諸定義}{170}%
+\contentsline {section}{\numberline {IX.1.1}平均, 分散, 共分散}{170}%
+\contentsline {section}{\numberline {IX.1.2}分散共分散行列}{170}%
+\contentsline {chapter}{\numberline {第IX.2章}諸定理}{171}%
+\contentsline {section}{\numberline {IX.2.1}分散共分散行列は半正定。特に分散が正なら正定。}{171}%
+\contentsline {chapter}{\numberline {第IX.3章}主成分分析}{172}%
+\contentsline {section}{\numberline {IX.3.1}分散共分散行列の対角化}{172}%
+\contentsline {section}{\numberline {IX.3.2}データセットの射影}{172}%
+\contentsline {section}{\numberline {IX.3.3}主成分}{173}%
+\contentsline {subsection}{\numberline {IX.3.3.1}主成分の分散共分散行列}{173}%
+\contentsline {chapter}{\numberline {第IX.4章}Fisherの線形判別分析}{174}%
+\contentsline {section}{\numberline {IX.4.1}クラス間分散とクラス内分散の比を最大にする${\boldsymbol {w}}$の導出}{174}%
+\contentsline {part}{第X部\hspace {1zw}頻度論的統計}{176}%
+\contentsline {chapter}{\numberline {第X.1章}一般の分布}{177}%
+\contentsline {section}{\numberline {X.1.1}${\boldsymbol {x}}$の分散共分散行列を$V=\operatorname {Var}_{}\left [{\boldsymbol {x}}\right ]$とすると$\operatorname {Var}_{}\left [{\boldsymbol {v}}^\top {\boldsymbol {x}}\right ] = {\boldsymbol {v}}^\top V{\boldsymbol {v}}$}{177}%
+\contentsline {section}{\numberline {X.1.2}ベクトル確率変数の線形写像の像の期待値と分散共分散行列}{177}%
+\contentsline {section}{\numberline {X.1.3}スコア関数}{178}%
+\contentsline {subsection}{\numberline {X.1.3.1}$\operatorname {E}_{{\boldsymbol {X}}}\left [V({\boldsymbol {X}},\theta )\right ] = 0$}{178}%
+\contentsline {section}{\numberline {X.1.4}Cram\'er-Raoの不等式}{178}%
+\contentsline {section}{\numberline {X.1.5}条件付き確率}{179}%
+\contentsline {subsection}{\numberline {X.1.5.1}$\operatorname {Pr}\left [A\right ]=\DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A,B_k\right ]} = \DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A\left | B_k\right .\right ]\operatorname {Pr}\left [B_k\right ]}$}{179}%
+\contentsline {subsection}{\numberline {X.1.5.2}$\operatorname {Pr}\left [A,B\left | C\right .\right ]=\operatorname {Pr}\left [A\left | B,C\right .\right ]\operatorname {Pr}\left [B\left | C\right .\right ]$\hskip 1em\relax (スライディング)}{179}%
+\contentsline {subsection}{\numberline {X.1.5.3}$\operatorname {Pr}\left [A\left | C\right .\right ] = \DOTSB \sum@ \slimits@ _k{\operatorname {Pr}\left [A\left | B_k,C\right .\right ]\operatorname {Pr}\left [B_k\left | C\right .\right ]}$}{179}%
+\contentsline {section}{\numberline {X.1.6}条件付き確率密度関数}{180}%
+\contentsline {section}{\numberline {X.1.7}条件付き期待値}{180}%
+\contentsline {subsection}{\numberline {X.1.7.1}$\operatorname {E}_{X,Y}\left [\operatorname {E}_{Y}\left [Y|X\right ]\right ] = \operatorname {E}_{X,Y}\left [Y\right ]$}{180}%
+\contentsline {section}{\numberline {X.1.8}確率不等式}{181}%
+\contentsline {subsection}{\numberline {X.1.8.1}マルコフの不等式}{181}%
+\contentsline {subsection}{\numberline {X.1.8.2}チェビシェフの不等式}{181}%
+\contentsline {subsection}{\numberline {X.1.8.3}ヘフディングの補題}{182}%
+\contentsline {subsection}{\numberline {X.1.8.4}ヘフディングの不等式}{183}%
+\contentsline {section}{\numberline {X.1.9}中心極限定理}{184}%
+\contentsline {chapter}{\numberline {第X.2章}多項分布}{185}%
+\contentsline {section}{\numberline {X.2.1}周辺分布は2項分布}{185}%
+\contentsline {section}{\numberline {X.2.2}共分散}{186}%
+\contentsline {chapter}{\numberline {第X.3章}幾何分布}{187}%
+\contentsline {section}{\numberline {X.3.1}無記憶性からの導出}{187}%
+\contentsline {chapter}{\numberline {第X.4章}指数分布}{188}%
+\contentsline {section}{\numberline {X.4.1}定義}{188}%
+\contentsline {section}{\numberline {X.4.2}解釈}{188}%
+\contentsline {section}{\numberline {X.4.3}無記憶性からの導出}{188}%
+\contentsline {section}{\numberline {X.4.4}特性関数}{189}%
+\contentsline {chapter}{\numberline {第X.5章}Erlang分布}{190}%
+\contentsline {section}{\numberline {X.5.1}定義}{190}%
+\contentsline {section}{\numberline {X.5.2}解釈}{190}%
+\contentsline {section}{\numberline {X.5.3}指数分布との関係:\hskip 1em\relax $X_1,\cdots ,X_k (\text {独立}) \sim \operatorname {ExpDist}\left (\mu \right ) \Rightarrow X_1+\cdots X_k \sim \operatorname {ErlangDist}\left (k,\mu \right )$}{190}%
+\contentsline {chapter}{\numberline {第X.6章}Poisson分布}{192}%
+\contentsline {section}{\numberline {X.6.1}定義}{192}%
+\contentsline {section}{\numberline {X.6.2}解釈}{192}%
+\contentsline {subsection}{\numberline {X.6.2.1}指数分布からの導出}{192}%
+\contentsline {section}{\numberline {X.6.3}Erlang分布との関係}{192}%
+\contentsline {section}{\numberline {X.6.4}再生性}{193}%
+\contentsline {chapter}{\numberline {第X.7章}Beta分布}{194}%
+\contentsline {section}{\numberline {X.7.1}Beta分布に従う確率変数の生成}{194}%
+\contentsline {subsection}{\numberline {X.7.1.1}$X\sim \operatorname {Gamma}\left (\alpha ,1\right ),Y\sim \operatorname {Gamma}\left (\beta ,1\right )\Rightarrow \frac {X}{X+Y}\sim \operatorname {Beta}\left (\alpha ,\beta \right )$}{194}%
+\contentsline {chapter}{\numberline {第X.8章}正規分布}{195}%
+\contentsline {section}{\numberline {X.8.1}裾確率の評価}{195}%
+\contentsline {section}{\numberline {X.8.2}スケール変換とシフト}{196}%
+\contentsline {section}{\numberline {X.8.3}再生性}{197}%
+\contentsline {section}{\numberline {X.8.4}一次結合}{198}%
+\contentsline {section}{\numberline {X.8.5}分散$\sigma ^2$,平均$\mu $のときの累積分布関数は$\Phi (\frac {z-\mu }{\sigma })$}{198}%
+\contentsline {section}{\numberline {X.8.6}零平均,同分散の正規分布に独立に従う$n$個の確率変数の直交変換もまた同じ分布に従う}{198}%
+\contentsline {section}{\numberline {X.8.7}多変量正規分布}{199}%
+\contentsline {subsection}{\numberline {X.8.7.1}定義}{199}%
+\contentsline {subsection}{\numberline {X.8.7.2}密度関数の全空間積分が1になることの確認}{199}%
+\contentsline {subsection}{\numberline {X.8.7.3}期待値の導出}{200}%
+\contentsline {subsection}{\numberline {X.8.7.4}共分散行列の導出}{200}%
+\contentsline {subsection}{\numberline {X.8.7.5}特性関数は$\phi _{{\boldsymbol {X}}}({\boldsymbol {t}})=\qopname \relax o{exp}(i{\boldsymbol {t}}^\top {\boldsymbol {\mu }} - {\boldsymbol {t}}^\top \Sigma {\boldsymbol {t}}/2)$}{200}%
+\contentsline {subsection}{\numberline {X.8.7.6}特性関数を用いた期待値と分散の導出}{201}%
+\contentsline {subsection}{\numberline {X.8.7.7}線形写像 : $A{\boldsymbol {X}}+{\boldsymbol {b}} \sim N(A{\boldsymbol {\mu }}+{\boldsymbol {b}}, A\Sigma A^\top )$}{202}%
+\contentsline {subsection}{\numberline {X.8.7.8}周辺分布 : $X_i \sim N(\mu _i, {\sigma _i}^2)$}{202}%
+\contentsline {chapter}{\numberline {第X.9章}$\chi ^2$分布}{203}%
+\contentsline {section}{\numberline {X.9.1}定義}{203}%
+\contentsline {section}{\numberline {X.9.2}$X \sim N(0,1) \hskip 1em\relax \Rightarrow \hskip 1em\relax X^2 \sim \chi ^2_1$}{203}%
+\contentsline {section}{\numberline {X.9.3}$X_i \sim N(0,1) \hskip 1em\relax \Rightarrow \hskip 1em\relax Z_n = \DOTSB \sum@ \slimits@ _{i=1}^{n}{{X_i}^2} \sim {\chi ^2}_n$}{203}%
+\contentsline {section}{\numberline {X.9.4}$X \sim {\chi ^2}_n \hskip 1em\relax \Rightarrow \hskip 1em\relax E[X] = n,\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}V[x] = 2n$}{204}%
+\contentsline {section}{\numberline {X.9.5}再生性}{205}%
+\contentsline {section}{\numberline {X.9.6}$X_1,\cdots ,X_n\sim N(\mu ,\sigma ^2) \Rightarrow \frac {1}{\sigma ^2}\DOTSB \sum@ \slimits@ _{i=1}^n{(X_i-\overline {X})^2} \sim \chi ^2_{n-1}$}{205}%
+\contentsline {chapter}{\numberline {第X.10章}$t$分布}{207}%
+\contentsline {section}{\numberline {X.10.1}定義}{207}%
+\contentsline {section}{\numberline {X.10.2}X.10.2.0\hskip 1em\relax $X,Y : \text {indep},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X \sim N(0,1),\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}Y \sim {\chi ^2}_n \hskip 1em\relax \Rightarrow \hskip 1em\relax T := \frac {X}{\sqrt {\frac {Y}{2}}} \sim t_n$}{207}%
+\contentsline {section}{\numberline {X.10.3}X.10.3.0\hskip 1em\relax $t$分布の期待値}{208}%
+\contentsline {section}{\numberline {X.10.4}X.10.4.0\hskip 1em\relax $t$分布の分散}{208}%
+\contentsline {chapter}{\numberline {第X.11章}$F$分布}{210}%
+\contentsline {section}{\numberline {X.11.1}定義}{210}%
+\contentsline {section}{\numberline {X.11.2}$X_1,X_2 : \text {indep},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X_1 \sim {\chi ^2}_{\nu _1},\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}X_2 \sim {\chi ^2}_{\nu _2} \hspace {10pt} \Rightarrow \hspace {10pt} F:= \frac {\frac {X_1}{\nu _1}}{\frac {X_2}{\nu _2}} \sim F_{\nu _2}^{\nu _1}$}{210}%
+\contentsline {section}{\numberline {X.11.3}自由度$(\nu _1,\nu _2)$の$F$分布$F_{\nu _2}^{\nu _1}$は$\nu _2 \geq 3$の時に限り期待値が定義できてその値は$\frac {\nu _2}{\nu _2-2}$である。}{211}%
+\contentsline {section}{\numberline {X.11.4}自由度$(\nu _1,\nu _2)$の$F$分布$F_{\nu _2}^{\nu _1}$の分散は$\nu _2 \leq 4$の場合$\infty $、$\nu _2 \geq 5$の場合$\displaystyle \frac {2{\nu _2}^2(\nu _1+\nu _2-2)}{\nu _1(\nu _2-2)^2(\nu _2-4)}$である。}{212}%
+\contentsline {chapter}{\numberline {第X.12章}推定}{213}%
+\contentsline {section}{\numberline {X.12.1}標本分散}{213}%
+\contentsline {subsection}{\numberline {X.12.1.1}$\operatorname {E}_{}\left [\frac {1}{n}\DOTSB \sum@ \slimits@ _{i=1}^{n}{(X_i-\overline {X})^2}\right ] = \frac {n-1}{n}\sigma ^2$}{213}%
+\contentsline {part}{第XI部\hspace {1zw}ベイズ統計}{215}%
+\contentsline {section}{\numberline {XI.0.1}事前分布と事後分布の考え方}{216}%
+\contentsline {subsection}{\numberline {XI.0.1.1}離散型}{216}%
+\contentsline {subsection}{\numberline {XI.0.1.2}連続型}{216}%
+\contentsline {section}{\numberline {XI.0.2}ベイズ推定量}{217}%
+\contentsline {section}{\numberline {XI.0.3}事前分布と事後分布の例}{218}%
+\contentsline {subsection}{\numberline {XI.0.3.1}正規分布の事後分布}{218}%
+\contentsline {part}{第XII部\hspace {1zw}グラフ理論}{219}%
+\contentsline {chapter}{\numberline {第XII.1章}定義}{220}%
+\contentsline {chapter}{\numberline {第XII.2章}連結グラフ}{221}%
+\contentsline {section}{\numberline {XII.2.1}諸定理}{221}%
+\contentsline {subsection}{\numberline {XII.2.1.1}頂点の連結グラフは少なくとも$n-1$本の辺をもつ}{221}%
+\contentsline {subsection}{\numberline {XII.2.1.2}$n$頂点グラフが$\frac {1}{2}(n-1)(n-2)$本より多くの辺を持つなら連結である}{221}%
+\contentsline {subsection}{\numberline {XII.2.1.3}Oreの定理}{222}%
+\contentsline {chapter}{\numberline {第XII.3章}木}{224}%
+\contentsline {section}{\numberline {XII.3.1}諸定理}{224}%
+\contentsline {subsection}{\numberline {XII.3.1.1}木は2部グラフである}{224}%
+\contentsline {subsection}{\numberline {XII.3.1.2}1本以上の辺を持つ有限な木は次数1の枝を少なくとも2個持つ}{224}%
+\contentsline {subsection}{\numberline {XII.3.1.3}どこへでも行ける点が1個あればその点を根として木を作れる}{224}%
+\contentsline {subsection}{\numberline {XII.3.1.4}$\mathcal {I}$ : グラフ$G$の非閉路部分グラフ全体の集合。$I_1,I_2\in \mathcal {I},\tmspace +\thickmuskip {.2777em}|I_1|<|I_2| \Rightarrow \tmspace +\thickmuskip {.2777em} ^\exists a \in I_2 {\textrm { s.t. }}I_1 \cup \{a\} \in \mathcal {I}$}{225}%
+\contentsline {subsection}{\numberline {XII.3.1.5}$\mathcal {T}$ : グラフ$G$の全域木の集合。$T_1,T_2\in \mathcal {T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 {\textrm { s.t. }}(T_1\setminus a_1) \cup a_2 \in \mathcal {T}$}{225}%
+\contentsline {chapter}{\numberline {第XII.4章}有向グラフ}{226}%
+\contentsline {section}{\numberline {XII.4.1}諸定理}{226}%
+\contentsline {subsection}{\numberline {XII.4.1.1}$G_1=(\nu ,\varepsilon _1),G_2=(\nu ,\varepsilon _2)$に対して${G_1}^{|\nu -1|} = {G_2}^{|\nu -1|}$であるとき、$G_1$が全域木を持つ$\DOTSB \tmspace +\thickmuskip {.2777em}\DOTSB \Leftarrow \joinrel \Rightarrow \tmspace +\thickmuskip {.2777em}\tmspace +\thickmuskip {.2777em}G_2$が〃}{226}%
+\contentsline {subsection}{\numberline {XII.4.1.2}非閉路的ならばpruningのアルゴリズムはデッドロックしない}{226}%
+\contentsline {subsection}{\numberline {XII.4.1.3}スタートからゴールへの全ての道の連鎖重みの総和は1以下}{227}%
+\contentsline {subsection}{\numberline {XII.4.1.4}(補題) ゴールに隣接する1つのスタート地点からの全ての経路の連鎖重みの総和は1以下}{229}%
+\contentsline {part}{第XIII部\hspace {1zw}寄せ集め}{231}%
+\contentsline {chapter}{\numberline {第XIII.1章}無限級数公式集}{232}%
+\contentsline {section}{\numberline {XIII.1.1}$\DOTSB \sum@ \slimits@ _{k=1}^{\infty }{\frac {\qopname \relax o{sin}{k}}{k}} = \frac {\pi -1}{2}$}{232}%
+\contentsline {section}{\numberline {XIII.1.2}$\DOTSB \sum@ \slimits@ _{n=1}^\infty {\frac {1}{1+n^2}}=\frac {-1}{2}+\frac {\pi }{2}\qopname \relax o{coth}{\pi }$}{232}%
+\contentsline {section}{\numberline {XIII.1.3}$\DOTSB \sum@ \slimits@ _{n=1}^\infty {\frac {1}{(1+n^2)^2}}=\frac {-1}{2}+\frac {\pi ^2}{4\qopname \relax o{sinh}^2{\pi }}+\frac {\pi }{4}\qopname \relax o{coth}\pi $}{233}%
+\contentsline {chapter}{参考文献}{234}%
