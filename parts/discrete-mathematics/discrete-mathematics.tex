@@ -422,23 +422,6 @@
 				仮に$P$が既約でないとすると$K$上の$P$より低次な2つの多項式$P_2,P_3$を用いて$P=P_2P_3$と表せる。
 				$\alpha$は$P$の根であるから$0 = P(\alpha) = P_2(\alpha)P_3(\alpha)$より$P_2(\alpha) = 0$または$P_3(\alpha) = 0$であるが、これは$P$が$\alpha$の最小多項式であることに矛盾する。
 			\end{proof}
-		\section{原始多項式}
-			\subsection{$\sum_{i=0}^n a_ix^i$が原始多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も原始多項式である}
-				\begin{shadebox}
-					$p$を素数とする。
-					有限体$\GaloisField{p}$上の$n$次多項式$p(x) := \sum_{i=0}^n a_ix^i$が原始多項式であれば、係数の順序を逆にした多項式$p_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					背理法で示す。
-					$p_2(x)$が原始多項式でないと仮定すると、ある$l\in\{1,2,\cdots,p^m-2\}$と$\GaloisField{p}$上の多項式$q(x) = \sum_{j=0}^{l-n} b_jx^j$が存在して次式が成り立つ。
-					\[ x^l = q(x)p_2(x) + 1 \]
-					ここで上式をLaurent多項式に拡張して両辺を$x^l$で割ると
-					\[ 1 = \left(\sum_{j=0}^{l-n} b_jx^{j-l+n}\right)\left(\sum_{i=0}^n a_{n-i}x^{i-n}\right) + x^{-l} = \left(\sum_{j=0}^{l-n} b_{l-n-j}x^{-j}\right)\left(\sum_{i=0}^n a_ix^{-i}\right) + x^{-l} \]
-					$x^{-1}$を新たな記号$y$と見ると、次式を得る。
-					\[ 1 = \left(\sum_{j=0}^{l-n} b_{l-n-j}y^j\right)p(y) + y^l \quad\therefore y^l \equiv 1 \mod p(y)\]
-					これは$p$が原始多項式であることに矛盾する。
-				\end{proof}
 	\chapter{有限体}
 		\section{素数位数の有限体の構成法}
 			$p$を素数とし、$S:=\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
@@ -481,6 +464,23 @@
 				少なくとも一つ存在することは、$a$に現れる$\alpha$を不定元$x$で置換して多項式に戻してからB\'ezoutの等式を考えることで理解できる。
 				唯一であることは背理法で示せる。
 				仮に異なる$b_1,b_2 \in S$が存在して$ab_1 = ab_2 = 1$であるとすると$a(b_1 - b_2) = 0$であるが、一方で$a, b_1 - b_2 \neq 0$だから$a(b_1 - b_2) \neq 0$であり、矛盾している。
+		\section{原始多項式}
+			\subsection{$\sum_{i=0}^n a_ix^i$が原始多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も原始多項式である}
+				\begin{shadebox}
+					$p$を素数とする。
+					有限体$\GaloisField{p}$上の$n$次多項式$p(x) := \sum_{i=0}^n a_ix^i$が原始多項式であれば、係数の順序を逆にした多項式$p_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					背理法で示す。
+					$p_2(x)$が原始多項式でないと仮定すると、ある$l\in\{1,2,\cdots,p^m-2\}$と$\GaloisField{p}$上の多項式$q(x) = \sum_{j=0}^{l-n} b_jx^j$が存在して次式が成り立つ。
+					\[ x^l = q(x)p_2(x) + 1 \]
+					ここで上式をLaurent多項式に拡張して両辺を$x^l$で割ると
+					\[ 1 = \left(\sum_{j=0}^{l-n} b_jx^{j-l+n}\right)\left(\sum_{i=0}^n a_{n-i}x^{i-n}\right) + x^{-l} = \left(\sum_{j=0}^{l-n} b_{l-n-j}x^{-j}\right)\left(\sum_{i=0}^n a_ix^{-i}\right) + x^{-l} \]
+					$x^{-1}$を新たな記号$y$と見ると、次式を得る。
+					\[ 1 = \left(\sum_{j=0}^{l-n} b_{l-n-j}y^j\right)p(y) + y^l \quad\therefore y^l \equiv 1 \mod p(y)\]
+					これは$p$が原始多項式であることに矛盾する。
+				\end{proof}
 	\chapter{有限幾何学}
 		\section{有限射影平面}
 			\subsection{位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}
