@@ -1,0 +1,258 @@
+\part{代数学}
+    \chapter{群}
+        \section{剰余類}
+            \subsection{定義}
+                $G$を群とし、$H$をその任意の部分群とする。
+                $g\in G$を任意にとる。
+                \par
+                「$G$に於ける$H$の左剰余類 (the left coset of $H$ in $G$)」とは次の集合族のことを言う。
+                \[ \set{gH}{g \in G} = \set{\set{gh}{h \in H}}{g \in G} \]
+                また、「$G$に於ける$H$の右剰余類」とは次の集合族のことを言う。
+                \[ \set{Hg}{g \in G} = \set{\set{hg}{h \in H}}{g \in G} \]
+                特に、$gH\;(g \in G)$を「$G$に於ける$g$に関する$H$の左剰余類 (the left coset of $H$ in $G$ with respect to $g$)」と呼び、$Hg\;(g \in G)$を「$G$に於ける$g$に関する$H$の右剰余類」と呼ぶ。
+            \subsection{群$G$の部分群$H$の全ての剰余類は互いに素である}
+                \begin{proof}
+                    \quad\par
+                    左剰余類について示す。
+                    右剰余類についても同様にして示せる。
+                    \par
+                    命題の対偶「2つの左剰余類$R=gH,\;R'=g'H\;(g\in G)$の共通部分が非空ならば$R=R'$」を示す。
+                    $R$と$R'$の共通部分を$gh = g'h'\;(h,h'\in H)$とすると$g' = ghh'^{-1}$だから$\forall h'' \in H,\;(R' \ni) g'h'' = ghh'^{-1}h'' \in gH = R\;(\because\;hh'^{-1}h'' \in H)$であり$R'\subseteq R$となる。
+                    同様に$R' \supseteq R$も示せるから$R=R'$となる。
+                \end{proof}
+            \subsection{2つの元が同じ剰余類に属する必要十分条件}
+                $G$を群とし、$H$をその部分群とする。
+                $s_1,s_2\in G$が$H$の同じ左剰余類に属する必要十分条件は$s_1^{-1}s_2\in H$である。
+                また、同じ右剰余類に属する必要十分条件は$s_1s_2^{-1}\in H$である。
+                \begin{proof}
+                    \quad\par
+                    左剰余類について示す。
+                    右剰余類についても同様にして示せる。\\
+                    ($\Rightarrow$)
+                    \par
+                    仮定より$\exists g \in G,\;h_1,h_2 \in H \st s_1 = gh_1,\;s_2 = gh_2$。
+                    よって$s_1^{-1}s_2 = h_1^{-1}g^{-1}gh_2 = h_1^{-1}h_2 \in H$\\
+                    ($\Leftarrow$)
+                    \par
+                    仮定より$\exists h \in H \st s_1^{-1}s_2 = h$。
+                    直前に示した定理より$H$の剰余類は$G$を分割するから、$\exists g\in G,\;h_1\in H \st s_1 = gh_1 (\in gH)$。
+                    よって$s_2 = s_1h = gh_1h \in gH\;(\because\; h_1h \in H)$
+                \end{proof}
+            \section{$\mathbb{Z}_p$ ($p: $素数)に乗法群としての位数$r$の元があれば$p-1$は$r$の倍数}
+                \begin{proof}
+                    \quad\par
+                    論題の元を$a$とする。
+                    $r$は$a^r \equiv_p 1$となる最小の自然数であるから、$k\in\naturalNumbers$に対して$a^k \equiv_p 1$となるのは$k$が$r$の倍数であるとき、かつそのときに限る。
+                    Fermatの小定理から$a^{p-1} \equiv_p 1$であるので、$p-1$は$r$の倍数である。
+                \end{proof}
+    \chapter{多項式}
+        \section{規約}
+            \begin{itemize}
+                \item 以降の説明に於いて多項式中に特別の断りなく現れる$x$は不定元を意味する。
+                \item 体$F$上の、$x$を不定元とする多項式全体の集合を$F[x]$と表記する。
+                \item 体$F$上の、$x$を不定元とするLaurent多項式全体の集合を$F[x,x^{-1}]$と表記する。
+            \end{itemize}
+        \section{$\sum_{i=0}^n a_ix^i$が既約多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も既約多項式である}
+            \label{既約多項式の係数の順番反転}
+            \begin{shadebox}
+                体$F$上の$n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i$が$F$上で既約であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                背理法で示す。
+                $f_2(x)$が既約でないと仮定すると、適当な多項式$g_{2,1}(x),g_{2,2}(x) \in F[x],\;d_{2,1} + d_{2,2} := \deg(g_{2,1}(x)) + \deg(g_{2,1}(x)) = n$が存在して次式が成り立つ。
+                \[ f_2(x) = g_{2,1}(x)g_{2,2}(x) \]
+                上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
+                \[ f_2(x^{-1}) = g_{2,1}(x^{-1})g_{2,2}(x^{-1}) \]
+                両辺に$x^n$を掛けると
+                \[ f_1(x) = x^n f_2(x^{-1}) = x^{d_{2,1}}g_{2,1}(x^{-1})x^{d_{2,2}}g_{2,2}(x^{-1}) =: g_{1,1}(x)g_{1,2}(x) \]
+                ここに$g_{1,1}(x), g_{1,2}(x)$は$g_{2,1}(x), g_{2,2}(x)$の係数の順番を逆にしたものである。
+                これは$f_1(x)$が既約であることに矛盾する。
+            \end{proof}
+        \section{既約多項式$\iff$最小多項式}
+            \begin{shadebox}
+                $P$を体$F$上の多項式とする。
+                $P$が$F$上で既約であることと、$P$がその任意の根の最小多項式であることは同値である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\newline\noindent
+                ($\Rightarrow$)
+                \par
+                背理法で示す。
+                $\alpha$を$P$の任意の根とする。
+                仮に$P$より低次の$F$上の多項式$P_2$が存在して$P_2(\alpha)=0$であるとする。
+                $P$を$P_2$で割った商を$Q_2$, 余りを$P_3$とすると、$0 = P(\alpha) = Q_2(\alpha)P_2(\alpha) + P_3(\alpha)$より$P_3(\alpha) = 0$である。
+                同じ要領で$P_i$を$P_{i+1}$で割った商を$Q_{i+1}$, 余りを$P_{i+2}$とすると$0 = P(\alpha) = P_2(\alpha) = P_3(\alpha) = \cdots$となる。
+                $P_i$の次数は$i$の増加と共に真に減少するため、次のいずれかが成り立つ。
+                \begin{enumerate}
+                    \item ある$i$で$P_{i+1} \mid P_i$
+                    \item ある$i$で$\deg(P_i)=0$となる
+                \end{enumerate}
+                Euclidの互除法により、1.の場合は$\gcd(P,P_2) = \gcd(P_2,P_3) = \cdots = \gcd(P_i,P_{i+1}) = P_{i+1}$となり、$P$が規約であるという前提に矛盾する。
+                2.の場合も先述の通り$P_i(\alpha)=0$であり、$\deg(P_i)=0$に注意して$P_i=0$であるので$P_{i-1} \mid P_{i-2}$であり、1.と同様に矛盾が生じる。
+                \newline\newline
+                ($\Leftarrow$)
+                \par
+                背理法で示す。
+                $\alpha$を$P$の任意の根とする。
+                仮に$P$が既約でないとすると$F$上の$P$より低次な2つの多項式$P_2,P_3$を用いて$P=P_2P_3$と表せる。
+                $\alpha$は$P$の根であるから$0 = P(\alpha) = P_2(\alpha)P_3(\alpha)$より$P_2(\alpha) = 0$または$P_3(\alpha) = 0$であるが、これは$P$が$\alpha$の最小多項式であることに矛盾する。
+            \end{proof}
+    \chapter{有限体}
+        \section{素数位数の有限体の構成法}
+            $p$を素数とし、$S:=\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+            \begin{itemize}
+                \item $a+'b = (a+b)\% p$
+                \item $a*'b = (ab)\% p$
+            \end{itemize}
+            このようにすると代数構造$(S,+',*')$が体を成すことを説明する。
+            \par
+            まず$+'$に関する結合法則, 単位元と唯一の逆元の存在、$*'$に関する結合法則と単位元の存在、また、$*'$が$+'$の上に分配的であることは合同式の基本的な知識があれば明らかであろう。
+            あとは、$*'$に関する唯一の逆元が存在すること、すなわち任意の$0 \neq a\in S$に対して唯一の$b\in S$が存在して$a*'b=1$となることを示せばよいのだが、\ref{a,mが互いに素のとき、0,a,...a(m-1)をmで割った余りは全て異なる}より、それが保証される。
+            \par
+            有限体はGalois体とも呼ばれ、位数$p$の有限体を$\GaloisField{p}$と表す。
+        \section{位数が素数の冪乗である有限体の構成法}
+            \subsection{既約多項式を用いる方法}
+                $p$を素数とする。$\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
+                $S$を、$\GaloisField{p}$上の次数$m-1$以下の全ての多項式の集合を$S$とする($|S|=p^m$)。
+                $S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+                \begin{itemize}
+                    \item $a+'b = (a+b)\% P$
+                    \item $a*'b = (ab)\% P$
+                \end{itemize}
+                このようにすると代数構造$(S,+',*')$が体を成すことを説明する。
+                \par
+                まず$+'$に関する結合法則, 単位元と唯一の逆元の存在、$*'$に関する結合法則と単位元の存在、また、$*'$が$+'$の上に分配的であることは合同式, 素数位数の有限体の基本的な知識があれば明らかであろう。
+                あとは、$*'$に関する唯一の逆元が存在すること、すなわち任意の$0 \neq a\in S$に対して唯一の$b\in S$が存在して$a*'b=1$となることを示せばよい。
+                少なくとも一つ存在することはB\'ezoutの等式により保証される。
+                唯一であることを背理法で示す。
+                仮に異なる$b_1,b_2 \in S$が存在して$a*'b_1 = a*'b_2 = 1$であるとすると$a*'(b_1 - b_2) = 0$であるが、これは$P$は既約であることと矛盾する。
+                なぜならば$a,b_1,b_2$は$P$と互いに素であるから、$P \nmid a*'(b_1 - b_2)$であるからである。
+            \subsection{既約多項式の根を用いる方法(根体)}
+                $p$を素数とする。
+                $\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
+                $\alpha$を$P$の任意の根とする。
+                $S := \set{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\cdots,a_{m-1} \in \GaloisField{p}}$とする。
+                $S$上の演算として$\GaloisField{p}$上の多項式に対する加法と乗法をそのまま使うと、$S$とこの演算の組が体を成すことを説明する。
+                \par
+                まず加法に関する結合法則, 単位元と唯一の逆元の存在、乗法に関する結合法則と単位元の存在、また、乗法が加法の上に分配的であることは$P(\alpha) = 0$であること, 素数位数の有限体, 多項式の除法の基本的な知識があれば明らかであろう。
+                あとは、乗法に関する唯一の逆元が存在すること、すなわち任意の$0 \neq a\in S$に対して唯一の$b\in S$が存在して$ab=1$となることを示せばよい。
+                少なくとも一つ存在することは、$a$に現れる$\alpha$を不定元$x$で置換して多項式に戻してからB\'ezoutの等式を考えることで理解できる。
+                唯一であることは背理法で示せる。
+                仮に異なる$b_1,b_2 \in S$が存在して$ab_1 = ab_2 = 1$であるとすると$a(b_1 - b_2) = 0$であるが、一方で$a, b_1 - b_2 \neq 0$だから$a(b_1 - b_2) \neq 0$であり、矛盾している。
+    \chapter{形式的冪級数}
+        \section{規約}
+            \begin{itemize}
+                \item 体$F$上の、$x$を不定元とする形式的冪級数全体の集合を$F[[x]]$と表記する。
+                \item 体$F$上の、$x$を不定元とする形式的Laurent級数全体の集合を$F((x))$と表記する。
+            \end{itemize}
+        \section{原始多項式}
+            \subsection{$\sum_{i=0}^n a_ix^i$が原始多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も原始多項式である}
+                \begin{shadebox}
+                    $p$を素数とする。
+                    $n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    \ref{既約多項式の係数の順番反転}より$f_2(x)$は$\GaloisField{p}$上で既約である。
+                    あとは$f_2(x) \mid x^l - 1$となる最小の自然数$l$が$p^m-1$であることを示せば良い。
+                    \par
+                    まず$f_2(x) \mid x^{p^n-1}-1$を示す。
+                    $f_1(x)$が原始多項式だから適当な$p^n-1-n$次多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                    \[ x^{p^n-1} - 1 = g_1(x)f_1(x) \]
+                    上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
+                    \[ \frac{1}{x^{p^n-1}} - 1 = g_1(x^{-1})f_1(x^{-1}) \]
+                    両辺に$x^{p^n-1}$を掛けると
+                    \[ 1 - x^{p^n-1} = x^{p^n-1-n}g_1(x^{-1}) x^n f_1(x^{-1}) =: g_2(x)f_2(x) \]
+                    \[ \therefore x^{p^n-1} -1 \equiv 0 \mod f_2(x) \]
+                    ここに$g_2(x)$は$g_1(x)$の係数の順番を逆にしたものである。
+                    \par
+                    次に$l=1,2,\cdots,p^n-2$について$f_2(x) \nmid x^l-1$を背理法で示す。
+                    仮にある$l$に対して$l-n$次多項式$h_1(x) \in \GaloisField{p}[x]$が存在して
+                    \[ x^l - 1 = h_1(x)f_2(x) \]
+                    が成り立つとする。
+                    上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
+                    \[ \frac{1}{x^l} - 1 = h_1(x^{-1})f_2(x^{-1}) \]
+                    両辺に$x^l$を掛けると
+                    \[ 1 - x^l = x^{l-n}h_1(x^{-1}) x^n f_2(x^{-1}) =: h_2(x)f_1(x) \]
+                    \[ \therefore x^l - 1 \equiv 0 \mod f_1(x) \]
+                    ここに$h_2(x)$は$h_1(x)$の係数の順番を逆にしたものである。
+                    これは$f_1(x)$が原始多項式であることに矛盾する。
+                    \par
+                    以上より$f_2(x) \mid x^l - 1$となる最小の自然数$l$は$p^m-1$である。
+                \end{proof}
+            \subsection{原始多項式の逆数の係数列は周期的}
+                \label{原始多項式の逆数の係数列は周期的}
+                \begin{shadebox}
+                    $p$を素数とする。
+                    $n$次の原始多項式$f(x) \in \GaloisField{p}[[x]]$の逆数$f(x)^{-1}$の係数列は周期的であり、その周期は$p^n-1$である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    まず係数列が周期的であることを示す。
+                    $f(x)$が原始多項式だから、適当な$p^n-1-n$次多項式$g(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                    \begin{align*}
+                        x^{p^n-1} - 1 &= g(x)f(x) \\
+                        \therefore f(x)^{-1} &= -g(x)\left(1 - x^{p^n-1}\right)^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
+                    \end{align*}
+                    $\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり、その周期は高々$p^n-1$である。
+                    「高々」と言ったのは、$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
+                    この周期が真に$p^n-1$であることを背理法で示す。
+                    \par
+                    仮に周期が$p^n-2$次以下であるとする、
+                    つまりある$l\in\{1,2,\cdots,p^n-2\}$と適当な$l-1$次以下の多項式$h(x) \in \GaloisField{p}[[x]]$が存在して
+                    \[ f(x)^{-1} = -h(x) \sum_{i=0}^\infty x^{il} \]
+                    が成り立つと仮定すると次式を得る。
+                    \begin{align*}
+                        f(x)^{-1} &= -h(x) \sum_{i=0}^\infty x^{il} = h(x)(x^l - 1)^{-1} \\
+                        \therefore x^l - 1 &= h(x)f(x) \equiv 0 \mod f(x)
+                    \end{align*}
+                    これは$f(x)$が原始多項式であることに矛盾する。
+                \end{proof}
+            \subsection{原始多項式$f_1(x)$の係数の順番を逆転した$f_2(x)$の逆数の係数列は$f_1(x)^{-1}$の係数列の逆順逆符号}
+                \begin{shadebox}
+                    $p$を素数とする。
+                    $n$次の原始多項式$f_1(x) \in \GaloisField{p}[[x]]$の係数の順番を逆転させ$f_2(x)$とする。
+                    $f_1(x)^{-1} =: a_0 + a_1x + \cdots$とする。
+                    このとき次式が成り立つ。
+                    \[ f_2(x)^{-1} = -\sum_{j=0}^{p^n-1-n} a_{p^n-1-n-j}x^j \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                    視覚的に言えば、$f_2(x)^{-1}$の係数列は周期的であり、$f_1(x)^{-1}$の係数列に現れるパターンを逆転させ、符号を逆にしたものになる。
+                \end{shadebox}
+                \subsubsection{例}
+                    \newcommand{\redtext}[1]{\textcolor{red}{#1}}
+                    $f_1(x) = 1+x^2+x^3 \in \GaloisField{2}[[x]]$とすると$f_2(x) = 1+x+x^3$である。
+                    \begin{align*}
+                        f_1(x)^{-1} &= \redtext{1} + 0x + \redtext{1}x^2 + \redtext{1}x^3 + \redtext{1}x^4 + 0x^5 + 0x^6 \\
+                        &\phantom{=}+ \redtext{1}x^7 + 0x^8 + \redtext{1}x^9 + \redtext{1}x^{10} + \redtext{1}x^{11} + 0x^{12} + 0x^{13} \\
+                        &\phantom{=}+ \redtext{1}x^{14} + 0x^{15} + \redtext{1}x^{16} + \cdots \\
+                        &= (\redtext{1} + 0x + \redtext{1}x^2 + \redtext{1}x^3 + \redtext{1}x^4 + 0x^5 + 0x^6) \sum_{i=0}^\infty x^{7i}
+                    \end{align*}
+                    $f_2(x)^{-1}$は次のようになる。
+                    \begin{align*}
+                        f_2(x)^{-1} &= \redtext{1} + \redtext{1}x + \redtext{1}x^2 + 0x^3 + \redtext{1}x^4 + 0x^5 + 0x^6 \\
+                        &\phantom{=}+ \redtext{1}x^7 + \redtext{1}x^8 + \redtext{1}x^9 + 0x^{10} + \redtext{1}x^{11} + 0x^{12} + 0x^{13} \\
+                        &\phantom{=}+ \redtext{1}x^{14} + \redtext{1}x^{15} + \redtext{1}x^{16} + \cdots \\
+                        &= (\redtext{1} + \redtext{1}x + \redtext{1}x^2 + 0x^3 + \redtext{1}x^4 + 0x^5 + 0x^6) \sum_{i=0}^\infty x^{7i}
+                    \end{align*}
+                    $f_2(x)^{-1}$の係数列のパターンは$f_1(x)^{-1}$のそれを逆転させたものになっている。
+                    係数体が$\GaloisField{2}$なので符号反転は起こらない。
+                \subsubsection{証明}
+                    \begin{proof}
+                        \quad\par
+                        \ref{原始多項式の逆数の係数列は周期的}より$f_1(x)^{-1}$の係数列は周期$p^n-1$であるから、適当な$p^n-1$次未満の多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                        \[ f_1(x)^{-1} = g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                        この式をLaurent多項式に拡張して変形してゆく。
+                        \begin{align*}
+                            f_1(x)^{-1} &= g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} = -g_1(x) \left(x^{p^n-1} - 1\right)^{-1} \\
+                            \therefore x^{p^n-1} - 1 &= -g_1(x)f_1(x) = -g_1(x) x^n f_2(x^{-1})
+                        \end{align*}
+                        ここに$f_2(x)$は$f_1(x)$の係数の順番を逆転させたものである。
+                        初めに$\deg g_1(x) < p^n-1$としていたが、上式より$\deg g_1(x) = p^n-1-n$が確定する。
+                        上式の$x$を$x^{-1}$で置き換えると次式を得る。
+                        \[ x^{-(p^n-1)} - 1 = -g_1(x^{-1}) x^{-n} f_2(x) \]
+                        両辺に$x^{p^n-1}$を掛けると
+                        \[ 1 - x^{p^n-1} = -x^{p^n-1-n}g_1(x^{-1}) f_2(x) =: -g_2(x)f_2(x) \]
+                        ここに$g_2(x)$は$g_1(x)$の係数の順番を逆転させたものである。
+                        これより次式を得る。
+                        \[ f_2(x)^{-1} = -g_2(x) \left(1 - x^{p^n-1}\right)^{-1} = -g_2(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                    \end{proof}
