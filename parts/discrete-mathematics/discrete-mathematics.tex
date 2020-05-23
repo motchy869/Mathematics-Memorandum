@@ -516,6 +516,33 @@
 					\par
 					以上より$f_2(x) \mid x^l - 1$となる最小の自然数$l$は$p^m-1$である。
 				\end{proof}
+			\subsection{形式的冪級数に於ける原始多項式の逆数の係数列は周期的}
+				\begin{shadebox}
+					$p$を素数とする。
+					有限体$\GaloisField{p}$上の形式的冪級数に於いて、$n$次の原始多項式$f(x)$の逆数$f(x)^{-1}$の係数列は周期的であり、その周期は$p^n-1$である。
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					まず係数列が周期的であることを示す。
+					$f(x)$が原始多項式だから、$\GaloisField{p}$上の適当な$p^n-1-n$次多項式$g(x)$が存在して次式が成り立つ。
+					\begin{align*}
+						x^{p^n-1} - 1 &= g(x)f(x) \\
+						\therefore f(x)^{-1} &= -g(x)\left(1 - x^{p^n-1}\right)^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
+					\end{align*}
+					$\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり、その周期は高々$p^n-1$である。
+					「高々」と言ったのは、$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
+					この周期が真に$p^n-1$であることを背理法で示す。
+					\par
+					仮に周期が$p^n-1$未満であるとする、
+					つまりある$l\in\{1,2,\cdots,p^n-2\}$と$\GaloisField{p}$上の適当な$l$次未満の多項式$h(x)$が存在して
+					\[ f(x)^{-1} = -h(x) \sum_{i=0}^\infty x^{il} \]
+					が成り立つと仮定すると次式を得る。
+					\begin{align*}
+						f(x)^{-1} &= -h(x) \sum_{i=0}^\infty x^{il} = h(x)(x^l - 1)^{-1} \\
+						\therefore x^l - 1 &= h(x)f(x) \equiv 0 \mod f(x)
+					\end{align*}
+					これは$f(x)$が原始多項式であることに矛盾する。
+				\end{proof}
 	\chapter{有限幾何学}
 		\section{有限射影平面}
 			\subsection{位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}
