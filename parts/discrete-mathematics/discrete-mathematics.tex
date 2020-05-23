@@ -468,18 +468,19 @@
 			\subsection{$\sum_{i=0}^n a_ix^i$が原始多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も原始多項式である}
 				\begin{shadebox}
 					$p$を素数とする。
-					有限体$\GaloisField{p}$上の$n$次多項式$p(x) := \sum_{i=0}^n a_ix^i$が原始多項式であれば、係数の順序を逆にした多項式$p_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+					有限体$\GaloisField{p}$上の$n$次多項式$p_1(x) := \sum_{i=0}^n a_ix^i$が原始多項式であれば、係数の順序を逆にした多項式$p_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					背理法で示す。
-					$p_2(x)$が原始多項式でないと仮定すると、ある$l\in\{1,2,\cdots,p^m-2\}$と$\GaloisField{p}$上の多項式$q(x) = \sum_{j=0}^{l-n} b_jx^j$が存在して次式が成り立つ。
+					$p_2(x)$が原始多項式でないと仮定すると、ある$l\in\{1,2,\cdots,p^n-2\}$と$\GaloisField{p}$上の多項式$q(x) = \sum_{j=0}^{l-n} b_jx^j$が存在して次式が成り立つ。
 					\[ x^l = q(x)p_2(x) + 1 \]
-					ここで上式をLaurent多項式に拡張して両辺を$x^l$で割ると
-					\[ 1 = \left(\sum_{j=0}^{l-n} b_jx^{j-l+n}\right)\left(\sum_{i=0}^n a_{n-i}x^{i-n}\right) + x^{-l} = \left(\sum_{j=0}^{l-n} b_{l-n-j}x^{-j}\right)\left(\sum_{i=0}^n a_ix^{-i}\right) + x^{-l} \]
-					$x^{-1}$を新たな記号$y$と見ると、次式を得る。
-					\[ 1 = \left(\sum_{j=0}^{l-n} b_{l-n-j}y^j\right)p(y) + y^l \quad\therefore y^l \equiv 1 \mod p(y)\]
-					これは$p$が原始多項式であることに矛盾する。
+					ここで上式をLaurent多項式に拡張して両辺の$x$を$1/x$で置き換えると
+					\[ \frac{1}{x^l} = \left(\sum_{j=0}^{l-n} b_jx^{-j}\right)\left(\sum_{i=0}^n a_{n-i}x^{-i}\right) + 1 \]
+					両辺に$x^l$を掛けると
+					\[ 1 = \left(\sum_{j=0}^{l-n} b_jx^{l-n-j}\right)\left(\sum_{i=0}^n a_{n-i}x^{n-i}\right) + x^l = \left(\sum_{j=0}^{l-n} b_jx^{l-n-j}\right)p_1(x) + x^l \]
+					\[ \therefore x^l \equiv 1 \mod p_1(x) \]
+					これは$p_1(x)$が原始多項式であることに矛盾する。
 				\end{proof}
 	\chapter{有限幾何学}
 		\section{有限射影平面}
