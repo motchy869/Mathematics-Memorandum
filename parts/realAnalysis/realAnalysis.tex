@@ -434,7 +434,7 @@
 					$f$の凸性より
 					\[ \text{左辺} \geq f(w_{n_0+1}x_{n_0+1} + (1-w_{n_0+1})X_{n_0}) = f\left(\sum_{i=1}^{n_0+1}w_i x_i\right)\]
 				\end{proof}
-			\subsection{重み付き相加,相乗平均の関係とヤングの不等式}
+			\subsection{重み付き相加,相乗平均の関係とYoungの不等式}
 				\begin{shadebox}
 					$w_1,\cdots,w_n\geq 0,\;w_1+\cdots+w_n=1,\;x_1,\cdots,x_n\geq 0$とするとき、次式が成り立つ。
 					\[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
@@ -446,7 +446,7 @@
 					\[ \log\sum_{i=1}^n w_i x_i \geq \sum_{i=1}^n w_i\log x_i \quad \therefore\; \log\sum_{i=1}^n w_i x_i \geq \log\prod_{i=1}^n x_i^{w_i} \quad \therefore\; \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
 					最初の式より、等号成立条件は$x_1=\cdots=x_n$である。
 				\end{proof}
-				この不等式には変形版があり、\textbf{ヤングの不等式}と呼ばれている。
+				この不等式には変形版があり、\textbf{Youngの不等式}と呼ばれている。
 				一時的に上の定理の条件を少し強めて$w_1,\cdots,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
 				これらをYoungの不等式に代入して
 				\[ \sum_{i=1}^n w_i y^{1/w_i} \geq \prod_{i=1}^n y_i \]
@@ -527,7 +527,7 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				ヤングの不等式より$a,b\geq 0$に対して$ab \leq a^p/p + b^q/q$が成り立つ。
+				Youngの不等式より$a,b\geq 0$に対して$ab \leq a^p/p + b^q/q$が成り立つ。
 				この式で$a=|x_i|/\norm{\bm{x}}_p,b=|y_i|/\norm{\bm{y}}_q$とすると
 				\[\frac{|x_iy_i|}{\norm{\bm{x}}_p\norm{\bm{y}}_q}\leq\frac{|x_i|^p/\norm{\bm{x}}_p^p}{p}+\frac{|y_i|^q/\norm{\bm{y}}_q^q}{q}\]
 				これを$i=1,\dots,n$まで足し合わせると
