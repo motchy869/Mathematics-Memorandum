@@ -520,7 +520,7 @@
 				。すなわち$-\inf_{\bm{x}\in X}f(\bm{x}) - \varepsilon$は$-f$の上界ではない。
 				よって上限の定義より$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x})$。2つ目の主張の証明も同様。
 			\end{proof}
-		\section{ヘルダーの不等式}
+		\section{H\"older(ヘルダー)の不等式}
 			\begin{shadebox}
 				$p,q>1,\;\frac{1}{p}+\frac{1}{q}=1$のとき
 				\[\sum_{i=1}^n|x_iy_i|\leq\norm{\bm{x}}_p\norm{\bm{y}}_q\]
@@ -543,7 +543,7 @@
 				\begin{equation}
 					\norm{\bm{x}+\bm{y}}_p^p = \sum_{i=1}^n{|x_i+y_i|^p} = \sum_{i=1}^n{|x_i+y_i||x_i+y_i|^{p-1}} \leq \sum_{i=1}^n{|x_i||x_i+y_i|^{p-1}}+\sum_{i=1}^n{|y_i||x_i+y_i|^{p-1}}
 				\end{equation}
-				右辺第1項はヘルダーの不等式より上から
+				右辺第1項はH\"olderの不等式より上から
 				\[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]:=|x_i+y_i|^{p-1}\]
 				で抑えられる。さらに
 				\[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}} = \norm{\bm{x}}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\bm{x}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}\]
