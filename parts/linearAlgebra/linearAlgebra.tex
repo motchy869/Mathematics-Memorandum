@@ -1149,6 +1149,34 @@
 				\[\left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right| = \prod_{i=1}^{n}{(\lambda - f(\lambda_i))}\]
 				であるから$f(A)$の固有値が$f(\lambda_1),\cdots,f(\lambda_n)$であることがわかる。
 			\end{proof}
+		\section{対角化}
+			\subsection{正規行列$\iff$ユニタリ行列で対角化可能}
+				\begin{shadebox}
+					$n$を自然数とする。
+					$A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は、ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda Q^*$となることである。
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					十分性は容易に示せるので省略し、必要性のみ示す。
+					$A$を正規行列とする。
+					$A$のSchur分解を$A = SUS^*$とする。
+					ここに$S,U \in \complexNumbers^{n \times n}$はそれぞれ適当なユニタリ行列, 上三角行列である。
+					$A$が正規だから
+					\begin{align*}
+						O = A^*A - AA^* &= SU^*US^* - SUU^*S^* = S(U^*U - UU^*)S^* \\
+						\therefore\;U^*U - UU^* &= S^*OS = O \\
+						\therefore\;U^*U &= UU^*
+					\end{align*}
+					これより、まず$U^*U$と$UU^*$の第1,1成分が等しいから
+					\[ (U^*U)_{1,1} = (UU^*)_{1,1} \]
+					\[ \therefore |u_{1,1}|^2 = |u_{1,1}|^2 + |u_{1,2}|^2 + \cdots + |u_{1,n}|^2 \]
+					\[ u_{1,2} = u_{1,3} = \cdots = u_{1,n} = 0 \]
+					次に、$U^*U$と$UU^*$の第2,2成分が等しいから
+					\[ |u_{1,2}|^2 + |u_{2,2}|^2 = |u_{2,2}|^2 + |u_{2,3}|^2 + \cdots + |u_{2,n}|^2 \]
+					これと先程の結果$|u_{1,2}| = 0$より
+					\[ u_{2,3} = u_{2,4} = \cdots = u_{2,n} = 0 \]
+					同じ要領で続けていくと$U$の非対角要素が全て0であることがわかる。
+				\end{proof}
 		\section{一般固有空間}
 			\subsection{一般固有空間の階数の頭打ち}
 				\begin{shadebox}
