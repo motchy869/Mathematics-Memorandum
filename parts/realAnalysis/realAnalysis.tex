@@ -289,20 +289,6 @@
 				\end{proof}
 	\chapter{代数方程式}
 		\section{諸定理}
-			\subsection{係数が次数に関して対称な奇数次の多項式$f(x)$を$(x+1)$で除したものも係数が次数に関して対称になる}
-				\begin{proof}
-					\quad\par
-					$n\in\naturalNumbers$を奇数とし、$f(x) = \sum_{i=0}^n a_ix^i,\;a_i = a_{n-i}$とする。
-					$f(x)$は$(x+1)$で割り切れる。
-					$g(x) = f(x)/(x+1) = \sum_{i=0}^{n-1} b_ix^i$としたときに$b_i = b_{n-1-i}$となることを示す。
-					\begin{align*}
-						f(x) &= (x+1)g(x) = \sum_{i=0}^{n-1} (b_ix^{i+1} + b_ix^i) = b_0 + \sum_{i=1}^{n-1}b_ix^i + \sum_{i=1}^n b_{i-1}x^i \\
-						&= b_0 + \sum_{i=1}^{n-1} (b_{i-1} + b_i)x^i + b_{n-1}x^n
-					\end{align*}
-					これよりまず$b_0 = a_0 = a_n = b_{n-1}$となる。
-					次に$x,x^2,\cdots,x^{n-1}$の項の係数に関しては$b_{i-1} + b_i = a_i = a_{n-i} = b_{n-1-i} + b_{n-i}$すなわち$b_i - b_{n-1-i} = b_{(n-1)-(i-1)} - b_{i-1}$となる。
-					既に見た$b_0 = b_{n-1}$から始めて帰納的に示せる。
-				\end{proof}
 			\subsection{実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である}
 				\begin{shadebox}
 					実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である。
