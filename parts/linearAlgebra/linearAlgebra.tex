@@ -750,6 +750,20 @@
 				まず、$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
 				$A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$A$はフルランク。
 			\end{proof}
+		\section{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}
+			\begin{proof}
+				\quad\par
+				$\bm{x} \in \complexNumbers^n$とする。
+				まず主張の左側の等号成立を示す。
+				$\bm{x} \in \ker{A}$ならば$A^* A\bm{x} = A^*\bm{0} = \bm{0}$だから$\ker{A} \subseteq \ker{A^* A}$。
+				逆に$\bm{x} \in \ker{A^*A}$ならば$A^*A\bm{x} = \bm{0}$なので$0 = \bm{x}^*A^*A\bm{x} = \norm{A\bm{x}}_2^2$より$A\bm{x} = \bm{0}$。
+				つまり$\bm{x} \in \ker{A}$だから$\ker{A} \supseteq \ker{A^* A}$。
+				以上より$\ker{A} = \ker{A^* A}$。
+				これと次元定理より$\rank{A} = \dim(\Img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{A^*A}) = \dim(\Img{A^*A}) = \rank{A^*A}$。
+				\par
+				この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
+				$\rank{A} = \rank{A^*} = \rank{(A^*)^*(A^*)} = \rank{AA^*}$。
+			\end{proof}
 		\section{$A\in\field^{m\times n}$の階数が$n$ならば$A^\top A$は正則}
 			\label{列フルランク行列を掛けあわせて正則行列を作る}
 			\begin{shadebox}
