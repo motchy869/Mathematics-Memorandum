@@ -6,11 +6,11 @@
 			\item $\bm{1}_n$ : 要素が全て1である$n$次元列ベクトル
 			\item $\bm{0}_n$ : 要素が全て0である$n$次元列ベクトル
 			\item $\bm{x}[i]$ : 列(行)ベクトルの第$i$成分
-			\item $\matEntry{A}{i}{j}$ : 行列$A$の第$(i,j)$成分
-			\item $\matEntry{A}{i}{*}$ : 行列$A$の第$i$行
-			\item $\matEntry{A}{*}{j}$ : 行列$A$の第$j$列
+			\item $\matEntry{A}{i}{j},\;A_{i,j}$ : 行列$A$の第$(i,j)$成分
 			\item $\matPart{A}{i_1}{i_2}{j_1}{j_2}$ : 行列$A$の第$i_1$行から第$i_2$行までの部分と第$j_1$列から第$j_2$列までの部分を抽出したもの
-			\item $A_{i,j}$ : 行列$A$の第$i$行$j$列を取り除いた行列
+			\item $\matEntry{A}{i}{:}$ : 行列$A$の第$i$行
+			\item $\matEntry{A}{:}{j}$ : 行列$A$の第$j$列
+			\item $[A]_{i,j}$ : 行列$A$の第$i$行$j$列を取り除いてできる部分行列。
 		\end{itemize}
 	\chapter{離散数学との関係}
 		\section{DirichletのDiophantine近似定理}
@@ -586,7 +586,7 @@
 					$F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
 				\end{shadebox}
 				\begin{proof}
-					\[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = J_G[i][*]J_F[*][j] \]
+					\[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
 				\end{proof}
 			\subsection{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}
 			\begin{shadebox}
@@ -697,7 +697,7 @@
 				帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
 				すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
 				\par
-				\[ J_{\Fhat}(\ahat)[*][j] = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
+				\[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
 				\[ \text{where}\quad \bm{p}_j := \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m+1),\;\lambda_j := \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m) \]
 				行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが、$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから、結局次のようになる。
 				\begin{align*}
