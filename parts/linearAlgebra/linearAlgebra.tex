@@ -1724,6 +1724,14 @@
 					実正方行列$A \in \realNumbers^{n\times n}$と実ベクトル$\vx \in \realNumbers^n$について
 					\[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}\]
 				\end{shadebox}
+				\noindent
+				(簡潔な証明)
+				\begin{proof}
+					左辺は$A$の最大特異値である。
+					$A$の特異値分解を$A=U\Sigma V^\top\;(U,V\text{は}n\text{次実直交行列})$とすると$A^\top A = V\Sigma^2V^\top$であり、定理の主張の右辺が$A$の最大特異値であることがわかる。
+				\end{proof}
+				\noindent
+				(昔考えた証明)
 				\begin{proof}
 					\[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\text{max}}\{A^\top A\}\]
 					を示せば良い。\\
@@ -1783,6 +1791,7 @@
 						\quad\par
 						転置してもノルムが変わらないことと、確率ベクトル(の転置)のノルムは高々$1$であることを使えば\ref{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}より従う。
 					\end{proof}
+			\subsection{}
 	\chapter{凸領域}
 		\section{凸領域内のベクトルの凸結合は元の凸領域に属す}
 			\begin{shadebox}
