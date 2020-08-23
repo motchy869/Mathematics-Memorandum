@@ -1793,15 +1793,15 @@
 				\begin{proof}
 					$A$の特異値分解より明らか。
 				\end{proof}
-			\subsection{$A\in\realNumbers^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
+			\subsection{$A\in\complexNumbers^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
 				\label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
 				\begin{proof}
 					\quad\par
-					$A$の第$i$列ベクトルを$\bm{a}_i$とし、$\bm{x}\in\realNumbers^n,\norm{\bm{x}}_2=1$とすると
+					$A$の第$i$列ベクトルを$\bm{a}_i$とし、$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1$とすると
 					\[\norm{A\bm{x}}_2=\norm{x_1\bm{a}_1+\cdots+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \cdots + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\cdots+|x_n|)a\]
 					これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\cdots+|x_n|\leq\sqrt{n}$なので定理が従う。
 				\end{proof}
-				\subsubsection{系:\quad$A\in\realNumbers^{m\times n}$の全要素の絶対値が$\varepsilon$以下であれば$\norm{A}_2\leq \varepsilon\sqrt{mn}$}
+				\subsubsection{系:\quad$A\in\complexNumbers^{m\times n}$の全要素の絶対値が$\varepsilon$以下であれば$\norm{A}_2\leq \varepsilon\sqrt{mn}$}
 					\begin{proof}
 						$A$の各列ベクトルのノルムが高々$\varepsilon\sqrt{m}$なので直前の定理より従う。
 					\end{proof}
