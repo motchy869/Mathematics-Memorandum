@@ -1714,6 +1714,11 @@
 					以上より$c_1=c_2=c_3$
 				\end{proof}
 				以降、特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
+			\subsection{部分行列のノルム: $A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}
+				\begin{proof}
+					\quad\par
+					$\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して、$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると、$||\bm{x}'|| = 1,\;||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
+				\end{proof}
 			\subsection{スペクトル半径の上界}
 				\begin{shadebox}
 					$A\in\complexNumbers^{n\times n}$について$\rho(A)\leq\norm{A}$
@@ -1761,13 +1766,13 @@
 					\[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}\]
 				\end{shadebox}
 				\noindent
-				(簡潔な証明)
+				(簡潔だが、高度な知識を前提とする証明)
 				\begin{proof}
 					左辺は$A$の最大特異値である。
 					$A$の特異値分解を$A=U\Sigma V^\top\;(U,V\text{は}n\text{次実直交行列})$とすると$A^\top A = V\Sigma^2V^\top$であり、定理の主張の右辺が$A$の最大特異値であることがわかる。
 				\end{proof}
 				\noindent
-				(昔考えた証明)
+				(初等的な証明)
 				\begin{proof}
 					\[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\text{max}}\{A^\top A\}\]
 					を示せば良い。\\
