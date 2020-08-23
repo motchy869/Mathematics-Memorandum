@@ -1645,15 +1645,34 @@
 					\[\therefore\; \norm{\sum_{i=1}^{m}{\bm{x}_i}} = \norm{\bm{x}_k+\bm{x}_l} + \sum_{i\neq k,l}{\norm{\bm{x}_i}} = \sum_{i=1}^{m}{\norm{\bm{x}_i}}\]
 					\[\therefore\; \norm{\bm{x}_k+\bm{x}_l} = \norm{\bm{x}_k}+\norm{\bm{x}_l}\]
 				\end{proof}
-			\subsection{$\bm{x}\in\realNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
+			% \subsection{$\bm{x}\in\realNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
+			% 	\label{th:単位球面上の点の座標の絶対値の総和の最大値}
+			% 	\begin{proof}
+			% 		\quad\par
+			% 		全要素が正の場合について証明すれば十分である。
+			% 		Lagrangeの未定乗数法を使う。
+			% 		目的関数を$f(\bm{x}):=\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x}):=\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda):=f(\bm{x})+\lambda g(\bm{x})$とする。
+			% 		最適解を$\bm{x}^*$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\bm{x}^*=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
+			% 		よって$\bm{x}^*$は全要素が等しい。これと$\norm{\bm{x}^*}=1,\bm{x}^*\geq\bm{0}$より$\bm{x}^* = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\bm{x}^*)=\sqrt{n}$
+			% 	\end{proof}
+			\subsection{$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
 				\label{th:単位球面上の点の座標の絶対値の総和の最大値}
 				\begin{proof}
 					\quad\par
-					全要素が正の場合について証明すれば十分である。
+					$x_k = r_k e^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\cdots,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) := \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) := \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+					\par
+					数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\cdots,m-1$について(*)が成り立つと仮定する。
+					$r_1,\cdots,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
+					\par
+					そこで$r_1,\cdots,r_n$が全て正であるとする。
 					Lagrangeの未定乗数法を使う。
-					目的関数を$f(\bm{x}):=\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x}):=\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda):=f(\bm{x})+\lambda g(\bm{x})$とする。
- 					最適解を$\bm{x}^*$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\bm{x}^*=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
- 					よって$\bm{x}^*$は全要素が等しい。これと$\norm{\bm{x}^*}=1,\bm{x}^*\geq\bm{0}$より$\bm{x}^* = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\bm{x}^*)=\sqrt{n}$
+					Lagrange関数を$L(\bm{r},\lambda):=f(\bm{r})+\lambda g(\bm{r})$とする。
+					$\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから、今関心のある領域に特異点は存在しない。
+					$r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\cdots,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
+					よってLagrangeの未定乗数法で極値を見つければそれは極大値であり、また最大値でもある。
+					極値を与える点を$\overset{\circ}{\bm{r}}$とすると$\nabla_{\bm{r}}L(\overset{\circ}{\bm{r}},\lambda)=\bm{0}$より$\bm{1}_n + 2\lambda\overset{\circ}{\bm{r}}=\bm{0}\;\therefore\;\overset{\circ}{\bm{r}}=-\frac{1}{2\lambda}\bm{1}_n$。
+					よって$\overset{\circ}{\bm{r}}$は全要素が等しい。
+					これと制約条件より$\overset{\circ}{\bm{r}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\overset{\circ}{\bm{r}}) = \sqrt{n}$
 				\end{proof}
 		\section{応用}
 			\subsection{超平面と点の距離公式の直感的説明}
