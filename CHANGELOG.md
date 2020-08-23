@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added a theorem "when alpha := the largest absolute value of a complex matrix A, then 2-operator-norm of A >= alpha."
 - Extended a theorem about maximum of the 2-operator-norm of a matrix A with constraints of its element's absolute value, so that A can be a complex matrix.
 - Extended a theorem about the sum of the absolute value of norm-1 vector. Allowed the vector's elements to take complex value.
 - Added more simple proof for a theorem "the largest singular value of a square matrix A is square root of the largest eigen value of A^\top A."

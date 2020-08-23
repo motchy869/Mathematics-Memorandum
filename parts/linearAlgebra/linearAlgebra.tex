@@ -1793,6 +1793,11 @@
 				\begin{proof}
 					$A$の特異値分解より明らか。
 				\end{proof}
+			\subsection{$A \in \complexNumbers^{m\times n}$について$\alpha = \max|A_{ij}|$とすると$\alpha \leq \|A\|_2$}
+				\begin{proof}
+					\quad\par
+					絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \|A\bm{e}_q\|_2 \leq \|A\|_2$
+				\end{proof}
 			\subsection{$A\in\complexNumbers^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
 				\label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
 				\begin{proof}
@@ -1810,7 +1815,6 @@
 						\quad\par
 						転置してもノルムが変わらないことと、確率ベクトル(の転置)のノルムは高々$1$であることを使えば\ref{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}より従う。
 					\end{proof}
-			\subsection{}
 	\chapter{凸領域}
 		\section{凸領域内のベクトルの凸結合は元の凸領域に属す}
 			\begin{shadebox}
