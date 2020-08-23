@@ -980,6 +980,11 @@
 					$A^{-1}\bm{y} = \lambda'\bm{y}$であり、両辺に左から$A$を掛けて$\bm{y} = \lambda'A\bm{y}\quad\therefore\;A\bm{y} = \frac{1}{\lambda'}\bm{y}$となる。
 					よって$A^{-1}$の固有値$\lambda'$は$A$の固有値$1/\lambda'$の逆数であり、固有ベクトルは共通である。
 				\end{proof}
+			\subsection{ユニタリ行列の全ての固有値の絶対値は1である}
+				\begin{proof}
+					\quad\par
+					ユニタリ行列$P$とその任意の固有値$\lambda$およびそれに対応する固有ベクトル$\bm{x} \neq \bm{0}$について$P\bm{x} = \lambda\bm{x}$の両辺のノルムをとると$\|\bm{x}\|_2 = \|P\bm{x}\|_2 = |\lambda|\|\bm{x}\|_2$であるからわかる。
+				\end{proof}
 			\subsection{コンパニオン行列}
 				\begin{shadebox}
 					$\lambda$に関する多項式$f_n(\lambda)=\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_0$に対して次の行列
