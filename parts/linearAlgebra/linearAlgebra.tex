@@ -1723,25 +1723,37 @@
 					$A$の絶対値最大固有値を$\lambda_{max}$, その任意の固有ベクトルを$\vx$とすると
 					\[\rho(A) := |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
 				\end{proof}
-			\subsection{実対称行列の最大固有値の絶対値はノルムと一致する}
+			\subsection{Hermite行列の絶対値最大固有値の絶対値は2-演算子ノルムと一致する}
 				\begin{shadebox}
-					$A\in\realNumbers^{n\times n}$が対称行列であるとき$|\lambda_\mathrm{max}| = \norm{A}$
+					$A\in\complexNumbers^{n\times n}$がHermite行列であるとき$\max |\lambda(A)| = \norm{A}$
 				\end{shadebox}
+				\noindent
+				(短いが高度な知識を前提とした証明)
 				\begin{proof}
 					\quad\par
-					$A$は実対称行列であるから固有値は全て実数で、$A$は実直交行列で対角化できることは既知とする。
-					$A$の異なる固有値を大きい順に$\lambda_1,\lambda_2,\cdots,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
+					$A$はHermite行列だから固有値は全て実数で、適当なユニタリ行列$U$で対角化できる。
+					$A$の対角化を$A = UDU^\mathrm{H}$とする。
+					ここに$D = \diag{\lambda_1,\cdots,\lambda_n},\;|\lambda_1| \geq \cdots \geq |\lambda_n|$である。
+					$A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で、$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
+					よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
+				\end{proof}
+				\noindent
+				(初等的な証明)
+				\begin{proof}
+					\quad\par
+					$A$はHermite行列であるから固有値は全て実数で、$A$がユニタリ交行列で対角化できることは既知とする。
+					$A$の異なる固有値を、絶対値が大きい順に$\lambda_1,\lambda_2,\cdots,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
 					$\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$とすると
-					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\realNumbers^n$の正規直交基底である。
+					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
 					\par
 					$\norm{A}$の定義は$\norm{A} := \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
-					任意の$\vx\in\realNumbers^n,\quad\norm{\vx}=1$は適当な実数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{{c_{k,i}}^2}}=1$を用いて
+					任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
 					$\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
 					\[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
 					よって
-					\[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{{c_{k,i}}^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i := \sum_{k=1}^{n_i}{{c_{k,i}}^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
+					\[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i := \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
 					これは$c_1=1,\quad c_2=\cdots=c_\sigma=0$のときに最大となる。よって
-					\[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = |\lambda_\mathrm{max}|\]
+					\[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
 				\end{proof}
 			\subsection{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}$}
 				\begin{shadebox}
