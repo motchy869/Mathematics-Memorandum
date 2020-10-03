@@ -475,69 +475,69 @@
 				\end{align*}
 			\end{proof}
 			\end{comment}
-			\section{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}
-				\begin{proof}
-					\[
-						M := \begin{bmatrix}
-							I_n & A \\
-							B & I_m
-						\end{bmatrix}
-					\]
-					とすると
-					\[
-						\det{M} = \det{
-							\left(M
-							\begin{bmatrix}
-								I_n & -A \\
-								O & I_m
-							\end{bmatrix}
-							\right)
-						} = \det{
-							\begin{bmatrix}
-								I_n & O \\
-								B & I_m-BA
-							\end{bmatrix}
-						} = |I_m-BA|
-					\]
-					一方で
-					\[
-						\det{M} = \det{
-							\left(M
-							\begin{bmatrix}
-								I_n & O \\
-								-B & I_m
-							\end{bmatrix}
-							\right)
-						} = \det{
-							\begin{bmatrix}
-								I_n-AB & A \\
-								~ & I_m
-							\end{bmatrix}
-						} = |I_n-AB|
-					\]
-				\end{proof}
-			\section{系: $\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}
-				\begin{shadebox}
-					$\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
-				\end{shadebox}
-				\begin{comment}
-				\begin{proof}
-					\begin{align*}
-						|I_n - \bm{v}\bm{v}^\top| &=
+		\section{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}
+			\begin{proof}
+				\[
+					M := \begin{bmatrix}
+						I_n & A \\
+						B & I_m
+					\end{bmatrix}
+				\]
+				とすると
+				\[
+					\det{M} = \det{
+						\left(M
 						\begin{bmatrix}
-							I_n & \bm{v} \\
-							\bm{v}^\top & 0
+							I_n & -A \\
+							O & I_m
 						\end{bmatrix}
-						=
+						\right)
+					} = \det{
 						\begin{bmatrix}
-							I_n & \bm{v} \\
-							\bm{0}_n^\top & -\norm{\bm{v}}_2^2
+							I_n & O \\
+							B & I_m-BA
 						\end{bmatrix}
-						\quad\left(\text{最下行から}i\text{行目}\times v_i\;(i=1,\cdots,n)\text{をそれぞれ引いた}\right) \\
-						&= 1 - \norm{\bm{v}}_2^2
-					\end{align*}
-				\end{proof}
-				\end{comment}
+					} = |I_m-BA|
+				\]
+				一方で
+				\[
+					\det{M} = \det{
+						\left(M
+						\begin{bmatrix}
+							I_n & O \\
+							-B & I_m
+						\end{bmatrix}
+						\right)
+					} = \det{
+						\begin{bmatrix}
+							I_n-AB & A \\
+							~ & I_m
+						\end{bmatrix}
+					} = |I_n-AB|
+				\]
+			\end{proof}
+		\section{系: $\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}
+			\begin{shadebox}
+				$\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
+			\end{shadebox}
+			\begin{comment}
+			\begin{proof}
+				\begin{align*}
+					|I_n - \bm{v}\bm{v}^\top| &=
+					\begin{bmatrix}
+						I_n & \bm{v} \\
+						\bm{v}^\top & 0
+					\end{bmatrix}
+					=
+					\begin{bmatrix}
+						I_n & \bm{v} \\
+						\bm{0}_n^\top & -\norm{\bm{v}}_2^2
+					\end{bmatrix}
+					\quad\left(\text{最下行から}i\text{行目}\times v_i\;(i=1,\cdots,n)\text{をそれぞれ引いた}\right) \\
+					&= 1 - \norm{\bm{v}}_2^2
+				\end{align*}
+			\end{proof}
+			\end{comment}
 	\chapter{逆行列}
 		\section{$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}
 			\label{逆行列にその構成縦ベクトルを掛ける}
