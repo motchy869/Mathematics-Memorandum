@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - In linear algebra, Clarified that the chapter name "norm" is "norm of vector".
 - Added theorems about the sign of permutation.
 - Added determinant of anti-diagonal transposed matrix.
+- Added a property of Legendre transformation.
 
 ## [0.0.0] - 2020-08-15
 

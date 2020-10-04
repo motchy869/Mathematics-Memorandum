@@ -461,6 +461,31 @@
 						&= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
 					\end{align*}
 				\end{proof}
+		\section{Legendre変換}
+			\subsection{十分滑らかな狭義凸関数に対してLegendre変換を2回施すと元の関数に戻る}
+				\newcommand{\fd}{{f^{(1)}}}
+				\newcommand{\fStarD}{{{f^*}^{(1)}}}
+				\begin{proof}
+					\quad\par
+					$f$を開区間$I$で定義された$C^2$級の狭義凸関数とする。
+					(よって1階導関数$f^{(1)}$は狭義単調増加だから逆関数が存在する。)
+					$\fd$の値域を$I_2$とする。$f$のLegendre変換$f^*$は次のようになる。
+					\[ f^*(p) = p\fd^{-1}(p) - f\left(\fd^{-1}(p)\right) \quad (p \in I_2) \]
+					$f^*$のLegendre変換$f^{**}$を求めるためにまず${f^*}^{(1)}$の値域を調べる。
+					\[ \fStarD(q)\;(q \in I_2) = \fd^{-1}(q) + q\frac{1}{f^{(2)}(q)} - \fd\left(\fd^{-1}(q)\right)\frac{1}{f^{(2)}(q)} = \fd^{-1}(q) \]
+					より$\fStarD$の値域は$I$である。
+					さらに、$\fd^{-1}$は狭義単調増加なので上式より$\fStarD$の逆関数が存在して$\fStarD^{-1} = \fd$である。
+					$\fStarD^{-1}$の定義域は$I$である。
+					以上より$f^{**}$は次のようになる。
+					\begin{align*}
+						f^{**}(q)\; (q \in I) &= q\fStarD^{-1}(q) - f^*\left(\fStarD^{-1}(q)\right) \\
+						&= q\fd(q) - f^*(\fd) \\
+						&= q\fd(q) - \fd(q)\fd^{-1}\left(\fd(q)\right) + f\left(\fd^{-1}\left(\fd(q)\right)\right) \\
+						&= f(q)
+					\end{align*}
+				\end{proof}
+				\let\fd\undefined
+				\let\fStarD\undefined
 	\chapter{諸定理}
 		\section{偶関数と奇関数への分解}
 			\begin{shadebox}
