@@ -287,25 +287,6 @@
 					\[\sum_{i=1}^{n}c_ix_i = c_nx_n+c_{n-1}x_{n-1}+\dots+c_1x_1\]
 					これは0でなくてはならない。
 				\end{proof}
-	\chapter{代数方程式}
-		\section{諸定理}
-			\subsection{実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である}
-				\begin{shadebox}
-					実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					最高次の係数を常に1として一般性を失わないので方程式は
-					\[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realNumbers\]
-					と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
-					\[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
-					両辺の複素共役をとると
-					\begin{align*}
-						\left[s^n + \sum_{k=n-1}^{0}{c_ks^k}\right]^* &= 0^* = 0\\
-						\therefore \; {s^*}^n + \sum_{k=n-1}^{0}{c_k{s^*}^k} &= 0
-					\end{align*}
-					これは$s^*$が解であることに他ならない。
-				\end{proof}
 	\chapter{指示関数}
 		\section{諸定理}
 			\subsection{$\Omega$を定義域とする写像$f,g,T$に対して$^\forall x\in\Omega,^\forall t\in T(\Omega),\; \indII{T(x)=t}f(x) = \indII{T(x)=t}g(x) \iff ^\forall x\in\Omega,\;f(x)=g(x)$}

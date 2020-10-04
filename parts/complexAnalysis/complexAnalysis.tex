@@ -72,19 +72,38 @@
 						\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} &= \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\exp\left(i\frac{k}{n}2\pi\right)^n\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} = \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-e^{ik2\pi}\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} =0
 					\end{align*}
 				\end{proof}
-		\section{例題}
-			\subsection{$z^n+z^{n-1}+\dots+z^2+z+1 = 0$}
-				\begin{shadebox}
-					次の方程式を解け。
-					\[z^n+z^{n-1}+\dots+z^2+z+1 = 0\]
-				\end{shadebox}
-				\begin{solution}
-					\quad\par
-					$z=1$が解ではないから両辺に$z-1$を掛けて
-					\[z^{n+1}-1=0\]
-					の形にする。$z$の絶対値が1だと分かるので$z=e^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
-					\qed
-				\end{solution}
+		\section{代数方程式}
+			\subsection{諸定理}
+				\subsubsection{実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である}
+					\begin{shadebox}
+						実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である。
+					\end{shadebox}
+					\begin{proof}
+						\quad\par
+						最高次の係数を常に1として一般性を失わないので方程式は
+						\[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realNumbers\]
+						と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
+						\[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
+						両辺の複素共役をとると
+						\begin{align*}
+							\left[s^n + \sum_{k=n-1}^{0}{c_ks^k}\right]^* &= 0^* = 0\\
+							\therefore \; {s^*}^n + \sum_{k=n-1}^{0}{c_k{s^*}^k} &= 0
+						\end{align*}
+						これは$s^*$が解であることに他ならない。
+					\end{proof}
+			\subsection{例題}
+				\subsection{$z^n+z^{n-1}+\dots+z^2+z+1 = 0$}
+					\begin{shadebox}
+						次の方程式を解け。
+						\[z^n+z^{n-1}+\dots+z^2+z+1 = 0\]
+					\end{shadebox}
+					\begin{solution}
+						\quad\par
+						$z=1$が解ではないから両辺に$z-1$を掛けて
+						\[z^{n+1}-1=0\]
+						の形にする。$z$の絶対値が1だと分かるので$z=e^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
+						\qed
+					\end{solution}
 	\chapter{特殊関数}
 		\section{Gamma関数}
 			\subsection{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}
