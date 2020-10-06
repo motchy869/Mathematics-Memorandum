@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a property of Legendre transformation.
 - Moved a theorem about complex conjugate root of algebraic equation from Real Analysis to Complex Analysis.
 - Added theorem: the inverse function of a continuous function is continuous.
+- Added differentiability of the inverse function of a differentiable function.
 
 ## [0.0.0] - 2020-08-15
 
