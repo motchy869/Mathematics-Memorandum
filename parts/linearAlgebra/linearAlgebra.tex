@@ -779,10 +779,10 @@
 				この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
 				$\rank{A} = \rank{A^*} = \rank{(A^*)^*(A^*)} = \rank{AA^*}$。
 			\end{proof}
-		\section{$A\in\field^{m\times n}$の階数が$n$ならば$A^\top A$は正則}
+		\section{$A\in\field^{m\times n}$の階数が$n$ならば$A^* A$は正則}
 			\label{列フルランク行列を掛けあわせて正則行列を作る}
 			\begin{shadebox}
-				$A\in\field^{m\times n}$が列フルランクならば$A^\top A$は正則
+				$A\in\field^{m\times n}$が列フルランクならば$A^* A$は正則
 			\end{shadebox}
 			\begin{proof}(ややこしい証明)
 				\par
@@ -798,15 +798,15 @@
 				\end{align*}
 				とすれば
 				\[AT = P\quad(A = PT^{-1})\]
-				であり、$T$は正則である。さらに$P^\top P = I_{n\times n}$であるから
-				\[\rank{A^\top A} = \rank{\left(T^{-1}\right)^\top P^\top PT^{-1}} = \rank{\left(T^{-1}\right)^\top I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
+				であり、$T$は正則である。さらに$P^* P = I_{n\times n}$であるから
+				\[\rank{A^* A} = \rank{\left(T^{-1}\right)^* P^* PT^{-1}} = \rank{\left(T^{-1}\right)^* I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
 			\end{proof}
 			\begin{proof}
 				(より簡単な証明)
 				\par
-				$\bm{x}\in\field^n$を任意にとって$A^\top A\bm{x}=\bm{0}$とおいてみると
-				\[A^\top A\bm{x}=\bm{0} \Rightarrow \bm{x}^\top A^\top A\bm{x}=\bm{0} \iff \inprod{A\bm{x}}{A\bm{x}}=\bm{0} \iff \norm{A\bm{x}}=0 \iff A\bm{x}=\bm{0}\]
-				$A$は列フルランクであったから$\bm{x}=\bm{0}$となるので$A^\top A$は正則である。
+				$\bm{x}\in\field^n$を任意にとって$A^* A\bm{x}=\bm{0}$とおいてみると
+				\[A^* A\bm{x}=\bm{0} \Rightarrow \bm{x}^* A^* A\bm{x}=\bm{0} \iff \inprod{A\bm{x}}{A\bm{x}}=\bm{0} \iff \norm{A\bm{x}}=0 \iff A\bm{x}=\bm{0}\]
+				$A$は列フルランクであったから$\bm{x}=\bm{0}$となるので$A^* A$は正則である。
 			\end{proof}
 		\section{(系)\quad$A\in\field^{m\times n}$が行フルランクならば$AA^\top$は正則}
 			\begin{shadebox}
