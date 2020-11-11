@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added a theorem about minimization of ||Ax-b|| (x is a complex vector).
 - Extended a theorem about matrix regularity: If a complex matrix A is column full rank, A^*A is regular.
 - Added some Mathematica demonstrations for proerties of matrix-norm, pseudoinverse.
 - Added an example of a convex function takes multiple matrices.

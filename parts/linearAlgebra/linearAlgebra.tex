@@ -1951,6 +1951,26 @@
 				\quad\par
 				直前の定理より$A$のノイマン級数$I+A+A^2+\cdots$の各要素は0以上$1+r+r^2+\cdots=\frac{1}{1-r}$以下である。
 			\end{proof}
+	\chapter{最適化への応用}
+		\section{$\norm{A\bm{x} - \bm{b}}_2^2$の最小化条件}
+			\begin{shadebox}
+				$A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
+				$f(\bm{x}) := \norm{A\bm{x} - \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \dom{f}$で最小となる必要十分条件は次式である。
+				\[ A^*A\mathring{\bm{x}} = A^*\bm{b} \]
+				特に$A$が列フルランクであれば$A^*A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
+				\[ \mathring{\bm{x}} = (A^*A)^{-1}A^*\bm{b} \]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				\ref{凸関数の例}より$f$は凸であるので、$\mathring{\bm{x}}$が$f$を最小化する必要十分条件は次式である。
+				\[ f(\mathring{\bm{x}} + \mathrm{d}\bm{x}) - f(\mathring{\bm{x}}) = o(\|\mathrm{d}\bm{x}\|) \; (\mathrm{d}\bm{x} \to \bm{0}) \]
+				これは$f(\mathring{\bm{x}} + \mathrm{d}\bm{x})$の$\mathrm{d}\bm{x}$に関する1次の項が0であることと同値である。
+				この1次の項を$g(\mathrm{d}\bm{x})$とすると
+				\begin{align*}
+					g(\mathrm{d}\bm{x}) &= (A\mathrm{d}\bm{x})^*(A\mathring{\bm{x}} - \bm{b}) + (A\mathring{\bm{x}} - \bm{b})^*(A\mathrm{d}\bm{x}) = 2\Re{(\mathring{\bm{x}}^*A^*A - \bm{b}^*A)\mathrm{d}\bm{x}}
+				\end{align*}
+				であるから、$\mathring{\bm{x}}$に関する条件は$\mathring{\bm{x}}^*A^*A - \bm{b}^*A = O$、すなわち$A^*A\mathring{\bm{x}} = A^*\bm{b}$である。
+			\end{proof}
 	\chapter{発想, 技巧}
 		\section{演算}
 			\subsection{積和の階数を拡張する}
