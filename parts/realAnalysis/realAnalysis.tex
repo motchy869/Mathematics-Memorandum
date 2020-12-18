@@ -1447,6 +1447,8 @@
 				ここに、$H(f,\bm{x}_0)$は$f$のHesse行列の$\bm{x}_0$に於ける値である。
 				$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$より$\nabla f(\bm{x}_0) = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)$である。
 				$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\cdots,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
+				\[ \nabla f(\bm{x}_0)^\top\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \bm{c}_i^\top\bm{h} = \bm{0} \]
+				である。よって
 				\[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
 				$f$は狭義凸であるので$H(f,\bm{x}_0)$は正定であり、$O(\|\bm{h}\|_2^2)$であるから、十分小さい$\bm{h}$に対して上式の右辺は$f(\bm{x}_0)$を厳密に上回る。
 			\end{proof}
