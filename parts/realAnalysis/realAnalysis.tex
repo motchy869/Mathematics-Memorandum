@@ -1430,3 +1430,23 @@
 					\therefore\; V_n &= V_1\prod_{i=3}^{n+1}{\sqrt{\pi}\frac{\GammaFunc{i/2}}{\GammaFunc{(i+1)/2}}} = 2\pi^{(n-1)/2}\frac{\GammaFunc{3/2}}{\GammaFunc{1+n/2}} = \frac{\pi^{n/2}}{\GammaFunc{1+n/2}}
 				\end{align*}
 			\end{proof}
+	\chapter{最適化への応用}
+		\section{狭義凸関数の線形制約下での最小化}
+			\begin{shadebox}
+				$m,n\in\naturalNumbers$とする。
+				$f: \realNumbers^n \to \realNumbers$を狭義凸関数とする。
+				$\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\cdots,m)$とし、$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
+				$\bm{\lambda} \in \realNumbers^m$とし、Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) := f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
+				$\bm{x}_0, \bm{\lambda}_0$を$F$の停留点、すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\cdots,m)$なる拘束条件の下、$\bm{x}_0$で最小値をとる。
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$\bm{h} \in \realNumbers^n \neq \bm{0}$とし、$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\cdots,m)$を満たすとする。
+				このとき$f(\bm{x}_0 + \bm{h}) > f(\bm{x}_0)$であることを示す。
+				\[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \nabla f(\bm{x}_0)^\top\bm{h} + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
+				ここに、$H(f,\bm{x}_0)$は$f$のHesse行列の$\bm{x}_0$に於ける値である。
+				$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$より$\nabla f(\bm{x}_0) = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)$である。
+				$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\cdots,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
+				\[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
+				$f$は狭義凸であるので$H(f,\bm{x}_0)$は正定であり、$O(\|\bm{h}\|_2^2)$であるから、十分小さい$\bm{h}$に対して上式の右辺は$f(\bm{x}_0)$を厳密に上回る。
+			\end{proof}
