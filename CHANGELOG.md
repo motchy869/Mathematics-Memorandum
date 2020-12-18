@@ -13,10 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added a theorem about minimization of ||Ax-b|| (x is a complex vector).
 - Extended a theorem about matrix regularity: If a complex matrix A is column full rank, A^*A is regular.
-- Added some Mathematica demonstrations for proerties of matrix-norm, pseudoinverse.
+- Added some Mathematica demonstrations for properties of matrix-norm, pseudo-inverse.
 - Added an example of a convex function takes multiple matrices.
 - Added convex function consists of matrix trace: For a real definite matrix A, tr(X^\top A X) (X is real matrix) is a convex function of X.
-- Added some equations about pseudoinverse.
+- Added some equations about pseudo-inverse.
 - Added a theorem that the 2-operator norm of a sub matrix of a matrix A is smaller or equal to the norm of A.
 - Added a complex version support: In the theorem that the largest absolute value of the eigenvalue of a real, symmetric matrix A equals to the 2-operator norm of A, allowed A to be a complex matrix.
 - Added a theorem that the absolute value of each eigenvalue of an unitary matrix is 1.
