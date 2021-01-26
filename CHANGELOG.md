@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Added a equation about vector triple product (Lagrange's formula).
 - Added a theorem about minimization of strictly convex function on linear constraints.
 - Added a theorem about minimization of complex-argument-real-valued function ||Ax+b|| on linear constraints.
 

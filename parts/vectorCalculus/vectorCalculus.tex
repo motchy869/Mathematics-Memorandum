@@ -40,7 +40,20 @@
 					\end{align*}
 					すると
 					\begin{align*}
-						A\times(B\times C) &= (\bm{i}_1 A_1 + \bm{i}_2 A_2 + \bm{i}_3 A_3) \times \left[\bm{i}_1(B_2 C_3 - B_3 C_2) + \bm{i}_2(B_3 C_1 - B_1 C_3) + \bm{i}_3(B_1 C_2 - B_2 C_1)\right]
+						A\times(B\times C) &= (\bm{i}_1 A_1 + \bm{i}_2 A_2 + \bm{i}_3 A_3) \times \left[\bm{i}_1(B_2 C_3 - B_3 C_2) + \bm{i}_2(B_3 C_1 - B_1 C_3) + \bm{i}_3(B_1 C_2 - B_2 C_1)\right] \\
+						&= \phantom{+}\bm{i}_3 A_1(B_3 C_1 - B_1 C_3) - \bm{i}_2 A_1(B_1 C_2 - B_2 C_1) \\
+						&\phantom{=} -\bm{i}_3 A_2(B_2 C_3 - B_3 C_2) + \bm{i}_1 A_2(B_1 C_2 - B_2 C_1) \\
+						&\phantom{=} +\bm{i}_2 A_3(B_2 C_3 - B_3 C_2) - \bm{i}_1 A_3(B_3 C_1 - B_1 C_3) \\
+						&= \phantom{+}\bm{i}_1 \left[(A_2 C_2 + A_3 C_3)B_1 - (A_2 B_2 + A_3 B_3)C_1\right] \\
+						&\phantom{=} + \bm{i}_2 \left[(A_1 C_1 + A_3 C_3)B_2 - (A_1 B_1 + A_3 B_3)C_2\right] \\
+						&\phantom{=} + \bm{i}_3 \left[(A_1 C_1 + A_2 C_2)B_2 - (A_1 B_1 + A_2 B_2)C_3\right] \\
+						&= \phantom{+}\bm{i}_1 \left[(\inprod{A}{C} - A_1 C_1)B_1 - (\inprod{A}{B} - A_1 B_1)C_1\right] \\
+						&\phantom{=} + \bm{i}_2 \left[(\inprod{A}{C} - A_2 C_2)B_2 - (\inprod{A}{B} - A_2 B_2)C_2\right] \\
+						&\phantom{=} + \bm{i}_3 \left[(\inprod{A}{C} - A_3 C_3)B_3 - (\inprod{A}{B} - A_3 B_3)C_3\right] \\
+						&= \phantom{+}\bm{i}_1 \left[\inprod{A}{C}B_1 - \inprod{A}{B}C_1\right] \\
+						&\phantom{=} + \bm{i}_2 \left[\inprod{A}{C}B_2 - \inprod{A}{B}C_2\right] \\
+						&\phantom{=} + \bm{i}_3 \left[\inprod{A}{C}B_3 - \inprod{A}{B}C_3\right] \\
+						&= \inprod{A}{C}B - \inprod{A}{B}C
 					\end{align*}
 				\end{proof}
 			\subsection{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}
