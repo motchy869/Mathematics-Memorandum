@@ -28,6 +28,13 @@
 	\newcommand{\ppph}{\partDeriv{}{\varphi}{}}
 
 	\chapter{直角座標系}
+		\section{諸定義}
+			\subsection{Vector Laplacian}
+				\label{VectorLaplacian}
+				\begin{definition}
+					$A: \bm{r}\in\realNumbers^3 \mapsto A(\bm{r}) \in \realNumbers^3$($A$の各成分は$\mathrm{C}^2$級)の Vector Laplacian $\nabla^2 A$は次式で定義される。
+					\[ \nabla^2A := \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) \]
+				\end{definition}
 		\section{諸公式}
 			\subsection{ベクトル三重積の公式: $A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}
 				\begin{proof}
@@ -54,6 +61,17 @@
 						&\phantom{=} + \bm{i}_2 \left[\inprod{A}{C}B_2 - \inprod{A}{B}C_2\right] \\
 						&\phantom{=} + \bm{i}_3 \left[\inprod{A}{C}B_3 - \inprod{A}{B}C_3\right] \\
 						&= \inprod{A}{C}B - \inprod{A}{B}C
+					\end{align*}
+				\end{proof}
+			\subsection{直角座標系に於ける Vector Laplacian: $\nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3$}
+				\begin{shadebox}
+					\ref{VectorLaplacian}に於いて、特に直角座標系を考える場合は次式のように簡約化される。
+					\[ \nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
+				\end{shadebox}
+				\begin{proof}
+					\begin{align*}
+						\nabla(\nabla\cdot A) &= \bm{i}_1 \partDerivLong{(\nabla\cdot A)}{r_1}{} + \bm{i}_2 \partDerivLong{(\nabla\cdot A)}{r_2}{} + \bm{i}_3 \partDerivLong{(\nabla\cdot A)}{r_3}{} \\
+						&= \phantom{+} \bm{i}_1\left(\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_2}{r_1}{r_3}\right)
 					\end{align*}
 				\end{proof}
 			\subsection{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}
