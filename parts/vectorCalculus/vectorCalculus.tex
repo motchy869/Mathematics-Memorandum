@@ -71,8 +71,18 @@
 				\begin{proof}
 					\begin{align*}
 						\nabla(\nabla\cdot A) &= \bm{i}_1 \partDerivLong{(\nabla\cdot A)}{r_1}{} + \bm{i}_2 \partDerivLong{(\nabla\cdot A)}{r_2}{} + \bm{i}_3 \partDerivLong{(\nabla\cdot A)}{r_3}{} \\
-						&= \phantom{+} \bm{i}_1\left(\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_2}{r_1}{r_3}\right)
+						&= \phantom{+} \bm{i}_1\left(\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_3}{r_1}{r_3}\right) \\
+						&\phantom{=} + \bm{i}_2\left(\partDerivIIHeteroLong{A_1}{r_2}{r_1} + \partDerivLong{A_2}{r_2}{2} + \partDerivIIHeteroLong{A_3}{r_2}{r_3}\right) \\
+						&\phantom{=} + \bm{i}_3\left(\partDerivIIHeteroLong{A_1}{r_3}{r_1} + \partDerivIIHeteroLong{A_2}{r_3}{r_2} + \partDerivLong{A_3}{r_3}{2}\right)
 					\end{align*}
+					\begin{align*}
+						\nabla\times(\nabla\times A) &= \nabla\times\left[\bm{i}_1\left(\partDeriv{A_3}{r_2}{} - \partDeriv{A_2}{r_3}{}\right) + \bm{i}_2\left(\partDeriv{A_1}{r_3}{} - \partDeriv{A_3}{r_1}{}\right) + \bm{i}_3\left(\partDeriv{A_2}{r_1}{} - \partDeriv{A_1}{r_2}{}\right)\right] \\
+						&=\phantom{+} \bm{i}_1\left(-\partDerivLong{A_1}{r_2}{2} - \partDerivLong{A_1}{r_3}{2} + \partDerivIIHeteroLong{A_2}{r_2}{r_1} + \partDerivIIHeteroLong{A_3}{r_3}{r_2}\right) \\
+						&\phantom{=} + \bm{i}_2\left(-\partDerivLong{A_2}{r_3}{2} - \partDerivLong{A_2}{r_1}{2} + \partDerivIIHeteroLong{A_3}{r_3}{r_2} + \partDerivIIHeteroLong{A_1}{r_1}{r_2}\right) \\
+						&\phantom{=} + \bm{i}_3\left(-\partDerivLong{A_3}{r_1}{2} - \partDerivLong{A_3}{r_2}{2} + \partDerivIIHeteroLong{A_1}{r_1}{r_3} + \partDerivIIHeteroLong{A_2}{r_2}{r_3}\right)
+					\end{align*}
+					$A_1,A_2,A_3$が$\mathrm{C}^2$級であるから偏微分の順序が交換可能であるので、
+					\[ \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
 				\end{proof}
 			\subsection{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}
 				\begin{shadebox}
