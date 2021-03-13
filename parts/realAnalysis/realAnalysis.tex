@@ -438,7 +438,7 @@
 			\subsection{$\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,\;X_i \in \complexNumbers^{m\times n})$は$X_1,\cdots,X_N$に関して凸である。}
 				\begin{proof}
 					\quad\par
-					$T_X := (X_1,\cdots,X_N),\;T_Y := (Y_1,\cdots,Y_N),\;\lambda \in [0,1]$とする。
+					$T_X := (X_1,\cdots,X_N),\;T_Y := (Y_1,\cdots,Y_N),\;\lambda \in [0,1]$とし、$f(T_X) := \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
 					\begin{align*}
 						f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
 						&= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\
@@ -447,7 +447,7 @@
 					\end{align*}
 					よって
 					\begin{align*}
-						&\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) \\
+						&\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
 						&= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
 						&= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
 					\end{align*}
