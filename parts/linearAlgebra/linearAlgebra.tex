@@ -1611,6 +1611,20 @@
 					= -1
 				$
 			\end{proof}
+		\section{$A$: Hermite対称で正定$\Rightarrow (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) \geq \|\bm{x}^*\bm{y}\|_2^2$}
+			\begin{shadebox}
+				$A \in \complexNumbers^{n\times n}$はHermite対称で正定であるとする。
+				このとき、任意の$\bm{x}, \bm{y} \in \complexNumbers^n$に対して次式が成り立つ。
+				\[ (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) \geq \|\bm{x}^*\bm{y}\|_2^2 \]
+				等号が成立するのは$\bm{x}$と$\bm{y}$どちらかが$\bm{0}$であるか、そうでなければ$\bm{y}$と$A\bm{x}$が平行であるとき、かつそのときである。
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$A$はHermite対称で正定であるから、適当なユニタリ行列で対角化可能であり、固有値が全て正であることに注意すれば、$\sqrt{A},\;\sqrt{A^{-1}}$を定義できる。
+				これを用いると次式を得る。
+				\[ (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) = \norm{\sqrt{A}\bm{x}}_2^2 \norm{\sqrt{A^{-1}}\bm{y}}_2^2 \geq \left|\inprod{\sqrt{A}\bm{x}}{\sqrt{A^{-1}}\bm{y}}\right|^2 = |\bm{x}^*\bm{y}|^2 \]
+				2つ目の不等号はCauchy-Schwartzの不等式より導かれる。
+			\end{proof}
 	\chapter{擬逆行列}
 		\section{諸定理: $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$など}
 			以下のものは特異値分解を用いて示せる。
