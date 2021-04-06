@@ -1146,6 +1146,18 @@
 				\end{align*}
 				よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integ{-\infty}{\infty}{(f*g)(x)}{x}$は絶対収束する。
 			\end{proof}
+		\section{諸公式}
+			\subsection{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \cdots - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}
+			\begin{proof}
+				\begin{align*}
+					&\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \cdots - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-1}=0}^{a-x_1- \cdots - x_{n-3}} (a-x_1- \cdots - x_{n-1}) \mathrm{d}x_{n-1} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-2}=0}^{a-x_1-\cdots-x_{n-4}} (a-x_1- \cdots - x_{n-2})^2 \mathrm{d}x_{n-2} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \cdots \\
+                    &= \frac{1}{2\times 3\times\cdots(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \mathrm{d}x_1 \\
+                    &= \frac{a^n}{n!}
+				\end{align*}
+			\end{proof}
 	\chapter{線積分}
 		\section{定義}
 			$\realNumbers^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\cdots,n)$軸方向の線積分を以下のようにして定義する。
