@@ -1546,12 +1546,12 @@
 				$A$は正定なので上式の$\Sigma$の中身は正であるから、上式は$\lambda=0,1$でない限り正である。
 			\end{proof}
 	\chapter{定値性}
-		\section{正定対称行列の逆行列も正定}
+		\section{正定Hermite対称行列の逆行列も正定}
 			\begin{proof}
 				\quad\par
-				$A\in\realNumbers^{n\times n}$を正定対称行列とし、重複を含めた$n$個の固有値を$\lambda_1,\cdots,\lambda_n > 0$とする。
-				$A$は実対称だから適当な直交行列$P\in\realNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\cdots,\lambda_n}P^\top$と表せるので
-				$A^{-1} = P\diag{\lambda_1,\cdots,\lambda_n}^{-1}P^\top = P\diag{1/\lambda_1,\cdots,1/\lambda_n}P^\top$である。
+				$A\in\complexNumbers^{n\times n}$をHermite対称な正定行列とし、重複を含めた$n$個の固有値を$\lambda_1,\cdots,\lambda_n > 0$とする。
+				$A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\cdots,\lambda_n}P^*$と表せるので
+				$A^{-1} = P\diag{\lambda_1,\cdots,\lambda_n}^{-1}P^* = P\diag{1/\lambda_1,\cdots,1/\lambda_n}P^*$である。
 				よって$A^{-1}$は対称で固有値が全て正なので正定である。
 			\end{proof}
 		\section{$A$が半正定で$\bm{x}^\top A\bm{x}=0$ならば$\bm{x}\in\Ker{A}$}

@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.2.0]
 
 - Added the definition of vector Laplacian and its expression in 3-D Euclidean space.
 - Added an equation about vector triple product (Lagrange's formula).
 - Added a theorem about minimization of strictly convex function on linear constraints.
 - Added a theorem about minimization of complex-argument-real-valued function ||Ax+b|| on linear constraints.
+- Extended theorem VI.13.1 (The inverse matrix of a Hermitian symmetric positive definite matrix is also.) to complex number case.
 
 ## [0.1.0]
 
