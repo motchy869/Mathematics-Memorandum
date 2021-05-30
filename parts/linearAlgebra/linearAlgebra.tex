@@ -106,6 +106,44 @@
 			\begin{attention}
 				$\realNumbers^3$以上では成り立たない。
 			\end{attention}
+		\section{Kronecker積}
+			\subsection{混合積 $(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}
+				\begin{shadebox}
+					行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					$A$の行数を$m_A$, 列数を$n_A$, $C$の列数を$n_C$とする。
+					\begin{align*}
+						(A\otimes B)(C\otimes D) &= \begin{bmatrix}
+							a_{1,1}B & a_{1,2}B & \cdots & a_{1,n_A}B \\
+							a_{2,1}B & \ddots & & \vdots \\
+							\vdots \\
+							a_{m_A, 1}B & \cdots & & a_{m_A, n_A}B
+						\end{bmatrix}
+						\begin{bmatrix}
+							c_{1,1}D & c_{1,2}D & \cdots & c_{1,n_C}D \\
+							c_{2,1}D & \ddots & & \vdots \\
+							\vdots \\
+							c_{n_A, 1}D & \cdots & & c_{n_A, n_C}D
+						\end{bmatrix} \\
+						&= \begin{bmatrix}
+							(AC)[1,1]BD & (AC)[1,2]BD & \cdots & (AC)[1,n_C]BD \\
+							(AC)[2,1]BD & \ddots & & \vdots \\
+							\vdots \\
+							(AC)[m_A,1]BD & \cdots & & (AC)[m_A,n_C]BD
+						\end{bmatrix} = (AC)\otimes(BD)
+					\end{align*}
+				\end{proof}
+			\subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
+				\begin{proof}
+					\quad\par
+					$A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。
+					混合積の性質から
+					\[
+						(A\otimes B)^*(A\otimes B) = (A^*\otimes B^*)(A\otimes B) = (A^*A)\otimes(B^*B) = I_m\otimes I_n = I_{m+n}
+					\]
+				\end{proof}
 	\chapter{ベクトル空間}
 		\section{基底}
 			\subsection{基底変換}

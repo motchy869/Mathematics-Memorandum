@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwartz' inequality.
 - Added an n-dimensional volume of V: {x_1, ..., x_n >= 0 and x_1+...x_n <= 1}.
 - Added a theorem: tr(AB) is real number when A and B is Hermitian matrices.
+- Added mixed-product property of Kronecker product.
+- Added a theorem: a Kronecker product of two unitary matrices is an unitary matrix.
 
 ## [0.2.0]
 
