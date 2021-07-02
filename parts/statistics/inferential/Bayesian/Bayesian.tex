@@ -72,17 +72,17 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				今、$\pi(\theta) = \frac{1}{\sqrt{2\pi\tau^2}}\exp{\left(-\frac{(\mu-\eta)^2}{2\tau^2}\right)}$、$f(\overline{x}|\theta) = \frac{1}{\sqrt{2\pi\frac{\sigma^2}{n}}}\exp{\left(-\frac{(\overline{x}-\mu)^2}{2\frac{\sigma^2}{n}}\right)}$である。
+				今、$\pi(\theta) = \frac{1}{\sqrt{2\pi\tau^2}}\exp{\left(-\frac{(\theta-\eta)^2}{2\tau^2}\right)}$、$f(\overline{x}|\theta) = \frac{1}{\sqrt{2\pi\frac{\sigma^2}{n}}}\exp{\left(-\frac{(\overline{x}-\theta)^2}{2\frac{\sigma^2}{n}}\right)}$である。
 				両者の積を$\theta$に関して規格化すれば求めたい事後分布が得られる。
 				よって両者の積に現れる定数因子はどうでもいいから、指数部分のみに着目すると
 				\begin{align*}
-					& \exp{\left(-\frac{(\overline{x}-\mu)^2}{2\frac{\sigma^2}{n}} - \frac{(\mu-\eta)^2}{2\tau^2}\right)} \\
-					&= \exp{\left\{\frac{-1}{2\left(\frac{\sigma^2\tau^2}{n}\right)}\left[\left(\tau^2+\frac{\sigma^2}{n}\right)\mu^2 - 2(\tau^2\overline{x}+\frac{\sigma^2}{n}\eta)\mu + \left(\tau^2\overline{x}^2+\frac{\sigma^2}{n}\eta^2\right)\right]\right\}}
+					& \exp{\left(-\frac{(\overline{x}-\theta)^2}{2\frac{\sigma^2}{n}} - \frac{(\theta-\eta)^2}{2\tau^2}\right)} \\
+					&= \exp{\left\{\frac{-1}{2\left(\frac{\sigma^2\tau^2}{n}\right)}\left[\left(\tau^2+\frac{\sigma^2}{n}\right)\theta^2 - 2(\tau^2\overline{x}+\frac{\sigma^2}{n}\eta)\theta + \left(\tau^2\overline{x}^2+\frac{\sigma^2}{n}\eta^2\right)\right]\right\}}
 				\end{align*}
 				上式のexp()中の$\left(\tau^2\overline{x}^2+\frac{\sigma^2}{n}\eta^2\right)$は定数因子になるから無視すると
 				\begin{align*}
-					\textrm{expの引数} &= \frac{-1}{2\left(\frac{\sigma^2\tau^2}{n}\right)}\left[\left(\tau^2+\frac{\sigma^2}{n}\right)\mu^2 - 2(\tau^2\overline{x}+\frac{\sigma^2}{n}\eta)\mu\right] \\
-					&= -\frac{1}{2}\times\frac{\tau^2+\frac{\sigma^2}{n}}{\frac{\sigma^2\tau^2}{n}}\left[\left(\mu-\frac{\tau^2\overline{x}+\frac{\sigma^2}{n}\eta}{\tau^2+\frac{\sigma^2}{n}}\right)^2 - \underbrace{\left(\frac{\tau^2\overline{x}+\frac{\sigma^2}{n}\eta}{\tau^2+\frac{\sigma^2}{n}}\right)^2}_{定数倍にしか関係ないので無視}\right] \\
-					&= -\frac{1}{2}\left(\frac{\tau^2\sigma^2}{n\tau^2+\sigma^2}\right)^{-1}\left(\mu-\frac{n\tau^2\overline{x}+\sigma^2\eta}{n\tau^2+\sigma^2}\right)^2
+					\textrm{expの引数} &= \frac{-1}{2\left(\frac{\sigma^2\tau^2}{n}\right)}\left[\left(\tau^2+\frac{\sigma^2}{n}\right)\theta^2 - 2(\tau^2\overline{x}+\frac{\sigma^2}{n}\eta)\theta\right] \\
+					&= -\frac{1}{2}\times\frac{\tau^2+\frac{\sigma^2}{n}}{\frac{\sigma^2\tau^2}{n}}\left[\left(\theta-\frac{\tau^2\overline{x}+\frac{\sigma^2}{n}\eta}{\tau^2+\frac{\sigma^2}{n}}\right)^2 - \underbrace{\left(\frac{\tau^2\overline{x}+\frac{\sigma^2}{n}\eta}{\tau^2+\frac{\sigma^2}{n}}\right)^2}_{定数倍にしか関係ないので無視}\right] \\
+					&= -\frac{1}{2}\left(\frac{\tau^2\sigma^2}{n\tau^2+\sigma^2}\right)^{-1}\left(\theta-\frac{n\tau^2\overline{x}+\sigma^2\eta}{n\tau^2+\sigma^2}\right)^2
 				\end{align*}
 			\end{proof}
