@@ -104,6 +104,26 @@
 						の形にする。$z$の絶対値が1だと分かるので$z=e^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
 						\qed
 					\end{solution}
+	\chapter{複素入力凸関数}
+		\section{複素入力凸関数の例}
+			\label{複素入力凸関数の例}
+			\subsection{$\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,\;X_i \in \complexNumbers^{m\times n})$は$X_1,\cdots,X_N$に関して凸である。}
+				\begin{proof}
+					\quad\par
+					$T_X := (X_1,\cdots,X_N),\;T_Y := (Y_1,\cdots,Y_N),\;\lambda \in [0,1]$とし、$f(T_X) := \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
+					\begin{align*}
+						f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
+						&= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\
+						&= (1-\lambda)^2\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \lambda^2\left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 \\
+						&\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
+					\end{align*}
+					よって
+					\begin{align*}
+						&\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
+						&= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
+						&= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
+					\end{align*}
+				\end{proof}
 	\chapter{特殊関数}
 		\section{Gamma関数}
 			\subsection{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}
