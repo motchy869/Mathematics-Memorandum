@@ -124,6 +124,27 @@
 						&= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
 					\end{align*}
 				\end{proof}
+			\subsection{$\norm{A\bm{x}+\bm{b}}_2^2$が狭義凸$\iff A^*A\succ O$}
+				\begin{shadebox}
+					$A \in \complexNumbers^{m\times n}, \bm{x} \in \complexNumbers^n, \bm{b} \in \complexNumbers^m$とする。
+					$f(\bm{x}) := \norm{A\bm{x}+\bm{b}}_2^2$が$\bm{x}$に関して狭義凸となる必要十分条件は$A^*A\succ O$である。
+				\end{shadebox}
+				$\lambda \in (0,1),\; \bm{x},\bm{y} \in \complexNumbers^m, \bm{x}\neq\bm{y}$とする。
+				\begin{proof}
+					まず次式が成り立つ。
+					\begin{align*}
+						f((1-\lambda)\bm{x} + \lambda\bm{y}) &:= \norm{(1-\lambda)(A\bm{x}+\bm{b}) + \lambda(A\bm{y}+\bm{b})}_2^2 \\
+						&= (1-\lambda)^2 f(\bm{x}) + \lambda^2 f(\bm{y}) + 2\lambda(1-\lambda)\Re{(A\bm{x}+\bm{b})^*(A\bm{y}+\bm{b})}
+					\end{align*}
+					これより
+					\begin{align*}
+						&\phantom{=} (1-\lambda)f(\bm{x}) + \lambda f(\bm{y}) - f((1-\lambda)\bm{x} + \lambda\bm{y}) \\
+						&= \lambda(1-\lambda)\left[f(\bm{x}) + f(\bm{y}) - 2\Re{(A\bm{x}+\bm{b})^*(A\bm{y}+\bm{b})}\right] \\
+						&= \lambda(1-\lambda)\norm{(A\bm{x}+\bm{b}) - (A\bm{y}+\bm{b})}_2^2 = \lambda(1-\lambda)\norm{A(\bm{x}-\bm{y})}_2^2 \\
+						&= \lambda(1-\lambda)(\bm{x}-\bm{y})^*A^*A(\bm{x}-\bm{y})
+					\end{align*}
+					$\lambda \in (0,1),\;\bm{x}\neq\bm{y}$に対して上式が正となる必要十分条件は$A^*A\succ O$である。
+				\end{proof}
 	\chapter{特殊関数}
 		\section{Gamma関数}
 			\subsection{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a theorem: Any graph with n vertexes such that the shortest path between any 2 vertexes is no more than 2 has at least n-1 edges.
 - Added a theorem: Minimal norm solution for a linear equation "Ax=b" is (A^+)b, where A is a full-row-rank complex matrix, and A^+ is pseudo-inverse matrix of A.
 - Moved complex-input-convex function examples from Real Analysis part to Complex Analysis part.
+- Added a theorem: ||Ax+b||_2^2 is convex iff A^*A is positive definite.
 
 ## [0.3.0] - 2021/7/3
 
