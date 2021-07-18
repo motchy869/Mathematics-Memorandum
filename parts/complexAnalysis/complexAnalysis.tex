@@ -38,7 +38,7 @@
 				だから、\textcolor{red}{実数と複素数の間}に演算「和」は定義されていない。
 				つまり、$a+ib$という書き方は厳密には\textcolor{red}{誤り}である。
 				本来$(a,0)+i\times(b,0)$であるものを簡略化して書いているに過ぎない。
-			\subsection{コラム $i^2=-1\;?$}
+			\subsection{コラム \texorpdfstring{$i^2=-1\;?$}{虚数単位の2乗は-1?}}
 				「2乗して\textcolor{red}{実数}-1になる」数は無い!! 代わりに、「2乗して\textcolor{red}{複素数}(-1,0)になる」数はある。
 				それは先程定義した虚数単位$i=(0,1)$である。
 				\par
@@ -59,13 +59,13 @@
 				しかし数学的に「ちゃんとした」理論を作るためには、既存の枠組みのままでは不可能だと分かり次第、思い切ってルールを拡張し、所望の性質が得られるように理屈を先回りして演算を機械的に定義するような break through が必要なこともある。
 				その際に、既存の理論に矛盾しないように構築しなければならないのは言うまでもない。
 		\section{諸公式}
-			\subsection{$x>0,\;z\in\complexNumbers$のとき$|x^z|=x^\Re{z}$}
+			\subsection{\texorpdfstring{$x>0,\;z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^\Re{z}$}{xのz乗の絶対値はxのRe(z)乗}}
 				\begin{proof}
 					\quad\par
 					$z = a + bi\;(a,b\in\realNumbers)$とする。
-					\[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |e^{bi\log{x}}| = x^\Re{z} \]]
+					\[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |e^{bi\log{x}}| = x^\Re{z} \]
 				\end{proof}
-			\subsection{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}
+			\subsection{\texorpdfstring{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
 				\label{fml:花びら定理}
 				\begin{proof}
 					\begin{align*}

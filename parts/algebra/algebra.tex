@@ -10,7 +10,7 @@
                 また、「$G$に於ける$H$の右剰余類」とは次の集合族のことを言う。
                 \[ \set{Hg}{g \in G} = \set{\set{hg}{h \in H}}{g \in G} \]
                 特に、$gH\;(g \in G)$を「$G$に於ける$g$に関する$H$の左剰余類 (the left coset of $H$ in $G$ with respect to $g$)」と呼び、$Hg\;(g \in G)$を「$G$に於ける$g$に関する$H$の右剰余類」と呼ぶ。
-            \subsection{群$G$の部分群$H$の全ての剰余類は互いに素である}
+            \subsection{群\texorpdfstring{$G$}{G}の部分群\texorpdfstring{$H$}{H}の全ての剰余類は互いに素である}
                 \begin{proof}
                     \quad\par
                     左剰余類について示す。
@@ -38,7 +38,7 @@
                     直前に示した定理より$H$の剰余類は$G$を分割するから、$\exists g\in G,\;h_1\in H \st s_1 = gh_1 (\in gH)$。
                     よって$s_2 = s_1h = gh_1h \in gH\;(\because\; h_1h \in H)$
                 \end{proof}
-            \section{$\mathbb{Z}_p$ ($p: $素数)に乗法群としての位数$r$の元があれば$p-1$は$r$の倍数}
+            \section{\texorpdfstring{$\mathbb{Z}_p$}{Zp} (\texorpdfstring{$p: $}{p: }素数)に乗法群としての位数\texorpdfstring{$r$}{r}の元があれば\texorpdfstring{$p-1$}{p-1}は\texorpdfstring{$r$}{r}の倍数}
                 \begin{proof}
                     \quad\par
                     論題の元を$a$とする。
@@ -52,7 +52,7 @@
                 \item 体$F$上の、$x$を不定元とする多項式全体の集合を$F[x]$と表記する。
                 \item 体$F$上の、$x$を不定元とするLaurent多項式全体の集合を$F[x,x^{-1}]$と表記する。
             \end{itemize}
-        \section{係数が次数に関して対称な奇数次の多項式$f(x)$を$(x+1)$で除したものも係数が次数に関して対称になる}
+        \section{係数が次数に関して対称な奇数次の多項式\texorpdfstring{$f(x)$}{f(x)}を\texorpdfstring{$(x+1)$}{x+1}で除したものも係数が次数に関して対称になる}
             \begin{proof}
                 \quad\par
                 $n\in\naturalNumbers$を奇数とし、$f(x) = \sum_{i=0}^n a_ix^i,\;a_i = a_{n-i}$とする。
@@ -66,7 +66,7 @@
                 次に$x,x^2,\cdots,x^{n-1}$の項の係数に関しては$b_{i-1} + b_i = a_i = a_{n-i} = b_{n-1-i} + b_{n-i}$すなわち$b_i - b_{n-1-i} = b_{(n-1)-(i-1)} - b_{i-1}$となる。
                 既に見た$b_0 = b_{n-1}$から始めて帰納的に示せる。
             \end{proof}
-        \section{$\sum_{i=0}^n a_ix^i$が既約多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も既約多項式である}
+        \section{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{}が既約多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{}も既約多項式である}
             \label{既約多項式の係数の順番反転}
             \begin{shadebox}
                 体$F$上の$n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i$が$F$上で既約であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
@@ -83,7 +83,7 @@
                 ここに$g_{1,1}(x), g_{1,2}(x)$は$g_{2,1}(x), g_{2,2}(x)$の係数の順番を逆にしたものである。
                 これは$f_1(x)$が既約であることに矛盾する。
             \end{proof}
-        \section{既約多項式$\iff$最小多項式}
+        \section{既約多項式\texorpdfstring{$\iff$}{⇔}最小多項式}
             \begin{shadebox}
                 $P$を体$F$上の多項式とする。
                 $P$が$F$上で既約であることと、$P$がその任意の根の最小多項式であることは同値である。
@@ -161,7 +161,7 @@
                 \item 体$F$上の、$x$を不定元とする形式的Laurent級数全体の集合を$F((x))$と表記する。
             \end{itemize}
         \section{原始多項式}
-            \subsection{$\sum_{i=0}^n a_ix^i$が原始多項式ならば$\sum_{i=0}^n a_{n-i}x^i$も原始多項式である}
+            \subsection{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a0 x0 + a1 x1 + ...}が原始多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\{n-1\} x0 + a\{n-2\} x1 + ...}も原始多項式である}
                 \begin{shadebox}
                     $p$を素数とする。
                     $n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
@@ -223,7 +223,7 @@
                     \end{align*}
                     これは$f(x)$が原始多項式であることに矛盾する。
                 \end{proof}
-            \subsection{原始多項式$f_1(x)$の係数の順番を逆転した$f_2(x)$の逆数の係数列は$f_1(x)^{-1}$の係数列の逆順逆符号}
+            \subsection{原始多項式\texorpdfstring{$f_1(x)$}{f1(x)}の係数の順番を逆転した\texorpdfstring{$f_2(x)$}{f2(x)}の逆数の係数列は\texorpdfstring{$f_1(x)^{-1}$}{1/f1(x)}の係数列の逆順逆符号}
                 \begin{shadebox}
                     $p$を素数とする。
                     $n$次の原始多項式$f_1(x) \in \GaloisField{p}[[x]]$の係数の順番を逆転させ$f_2(x)$とする。
