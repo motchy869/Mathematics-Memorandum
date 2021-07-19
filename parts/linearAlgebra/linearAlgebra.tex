@@ -83,7 +83,7 @@
 					&= \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} = (AB)[i][j]
 				\end{align*}
 			\end{proof}
-		\section{$\realNumbers^{\textcolor{red}{2}}$の対称行列同士の積は対称}
+		\section{\texorpdfstring{$\realNumbers^{\textcolor{red}{2}}$}{R\string^2}の対称行列同士の積は対称}
 			\begin{proof}
 				$
 					A = \begin{bmatrix}
@@ -107,7 +107,7 @@
 				$\realNumbers^3$以上では成り立たない。
 			\end{attention}
 		\section{Kronecker積}
-			\subsection{混合積 $(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}
+			\subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
 				\begin{shadebox}
 					行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
 				\end{shadebox}
@@ -202,7 +202,7 @@
 					逆に$[c_{1i},\cdots,c_{ni}]^\top\;(i=1,\cdots,p)$が一次独立なら(2)より$d_1=\cdots=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$\bm{v}_1,\cdots,\bm{v}_p$が一次独立であることになる。
 				\end{proof}
 		\section{諸定理}
-			\subsection{ベクトル空間$V$の部分空間$V_1,V_2$について、「$V_1\cup V_2$がベクトル空間である」$\iff$「$V_1\subseteq V_2$または$V_1 \supseteq V_2$」}
+			\subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
 				\begin{proof}
 					\quad\par
 					($\Leftarrow$) 容易。
@@ -216,7 +216,7 @@
 					同様に$\bm{v}_1 + \bm{v}_2 \in V_2$であるとしても矛盾が生じる。
 					従って$V_1\cup V_2$がベクトル空間であることに矛盾する。
 				\end{proof}
-			\subsection{$\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad\Rightarrow W_i=V_i$}
+			\subsection{\texorpdfstring{$V_i \subseteq W_i,\;\bigoplus_{i=1}^n {W_i} = \bigoplus_{i=1}^n {V_i}\quad\Rightarrow V_i=W_i$}{Vi⊆Wi, V1⊕...⊕Vn = W1⊕...⊕Wn ⇒ Vi=Wi}}
 				\begin{shadebox}
 					\[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\cdots,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\cdots,n)\]
 				\end{shadebox}
@@ -239,7 +239,7 @@
 					\end{equation*}
 					よって$\vx\in V_i$
 				\end{proof}
-			\subsection{一次独立なベクトル$\bm{v}_1,\cdots,\bm{v}_k\in V$に$\bm{v}\in V$を加えたものが一次独立 $\iff$ $\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k\in V$の一次結合で表せない}
+			\subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\cdots,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\cdots,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
 				\label{subsec:一次独立なベクトルの、独立集合族としての性質}
 				\begin{shadebox}
 					$V$を線形ベクトル空間とし、$\bm{v}_1,\cdots,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k$の一次結合で表せないことと同値である。
@@ -252,7 +252,7 @@
 					よって$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\cdots,\bm{v}_k$は一次独立であるから$c_1=\cdots c_k=0$である。
 					すなわち$c_1=\cdots=c_k=c=0$なので$\bm{v}_1,\cdots,\bm{v}_k,\bm{v}$は一次独立である。
 				\end{proof}
-			\subsection{$A_v:=\{\bm{v}_1,\cdots,\bm{v}_k\}$と$A_w:=\{\bm{w}_1,\cdots,\bm{w}_l\}$が各々一次独立で$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次独立}
+			\subsection{\texorpdfstring{$A_v:=\{\bm{v}_1,\cdots,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w:=\{\bm{w}_1,\cdots,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\cdots,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
 				\begin{shadebox}
 					線形空間$V$のベクトルの集合$A_v:=\{\bm{v}_1,\cdots,\bm{v}_k\}$と$A_w:=\{\bm{w}_1,\cdots,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次独立である。
 				\end{shadebox}
