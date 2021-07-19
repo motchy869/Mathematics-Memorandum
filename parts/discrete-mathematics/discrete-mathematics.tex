@@ -114,7 +114,7 @@
 				\item $x_1y_1 \equiv_n x_2y_2$
 				\item $x_1,\;x_2$が共に整数$m$で割り切れて$m$と$n$が互いに素ならば$x_1/m \equiv_n x_2/m$
 			\end{itemize}
-		\section{$a,m\in \naturalNumbers$が互いに素であるとき、$0,a,2a,\cdots,a(m-1)$を$m$で割った余りは全て異なる}
+		\section{\texorpdfstring{$a,m\in \naturalNumbers$}{自然数a,m}が互いに素であるとき、\texorpdfstring{$0,a,2a,\cdots,(m-1)a$}{0,a,2a,...,(m-1)a}を\texorpdfstring{$m$}{m}で割った余りは全て異なる}
 			\label{a,mが互いに素のとき、0,a,...a(m-1)をmで割った余りは全て異なる}
 			\begin{proof}
 				\quad\par
@@ -159,8 +159,8 @@
 				\[ a^p \equiv_p [(a+1)-1]^p \equiv_p (a+1)^p - 1 \equiv_p [(a+2) - 1]^p - 1 \equiv_p (a+2)^p - 1 - 1 \equiv_p \cdots \equiv_p (-a)(-1) \equiv_p a \]
 				となり、やはり成り立つ。
 			\end{proof}
-	\chapter{$r$進法}
-		\section{$1/10$が2進表記で無限小数になることの証明}
+	\chapter{\texorpdfstring{$r$}{r}進法}
+		\section{\texorpdfstring{$1/10$}{1/10}が2進表記で無限小数になることの証明}
 			\begin{proof}
 				\quad\par
 				$\frac{1}{10}=\frac{1}{2}\times\frac{1}{5}$なので$1/5$が2進表記で無限小数になることを示せば十分。
@@ -170,13 +170,13 @@
 				左辺は5で割り切れないが右辺は割り切れるので矛盾している。
 			\end{proof}
 	\chapter{公式}
-		\section{$1\cdot3\cdot5\cdots(2n-1)2n = (2n)!/n!$}
+		\section{\texorpdfstring{$1\cdot3\cdot5\cdots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
 			\begin{proof}
 				\begin{align*}
 					1\cdot3\cdot5\cdots(2n-1)2n = \frac{1\cdot2\cdot3\cdot4\cdot5\cdot6\cdot7\cdots(2n-2)(2n-1)2n}{\underbrace{2\cdot4\cdot6\cdots(2n-2)2n}_{n\text{個}}}2^n = \frac{(2n)!}{1\cdot2\cdot3\cdots(n-1)n} = \frac{(2n)!}{n!}
 				\end{align*}
 			\end{proof}
-		\section{$a^n-b^n = (a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k$}
+		\section{\texorpdfstring{$a^n-b^n = (a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k$}{a\string^n-b\string^nの分解}}
 			\begin{proof}
 				\begin{align*}
 					(a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k &= \sum_{k=0}^{n-1} a^{n-k}b^k - \sum_{k=0}^{n-1} a^{n-1-k}b^{k+1} \\
@@ -211,7 +211,7 @@
 				\end{align*}
 			\end{proof}
 	\chapter{数え上げ}
-		\section{``for $i=1, \cdots, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\cdots,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\cdots,n/d \text{ where } \gcd(j,n/d)=1$''}
+		\section{\texorpdfstring{``for $i=1, \cdots, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\cdots,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\cdots,n/d \text{ where } \gcd(j,n/d)=1$''}{数え上げと最大公約数}}
 			1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、最初の$\iff$が成り立つ。
 			2つ目の$\iff$については$i=dj$なる変数変換を施すことで分かる。
 			次のような使い方が考えられる。
@@ -220,7 +220,7 @@
 				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{j=1, \cdots, n/d}{\gcd(j,n/d)=1}} f(dj)$
 			\end{itemize}
 		\section{包除原理}
-			\subsection{補題: $A\subseteq U \Rightarrow |A| = \sum_{x\in U}{|A\cap\{x\}|}$}
+			\subsection{補題: \texorpdfstring{$A\subseteq U \Rightarrow |A| = \sum_{x\in U}{|A\cap\{x\}|}$}{A⊆Uのときの|A|の計算}}
 				\label{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}
 				\begin{commentary}
 					\quad\par
@@ -346,7 +346,7 @@
 			\end{proof}
 	\chapter{置換}
 		\section{置換の符号の定理}
-			\subsection{$\sigma'(i) := \sigma(n+1-i)$としたときの$\sgn{\sigma'}$}
+			\subsection{\texorpdfstring{$\sigma'(i) := \sigma(n+1-i)$としたときの$\sgn{\sigma'}$}{σ'(i) := σ(n+1-i)としたときのsgn(σ')}}
 				\label{置換の引数を逆順にしたときの符号}
 				\begin{shadebox}
 					$\sigma$を$S=\{1,\cdots,n\}$上の置換とする。
@@ -375,7 +375,7 @@
 					逆順にする置換は、$1,2,\cdots,n$を左右の端同士で交換する処理を外側から内側に向かって進める方針で考えれば定理の主張が成り立つことがわかる。
 				\end{proof}
 				Mathematicaを用いた数値例による検証は\verb|theorem_sign_of_permutation.nb|を参照
-			\subsection{$\sigma'(i) := n+1-\sigma(i)$としたときの$\sgn{\sigma'}$}
+			\subsection{\texorpdfstring{$\sigma'(i) := n+1-\sigma(i)$としたときの$\sgn{\sigma'}$}{σ'(i) := n+1-σ(i)おしたときのsgn(σ')}}
 				\label{出力を逆順にしたときの置換の符号}
 				\begin{shadebox}
 					$\sigma$を$S=\{1,\cdots,n\}$上の置換とする。
@@ -400,7 +400,7 @@
 				Mathematicaを用いた数値例による検証は\verb|theorem_sign_of_permutation.nb|を参照
 	\chapter{有限幾何学}
 		\section{有限射影平面}
-			\subsection{位数$n$の有限射影平面には$n^2+n+1$個の点と直線が存在し、各点は$n+1$本の直線に含まれる。}
+			\subsection{位数\texorpdfstring{$n$}{n}の有限射影平面には\texorpdfstring{$n^2+n+1$}{n\string^2+n+1}個の点と直線が存在し、各点は\texorpdfstring{$n+1$}{n+1}本の直線に含まれる。}
 				\begin{proof}
 					\newcommand{\np}{n_\textrm{p}}
 					\newcommand{\nl}{n_\textrm{l}}

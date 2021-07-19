@@ -6,14 +6,14 @@
 		\end{itemize}
 	\chapter{連結グラフ}
 		\section{諸定理}
-			\subsection{$n$頂点の連結グラフは少なくとも$n-1$本の辺をもつ}
+			\subsection{\texorpdfstring{$n$}{n}頂点の連結グラフは少なくとも\texorpdfstring{$n-1$}{n-1}本の辺をもつ}
 				\begin{proof}
 				\quad\par
 					$n$に関する帰納法で示す。$n=2$の時は明らか。$n-1$まで成り立つと仮定して$n$のとき成り立つことを示す。
 					\par
 					グラフから辺を任意に1本ずつ取り去ってゆき、$c$本目で初めて非連結になったとする。このときグラフは2つの連結成分$A,B$に分かれる(3つ以上に分かれることはない。3つ以上の連結成分を1本の辺で橋渡しするなど不可能である)。両者の点数をそれぞれ$a,n-a\;(1\leq a\leq n-1)$とすると帰納法の仮定より$A$は$a-1$本以上の、$B$は$n-a-1$本以上の辺をそれぞれもつ。よって元々のグラフは$(a-1)+(n-a-1)+c = n-2+c \geq n-1$本以上の辺をもっていたことになる。
 				\end{proof}
-			\subsection{任意の2つの頂点間の最短距離が2である無向グラフは少なくとも$n-1$本の辺をもつ}
+			\subsection{任意の2つの頂点間の最短距離が2である無向グラフは少なくとも\texorpdfstring{$n-1$}{n-1}本の辺をもつ}
 				\begin{proof}
 					$n=2,3$の場合は明らかである。以下$n\geq4$とする。
 					無向グラフ$G$が$n$個の点をもち、任意の頂点間の最短距離が2であり、$G$から1つでも辺を取り去ると、ある2点間の最短距離が3以上になってしまうとする。
@@ -27,7 +27,7 @@
 					$v_0$とそれ以外の点を結ぶ辺のみを残して他の辺を除去したグラフは、任意の2点間の最短距離が2である。
 					以上より、定理の主張が成り立つ。
 				\end{proof}
-			\subsection{$n$頂点グラフが$\frac{1}{2}(n-1)(n-2)$本より多くの辺を持つなら連結である}
+			\subsection{\texorpdfstring{$n$}{n}頂点グラフが\texorpdfstring{$\frac{1}{2}(n-1)(n-2)$}{(n-1)(n-2)/2}本より多くの辺を持つなら連結である}
 				\begin{proof}
 					\quad\par
 					$n$に関する帰納法で示す。$n=1,2$のときは明らかに成り立つ。$n=m-1\;(m\geq3)$のとき成り立つものとして$n=m$のとき成り立つことを示す。
@@ -92,7 +92,7 @@
 					\par
 					以上の操作を白い点がなくなるまで繰り返した暁には、黒い点と辺から成る木が出来上がっている。
 				\end{proof}
-			\subsection{$\mathcal{I}$ : グラフ$G$の非閉路部分グラフ全体の集合。$I_1,I_2\in \mathcal{I},\;|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}
+			\subsection{\texorpdfstring{$\mathcal{I}$}{I} : グラフ\texorpdfstring{$G$}{G}の非閉路部分グラフ全体の集合。\texorpdfstring{$I_1,I_2\in \mathcal{I},\;|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}{I1,I2∈I, |I1|<|I2|とすると、あるa∈I2が存在してI1∪{a}∈I}}
 				\begin{proof}
 					\quad\par
 					背理法で示す。
