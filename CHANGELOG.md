@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a theorem: Minimal norm solution for a linear equation "Ax=b" is (A^+)b, where A is a full-row-rank complex matrix, and A^+ is pseudo-inverse matrix of A.
 - Moved complex-input-convex function examples from Real Analysis part to Complex Analysis part.
 - Added a theorem: ||Ax+b||_2^2 is convex iff A^*A is positive definite.
+- Fixed a mistake in tips: "Even when {v1,v2}, {w1,w2}, {v1,v2,w1}, {v1,v2,w2} are linearly independent respectively, {v1,v2,v3,v4} is not always linearly independent."
 
 ## [0.3.0] - 2021/7/3
 
