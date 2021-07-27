@@ -263,22 +263,20 @@
 				\end{proof}
 		\section{諸注意}
 			\subsection{
-				$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$が各々一次独立でも \\
-				$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$が一次独立とは限らない
-			}
+				\texorpdfstring{$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$}{\{v1,v2\},\{w1,w2\},\{v1,v2,w1\},\{v1,v2,w2\}}が各々一次独立でも\texorpdfstring{$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$}{\{v1,v2,w1,w2\}}が一次独立とは限らない}
 				\begin{proof}
 					例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
 				\end{proof}
-			\subsection{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\cdots,n\},\;i\neq j)$であっても$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$とは限らない}
+			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\cdots,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
 				\begin{proof}
 					\quad\par
 					例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
 				\end{proof}
-			\subsection{$W=V\oplus X,\;W=V\oplus Y$でも$X=Y$とは限らない}
+			\subsection{\texorpdfstring{$W=V\oplus X,\;W=V\oplus Y$}{W=V⊕X, W=V⊕Y}でも\texorpdfstring{$X=Y$}{X=Y}とは限らない}
 				\begin{proof}
 					例えば$W=\realNumbers^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
 				\end{proof}
-			\subsection{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$とは限らない}
+			\subsection{\texorpdfstring{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$}{Span[a,b,c]/Span[a,b]=Span[c]}とは限らない}
 				\begin{proof}
 					\quad\par
 					例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realNumbers^3$のとき、
@@ -312,7 +310,7 @@
 				これらを要素とする行列$A:=[\bm{a}_{ij}]_{l\times m},\;B:=[\bm{b}_{ij}]_{m\times n}$の積$C$を
 				$C:=[c_{ij}]_{m\times n},\;c_{ij} := \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
 				これは$\bm{a}_{ij},\bm{b}_{ij}$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
-		\section{$\dim(V)=\dim(W),\;f:V\to W$であるとき、$f$が単射であることと全射であることは同値。}
+		\section{\texorpdfstring{$\dim(V)=\dim(W),\;f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき、\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
 			\begin{shadebox}
 				$f$を$V\rightarrow W$への線形写像とする。$\dim(V)=\dim(W)$であるとき、$f$が単射であることと全射であることは同値。
 			\end{shadebox}
@@ -353,7 +351,7 @@
 				より$c_1=\cdots=c_n=0$となるから$\bm{x}=\bm{0}$である。
 				すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
 			\end{proof}
-		\section{$\dim{V}=\dim{W}$ならば全単射線形写像$f:V\to W$が存在する}
+		\section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
 			\begin{proof}
 				\quad\par
 				$n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\cdots,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\cdots,\bm{w}_n\}$を$W$の基底とする。
@@ -513,7 +511,7 @@
 				\end{align*}
 			\end{proof}
 			\end{comment}
-		\section{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$に対して$|I_m-AB| = |I_n-BA|$}
+		\section{\texorpdfstring{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$}{A∈R\string^(n×m), B∈R\string^(m×n)}に対して\texorpdfstring{$|I_m-AB| = |I_n-BA|$}{|Im-AB| = |In-BA|}}
 			\begin{proof}
 				\[
 					M := \begin{bmatrix}
@@ -554,7 +552,7 @@
 					} = |I_n-AB|
 				\]
 			\end{proof}
-		\section{系: $\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}
+		\section{系: \texorpdfstring{$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}{|In-vv\string^| = 1 - ||v||\string^2}}
 			\begin{shadebox}
 				$\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
 			\end{shadebox}
@@ -592,7 +590,7 @@
 				\[ |A'| = \sum_{\tilde\sigma\in S_n} \sgn{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] = |A| \]
 			\end{proof}
 	\chapter{逆行列}
-		\section{$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}
+		\section{\texorpdfstring{$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}{[φ1,...,φn]\string^(-1)φi = ei}}
 			\label{逆行列にその構成縦ベクトルを掛ける}
 			\begin{shadebox}
 				$\bm{\phi}_1,\cdots,\bm{\phi}_n\in\field^n$が一次独立であるとき、$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
@@ -745,7 +743,7 @@
 				$A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\cdots\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\cdots\Pi_c$
 			\end{proof}
 	\chapter{特性多項式}
-		\section{逆行列の特性多項式: $\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$}
+		\section{逆行列の特性多項式: \texorpdfstring{$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$}{φA\string^(-1)(λ) = |A|\string^(-1)\string^n φA(1/λ)}}
 			\begin{shadebox}
 				$A$を正則な$n$次正方行列とし、特性多項式を$\phi_A(\lambda)$とすると、$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$。
 			\end{shadebox}
@@ -763,7 +761,7 @@
 				)^*\overline{U} = \overline{(U^*)}\;\overline{U} = \overline{U^*U} = \overline{I} = I$
 			\end{proof}
 	\chapter{行列の階数}
-		\section{$T$が正則でも$\rank{ATB}=\rank{AB}$とは限らない}
+		\section{\texorpdfstring{$T$}{T}が正則でも\texorpdfstring{$\rank{ATB}=\rank{AB}$}{rank(ATB) = rank(AB)}とは限らない}
 			\begin{proof}
 				\[
 					A =
@@ -803,7 +801,7 @@
 				まず、$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
 				$A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$A$はフルランク。
 			\end{proof}
-		\section{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}
+		\section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
 			\begin{proof}
 				\quad\par
 				$\bm{x} \in \complexNumbers^n$とする。
@@ -817,7 +815,7 @@
 				この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
 				$\rank{A} = \rank{A^*} = \rank{(A^*)^*(A^*)} = \rank{AA^*}$。
 			\end{proof}
-		\section{$A\in\field^{m\times n}$の階数が$n$ならば$A^* A$は正則}
+		\section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$A^* A$}{A\string^*A}は正則}
 			\label{列フルランク行列を掛けあわせて正則行列を作る}
 			\begin{shadebox}
 				$A\in\field^{m\times n}$が列フルランクならば$A^* A$は正則
@@ -846,7 +844,7 @@
 				\[A^* A\bm{x}=\bm{0} \Rightarrow \bm{x}^* A^* A\bm{x}=\bm{0} \iff \inprod{A\bm{x}}{A\bm{x}}=\bm{0} \iff \norm{A\bm{x}}=0 \iff A\bm{x}=\bm{0}\]
 				$A$は列フルランクであったから$\bm{x}=\bm{0}$となるので$A^* A$は正則である。
 			\end{proof}
-		\section{(系)\quad$A\in\field^{m\times n}$が行フルランクならば$AA^\top$は正則}
+		\section{(系)\texorpdfstring{\quad$A\in\field^{m\times n}$}{A∈F\string^(m×n)}が行フルランクならば\texorpdfstring{$AA^\top$}{AA\string^⊤}は正則}
 			\begin{shadebox}
 				(系)\quad$A\in\field^{m\times n}$が行フルランクならば$AA^\top$は正則
 			\end{shadebox}
@@ -854,7 +852,7 @@
 				\quad\par
 				$B=A^\top$とおき、$B$に対して直前の定理を適用する。
 			\end{proof}
-		\section{$A\in\field^{m\times n}$の階数が$r$であるなら、ある正則行列$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$が存在して...}
+		\section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$r$}{r}であるなら、ある正則行列\texorpdfstring{$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$}{Tx∈\string^(n×n), Ty∈\string^(m×m)}が存在して...}
 			\label{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}
 			\begin{shadebox}
 				$A\in\field^{m\times n}$の階数が$r$であるなら、適当な正則行列$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$が存在して
@@ -989,7 +987,7 @@
 					\[ [c_1\bm{v}_1,\cdots,c_p\bm{v}_p] = O_{n\times p} \]
 					となる。$\bm{v}_1,\cdots,\bm{v}_p\neq\bm{0}_n$より$c_1=\cdots c_p=0$である。
 				\end{proof}
-			\subsection{$n\times n$行列$A$の全要素が$a$であるなら非零固有値は$an$のみ}
+			\subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
 				\begin{proof}
 					\quad\par
 					まず、$an$が固有値であり、全ての要素が等しい$n$次元ベクトルが固有値$an$に対応する固有ベクトルであることは、実際に計算してみることで容易に確かめられる。
@@ -1222,7 +1220,7 @@
 				であるから$f(A)$の固有値が$f(\lambda_1),\cdots,f(\lambda_n)$であることがわかる。
 			\end{proof}
 		\section{対角化}
-			\subsection{正規行列$\iff$ユニタリ行列で対角化可能}
+			\subsection{正規行列\texorpdfstring{$\iff$}{⇔}ユニタリ行列で対角化可能}
 				\begin{shadebox}
 					$n$を自然数とする。
 					$A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は、ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda Q^*$となることである。
@@ -1355,14 +1353,14 @@
 					となり、定理の仮定の$\varphi_A(\lambda)$と比較して${\nu_i}'=\nu_i$が得られる。
 				\end{proof}
 			この定理から直ちに次が成り立つ。
-			\subsection{代数的重複度$\geq$幾何学的重複度}
+			\subsection{代数的重複度\texorpdfstring{$\geq$}{≧}幾何学的重複度}
 				\begin{shadebox}
 					任意の$A\in\field^{n\times n}$の固有値$\lambda$の代数的重複度$\nu_i$は幾何学的重複度$\mu_i$以上である。
 				\end{shadebox}
 				\begin{proof}
 					直前の定理より$\nu_i = \dim{F_A(\lambda)}$であることと、$F_A(\lambda) \supseteq E_A(\lambda)$であることより従う。
 				\end{proof}
-			\subsection{$AB=O$でも$\realNumbers^{n\times n} = \Ker{A} + \Ker{B}$とは限らない}
+			\subsection{\texorpdfstring{$AB=O$}{AB=O}でも\texorpdfstring{$\realNumbers^n = \Ker{A} + \Ker{B}$}{R\string^n = Ker(A) + Ker(B)}とは限らない}
 				\begin{proof}
 					例えば
 					$
@@ -1564,21 +1562,21 @@
 					単位行列の各列ベクトルは正規直交であるが、列を入れ替えても正規直交性は維持され、置換行列の各列ベクトルは正規直交なので直交行列である。
 				\end{proof}
 	\chapter{トレース}
-		\section{$\tr{AB}=\tr{BA}$}
+		\section{\texorpdfstring{$\tr{AB}=\tr{BA}$}{tr(AB)=tr(BA)}}
 			\begin{shadebox}
 				$m\times n$行列$A$と$n\times m$行列$B$に対して$\tr{AB}=\tr{BA}$
 			\end{shadebox}
 			\begin{proof}
 				\[ \tr{BA} = \sum_{l=1}^n (BA)[l][l] = \sum_{l=1}^n\sum_{k=1}^m b_{lk}a_{kl} = \sum_{k=1}^m\sum_{l=1}^n a_{kl}b_{lk} = \sum_{k=1}^m (AB)[k][k] = \tr{AB} \]
 			\end{proof}
-		\section{Hermite行列$A,B$に対して$\tr{AB} \in \realNumbers$}
+		\section{Hermite行列\texorpdfstring{$A,B$}{A,B}に対して\texorpdfstring{$\tr{AB} \in \realNumbers$}{tr(AB)∈R}}
 			\begin{shadebox}
 				$A,B\in\complexNumbers^{n\times n}$がエルミート行列であるとき、$\tr{AB}$は実数である。
 			\end{shadebox}
 			\begin{proof}
 				\[ \overline{\tr{AB}} = \tr{\overline{AB}} = \tr{\overline{A^*B^*}} = \tr{A^\top B^\top} = \tr{(BA)^\top} = \tr{BA} = \tr{AB} \]
 			\end{proof}
-		\section{正定値行列$A \in \realNumbers^{m\times m}$に対して$\tr{X^\top AX}\;(X \in \realNumbers^{m\times n})$は$X$の狭義凸関数である}
+		\section{正定値行列\texorpdfstring{$A \in \realNumbers^{m\times m}$}{A∈R\string^(m×m)}に対して\texorpdfstring{$\tr{X^\top AX}\;(X \in \realNumbers^{m\times n})$}{tr(X\string^AX (X∈R\string^(m×n)))}は\texorpdfstring{$X$}{X}の狭義凸関数である}
 			\begin{proof}
 				\quad\par
 				$\lambda \in [0,1],\;X,Y \in \realNumbers^{m\times n}$とする。
