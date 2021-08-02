@@ -1874,10 +1874,10 @@
 					これは$c_1=1,\quad c_2=\cdots=c_\sigma=0$のときに最大となる。よって
 					\[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
 				\end{proof}
-			\subsection{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}$}
+			\subsection{\texorpdfstring{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}(A^\top A)}\;(A\in\realNumbers^{n\times n})$}{max\_\{||x||=1\} ||Ax|| = sqrt(λ\_max(A\string^⊤ A)) (A∈R\string^(n×n))}}
 				\begin{shadebox}
 					実正方行列$A \in \realNumbers^{n\times n}$と実ベクトル$\vx \in \realNumbers^n$について
-					\[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}\{A^\top A\}}\]
+					\[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}(A^\top A)}\]
 				\end{shadebox}
 				\noindent
 				(簡潔だが、高度な知識を前提とする証明)
@@ -1888,7 +1888,7 @@
 				\noindent
 				(初等的な証明)
 				\begin{proof}
-					\[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\text{max}}\{A^\top A\}\]
+					\[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\text{max}}(A^\top A)\]
 					を示せば良い。\\
 					\[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inprod{\vx}{A^\top A\vx} = \inprod{A^\top A\vx}{\vx}\]
 					であり、$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から、固有値は全て実数であり、固有空間の基底に正規直交基を選べる。\\
@@ -1901,7 +1901,7 @@
 					\[A^\top A\vx = A^\top A\sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}A^\top A\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\lambda_i\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
 					となるから、$\mbox{\boldmath $b$}_{ij}$の正規直交性に注意して
 					\[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
-					条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}\{A^\top A\}$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
+					条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}(A^\top A)$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
 					\begin{numcases}
 						{}
 						g\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) = \sum_{ij}{{c_{ij}}^2} - 1 & \nonumber \\
@@ -1915,12 +1915,12 @@
 					\[\sum_{j=1}^{n_p}{c_{pj}}^2 = 1\cdots(\text{iv})\]
 					となるので
 					\[f = (A^\top A\vx,\vx) = \lambda_p\sum_{j=1}^{n_p}{c_{pj}}^2 = \lambda_p\]
-					これは$p=1$のとき最大値$\lambda_1 = \lambda_{\text{max}}\{A^\top A\}$をとる。\\
+					これは$p=1$のとき最大値$\lambda_1 = \lambda_{\text{max}}(A^\top A)$をとる。\\
 					さて、これが果たして$f$の最大値なのかどうかを吟味する必要がある。条件(i)の表す領域は(iii)に注意すると(iv)の表す$n_1$次元超球面であるから、最大値は極大値と同じ意味になる。
 					(iv)より$c_{11},c_{12},\dots,c_{1n_1}$の少なくとも1つは0でない。0でないものが$c_{1q}$であったとしよう。すると$\frac{\partial g}{\partial c_{1q}} = 2c_{1q} \neq 0$だから陰関数定理より先述の超球面は$c_{1q}$の近傍で
 					\[{c_{1q}}^2 = 1 - \sum_{j=1}^{q-1}{{c_{1j}}^2} - \sum_{j=q+1}^{n_1}{{c_{1j}}^2}\]
 					と表現される。$f$は定数関数$\lambda_1$となっているから、その$c_{11},c_{12},\dots,c_{1(q-1)},c_{1(q+1)}\dots,c_{1n_1}$による一階偏微分,二階偏微分はともに0であり、$\lambda_1$が極値たる条件を満たす。\\
-					よって$\lambda_1 = \lambda_{\text{max}}\{A^\top A\}$は$f$の最大値である。
+					よって$\lambda_1 = \lambda_{\text{max}}(A^\top A)$は$f$の最大値である。
 				\end{proof}
 			\subsection{逆行列のノルムは元の行列の最小特異値の逆数と等しい}
 				\begin{shadebox}
