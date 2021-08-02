@@ -30,14 +30,14 @@
 				$q=q_2-q_1,p=m$とすれば定理の主張を満たす$p/q$が得られる。
 			\end{proof}
 		\section{床関数と天井関数}
-			\subsection{$\forall x\in\realNumbers,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}
+			\subsection{\texorpdfstring{$\forall x\in\realNumbers,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}{∀x∈R, floor(-1) = -ceil(x), ceil(-x) = -floor(x)}}
 				\begin{proof}
 					\quad\par
 					前者は次のようにして示せる。
 					\[ n = \floor{-x} \iff n\in\integers,\; -x-1 < n \leq -x \iff n\in\integers,\; x \leq -n < x+1 \iff -n = \ceil{x} \iff n = -\ceil{x} \]
 					前者の式で$x$を$-x$で置き換えれば後者が得られる。
 				\end{proof}
-			\subsection{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}
+			\subsection{\texorpdfstring{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}{∀x,y∈R, floor(x)+floor(y) ≦ foor(x+y), ceil(x)+ceil(y) ≧ ceil(x+y)}}
 				\begin{proof}
 					\quad\\
 					($\floor{x}+\floor{y}\leq\floor{x+y}$の証明)\\
@@ -59,7 +59,7 @@
 		% 	$(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$、そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
 		% 	$c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
 		\section{単調性}
-			\subsection{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$は$n$に関して単調増加}
+			\subsection{\texorpdfstring{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
 				\label{(1-t/n)^nは単調増加}
 				\begin{proof}
 					\quad\par
@@ -84,7 +84,7 @@
 			% 		\end{align*}
 			% 	\end{proof}
 		\section{極限}
-			\subsection{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = e\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}
+			\subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = e\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
 				\begin{proof}
 					\quad\par
 					\[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\]
@@ -93,7 +93,7 @@
 					\[\left(1+\frac{1-\epsilon}{n}\right)^n \leq \left(1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\right)^n \leq \left(1+\frac{1+\epsilon}{n}\right)^n\]
 					両辺で$n\rightarrow\infty$として従う。
 				\end{proof}
-			\subsection{$\lim_{n\rightarrow\infty}\left(1+1/n+o(1/n)\right)^n = e$}
+			\subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+o(1/n)\right)^n = e$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
 				\begin{proof}
 					\quad\par
 					$o(1/n)$の部分を$f(n)$とおく。
@@ -110,7 +110,7 @@
 			\subsection{Fibonacci数列}
 				\subsubsection{つがいの増殖からの漸化式の導出}
 					第$n$世代のつがいの数を$a_n$とし、そのうち成熟しているものを$m_n$、未成熟のものを$y_n$とすると、$a_{n+1} - a_n = m_n$であり、同時に$m_n = m_{n-1} + y_{n-1}$なので結局$a_{n+1} = a_n + a_{n-1}$となる。
-			\subsection{$a_{n+1}=ra_n + p(n),\;(r\neq1 ,\;p(n):\;d\text{次多項式})$の一般項は$a_n = Ar^n + q(n),\;(A:\text{ 定数},\;q(n):\;d\text{次多項式})$}
+			\subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),\;(r\neq1 ,\;p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),\;(A:\text{ 定数},\;q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
 				\begin{proof}
 					\quad\par
 					$p(n) = b_dn^d + \cdots + b_1n + b_0n$とする。
@@ -141,7 +141,7 @@
 					\end{proof}
 			\end{comment}
 	\chapter{級数}
-		\section{$S_l = \sum_{k=0}^\infty k^l r^k$を逐次的に求める}
+		\section{\texorpdfstring{$S_l = \sum_{k=0}^\infty k^l r^k$}{A\_l = Σ\_\{k=0\}\string^∞ k\string^l r\string^k}を逐次的に求める}
 			\begin{shadebox}
 				$S_l := \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
 				\[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
@@ -156,7 +156,7 @@
 			\end{proof}
 			$l=2$まで具体的に求めた結果:
 			\[ S_0 = 1/(1-r),\quad S_1 = r/(1-r)^2,\quad S_2 = r(r+1)/(1-r)^3 \]
-		\section{Abelの総和公式 : $\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}
+		\section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
 			\begin{shadebox}
 				数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
 				\[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i := \sum_{j=1}^i a_j \right) \]
@@ -194,7 +194,7 @@
 					&= A_nb_n + \sum_{i=1}^n A_i(b_i-b_{i+1}) = A_nb_n - \sum_{i=1}^n A_i(b_{i+1} - b_i)
 				\end{align*}
 			\end{proof}
-		\section{FKG不等式(離散) : 単調増加列$\{a_n\},\{b_n\}$について、$\left(\sum_{i=1}^n a_i\right)\left(\sum_{i=1}^n b_i\right) \leq n\sum_{i=1}^n a_ib_i$}
+		\section{FKG不等式(離散) : 単調増加列\texorpdfstring{$\{a_n\},\{b_n\}$}{\{a\_n\}, \{b\_n\}}について、\texorpdfstring{$\left(\sum_{i=1}^n a_i\right)\left(\sum_{i=1}^n b_i\right) \leq n\sum_{i=1}^n a_ib_i$}{(Σ\_\{i=1\}\string^n a\_i)(Σ\_\{j=1\}\string^n b\_i)≦Σ\_\{i=1\}\string^n a\_i b\_i}}
 			\label{subsec:FKG不等式(離散)}
 			\begin{proof}
 				\quad\par
@@ -208,7 +208,7 @@
 				\[ n\sum_{i=1}^n a'_ib'_i = n\sum_{i=1}^n (a_ib_i + \alpha b_i + \beta a_i + \alpha\beta) = n\sum_{i=1}^n a_ib_i + n\alpha B_n + n\beta A_n + n\alpha\beta \]
 				であるから$\{a'_n\},\{b'_n\}$が定理の不等式を満たすことと$\{a_n\},\{b_n\}$が定理の不等式を満たすことは同値である。以上で定理が示された。
 			\end{proof}
-		\section{等比級数と0収束列の畳み込み: {\normalsize $|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}}
+		\section{等比級数と0収束列の畳み込み: {\normalsize \texorpdfstring{$|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}{|r|<1, lim\_\{n→∞\}a\_n=0 ⇒ lim\_\{t→∞\} Σ\_\{τ=0\}\string^t r\string^(t-τ) a\_τ} = 0}}
 			\begin{shadebox}
 				$|r|<1$とし, 数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき、次が成り立つ。
 				\[\lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0\]
@@ -226,7 +226,7 @@
 				そこで$t\geq T_2$と取り直すと、上の式より
 				\[\left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| \leq \frac{2\varepsilon}{1-|r|}\]
 			\end{proof}
-		\section{$\sum_{k=1}^n \cos kx = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin(x/2)} \quad (x\neq 0)$}
+		\section{\texorpdfstring{$\sum_{k=1}^n \cos kx = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n cos(kx) = -1/2 + (sin(n+1/2)x)/(2sin(x/2))}}
 			\begin{proof}
 				\begin{align*}
 					(\sin x) \sum_{k=1}^n \cos kx &= \frac{1}{2}\sum_{k=1}^n (\sin(1+k)x+\sin(1-k)x) \\
@@ -235,7 +235,7 @@
 					&= -\frac{1}{2} + \frac{1}{4\sin\frac{x}{2}\cos\frac{x}{2}}2\sin\frac{(2n+1)x}{2}\cos\frac{-x}{2} = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin\frac{x}{2}}
 				\end{align*}
 			\end{proof}
-		\section{$\sum_{k=1}^n \sin kx = \frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{2\sin(x/2)} \quad (x\neq 0)$}
+		\section{\texorpdfstring{$\sum_{k=1}^n \sin kx = \frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n sin(kx) = (sin(nx/2)sin((n+1)x/2))/(2sin(x/2))}}
 			\begin{proof}
 				\begin{align*}
 					(\sin x) \sum_{k=1}^n \sin kx &= \frac{1}{2}\sum_{k=1}^n (\cos(1-k)x-\cos(1+k)x) \\
@@ -249,7 +249,7 @@
 				\end{align*}
 			\end{proof}
 	\chapter{乗積}
-		\section{$a_i\geq 0\;(i=1,2,\cdots),\;\sum_{i=1}^\infty (1-a_i) = \infty \Rightarrow \prod_{i=1}^\infty a_i = 0$}
+		\section{\texorpdfstring{$a_i\geq 0\;(i=1,2,\cdots),\;\sum_{i=1}^\infty (1-a_i) = \infty \Rightarrow \prod_{i=1}^\infty a_i = 0$}{a\_i≦0 (i=1,2,...), Σ\_\{i=1\}\string^∞ (1-a\_i) = ∞ ⇒ Π\_\{i=1\}\string^∞ a\_i = 0}}
 			\begin{proof}
 				\quad\par
 				$a_i=0$となる$i\in\naturalNumbers$が存在する場合は命題の主張は明らかに成り立つので、以下では$a_i\in(0,1]$とする。
@@ -259,7 +259,7 @@
 				\[ \prod_{i=1}^\infty a_i = \prod_{i=1}^\infty e^{-b_i} = \exp\left(-\sum_{i=1}^\infty b_i\right) = 0 \]
 			\end{proof}
 	\chapter{位相空間}
-		\section{$A \subseteq B \Rightarrow \cl{A} \subseteq \cl{B}$}
+		\section{\texorpdfstring{$A \subseteq B \Rightarrow \cl{A} \subseteq \cl{B}$}{A⊆B ⇒ cl(A)⊆cl(B)}}
 			\begin{proof}
 				\quad\par
 				もしもある$a\in \cl{A}, a\not\in\cl{B}$が存在すれば、$a$に収束するある点列$\{a_k\}, a_k\in A \subseteq B \subseteq \cl{B}$に対してその収束先$a$が$\cl{B}$に含まれない。
@@ -267,7 +267,7 @@
 			\end{proof}
 	\chapter{部分分数分解}
 		\section{諸公式}
-			\subsection{$\frac{1}{(x^2-1)^2} = \frac{1}{4}\left[\frac{1}{x+1}-\frac{1}{x-1}+\frac{1}{(x+1)^2}+\frac{1}{(x-1)^2}\right]$}
+			\subsection{\texorpdfstring{$\frac{1}{(x^2-1)^2} = \frac{1}{4}\left[\frac{1}{x+1}-\frac{1}{x-1}+\frac{1}{(x+1)^2}+\frac{1}{(x-1)^2}\right]$}{1/(x\string^2-1)\string^2 = (1/4)[1/(x+1) - 1/(x-1) + 1/(x+1)\string^2 + 1/(x-1)\string^2]}}
 				\label{sec:公式イ}
 				\begin{indentation}{1zw}{0zw}
 					\begin{shadebox}
@@ -298,7 +298,7 @@
 				\end{proof}
 	\chapter{指示関数}
 		\section{諸定理}
-			\subsection{$\Omega$を定義域とする写像$f,g,T$に対して$^\forall x\in\Omega,^\forall t\in T(\Omega),\; \indII{T(x)=t}f(x) = \indII{T(x)=t}g(x) \iff ^\forall x\in\Omega,\;f(x)=g(x)$}
+			\subsection{\texorpdfstring{$\Omega$}{Ω}を定義域とする写像\texorpdfstring{$f,g,T$}{f,g,T}に対して\texorpdfstring{$\forall x\in\Omega,\forall t\in T(\Omega),\; \indII{T(x)=t}f(x) = \indII{T(x)=t}g(x) \iff ^\forall x\in\Omega,\;f(x)=g(x)$}{∀x∈Ω, ∀t∈T(Ω), 1(T(x)=t)f(x) = 1(T(x)=t)g(x) ⇔ ∀x∈Ω, f(x)=g(x)}}
 				\begin{proof}
 					\quad\\
 					($\Rightarrow$)
@@ -310,7 +310,7 @@
 					$t\neq T(x)$の場合は主張の左側の式は$0=0$となる。
 				\end{proof}
 	\chapter{微分}
-		\section{$f(a)<0<f(b) \Rightarrow \;^\exists x \in (a,b) \st f(x)=0, f'(x)\geq 0$}
+		\section{\texorpdfstring{$f(a)<0<f(b) \Rightarrow \;\exists x \in (a,b) \st f(x)=0, f'(x)\geq 0$}{f(a)<0<f(b) ⇔ ∃x∈(a,b) s.t. f(x)=0, f'(x)≦0}}
 			\begin{shadebox}
 				区間$[a,b]\;(a<b)$で定義された連続関数$f$が開区間$(a,b)$で微分可能であるとする。
 				$f(a)<0<f(b)$であるとき、ある$x\in(a,b)$が存在して$f(x)=0, f'(x)\geq 0$を満たす。
@@ -323,7 +323,7 @@
 			中間値の定理より、ある$y\in(a,x_0-\delta)$が存在して$f(y=0)$となる。
 			これは$x_0$が$f(x=0)$を満たす最小の点であったことに矛盾する。
 		\end{proof}
-		\section{$\lim_{x\to\infty}{f(x)}=0$であっても$\displaystyle \lim_{x\to0}{f'(x)} = 0$とは限らない}
+		\section{\texorpdfstring{$\lim_{x\to\infty}{f(x)}=0$}{lim\_\{x→∞\}f(x)=0}であっても\texorpdfstring{$\displaystyle \lim_{x\to0}{f'(x)} = 0$}{lim\_\{x→∞\}f'(x)=0}とは限らない}
 			\begin{shadebox}
 				$\textup{C}^1$級関数$f(x)$について$\displaystyle \lim_{x\to\infty}{f(x)}=0$であっても$\displaystyle \lim_{x\to0}{f'(x)} = 0$とは限らない。
 			\end{shadebox}
@@ -334,7 +334,7 @@
 		\section{soft-step 関数}
 			工学的な道具として使うための恣意的な関数を考えてみる。
 			ここでは滑らかに0から1に変化するステップ状の関数を考えてみる。
-			\subsection{$C^{n-1}$級の soft-step 関数}
+			\subsection{\texorpdfstring{$C^{n-1}$}{C\string^(n-1)}級の soft-step 関数}
 				$\sigma>0, n\in\naturalNumbers$とする。次の関数は$\realNumbers$上で$C^{n-1}$級である。
 				\[
 					f(x) =
@@ -363,7 +363,7 @@
 				\]
 				$k\in\range{1}{n-1}$に対して隣接する領域同士の境界点で左側,右側微分係数が一致するので$C^{n-1}$級である。
 	\chapter{Taylor展開}
-		\section{$e^{-x^2}$は全域でTaylor展開可能}
+		\section{\texorpdfstring{$e^{-x^2}$}{e\string^(-x\string^2)}は全域でTaylor展開可能}
 			\begin{proof}
 				\quad\par
 				$f(x) = e^{-x^2}\;(x\in\realNumbers)$とする。
@@ -375,7 +375,7 @@
 			\end{proof}
 	\chapter{凸関数}
 		\section{諸定理}
-			\subsection{$f_1,f_2$が凸なら$\max\{f_1,f_2\}$は凸}
+			\subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
 			\begin{proof}
 				\quad\par
 				$g(\bm{x}) := \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
@@ -495,7 +495,7 @@
 					\caption{$a,\alpha,\gamma$の様子}
 				\end{figure}
 			\end{proof}
-		\section{可微分な関数$f$の逆関数は$f'\left(f^{-1}(x)\right)\neq 0$なる点$x$で微分可能であり、$\deriv{f^{-1}}{x}{}(x) = 1/f'\left(f^{-1}(x)\right)$。}
+		\section{可微分な関数\texorpdfstring{$f$}{f}の逆関数は\texorpdfstring{$f'\left(f^{-1}(x)\right)\neq 0$}{f'(f\string^(-1)(x)) ≠ 0}なる点\texorpdfstring{$x$}{x}で微分可能であり、\texorpdfstring{$\deriv{f^{-1}}{x}{}(x) = 1/f'\left(f^{-1}(x)\right)$}{f\string^(-1)'(x) = 1/f'(f\string^(-1)(x))}。}
 			\begin{proof}
 				\quad\par
 				$f$を開区間$I$上の可微分な関数とし、$f$には逆関数が存在するとする(必然的に$f$は狭義単調増加/減少なものに限られる)。
@@ -558,7 +558,7 @@
 				これと式(1)より$ \fea(0) = \feb(0) = f(0)$となり、結局$\fea$と$\feb$は常に等しい。
 				これと式(1)から奇関数成分$\foa,\fob$も等しいことがわかる。
 			\end{proof}
-		\section{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}
+		\section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
 			\begin{shadebox}
 				集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
 				\[ \sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \]
@@ -568,7 +568,7 @@
 				$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_1$とすると$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_1)+g(\bm{x}_1) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x})$。
 				また、$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_2$とすると$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_2)+g(\bm{x}_2) \geq \inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x})$
 			\end{proof}
-		\section{$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}),\; \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x})$}
+		\section{\texorpdfstring{$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}),\; \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x})$}{sup\_\{x∈X\} -f(x) = -inf\_\{x∈X\}f(x), inf\_\{x∈X\} -f(x) = -sup\_\{x∈X\}f(x)}}
 			\begin{shadebox}
 				集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
 				\[ \sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}),\; \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x}) \]
@@ -612,7 +612,7 @@
 				両辺を$\norm{\bm{x}+\bm{y}}_p^{p-1}$で割ることでMinkowskiの不等式を得る。
 			\end{proof}
 	\chapter{2変数関数}
-		\section{4象限逆正接 : $\atanEx{x}{y}$}
+		\section{4象限逆正接 : \texorpdfstring{$\atanEx{x}{y}$}{atan2(y,x)}}
 			\begin{shadebox}
 				4象限逆正接 $\atanEx{x}{y}$ を次で定義する。
 				\[
@@ -654,7 +654,7 @@
 			\end{proof}
 	\chapter{多変数関数}
 		\section{Jacobi行列}
-			\subsection{$J_{G\circ F}=J_GJ_F$}
+			\subsection{\texorpdfstring{$J_{G\circ F}=J_GJ_F$}{J\_\{G∘F\}}}
 				\label{subsec:合成関数のJacobi行列}
 				\begin{shadebox}
 					$F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
@@ -662,7 +662,7 @@
 				\begin{proof}
 					\[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
 				\end{proof}
-			\subsection{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}
+			\subsection{\texorpdfstring{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}{J\_\{f\string^⊤g\} = g\string^⊤ J\_f + f\string^⊤ J\_g}}
 			\begin{shadebox}
 				$\bm{f},\bm{g}:\realNumbers^m\to\realNumbers^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると、$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
 			\end{shadebox}
@@ -673,20 +673,20 @@
 				\end{align*}
 			\end{proof}
 		\section{勾配とHessian}
-			\subsection{$\nabla(G\circ F) = \nabla F \nabla G$}
+			\subsection{\texorpdfstring{$\nabla(G\circ F) = \nabla F \nabla G$}{∇(G∘F) = ∇F ∇G}}
 				\begin{shadebox}
 					$F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$に対して$F,G$の合成写像$G\circ F$の勾配は$\nabla(G\circ F) = \nabla F \nabla G$である。
 				\end{shadebox}
 				\begin{proof}
 					$\nabla F = {J_F}^\top$であることと\ref{subsec:合成関数のJacobi行列}より直ちに従う。
 				\end{proof}
-			\subsection{$\nabla_\bm{xy}^2 f = (\nabla_\bm{yx}^2 f)^\top$}
+			\subsection{\texorpdfstring{$\nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top$}{∇\_\{xy\}f = (∇\_\{yx\} f)\string^⊤}}
 				\begin{shadebox}
 					$\bm{x}\in\realNumbers^{n_1}, \bm{y}\in\realNumbers^{n_2}$とし、$f:(\bm{x},\bm{y})\in\realNumbers^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realNumbers$とするとき、次が成り立つ。
-					\[ \nabla_\bm{xy}^2 f = (\nabla_\bm{yx}^2 f)^\top \]
+					\[ \nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top \]
 				\end{shadebox}
 				\begin{proof}
-					\[ \nabla_\bm{xy}^2 f = \nabla_\bm{x}\nabla_\bm{y}f = \nabla_\bm{x}\left[\partDeriv{f}{y_1}{}, \cdots, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_\bm{yx}^2 f)^\top \]
+					\[ \nabla_{\bm{x}\bm{y}} f = \nabla_\bm{x}\nabla_\bm{y}f = \nabla_\bm{x}\left[\partDeriv{f}{y_1}{}, \cdots, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_{\bm{y}\bm{x}} f)^\top \]
 				\end{proof}
 			\subsection{勾配ベクトルが等値面の接平面と直交することの証明}
 				\begin{shadebox}
@@ -703,22 +703,22 @@
 					\[ W := \Span{\set{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
 					のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\cdots,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
 				\end{proof}
-			\subsection{$\nabla A\bm{x} = A^\top$}
+			\subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
 				\begin{proof}
 					\quad $\nabla(A\bm{x})[i][j] = \partDeriv{(A\bm{x})[j]}{x_i}{} = \partDerivLong{\sum_{k=1}^n a_{jk} x_k}{x_i}{} = a_{ji}$
 				\end{proof}
-			\subsection{$\nabla \bm{x}^\top\bm{x} = 2\bm{x}$}
+			\subsection{\texorpdfstring{$\nabla \bm{x}^\top\bm{x} = 2\bm{x}$}{∇ x\string^⊤ x = 2x}}
 				\begin{proof}
 					\quad $\partDeriv{\bm{x}^\top\bm{x}}{x_i}{} = \partDerivLong{\sum_{j=1}^n x_j^2}{x_i}{} = 2x_i \quad\therefore \nabla \bm{x}^\top\bm{x} = 2\bm{x}$
 				\end{proof}
-			\subsection{$\nabla \bm{x}^\top A\bm{x} = (A+A^\top)\bm{x}$}
+			\subsection{\texorpdfstring{$\nabla \bm{x}^\top A\bm{x} = (A+A^\top)\bm{x}$}{∇ x\string⊤ Ax}}
 				\begin{proof}
 					\quad\par
 					\[\nabla \bm{x}^\top A\bm{x} = \nabla\sum_{i=1}^{n}{\sum_{j=1}^{n}{a_{ij}x_ix_j}} = \nabla\left(\sum_{i=1}^{n}{a_{ii}{x_i}^2} + \sum_{i\neq j}^{n}{a_{ij}x_ix_j}\right)\]
 					よって第$i$要素は
 					\[\left(\nabla \bm{x}^\top A\bm{x}\right)[i] = 2a_{ii}x_i + \sum_{j\neq i}^{n}{(a_{ij}+a_{ji})x_j} = \sum_{j=1}^{n}{(a_{ij}+a_{ji})x_j} = \left((A+A^\top)\bm{x}\right)[i]\]
 				\end{proof}
-			\subsection{$\nabla\norm{A\bm{x}+\bm{b}}_2^2 = 2A^\top(A\bm{x}+\bm{b})$}
+			\subsection{\texorpdfstring{$\nabla\norm{A\bm{x}+\bm{b}}_2^2 = 2A^\top(A\bm{x}+\bm{b})$}{∇||Ax+b||\_2\string^2 = 2A\string^⊤(Ax+b)}}
 				\begin{proof}
 					\quad\par
 					合成関数の微分法より
@@ -732,13 +732,13 @@
 					\end{align*}
 					\end{comment}
 				\end{proof}
-			\subsection{$\nabla (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = A^\top(B+B^\top)(A\bm{x}+\bm{b})$}
+			\subsection{\texorpdfstring{$\nabla (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = A^\top(B+B^\top)(A\bm{x}+\bm{b})$}{∇ (Ax+b)\string^⊤ B(Ax+b) = A\string^⊤ (B+B\string^⊤)(Ax+b)}}
 				\begin{proof}
 					\quad\par
 					合成関数の微分法より
 					\[ \nabla (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = \nabla(A\bm{x} + \bm{b})\left(\left.\nabla(\bm{y}^\top B\bm{y})\right|_{\bm{y}=A\bm{x}+\bm{b}}\right) = A^\top(B+B^\top)(A\bm{x}+\bm{b}) \]
 				\end{proof}
-			\subsection{$\nabla^2 \bm{x}^\top A\bm{x} = A+A^\top$}
+			\subsection{\texorpdfstring{$\nabla^2 \bm{x}^\top A\bm{x} = A+A^\top$}{∇\string^2 x\string^⊤ Ax = A+A\string^⊤}}
 				\begin{proof}
 					\quad $\nabla^2\bm{x}^\top A\bm{x} = \nabla \nabla\bm{x}^\top A\bm{x} = \nabla(A+A^\top)\bm{x} = A+A^\top$
 				\end{proof}
