@@ -1669,7 +1669,7 @@
 				2つ目の不等号はCauchy-Schwartzの不等式より導かれる。
 			\end{proof}
 	\chapter{擬逆行列}
-		\section{諸定理: $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$など}
+		\section{諸定理: \texorpdfstring{$(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$}{(A\string^H A)\string^† A\string^H = A\string^†}など}
 			以下のものは特異値分解を用いて示せる。
 			\begin{enumerate}
 				\item $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$
@@ -1700,7 +1700,7 @@
 			\end{proof}
 	\chapter{ベクトルのノルム}
 		\section{諸定理}
-			\subsection{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realNumbers^n,\;p\geq 1,\;a\geq 0)$}
+			\subsection{\texorpdfstring{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realNumbers^n,\;p\geq 1,\;a\geq 0)$}{||x||\_\{p+a\} ≦ ||x||\_p (x∈R\string^n, p≧1, a≧0)}}
 				\begin{proof}
 					\quad\par
 					$a=0$のときは明らか。$a>0$のときを考える。
@@ -1716,7 +1716,7 @@
 						&\iff \sum_{i=1}^r w_i\log w_i < 0 \quad \left( \because\;\sum_{i=1}^r w_i = 1 \right) \quad = \text{true} \quad (\because\; 0<w_i<1)
 					\end{align*}
 				\end{proof}
-			\subsection{$1\leq p\leq q,\;\bm{x}\in\complexNumbers^n$のとき$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}
+			\subsection{\texorpdfstring{$1\leq p\leq q,\;\bm{x}\in\complexNumbers^n$}{1≦p≦q, x∈C\string^n}のとき\texorpdfstring{$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}{||x||\_p ≦ n\string^(1/p-1/q)||x||\_q}}
 				\begin{proof}
 					\quad\par
 					$\bm{a},\bm{b}\in\complexNumbers^n$とする。$r=q/p, s=q/(q-p)$とすると$1\leq r,s$および$1/r+1/s=1$を満たすのでH\"olderの不等式より次式が成り立つ。
@@ -1774,7 +1774,7 @@
 			% 		最適解を$\bm{x}^*$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\bm{x}^*=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
 			% 		よって$\bm{x}^*$は全要素が等しい。これと$\norm{\bm{x}^*}=1,\bm{x}^*\geq\bm{0}$より$\bm{x}^* = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\bm{x}^*)=\sqrt{n}$
 			% 	\end{proof}
-			\subsection{$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}
+			\subsection{\texorpdfstring{$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}{x∈C\string^n, ||x||\_2=1, ⇒ |x\_1|+...+|x\_n| ≦ √n}}
 				\label{th:単位球面上の点の座標の絶対値の総和の最大値}
 				\begin{proof}
 					\quad\par
@@ -1828,7 +1828,7 @@
 					以上より$c_1=c_2=c_3$
 				\end{proof}
 				以降、特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
-			\subsection{部分行列のノルム: $A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}
+			\subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
 				\begin{proof}
 					\quad\par
 					$\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して、$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると、$||\bm{x}'|| = 1,\;||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
@@ -1929,12 +1929,12 @@
 				\begin{proof}
 					$A$の特異値分解より明らか。
 				\end{proof}
-			\subsection{$A \in \complexNumbers^{m\times n}$について$\alpha = \max|A_{ij}|$とすると$\alpha \leq \|A\|_2$}
+			\subsection{\texorpdfstring{$A \in \complexNumbers^{m\times n}$}{A∈C\string^(m×n)}について\texorpdfstring{$\alpha = \max|A_{ij}|$}{α = max|A\_(i,j)|}とすると\texorpdfstring{$\alpha \leq \|A\|_2$}{α ≦ ||A||\_2}}
 				\begin{proof}
 					\quad\par
 					絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \|A\bm{e}_q\|_2 \leq \|A\|_2$
 				\end{proof}
-			\subsection{$A\in\complexNumbers^{m\times n}$の各列ベクトルのノルムが高々$a$ならば$\norm{A}_2\leq a\sqrt{n}$}
+			\subsection{\texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の各列ベクトルのノルムが高々\texorpdfstring{$a$}{a}ならば\texorpdfstring{$\norm{A}_2\leq a\sqrt{n}$}{||A||\_2 ≦ a√n}}
 				\label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
 				\begin{proof}
 					\quad\par
@@ -1942,11 +1942,11 @@
 					\[\norm{A\bm{x}}_2=\norm{x_1\bm{a}_1+\cdots+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \cdots + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\cdots+|x_n|)a\]
 					これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\cdots+|x_n|\leq\sqrt{n}$なので定理が従う。
 				\end{proof}
-				\subsubsection{系:\quad$A\in\complexNumbers^{m\times n}$の全要素の絶対値が$\varepsilon$以下であれば$\norm{A}_2\leq \varepsilon\sqrt{mn}$}
+				\subsubsection{系: \texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の全要素の絶対値が\texorpdfstring{$\varepsilon$}{ε}以下であれば\texorpdfstring{$\norm{A}_2\leq \varepsilon\sqrt{mn}$}{||A||\_2 ≦ ε√(mn)}}
 					\begin{proof}
 						$A$の各列ベクトルのノルムが高々$\varepsilon\sqrt{m}$なので直前の定理より従う。
 					\end{proof}
-				\subsubsection{系:\quad$n$次確率行列のノルムは高々$\sqrt{n}$}
+				\subsubsection{系: \texorpdfstring{$n$}{n}次確率行列のノルムは高々\texorpdfstring{$\sqrt{n}$}{√n}}
 					\begin{proof}
 						\quad\par
 						転置してもノルムが変わらないことと、確率ベクトル(の転置)のノルムは高々$1$であることを使えば\ref{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}より従う。
@@ -2011,20 +2011,20 @@
 					\item 各行ベクトルの1ノルムが$r<1$以下である。
 				\end{itemize}
 			\end{shadebox}
-		\section{漏れ確率行列のべき乗は$O$に収束する}
+		\section{漏れ確率行列のべき乗は\texorpdfstring{$O$}{O}に収束する}
 			\begin{proof}
 				\quad\par
 				$A$を$o(r)$の漏れ確率行列とし、$C=A^2$とすると$c_{ij} = \sum_{k=1}^{n}{a_{ik}a_{kj}}$であるから$C$の第i行ベクトルの1ノルムは
 				$\sum_{j=1}^{n}{c_{ij}} = \sum_{j=1}^{n}{\sum_{k=1}^{n}{a_{ik}a_{kj}}} = \sum_{k=1}^{n}{a_{ik}\sum_{j=1}^{n}{a_{kj}}} \leq r\sum_{k=1}^{n}{a_{ik}} \leq r^2$となるので、$C$が非負行列であったことに注意して、各要素$c_{ij}$は必ず0以上$r^2$以下である。
 				これを繰り返すと$A^n$の各要素は0以上$r^n$以下であることがわかるので、$\lim_{n\rightarrow\infty}{A^n}=O$
 			\end{proof}
-		\section{$o(r)$の漏れ確率行列$A$のノイマン級数は収束し、各要素の和は$\frac{1}{1-r}$以下である。}
+		\section{\texorpdfstring{$o(r)$}{o(r)}の漏れ確率行列\texorpdfstring{$A$}{A}のノイマン級数は収束し、各要素の和は\texorpdfstring{$\frac{1}{1-r}$}{1/(1-r)}以下である。}
 			\begin{proof}
 				\quad\par
 				直前の定理より$A$のノイマン級数$I+A+A^2+\cdots$の各要素は0以上$1+r+r^2+\cdots=\frac{1}{1-r}$以下である。
 			\end{proof}
 	\chapter{最適化への応用}
-		\section{$\norm{A\bm{x} + \bm{b}}_2^2$の最小化条件}
+		\section{\texorpdfstring{$\norm{A\bm{x} + \bm{b}}_2^2$}{||Ax+b||\_2}の最小化条件}
 			\subsection{制約なしの場合}
 				\begin{shadebox}
 					$A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
