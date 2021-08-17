@@ -37,7 +37,7 @@
 					\[ n = \floor{-x} \iff n\in\integers,\; -x-1 < n \leq -x \iff n\in\integers,\; x \leq -n < x+1 \iff -n = \ceil{x} \iff n = -\ceil{x} \]
 					前者の式で$x$を$-x$で置き換えれば後者が得られる。
 				\end{proof}
-			\subsection{\texorpdfstring{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}{∀x,y∈R, floor(x)+floor(y) ≦ foor(x+y), ceil(x)+ceil(y) ≧ ceil(x+y)}}
+			\subsection{\texorpdfstring{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}{∀x,y∈R, floor(x)+floor(y) ≦ floor(x+y), ceil(x)+ceil(y) ≧ ceil(x+y)}}
 				\begin{proof}
 					\quad\\
 					($\floor{x}+\floor{y}\leq\floor{x+y}$の証明)\\
@@ -791,7 +791,7 @@
 				そして$F^{-1}\circ F$は恒等写像だから$I_n = J_{F^{-1}\circ F}(\bm{a}) = J_{F^{-1}}(\bm{a})J_F(\bm{a})$より$J_{F^{-1}}(\bm{a}) = J_F(\bm{a})^{-1}$となる。
 			\end{proof}
 		\section{2次形式}
-			\subsection{$^\forall A\in\realNumbers^{n\times n},\bm{x}\in\realNumbers^n,\;^\exists$対称行列$B\in\realNumbers^{n\times n} \text{ s.t. } \bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}$}
+			\subsection{\texorpdfstring{$^\forall A\in\realNumbers^{n\times n},\bm{x}\in\realNumbers^n,\;^\exists$}{∀A∈R\string^(n×n), x∈R\string^n, ∃}対称行列\texorpdfstring{$B\in\realNumbers^{n\times n} \text{ s.t. } \bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}$}{B∈R\string^(n×n) s.t. x\string^⊤Ax}}
 				\begin{proof}
 					\quad\par
 					\[\bm{x}^\top A\bm{x} = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A\bm{x}\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \left(\bm{x}^\top A\bm{x}\right)^\top\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A^\top\bm{x}\right) = \bm{x}^\top\frac{A+A^\top}{2}\bm{x}\]
@@ -802,14 +802,14 @@
 		\newcommand{\mJi}[1]{\protect\underline{m}_\textrm{J}\left(#1\right)}
 		\newcommand{\mJo}[1]{\protect\overline{m}_\textrm{J}\left(#1\right)}
 		\newcommand{\mJordan}[1]{m_\textrm{J}\left(#1\right)}	%本当は \mJ を使いたいが、Debian だとバグる。"already defined"というくせに、ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
-		\section{$\sigma$--加法族}
-			\subsection{2つの$\sigma$--加法族の和集合は$\sigma$--加法族になるとは限らない}
+		\section{\texorpdfstring{$\sigma$}{σ}--加法族}
+			\subsection{2つの\texorpdfstring{$\sigma$}{σ}--加法族の和集合は\texorpdfstring{$\sigma$}{σ}--加法族になるとは限らない}
 				例えば$S=\{1,2,3\},\;X=\{\emptyset,\{1\},\{2,3\},S\},\;Y=\{\emptyset,\{1,2\},\{3\},S\}$とすると$X,Y$は$S$上の$\sigma$--加法族であり、$X\cup Y=\{\emptyset,\{1\},\{3\},\{2,3\},\{1,2\},S\}$である。$\{1\},\{3\}\subset X\cup Y$だが$\{1\}\cup\{3\} = \{1,3\} \notin X\cup Y$なので$X\cup Y$は$\sigma$--加法族ではない。
-			\subsection{$\sigma$--加法族の要素同士の直積集合の族は$\sigma$--加法族になるとは限らない}
+			\subsection{\texorpdfstring{$\sigma$}{σ}--加法族の要素同士の直積集合の族は\texorpdfstring{$\sigma$}{σ}--加法族になるとは限らない}
 				例えば$S=\{1,2,3\},\;X=\{\emptyset,\{1\},\{2,3\},S\},\;Y=\{\emptyset,\{1,2\},\{3\},S\}$とすると$X,Y$は$S$上の$\sigma$--加法族であり、その要素同士の直積集合の集合族を$Z$とすると
 				$Z=\{\emptyset,\{1\}\times\{1,2\},\{1,3\},\{1\}\times S,\{2,3\}\times\{1,2\},\{2,3\}\times\{3\},\{2,3\}\times S,S\times\{1,2\},S\times\{3\},S\times S\}$である。
 				$\{2,3\}\times\{1,2\}\in Z$であるが$(\{2,3\}\times\{1,2\})^\complement = \{(1,1),(1,2),(1,3),(2,3),(3,3)\} \notin Z$なので$Z$は$\sigma$--加法族ではない。
-			\subsection{$X$を集合とする。$A,B\subset 2^X,\;A\subset B\Rightarrow\sigma(A)\subset\sigma(B)$}
+			\subsection{\texorpdfstring{$X$}{X}を集合とする。\texorpdfstring{$A,B\subset 2^X,\;A\subset B\Rightarrow\sigma(A)\subset\sigma(B)$}{A,B⊂2\string^X, A⊂B ⇒ σ(A)⊂σ(B)}}
 				\begin{proof}
 					\quad\par
 					まず、$\sigma(\cdot)$の定義より$B\subset\sigma(B)$であり、これと$A\subset B$より$A\subset\sigma(B)$である。
@@ -847,13 +847,13 @@
 					が成り立っており、これとダルブーの定理より次式が従う。
 					\[ \mJordan{A_1\cup A_2} = \mJordan{A_1} + \mJordan{A_2} - \mJordan{A_1\cap A_2} \]
 				\end{proof}
-			\subsection{$A\subset E$($E$は直方体)のとき$\mJi{A} = |E| - \mJo{A^\complement\cap E}$}
+			\subsection{\texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)のとき\texorpdfstring{$\mJi{A} = |E| - \mJo{A^\complement\cap E}$}{mJi(A) = |E| - mJo(A\string^∁ ∩ E)}}
 				\begin{proof}
 					\quad\par
 					外測度と内測度の定義より任意の正数$\varepsilon$に対して$E$のある分割$\Delta$が存在して$\mJi{A} - s(\ind{A}{\cdot},\Delta),\;S(\ind{A^\complement\cap E}{\cdot},\Delta) - \mJo{A^\complement\cap E} < \varepsilon/2$
 					であることと$s(\ind{A}{\cdot},\Delta) = |E| - S(\ind{A^\complement\cap E}{\cdot},\Delta)$より従う。
 				\end{proof}
-			\subsection{系: $A\subset E$($E$は直方体)がJordan可測のとき$A^\complement\cap E$もJordan可測である}
+			\subsection{系: \texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)がJordan可測のとき\texorpdfstring{$A\complement\cap E$}{A\string^∁ ∩ E}もJordan可測である}
 				\label{subsec: Jordan可測集合の補集合もJordan可測}
 				\begin{proof}
 					\quad\par
@@ -867,21 +867,21 @@
 			\begin{itemize}
 				\item 有界集合$A$のLebesgue外測度,測度を$\mLebO{A}, \mLeb{A}$と書く。
 			\end{itemize}
-			\subsection{$A\subset B$ならば$\mLebO{A}\leq\mLebO{B}$}
+			\subsection{\texorpdfstring{$A\subset B$}{A⊂B}ならば\texorpdfstring{$\mLebO{A}\leq\mLebO{B}$}{mLo(A)<mLo(B)}}
 				\begin{proof}
 					\quad\par
 					背理法で示す。仮に$\mLebO{A} > \mLebO{B}$であるとする。
 					任意の$0 < \varepsilon < \mLebO{A} - \mLebO{B}$に対してある直方体領域の集合$R$が存在して$B\subset R,\;|R| < \mLebO{B} + \varepsilon$となる。
 					$A\subset B\subset R$となるので$\mLebO{A} \leq |R| < \mLebO{B} + \varepsilon < \mLebO{A}$となり矛盾。
 				\end{proof}
-			\subsection{$\mLebO{A\cup B}\leq\mLebO{A} + \mLebO{B}$}
+			\subsection{\texorpdfstring{$\mLebO{A\cup B}\leq\mLebO{A} + \mLebO{B}$}{mLo(A∪B)≦mLo(A)+mLo(B)}}
 				\begin{proof}
 					\quad\par
 					背理法で示す。仮に$\mLebO{A\cup B} > \mLebO{A} + \mLebO{B}$とする。
 					任意の$0 < \varepsilon < (\mLebO{A\cup B} - (\mLebO{A} + \mLebO{B}))/2$に対してある直方体領域の集合$R_1,R_2$が存在して$A\subset R_1, B\subset R_2,\;|R_1|<\mLebO{A} + \varepsilon,\;|R_2| < \mLebO{B} + \varepsilon$となる。
 					$A\cup B \subset R_1\cup R_2$となるので$\mLebO{A\cup B} \leq |R_1\cup R_2| \leq |R_1|+|R_2| < \mLebO{A} + \mLebO{B} + 2\varepsilon < \mLebO{A\cup B}$となり矛盾。
 				\end{proof}
-			\subsection{Lebesgue外測度の劣加法性: $\mLebO{\bigcup_{n=1}^\infty A_n} \leq \sum_{n=1}^\infty \mLebO{A_n}$}
+			\subsection{Lebesgue外測度の劣加法性: \texorpdfstring{$\mLebO{\bigcup_{n=1}^\infty A_n} \leq \sum_{n=1}^\infty \mLebO{A_n}$}{mLo(∪)\_\{n=1\}\string^∞ A\_n}}
 				\begin{proof}
 					\quad\par
 					背理法で示す。仮に$\mLebO{\bigcup_{n=1}^\infty A_n} > \sum_{n=1}^\infty \mLebO{A_n}$とし、その差を$d>0$とおく。
