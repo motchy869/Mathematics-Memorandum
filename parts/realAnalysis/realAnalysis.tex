@@ -1263,7 +1263,7 @@
 				\[ \left|\sum_{i=2}^\infty a_i x^i\right|/|x| < \frac{M}{u}\frac{|x|/u}{1-|x|/u} \to 0\; (\text{as } x\to 0) \]
 			\end{proof}
 	\chapter{微分と積分の関係}
-		\section{$\lim_{x\to\infty}{f(x)}$が存在すれば$\int_{0}^{\infty}{f'(x) dx} = f(\infty)-f(0)$}
+		\section{\texorpdfstring{$\lim_{x\to\infty}{f(x)}$}{lim x→∞ f(x)}が存在すれば\texorpdfstring{$\int_{0}^{\infty}{f'(x) dx} = f(\infty)-f(0)$}{∫\_0\string^∞ f'(x) = f(∞) - f(0)}}
 			\begin{shadebox}
 				$\textup{C}^1$級関数$f(x)$について$\displaystyle \lim_{x\to\infty}{f(x)}$が存在するとき$f'(x) $は$0\sim\infty$で可積分である。すなわち$\displaystyle \int_{0}^{\infty}{f'(x) dx}$が存在する。
 			\end{shadebox}
@@ -1275,7 +1275,7 @@
 				$\epsilon \to 0$のとき$X(\epsilon) \to \infty$であるから結局
 				\[\int_{0}^{\infty}{f'(x) dx} = f(\infty)-f(0)\]
 			\end{proof}
-		\section{$\derivLong{\integ{a}{x}{f(x)}{x}}{x}{} = f(x)$}
+		\section{\texorpdfstring{$\derivLong{\integ{a}{x}{f(x)}{x}}{x}{} = f(x)$}{(d/dx)∫\_a\string^x f(x) dx = f(x)}}
 			\begin{shadebox}
 				連続関数$f(x)$について
 				\[\derivLong{\integ{a}{x}{f(x)}{x}}{x}{} = f(x)\]
@@ -1291,8 +1291,8 @@
 				\[(1) = \lim_{h\rightarrow0}{f(\xi)}=f(x)\]
 			\end{proof}
 		\section{
-			畳み込みの微分\\
-			$\derivLong{\integ{s=0}{x}{f(s)g(x-s)}{s}}{x}{} = f(x)g(0) + \integ{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{s}$
+			畳み込みの微分\texorpdfstring{\\}{}
+			\texorpdfstring{$\derivLong{\integ{s=0}{x}{f(s)g(x-s)}{s}}{x}{} = f(x)g(0) + \integ{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{s}$}{}
 		}
 			\begin{proof}
 				\newcommand{\dx}{{\Delta x}}
@@ -1310,10 +1310,10 @@
 				\end{align*}
 			\end{proof}
 		\section{
-			重積分の微分 \\
+			重積分の微分\texorpdfstring{\\}{}
 			\small{
-				$\derivLong{\left(\integ{x_1=0}{x}{\cdots\integ{x_n=0}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$ \\
-				$= \int_{x_1=0}^x\cdots\int_{x_{n-1}=0}^{x-x_1-\cdots -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1}) \mathrm{d}x_{n-1}\cdots\mathrm{d}x_{1}$
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=0}{x}{\cdots\integ{x_n=0}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$}{} \texorpdfstring{\\}{}
+				\texorpdfstring{$= \int_{x_1=0}^x\cdots\int_{x_{n-1}=0}^{x-x_1-\cdots -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1}) \mathrm{d}x_{n-1}\cdots\mathrm{d}x_{1}$}{}
 			}
 		}
 			\label{重積分の微分}
@@ -1378,10 +1378,10 @@
 				\[\deriv{F(\omega)}{\omega}{} = \lim_{\domega \to 0}\frac{F(\omega+\domega)-F(\omega)}{\domega} = \lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
 			\end{proof}
 		\section{
-			系\\
+			系\texorpdfstring{\\}{}
 			\small{
-				$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\cdots\integ{x_n=-\infty}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$\\
-				$= \integ{x_1=-\infty}{\infty}{\cdots\integ{x_{n-1}=-\infty}{x-x_1-\cdots-x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1})}{x_{n-1}}\cdots}{x_1}$
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\cdots\integ{x_n=-\infty}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$\\}{}
+				\texorpdfstring{$= \integ{x_1=-\infty}{\infty}{\cdots\integ{x_{n-1}=-\infty}{x-x_1-\cdots-x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1})}{x_{n-1}}\cdots}{x_1}$}{}
 			}
 		}
 			\label{重積分の微分の系}
@@ -1399,7 +1399,7 @@
 				直前の定理の証明を少し改造するだけで簡単に証明できる。
 			\end{proof}
 	\chapter{図形への応用}
-		\section{ある超平面から距離$d$だけ離れた超平面の方程式}
+		\section{ある超平面から距離\texorpdfstring{$d$}{d}だけ離れた超平面の方程式}
 			$n\in\naturalNumbers,\;\bm{w}\in\realNumbers^n\neq\bm{0},\;c\in\realNumbers$とする。
 			写像$f:\bm{x}\in\realNumbers^n\mapsto \bm{w}^\top\bm{x} + c \in \realNumbers$が定める$\realNumbers^n$上の超平面$f(\bm{x})=0$
 			から距離$d>0$だけ離れた2枚の超平面を求める方法を述べる。
@@ -1410,7 +1410,7 @@
 			\[ g(\bm{x}) \pm d = 0 \iff f(\bm{x}) \pm d\norm{w}_2 = 0 \]
 			\par
 			$n=2, \bm{w} = [1,1]^\top, c=0.5, d=0.5$の例を\url{\currfiledir/mathematica/平面上の直線から距離dだけ離れた直線.nb}に示した。
-		\section{$n$次元単位球の体積$V_n$は$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}
+		\section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
 			\begin{proof}
 				\quad\par
 				$\Omega(n,r)\;(r\in\realNumbers) := \set{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
