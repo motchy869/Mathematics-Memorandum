@@ -4,7 +4,7 @@
 	\newcommand{\ymin}{y_\textrm{min}}
 	\newcommand{\ymax}{y_\textrm{max}}
 	\chapter{一般の分布}
-		\section{$\bm{x}$の分散共分散行列を$V=\Var{}{\bm{x}}$とすると$\Var{}{\bm{v}^\top\bm{x}} = \bm{v}^\top V\bm{v}$}
+		\section{\texorpdfstring{$\bm{x}$}{x}の分散共分散行列を\texorpdfstring{$V=\Var{}{\bm{x}}$}{V=Var(x)}とすると\texorpdfstring{$\Var{}{\bm{v}^\top\bm{x}} = \bm{v}^\top V\bm{v}$}{Var(v\string^T x) = v\string^T V v}}
 			\begin{proof}
 			\quad\par
 				$\hat{\bm{x}} = \E{}{\bm{x}}$とすると
@@ -41,7 +41,7 @@
 		\section{スコア関数}
 			$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\cdots,X_n \in \Omega$に対して「スコア関数」を次式で定義する。
 			\[ V_n(\bm{X},\theta) := \partDerivLong{\log f(\bm{X};\theta)}{\theta}{} = \partDerivLong{\log \prod_{i=1}^n f(X_i;\theta)}{\theta}{} = \partDerivLong{\sum_{i=1}^n \log f(X_i;\theta)}{\theta}{} = \sum_{i=1}^n V(X_i,\theta) \]
-			\subsection{$\E{\bm{X}}{V(\bm{X},\theta)} = 0$}
+			\subsection{\texorpdfstring{$\E{\bm{X}}{V(\bm{X},\theta)} = 0$}{E\_X (V(X,Θ)) = 0}}
 				\begin{proof}
 					\begin{align*}
 						\E{\bm{X}}{V_n(\bm{X},\theta)} &= \integ{\Omega^n}{}{V_n(\bm{x},\theta) \prod_{i=1}^n f(x_i;\theta)}{\bm{x}} = \integ{\Omega^n}{}{\partDerivLong{\prod_{i=1}^n f(x_i;\theta)}{\theta}{}}{\bm{x}} \\
@@ -75,13 +75,13 @@
 				以上より定理の主張が成り立つ。
 			\end{proof}
 		\section{条件付き確率}
-			\subsection{$\Pr{A}=\sum_k{\Pr{A,B_k}} = \sum_k{\cPr{A}{B_k}\Pr{B_k}}$}
+			\subsection{\texorpdfstring{$\Pr{A}=\sum_k{\Pr{A,B_k}} = \sum_k{\cPr{A}{B_k}\Pr{B_k}}$}{Pr(A) = Σ\_k Pr(A, Bk) = Σ\_k Pr(A|Bk)Pr(Bk)}}
 			\label{tech:確率の分解}
-			\subsection{$\cPr{A,B}{C}=\cPr{A}{B,C}\cPr{B}{C}$\quad(スライディング)}
+			\subsection{\texorpdfstring{$\cPr{A,B}{C}=\cPr{A}{B,C}\cPr{B}{C}$}{Pr(A,B|C) = Pr(A|B,C)Pr(B|C)} (スライディング)}
 				\begin{proof}
 					\[\cPr{A,B}{C} = \frac{\Pr{A,B,C}}{\Pr{C}} = \frac{\cPr{A}{B,C}\Pr{B,C}}{\Pr{C}} = \cPr{A}{B,C}\cPr{B}{C}\]
 				\end{proof}
-			\subsection{$\cPr{A}{C} = \sum_k{\cPr{A}{B_k,C}\cPr{B_k}{C}}$}
+			\subsection{\texorpdfstring{$\cPr{A}{C} = \sum_k{\cPr{A}{B_k,C}\cPr{B_k}{C}}$}{Pr(A|C) = Σ\_k Pr(A|Bk,C)Pr(Bk|C)}}
 				\begin{proof}
 					\begin{align*}
 						\cPr{A}{C} &= \frac{\Pr{A,C}}{\Pr{C}} = \frac{\sum_k{\Pr{A,B_k,C}}}{\Pr{C}} \quad(\because\;\ref{tech:確率の分解}) \\
