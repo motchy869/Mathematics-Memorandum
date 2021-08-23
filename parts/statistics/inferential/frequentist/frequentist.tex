@@ -98,7 +98,7 @@
 				\textrm{(離散)} &: \E{Y}{Y|X=x} := \sum_y y\Pr{Y=y|X=x} = \sum_y y\frac{\Pr{Y=y,X=x}}{\Pr{X=x}} \\
 				\textrm{(連続)} &: \E{Y}{Y|X=x} := \integ{\ymin}{\ymax}{yp_Y(y|X=x)}{y}
 			\end{align*}
-			\subsection{$\E{X,Y}{\E{Y}{Y|X}} = \E{X,Y}{Y}$}
+			\subsection{\texorpdfstring{$\E{X,Y}{\E{Y}{Y|X}} = \E{X,Y}{Y}$}{E\_(X,Y) (E\_Y (Y|X)) = E\_(X,Y) (Y)}}
 				\begin{shadebox}
 					条件付き期待値について次の性質が成り立つ。
 					\[\E{X,Y}{\E{Y}{Y|X}} = \E{X,Y}{Y}\]
@@ -391,7 +391,7 @@
 			確率変数$X$がこの分布に従うことを$X \sim \ErlangDist{k}{\mu}$と表すことにする。
 		\section{解釈}
 			単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が、時間$x$の間に$k$以上回数生起する(つまり、$k$回目の事象の発生までの待ち時間が$x$である)確率の累積分布。
-		\section{指数分布との関係:\quad$X_1,\cdots,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\cdots X_k \sim \ErlangDist{k}{\mu}$}
+		\section{指数分布との関係: \texorpdfstring{$X_1,\cdots,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\cdots X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
 			\label{指数分布とErlang分布の関係}
 			\begin{proof} (直接的な証明)
 				\par
