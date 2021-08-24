@@ -453,7 +453,7 @@
 			\end{proof}
 	\chapter{Beta分布}
 		\section{Beta分布に従う確率変数の生成}
-			\subsection{$X\sim\GammaDist{\alpha}{1},Y\sim\GammaDist{\beta}{1}\Rightarrow \frac{X}{X+Y}\sim\Beta{\alpha}{\beta}$}
+			\subsection{\texorpdfstring{$X\sim\GammaDist{\alpha}{1},Y\sim\GammaDist{\beta}{1}\Rightarrow \frac{X}{X+Y}\sim\Beta{\alpha}{\beta}$}{X～Gamma(α,1), Y～Gamma(β,1) ⇒ X/(X+Y)～Beta(α,β)}}
 				\begin{proof}
 					\quad\par
 					$Z=\frac{X}{X+Y}$とおく。
@@ -471,7 +471,7 @@
 	\chapter{正規分布}
 		\section{裾確率の評価}
 			\begin{shadebox}
-				標準正規分布の累積分布関数$\Phi(x)$に対して次が成り立つ。
+				標準正規分布の累積分布関数\texorpdfstring{$\Phi(x)$}{Φ(x)}に対して次が成り立つ。
 				\[1-\Phi(\alpha) \leq \frac{1}{2}\exp{\left(-\frac{1}{2}\alpha^2\right) \quad \textrm{for }^\forall \alpha \geq 0}\]
 			\end{shadebox}
 			\begin{proof}
@@ -556,7 +556,7 @@
 				\quad\par
 				定理1(スケール変換＆シフト),2(和)より明らか。
 			\end{proof}
-		\section{分散$\sigma^2$,平均$\mu$のときの累積分布関数は$\Phi(\frac{z-\mu}{\sigma})$}
+		\section{分散\texorpdfstring{$\sigma^2$}{σ\string^2},平均\texorpdfstring{$\mu$}{μ}のときの累積分布関数は\texorpdfstring{$\Phi(\frac{z-\mu}{\sigma})$}{Φ((z-μ)/σ)}}
 			\begin{shadebox}
 				標準正規分布の累積分布関数を$\Phi(z) := \integ{-\infty}{z}{\phi(x)}{x}$とするとき、
 				$X\sim N(\mu,\sigma)$の累積分布関数は$\Phi_X(Z) = \Phi(\frac{z-\mu}{\sigma})$となる。
@@ -567,7 +567,7 @@
 					&= \func{\Phi}{\frac{z-\mu}{\sigma}}
 				\end{align*}
 			\end{proof}
-		\section{零平均,同分散の正規分布に独立に従う$n$個の確率変数の直交変換もまた同じ分布に従う}
+		\section{零平均,同分散の正規分布に独立に従う\texorpdfstring{$n$}{n}個の確率変数の直交変換もまた同じ分布に従う}
 			\label{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}
 			\begin{shadebox}
 				$X_1,\cdots,X_n\sim N(0,\sigma^2),\quad\bm{X}:=[X_1,\cdots,X_n]^\top$とし、$P\in\realNumbers^{n\times n}$を直交行列とする。
@@ -636,7 +636,7 @@
 					よって
 					\[ \CovMat{\bm{X}} = V\Lambda V^\top = \Sigma \]
 				\end{proof}
-			\subsection{特性関数は$\phi_{\bm{X}}(\bm{t})=\exp(i\bm{t}^\top\bm{\mu} - \bm{t}^\top\Sigma\bm{t}/2)$}
+			\subsection{特性関数は\texorpdfstring{$\phi_{\bm{X}}(\bm{t})=\exp(i\bm{t}^\top\bm{\mu} - \bm{t}^\top\Sigma\bm{t}/2)$}{φ\_X (t) = exp(i t\string^T μ - t\string^T Σ t/2)}}
 				\begin{proof}
 					\quad\par
 					\ref{subsec:多変量正規分布の密度関数の全空間積分が1になることの確認}で用いた直交変換をここでも用いる。
@@ -672,7 +672,7 @@
 					より$\E{}{\bm{X}\bm{X}^\top} = -\nabla_{\bm{t}}^2\phi_{\bm{X}}(\bm{0}) = \Sigma + \bm{\mu}\bm{\mu}^\top$であるので
 					$\CovMat{\bm{X}} = \E{}{\bm{X}\bm{X}^\top} - \E{}{\bm{X}}\E{}{\bm{X}}^\top = \Sigma$
 				\end{proof}
-			\subsection{線形写像 : $A\bm{X}+\bm{b} \sim N(A\bm{\mu}+\bm{b}, A\Sigma A^\top)$}
+			\subsection{線形写像 : \texorpdfstring{$A\bm{X}+\bm{b} \sim N(A\bm{\mu}+\bm{b}, A\Sigma A^\top)$}{AX+b ～ N(Aμ+b, AΣA\string^T)}}
 				\begin{proof}
 					\quad\par
 					特性関数を用いて証明する。
@@ -683,18 +683,18 @@
 					\end{align*}
 					これは期待値$A\bm{\mu}+\bm{b}$,\;共分散行列$A\Sigma A^\top$の多変量正規分布の特性関数であるから、$A\bm{X}+\bm{b}$がこの多変量正規分布に従うことがわかる。
 				\end{proof}
-			\subsection{周辺分布 : $X_i \sim N(\mu_i, {\sigma_i}^2)$}
+			\subsection{周辺分布 : \texorpdfstring{$X_i \sim N(\mu_i, {\sigma_i}^2)$}{Xi～N(μi, (σi)\string^2)}}
 				\begin{proof}
 					\quad 直前の定理で$A=\bm{e}_i^\top,\;\bm{b}=0$とすればよい。
 				\end{proof}
-	\chapter{$\chi^2$分布}
+	\chapter{\texorpdfstring{$\chi^2$}{χ\string^2}分布}
 		\section{定義}
 			\begin{shadebox}
 				関数$f(x)$を次のように定義する。
 				\[f(x) := \frac{1}{2^{\frac{n}{2}\Gamma\left(\frac{n}{2}\right)}}e^{-\frac{x}{2}}x^{\frac{n}{2}-1}\]
 				確率密度関数が上式で与えられるような分布を「自由度$n$の$\chi^2$分布」と呼び、${\chi^2}_n$と書くことにする。
 			\end{shadebox}
-		\section{$X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1$}
+		\section{\texorpdfstring{$X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1$}{X～N(0,1) ⇒ X\string^2～χ\string^2\_1}}
 			\begin{shadebox}
 				\[X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1\]
 			\end{shadebox}
@@ -707,7 +707,7 @@
 					&= \frac{1}{2^{\frac{1}{2}}\Gamma(\frac{1}{2})}e^{-\frac{z}{2}}z^{\frac{1}{2}-1} = \text{pdf of}\;\chi^2_1
 				\end{align*}
 			\end{proof}
-		\section{$X_i \sim N(0,1) \quad \Rightarrow \quad Z_n = \sum_{i=1}^{n}{{X_i}^2} \sim {\chi^2}_n$}
+		\section{\texorpdfstring{$X_i \sim N(0,1) \quad \Rightarrow \quad Z_n = \sum_{i=1}^{n}{{X_i}^2} \sim {\chi^2}_n$}{Xi～N(0,1) ⇒ Zn = (X1)\string^2 + ... + (Xn)\string^2 ～ χ\string^2\_n}}
 			\label{標準正規分布に従うn個の独立な確率変数の2乗和は自由度n-1のカイ2乗分布に従う}
 			\begin{shadebox}
 				\[X_i \sim N(0,1) \quad \Rightarrow \quad Z_n = \sum_{i=1}^{n}{{X_i}^2} \sim {\chi^2}_n\]
@@ -731,7 +731,7 @@
 					&= \frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}e^{-\frac{z}{2}}z^{\frac{n}{2}-1} = \text{pdf of} \quad {\chi^2}_n
 				\end{align*}
 			\end{proof}
-		\section{$X \sim {\chi^2}_n \quad \Rightarrow \quad E[X] = n,\;\;\;V[x] = 2n$}
+		\section{\texorpdfstring{$X \sim {\chi^2}_n \quad \Rightarrow \quad E[X] = n,\;\;\;V[x] = 2n$}{X～χ\string^2\_n ⇒ E(X) = n, V(X) = 2n}}
 			\begin{shadebox}
 				\[X \sim {\chi^2}_n \quad \Rightarrow \quad E[X] = n,\;\;\;V[x] = 2n\]
 			\end{shadebox}
@@ -777,7 +777,7 @@
 					&= \text{pdf of }{\chi^2}_{n_X+n_Y}
 				\end{align*}
 			\end{proof}
-		\section{$X_1,\cdots,X_n\sim N(\mu,\sigma^2) \Rightarrow \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$}
+		\section{\texorpdfstring{$X_1,\cdots,X_n\sim N(\mu,\sigma^2) \Rightarrow \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$}{X1, ..., Xn ～ N(μ,σ\string^2) ⇒ (1/σ\string^2)[(X1 - sampleAvg(X))\string^2 + ... + (Xn-E(X))\string^2] ～ χ\string^2\_(n-1)}}
 			\begin{shadebox}
 				$X_1,\cdots,X_n\sim N(\mu,\sigma^2)$とし、$\overline{X}$を標本平均とすると$\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$
 			\end{shadebox}
@@ -801,14 +801,14 @@
 				$\bm{Z}$はこの方向に無制限に動ける。
 				上述の直交変換で$Y_n$がこの方向に割り当てられたため、確率密度関数を求めるための重積分の中のこの方向に関する$(-\infty,\infty)$の積分結果が$Y_n$の確率密度関数の全域積分すなわち1になり、我々が相手にするべき次元が1個減ったのである。
 			\end{commentary}
-	\chapter{$t$分布}
+	\chapter{\texorpdfstring{$t$}{t}分布}
 		\section{定義}
 			\begin{shadebox}
 				関数$f(t)$を次のように定義する。
 				\[f(t) := \frac{\Gamma{\left(\frac{n+1}{2}\right)}}{\sqrt{n\pi}\Gamma{\left(\frac{n}{2}\right)}}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}}\]
 				確率密度関数が上式で与えられるような分布を「自由度$n$の$t$分布」と呼び、$t_n$と書くことにする。
 			\end{shadebox}
-		\section{\thesubsection\quad$X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T := \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n$}
+		\section{\thesubsection \texorpdfstring{$X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T := \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n$}{X,Y: 独立, X～N(0,1), Y～χ\string^2\_n ⇒ T := X/√(Y/2) ～ t\_n}}
 			\begin{shadebox}
 				\[X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T := \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n\]
 			\end{shadebox}
@@ -829,7 +829,7 @@
 					&= \frac{\Gamma{\left(\frac{n+1}{2}\right)}}{\sqrt{n\pi}\Gamma{\left(\frac{n}{2}\right)}}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}} = \text{pdf of} \quad t_n
 				\end{align*}
 			\end{proof}
-		\section{\thesubsection\quad$t$分布の期待値}
+		\section{\thesubsection \texorpdfstring{$t$}{t}分布の期待値}
 			\begin{shadebox}
 				$t$分布は自由度$n \geq 2$の場合に限り期待値が存在し$E[T] = 0$である。
 			\end{shadebox}
@@ -839,7 +839,7 @@
 				この時に限り$\int_{0}^{\infty}{tf(t) dt}$および$\int_{-\infty}^{0}{tf(t) dt}$が存在し$E[T] = \int_{-\infty}^{\infty}{tf(t) dt}$が存在する。
 				被積分関数が奇関数であることから積分値は明らかに0である。
 			\end{proof}
-			\section{\thesubsection\quad$t$分布の分散}
+			\section{\thesubsection \texorpdfstring{$t$}{t}分布の分散}
 			\begin{shadebox}
 				$t$分布の分散は自由度$n \leq 2$の場合$\infty$、自由度$n \geq 3$の場合$\frac{n}{n-2}$
 			\end{shadebox}
@@ -874,7 +874,7 @@
 				最後に
 				\[V[T] = E[T^2] - {E[T]}^2 = \int_{-\infty}^{\infty}{t^2f(t) dt} - 0 = \frac{n}{n-2}\]
 			\end{proof}
-	\chapter{$F$分布}
+	\chapter{\texorpdfstring{$F$}{F}分布}
 		\section{定義}
 			\begin{shadebox}
 				関数$f(f)$を次のように定義する。
@@ -882,7 +882,7 @@
 				\[\text{where} \hspace{10pt} \nu_1,\nu_2 \in \mathbb{N},\;\;\; f > 0\]
 				確率密度関数が上式で与えられるような分布を「自由度$(\nu_1,\nu_2)$の$F$分布」と呼び、$F_{\nu_2}^{\nu_1}$と書くことにする。
 			\end{shadebox}
-		\section{$X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F:= \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}$}
+		\section{\texorpdfstring{$X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F:= \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}$}{X1,X2: 独立, X1～χ\string^2\_ν1, X2～χ\string^2\_ν2 ⇒ F := (X1/ν1)/(X2/ν2) ～ F\_ν2\string^ν1}}
 			\begin{shadebox}
 				\[X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F:= \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}\]
 			\end{shadebox}
@@ -906,7 +906,7 @@
 				これを(2)に適用して
 				\[f(f) = \frac{\Gamma{\left(\frac{\nu_1+\nu_2}{2}\right)}}{\Gamma{\left(\frac{\nu_1}{2}\right)}\Gamma{\left(\frac{\nu_2}{2}\right)}}\left(\frac{\nu_1}{\nu_2}\right)^{\frac{\nu_1}{2}}f^{\frac{\nu_1-2}{2}}\left(1+\frac{\nu_1}{\nu_2}f\right)^{-\frac{\nu_1+\nu_2}{2}} = \text{pdf of} \quad F_{\nu_2}^{\nu_1}\]
 			\end{proof}
-		\section{自由度$(\nu_1,\nu_2)$の$F$分布$F_{\nu_2}^{\nu_1}$は$\nu_2 \geq 3$の時に限り期待値が定義できてその値は$\frac{\nu_2}{\nu_2-2}$である。}
+		\section{自由度\texorpdfstring{$(\nu_1,\nu_2)$}{(ν1,ν2)}の\texorpdfstring{$F$}{F}分布\texorpdfstring{$F_{\nu_2}^{\nu_1}$}{F\_ν2\string^ν1}は\texorpdfstring{$\nu_2 \geq 3$}{ν2≧3}の時に限り期待値が定義できてその値は\texorpdfstring{$\frac{\nu_2}{\nu_2-2}$}{ν2/(ν2-2)}である。}
 			\begin{shadebox}
 				自由度$(\nu_1,\nu_2)$の$F$分布$F_{\nu_2}^{\nu_1}$は$\nu_2 \geq 3$の時に限り期待値が定義できてその値は$\frac{\nu_2}{\nu_2-2}$である。
 			\end{shadebox}
@@ -930,7 +930,7 @@
 				これを(1)に適用して
 				\[E[F] = \frac{\nu_2}{\nu_2-2}\]
 			\end{proof}
-		\section{自由度$(\nu_1,\nu_2)$の$F$分布$F_{\nu_2}^{\nu_1}$の分散は$\nu_2 \leq 4$の場合$\infty$、$\nu_2 \geq 5$の場合$\displaystyle \frac{2{\nu_2}^2(\nu_1+\nu_2-2)}{\nu_1(\nu_2-2)^2(\nu_2-4)}$である。}
+		\section{自由度\texorpdfstring{$(\nu_1,\nu_2)$}{(ν1,ν2)}の\texorpdfstring{$F$}{F}分布\texorpdfstring{$F_{\nu_2}^{\nu_1}$}{F\_ν2\string^ν1}の分散は\texorpdfstring{$\nu_2 \leq 4$}{ν2<4}の場合\texorpdfstring{$\infty$}{∞}、\texorpdfstring{$\nu_2 \geq 5$}{ν2≧5}の場合\texorpdfstring{$\displaystyle \frac{2{\nu_2}^2(\nu_1+\nu_2-2)}{\nu_1(\nu_2-2)^2(\nu_2-4)}$}{(2(ν2)\string^2 (ν1+ν2-2))/(ν1(ν2-2)\string^2 (ν2-4))}である。}
 			\begin{shadebox}
 				自由度$(\nu_1,\nu_2)$の$F$分布$F_{\nu_2}^{\nu_1}$の分散は$\nu_2 \leq 4$の場合$\infty$、$\nu_2 \geq 5$の場合$\displaystyle \frac{2{\nu_2}^2(\nu_1+\nu_2-2)}{\nu_1(\nu_2-2)^2(\nu_2-4)}$である。
 			\end{shadebox}
