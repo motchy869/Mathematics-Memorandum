@@ -36,7 +36,7 @@
 					\[ \nabla^2A := \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) \]
 				\end{definition}
 		\section{諸公式}
-			\subsection{ベクトル三重積の公式: $A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}
+			\subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
 				\begin{proof}
 					\quad\par
 					$A,B,C$を次のようにおく。
@@ -63,7 +63,7 @@
 						&= \inprod{A}{C}B - \inprod{A}{B}C
 					\end{align*}
 				\end{proof}
-			\subsection{直角座標系に於ける Vector Laplacian: $\nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3$}
+			\subsection{直角座標系に於ける Vector Laplacian: \texorpdfstring{$\nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3$}{∇\string^2 A = i1ΔA1 + i2ΔA2 + i3ΔA3}}
 				\begin{shadebox}
 					\ref{VectorLaplacian}に於いて、特に直角座標系を考える場合は次式のように簡約化される。
 					\[ \nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
@@ -84,7 +84,7 @@
 					$A_1,A_2,A_3$が$\mathrm{C}^2$級であるから偏微分の順序が交換可能であるので、
 					\[ \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
 				\end{proof}
-			\subsection{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}
+			\subsection{\texorpdfstring{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}{∇(∇f v) = (∇\string^2 f)v}}
 				\begin{shadebox}
 					$\bm{v}$を定数ベクトルとするとき
 					\[\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}\]
@@ -110,13 +110,13 @@
 						\right] = \left(\nabla^2f\right)\bm{v}
 					\]
 				\end{proof}
-			\subsection{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}
+			\subsection{\texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
 			\begin{proof}
 				\quad\par
 				ベクトル三重積の公式を利用する。
 				\[ \inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inprod{a}{\inprod{\bm{d}}{\bm{b}}\bm{c} - \inprod{\bm{b}}{\bm{c}}\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}} \]
 			\end{proof}
-			\subsection{(系)\;$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}
+			\subsection{(系) \texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}{(a×b)・(a×c) = ||a||\string^2(b・c) - (a・b)(a・c)}}
 				%実は直前の公式よりもこちらの方を先に思いついた。直前の公式から直ちに導かれるが、当時思いついた証明を書き残しておく。
 				\begin{proof}
 					直前の公式から直ちに導ける。
