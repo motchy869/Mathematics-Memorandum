@@ -746,7 +746,7 @@
 		\section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
 			\label{Sherman-Morrisonの公式の特別な場合}
 			\begin{shadebox}
-				$\bm{u},\bm{v} \in \complexNumbers^m,\; 1+\bm{v}^*A^{-1}\bm{u} \neq 0$とするとき次式が成り立つ。
+				$\bm{u},\bm{v} \in \complexNumbers^m,\; 1+\bm{v}^*\bm{u} \neq 0$とするとき次式が成り立つ。
 				\[ (I+\bm{u}\bm{v}^*)^{-1} = I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^* \]
 			\end{shadebox}
 			\begin{proof}
@@ -754,7 +754,7 @@
 				Woodburyの公式の特別な場合として片付けるのが一般的だが、ここではJordan分解を用いて導出してみる。
 				$\bm{u}\bm{v}^* = 0$のときは定理の主張は明らかに成り立つ。
 				以下では$\bm{u}\bm{v}^* \neq 0$とする。
-				仮定$1+\bm{v}^*A^{-1}\bm{u} \neq 0$と\ref{I-ABの行列式}より$I+\bm{u}\bm{v}^*$には逆行列が存在する。
+				仮定$1+\bm{v}^*\bm{u} \neq 0$と\ref{I-ABの行列式}より$I+\bm{u}\bm{v}^*$には逆行列が存在する。
 				$\bm{u}\bm{v}^*$の階数は1であり($\Img{\bm{u}\bm{v}^*} = \Span{\bm{u}}$)、唯一の固有値は$\bm{v}^*\bm{u}$である(対応する固有ベクトルは$\bm{u}$)。
 				よって$\bm{u}\bm{v}^*$をJordan分解すると、適当な正則行列$J$を用いて次のように表せる。
 				\[
