@@ -746,7 +746,7 @@
 		\section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
 			\label{Sherman-Morrisonの公式の特別な場合}
 			\begin{shadebox}
-				$\bm{u},\bm{v} \in \complexNumbers^m, 1+\bm{v}^*A^{-1}\bm{u} \neq 0$とするとき次式が成り立つ。
+				$\bm{u},\bm{v} \in \complexNumbers^m,\; 1+\bm{v}^*A^{-1}\bm{u} \neq 0$とするとき次式が成り立つ。
 				\[ (I+\bm{u}\bm{v}^*)^{-1} = I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^* \]
 			\end{shadebox}
 			\begin{proof}
@@ -858,6 +858,7 @@
 				$A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$A$はフルランク。
 			\end{proof}
 		\section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
+			次元定理を用いる証明
 			\begin{proof}
 				\quad\par
 				$\bm{x} \in \complexNumbers^n$とする。
@@ -870,6 +871,12 @@
 				\par
 				この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
 				$\rank{A} = \rank{A^*} = \rank{(A^*)^*(A^*)} = \rank{AA^*}$。
+			\end{proof}
+			特異値分解を用いる証明
+			\begin{proof}
+				\quad\par
+				$A$の特異値分解を$U\Sigma V^*$とすると、$\rank{AA^*} = \rank{U\Sigma V^*V\Sigma U^*} = \rank{U\Sigma^2 U^*} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
+				同様にして$\rank{A^*A} = \rank{A}$も示せる。
 			\end{proof}
 		\section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$A^* A$}{A\string^*A}は正則}
 			\label{列フルランク行列を掛けあわせて正則行列を作る}

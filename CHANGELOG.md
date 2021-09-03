@@ -13,7 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a theorem: ||Ax+b||_2^2 is convex iff A^*A is positive definite.
 - Fixed a mistake in tips: "Even when {v1,v2}, {w1,w2}, {v1,v2,w1}, {v1,v2,w2} are linearly independent respectively, {v1,v2,v3,v4} is not always linearly independent."
 - Introduced `hyperref` package.
-- Add Sherman-Morrison formula.
+- Added Sherman-Morrison formula.
+- Added a new proof for a theorem on matrix rank: `rank(AA^*) = rank(A^*A) = rank(A)`
 
 ## [0.3.0] - 2021/7/3
 
