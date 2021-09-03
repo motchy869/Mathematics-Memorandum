@@ -817,6 +817,22 @@
 				)^*\overline{U} = \overline{(U^*)}\;\overline{U} = \overline{U^*U} = \overline{I} = I$
 			\end{proof}
 	\chapter{行列の階数}
+		\section{\texorpdfstring{$\rank{AB}=\rank{BA}$}{rank(AB)=rank(BA)}とは限らない}
+			例えば
+			\[
+				A =
+				\begin{bmatrix}
+					1 & 0 \\
+					0 & 1 \\
+					0 & 0 \\
+					0 & 0
+				\end{bmatrix},\;
+				B = \begin{bmatrix}
+					0 & 0 & 1 & 0 \\
+					0 & 0 & 0 & 1
+				\end{bmatrix}
+			\]
+			とすると$\rank{AB} = 2 \neq \rank{BA}=0$。
 		\section{\texorpdfstring{$T$}{T}が正則でも\texorpdfstring{$\rank{ATB}=\rank{AB}$}{rank(ATB) = rank(AB)}とは限らない}
 			\begin{proof}
 				\[
