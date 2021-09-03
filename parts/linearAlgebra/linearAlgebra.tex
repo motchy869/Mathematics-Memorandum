@@ -512,6 +512,7 @@
 			\end{proof}
 			\end{comment}
 		\section{\texorpdfstring{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$}{A∈R\string^(n×m), B∈R\string^(m×n)}に対して\texorpdfstring{$|I_m-AB| = |I_n-BA|$}{|Im-AB| = |In-BA|}}
+			\label{I-ABの行列式}
 			\begin{proof}
 				\[
 					M := \begin{bmatrix}
@@ -741,6 +742,61 @@
 				同様にして行の置換に関しても示せる。
 				行の置換を表す行置換行列を$\Pi = \Pi_c\cdots\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \cdots, \Pi_c$は単位行置換行列)と、
 				$A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\cdots\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\cdots\Pi_c$
+			\end{proof}
+		\section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
+			\label{Sherman-Morrisonの公式の特別な場合}
+			\begin{shadebox}
+				$\bm{u},\bm{v} \in \complexNumbers^m, 1+\bm{v}^*A^{-1}\bm{u} \neq 0$とするとき次式が成り立つ。
+				\[ (I+\bm{u}\bm{v}^*)^{-1} = I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^* \]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				Woodburyの公式の特別な場合として片付けるのが一般的だが、ここではJordan分解を用いて導出してみる。
+				$\bm{u}\bm{v}^* = 0$のときは定理の主張は明らかに成り立つ。
+				以下では$\bm{u}\bm{v}^* \neq 0$とする。
+				仮定$1+\bm{v}^*A^{-1}\bm{u} \neq 0$と\ref{I-ABの行列式}より$I+\bm{u}\bm{v}^*$には逆行列が存在する。
+				$\bm{u}\bm{v}^*$の階数は1であり($\Img{\bm{u}\bm{v}^*} = \Span{\bm{u}}$)、唯一の固有値は$\bm{v}^*\bm{u}$である(対応する固有ベクトルは$\bm{u}$)。
+				よって$\bm{u}\bm{v}^*$をJordan分解すると、適当な正則行列$J$を用いて次のように表せる。
+				\[
+					\bm{u}\bm{v}^* =
+					\begin{bmatrix}
+						\bm{v}^*\bm{u} & \bm{0}^\top \\
+						\bm{0} & O
+					\end{bmatrix}
+					=: J\Lambda J^{-1}
+				\]
+				よって
+				\begin{align*}
+					(I+\bm{u}\bm{v}^*)^{-1} &= J(I + \Lambda)^{-1}J^{-1} = J
+					\begin{bmatrix}
+						1+\bm{v}^*\bm{u} & \bm{0}^\top \\
+						\bm{0} & I
+					\end{bmatrix}
+					^{-1}J^{-1} = J
+					\begin{bmatrix}
+						\frac{1}{1+\bm{v}^*\bm{u}} & \bm{0}^\top \\
+						\bm{0} & I
+					\end{bmatrix}
+					J^{-1} \\
+					&= J\frac{1}{1+\bm{v}^*\bm{u}}
+					\begin{bmatrix}
+						1 & \bm{0}^\top \\
+						\bm{0} & (1+\bm{v}^*\bm{u})I
+					\end{bmatrix}
+					J^{-1} = J\frac{1}{1+\bm{v}^*\bm{u}}((1+\bm{v}^*\bm{u})I - \Lambda)J^{-1} \\
+					&= I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^*
+				\end{align*}
+			\end{proof}
+		\section{Sherman-Morrisonの公式\texorpdfstring{: $(A+\bm{u}\bm{v}^*)^{-1} = (I-A^{-1}\bm{u}\bm{v}^*/(1+\bm{v}^*A^{-1}\bm{u}))A^{-1}$}{}}
+			\begin{shadebox}
+				$A \in \complexNumbers^{m\times m}, \bm{u},\bm{v} \in \complexNumbers^m$とする。
+				$A$は可逆であるとし、$1+\bm{v}^*A^{-1}\bm{u} \neq 0$とする。
+				このとき次式が成り立つ。
+				\[ (A+\bm{u}\bm{v}^*)^{-1} = \left( I - \frac{1}{1+\bm{v}^*A^{-1}\bm{u}}A^{-1}\bm{u}\bm{v}^* \right)A^{-1} \]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$A+\bm{u}\bm{v}^* = A(I + A^{-1}\bm{u}\bm{v}^*)$だから$(A+\bm{u}\bm{v}^*)^{-1} = (I + A^{-1}\bm{u}\bm{v}^*)^{-1}A^{-1}$であり、2つ目の因子に\ref{Sherman-Morrisonの公式の特別な場合}を適用すればよい。
 			\end{proof}
 	\chapter{特性多項式}
 		\section{逆行列の特性多項式: \texorpdfstring{$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$}{φA\string^(-1)(λ) = |A|\string^(-1)\string^n φA(1/λ)}}
