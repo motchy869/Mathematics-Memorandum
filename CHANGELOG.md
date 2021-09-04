@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Sherman-Morrison formula.
 - Added a new proof for a theorem on matrix rank: `rank(AA^*) = rank(A^*A) = rank(A)`
 - Added a theorem: not always `rank(AB)=rank(BA)`.
+- Added Woodbury matrix identity
 
 ## [0.3.0] - 2021/7/3
 

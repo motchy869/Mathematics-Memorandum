@@ -798,6 +798,37 @@
 				\quad\par
 				$A+\bm{u}\bm{v}^* = A(I + A^{-1}\bm{u}\bm{v}^*)$だから$(A+\bm{u}\bm{v}^*)^{-1} = (I + A^{-1}\bm{u}\bm{v}^*)^{-1}A^{-1}$であり、2つ目の因子に\ref{Sherman-Morrisonの公式の特別な場合}を適用すればよい。
 			\end{proof}
+		\section{Woodburyの公式の特別な場合\texorpdfstring{: $(I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V$}{}}
+			\label{Woodburyの公式の特別な場合}
+			\begin{shadebox}
+				$I_n, I_k$をそれぞれ$n,k$次の単位行列とする。
+				$U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし、$I_k+VU$が可逆であるとする。
+				このとき次式が成り立つ。
+				\[ (I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V \]
+			\end{shadebox}
+			\ref{Sherman-Morrisonの公式の特別な場合}からの類推でこの等式が予想され、直接代入することで予想が正しいことが確認される。
+			\begin{proof}
+				\quad\par
+				直接代入して確認する。
+				\begin{align*}
+					&\phantom{=} (I_n+UV)(I_n-U(I_k+VU)^{-1}V) = I_n - U(I_k+VU)^{-1}V + UV - UVU(I_k+VU)^{-1}V \\
+					&= I_n - U(I_k+VU)^{-1}V + UV - U[(I_k + VU) - I_k](I_k+VU)^{-1}V \\
+					&= I_n - U(I_k+VU)^{-1}V + UV - UV - U(I_k+VU)^{-1}V = I_n
+				\end{align*}
+			\end{proof}
+		\section{Woodburyの公式\texorpdfstring{: $(A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1}$}{}}
+			\begin{shadebox}
+				$I_n$を$n$次の単位行列とする。
+				$A\in\complexNumbers^{n\times n},\; C\in\complexNumbers^{k\times k},\; U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし、$A,\;C,\;I_k + CVA^{-1}U$が可逆であるとする(結果として$C^{-1} + VA^{-1}U$も可逆になる)。
+				このとき次式が成り立つ。
+				\[ (A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1} \]
+			\end{shadebox}
+			\begin{proof}
+				\quad\par
+				$A+UCV = A(I_n + A^{-1}UCV)$であるから$(A+UCV)^{-1} = (I_n + A^{-1}UCV)^{-1}A^{-1}$である。
+				\ref{Woodburyの公式の特別な場合}で$U$を$A^{-1}U$で、$V$を$CV$で置き換えて上式に適用すると次式を得る。
+				\[ (A+UCV)^{-1} = \left[I_n - A^{-1}U(I_k + CVA^{-1}U)^{-1}CV\right]A^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1} \]
+			\end{proof}
 	\chapter{特性多項式}
 		\section{逆行列の特性多項式: \texorpdfstring{$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$}{φA\string^(-1)(λ) = |A|\string^(-1)\string^n φA(1/λ)}}
 			\begin{shadebox}
