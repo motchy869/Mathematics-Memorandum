@@ -66,11 +66,11 @@
 				\newline
 				(項目2)
 				\[
-					A_i := \begin{bmatrix}
+					A_i \coloneqq \begin{bmatrix}
 						s_i & s_{i+1} \\
 						t_i & t_{i+1}
 					\end{bmatrix},\quad
-					Q_i := \begin{bmatrix}
+					Q_i \coloneqq \begin{bmatrix}
 						0 & 1 \\
 						1 & -q_i
 					\end{bmatrix}
@@ -246,14 +246,14 @@
 					\begin{proof}
 						\quad\par
 						式(1)を証明する。
-						$U:=\bigcup_{i=1}^n A_i$とする。
+						$U\coloneqq\bigcup_{i=1}^n A_i$とする。
 						補題\ref{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}より
 						\begin{align*}
 							\textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\left(\bigcup_{i=1}^n A_i\right)\cap\{x\}}} = \sum_{x\in U}1 \\
 							\textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}} \\
 							&= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
 							&= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
-							&= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) := \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
+							&= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) \coloneqq \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
 						\end{align*}
 						任意の$x\in U$に対して$c(x)=1$であることを示す。
 						各$x$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
@@ -274,7 +274,7 @@
 						ここでは、あの等式を導き出す自然なアルゴリズムを考えてみる。
 						\par
 						まず我々は「メモリ」を\textcolor{red}{1つ}用意して0で初期化する。
-						次に、$U:=\bigcup_{i=1}^n A_i$とし、$U$の\textcolor{red}{各}要素に「カウンタ」を取り付けて0で初期化する。
+						次に、$U\coloneqq\bigcup_{i=1}^n A_i$とし、$U$の\textcolor{red}{各}要素に「カウンタ」を取り付けて0で初期化する。
 						\par
 						まず次の操作を実行する。
 						「任意の$A_i$について、$A_i$に属する各要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を$i=1,\cdots,n$すべてに対して行う。」
@@ -346,7 +346,7 @@
 			\end{proof}
 	\chapter{置換}
 		\section{置換の符号の定理}
-			\subsection{\texorpdfstring{$\sigma'(i) := \sigma(n+1-i)$としたときの$\sgn{\sigma'}$}{σ'(i) := σ(n+1-i)としたときのsgn(σ')}}
+			\subsection{\texorpdfstring{$\sigma'(i) \coloneqq \sigma(n+1-i)$としたときの$\sgn{\sigma'}$}{σ'(i) := σ(n+1-i)としたときのsgn(σ')}}
 				\label{置換の引数を逆順にしたときの符号}
 				\begin{shadebox}
 					$\sigma$を$S=\{1,\cdots,n\}$上の置換とする。
@@ -375,7 +375,7 @@
 					逆順にする置換は、$1,2,\cdots,n$を左右の端同士で交換する処理を外側から内側に向かって進める方針で考えれば定理の主張が成り立つことがわかる。
 				\end{proof}
 				Mathematicaを用いた数値例による検証は\verb|theorem_sign_of_permutation.nb|を参照
-			\subsection{\texorpdfstring{$\sigma'(i) := n+1-\sigma(i)$としたときの$\sgn{\sigma'}$}{σ'(i) := n+1-σ(i)おしたときのsgn(σ')}}
+			\subsection{\texorpdfstring{$\sigma'(i) \coloneqq n+1-\sigma(i)$としたときの$\sgn{\sigma'}$}{σ'(i) := n+1-σ(i)おしたときのsgn(σ')}}
 				\label{出力を逆順にしたときの置換の符号}
 				\begin{shadebox}
 					$\sigma$を$S=\{1,\cdots,n\}$上の置換とする。
@@ -388,8 +388,8 @@
 				\begin{proof}
 					\quad\par
 					$\sigma$を互換の積で表したものを$\sigma=b_k b_{k-1}\cdots b_1 b_0$とする。
-					但し$b_0 := \epsilon$(単位置換)とする。
-					$\sigma_0 := b_0,\;\sigma_l := b_l\sigma_{l-1}\;(l=1,2,\cdots,k)$とする。
+					但し$b_0 \coloneqq \epsilon$(単位置換)とする。
+					$\sigma_0 \coloneqq b_0,\;\sigma_l \coloneqq b_l\sigma_{l-1}\;(l=1,2,\cdots,k)$とする。
 					\par
 					$\sigma'_0$は逆順にする置換である。
 					$1,2,\cdots,n$を左右の端同士で交換する処理を外側から内側に向かって進める方針で考えれば$\sigma'_0$の符号は定理の主張の$s$に等しいことが解る。

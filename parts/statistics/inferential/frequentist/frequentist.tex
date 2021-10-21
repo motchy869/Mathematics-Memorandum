@@ -15,7 +15,7 @@
 			\end{proof}
 		\section{ベクトル確率変数の線形写像の像の期待値と分散共分散行列}
 			\begin{shadebox}
-				$X_1,\cdots,X_n\in\realNumbers$を確率変数、$A\in\realNumbers^{n\times m}$、$\bm{X}:=[X_1,\cdots,X_n]^\top$、$\Sigma_X:=\CovMat{\bm{X}}$とすると次が成り立つ。
+				$X_1,\cdots,X_n\in\realNumbers$を確率変数、$A\in\realNumbers^{n\times m}$、$\bm{X}\coloneqq[X_1,\cdots,X_n]^\top$、$\Sigma_X\coloneqq\CovMat{\bm{X}}$とすると次が成り立つ。
 				\[\E{}{A^\top\bm{X}} = A^\top\E{}{\bm{X}},\quad\CovMat{A^\top\bm{X}} = A^\top\Sigma_X A\]
 				特に$X_1,\cdots,X_n$が独立で同一の分散$\sigma^2$をもち、かつ$A$が$n$次直交行列であれば
 				\[\CovMat{A^\top\bm{X}} = \Sigma_X\]
@@ -25,7 +25,7 @@
 				\newcommand{\aj}{{\bm{a}_j}}
 				\quad\par
 				$\E{}{A^\top\bm{X}} = A^\top\E{}{\bm{X}}$は期待値の線形性より明らか。$\CovMat{A^\top\bm{X}} = A^\top\Sigma_X A$を示す。
-				$\bm{Y}:=A^\top\bm{X}$とし、$A$の第$i$列ベクトルを$\bm{a}_i$とすると
+				$\bm{Y}\coloneqq A^\top\bm{X}$とし、$A$の第$i$列ベクトルを$\bm{a}_i$とすると
 				\begin{align*}
 					\CovMat{A^\top\bm{X}}_{ij} &= \CovMat{\bm{Y}}_{ij} = \Cov{Y_i}{Y_j} = \E{}{\left(Y_i-\E{}{Y_i}\right)\left(Y_j-\E{}{Y_j}\right) } \\
 					&= \E{}{\left(\ai^\top\bm{X}-\E{}{\ai^\top\bm{X}}\right) \left(\aj^\top\bm{X}-\E{}{\aj^\top\bm{X}}\right)} \\
@@ -40,7 +40,7 @@
 			\end{proof}
 		\section{スコア関数}
 			$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\cdots,X_n \in \Omega$に対して「スコア関数」を次式で定義する。
-			\[ V_n(\bm{X},\theta) := \partDerivLong{\log f(\bm{X};\theta)}{\theta}{} = \partDerivLong{\log \prod_{i=1}^n f(X_i;\theta)}{\theta}{} = \partDerivLong{\sum_{i=1}^n \log f(X_i;\theta)}{\theta}{} = \sum_{i=1}^n V(X_i,\theta) \]
+			\[ V_n(\bm{X},\theta) \coloneqq \partDerivLong{\log f(\bm{X};\theta)}{\theta}{} = \partDerivLong{\log \prod_{i=1}^n f(X_i;\theta)}{\theta}{} = \partDerivLong{\sum_{i=1}^n \log f(X_i;\theta)}{\theta}{} = \sum_{i=1}^n V(X_i,\theta) \]
 			\subsection{\texorpdfstring{$\E{\bm{X}}{V(\bm{X},\theta)} = 0$}{E\_X (V(X,Θ)) = 0}}
 				\begin{proof}
 					\begin{align*}
@@ -90,13 +90,13 @@
 				\end{proof}
 		\section{条件付き確率密度関数}
 			連続型2変数$X,Y$に関して、条件付き確率密度関数を次のように定義する。
-			\[p_Y(y|X=x) := \frac{p(x,y)}{\integ{\ymin}{\ymax}{p(x,y)}{y}}\]
+			\[p_Y(y|X=x) \coloneqq \frac{p(x,y)}{\integ{\ymin}{\ymax}{p(x,y)}{y}}\]
 			($p(x,y)$は$X,Y$の同時確率密度関数)
 		\section{条件付き期待値}
 			2変数$X,Y$に関して、条件付き期待値を次のように定義する。
 			\begin{align*}
-				\textrm{(離散)} &: \E{Y}{Y|X=x} := \sum_y y\Pr{Y=y|X=x} = \sum_y y\frac{\Pr{Y=y,X=x}}{\Pr{X=x}} \\
-				\textrm{(連続)} &: \E{Y}{Y|X=x} := \integ{\ymin}{\ymax}{yp_Y(y|X=x)}{y}
+				\textrm{(離散)} &: \E{Y}{Y|X=x} \coloneqq \sum_y y\Pr{Y=y|X=x} = \sum_y y\frac{\Pr{Y=y,X=x}}{\Pr{X=x}} \\
+				\textrm{(連続)} &: \E{Y}{Y|X=x} \coloneqq \integ{\ymin}{\ymax}{yp_Y(y|X=x)}{y}
 			\end{align*}
 			\subsection{\texorpdfstring{$\E{X,Y}{\E{Y}{Y|X}} = \E{X,Y}{Y}$}{E\_(X,Y) (E\_Y (Y|X)) = E\_(X,Y) (Y)}}
 				\begin{shadebox}
@@ -191,8 +191,8 @@
 						E_{P}[\exp(tX)]\le\frac{-a}{b-a}\exp(tb)+\frac{b}{b-a}\exp(ta)
 					\end{equation}
 					今、
-					\[\displaystyle p:=\frac{-a}{b-a},\quad u:=t(b-a)\]
-					とおくと$\displaystyle p:=\frac{-a}{b-a},\quad u:=t(b-a)$であり、
+					\[\displaystyle p\coloneqq\frac{-a}{b-a},\quad u\coloneqq t(b-a)\]
+					とおくと$\displaystyle p\coloneqq\frac{-a}{b-a},\quad u\coloneqq t(b-a)$であり、
 					\begin{align*}
 						(1) &= p\exp(tb)+(1-p)\exp(ta)\\
 						&= p\exp((1-p)u)+(1-p)\exp(-pu)
@@ -200,7 +200,7 @@
 					\begin{screen}
 						$\because\;\;1-p=\frac{b}{b-a}$より$tb = t(b-a)(1-p) = (1-p)u$ また、$ta = -tp(b-a) = -pu$
 					\end{screen}
-					さらに、$\phi(u) := \log{\left(\textrm{式}(1)\right)}$とおくと
+					さらに、$\phi(u) \coloneqq \log{\left(\textrm{式}(1)\right)}$とおくと
 					\begin{align*}
 						\phi(u) &= \log\left[p\exp( (1-p)u)+(1-p)\exp(-pu)\right]\\
 						&= \log\left[\exp( (1-p)u)\cdot(p+(1-p)\exp(-u))\right]\\
@@ -260,7 +260,7 @@
 				\quad\par
 				(引用 : \url{https://ja.wikipedia.org/wiki/中心極限定理})
 				\par
-				\[Z_n := \A = \frac{\SUM{X_j}-n\mu}{\sqrt{n}\sigma} = \SUM{Y_j/sqrt{n}}\quad\textrm{where }Y_j := \frac{X_j-\mu}{\sigma}\]
+				\[Z_n \coloneqq \A = \frac{\SUM{X_j}-n\mu}{\sqrt{n}\sigma} = \SUM{Y_j/sqrt{n}}\quad\textrm{where }Y_j \coloneqq \frac{X_j-\mu}{\sigma}\]
 				とおく。$Y_j$の平均は0分散は1である。
 				\par
 				$Z_n$の特性関数$\phi_{Z_n}(t)$は
@@ -337,7 +337,7 @@
 			\end{align*}
 			これより
 			\begin{align*}
-				P(X=2) &= P(X=1)(1 - P(X=1)) = p(1-p) \quad (p := P(X=1)) \\
+				P(X=2) &= P(X=1)(1 - P(X=1)) = p(1-p) \quad (p \coloneqq P(X=1)) \\
 				P(X=3) &= P(X=1)(1 - P(X=1) - P(X=2)) = p[1-p-p(1-p)] = p(1-p)^2 \\
 				P(X=4) &= P(X=1)(1 - P(X=1) - P(X=2) - P(X=3)) \\
 				&= p[1-p-p(1-p)-p(1-p)^2] = p(1-p)^3 \\
@@ -558,7 +558,7 @@
 			\end{proof}
 		\section{分散\texorpdfstring{$\sigma^2$}{σ\string^2},平均\texorpdfstring{$\mu$}{μ}のときの累積分布関数は\texorpdfstring{$\Phi(\frac{z-\mu}{\sigma})$}{Φ((z-μ)/σ)}}
 			\begin{shadebox}
-				標準正規分布の累積分布関数を$\Phi(z) := \integ{-\infty}{z}{\phi(x)}{x}$とするとき、
+				標準正規分布の累積分布関数を$\Phi(z) \coloneqq \integ{-\infty}{z}{\phi(x)}{x}$とするとき、
 				$X\sim N(\mu,\sigma)$の累積分布関数は$\Phi_X(Z) = \Phi(\frac{z-\mu}{\sigma})$となる。
 			\end{shadebox}
 			\begin{proof}
@@ -570,8 +570,8 @@
 		\section{零平均,同分散の正規分布に独立に従う\texorpdfstring{$n$}{n}個の確率変数の直交変換もまた同じ分布に従う}
 			\label{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}
 			\begin{shadebox}
-				$X_1,\cdots,X_n\sim N(0,\sigma^2),\quad\bm{X}:=[X_1,\cdots,X_n]^\top$とし、$P\in\realNumbers^{n\times n}$を直交行列とする。
-				$\bm{Y} := [Y_1,\cdots,Y_n]^\top := P\bm{X}$とすると、$Y_1,\cdots,Y_n\sim N(0,\sigma^2)$
+				$X_1,\cdots,X_n\sim N(0,\sigma^2),\quad\bm{X}\coloneqq[X_1,\cdots,X_n]^\top$とし、$P\in\realNumbers^{n\times n}$を直交行列とする。
+				$\bm{Y} \coloneqq [Y_1,\cdots,Y_n]^\top \coloneqq P\bm{X}$とすると、$Y_1,\cdots,Y_n\sim N(0,\sigma^2)$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -580,7 +580,7 @@
 				任意の点$\bm{y}_0\in\realNumbers^n$における$p_{\bm{Y}}$を計算するために、$\Omega$を、$\bm{y}_0$を含む任意の領域とする。
 				$\Omega$を直交変換$P$の逆写像で写した領域を$P^\top(\Omega)$と表記すると
 				\begin{align}
-					p_{\bm{Y}}(\bm{y}_0) &:= \lim_{|\Omega|\to 0}\frac{\Pr{\bm{y}\in\Omega}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{\Pr{\bm{x}\in P^\top(\Omega)}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P^\top(\Omega)}{}{p_{\bm{X}}(\bm{x})}{\bm{x}} \nonumber\\
+					p_{\bm{Y}}(\bm{y}_0) &\coloneqq \lim_{|\Omega|\to 0}\frac{\Pr{\bm{y}\in\Omega}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{\Pr{\bm{x}\in P^\top(\Omega)}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P^\top(\Omega)}{}{p_{\bm{X}}(\bm{x})}{\bm{x}} \nonumber\\
 					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P^\top(\Omega)}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{\bm{x}}^2}{2\sigma^2}\right)} }{\bm{x}} \nonumber\\
 					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P(P^\top(\Omega))}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{P^\top\bm{y}}^2}{2\sigma^2}\right)} |\det{P^\top}|}{\bm{y}} \\
 					&\quad \quad(\text{↑重積分の変数変換}\bm{x}=P^\top\bm{y}\textrm{を用いた}) \nonumber\\
@@ -647,7 +647,7 @@
 						&= \exp(i\bm{t}^\top\bm{\mu})\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y} + i\bm{t}^\top V\bm{y}\right)}{\bm{y}} \\
 						&= \exp(i\bm{t}^\top\bm{\mu})\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}{y_i}^2 + i\bm{t}^\top V\bm{y}\right)}{\bm{y}}
 					\end{align*}
-					ここで$c_i := (\bm{t}^\top V)[i]$とするとexpの引数は次のように変形できる。
+					ここで$c_i \coloneqq (\bm{t}^\top V)[i]$とするとexpの引数は次のように変形できる。
 					\begin{align*}
 						& -\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}{y_i}^2 + i\bm{t}^\top V\bm{y} = -\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}{y_i}^2 + i\sum_{i=1}^n c_iy_i = -\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left({y_i}^2 - i2{\sigma_i}^2c_iy_i\right) \\
 						=& -\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left[\left(y_i - i{\sigma_i}^2c_i\right)^2 + {\sigma_i}^4{c_i}^2\right] = -\frac{1}{2}\sum_{i=1}^n{\sigma_i}^2{c_i}^2 - \frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2
@@ -658,7 +658,7 @@
 					\begin{align*}
 						\phi_{\bm{X}}(t) &= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{\bm{y}} \\
 						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integ{\realNumbers^n}{}{\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{\bm{y}} \\
-						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\prod_{i=1}^n I_i\quad \left(I_i := \integ{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{y_i}\right)
+						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\prod_{i=1}^n I_i\quad \left(I_i \coloneqq \integ{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{y_i}\right)
 					\end{align*}
 					$I_i$は複素積分により1である(矩形閉路ABCDA: $A=(-L,0),\;B=(L,0),\;C=(L,i{\sigma_i}^2c_i),\;D=(-L,i{\sigma_i}^2c_i)$を用いて$L\to\infty$とするとよい)ので
 					\[ \phi_{\bm{X}}(t) = \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right) \]
@@ -691,7 +691,7 @@
 		\section{定義}
 			\begin{shadebox}
 				関数$f(x)$を次のように定義する。
-				\[f(x) := \frac{1}{2^{\frac{n}{2}\Gamma\left(\frac{n}{2}\right)}}e^{-\frac{x}{2}}x^{\frac{n}{2}-1}\]
+				\[f(x) \coloneqq \frac{1}{2^{\frac{n}{2}\Gamma\left(\frac{n}{2}\right)}}e^{-\frac{x}{2}}x^{\frac{n}{2}-1}\]
 				確率密度関数が上式で与えられるような分布を「自由度$n$の$\chi^2$分布」と呼び、${\chi^2}_n$と書くことにする。
 			\end{shadebox}
 		\section{\texorpdfstring{$X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1$}{X～N(0,1) ⇒ X\string^2～χ\string^2\_1}}
@@ -783,12 +783,12 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$Z_i := \frac{X_i-\mu}{\sigma}$とすると$Z_i \sim N(0,1)$であり
+				$Z_i \coloneqq \frac{X_i-\mu}{\sigma}$とすると$Z_i \sim N(0,1)$であり
 				\begin{equation}
-					\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} = \sum_{i=1}^n{(Z_i-\overline{Z})^2} \quad \textrm{where }\overline{Z}:=\frac{1}{n}\sum_{i=1}^n{X_i}
+					\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} = \sum_{i=1}^n{(Z_i-\overline{Z})^2} \quad \textrm{where }\overline{Z}\coloneqq\frac{1}{n}\sum_{i=1}^n{X_i}
 				\end{equation}
-				$\bm{Z} := [Z_1,\cdots,Z_n]^\top$とする。
-				最下行が全て$1/\sqrt{n}$である$n$次直交行列を$P$として$\bm{Y} := [Y_1,\cdots,Y_n]^\top := P\bm{Z}$とすると、\ref{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}より、$Y_1,\cdots,Y_n\sim N(0,1)$であり、$Y_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n{Z_i} = \sqrt{n}\overline{Z} \therefore\;\overline{Z}=Y_n/\sqrt{n}$。
+				$\bm{Z} \coloneqq [Z_1,\cdots,Z_n]^\top$とする。
+				最下行が全て$1/\sqrt{n}$である$n$次直交行列を$P$として$\bm{Y} \coloneqq [Y_1,\cdots,Y_n]^\top \coloneqq P\bm{Z}$とすると、\ref{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}より、$Y_1,\cdots,Y_n\sim N(0,1)$であり、$Y_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n{Z_i} = \sqrt{n}\overline{Z} \therefore\;\overline{Z}=Y_n/\sqrt{n}$。
 				\[(1) = \sum_{i=1}^n{({Z_i}^2 + \overline{Z}^2 -2\overline{Z}Z_i)} = \norm{\bm{Z}}^2 - n\overline{Z}^2 = \norm{\bm{Y}}^2 - \overline{Y_n}^2 = \sum_{i=1}^{n\textcolor{red}{-1}}{{Y_i}^2}\]
 				右から2つ目の等号で、直交変換がノルムを保存する性質を用いた。
 				このように、標準正規分布に従う独立な$n-1$個の確率変数の2乗和で表されたので、\ref{標準正規分布に従うn個の独立な確率変数の2乗和は自由度n-1のカイ2乗分布に従う}よりこれは自由度$n-1$のカイ2乗分布に従う。
@@ -805,12 +805,12 @@
 		\section{定義}
 			\begin{shadebox}
 				関数$f(t)$を次のように定義する。
-				\[f(t) := \frac{\Gamma{\left(\frac{n+1}{2}\right)}}{\sqrt{n\pi}\Gamma{\left(\frac{n}{2}\right)}}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}}\]
+				\[f(t) \coloneqq \frac{\Gamma{\left(\frac{n+1}{2}\right)}}{\sqrt{n\pi}\Gamma{\left(\frac{n}{2}\right)}}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}}\]
 				確率密度関数が上式で与えられるような分布を「自由度$n$の$t$分布」と呼び、$t_n$と書くことにする。
 			\end{shadebox}
-		\section{\thesubsection \texorpdfstring{$X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T := \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n$}{X,Y: 独立, X～N(0,1), Y～χ\string^2\_n ⇒ T := X/√(Y/2) ～ t\_n}}
+		\section{\thesubsection \texorpdfstring{$X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T \coloneqq \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n$}{X,Y: 独立, X～N(0,1), Y～χ\string^2\_n ⇒ T := X/√(Y/2) ～ t\_n}}
 			\begin{shadebox}
-				\[X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T := \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n\]
+				\[X,Y : \text{indep},\;\;\;X \sim N(0,1),\;\;\;Y \sim {\chi^2}_n \quad \Rightarrow \quad T \coloneqq \frac{X}{\sqrt{\frac{Y}{2}}} \sim t_n\]
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -882,9 +882,9 @@
 				\[\text{where} \hspace{10pt} \nu_1,\nu_2 \in \mathbb{N},\;\;\; f > 0\]
 				確率密度関数が上式で与えられるような分布を「自由度$(\nu_1,\nu_2)$の$F$分布」と呼び、$F_{\nu_2}^{\nu_1}$と書くことにする。
 			\end{shadebox}
-		\section{\texorpdfstring{$X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F:= \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}$}{X1,X2: 独立, X1～χ\string^2\_ν1, X2～χ\string^2\_ν2 ⇒ F := (X1/ν1)/(X2/ν2) ～ F\_ν2\string^ν1}}
+		\section{\texorpdfstring{$X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F\coloneqq \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}$}{X1,X2: 独立, X1～χ\string^2\_ν1, X2～χ\string^2\_ν2 ⇒ F := (X1/ν1)/(X2/ν2) ～ F\_ν2\string^ν1}}
 			\begin{shadebox}
-				\[X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F:= \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}\]
+				\[X_1,X_2 : \text{indep},\;\;\;X_1 \sim {\chi^2}_{\nu_1},\;\;\;X_2 \sim {\chi^2}_{\nu_2} \hspace{10pt} \Rightarrow \hspace{10pt} F\coloneqq \frac{\frac{X_1}{\nu_1}}{\frac{X_2}{\nu_2}} \sim F_{\nu_2}^{\nu_1}\]
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -960,7 +960,7 @@
 		\section{標本分散}
 			\subsection{\texorpdfstring{$\E{}{\frac{1}{n}\sum_{i=1}^{n}{(X_i-\overline{X})^2}} = \frac{n-1}{n}\sigma^2$}{E((1/n)Σ\_\{i=1\}\string^n (Xi - sampleAvg(X))\string^2) = ((n-1)/n)σ\string^2}}
 				\begin{shadebox}
-					$X$が平均$\mu$,分散$\sigma^2$の母集団に属しているとき、そこからランダムに抽出した標本$(X_1,X_2,\dots,X_n)$の標本分散$\displaystyle S^2 := \frac{1}{n}\sum_{i=1}^{n}{(X_i-\overline{X})^2}$の期待値は$\displaystyle \text{E}(S^2) = \frac{n-1}{n}\sigma^2$である。
+					$X$が平均$\mu$,分散$\sigma^2$の母集団に属しているとき、そこからランダムに抽出した標本$(X_1,X_2,\dots,X_n)$の標本分散$\displaystyle S^2 \coloneqq \frac{1}{n}\sum_{i=1}^{n}{(X_i-\overline{X})^2}$の期待値は$\displaystyle \text{E}(S^2) = \frac{n-1}{n}\sigma^2$である。
 				\end{shadebox}
 				\begin{proof}
 				{%スコープ。\s 上書き回避

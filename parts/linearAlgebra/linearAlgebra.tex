@@ -16,9 +16,9 @@
 			\begin{proof}
 				\quad\par
 				まず下準備。
-				\[A := \left[a_{ij}\right]_{l\times m},\quad B := \left[b_{ij}\right]_{m\times n},\quad C := \left[c_{ij}\right]_{n\times o}\]
-				\[M_{AB} := \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} := [m_{{BC}_{ij}}]_{m\times o} = BC\]
-				\[N_1 := \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 := \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
+				\[A \coloneqq \left[a_{ij}\right]_{l\times m},\quad B \coloneqq \left[b_{ij}\right]_{m\times n},\quad C \coloneqq \left[c_{ij}\right]_{n\times o}\]
+				\[M_{AB} \coloneqq \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} \coloneqq [m_{{BC}_{ij}}]_{m\times o} = BC\]
+				\[N_1 \coloneqq \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneqq \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
 				とする。
 				$N_1 = N_2$すなわち$n_{1_{ij}} = n_{2_{ij}}$を示せば良い。\\
 				まず
@@ -252,9 +252,9 @@
 					よって$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\cdots,\bm{v}_k$は一次独立であるから$c_1=\cdots c_k=0$である。
 					すなわち$c_1=\cdots=c_k=c=0$なので$\bm{v}_1,\cdots,\bm{v}_k,\bm{v}$は一次独立である。
 				\end{proof}
-			\subsection{\texorpdfstring{$A_v:=\{\bm{v}_1,\cdots,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w:=\{\bm{w}_1,\cdots,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\cdots,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
+			\subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\cdots,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\cdots,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\cdots,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
 				\begin{shadebox}
-					線形空間$V$のベクトルの集合$A_v:=\{\bm{v}_1,\cdots,\bm{v}_k\}$と$A_w:=\{\bm{w}_1,\cdots,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次独立である。
+					線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\cdots,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\cdots,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次独立である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -294,21 +294,21 @@
 						\bm{v}_1 \\
 						\vdots \\
 						\bm{v}_n
-					\end{bmatrix} :=
+					\end{bmatrix} \coloneqq
 					\begin{bmatrix}
 						\sum_{j=1}^n a_{1j}\bm{v}_j \\
 						\vdots \\
 						\sum_{j=1}^n a_{mj}\bm{v}_j
 					\end{bmatrix},
 					\qquad
-					[\bm{v}_1,\cdots,\bm{v}_n]B :=
+					[\bm{v}_1,\cdots,\bm{v}_n]B \coloneqq
 					\left[\sum_{i=1}^n b_{i1}\bm{v}_i, \cdots, \sum_{i=1}^n b_{im}\bm{v}_i \right]
 				\]
 				これは$\bm{v}_1,\cdots,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
 			\subsection{一般のベクトルを要素とする行列同士の積}
 				ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して、
-				これらを要素とする行列$A:=[\bm{a}_{ij}]_{l\times m},\;B:=[\bm{b}_{ij}]_{m\times n}$の積$C$を
-				$C:=[c_{ij}]_{m\times n},\;c_{ij} := \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
+				これらを要素とする行列$A\coloneqq[\bm{a}_{ij}]_{l\times m},\;B\coloneqq[\bm{b}_{ij}]_{m\times n}$の積$C$を
+				$C\coloneqq[c_{ij}]_{m\times n},\;c_{ij} \coloneqq \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
 				これは$\bm{a}_{ij},\bm{b}_{ij}$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
 		\section{\texorpdfstring{$\dim(V)=\dim(W),\;f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき、\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
 			\begin{shadebox}
@@ -364,8 +364,8 @@
 		\section{不変部分空間と表現行列}
 			\label{不変部分空間と表現行列}
 			\begin{shadebox}
-				$A\in\field^{n\times n},\quad W_1,\cdots,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\cdots\oplus W_m,\quad d_i := \dim{W_i}$\\
-				$\{\bm{w}_{i1},\cdots,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i := [\bm{w}_{i1},\cdots,\bm{w}_{id_i}],\quad \Phi := [\Phi_1,\cdots,\Phi_m]$\\
+				$A\in\field^{n\times n},\quad W_1,\cdots,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\cdots\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
+				$\{\bm{w}_{i1},\cdots,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\cdots,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\cdots,\Phi_m]$\\
 				以上の設定の下で、次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
 				\[A = \Phi\;\diag{A_1,\cdots,A_m}\Phi^{-1}\]
 				$A_i$は次式で得られる。
@@ -412,7 +412,7 @@
 		\subsection{正規直交基底間での座標変換は直交変換}
 			\begin{shadebox}
 				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\cdots\bm{u}_n\},\;\{\bm{v}_1,\cdots,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
-				すなわち座標変換行列$P := [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
+				すなわち座標変換行列$P \coloneqq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
 			\end{shadebox}
 			\begin{proof}
 				\[ \bm{v}_i = \sum_{k=1}^n \inprod{\bm{v}_i}{\bm{u}_k}\bm{u}_k = \sum_{k=1}^n P[i][k]\bm{u}_k \]
@@ -441,7 +441,7 @@
 					\end{bmatrix}
 				\]
 				$\{\bm{v}_1,\cdots,\bm{v}_n\},\;\{{\bm{v}_1}',\cdots,{\bm{v}_n}'\}$の双対基底をそれぞれ$\{\bm{v}^1,\cdots,\bm{v}^n\}\,\{{\bm{v}^1}',\cdots,{\bm{v}^n}'\}$とし、
-				$\underline{\bm{x}} := [x_1,\cdots,x_n]^\top,\;\underline{\bm{x}}' := [{x_1}',\cdots,{x_n}']^\top$とする。
+				$\underline{\bm{x}} \coloneqq [x_1,\cdots,x_n]^\top,\;\underline{\bm{x}}' \coloneqq [{x_1}',\cdots,{x_n}']^\top$とする。
 				このとき$[{\bm{v}^1}',\cdots,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\cdots,\bm{v}^n]\underline{\bm{x}}$であれば$\underline{\bm{x}}' = A\underline{\bm{x}}$である。
 				すなわち、双対空間での座標変換と元の空間の基底間の線形変換が同じ形になる。
 			\end{shadebox}
@@ -515,7 +515,7 @@
 			\label{I-ABの行列式}
 			\begin{proof}
 				\[
-					M := \begin{bmatrix}
+					M \coloneqq \begin{bmatrix}
 						I_n & A \\
 						B & I_m
 					\end{bmatrix}
@@ -598,7 +598,7 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\Phi := [\bm{\phi}_1,\cdots,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
+				$\Phi \coloneqq [\bm{\phi}_1,\cdots,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
 				\[[\bm{e}_1,\cdots,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\cdots,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\cdots,\Phi^{-1}\bm{\phi}_n]\]
 			\end{proof}
 			この定理から直ちに次の系が得られる。
@@ -938,8 +938,8 @@
 				なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\cdots,\bm{t}_n$は一次独立である。
 				よって
 				\begin{align*}
-					T &:= [\bm{t}_1,\bm{t}_2,\cdots,\bm{t}_n]\\
-					P &:= [\bm{p}_1,\bm{p}_2,\cdots,\bm{p}_n]
+					T &\coloneqq [\bm{t}_1,\bm{t}_2,\cdots,\bm{t}_n]\\
+					P &\coloneqq [\bm{p}_1,\bm{p}_2,\cdots,\bm{p}_n]
 				\end{align*}
 				とすれば
 				\[AT = P\quad(A = PT^{-1})\]
@@ -980,8 +980,8 @@
 				$\Ker{A}$の基底を$\{\bm{x}_{r+1},\bm{x}_{r+2},\cdots,\bm{x}_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
 				これを含む$\field^n$の基底を$\{\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_r,\bm{x}_{r+1},\cdots,\bm{x}_n\}$とすると
 				\[\mathrm{span}[A\bm{x}_1,A\bm{x}_2,\cdots,A\bm{x}_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
-				である。$\bm{y}_i:=A\bm{x}_i\quad(i=1,2,\cdots,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_r,\bm{y}_{r+1},\cdots,\bm{y}_m\}$とすると
-				$T_x:=[\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n],\quad T_y:=[\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_m]$は正則であり、
+				である。$\bm{y}_i\coloneqq A\bm{x}_i\quad(i=1,2,\cdots,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_r,\bm{y}_{r+1},\cdots,\bm{y}_m\}$とすると
+				$T_x\coloneqq[\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n],\quad T_y\coloneqq[\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_m]$は正則であり、
 				\begin{align*}
 					AT_x &= [\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_r,\underbrace{\bm{0},\cdots,\bm{0}}_{n-r\mathrm{個}}]\\
 					&= [\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_m][\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\underbrace{\bm{0},\cdots,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
@@ -1007,7 +1007,7 @@
 					{T_{y,A}}^{-1}AT_{x,A} &= {T_{y,B}}^{-1}BT_{x,B}\\
 					\therefore\;AT_{x,A}{T_{x,B}}^{-1} &= T_{y,A}{T_{y,B}}^{-1}B
 				\end{align*}
-				上式で$T_1:=T_{x,A}{T_{x,B}}^{-1},\quad T_2:=T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
+				上式で$T_1\coloneqq T_{x,A}{T_{x,B}}^{-1},\quad T_2\coloneqq T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
 				\\
 				(十分)
 				\par
@@ -1195,7 +1195,7 @@
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					$2^n$次のHadamard行列を$H_n$と書く。$H_0 := [1]$と定義する。
+					$2^n$次のHadamard行列を$H_n$と書く。$H_0 \coloneqq [1]$と定義する。
 					まず、$H_1$の固有値と固有ベクトルの組が$(\pm\sqrt{2},[1\pm\sqrt{2},1]^\top)$(複合同順)であることは容易に導ける。
 					よって$n=1$のとき定理の主張が成り立つ。
 					\par
@@ -1373,7 +1373,7 @@
 			%\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
 			%	\begin{shadebox}
 			%		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし、その代数的重複度を$n_i,n_j$とする。
-			%		一般固有空間を$F_i:=\Ker{(A-\lambda_i)^{n_i}},\;F_j:=\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
+			%		一般固有空間を$F_i\coloneqq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneqq\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
 			%	\end{shadebox}
 			\subsection{一般固有空間への直和分解}
 				\label{一般固有空間への分解}
@@ -1384,9 +1384,9 @@
 				\begin{proof}
 					\quad\par
 					Cayley-Hamiltonの定理と\cite{システム線形代数}補題2.2より最初の式\;$\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)}$\;が従う。
-					次に${\nu_i}' := \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
+					次に${\nu_i}' \coloneqq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
 					各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より、
-					$F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i := [\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}],\quad \Phi := [\Phi_i,\cdots,\Phi_p]\in\field^{n\times n}$とすれば、
+					$F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneqq [\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneqq [\Phi_i,\cdots,\Phi_p]\in\field^{n\times n}$とすれば、
 					次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\cdots,p)$が存在する。
 					\[A = \Phi\;\diag{A_1,\cdots,A_p}\Phi^{-1}\]
 					\par
@@ -1556,8 +1556,8 @@
 					$J(\lambda, n)$を次のように対角成分とその一つ上の斜めラインに分ける。
 					\[
 						J(\lambda, n)=\Gamma+U,\quad
-						\Gamma:=\lambda I_{n\times n},\quad
-						U:=
+						\Gamma\coloneqq\lambda I_{n\times n},\quad
+						U\coloneqq
 						\begin{bmatrix}
 							0		& 1	& 0			& \cdots	& 0\\
 									& 0	& 1			& \ddots	& \vdots\\
@@ -1820,7 +1820,7 @@
 					\begin{align*}
 						\derivLong{\norm{\bm{x}}_p}{p}{} < 0 &\iff \derivLong{\log \norm{\bm{x}}_p}{p}{} < 0 \iff -\frac{1}{p^2}\log \sum_{i=1}^r |x_i|^p + \frac{1}{p}\times\frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < 0 \\
 						&\iff \frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < \frac{1}{p}\log \sum_{i=1}^r |x_i|^p \\
-						&\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M := \sum_{i=1}^r |x_i|^p,\; w_i := |x_i|^p/M \right) \\
+						&\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M \coloneqq \sum_{i=1}^r |x_i|^p,\; w_i \coloneqq |x_i|^p/M \right) \\
 						&\iff \sum_{i=1}^r w_i\log M w_i < \log M \iff \sum_{i=1}^r w_i(\log M + \log w_i) < \log M \\
 						&\iff \sum_{i=1}^r w_i\log w_i < 0 \quad \left( \because\;\sum_{i=1}^r w_i = 1 \right) \quad = \text{true} \quad (\because\; 0<w_i<1)
 					\end{align*}
@@ -1879,7 +1879,7 @@
 			% 		\quad\par
 			% 		全要素が正の場合について証明すれば十分である。
 			% 		Lagrangeの未定乗数法を使う。
-			% 		目的関数を$f(\bm{x}):=\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x}):=\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda):=f(\bm{x})+\lambda g(\bm{x})$とする。
+			% 		目的関数を$f(\bm{x})\coloneqq\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x})\coloneqq\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda)\coloneqq f(\bm{x})+\lambda g(\bm{x})$とする。
 			% 		最適解を$\bm{x}^*$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\bm{x}^*=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
 			% 		よって$\bm{x}^*$は全要素が等しい。これと$\norm{\bm{x}^*}=1,\bm{x}^*\geq\bm{0}$より$\bm{x}^* = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\bm{x}^*)=\sqrt{n}$
 			% 	\end{proof}
@@ -1887,14 +1887,14 @@
 				\label{th:単位球面上の点の座標の絶対値の総和の最大値}
 				\begin{proof}
 					\quad\par
-					$x_k = r_k e^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\cdots,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) := \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) := \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+					$x_k = r_k e^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\cdots,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneqq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneqq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
 					\par
 					数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\cdots,m-1$について(*)が成り立つと仮定する。
 					$r_1,\cdots,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
 					\par
 					そこで$r_1,\cdots,r_n$が全て正であるとする。
 					Lagrangeの未定乗数法を使う。
-					Lagrange関数を$L(\bm{r},\lambda):=f(\bm{r})+\lambda g(\bm{r})$とする。
+					Lagrange関数を$L(\bm{r},\lambda)\coloneqq f(\bm{r})+\lambda g(\bm{r})$とする。
 					$\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから、今関心のある領域に特異点は存在しない。
 					$r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\cdots,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
 					よってLagrangeの未定乗数法で極値を見つければそれは極大値であり、また最大値でもある。
@@ -1922,11 +1922,11 @@
 					\quad\par
 					上述の3式が等しいことを示す。
 					第1,2,3式の与える値を$c_1,c_2,c_3$とし、3つの式に対応する集合を3つ定義する。
-					\[S_1 := \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 := \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 := \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
+					\[S_1 \coloneqq \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 \coloneqq \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 \coloneqq \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
 					まず
 					\[S_2 = \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\norm{\vx}_2=1\right\}\subseteq S_1\]
 					より$c_1\geq c_2$である。
-					\par$c_1$を与えるベクトル$\vx_1$に対して$\vx_1' := \vx_1/\norm{\vx_1}_2$とすれば$\norm{\vx_1'}_2=1$であり、$\norm{A\vx_1'}_2=\frac{\norm{A\vx_1}_2}{\norm{\vx_1}_2}$であるからつまり$c_1\in S_2$である($S_1$の最大要素が$S_2$に属する)。
+					\par$c_1$を与えるベクトル$\vx_1$に対して$\vx_1' \coloneqq \vx_1/\norm{\vx_1}_2$とすれば$\norm{\vx_1'}_2=1$であり、$\norm{A\vx_1'}_2=\frac{\norm{A\vx_1}_2}{\norm{\vx_1}_2}$であるからつまり$c_1\in S_2$である($S_1$の最大要素が$S_2$に属する)。
 					よって$c_1\leq c_2$。これと$c_1\geq c_2$より$c_1=c_2$。
 					\par
 					$c\in S_3$は任意の$\vx\neq0$に対して$\frac{\norm{A\vx}_2}{\norm{\vx}_2}\leq c$を満たすから$c_1\leq c$。よって$c_1\leq c_3$。
@@ -1949,7 +1949,7 @@
 				\begin{proof}
 					\quad\par
 					$A$の絶対値最大固有値を$\lambda_{max}$, その任意の固有ベクトルを$\vx$とすると
-					\[\rho(A) := |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
+					\[\rho(A) \coloneqq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
 				\end{proof}
 			\subsection{Hermite行列の絶対値最大固有値の絶対値は2-演算子ノルムと一致する}
 				\begin{shadebox}
@@ -1974,12 +1974,12 @@
 					$\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$とすると
 					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
 					\par
-					$\norm{A}$の定義は$\norm{A} := \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
+					$\norm{A}$の定義は$\norm{A} \coloneqq \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
 					任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
 					$\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
 					\[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
 					よって
-					\[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i := \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
+					\[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i \coloneqq \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
 					これは$c_1=1,\quad c_2=\cdots=c_\sigma=0$のときに最大となる。よって
 					\[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
 				\end{proof}
@@ -2001,7 +2001,7 @@
 					を示せば良い。\\
 					\[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inprod{\vx}{A^\top A\vx} = \inprod{A^\top A\vx}{\vx}\]
 					であり、$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から、固有値は全て実数であり、固有空間の基底に正規直交基を選べる。\\
-					$\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i := \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
+					$\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i \coloneqq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
 					$\mbox{\boldmath $b$}_{i1},\mbox{\boldmath $b$}_{i2},\dots,\mbox{\boldmath $b$}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると、
 					ノルムが1であるような任意のベクトル$\vx \in \realNumbers^n$は適当な実数$c_{ij}$を用いて
 					\[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
@@ -2070,8 +2070,8 @@
 				$n=1$のときは明らか。
 				$n=m\in\naturalNumbers$まで成り立つと仮定する。
 				$n=m+1$のとき、
-				\[ \sum_{i=1}^n\alpha_i\bm{v}_i = \sum_{i=1}^{m+1}\alpha_i\bm{v}_i = \sum_{i=1}^m\alpha_i\bm{v}_i + \alpha_{m+1}\bm{v}_{m+1} = A_m\sum_{i=1}^m\beta_i\bm{v}_i + \alpha_{m+1}\bm{v}_{m+1} \quad \left(A_m := \sum_{i=1}^m\alpha_i,\;\beta_i := \frac{\alpha_i}{A_m}\right) \]
-				$\sum_{i=1}^m\beta_i = 1$であるから、仮定より$\bm{w}_{m+1} := \sum_{i=1}^m\beta_i\bm{v}_i\in V$である。
+				\[ \sum_{i=1}^n\alpha_i\bm{v}_i = \sum_{i=1}^{m+1}\alpha_i\bm{v}_i = \sum_{i=1}^m\alpha_i\bm{v}_i + \alpha_{m+1}\bm{v}_{m+1} = A_m\sum_{i=1}^m\beta_i\bm{v}_i + \alpha_{m+1}\bm{v}_{m+1} \quad \left(A_m \coloneqq \sum_{i=1}^m\alpha_i,\;\beta_i \coloneqq \frac{\alpha_i}{A_m}\right) \]
+				$\sum_{i=1}^m\beta_i = 1$であるから、仮定より$\bm{w}_{m+1} \coloneqq \sum_{i=1}^m\beta_i\bm{v}_i\in V$である。
 				そして$A_m\geq 0,\;A_m + \alpha_{m+1} = 1$であるから$\sum_{i=1}^n\alpha_i\bm{v}_i = A_m\bm{w}_{m+1} + \alpha_{m+1}\bm{v}_{m+1} \in V$である。
 			\end{proof}
 	\chapter{既約性}
@@ -2137,7 +2137,7 @@
 			\subsection{制約なしの場合}
 				\begin{shadebox}
 					$A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
-					$f(\bm{x}) := \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
+					$f(\bm{x}) \coloneqq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
 					\[ A^*A\mathring{\bm{x}} = -A^*\bm{b} \]
 					特に$A$が列フルランクであれば$A^*A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
 					\[ \mathring{\bm{x}} = -(A^*A)^{-1}A^*\bm{b} \]
@@ -2156,7 +2156,7 @@
 			\subsection{線形制約付きの場合}
 				\begin{shadebox}
 					$f$の定義は前小節のものとする。
-					$m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) := \bm{c}_i^\top\bm{x}+d_i$とする。
+					$m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneqq \bm{c}_i^\top\bm{x}+d_i$とする。
 					ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\cdots,m),\; (A\mathring{\bm{x}}+\bm{b})^*A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\cdots,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
 				\end{shadebox}
 				\begin{proof}

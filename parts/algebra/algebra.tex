@@ -69,12 +69,12 @@
         \section{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{}が既約多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{}も既約多項式である}
             \label{既約多項式の係数の順番反転}
             \begin{shadebox}
-                体$F$上の$n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i$が$F$上で既約であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
+                体$F$上の$n$次多項式$f_1(x) \coloneqq \sum_{i=0}^n a_ix^i$が$F$上で既約であれば、係数の順番を逆にした多項式$f_2(x) \coloneqq \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 背理法で示す。
-                $f_2(x)$が既約でないと仮定すると、適当な多項式$g_{2,1}(x),g_{2,2}(x) \in F[x],\;d_{2,1} + d_{2,2} := \deg(g_{2,1}(x)) + \deg(g_{2,1}(x)) = n$が存在して次式が成り立つ。
+                $f_2(x)$が既約でないと仮定すると、適当な多項式$g_{2,1}(x),g_{2,2}(x) \in F[x],\;d_{2,1} + d_{2,2} \coloneqq \deg(g_{2,1}(x)) + \deg(g_{2,1}(x)) = n$が存在して次式が成り立つ。
                 \[ f_2(x) = g_{2,1}(x)g_{2,2}(x) \]
                 上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
                 \[ f_2(x^{-1}) = g_{2,1}(x^{-1})g_{2,2}(x^{-1}) \]
@@ -114,7 +114,7 @@
             \end{proof}
     \chapter{有限体}
         \section{素数位数の有限体の構成法}
-            $p$を素数とし、$S:=\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+            $p$を素数とし、$S\coloneqq\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
             \begin{itemize}
                 \item $a+'b = (a+b)\% p$
                 \item $a*'b = (ab)\% p$
@@ -146,7 +146,7 @@
                 $p$を素数とする。
                 $\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
                 $\alpha$を$P$の任意の根とする。
-                $S := \set*{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\cdots,a_{m-1} \in \GaloisField{p}}$とする。
+                $S \coloneqq \set*{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\cdots,a_{m-1} \in \GaloisField{p}}$とする。
                 $S$上の演算として$\GaloisField{p}$上の多項式に対する加法と乗法をそのまま使うと、$S$とこの演算の組が体を成すことを説明する。
                 \par
                 まず加法に関する結合法則, 単位元と唯一の逆元の存在、乗法に関する結合法則と単位元の存在、また、乗法が加法の上に分配的であることは$P(\alpha) = 0$であること, 素数位数の有限体, 多項式の除法の基本的な知識があれば明らかであろう。
@@ -164,7 +164,7 @@
             \subsection{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a0 x0 + a1 x1 + ...}が原始多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\{n-1\} x0 + a\{n-2\} x1 + ...}も原始多項式である}
                 \begin{shadebox}
                     $p$を素数とする。
-                    $n$次多項式$f_1(x) := \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) := \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+                    $n$次多項式$f_1(x) \coloneqq \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) \coloneqq \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
                 \end{shadebox}
                 \begin{proof}
                     \quad\par

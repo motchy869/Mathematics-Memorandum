@@ -1,8 +1,8 @@
 \part{実解析}
 	\chapter{表記}
 		\begin{itemize}
-			\item $\realNumbers_+ := \{x\in\realNumbers|x\geq 0\}$ : 非負の実数全体の集合
-			\item $\realNumbers_{++} := \{x\in\realNumbers|x > 0\}$ : 正の実数全体の集合
+			\item $\realNumbers_+ \coloneqq \{x\in\realNumbers|x\geq 0\}$ : 非負の実数全体の集合
+			\item $\realNumbers_{++} \coloneqq \{x\in\realNumbers|x > 0\}$ : 正の実数全体の集合
 			\item $\bm{1}_n$ : 要素が全て1である$n$次元列ベクトル
 			\item $\bm{0}_n$ : 要素が全て0である$n$次元列ベクトル
 			\item $\bm{x}[i]$ : 列(行)ベクトルの第$i$成分
@@ -22,7 +22,7 @@
 				示したい式を変形して$\abs{q\alpha - p} < 1/N$と見る。
 				$q\in\{1,\cdots,N\}$と変化させるとき、$q\alpha$の中に格子点との距離が$1/N$未満のものが存在することを示せば良い。
 				つまり$q\alpha\%1$のうちで$[0,1/N)$に含まれるものが存在することを示せば良い。
-				区間$I_k := [k/N,(k+1)/N)\;(k=0,\cdots,N-1)$を考える。
+				区間$I_k \coloneqq [k/N,(k+1)/N)\;(k=0,\cdots,N-1)$を考える。
 				$q\alpha\%1$は$I_0,\cdots,I_{N-1}$のどれかに入る。
 				もし仮に$I_0$に入るものが無いとすると、鳩ノ巣原理よりある自然数$1 \leq q_1 < q_2 \leq N$が存在して$q_1\alpha\%1$と$q_2\alpha\%1$がともにある区間$I_k$に含まれる。
 				つまりある$m\in\integers,\;\varepsilon\in\realNumbers,|\varepsilon|<1/N$が存在して$q_2\alpha = q_1\alpha + m + \varepsilon$となる。
@@ -63,7 +63,7 @@
 				\label{(1-t/n)^nは単調増加}
 				\begin{proof}
 					\quad\par
-					$a_n := \left(1-\frac{t}{n}\right)^n$とする。
+					$a_n \coloneqq \left(1-\frac{t}{n}\right)^n$とする。
 					$t=0,n$の場合は単調増加性は明らか。以下$0<t<n$とする。
 					\begin{align*}
 						a_{n+1}/a_n &= \frac{(n+1-t)^{n+1}}{(n+1)^{n+1}}\times\frac{n^n}{(n-t)^n} = \left(\frac{(n+1-t)n}{(n+1)(n-t)}\right)^n\times\frac{n+1-t}{n+1} \\
@@ -76,7 +76,7 @@
 			% 	\label{(1-1/n)^nは単調増加}
 			% 	\begin{proof}
 			% 		\quad\par
-			% 		$a_n := \left(1-\frac{1}{n}\right)^n$とする。
+			% 		$a_n \coloneqq \left(1-\frac{1}{n}\right)^n$とする。
 			% 		$a_0 < a_1$は明らか。以下$n\geq 2$とする。
 			% 		\begin{align*}
 			% 			a_{n+1}/a_n &= \frac{\left(\frac{n}{n+1}\right)^{n+1}}{\left(\frac{n-1}{n}\right)^n} = \left(\frac{n^2}{n^2-1}\right)^n\times\frac{n}{n+1} = \left(1+\frac{1}{n^2-1}\right)^n\times\frac{n}{n+1} \\
@@ -143,7 +143,7 @@
 	\chapter{級数}
 		\section{\texorpdfstring{$S_l = \sum_{k=0}^\infty k^l r^k$}{A\_l = Σ\_\{k=0\}\string^∞ k\string^l r\string^k}を逐次的に求める}
 			\begin{shadebox}
-				$S_l := \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
+				$S_l \coloneqq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
 				\[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
 			\end{shadebox}
 			\begin{proof}
@@ -159,7 +159,7 @@
 		\section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
 			\begin{shadebox}
 				数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
-				\[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i := \sum_{j=1}^i a_j \right) \]
+				\[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneqq \sum_{j=1}^i a_j \right) \]
 			\end{shadebox}
 			\begin{proof}
 					\quad\\
@@ -188,7 +188,7 @@
 				\end{minipage}\\
 				\newline
 				(エレガントな証明)\\
-				\quad $A_i := \sum_{j=1}^i a_j,\;A_0 := 0$と定義すると
+				\quad $A_i \coloneqq \sum_{j=1}^i a_j,\;A_0 \coloneqq 0$と定義すると
 				\begin{align*}
 					\sum_{i=1}^n a_ib_i &= \sum_{i=1}^n (A_i-A_{i-1})b_i = \sum_{i=1}^n A_ib_i - \sum_{i=2}^n A_{i-1}b_i = \sum_{i=1}^n A_ib_i - \sum_{i=1}^n A_{i}b_{i+1} \\
 					&= A_nb_n + \sum_{i=1}^n A_i(b_i-b_{i+1}) = A_nb_n - \sum_{i=1}^n A_i(b_{i+1} - b_i)
@@ -199,10 +199,10 @@
 			\begin{proof}
 				\quad\par
 				まず$\{a_n\},\{b_n\}$が非負数列である場合に示す。
-				$A_i := \sum_{j=1}^i a_j,\;B_i := \sum_{j=1}^i b_j$としてAbelの総和公式を用いる。
+				$A_i \coloneqq \sum_{j=1}^i a_j,\;B_i \coloneqq \sum_{j=1}^i b_j$としてAbelの総和公式を用いる。
 				$\{a_n\},\{b_n\}$が非負単調増加数列であることより$nb_n \geq \sum_{i=1}^n b_i = B_n \geq 0,\;A_i(b_{i+1}-b_i) \geq 0\;(i=1,\cdots n-1)$だから次式より定理の不等式が成り立つ。
 				\[ n\sum_{i=1}^n a_ib_i = nA_nb_n - n\sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \geq A_nB_n \]
-				次に、$\{a_n\},\{b_n\}$が非負数列とは限らない場合は適当な$\alpha,\beta \geq 0$を用いて$a'_n := a_n + \alpha \geq 0,\;b'_n := b_n + \beta \geq 0$とすれば$\{a'_n\},\{b'_n\}$は非負単調増加列であるから定理の不等式が成り立つ。
+				次に、$\{a_n\},\{b_n\}$が非負数列とは限らない場合は適当な$\alpha,\beta \geq 0$を用いて$a'_n \coloneqq a_n + \alpha \geq 0,\;b'_n \coloneqq b_n + \beta \geq 0$とすれば$\{a'_n\},\{b'_n\}$は非負単調増加列であるから定理の不等式が成り立つ。
 				そして
 				\[ \left(\sum_{i=1}^n a'_i\right)\left(\sum_{i=1}^n b'_i\right) = (A_n + n\alpha)(B_n + n\beta) = A_nB_n + n\alpha B_n + n\beta A_n + n\alpha\beta \]
 				\[ n\sum_{i=1}^n a'_ib'_i = n\sum_{i=1}^n (a_ib_i + \alpha b_i + \beta a_i + \alpha\beta) = n\sum_{i=1}^n a_ib_i + n\alpha B_n + n\beta A_n + n\alpha\beta \]
@@ -378,7 +378,7 @@
 			\subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
 			\begin{proof}
 				\quad\par
-				$g(\bm{x}) := \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
+				$g(\bm{x}) \coloneqq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
 				$g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
 				\[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
 				であるが、maxの性質から
@@ -400,7 +400,7 @@
 					$n=1$の時は明らか。
 					$n=2$のときは凸関数の定義より成り立つ。
 					$n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
-					$w'_i:=w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\cdots+w'_{n_0}=1$だから、仮定より
+					$w'_i\coloneqq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\cdots+w'_{n_0}=1$だから、仮定より
 					\begin{align*}
 						f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
 						\therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
@@ -463,7 +463,7 @@
 			\begin{proof}
 				\quad\par
 				まず元の関数の定義域が開区間の場合について示す。
-				$f$を区間$I = (a_1,a_2)$上の連続関数とし、$J := f(I) =: (b_1,b_2)$とする。
+				$f$を区間$I = (a_1,a_2)$上の連続関数とし、$J \coloneqq f(I) =: (b_1,b_2)$とする。
 				$f$には逆関数が存在するものとする(必然的に$f$は狭義単調増加/減少なものに限られる)。
 				$f$が狭義単調増加な場合について示すが、狭義単調減少の場合も同様にして示せる。
 				\par
@@ -484,7 +484,7 @@
 				次に$f$の定義域が閉区間$I=[a_1,a_2]$と表される場合について示す。
 				半開区間の場合の証明は開区間の場合と閉区間の場合の証明を組み合わせて直ちに得られる
 				(半開区間を隣接する閉区間と開区間に分けて考える。境界となる点での連続性は開区間の場合で証明済みである)。
-				$J := f(I) =: [b_1,b_2]$とする。
+				$J \coloneqq f(I) =: [b_1,b_2]$とする。
 				開区間での右連続性の証明と同様にして$b_1$での右連続性が示される。
 				また開区間での左連続性の証明と同様にして$b_2$での左連続性が示される。
 				以上より$f^{-1}$は定義域の端点を含めて連続である。
@@ -532,8 +532,8 @@
 				\quad\par
 				(分解可能性)\\
 				\begin{align*}
-					\fe(x) &:= \frac{1}{2}\left(f(x)+f(-x)\right)\\
-					\fo(x) &:= \frac{1}{2}\left(f(x)-f(-x)\right)
+					\fe(x) &\coloneqq \frac{1}{2}\left(f(x)+f(-x)\right)\\
+					\fo(x) &\coloneqq \frac{1}{2}\left(f(x)-f(-x)\right)
 				\end{align*}
 				とすれば確かに$f(x)=\fe(x)+\fo(x)$であり$\fe(x),\fo(x)$はそれぞれ連続な偶,奇関数になっている。\\
 				\newline
@@ -604,7 +604,7 @@
 					\norm{\bm{x}+\bm{y}}_p^p = \sum_{i=1}^n{|x_i+y_i|^p} = \sum_{i=1}^n{|x_i+y_i||x_i+y_i|^{p-1}} \leq \sum_{i=1}^n{|x_i||x_i+y_i|^{p-1}}+\sum_{i=1}^n{|y_i||x_i+y_i|^{p-1}}
 				\end{equation}
 				右辺第1項はH\"olderの不等式より上から
-				\[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]:=|x_i+y_i|^{p-1}\]
+				\[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]\coloneqq|x_i+y_i|^{p-1}\]
 				で抑えられる。さらに
 				\[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}} = \norm{\bm{x}}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\bm{x}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}\]
 				同様に式(1)の右辺第2項も上から$\norm{\bm{y}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}$で抑えられるので
@@ -616,7 +616,7 @@
 			\begin{shadebox}
 				4象限逆正接 $\atanEx{x}{y}$ を次で定義する。
 				\[
-					\atanEx{x}{y} :=
+					\atanEx{x}{y} \coloneqq
 					\begin{cases}
 						\atan{\frac{y}{x}}+\pi	& (\text{領域$1$ : }x<0,y>0)\\
 						\frac{\pi}{2}			& (\text{領域$2$ : }x=0,y>0)\\
@@ -690,17 +690,17 @@
 				\end{proof}
 			\subsection{勾配ベクトルが等値面の接平面と直交することの証明}
 				\begin{shadebox}
-					$n$変数関数$f(\bm{x}),\;(\bm{x}:=[x_1,\cdots,x_n]^\top)$の点$\bm{a}:=[a_1,\cdots,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
+					$n$変数関数$f(\bm{x}),\;(\bm{x}\coloneqq[x_1,\cdots,x_n]^\top)$の点$\bm{a}\coloneqq[a_1,\cdots,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					$\nabla f(\bm{a})\neq\bm{0}$だから$f_{x_1}(\bm{a}),\cdots,f_{x_n}(\bm{a})$のうち少なくとも1つは0でない。
 					一般性を失わずに$f_{x_n}(\bm{a})\neq 0$であるとする(変数の添字をそのように付け替えれば良い)。
-					このとき陰関数定理より点$\bm{a}':=[a_1,\cdots,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\cdots,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
+					このとき陰関数定理より点$\bm{a}'\coloneqq[a_1,\cdots,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\cdots,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
 					$n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
 					\[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
 					であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
-					\[ W := \Span{\set*{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
+					\[ W \coloneqq \Span{\set*{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
 					のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\cdots,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
@@ -761,18 +761,18 @@
 				\quad\par
 				$n=1$のときは1変数関数の逆関数定理より従う。$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
 				\par
-				$F = [f_1,\cdots,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat := [x_1,\cdots,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
+				$F = [f_1,\cdots,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneqq [x_1,\cdots,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
 				\par
 				$J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
 				一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
 				この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
 				\par
-				$\fhat_i(\xhat) := f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) := [\fhat_i(\xhat),\cdots,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
+				$\fhat_i(\xhat) \coloneqq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneqq [\fhat_i(\xhat),\cdots,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
 				帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
 				すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
 				\par
 				\[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
-				\[ \text{where}\quad \bm{p}_j := \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m+1),\;\lambda_j := \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m) \]
+				\[ \text{where}\quad \bm{p}_j \coloneqq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m+1),\;\lambda_j \coloneqq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m) \]
 				行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが、$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから、結局次のようになる。
 				\begin{align*}
 					|J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\cdots,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\cdots,\bm{p}_m\right| \\
@@ -795,7 +795,7 @@
 				\begin{proof}
 					\quad\par
 					\[\bm{x}^\top A\bm{x} = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A\bm{x}\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \left(\bm{x}^\top A\bm{x}\right)^\top\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A^\top\bm{x}\right) = \bm{x}^\top\frac{A+A^\top}{2}\bm{x}\]
-					であるので$B := \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
+					であるので$B \coloneqq \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
 					\[\bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}\]
 				\end{proof}
 	\chapter{測度}
@@ -820,7 +820,7 @@
 			いくつか記号の約束を決めておく。
 			\begin{itemize}
 				\item 閉直方体$E$上の有界関数$f$と、$E$の分割$\Delta$に対して過剰和と不足和を
-				\[ S(f,\Delta) := \sum_{r\in\Delta} \sup_{\bm{x}\in r}f(\bm{x})|r|,\quad s(f,\Delta) := \sum_{r\in\Delta} \inf_{\bm{x}\in r}f(\bm{x})|r| \]
+				\[ S(f,\Delta) \coloneqq \sum_{r\in\Delta} \sup_{\bm{x}\in r}f(\bm{x})|r|,\quad s(f,\Delta) \coloneqq \sum_{r\in\Delta} \inf_{\bm{x}\in r}f(\bm{x})|r| \]
 				と定義する。
 				\item 有界集合$A$のJordan外測度,内測度,測度をそれぞれ$\mJo{A}, \mJi{A}, \mJordan{A}$と書く。
 			\end{itemize}
@@ -971,7 +971,7 @@
 				Lebesgue可測集合$A_1,A_2,\cdots\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
 				\begin{proof}
 					\quad\par
-					$B_n := \bigsqcup_{i=1}^n A_i,\;B := \bigsqcup_{i=1}^\infty A_i$とする。
+					$B_n \coloneqq \bigsqcup_{i=1}^n A_i,\;B \coloneqq \bigsqcup_{i=1}^\infty A_i$とする。
 					任意の集合$S\in\realNumbers^n$に対して
 					\[ \mLebO{S\cap B} + \mLebO{S\cap B^\complement} = \mLebO{S} \]
 					となることを示す。$\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
@@ -1025,9 +1025,9 @@
 						\textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
 						\textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
 						&= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
-						&= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) := \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
+						&= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneqq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
 					\end{align*}
-					$U:=\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
+					$U\coloneqq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
 					まず$x\notin U\Rightarrow c(x)=0$は明らか。
 					各$x\in U$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
 					\begin{center}
@@ -1085,7 +1085,7 @@
 				\quad\par
 				$F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
 				$R = [a_1,b_1]\times\cdots\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
-				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\cdots,m,\;d=1,\cdots,n)$とし、各小超直方体を$R_{i_1,\cdots,i_n} := [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\cdots\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
+				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\cdots,m,\;d=1,\cdots,n)$とし、各小超直方体を$R_{i_1,\cdots,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\cdots\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
 				$R$の対角線の長さを$L = \sqrt{\sum_{d=1}^n (b_d-a_d)^2}$としておく。
 				$C$は面積確定で面積が0であるから、任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し、$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
 				\[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset} |R_{i_1,\cdots,i_m}| = \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
@@ -1108,7 +1108,7 @@
 				\[ \integ{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y},\;\integ{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y} < \varepsilon/3 \]
 				となる。$f$は$\realNumbers$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
 				よって$h$を十分小さくすれば
-				\[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L := \integ{-\infty}{\infty}{|g(y)|}{y} \right) \]
+				\[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L \coloneqq \integ{-\infty}{\infty}{|g(y)|}{y} \right) \]
 				となり、
 				\[ \integ{-a}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{y} < \varepsilon/3 \]
 				以上より
@@ -1117,13 +1117,13 @@
 				\noindent
 				(絶対可積分であること):
 				\par
-				$a>0$として$I(a) := \integ{-a}{a}{|(f*g)(x)|}{x}$とすると$I(a)$は$a$に関して単調増加であり、次式が成り立つ。
+				$a>0$として$I(a) \coloneqq \integ{-a}{a}{|(f*g)(x)|}{x}$とすると$I(a)$は$a$に関して単調増加であり、次式が成り立つ。
 				\[ I(a) = \integ{-a}{a}{\abs{\integ{-\infty}{\infty}{f(x-y)g(y)}{y}}}{x} \leq \integ{-a}{a}{\integ{-\infty}{\infty}{|f(x-y)||g(y)|}{y}}{x} = \integ{-\infty}{\infty}{\integ{-a}{a}{|f(x-y)||g(y)|}{x}}{y} \]
 				右端の等号は$f$の有界性と$g$の絶対可積分性より$\integ{-\infty}{\infty}{|f(x-y)||g(y)|}{y}$が$x$の値に関係なく収束することによる。
 				これより
 				\begin{align*}
-					I(a) &\leq \integ{-\infty}{\infty}{\abs{g(y)}\integ{-a}{a}{\abs{f(x-y)}}{x}}{y} \leq \integ{-\infty}{\infty}{\abs{g(y)}M_1}{y} \quad \left( M_1 := \integ{-\infty}{\infty}{\abs{f(x-y)}}{x} \right) \\
-					&\leq M_1M_2 \quad \left( M_2 := \integ{-\infty}{\infty}{\abs{g(y)}}{y} \right)
+					I(a) &\leq \integ{-\infty}{\infty}{\abs{g(y)}\integ{-a}{a}{\abs{f(x-y)}}{x}}{y} \leq \integ{-\infty}{\infty}{\abs{g(y)}M_1}{y} \quad \left( M_1 \coloneqq \integ{-\infty}{\infty}{\abs{f(x-y)}}{x} \right) \\
+					&\leq M_1M_2 \quad \left( M_2 \coloneqq \integ{-\infty}{\infty}{\abs{g(y)}}{y} \right)
 				\end{align*}
 				よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integ{-\infty}{\infty}{(f*g)(x)}{x}$は絶対収束する。
 			\end{proof}
@@ -1146,9 +1146,9 @@
 			$C$上にその向きに沿って$n+1$個の分点\quad$\text{始点} = P_0, P_1, \cdots, P_n = \text{終点}$\quad をとる。
 			添字の意味で隣接する2点$P_{i-1},P_i$は重ならないようにする。さらに添字の順番が曲線の向きと逆行しないようにする。
 			曲線が自己交差する点では複数の点が重なることがあるが、それは構わない。
-			これらの点による$C$の分割を$\Delta$と表し、その「幅」を$|\Delta| := \max_{i\in\range{1}{n}}\norm{P_{i-1}P_i}_2$で定義する。
+			これらの点による$C$の分割を$\Delta$と表し、その「幅」を$|\Delta| \coloneqq \max_{i\in\range{1}{n}}\norm{P_{i-1}P_i}_2$で定義する。
 			$P_{i-1}$から$P_i$までの部分曲線から\textcolor{red}{任意に}点$\bm{\xi}_i$をとり、また、$\overrightarrow{P_{i-1}P_i}$の$x_d$軸成分を$(\Delta x_d)_i$とする。
-			級数$S(f,\Delta,\{\bm{\xi}_i\}) := \sum_{i=1}^n f(\bm{\xi}_i)(\Delta x_d)_i$を考え、これを$f$の$\Delta, \{\bm{\xi}_i\}$に関する\textbf{Riemann和}と呼ぶ。
+			級数$S(f,\Delta,\{\bm{\xi}_i\}) \coloneqq \sum_{i=1}^n f(\bm{\xi}_i)(\Delta x_d)_i$を考え、これを$f$の$\Delta, \{\bm{\xi}_i\}$に関する\textbf{Riemann和}と呼ぶ。
 			分割を任意のやり方で細かくして$|\Delta|\to 0$としたときに$S(f,\Delta,\{\bm{\xi}\})$が収束するとき、これを$\integ{C}{}{f(\bm{x})}{x_d}$と表し、\textbf{$x_d$方向の線積分}という。
 		\section{計算法}
 			$f$が$C$に関して線積分可能であるとし、パラメータ$t$を用いて$\bm{x}=\bm{\phi}(t)=[\phi_1(t),\cdots,\phi_n(t)]^\top,\; \bm{\phi} \in C^1(\realNumbers\to\realNumbers^n),\;t:a\to b$と表せる場合は次が成り立つ。
@@ -1161,7 +1161,7 @@
 			曲線が自己交差する点では複数の点が重なっていることがあるが、このときは添字の若い順にとる。
 			つまり最初の通過で一番若い添字のものが対応し、次の通過で次に若い添字を対応させる。
 			平均値の定理より、各$i$に対して適当な$\mu_i\in(t_{i-1},t_i)$が存在して$(\Delta x_d)_i = \phi_d(t_i) - \phi_d(t_{i-1}) = \phi_d'(\mu_i)(t_i-t_{i-1})$を満たす。
-			級数$S^{(2)} := \sum_{i=1}^n f(\bm{\phi}(\mu_i))\phi_d'(\mu_i)(t_i-t_{i-1})$を考えると、これもまた$f$の$\Delta, \{\bm{\phi}(\mu_i)\}$に関するRiemann和であるから$f$の線積分可能性より、分割を細かくして$|\Delta|\to 0$とするとき$\integ{C}{}{f(\bm{x})}{x_d}$に収束する。
+			級数$S^{(2)} \coloneqq \sum_{i=1}^n f(\bm{\phi}(\mu_i))\phi_d'(\mu_i)(t_i-t_{i-1})$を考えると、これもまた$f$の$\Delta, \{\bm{\phi}(\mu_i)\}$に関するRiemann和であるから$f$の線積分可能性より、分割を細かくして$|\Delta|\to 0$とするとき$\integ{C}{}{f(\bm{x})}{x_d}$に収束する。
 			また、$S^{(2)}$を$t$についての1変数関数$f(\bm{\phi}(t))\phi_d'(t)$のRiemann和と見れば、これは分割を細かくするときに$\integ{a}{b}{f(\bm{\phi}(t))\phi_d'(t)}{t}$に収束する。
 			\newline
 			\par
@@ -1190,7 +1190,7 @@
 				極座標変換だから$\theta$は適当な$2\pi$区間の部分集合を選べば良い。
 				よって$r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす集合は$S = \set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]} \cup \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$である。
 				しかし$\set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]}$の$xy$空間での像は原点であり、$\set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$の像にも原点が含まれる。
-				そこで$S_2 := \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$とすると、$S,S_2$それぞれを$x,y$空間に写像してできる2つの曲線の排他的論理和は$\emptyset$である。
+				そこで$S_2 \coloneqq \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$とすると、$S,S_2$それぞれを$x,y$空間に写像してできる2つの曲線の排他的論理和は$\emptyset$である。
 				だから曲線を表現するという目的では$r = \sqrt{\cos 2\theta}$で十分なのである。
 	\chapter{Beta関数}
 		\section{Beta関数とGamma関数の関係}
@@ -1212,7 +1212,7 @@
 			\begin{shadebox}
 				$ \bm{\alpha} = [\alpha_1,\cdots,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
 				\begin{align*}
-					B(\bm{\alpha}) &:= \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega := \set*{[x_1,\cdots,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
+					B(\bm{\alpha}) &\coloneqq \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega \coloneqq \set*{[x_1,\cdots,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
 					&= \integ{x_1=0}{1}{\integ{x_2=0}{1-x_1}{\cdots\integ{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{x_{n-1}}\cdots}{x_2}}{x_1}
 				\end{align*}
 			\end{shadebox}
@@ -1225,7 +1225,7 @@
 				ここで
 				\[
 					\bm{y} = P\bm{x},\quad
-					P :=
+					P \coloneqq
 					\begin{bmatrix}
 						\bm{e}_1^\top \\
 						\bm{e}_2^\top \\
@@ -1269,7 +1269,7 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\displaystyle f(\infty) := \lim_{x\to\infty}{f(x)}$とすると任意の$\epsilon>0$に対してある正数$X(\epsilon)$が存在して$x \geq X \Rightarrow |f(x)-f(\infty)| < \epsilon$であるから、$x\geq X$とすると
+				$\displaystyle f(\infty) \coloneqq \lim_{x\to\infty}{f(x)}$とすると任意の$\epsilon>0$に対してある正数$X(\epsilon)$が存在して$x \geq X \Rightarrow |f(x)-f(\infty)| < \epsilon$であるから、$x\geq X$とすると
 				\[|[f(x)-f(0)]-[f(\infty)-f(0)]| < \epsilon\]
 				\[\therefore \; \left|\int_{0}^{x}{f'(u) du}-[f(\infty)-f(0)]\right| < \epsilon\]
 				$\epsilon \to 0$のとき$X(\epsilon) \to \infty$であるから結局
@@ -1298,7 +1298,7 @@
 				\newcommand{\dx}{{\Delta x}}
 				\renewcommand{\d}[1]{{\mathrm{d}#1}}
 				\quad\par
-				$I(x) := \integ{0}{x}{f(s)g(x-s)}{s}$とおき、微分の定義に従い$\lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx}$を計算する。
+				$I(x) \coloneqq \integ{0}{x}{f(s)g(x-s)}{s}$とおき、微分の定義に従い$\lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx}$を計算する。
 				\begin{align*}
 					I(x+\dx)-I(x) &= \left(\int_{0}^{x}+\int_{x}^{x+\dx}\right)f(s)g(x+\dx-s)\d{s} - \integ{s=0}{x}{f(s)g(x-s)}{s} \\
 					&= \integ{0}{x}{f(s)\left(g(x-s+\dx)-g(x-s)\right)}{s} + \integ{x}{x+\dx}{f(s)g(x+\dx-s)}{s}
@@ -1319,9 +1319,9 @@
 			\label{重積分の微分}
 			\begin{shadebox}
 				$\omega>0$とする。
-				\[\Omega:=\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+:=\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n = \omega\} \subset \Omega\]
-				$f_1(x),\cdots,f_n(x)$を$\{x|x\geq 0\}$上の連続関数とし、$f(\bm{x}):=f_1(x_1)\cdots f_n(x_n),\quad F(\omega) := \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
+				\[\Omega\coloneqq\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				$f_1(x),\cdots,f_n(x)$を$\{x|x\geq 0\}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
 				要するに、領域$x_1,\cdots,x_n\geq 0$の超平面$x_1+\cdots+x_n=\omega$の原点側の部分における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは領域$x_1,\cdots,x_n\geq 0$と超平面の共通部分上での積分に等しい。\\
 				\\
@@ -1340,7 +1340,7 @@
 				であり、括弧の中身を全部展開すれば$F(\omega)$を含む$2^n$個の項が出る。
 				$\frac{F(\omega+\domega)-F(\omega)}{\domega}$を考えるときは$F(\omega)$は相殺するから放っておけば良い。
 				$F(\omega)$を除いた$2^n-1$項を$\domega$で除して$\domega \to 0$としたとき、ある1項を除いて他は0になり、残った項が$\integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}$になることを以下で示していく。
-				\[g_1(\omega,x_1) := \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_2}}\]
+				\[g_1(\omega,x_1) \coloneqq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_2}}\]
 				とおけば
 				\begin{align*}
 					F(\omega+\domega) = \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{11}(\omega,\domega)} + \underbrace{\int_{x_1=\omega}^{\omega+\domega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{12}(\omega,\domega)}
@@ -1349,7 +1349,7 @@
 				積分の平均値の定理から$^\exists\theta_1 \in (\omega,\omega+\domega)\st h_{12}(\omega,\domega)=\domega f_1(\theta_1)g_1(\omega,\theta_1)$であるので
 				\[\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}f_1(\theta_1)g_1(\omega,\theta_1) = f_1(\omega)\lim_{\domega\to 0}g_1(\omega,\theta_1) = 0\]
 				結局$h_{11}(\omega,\domega)$だけ考えれば良い。
-				\[g_2(\omega,x_1,x_2) := \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
+				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
 				とおけば
 				\begin{align*}
 					h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{21}(\omega,\domega)} \\
@@ -1386,9 +1386,9 @@
 		}
 			\label{重積分の微分の系}
 			\begin{shadebox}
-				\[\Omega:=\{(x_1,\cdots,x_n)|x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+:=\{(x_1,\cdots,x_n)|x_1+\cdots+x_n = \omega\} \subset \Omega\]
-				$f_1(x),\cdots,f_n(x)$を$\mathbb{R}$上の連続関数とし、$f(\bm{x}):=f_1(x_1)\cdots f_n(x_n),\quad F(\omega) := \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
+				\[\Omega\coloneqq\{(x_1,\cdots,x_n)|x_1+\cdots+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\cdots,x_n)|x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				$f_1(x),\cdots,f_n(x)$を$\mathbb{R}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
 				要するに、超平面$x_1+\cdots+x_n=\omega$の負領域における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは超平面上での積分に等しい。\\
 				\\
@@ -1413,7 +1413,7 @@
 		\section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
 			\begin{proof}
 				\quad\par
-				$\Omega(n,r)\;(r\in\realNumbers) := \set*{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
+				$\Omega(n,r)\;(r\in\realNumbers) \coloneqq \set*{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
 				\begin{align*}
 					V_n &= \integ{\Omega(n,1)}{}{1}{\bm{x}} = \integ{-1}{1}{\left(\integ{\Omega(n-1,1-{x_n}^2)}{}{1}{\bm{x}}\right)}{x_n} = \integ{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{x_n} \\
 						&= V_{n-1}\integ{-1}{1}{(1-x^2)^{(n-1)/2}}{x} = 2V_{n-1} \integ{0}{1}{(1-x^2)^{(n-1)/2}}{x} \\
@@ -1429,7 +1429,7 @@
 				$m,n\in\naturalNumbers$とする。
 				$f: \realNumbers^n \to \realNumbers$を狭義凸関数とする。
 				$\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\cdots,m)$とし、$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
-				$\bm{\lambda} \in \realNumbers^m$とし、Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) := f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
+				$\bm{\lambda} \in \realNumbers^m$とし、Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) \coloneqq f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
 				$\bm{x}_0, \bm{\lambda}_0$を$F$の停留点、すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\cdots,m)$なる拘束条件の下、$\bm{x}_0$で最小値をとる。
 			\end{shadebox}
 			\begin{proof}

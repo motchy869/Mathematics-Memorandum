@@ -33,7 +33,7 @@
 				\label{VectorLaplacian}
 				\begin{definition}
 					$A: \bm{r}\in\realNumbers^3 \mapsto A(\bm{r}) \in \realNumbers^3$($A$の各成分は$\mathrm{C}^2$級)の Vector Laplacian $\nabla^2 A$は次式で定義される。
-					\[ \nabla^2A := \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) \]
+					\[ \nabla^2A \coloneqq \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) \]
 				\end{definition}
 		\section{諸公式}
 			\subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
@@ -134,7 +134,7 @@
 			\subsection{非負領域の共通部分の非負領域}
 				\begin{shadebox}
 					$\realNumbers^n$上で考える。$\bm{v}_1,\cdots,\bm{v}_m\;(m\leq n)$は一次独立であるとし、$\bm{v}$の非負領域を
-					\[P(\bm{v}):=\left\{\bm{w}|\inprod{\bm{v}}{\bm{w}}\geq0\right\})\]
+					\[P(\bm{v})\coloneqq\left\{\bm{w}|\inprod{\bm{v}}{\bm{w}}\geq0\right\})\]
 					で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の非負領域にある、すなわち
 					\[\inprod{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\]
 					であるとき、$\bm{u}$は適当な定数$a_i\geq0(i=1,\cdots,m)$によって
@@ -144,7 +144,7 @@
 				\begin{proof}
 					\quad\par
 						まず$\bm{u}$が$\bm{v}_1,\cdots,\bm{v}_m$の一次結合で表せることを示す。\\
-						$W := \Span{\bm{v}_1,\cdots,\bm{v}_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから、適当な定数$c_1,\cdots,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
+						$W \coloneqq \Span{\bm{v}_1,\cdots,\bm{v}_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから、適当な定数$c_1,\cdots,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
 						\begin{equation}
 							\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i} + \bm{w}_t
 						\end{equation}
@@ -152,7 +152,7 @@
 						\[\inprod{\bm{v}_i}{\bm{p}}\geq0,\forall\bm{v}_i\in W\]
 						また、$\bm{w}_{t2}$を$W^\bot$の任意のベクトルとすると
 						\[\inprod{\bm{v}_i}{\bm{w}_{t2}}=0,\forall\bm{v}_i\in W\]
-						従って$\bm{p}' := \bm{p}+\bm{w}_{t2}$とすると
+						従って$\bm{p}' \coloneqq \bm{p}+\bm{w}_{t2}$とすると
 						\[\inprod{\bm{v}_i}{\bm{p}'}\geq0,\forall\bm{v}_i\in W\]
 						であるから$\bm{p'}$もまた$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$のベクトルである。従って$\inprod{\bm{u}}{\bm{p}'}\geq0$であるから
 						\[0\leq\inprod{\bm{u}}{\bm{p}'} = \inprod{\sum_{i=1}^{m}{c_i\bm{v}_i}}{\bm{p}} + \inprod{\bm{w}_{t1}}{\bm{w}_{t2}}\]
@@ -296,9 +296,9 @@
 				\[\vr = \dthv{r\cosph}{r\sinph}{z}\]
 				よって
 				\begin{align*}
-					h_r &:= \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
-					\hph &:= \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
-					h_z &:= \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
+					h_r &\coloneqq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
+					\hph &\coloneqq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
+					h_z &\coloneqq \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
 				\end{align*}
 			\end{proof}
 		\section{単位ベクトルに関する直角座標系との関係}
@@ -318,8 +318,8 @@
 				\[\vr = \dthv{r\cosph}{r\sinph}{z}\]
 				よって
 				\begin{align}
-					\ir &:= \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \ix\cosph+\iy\sinph \\
-					\iph &:= \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\ix\sinph+\iy\cosph
+					\ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \ix\cosph+\iy\sinph \\
+					\iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\ix\sinph+\iy\cosph
 				\end{align}
 				これを逆に解いてみる。\\
 				$(1)\times\cosph-(2)\times\sinph$より$\ix = \ir\cosph - \iph\sinph$\\
@@ -339,7 +339,7 @@
 				\def \phr {\partDeriv{\phi}{r}{}}
 				\def \php {\partDeriv{\phi}{\varphi}{}}
 				\def \phz {\partDeriv{\phi}{z}{}}
-				$d\phi := \phr dr + \php d\varphi + \phz dz$であるから
+				$d\phi \coloneqq \phr dr + \php d\varphi + \phz dz$であるから
 				\begin{align*}
 					\partDeriv{\phi}{x}{} &= \phr\partDeriv{r}{x}{} + \php\partDeriv{\varphi}{x}{} + \phz\partDeriv{z}{x}{}\\
 					&= \phr\ppx{\sqrt{x^2+y^2}} + \php\ppx{\varphi}
@@ -363,9 +363,9 @@
 				\[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
 				よって
 				\begin{align*}
-					h_r &:= \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\sinth\cosph}{\sinth\sinph}{\costh}} = 1\\
-					\hth &:= \norm{\partDeriv{\vr}{\theta}{}} = \norm{\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth}} = r\\
-					\hph &:= \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\sinth\sinph}{r\sinth\cosph}{0}} = r\sinth
+					h_r &\coloneqq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\sinth\cosph}{\sinth\sinph}{\costh}} = 1\\
+					\hth &\coloneqq \norm{\partDeriv{\vr}{\theta}{}} = \norm{\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth}} = r\\
+					\hph &\coloneqq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\sinth\sinph}{r\sinth\cosph}{0}} = r\sinth
 				\end{align*}
 			\end{proof}
 		\section{単位ベクトルに関する直角座標系との関係}
@@ -387,9 +387,9 @@
 				\[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
 				よって
 				\begin{align}
-					\ir &:= \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh \\
-					\ith &:= \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \ix\costh\cosph + \iy\costh\sinph - \iz\sinth \\
-					\iph &:= \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\ix\sinph + \iy\cosph
+					\ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh \\
+					\ith &\coloneqq \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \ix\costh\cosph + \iy\costh\sinph - \iz\sinth \\
+					\iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\ix\sinph + \iy\cosph
 				\end{align}
 				これを逆に解いてみる。\\
 				$(1)\times\costh-(2)\times\sinth$より$\iz = \ir\costh - \ith\sinth$\\
