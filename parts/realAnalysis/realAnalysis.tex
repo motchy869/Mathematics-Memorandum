@@ -20,10 +20,10 @@
 			\begin{proof}
 				\quad\par
 				示したい式を変形して$\abs{q\alpha - p} < 1/N$と見る。
-				$q\in\{1,\cdots,N\}$と変化させるとき、$q\alpha$の中に格子点との距離が$1/N$未満のものが存在することを示せば良い。
+				$q\in\{1,\dotsc,N\}$と変化させるとき、$q\alpha$の中に格子点との距離が$1/N$未満のものが存在することを示せば良い。
 				つまり$q\alpha\%1$のうちで$[0,1/N)$に含まれるものが存在することを示せば良い。
-				区間$I_k \coloneqq [k/N,(k+1)/N)\;(k=0,\cdots,N-1)$を考える。
-				$q\alpha\%1$は$I_0,\cdots,I_{N-1}$のどれかに入る。
+				区間$I_k \coloneqq [k/N,(k+1)/N)\;(k=0,\dotsc,N-1)$を考える。
+				$q\alpha\%1$は$I_0,\dotsc,I_{N-1}$のどれかに入る。
 				もし仮に$I_0$に入るものが無いとすると、鳩ノ巣原理よりある自然数$1 \leq q_1 < q_2 \leq N$が存在して$q_1\alpha\%1$と$q_2\alpha\%1$がともにある区間$I_k$に含まれる。
 				つまりある$m\in\integers,\;\varepsilon\in\realNumbers,|\varepsilon|<1/N$が存在して$q_2\alpha = q_1\alpha + m + \varepsilon$となる。
 				このとき$|(q_2-q_1)\alpha - m|=|\varepsilon|<1/N$が成り立つ。
@@ -116,7 +116,7 @@
 					$p(n) = b_dn^d + \cdots + b_1n + b_0n$とする。
 					$a_n = Ar^n + q(n)\;\left(q(n) = c_dn^d + \cdots + c_1n + c_0\right)$とおいて漸化式に代入すると次式を得る。
 					\[ Ar^{n+1} + q(n+1) = Ar^{n+1} + rq(n) + p(n) \quad \therefore\; q(n+1) = rq(n) + p(n) \]
-					両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$、左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり、$r\neq 1$なので$d$次の係数から順に見てゆき、$c_d,c_{d-1},\cdots,c_1,c_0$の順に決定できる。
+					両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$、左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり、$r\neq 1$なので$d$次の係数から順に見てゆき、$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
 					最後に初期条件$a_0$(或いは$a_1,a_2,\cdots$\;値が分かっている項なら何でも良い)の値から$A$を決定できる。
 				\end{proof}
 			\begin{comment}
@@ -181,7 +181,7 @@
 					\end{table}
 				\end{minipage}
 				\begin{minipage}{0.45\hsize}
-					右辺の各$a_j\;(j=1,\cdots,n)$について、その係数が正味$b_i$だけであることを示せば良い。
+					右辺の各$a_j\;(j=1,\dotsc,n)$について、その係数が正味$b_i$だけであることを示せば良い。
 					$(\text{右辺}) = A_nb_n - \sum_{i=1}^{n-1}\sum_{j=1}^ia_j(b_{i+1}-b_i)$
 					であるから、右辺に現れる$a_j$の係数として、まず第1項目より$b_n$がある。
 					第2項目の寄与は左の表のようになり、殆ど相殺して$b_j$のみが残る。
@@ -392,7 +392,7 @@
 			\end{proof}
 			\subsection{Jensenの不等式}
 				\begin{shadebox}
-					$f(x)$を凸関数とし、$w_i\geq 0(i=1,\cdots,n),\;\sum_{i=1}^n w_i=1$とするとき、次式が成り立つ。
+					$f(x)$を凸関数とし、$w_i\geq 0(i=1,\dotsc,n),\;\sum_{i=1}^n w_i=1$とするとき、次式が成り立つ。
 					\[ f\left(\sum_{i=1}^n w_i x_i\right) \leq \sum_{i=1}^n w_i f(x_i) \]
 				\end{shadebox}
 				\begin{proof}
@@ -412,7 +412,7 @@
 				\end{proof}
 			\subsection{重み付き相加,相乗平均の関係とYoungの不等式}
 				\begin{shadebox}
-					$w_1,\cdots,w_n\geq 0,\;w_1+\cdots+w_n=1,\;x_1,\cdots,x_n\geq 0$とするとき、次式が成り立つ。
+					$w_1,\dotsc,w_n\geq 0,\;w_1+\cdots+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
 					\[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
 					この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
 				\end{shadebox}
@@ -423,14 +423,14 @@
 					最初の式より、等号成立条件は$x_1=\cdots=x_n$である。
 				\end{proof}
 				この不等式には変形版があり、\textbf{Youngの不等式}と呼ばれている。
-				一時的に上の定理の条件を少し強めて$w_1,\cdots,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
+				一時的に上の定理の条件を少し強めて$w_1,\dotsc,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
 				これらを重み付き相加,相乗平均の関係に代入して
 				\[ \sum_{i=1}^n w_i y^{1/w_i} \geq \prod_{i=1}^n y_i \]
 				を得る。$p_i=1/w_i$とすると次式を得る。
 				\[ \sum_{i=1}^n \frac{{y_i}^{p_i}}{p_i} \geq \prod_{i=1}^n y_i \]
 				改めて定理の形で述べると、次のようになる。\\
 				\begin{shadebox}
-					$p_1,\cdots,p_n>1,\;1/p_1+\cdots+1/p_n=1,\;x_1,\cdots,x_n\geq 0$とするとき、次式が成り立つ。
+					$p_1,\dotsc,p_n>1,\;1/p_1+\cdots+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
 					\[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
 				\end{shadebox}
 		\section{Legendre変換}
@@ -690,18 +690,18 @@
 				\end{proof}
 			\subsection{勾配ベクトルが等値面の接平面と直交することの証明}
 				\begin{shadebox}
-					$n$変数関数$f(\bm{x}),\;(\bm{x}\coloneqq[x_1,\cdots,x_n]^\top)$の点$\bm{a}\coloneqq[a_1,\cdots,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
+					$n$変数関数$f(\bm{x}),\;(\bm{x}\coloneqq[x_1,\dotsc,x_n]^\top)$の点$\bm{a}\coloneqq[a_1,\dotsc,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					$\nabla f(\bm{a})\neq\bm{0}$だから$f_{x_1}(\bm{a}),\cdots,f_{x_n}(\bm{a})$のうち少なくとも1つは0でない。
+					$\nabla f(\bm{a})\neq\bm{0}$だから$f_{x_1}(\bm{a}),\dotsc,f_{x_n}(\bm{a})$のうち少なくとも1つは0でない。
 					一般性を失わずに$f_{x_n}(\bm{a})\neq 0$であるとする(変数の添字をそのように付け替えれば良い)。
-					このとき陰関数定理より点$\bm{a}'\coloneqq[a_1,\cdots,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\cdots,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
+					このとき陰関数定理より点$\bm{a}'\coloneqq[a_1,\dotsc,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\dotsc,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
 					$n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
 					\[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
 					であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
-					\[ W \coloneqq \Span{\set*{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
-					のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\cdots,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
+					\[ W \coloneqq \Span{\set*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
+					のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
 				\begin{proof}
@@ -761,29 +761,29 @@
 				\quad\par
 				$n=1$のときは1変数関数の逆関数定理より従う。$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
 				\par
-				$F = [f_1,\cdots,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneqq [x_1,\cdots,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
+				$F = [f_1,\dotsc,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneqq [x_1,\dotsc,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
 				\par
 				$J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
 				一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
 				この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
 				\par
-				$\fhat_i(\xhat) \coloneqq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneqq [\fhat_i(\xhat),\cdots,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
+				$\fhat_i(\xhat) \coloneqq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneqq [\fhat_i(\xhat),\dotsc,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
 				帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
 				すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
 				\par
 				\[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
-				\[ \text{where}\quad \bm{p}_j \coloneqq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m+1),\;\lambda_j \coloneqq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\cdots,m) \]
+				\[ \text{where}\quad \bm{p}_j \coloneqq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m+1),\;\lambda_j \coloneqq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m) \]
 				行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが、$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから、結局次のようになる。
 				\begin{align*}
-					|J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\cdots,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\cdots,\bm{p}_m\right| \\
-					&= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\left|\bm{p}_1,\cdots,\bm{p}_{i-1},\bm{p}_{i+1},\cdots,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}\right|
+					|J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\dotsc,\bm{p}_m\right| \\
+					&= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}\right|
 				\end{align*}
 				ここで
 				\[ \lambda_i = -\frac{\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})} \]
 				であることと$(-1)^{m-i} = (-1)^{m+i}$に注意して
 				\begin{align*}
 					J_{\Fhat}(\ahat)| &= \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}\left[\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})|\matPart{J_F(\bm{a})}{1}{m}{1}{m}|\right. \\
-					&+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\cdots\bm{p}_{i-1},\bm{p}_{i+1},\cdots,\bm{p}_{m+1}\right|\right]
+					&+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\cdots\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}\right|\right]
 				\end{align*}
 				上式の$[\;]$内は$|J_F(\bm{a})|$の第$m$行に関する余因子展開と等しいので
 				\[ |J_{\Fhat}(\ahat)| = \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}|J_F(\bm{a})| \neq 0 \]
@@ -905,7 +905,7 @@
 					$\mLebO{A}=0$より、任意の$\varepsilon>0$に対してある直方体集合$R=\bigcup_{n=1}^\infty E_n$が存在して$A\subset R,\;|R|<\varepsilon/2$を満たす。
 					任意の直方体$r$に対して、その中心を保ったまま$k$倍に相似拡大した直方体を$kr$と書くことにする。
 					$\bigcup_{n=1}^\infty \textrm{Int}(2E_n)$は$A$の開被覆であり、$A$は$\realNumbers^n$の有界閉集合なのでコンパクトであるから、ある$N\in\naturalNumbers$が存在して$A\subset \bigcup_{n=1}^N \textrm{Int}(2E_n)$となる。
-					$\bigcup_{n=1}^N \textrm{Int}(2E_n)$を包含する十分大きな直方体$B$を考え、$2E_n\;(n=1,\cdots,N)$を非交差的になるように適当に分割した直方体群を全て要素に持つような$B$の分割$\Delta$に対して$S(A,\Delta) \leq 2|R| <\varepsilon$となるから$\mJo{A}<\varepsilon$となる。
+					$\bigcup_{n=1}^N \textrm{Int}(2E_n)$を包含する十分大きな直方体$B$を考え、$2E_n\;(n=1,\dotsc,N)$を非交差的になるように適当に分割した直方体群を全て要素に持つような$B$の分割$\Delta$に対して$S(A,\Delta) \leq 2|R| <\varepsilon$となるから$\mJo{A}<\varepsilon$となる。
 				\end{proof}
 			\subsection{\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}とする。任意の直方体\texorpdfstring{$E$}{E}に対して\texorpdfstring{$\mLebO{A\cap E} + \mLebO{A^\complement\cap E} = \mLebO{E} \iff$}{mLo(A∩E) + mLo(A\string^C E) = mLo(E) ⇔}任意の\texorpdfstring{$B\subset\realNumbers^n$}{B⊂R\string^n}に対して\texorpdfstring{$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} = \mLebO{B}$}{mLebo(A∩B) + mLo(A\string^C ∩B)}}
 				\begin{proof}
@@ -945,7 +945,7 @@
 						&= \mLebO{B} \quad(\because A_1\text{は可測})
 					\end{align*}
 				\end{proof}
-			\subsection{系: \texorpdfstring{$A_1,\cdots,A_n\subset\realNumbers^n$}{A1,...,An⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2\cup\cdots\cup A_n$}{A1,...,Anの和集合}もLebesgue可測}
+			\subsection{系: \texorpdfstring{$A_1,\dotsc,A_n\subset\realNumbers^n$}{A1,...,An⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2\cup\cdots\cup A_n$}{A1,...,Anの和集合}もLebesgue可測}
 				\begin{proof}
 					直前の定理を繰り返し用いる。
 				\end{proof}
@@ -963,7 +963,7 @@
 					\[ \mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2} \]
 				\end{proof}
 			\subsection{系: Lebesgue測度の有限加法性}
-				Lebesgue可測集合$A_1,\cdots,A_n\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^n A_i} = \sum_{i=1}^n \mLeb{A_i}$
+				Lebesgue可測集合$A_1,\dotsc,A_n\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^n A_i} = \sum_{i=1}^n \mLeb{A_i}$
 				\begin{proof}
 					直前の定理を繰り返し用いる。
 				\end{proof}
@@ -1001,10 +1001,10 @@
 				この点がJordan測度とLebesgue測度の違いを生んでいると思う。
 		\section{包除原理}
 			{
-				\newcommand{\numset}{{\{1,\cdots,n\}}}
+				\newcommand{\numset}{{\{1,\dotsc,n\}}}
 				\begin{shadebox}
 					測度空間$(S,\mathcal{M},\mu)$を考える。
-					任意の$A_1,\cdots,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
+					任意の$A_1,\dotsc,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
 					\begin{align*}
 						\mu(A_1\cup\cdots\cup A_n) &= \mu(A_1)+\cdots +\mu(A_n) \\
 						&- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \cdots - \mu(A_{n-1}\cap A_n) \\
@@ -1031,13 +1031,13 @@
 					まず$x\notin U\Rightarrow c(x)=0$は明らか。
 					各$x\in U$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
 					\begin{center}
-						「$x$は$m(x)$個の集合$A_{i_1},\cdots,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
+						「$x$は$m(x)$個の集合$A_{i_1},\dotsc,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
 					\end{center}
 					従って、$c(x)$の$\sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
 					\[ c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}} (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x} \]
 					上式の$\ind{\bigcap_{i\in I}A_i}{x}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから、$c(x)$はさらに次のように書き直される。
 					\begin{align*}
-						c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\cdots,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
+						c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
 						&= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
 						&= -\left((1-1)^{m(x)} - 1\right) = 1
 					\end{align*}
@@ -1085,14 +1085,14 @@
 				\quad\par
 				$F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
 				$R = [a_1,b_1]\times\cdots\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
-				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\cdots,m,\;d=1,\cdots,n)$とし、各小超直方体を$R_{i_1,\cdots,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\cdots\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
+				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし、各小超直方体を$R_{i_1,\dotsc,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\cdots\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
 				$R$の対角線の長さを$L = \sqrt{\sum_{d=1}^n (b_d-a_d)^2}$としておく。
 				$C$は面積確定で面積が0であるから、任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し、$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
-				\[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset} |R_{i_1,\cdots,i_m}| = \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
-				各$R_{i_1,\cdots,i_n}$の対角線の長さは$L/m$であり、$F$がLipschitz連続だから各$R_{i_1,\cdots,i_n}$について、その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
-				つまり各$F(R_{i_1,\cdots,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\cdots,i_n}$で覆うことができる。
-				よって$F(C)$は$\set*{R'_{i_1,\cdots,i_n}}{R_{i_1,\cdots,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
-				\[ \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} |R'_{i_1,\cdots,i_n}| \leq \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
+				\[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset} |R_{i_1,\dotsc,i_m}| = \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
+				各$R_{i_1,\dotsc,i_n}$の対角線の長さは$L/m$であり、$F$がLipschitz連続だから各$R_{i_1,\dotsc,i_n}$について、その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
+				つまり各$F(R_{i_1,\dotsc,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\dotsc,i_n}$で覆うことができる。
+				よって$F(C)$は$\set*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
+				\[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
 			\end{proof}
 		\section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integ{-\infty}{\infty}{f(x)}{x},\;\integ{-\infty}{\infty}{g(x)}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
 			\begin{proof}
@@ -1141,7 +1141,7 @@
 			\end{proof}
 	\chapter{線積分}
 		\section{定義}
-			$\realNumbers^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\cdots,n)$軸方向の線積分を以下のようにして定義する。
+			$\realNumbers^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\dotsc,n)$軸方向の線積分を以下のようにして定義する。
 			\par
 			$C$上にその向きに沿って$n+1$個の分点\quad$\text{始点} = P_0, P_1, \cdots, P_n = \text{終点}$\quad をとる。
 			添字の意味で隣接する2点$P_{i-1},P_i$は重ならないようにする。さらに添字の順番が曲線の向きと逆行しないようにする。
@@ -1151,7 +1151,7 @@
 			級数$S(f,\Delta,\{\bm{\xi}_i\}) \coloneqq \sum_{i=1}^n f(\bm{\xi}_i)(\Delta x_d)_i$を考え、これを$f$の$\Delta, \{\bm{\xi}_i\}$に関する\textbf{Riemann和}と呼ぶ。
 			分割を任意のやり方で細かくして$|\Delta|\to 0$としたときに$S(f,\Delta,\{\bm{\xi}\})$が収束するとき、これを$\integ{C}{}{f(\bm{x})}{x_d}$と表し、\textbf{$x_d$方向の線積分}という。
 		\section{計算法}
-			$f$が$C$に関して線積分可能であるとし、パラメータ$t$を用いて$\bm{x}=\bm{\phi}(t)=[\phi_1(t),\cdots,\phi_n(t)]^\top,\; \bm{\phi} \in C^1(\realNumbers\to\realNumbers^n),\;t:a\to b$と表せる場合は次が成り立つ。
+			$f$が$C$に関して線積分可能であるとし、パラメータ$t$を用いて$\bm{x}=\bm{\phi}(t)=[\phi_1(t),\dotsc,\phi_n(t)]^\top,\; \bm{\phi} \in C^1(\realNumbers\to\realNumbers^n),\;t:a\to b$と表せる場合は次が成り立つ。
 			\[ \integ{C}{}{f(\bm{x})}{x_d} = \integ{a}{b}{f(\bm{\phi}(t))\phi_d'(t)}{t} \]
 			その理由を以下で説明する。
 			\par
@@ -1210,9 +1210,9 @@
 			\end{proof}
 		\section{多変量Beta関数}
 			\begin{shadebox}
-				$ \bm{\alpha} = [\alpha_1,\cdots,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
+				$ \bm{\alpha} = [\alpha_1,\dotsc,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
 				\begin{align*}
-					B(\bm{\alpha}) &\coloneqq \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega \coloneqq \set*{[x_1,\cdots,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
+					B(\bm{\alpha}) &\coloneqq \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega \coloneqq \set*{[x_1,\dotsc,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
 					&= \integ{x_1=0}{1}{\integ{x_2=0}{1-x_1}{\cdots\integ{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{x_{n-1}}\cdots}{x_2}}{x_1}
 				\end{align*}
 			\end{shadebox}
@@ -1239,7 +1239,7 @@
 					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{\integ{y_1=0}{y_n}{\cdots\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} e^{-y_n}|P|^{-1}}{y_{n-1}}\cdots}{y_1}}{y_n} \\
 					&= \integ{y_n=0}{\infty}{e^{-y_n}\integ{y_1=0}{y_n}{\cdots\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{y_{n-1}}\cdots}{y_1}}{y_n}
 				\end{align*}
-				ここで$y_i = z_iy_n\;(i=1,\cdots,n-1)$と変数変換すると
+				ここで$y_i = z_iy_n\;(i=1,\dotsc,n-1)$と変数変換すると
 				\begin{align*}
 					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{y_n^{\left(\sum_{i=1}^n \alpha_i-1\right)}e^{-y_n}}{y_n}\integ{z_1=0}{1}{\cdots\integ{z_{n-1}=0}{1-\sum_{i=1}^{n-2}z_i}{\prod_{i=1}^{n-1}z_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-1} z_i \right)^{\alpha_n-1}}{z_{n-1}}\cdots}{z_1} \\
 					&= \Gamma\left(\sum_{i=1}^n \alpha_i\right)B(\bm{\alpha})
@@ -1319,11 +1319,11 @@
 			\label{重積分の微分}
 			\begin{shadebox}
 				$\omega>0$とする。
-				\[\Omega\coloneqq\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+\coloneqq\{(x_1,\cdots,x_n)|x_1,\cdots,x_n\geq 0, x_1+\cdots+x_n = \omega\} \subset \Omega\]
-				$f_1(x),\cdots,f_n(x)$を$\{x|x\geq 0\}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
+				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\cdots+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				$f_1(x),\dotsc,f_n(x)$を$\{x|x\geq 0\}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
-				要するに、領域$x_1,\cdots,x_n\geq 0$の超平面$x_1+\cdots+x_n=\omega$の原点側の部分における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは領域$x_1,\cdots,x_n\geq 0$と超平面の共通部分上での積分に等しい。\\
+				要するに、領域$x_1,\dotsc,x_n\geq 0$の超平面$x_1+\cdots+x_n=\omega$の原点側の部分における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは領域$x_1,\dotsc,x_n\geq 0$と超平面の共通部分上での積分に等しい。\\
 				\\
 				\quad この定理は2つの独立な非負の確率変数の和の確率密度関数を計算する時に役立つ。
 			\end{shadebox}
@@ -1361,7 +1361,7 @@
 				これと$\lim_{\domega\to 0}g_2(\omega,x_1,\theta_2)=0$であり、かつ$\int_{x_1=0}^\omega f_1(x_1)f_2(\theta_2)\d{x_1}$が有界であることから
 				\[\lim_{\domega\to 0}\frac{h_{22}(\omega,\domega)}{\domega} = 0\]
 				となるので、結局$h_{21}(\omega,\domega)$だけを考えれば良い。
-				同様の議論を繰り返すと、結局$h_{ij}(\omega,\domega)\quad((i,j)\in\{1,\cdots,n-1\}\times\{1,2\})$に対して$\lim_{\domega\to 0}\frac{h_{i2}(\omega,\domega)}{\domega}=0$であり、残る項は
+				同様の議論を繰り返すと、結局$h_{ij}(\omega,\domega)\quad((i,j)\in\{1,\dotsc,n-1\}\times\{1,2\})$に対して$\lim_{\domega\to 0}\frac{h_{i2}(\omega,\domega)}{\domega}=0$であり、残る項は
 				\begin{align*}
 					&\quad h_{n-1,1}(\omega,\domega) \\
 					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\cdots-x_{n-2}}f_{n-1}(x_{n-1}) \\
@@ -1386,9 +1386,9 @@
 		}
 			\label{重積分の微分の系}
 			\begin{shadebox}
-				\[\Omega\coloneqq\{(x_1,\cdots,x_n)|x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+\coloneqq\{(x_1,\cdots,x_n)|x_1+\cdots+x_n = \omega\} \subset \Omega\]
-				$f_1(x),\cdots,f_n(x)$を$\mathbb{R}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
+				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1+\cdots+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				$f_1(x),\dotsc,f_n(x)$を$\mathbb{R}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
 				要するに、超平面$x_1+\cdots+x_n=\omega$の負領域における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは超平面上での積分に等しい。\\
 				\\
@@ -1428,18 +1428,18 @@
 			\begin{shadebox}
 				$m,n\in\naturalNumbers$とする。
 				$f: \realNumbers^n \to \realNumbers$を狭義凸関数とする。
-				$\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\cdots,m)$とし、$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
+				$\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\dotsc,m)$とし、$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
 				$\bm{\lambda} \in \realNumbers^m$とし、Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) \coloneqq f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
-				$\bm{x}_0, \bm{\lambda}_0$を$F$の停留点、すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\cdots,m)$なる拘束条件の下、$\bm{x}_0$で最小値をとる。
+				$\bm{x}_0, \bm{\lambda}_0$を$F$の停留点、すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\dotsc,m)$なる拘束条件の下、$\bm{x}_0$で最小値をとる。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\bm{h} \in \realNumbers^n \neq \bm{0}$とし、$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\cdots,m)$を満たすとする。
+				$\bm{h} \in \realNumbers^n \neq \bm{0}$とし、$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\dotsc,m)$を満たすとする。
 				このとき$f(\bm{x}_0 + \bm{h}) > f(\bm{x}_0)$であることを示す。
 				\[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \nabla f(\bm{x}_0)^\top\bm{h} + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
 				ここに、$H(f,\bm{x}_0)$は$f$のHesse行列の$\bm{x}_0$に於ける値である。
 				$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$より$\nabla f(\bm{x}_0) = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)$である。
-				$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\cdots,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
+				$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\dotsc,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
 				\[ \nabla f(\bm{x}_0)^\top\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \bm{c}_i^\top\bm{h} = \bm{0} \]
 				である。よって
 				\[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]

@@ -63,7 +63,7 @@
                     &= b_0 + \sum_{i=1}^{n-1} (b_{i-1} + b_i)x^i + b_{n-1}x^n
                 \end{align*}
                 これよりまず$b_0 = a_0 = a_n = b_{n-1}$となる。
-                次に$x,x^2,\cdots,x^{n-1}$の項の係数に関しては$b_{i-1} + b_i = a_i = a_{n-i} = b_{n-1-i} + b_{n-i}$すなわち$b_i - b_{n-1-i} = b_{(n-1)-(i-1)} - b_{i-1}$となる。
+                次に$x,x^2,\dotsc,x^{n-1}$の項の係数に関しては$b_{i-1} + b_i = a_i = a_{n-i} = b_{n-1-i} + b_{n-i}$すなわち$b_i - b_{n-1-i} = b_{(n-1)-(i-1)} - b_{i-1}$となる。
                 既に見た$b_0 = b_{n-1}$から始めて帰納的に示せる。
             \end{proof}
         \section{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{}が既約多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{}も既約多項式である}
@@ -114,7 +114,7 @@
             \end{proof}
     \chapter{有限体}
         \section{素数位数の有限体の構成法}
-            $p$を素数とし、$S\coloneqq\{0,1,\cdots,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
+            $p$を素数とし、$S\coloneqq\{0,1,\dotsc,p-1\}$とする。$S$の任意の元$a,b$に対する演算$+'$と$*'$を次式で定義する。
             \begin{itemize}
                 \item $a+'b = (a+b)\% p$
                 \item $a*'b = (ab)\% p$
@@ -146,7 +146,7 @@
                 $p$を素数とする。
                 $\GaloisField{p}$上の既約多項式を任意に一つ選んで$P$とし、$m = \deg(P)$とする。
                 $\alpha$を$P$の任意の根とする。
-                $S \coloneqq \set*{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\cdots,a_{m-1} \in \GaloisField{p}}$とする。
+                $S \coloneqq \set*{\sum_{i=0}^{m-1}a_i\alpha^i}{a_0,\dotsc,a_{m-1} \in \GaloisField{p}}$とする。
                 $S$上の演算として$\GaloisField{p}$上の多項式に対する加法と乗法をそのまま使うと、$S$とこの演算の組が体を成すことを説明する。
                 \par
                 まず加法に関する結合法則, 単位元と唯一の逆元の存在、乗法に関する結合法則と単位元の存在、また、乗法が加法の上に分配的であることは$P(\alpha) = 0$であること, 素数位数の有限体, 多項式の除法の基本的な知識があれば明らかであろう。
@@ -181,7 +181,7 @@
                     \[ \therefore x^{p^n-1} -1 \equiv 0 \mod f_2(x) \]
                     ここに$g_2(x)$は$g_1(x)$の係数の順番を逆にしたものである。
                     \par
-                    次に$l=1,2,\cdots,p^n-2$について$f_2(x) \nmid x^l-1$を背理法で示す。
+                    次に$l=1,2,\dotsc,p^n-2$について$f_2(x) \nmid x^l-1$を背理法で示す。
                     仮にある$l$に対して$l-n$次多項式$h_1(x) \in \GaloisField{p}[x]$が存在して
                     \[ x^l - 1 = h_1(x)f_2(x) \]
                     が成り立つとする。
@@ -214,7 +214,7 @@
                     この周期が真に$p^n-1$であることを背理法で示す。
                     \par
                     仮に周期が$p^n-2$次以下であるとする、
-                    つまりある$l\in\{1,2,\cdots,p^n-2\}$と適当な$l-1$次以下の多項式$h(x) \in \GaloisField{p}[[x]]$が存在して
+                    つまりある$l\in\{1,2,\dotsc,p^n-2\}$と適当な$l-1$次以下の多項式$h(x) \in \GaloisField{p}[[x]]$が存在して
                     \[ f(x)^{-1} = -h(x) \sum_{i=0}^\infty x^{il} \]
                     が成り立つと仮定すると次式を得る。
                     \begin{align*}

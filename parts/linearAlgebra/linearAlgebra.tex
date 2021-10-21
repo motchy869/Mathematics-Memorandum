@@ -58,7 +58,7 @@
 			\begin{shadebox}
 				列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
 				\[
-				\sum_{i\in{i_1,i_2,\cdots,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\cdots\bm{a}_{i_l}]
+				\sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\cdots\bm{a}_{i_l}]
 				\begin{bmatrix}
 					\bm{b}_{i_i}\\
 					\bm{b}_{i_2}\\
@@ -73,7 +73,7 @@
 		\section{巡回行列の可換則}
 			\begin{proof}
 				\quad\par
-				$A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\cdots,c_{n-1},\;d_0,\cdots,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
+				$A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
 				まず
 				\[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
 				であり、添字に剰余を用いていることと総和の範囲に注意して、
@@ -148,7 +148,7 @@
 		\section{基底}
 			\subsection{基底変換}
 				\begin{shadebox}
-					$V$の基底$\{\bm{v}_1,\cdots,\bm{v}_n\}$に以下の操作を行っても依然として基底である。
+					$V$の基底$\{\bm{v}_1,\dotsc,\bm{v}_n\}$に以下の操作を行っても依然として基底である。
 					\begin{itemize}
 						\item $\bm{v}_i$を非零倍する
 						\item $\bm{v}_j$に$\bm{v}_i$の定数倍を加える
@@ -162,7 +162,7 @@
 				\subsubsection{三角関数ベクトルによる直交展開}
 					\begin{shadebox}
 						$\complexNumbers^n$を考える。$n$本のベクトルの集合
-						\[\left\{\bm{v}_1,\cdots,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
+						\[\left\{\bm{v}_1,\dotsc,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
 						は$\complexNumbers^n$の正規直交基底を成す。
 					\end{shadebox}
 					\begin{proof}
@@ -175,7 +175,7 @@
 		\section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
 			\subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}
 				\begin{shadebox}
-					$n$次元ベクトル空間$V$の基底$\bm{b}_1,\cdots,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\cdots+c_{ni}\bm{b}_n\;(i=1,\cdots,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\cdots,c_{ni}]^\top\;(i=1,\cdots,p)$が一次独立であることは同値。
+					$n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\cdots+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -184,7 +184,7 @@
 						\quad& d_1\bm{v}_1 + \cdots + d_p\bm{v}_p = \bm{0} \tag{1} \\
 						\iff& d_1(c_{11}\bm{b}_1 + \cdots + c_{n1}\bm{b}_n) + \cdots + d_p(c_{1p}\bm{b}_1 + \cdots + c_{np}\bm{b}_n) = \bm{0} \\
 						\iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \cdots + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
-						\iff& d_1 c_{11} + \cdots + d_p c_{1p} = 0,\cdots,d_1 c_{n1} + \cdots + d_p c_{np} = 0\;(\bm{b}_1,\cdots,\bm{b}_n\mathrm{は基底}) \\
+						\iff& d_1 c_{11} + \cdots + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \cdots + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
 						\iff&
 						\begin{bmatrix}
 							c_{11} & \cdots & c_{1p} \\
@@ -198,8 +198,8 @@
 						\end{bmatrix}
 						=\bm{0}_n \tag{2}
 					\end{align*}
-					が成り立つから、$\bm{v}_1,\cdots,\bm{v}_p$が一次独立なら(1)より$d_1=\cdots=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$[c_{1i},\cdots,c_{ni}]^\top\;(i=1,\cdots,p)$が一次独立であることになる。
-					逆に$[c_{1i},\cdots,c_{ni}]^\top\;(i=1,\cdots,p)$が一次独立なら(2)より$d_1=\cdots=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$\bm{v}_1,\cdots,\bm{v}_p$が一次独立であることになる。
+					が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\cdots=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
+					逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\cdots=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
 				\end{proof}
 		\section{諸定理}
 			\subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
@@ -218,7 +218,7 @@
 				\end{proof}
 			\subsection{\texorpdfstring{$V_i \subseteq W_i,\;\bigoplus_{i=1}^n {W_i} = \bigoplus_{i=1}^n {V_i}\quad\Rightarrow V_i=W_i$}{Vi⊆Wi, V1⊕...⊕Vn = W1⊕...⊕Wn ⇒ Vi=Wi}}
 				\begin{shadebox}
-					\[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\cdots,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\cdots,n)\]
+					\[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\dotsc,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\dotsc,n)\]
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -239,26 +239,26 @@
 					\end{equation*}
 					よって$\vx\in V_i$
 				\end{proof}
-			\subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\cdots,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\cdots,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
+			\subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
 				\label{subsec:一次独立なベクトルの、独立集合族としての性質}
 				\begin{shadebox}
-					$V$を線形ベクトル空間とし、$\bm{v}_1,\cdots,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k$の一次結合で表せないことと同値である。
+					$V$を線形ベクトル空間とし、$\bm{v}_1,\dotsc,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことと同値である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					$\bm{v}_1,\cdots,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
-					逆に$\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k$の一次結合で表せないとする。
-					このとき$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\cdots,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
-					よって$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\cdots,\bm{v}_k$は一次独立であるから$c_1=\cdots c_k=0$である。
-					すなわち$c_1=\cdots=c_k=c=0$なので$\bm{v}_1,\cdots,\bm{v}_k,\bm{v}$は一次独立である。
+					$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
+					逆に$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないとする。
+					このとき$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
+					よって$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\cdots c_k=0$である。
+					すなわち$c_1=\cdots=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
 				\end{proof}
-			\subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\cdots,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\cdots,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\cdots,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
+			\subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
 				\begin{shadebox}
-					線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\cdots,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\cdots,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次独立である。
+					線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次独立である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\cdots,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\cdots,\bm{w}_l$の一次結合で表せる。
+					背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\dotsc,\bm{w}_l$の一次結合で表せる。
 					よって$A_v$は$l$個の一次独立なベクトルの一次結合で表された$k>l$個以上のベクトルの集合なので一次従属であるが、これは$A_v$の一次独立性の仮定に矛盾する。
 				\end{proof}
 		\section{諸注意}
@@ -267,7 +267,7 @@
 				\begin{proof}
 					例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
 				\end{proof}
-			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\cdots,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
+			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
 				\begin{proof}
 					\quad\par
 					例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
@@ -286,7 +286,7 @@
 	\chapter{線形写像}
 		\section{表記の規則}
 			\subsection{一般のベクトルを要素とする配列と行列の積}
-				$\bm{v}_1,\cdots,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
+				$\bm{v}_1,\dotsc,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
 				これと$m\times n$行列$A=[a_{ij}]_{m\times n}$, $n\times m$行列$B=[b_{ij}]_{n\times m}$に対して次のように演算を定義する。
 				\[
 					A
@@ -301,10 +301,10 @@
 						\sum_{j=1}^n a_{mj}\bm{v}_j
 					\end{bmatrix},
 					\qquad
-					[\bm{v}_1,\cdots,\bm{v}_n]B \coloneqq
+					[\bm{v}_1,\dotsc,\bm{v}_n]B \coloneqq
 					\left[\sum_{i=1}^n b_{i1}\bm{v}_i, \cdots, \sum_{i=1}^n b_{im}\bm{v}_i \right]
 				\]
-				これは$\bm{v}_1,\cdots,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
+				これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
 			\subsection{一般のベクトルを要素とする行列同士の積}
 				ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して、
 				これらを要素とする行列$A\coloneqq[\bm{a}_{ij}]_{l\times m},\;B\coloneqq[\bm{b}_{ij}]_{m\times n}$の積$C$を
@@ -339,11 +339,11 @@
 				$f$は全射であったから$\Img{f}=W$であるので$\dim(\Img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
 				(別証)
 				\par
-				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\cdots\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\cdots,\bm{v}_n$が存在して
-				$f(\bm{v}_i)=\bm{w}_i\;(i=1,\cdots,n)$を満たす。
+				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\cdots\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
+				$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
 				ここで$c_1\bm{v}_1 + \cdots + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \cdots + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \cdots + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \cdots + c_n\bm{w}_n$となる。
 				$\{\bm{w}_1,\cdots\bm{w}_n\}$は$W$の基底であったから$c_1=\cdots=c_n=0$である。
-				よって$\{\bm{v}_1,\cdots,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
+				よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
 				\par
 				$\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
 				$\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\cdots+c_n\bm{v}_n$とすると、
@@ -354,20 +354,20 @@
 		\section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
 			\begin{proof}
 				\quad\par
-				$n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\cdots,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\cdots,\bm{w}_n\}$を$W$の基底とする。
-				写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\cdots,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
+				$n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
+				写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
 				さらに単射であることが次のようにして確かめられる。
 				\par
 				$\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
-				$\bm{x},\bm{y}$を基底で展開して$\bm{x}=\sum_{i=1}^n x_i\bm{v}_i, \bm{y}=\sum_{i=1}^n y_i\bm{v}_i$とすると$\bm{x}=\sum_{i=1}^n x_i\bm{w}_i = \bm{y}=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\bm{x}=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが、$\{\bm{w}_1,\cdots,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\cdots,n)$であるので$\bm{x}=\bm{y}$である。直前の定理より$f$は全射でもあるから全単射である。
+				$\bm{x},\bm{y}$を基底で展開して$\bm{x}=\sum_{i=1}^n x_i\bm{v}_i, \bm{y}=\sum_{i=1}^n y_i\bm{v}_i$とすると$\bm{x}=\sum_{i=1}^n x_i\bm{w}_i = \bm{y}=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\bm{x}=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\dotsc,n)$であるので$\bm{x}=\bm{y}$である。直前の定理より$f$は全射でもあるから全単射である。
 			\end{proof}
 		\section{不変部分空間と表現行列}
 			\label{不変部分空間と表現行列}
 			\begin{shadebox}
-				$A\in\field^{n\times n},\quad W_1,\cdots,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\cdots\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
-				$\{\bm{w}_{i1},\cdots,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\cdots,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\cdots,\Phi_m]$\\
+				$A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\cdots\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
+				$\{\bm{w}_{i1},\dotsc,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\dotsc,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\dotsc,\Phi_m]$\\
 				以上の設定の下で、次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
-				\[A = \Phi\;\diag{A_1,\cdots,A_m}\Phi^{-1}\]
+				\[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
 				$A_i$は次式で得られる。
 				\[A_i = \left({\Phi_i}^\top\Phi_i\right)^{-1}{\Phi_i}^\top A\Phi_i\]
 				特に$W_i$の基底を正規直交基底にしておけば、より簡単に次式で得られる。
@@ -375,13 +375,13 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$A = \Phi\;\diag{A_1,\cdots,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
+				$A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
 				$\Phi$は$\field$から来る入力ベクトルを$A$の不変部分空間の成分に分解する変換器になっている。
 				\par
 				$A_i$の構成法を示す。一般の場合を示すのは別に難しくないが、式が煩雑になって無意味に難解になるので、具体的な場合を示す。
 				例えば$n=4, m=2, d_1=d_2=2$としてみる。この場合の証明が理解できれば一般の証明は楽勝である。
 				まず
-				\[A = \Phi\;\diag{A_1,\cdots,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
+				\[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
 				とおく。まず$A_1$を求めてみる。定理\ref{逆行列にその構成縦ベクトルを掛ける}からヒントを得て両辺に$[\bm{w}_1,\bm{w}_2]$を右から掛けて
 				\begin{align*}
 					A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}
@@ -411,7 +411,7 @@
 			\end{proof}
 		\subsection{正規直交基底間での座標変換は直交変換}
 			\begin{shadebox}
-				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\cdots\bm{u}_n\},\;\{\bm{v}_1,\cdots,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
+				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\cdots\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
 				すなわち座標変換行列$P \coloneqq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
 			\end{shadebox}
 			\begin{proof}
@@ -425,7 +425,7 @@
 	\chapter{双対空間}
 		\section{基底変換と座標変換の関係}
 			\begin{shadebox}
-				$V$を$n$次元ベクトル空間とし($\realNumbers^n$や$\complexNumbers^n$とは限らないことに注意)、$\{\bm{v}_1,\cdots,\bm{v}_n\}$と$\{{\bm{v}_1}',\cdots,{\bm{v}_n}'\}$を$V$の基底とする。
+				$V$を$n$次元ベクトル空間とし($\realNumbers^n$や$\complexNumbers^n$とは限らないことに注意)、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$と$\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$を$V$の基底とする。
 				これらが$n$次正則行列$A$により次の関係式に従うとする。
 				\[
 					\begin{bmatrix}
@@ -440,14 +440,14 @@
 						\bm{v}_n
 					\end{bmatrix}
 				\]
-				$\{\bm{v}_1,\cdots,\bm{v}_n\},\;\{{\bm{v}_1}',\cdots,{\bm{v}_n}'\}$の双対基底をそれぞれ$\{\bm{v}^1,\cdots,\bm{v}^n\}\,\{{\bm{v}^1}',\cdots,{\bm{v}^n}'\}$とし、
-				$\underline{\bm{x}} \coloneqq [x_1,\cdots,x_n]^\top,\;\underline{\bm{x}}' \coloneqq [{x_1}',\cdots,{x_n}']^\top$とする。
-				このとき$[{\bm{v}^1}',\cdots,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\cdots,\bm{v}^n]\underline{\bm{x}}$であれば$\underline{\bm{x}}' = A\underline{\bm{x}}$である。
+				$\{\bm{v}_1,\dotsc,\bm{v}_n\},\;\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$の双対基底をそれぞれ$\{\bm{v}^1,\dotsc,\bm{v}^n\}\,\{{\bm{v}^1}',\dotsc,{\bm{v}^n}'\}$とし、
+				$\underline{\bm{x}} \coloneqq [x_1,\dotsc,x_n]^\top,\;\underline{\bm{x}}' \coloneqq [{x_1}',\dotsc,{x_n}']^\top$とする。
+				このとき$[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$であれば$\underline{\bm{x}}' = A\underline{\bm{x}}$である。
 				すなわち、双対空間での座標変換と元の空間の基底間の線形変換が同じ形になる。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$[{\bm{v}^1}',\cdots,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\cdots,\bm{v}^n]\underline{\bm{x}}$より
+				$[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$より
 				\begin{align*}
 					\underline{\bm{x}}' &= 
 					\begin{bmatrix}
@@ -455,13 +455,13 @@
 						\vdots \\
 						{\bm{v}_n}'
 					\end{bmatrix}
-					[\bm{v}^1,\cdots,\bm{v}^n]\underline{\bm{x}} = A
+					[\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A
 					\begin{bmatrix}
 						\bm{v}_1 \\
 						\vdots \\
 						\bm{v}_n
 					\end{bmatrix}
-					[\bm{v}^1,\cdots,\bm{v}^n]\underline{\bm{x}} = A I_3\underline{\bm{x}} = A\underline{\bm{x}}
+					[\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A I_3\underline{\bm{x}} = A\underline{\bm{x}}
 				\end{align*}
 			\end{proof}
 	\chapter{行列式}
@@ -570,7 +570,7 @@
 						I_n & \bm{v} \\
 						\bm{0}_n^\top & -\norm{\bm{v}}_2^2
 					\end{bmatrix}
-					\quad\left(\text{最下行から}i\text{行目}\times v_i\;(i=1,\cdots,n)\text{をそれぞれ引いた}\right) \\
+					\quad\left(\text{最下行から}i\text{行目}\times v_i\;(i=1,\dotsc,n)\text{をそれぞれ引いた}\right) \\
 					&= 1 - \norm{\bm{v}}_2^2
 				\end{align*}
 			\end{proof}
@@ -591,23 +591,23 @@
 				\[ |A'| = \sum_{\tilde\sigma\in S_n} \sgn{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] = |A| \]
 			\end{proof}
 	\chapter{逆行列}
-		\section{\texorpdfstring{$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}{[φ1,...,φn]\string^(-1)φi = ei}}
+		\section{\texorpdfstring{$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}{[φ1,...,φn]\string^(-1)φi = ei}}
 			\label{逆行列にその構成縦ベクトルを掛ける}
 			\begin{shadebox}
-				$\bm{\phi}_1,\cdots,\bm{\phi}_n\in\field^n$が一次独立であるとき、$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
+				$\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$が一次独立であるとき、$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\Phi \coloneqq [\bm{\phi}_1,\cdots,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
-				\[[\bm{e}_1,\cdots,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\cdots,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\cdots,\Phi^{-1}\bm{\phi}_n]\]
+				$\Phi \coloneqq [\bm{\phi}_1,\dotsc,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
+				\[[\bm{e}_1,\dotsc,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\dotsc,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\dotsc,\Phi^{-1}\bm{\phi}_n]\]
 			\end{proof}
 			この定理から直ちに次の系が得られる。
 		\section{(系)結合係数の抽出}
 			\begin{shadebox}
-				$\bm{\phi}_1,\cdots,\bm{\phi}_n\in\field^n$は一次独立であるとする。
-				このとき、任意に与えられたベクトル$\bm{x} = \sum_{i=1}^{n}{c_i\phi_i}\in\field^n$ ($\bm{\phi}_1,\cdots,\bm{\phi}_n$は$\field^n$の基底だから$\bm{x}$は必ずこのように分解できる!)から$c_1,\cdots c_n$を抽出するには左から$[\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}$を掛ければよい。
+				$\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$は一次独立であるとする。
+				このとき、任意に与えられたベクトル$\bm{x} = \sum_{i=1}^{n}{c_i\phi_i}\in\field^n$ ($\bm{\phi}_1,\dotsc,\bm{\phi}_n$は$\field^n$の基底だから$\bm{x}$は必ずこのように分解できる!)から$c_1,\cdots c_n$を抽出するには左から$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}$を掛ければよい。
 				詳しく言うと、次式が成り立つ。
-				\[[c_1,\dots,c_n]^\top = [\bm{\phi}_1,\cdots,\bm{\phi}_n]^{-1}\bm{x}\]
+				\[[c_1,\dots,c_n]^\top = [\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{x}\]
 			\end{shadebox}
 		\section{上(下)三角行列が逆行列をもてば、それも上(下)三角行列である}
 			\begin{proof}
@@ -617,7 +617,7 @@
 				$A$が下三角行列である場合は、$A^\top$について簡約化による逆行列の計算を行えば$(A^\top)^{-1} = (A^{-1})^\top$が上三角行列になり、$A^{-1}$は下三角行列になる。
 			\end{proof}
 		\section{1列(or 1行)だけ置き換えた行列の逆行列}
-			$A=[\bm{a}_1,\cdots,\bm{a}_n]\in\complexNumbers^{n\times n}$を正則な行列とし、$c$列目を置き換えた行列$A'=[\bm{a}_1,\cdots,\bm{a}'_c,\cdots,\bm{a}_n]$も正則であるとする。
+			$A=[\bm{a}_1,\dotsc,\bm{a}_n]\in\complexNumbers^{n\times n}$を正則な行列とし、$c$列目を置き換えた行列$A'=[\bm{a}_1,\dotsc,\bm{a}'_c,\dotsc,\bm{a}_n]$も正則であるとする。
 			$A^{-1}$が既知であれば$A'^{-1}$を以下のようにして少ない手間で計算できる。
 			\par
 			まず$A^{-1}A'$は$c$列目以外は単位行列と同じである、次のような行列になる。
@@ -658,7 +658,7 @@
 				\end{bmatrix}
 			\]
 			そうすると$MA^{-1}A'=I_n$となるので$A'^{-1} = MA^{-1}$である。
-			要するに$A^{-1}\bm{a}'_c$より$p_1,\cdots,p_n$を計算して$A^{-1}$の第$c$行を$p_c$で割った後、第$i\neq c$行から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
+			要するに$A^{-1}\bm{a}'_c$より$p_1,\dotsc,p_n$を計算して$A^{-1}$の第$c$行を$p_c$で割った後、第$i\neq c$行から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
 			\newline\par
 			上と同様にして、1行だけ置き換えた行列の逆行列も、元の逆行列が既知であれば少ない手間で計算できる。
 			$
@@ -726,7 +726,7 @@
 			\]
 			そうすると
 			$A'A^{-1}M = I_n$となるので$A'^{-1} = A^{-1}M$である。
-			要するに$\bm{a}'_c A^{-1}$より$p_1,\cdots,p_n$を計算して$A^{-1}$の第$c$列を$p_c$で割った後、第$i\neq c$列から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
+			要するに$\bm{a}'_c A^{-1}$より$p_1,\dotsc,p_n$を計算して$A^{-1}$の第$c$列を$p_c$で割った後、第$i\neq c$列から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
 		\section{列(or 行)を入れ替えた行列の逆行列}
 			\begin{shadebox}
 				正方行列$A$の幾つかの列(行)を入れ替えた行列$A'$の逆行列は、$A^{-1}$の行(列)に対して同じ並べ替えを適用して得られる。
@@ -901,7 +901,7 @@
 			\begin{proof}
 				\quad\par
 				まず、$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
-				$A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\cdots,\bm{a}_m\}$は一次独立だから$A$はフルランク。
+				$A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
 			\end{proof}
 		\section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
 			次元定理を用いる証明
@@ -935,11 +935,11 @@
 				これを正規直交化したものを$\{\bm{p}_1,\bm{p}_2,\cdots\bm{p}_n\}$とする。
 				$\bm{p}_i\in\mathrm{span}[\bm{a}_1,\bm{a}_2,\cdots\bm{a}_n]$であるから
 				\[\bm{t}_i\in\field^n,\quad A\bm{t}_i=\bm{p}_i\]
-				なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\cdots,\bm{t}_n$は一次独立である。
+				なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n$は一次独立である。
 				よって
 				\begin{align*}
-					T &\coloneqq [\bm{t}_1,\bm{t}_2,\cdots,\bm{t}_n]\\
-					P &\coloneqq [\bm{p}_1,\bm{p}_2,\cdots,\bm{p}_n]
+					T &\coloneqq [\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n]\\
+					P &\coloneqq [\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n]
 				\end{align*}
 				とすれば
 				\[AT = P\quad(A = PT^{-1})\]
@@ -977,14 +977,14 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\Ker{A}$の基底を$\{\bm{x}_{r+1},\bm{x}_{r+2},\cdots,\bm{x}_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
-				これを含む$\field^n$の基底を$\{\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_r,\bm{x}_{r+1},\cdots,\bm{x}_n\}$とすると
-				\[\mathrm{span}[A\bm{x}_1,A\bm{x}_2,\cdots,A\bm{x}_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
-				である。$\bm{y}_i\coloneqq A\bm{x}_i\quad(i=1,2,\cdots,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_r,\bm{y}_{r+1},\cdots,\bm{y}_m\}$とすると
-				$T_x\coloneqq[\bm{x}_1,\bm{x}_2,\cdots,\bm{x}_n],\quad T_y\coloneqq[\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_m]$は正則であり、
+				$\Ker{A}$の基底を$\{\bm{x}_{r+1},\bm{x}_{r+2},\dotsc,\bm{x}_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
+				これを含む$\field^n$の基底を$\{\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_r,\bm{x}_{r+1},\dotsc,\bm{x}_n\}$とすると
+				\[\mathrm{span}[A\bm{x}_1,A\bm{x}_2,\dotsc,A\bm{x}_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
+				である。$\bm{y}_i\coloneqq A\bm{x}_i\quad(i=1,2,\dotsc,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\bm{y}_{r+1},\dotsc,\bm{y}_m\}$とすると
+				$T_x\coloneqq[\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_n],\quad T_y\coloneqq[\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m]$は正則であり、
 				\begin{align*}
-					AT_x &= [\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_r,\underbrace{\bm{0},\cdots,\bm{0}}_{n-r\mathrm{個}}]\\
-					&= [\bm{y}_1,\bm{y}_2,\cdots,\bm{y}_m][\bm{e}_1,\bm{e}_2,\cdots,\bm{e}_r,\underbrace{\bm{0},\cdots,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
+					AT_x &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\\
+					&= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m][\bm{e}_1,\bm{e}_2,\dotsc,\bm{e}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
 					&= T_y
 					\begin{array}{r cc l l}
 						\multicolumn{5}{c}{\vspace{1em}}\\
@@ -1017,20 +1017,20 @@
 		\section{優対角正方行列は正則}
 			\begin{proof}
 				\quad\par
-				$A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\cdots,x_n]^\top\in\complexNumbers^n$とおく。
+				$A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
 				$A\bm{x}$の第1成分の絶対値について
 				\begin{align*}
 					|a_{11}x_1 + \cdots a_{1n}x_n| &\geq ||a_{11}x_1| - |a_{12}x_2 + \cdots a_{1n}x_n|| \geq |a_{11}x_1| - |a_{12}x_2 + \cdots a_{1n}x_n| \\
 					& \geq |a_{11}||x_1| - \cdots - |a_{1n}||x_n|
 				\end{align*}
-				が成り立つが、ここで仮に$|x_1| > |x_2|,\cdots,|x_n|$とすると、$A$の優対角性から
+				が成り立つが、ここで仮に$|x_1| > |x_2|,\dotsc,|x_n|$とすると、$A$の優対角性から
 				\begin{align*}
 					|a_{11}||x_1| - \cdots - |a_{1n}||x_n| &> |a_{11}||x_1| - |a_{12}||x_1| - \cdots - |a_{1n}||x_1| \\
 					&= (|a_{11}| - |a_{12}| - \cdots - |a_{1n}|)|x_1| > 0 \tag{1}
 				\end{align*}
 				となり、$A\bm{x}=\bm{0}_n$に矛盾する。
-				故に$|x_1| \leq \max\{|x_1|,|x_2|,\cdots,|x_n|\}$である。
-				同様にして$A\bm{x}$の第$2,3,\cdots,n$成分の絶対値を考えることで$|x_i| \leq \max\{|x_j|\}\;(i,j\in\{1,\cdots,n\})$が示される。
+				故に$|x_1| \leq \max\{|x_1|,|x_2|,\dotsc,|x_n|\}$である。
+				同様にして$A\bm{x}$の第$2,3,\dotsc,n$成分の絶対値を考えることで$|x_i| \leq \max\{|x_j|\}\;(i,j\in\{1,\dotsc,n\})$が示される。
 				これは$|x_1|=\cdots=|x_n|=c,\;(c$は適当な非負数)に他ならない。
 				仮に$c>0$であるとすると式(1)より$|A\bm{x}\text{の第1成分}| > 0$となり、$A\bm{x}=0$に矛盾する。
 				故に$c=0$、つまり$\bm{x}=\bm{0}_n$である。
@@ -1067,11 +1067,11 @@
 			\subsection{相異なる固有値に対応する固有ベクトルは一次独立}
 				\label{相異なる固有値に対応する固有ベクトルは一次独立}
 				\begin{shadebox}
-					$A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\cdots,p)$に対応する固有ベクトルを$\bm{v}_i$とすると$\bm{v}_1,\cdots,\bm{v}_p$は一次独立である。
+					$A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\dotsc,p)$に対応する固有ベクトルを$\bm{v}_i$とすると$\bm{v}_1,\dotsc,\bm{v}_p$は一次独立である。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					$c_1,\cdots,c_p$を定数として
+					$c_1,\dotsc,c_p$を定数として
 					\[c_1\bm{v}_1 + \cdots + c_p\bm{v}_p = \bm{0}_n\]
 					とおいて両辺に左から$A$を掛けると
 					\[\lambda_1 c_1\bm{v}_1 + \cdots + \lambda_p c_p\bm{v}_p = \bm{0}_n\]
@@ -1083,7 +1083,7 @@
 					\end{align*}
 					を得る。これより
 					\[
-						[c_1\bm{v}_1,\cdots,c_p\bm{v}_p]
+						[c_1\bm{v}_1,\dotsc,c_p\bm{v}_p]
 						\begin{bmatrix}
 							1 & \lambda_1 & \cdots & {\lambda_1}^{p-1} \\
 							1 & \lambda_2 & \cdots & {\lambda_2}^{p-1} \\
@@ -1092,9 +1092,9 @@
 						\end{bmatrix}
 						= O_{n\times p}
 					\]
-					となるが、$\lambda_i\;(i=1,\cdots,p)$が相異なることより、上式の等号の左隣のヴァンデルモンド行列は正則だから
-					\[ [c_1\bm{v}_1,\cdots,c_p\bm{v}_p] = O_{n\times p} \]
-					となる。$\bm{v}_1,\cdots,\bm{v}_p\neq\bm{0}_n$より$c_1=\cdots c_p=0$である。
+					となるが、$\lambda_i\;(i=1,\dotsc,p)$が相異なることより、上式の等号の左隣のヴァンデルモンド行列は正則だから
+					\[ [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p] = O_{n\times p} \]
+					となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\cdots c_p=0$である。
 				\end{proof}
 			\subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
 				\begin{proof}
@@ -1108,8 +1108,8 @@
 							\lambda-a & (i=k)
 						\end{cases}
 					\]
-					$\{\bm{b}_1,\cdots,\bm{b}_n\}$が一次独立であることを示せば、$\left|\lambda I-A\right|\neq 0$が示せて、$\lambda$が固有値でないことが示せる。
-					$c_1,\cdots,c_n$を定数とし、$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと、第$i$成分に着目して
+					$\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば、$\left|\lambda I-A\right|\neq 0$が示せて、$\lambda$が固有値でないことが示せる。
+					$c_1,\dotsc,c_n$を定数とし、$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと、第$i$成分に着目して
 					\[0 = c_i(\lambda-a) - a\sum_{j\neq i}^{n}{c_j} = c_i\lambda - a\sum_{j=1}^{n}{c_j}\]
 					これと$\lambda\neq 0$より$c_1=\cdots=c_n$である。この値を$c$とおくと$c\lambda = anc$となり、$\lambda\neq an$より$c=0$である。
 				\end{proof}
@@ -1202,7 +1202,7 @@
 					$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
 					$H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\cdots\bm{u}_m^{2^{m-1}}$とし、固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\cdots\bm{v}_m^{2^{m-1}}$とする。
 					このとき次のことが成り立つ。\\
-					$i=1,\cdots,2^{m-1}$に対して					
+					$i=1,\dotsc,2^{m-1}$に対して					
 					\begin{equation}
 						\begin{bmatrix}
 							\bm{u}_m^i \\
@@ -1260,7 +1260,7 @@
 							\bm{u}_m^i \\
 							(-1+\sqrt{2})\bm{u}_m^i
 						\end{bmatrix}
-						\;(i=1,\cdots,2^{m-1})
+						\;(i=1,\dotsc,2^{m-1})
 					$
 					の一次結合と
 					$
@@ -1268,16 +1268,16 @@
 							(1-\sqrt{2})\bm{v}_m^i \\
 							\bm{v}_m^i
 						\end{bmatrix}
-						\;(i=1,\cdots,2^{m-1})
+						\;(i=1,\dotsc,2^{m-1})
 					$
 					の一次結合は一次独立である。
-					また、$\bm{u}_m^1,\cdots,\bm{u}_m^{2^{m-1}}$は$H_m$の固有ベクトルだから
+					また、$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$は$H_m$の固有ベクトルだから
 					$
 						\begin{bmatrix}
 							\bm{u}_m^i \\
 							(-1+\sqrt{2})\bm{u}_m^i
 						\end{bmatrix}
-						\;(i=1,\cdots,2^{m-1})
+						\;(i=1,\dotsc,2^{m-1})
 					$
 					は一次独立である。
 					\par
@@ -1309,8 +1309,8 @@
 				\end{proof}
 		\section{スペクトル写像定理}
 			\begin{shadebox}
-				$A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\cdots,\lambda_n$とし、$f(s)$を$s$の多項式とする。
-				このとき行列多項式$f(A)$の固有値は重複を含めて$f(\lambda_1),\cdots,f(\lambda_n)$となる。
+				$A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\dotsc,\lambda_n$とし、$f(s)$を$s$の多項式とする。
+				このとき行列多項式$f(A)$の固有値は重複を含めて$f(\lambda_1),\dotsc,f(\lambda_n)$となる。
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -1326,7 +1326,7 @@
 				定理\ref{上(下)三角行列のべき乗}より$U^k$は上三角行列であり、その第$i$対角成分は${\lambda_i}^k$であるから、上の$|\cdot|$の中身は上三角行列であり、その第$i$対角成分は$\lambda - \sum_{k=0}^{m}c_{k}{\lambda_i}^k = \lambda - f(\lambda_i)$である。
 				よって上の式は
 				\[\left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right| = \prod_{i=1}^{n}{(\lambda - f(\lambda_i))}\]
-				であるから$f(A)$の固有値が$f(\lambda_1),\cdots,f(\lambda_n)$であることがわかる。
+				であるから$f(A)$の固有値が$f(\lambda_1),\dotsc,f(\lambda_n)$であることがわかる。
 			\end{proof}
 		\section{対角化}
 			\subsection{正規行列\texorpdfstring{$\iff$}{⇔}ユニタリ行列で対角化可能}
@@ -1378,7 +1378,7 @@
 			\subsection{一般固有空間への直和分解}
 				\label{一般固有空間への分解}
 				\begin{shadebox}
-					$A\in\field^{n\times n}$の固有多項式が相異なる固有値$\lambda_1,\cdots,\lambda_p$に対して$\varphi_A(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\nu_i}}$となるとき、次が成り立つ。
+					$A\in\field^{n\times n}$の固有多項式が相異なる固有値$\lambda_1,\dotsc,\lambda_p$に対して$\varphi_A(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\nu_i}}$となるとき、次が成り立つ。
 					\[\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)},\quad \dim{F_A(\lambda_i)} = \nu_i\]
 				\end{shadebox}
 				\begin{proof}
@@ -1386,48 +1386,48 @@
 					Cayley-Hamiltonの定理と\cite{システム線形代数}補題2.2より最初の式\;$\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)}$\;が従う。
 					次に${\nu_i}' \coloneqq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
 					各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より、
-					$F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneqq [\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneqq [\Phi_i,\cdots,\Phi_p]\in\field^{n\times n}$とすれば、
-					次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\cdots,p)$が存在する。
-					\[A = \Phi\;\diag{A_1,\cdots,A_p}\Phi^{-1}\]
+					$F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneqq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneqq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば、
+					次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\dotsc,p)$が存在する。
+					\[A = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\]
 					\par
 					ここで下準備として$A_i$が唯一の固有値$\lambda_i$を持つことを示しておく。
 					まず固有値$\lambda_i$を持つことを示す。$\bm{x}\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り、$F_A(\lambda_i)$の基底で次のように展開する。
 					\[\bm{x} = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
 					これを上式に右から掛けて
 					\begin{align}
-						A\bm{x} &= \Phi\;\diag{A_1,\cdots,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\cdots,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
-						&= \Phi\;\diag{A_1,\cdots,A_p}[\underbrace{0,\cdots,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},c_1,\cdots,c_{{\nu_i}'},\underbrace{0,\cdots,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top \nonumber\\
+						A\bm{x} &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
+						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top \nonumber\\
 						&= \Phi\left[
 								\begin{array}{c}
 									\bm{0}_{{\nu_1}'}\\
 									\vdots\\
 									\bm{0}_{{\nu_{i-1}}'}\\
-									A_i[c_1,\cdots,c_{{\nu_i}}']^\top\\
+									A_i[c_1,\dotsc,c_{{\nu_i}}']^\top\\
 									\bm{0}_{{\nu_{i+1}}'}\\
 									\vdots\\
 									\bm{0}_{{\nu_p}'}\\
 								\end{array}
 							\right]\quad (\mathrm{※}\bm{0}_\nu\mathrm{は}\nu\mathrm{次元の0ベクトル})
 					\end{align}
-					ここで$[d_1,\cdots,d_{\nu_i}']^\top = A_i[c_1,\cdots,c_{{\nu_i}'}]^\top$とおくと
+					ここで$[d_1,\dotsc,d_{\nu_i}']^\top = A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$とおくと
 					\[A\bm{x} = (1) = \sum_{j=1}^{{\nu_i}'}{d_j\bm{\phi}_{ij}}\]
 					であるが、そもそも$A\bm{x} = \lambda_i\bm{x} = \sum_{j=1}^{{\nu_i}'}{\lambda_ic_j\bm{\phi}_{ij}}$であったから$d_j = \lambda_jc_j$となり、
-					$A_i[c_1,\cdots,c_{{\nu_i}'}]^\top = \lambda_i[c_1,\cdots,c_{{\nu_i}'}]^\top$となるから、$A_i$は固有値$\lambda_i$を持つことになる。
+					$A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top = \lambda_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$となるから、$A_i$は固有値$\lambda_i$を持つことになる。
 					\par
 					次に$A_i$の固有値が$\lambda_i$のみであることを背理法で示す。
-					$A_i$が固有値$\lambda'\notin\{\lambda_1,\cdots,\lambda_p\}$を持つと仮定し、$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\cdots,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
+					$A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し、$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
 					ベクトル$\bm{x}\in\field^n$を
-					\[\Phi^{-1}\bm{x} = [\underbrace{0,\cdots,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\cdots,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top\]
+					\[\Phi^{-1}\bm{x} = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top\]
 					すなわち
-					\[\bm{x} = \Phi[\underbrace{0,\cdots,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\cdots,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
-					で定めると$\bm{\phi}_{i1},\cdots,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので、まず次式が成り立つ。
+					\[\bm{x} = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
+					で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので、まず次式が成り立つ。
 					\begin{equation}
 						(A-\lambda_iI_n)^{\nu_i}\bm{x} = \bm{0}_n
 					\end{equation}
 					一方で
 					\begin{align*}
-						(A-\lambda_iI_n)\bm{x} &= A\bm{x} - \lambda_i\bm{x} = \Phi\;\diag{A_1,\cdots,A_p}\Phi^{-1}\bm{x} - \lambda_i\bm{x}\\
-						&= \Phi\;\diag{A_1,\cdots,A_p}[\underbrace{0,\cdots,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\cdots,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x}\\
+						(A-\lambda_iI_n)\bm{x} &= A\bm{x} - \lambda_i\bm{x} = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\bm{x} - \lambda_i\bm{x}\\
+						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x}\\
 						&= \Phi\left[
 							\begin{array}{c}
 								\bm{0}_{{\nu_1}'}\\
@@ -1449,7 +1449,7 @@
 								\bm{0}_{{\nu_p}'}\\
 							\end{array}
 						\right] - \lambda_i\bm{x}\\
-						&= \lambda'\Phi[\underbrace{0,\cdots,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\cdots,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x} = \lambda'\bm{x}-\lambda_i\bm{x}\\
+						&= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x} = \lambda'\bm{x}-\lambda_i\bm{x}\\
 						&= (\lambda'-\lambda_i)\bm{x}
 					\end{align*}
 					であるから
@@ -1623,7 +1623,7 @@
 				\par
 				$A$は正行列だから$a_{ij}>0$である。$\bm{x}$は固有ベクトルであるから$x_j$の少なくともどれか一つは非零である。
 				よって等号が成り立つとき$x_j$は全て同じ向きである。
-				言い換えれば、ある非零な複素数$z$と$b_1,\cdots,b_n\geq0$が存在して
+				言い換えれば、ある非零な複素数$z$と$b_1,\dotsc,b_n\geq0$が存在して
 				\[
 					\bm{x} = z
 					\begin{bmatrix}
@@ -1638,7 +1638,7 @@
 					\lambda zb_i &= \sum_{j=1}^{n}{a_{ij}zb_j}\\
 					\therefore\; \lambda b_i &= \sum_{j=1}^{n}{a_{ij}b_j}
 				\end{align*}
-				$b_1,\cdots,b_n$の少なくとも1つは正である。それを$b_k$とすると
+				$b_1,\dotsc,b_n$の少なくとも1つは正である。それを$b_k$とすると
 				\[\lambda = \frac{1}{b_k}\sum_{j=1}^{n}{a_{ij}b_j} > 0\]
 				これと$|\lambda|=\hat{\lambda}$より$\lambda=\hat{\lambda}$
 			\end{proof}
@@ -1657,7 +1657,7 @@
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					置換行列$\Pi$は基本置換行列$\Pi_1,\Pi_2,\cdots,\Pi_n$の積で表される。各$\Pi_i$は対称行列であるから
+					置換行列$\Pi$は基本置換行列$\Pi_1,\Pi_2,\dotsc,\Pi_n$の積で表される。各$\Pi_i$は対称行列であるから
 					\[\Pi^\top A\Pi = {\Pi_n}^\top\cdots{\Pi_1}^\top\;A\;\Pi_1\cdots\Pi_n = \Pi_n\cdots\Pi_1\;A\;\Pi_1\cdots\Pi_n\]
 					であり、明らかに行と列に同じ入れ替えを行っている。
 				\end{proof}
@@ -1701,23 +1701,23 @@
 		\section{正定Hermite対称行列の逆行列も正定}
 			\begin{proof}
 				\quad\par
-				$A\in\complexNumbers^{n\times n}$をHermite対称な正定行列とし、重複を含めた$n$個の固有値を$\lambda_1,\cdots,\lambda_n > 0$とする。
-				$A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\cdots,\lambda_n}P^*$と表せるので
-				$A^{-1} = P\diag{\lambda_1,\cdots,\lambda_n}^{-1}P^* = P\diag{1/\lambda_1,\cdots,1/\lambda_n}P^*$である。
+				$A\in\complexNumbers^{n\times n}$をHermite対称な正定行列とし、重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
+				$A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\dotsc,\lambda_n}P^*$と表せるので
+				$A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}P^* = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}P^*$である。
 				よって$A^{-1}$は対称で固有値が全て正なので正定である。
 			\end{proof}
 		\section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\bm{x}^\top A\bm{x}=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\bm{x}\in\Ker{A}$}{x∈Ker(A)}}
 			\begin{proof}
 				\quad\par
 				$A$を$n\times n$実対称行列とする。
-				$A$を対角化する実直交行列を$P = [\bm{p}_1,\cdots,\bm{p}_n]$とし、$\bm{p}_i$に対応する固有値を$\lambda_i$とすると、$A$が半正定だから$\lambda_i\geq 0$である。
-				$\bm{x}$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\cdots,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
+				$A$を対角化する実直交行列を$P = [\bm{p}_1,\dotsc,\bm{p}_n]$とし、$\bm{p}_i$に対応する固有値を$\lambda_i$とすると、$A$が半正定だから$\lambda_i\geq 0$である。
+				$\bm{x}$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
 				ゆえに$\bm{x}$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
 			\end{proof}
 		\section{Gram行列は半正定}
 			\begin{proof}
 				\quad\par
-				$V$を内積空間とし、$\bm{v}_1,\cdots,\bm{v}_n\in V$のGram行列を$G=[\inprod{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
+				$V$を内積空間とし、$\bm{v}_1,\dotsc,\bm{v}_n\in V$のGram行列を$G=[\inprod{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
 				$\bm{x}\in \complexNumbers^n$に対して
 				\[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inprod{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inprod{x_i\bm{v}_i}{x_j\bm{v}_j} = \inprod{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
 			\end{proof}
@@ -1813,9 +1813,9 @@
 				\begin{proof}
 					\quad\par
 					$a=0$のときは明らか。$a>0$のときを考える。
-					$x_1,\cdots,x_n$のうち非零要素が1つ以下のときは明らか。
+					$x_1,\dotsc,x_n$のうち非零要素が1つ以下のときは明らか。
 					非零要素が2つ以上のときを考える。
-					一般性を失わずに$|x_1|,\cdots,|x_r|>0\;(2\leq r\leq n)$とする。
+					一般性を失わずに$|x_1|,\dotsc,|x_r|>0\;(2\leq r\leq n)$とする。
 					$\derivLong{\norm{\bm{x}}_p}{p}{} < 0$ を示せば良い。
 					\begin{align*}
 						\derivLong{\norm{\bm{x}}_p}{p}{} < 0 &\iff \derivLong{\log \norm{\bm{x}}_p}{p}{} < 0 \iff -\frac{1}{p^2}\log \sum_{i=1}^r |x_i|^p + \frac{1}{p}\times\frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < 0 \\
@@ -1861,7 +1861,7 @@
 				\end{proof}
 			\subsection{和のノルムとノルムの和が等しい時(2)}
 				\begin{shadebox}
-					$\bm{x}_1,\cdots,\bm{x}_m\in\field^n$に対して$\norm{\sum_{i=1}^{m}{\bm{x}_i}}=\sum_{i=1}^{m}{\norm{\bm{x}_i}}$であるとき、任意の$k,l\in\{1,2,\cdots,m\}$に対して$\norm{\bm{x}_k+\bm{x}_l}=\norm{\bm{x}_k}+\norm{\bm{x}_l}$
+					$\bm{x}_1,\dotsc,\bm{x}_m\in\field^n$に対して$\norm{\sum_{i=1}^{m}{\bm{x}_i}}=\sum_{i=1}^{m}{\norm{\bm{x}_i}}$であるとき、任意の$k,l\in\{1,2,\dotsc,m\}$に対して$\norm{\bm{x}_k+\bm{x}_l}=\norm{\bm{x}_k}+\norm{\bm{x}_l}$
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
@@ -1887,16 +1887,16 @@
 				\label{th:単位球面上の点の座標の絶対値の総和の最大値}
 				\begin{proof}
 					\quad\par
-					$x_k = r_k e^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\cdots,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneqq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneqq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+					$x_k = r_k e^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneqq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneqq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
 					\par
-					数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\cdots,m-1$について(*)が成り立つと仮定する。
-					$r_1,\cdots,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
+					数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\dotsc,m-1$について(*)が成り立つと仮定する。
+					$r_1,\dotsc,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
 					\par
-					そこで$r_1,\cdots,r_n$が全て正であるとする。
+					そこで$r_1,\dotsc,r_n$が全て正であるとする。
 					Lagrangeの未定乗数法を使う。
 					Lagrange関数を$L(\bm{r},\lambda)\coloneqq f(\bm{r})+\lambda g(\bm{r})$とする。
 					$\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから、今関心のある領域に特異点は存在しない。
-					$r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\cdots,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
+					$r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\dotsc,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
 					よってLagrangeの未定乗数法で極値を見つければそれは極大値であり、また最大値でもある。
 					極値を与える点を$\overset{\circ}{\bm{r}}$とすると$\nabla_{\bm{r}}L(\overset{\circ}{\bm{r}},\lambda)=\bm{0}$より$\bm{1}_n + 2\lambda\overset{\circ}{\bm{r}}=\bm{0}\;\therefore\;\overset{\circ}{\bm{r}}=-\frac{1}{2\lambda}\bm{1}_n$。
 					よって$\overset{\circ}{\bm{r}}$は全要素が等しい。
@@ -1961,7 +1961,7 @@
 					\quad\par
 					$A$はHermite行列だから固有値は全て実数で、適当なユニタリ行列$U$で対角化できる。
 					$A$の対角化を$A = UDU^\mathrm{H}$とする。
-					ここに$D = \diag{\lambda_1,\cdots,\lambda_n},\;|\lambda_1| \geq \cdots \geq |\lambda_n|$である。
+					ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},\;|\lambda_1| \geq \cdots \geq |\lambda_n|$である。
 					$A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で、$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
 					よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
 				\end{proof}
@@ -1970,12 +1970,12 @@
 				\begin{proof}
 					\quad\par
 					$A$はHermite行列であるから固有値は全て実数で、$A$がユニタリ交行列で対角化できることは既知とする。
-					$A$の異なる固有値を、絶対値が大きい順に$\lambda_1,\lambda_2,\cdots,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
-					$\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$とすると
-					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\cdots,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
+					$A$の異なる固有値を、絶対値が大きい順に$\lambda_1,\lambda_2,\dotsc,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
+					$\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$とすると
+					$\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
 					\par
 					$\norm{A}$の定義は$\norm{A} \coloneqq \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
-					任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\cdots,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
+					任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\dotsc,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
 					$\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
 					\[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
 					よって
@@ -2063,7 +2063,7 @@
 	\chapter{凸領域}
 		\section{凸領域内のベクトルの凸結合は元の凸領域に属す}
 			\begin{shadebox}
-				$V$を凸領域とし、$\bm{v}_1,\cdots,\bm{v}_n\in V,\;\alpha_1,\cdots,\alpha_n\geq 0,\;\sum_{i=1}^n\alpha_i = 1$であるとき、$\sum_{i=1}^n\alpha_i\bm{v}_i \in V$
+				$V$を凸領域とし、$\bm{v}_1,\dotsc,\bm{v}_n\in V,\;\alpha_1,\dotsc,\alpha_n\geq 0,\;\sum_{i=1}^n\alpha_i = 1$であるとき、$\sum_{i=1}^n\alpha_i\bm{v}_i \in V$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -2157,11 +2157,11 @@
 				\begin{shadebox}
 					$f$の定義は前小節のものとする。
 					$m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneqq \bm{c}_i^\top\bm{x}+d_i$とする。
-					ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\cdots,m),\; (A\mathring{\bm{x}}+\bm{b})^*A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\cdots,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
+					ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; (A\mathring{\bm{x}}+\bm{b})^*A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-					$\bm{h} \in \complexNumbers^n,\;g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\cdots,m)$とする。
+					$\bm{h} \in \complexNumbers^n,\;g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
 					$g_i(\mathring{\bm{x}} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
 					\begin{align*}
 						f(\mathring{\bm{x}} + \bm{h}) &= f(\mathring{\bm{x}}) + 2\Re{(A\mathring{\bm{x}}+\bm{b})^*A\bm{h}} + \bm{h}^*A^*A\bm{h} = f(\mathring{\bm{x}}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \bm{h}^*A^*A\bm{h} \\
@@ -2175,5 +2175,5 @@
 				\begin{enumerate}
 					\item スカラー同士の積: $x,y\in\field$に対して$xy$
 					\item 内積(スカラー同士の積の和): $\bm{x},\bm{y} \in \field^l$に対して$\bm{x}^\top\bm{y} = \sum_{i=1}^l x_i y_i$
-					\item トレース(内積同士の和): $X = [\bm{x}_1,\cdots,\bm{x}_n]^\top,\;Y = [\bm{y}_1,\cdots,\bm{y}_n]^\top\;(\bm{x}_1,\bm{x}_2,\cdots,\bm{y}_n \in \field^l)$に対して$\tr{X^\top Y} = \sum_{i=1}^l \bm{x}_i^\top\bm{y}_i$
+					\item トレース(内積同士の和): $X = [\bm{x}_1,\dotsc,\bm{x}_n]^\top,\;Y = [\bm{y}_1,\dotsc,\bm{y}_n]^\top\;(\bm{x}_1,\bm{x}_2,\dotsc,\bm{y}_n \in \field^l)$に対して$\tr{X^\top Y} = \sum_{i=1}^l \bm{x}_i^\top\bm{y}_i$
 				\end{enumerate}
