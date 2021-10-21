@@ -700,7 +700,7 @@
 					$n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
 					\[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
 					であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
-					\[ W := \Span{\set{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
+					\[ W := \Span{\set*{\left[0,\cdots,0,\underset{i\text{番目}}{1},0,\cdots,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\cdots,n-1}} \]
 					のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\cdots,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
@@ -1091,7 +1091,7 @@
 				\[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset} |R_{i_1,\cdots,i_m}| = \sum_{R_{i_1,\cdots,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
 				各$R_{i_1,\cdots,i_n}$の対角線の長さは$L/m$であり、$F$がLipschitz連続だから各$R_{i_1,\cdots,i_n}$について、その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
 				つまり各$F(R_{i_1,\cdots,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\cdots,i_n}$で覆うことができる。
-				よって$F(C)$は$\set{R'_{i_1,\cdots,i_n}}{R_{i_1,\cdots,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
+				よって$F(C)$は$\set*{R'_{i_1,\cdots,i_n}}{R_{i_1,\cdots,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
 				\[ \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} |R'_{i_1,\cdots,i_n}| \leq \sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\cdots,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
 			\end{proof}
 		\section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integ{-\infty}{\infty}{f(x)}{x},\;\integ{-\infty}{\infty}{g(x)}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
@@ -1188,9 +1188,9 @@
 				\par
 				$r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす$r,\theta$空間の集合を考える。
 				極座標変換だから$\theta$は適当な$2\pi$区間の部分集合を選べば良い。
-				よって$r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす集合は$S = \set{(r,\theta)}{r=0, \theta \in [-\pi,\pi]} \cup \set{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$である。
-				しかし$\set{(r,\theta)}{r=0, \theta \in [-\pi,\pi]}$の$xy$空間での像は原点であり、$\set{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$の像にも原点が含まれる。
-				そこで$S_2 := \set{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$とすると、$S,S_2$それぞれを$x,y$空間に写像してできる2つの曲線の排他的論理和は$\emptyset$である。
+				よって$r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす集合は$S = \set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]} \cup \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$である。
+				しかし$\set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]}$の$xy$空間での像は原点であり、$\set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$の像にも原点が含まれる。
+				そこで$S_2 := \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$とすると、$S,S_2$それぞれを$x,y$空間に写像してできる2つの曲線の排他的論理和は$\emptyset$である。
 				だから曲線を表現するという目的では$r = \sqrt{\cos 2\theta}$で十分なのである。
 	\chapter{Beta関数}
 		\section{Beta関数とGamma関数の関係}
@@ -1212,7 +1212,7 @@
 			\begin{shadebox}
 				$ \bm{\alpha} = [\alpha_1,\cdots,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
 				\begin{align*}
-					B(\bm{\alpha}) &:= \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega := \set{[x_1,\cdots,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
+					B(\bm{\alpha}) &:= \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega := \set*{[x_1,\cdots,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
 					&= \integ{x_1=0}{1}{\integ{x_2=0}{1-x_1}{\cdots\integ{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{x_{n-1}}\cdots}{x_2}}{x_1}
 				\end{align*}
 			\end{shadebox}
@@ -1413,7 +1413,7 @@
 		\section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
 			\begin{proof}
 				\quad\par
-				$\Omega(n,r)\;(r\in\realNumbers) := \set{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
+				$\Omega(n,r)\;(r\in\realNumbers) := \set*{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
 				\begin{align*}
 					V_n &= \integ{\Omega(n,1)}{}{1}{\bm{x}} = \integ{-1}{1}{\left(\integ{\Omega(n-1,1-{x_n}^2)}{}{1}{\bm{x}}\right)}{x_n} = \integ{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{x_n} \\
 						&= V_{n-1}\integ{-1}{1}{(1-x^2)^{(n-1)/2}}{x} = 2V_{n-1} \integ{0}{1}{(1-x^2)^{(n-1)/2}}{x} \\
