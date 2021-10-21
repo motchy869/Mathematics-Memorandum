@@ -175,16 +175,16 @@
 		\section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
 			\subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}
 				\begin{shadebox}
-					$n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\cdots+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
+					$n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\dotsb+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					まず
 					\begin{align*}
-						\quad& d_1\bm{v}_1 + \cdots + d_p\bm{v}_p = \bm{0} \tag{1} \\
-						\iff& d_1(c_{11}\bm{b}_1 + \cdots + c_{n1}\bm{b}_n) + \cdots + d_p(c_{1p}\bm{b}_1 + \cdots + c_{np}\bm{b}_n) = \bm{0} \\
-						\iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \cdots + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
-						\iff& d_1 c_{11} + \cdots + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \cdots + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
+						\quad& d_1\bm{v}_1 + \dotsb + d_p\bm{v}_p = \bm{0} \tag{1} \\
+						\iff& d_1(c_{11}\bm{b}_1 + \dotsb + c_{n1}\bm{b}_n) + \dotsb + d_p(c_{1p}\bm{b}_1 + \dotsb + c_{np}\bm{b}_n) = \bm{0} \\
+						\iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \dotsb + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
+						\iff& d_1 c_{11} + \dotsb + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \dotsb + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
 						\iff&
 						\begin{bmatrix}
 							c_{11} & \cdots & c_{1p} \\
@@ -198,8 +198,8 @@
 						\end{bmatrix}
 						=\bm{0}_n \tag{2}
 					\end{align*}
-					が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\cdots=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
-					逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\cdots=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\cdots=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
+					が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\dotsb=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
+					逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\dotsb=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
 				\end{proof}
 		\section{諸定理}
 			\subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
@@ -224,11 +224,11 @@
 					\quad\par
 					$W_i\subseteq V_i$を示せば良い。
 					$\vx\in W_i$を任意にとると$\vx\in \bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i}$でもあるから適当なベクトル$\vv_i\in V_i$が存在して
-					\[\vx = \vv_1+\vv_2+\cdots+\vv_i+\cdots+\vv_n\]
+					\[\vx = \vv_1+\vv_2+\dotsb+\vv_i+\dotsb+\vv_n\]
 					と一意に分解できるが、$V_i\subseteq W_i$より$\vv_i\in W_i$であるので
-					\[\vx = \underbrace{\vv_1}_{\in W_1}+\underbrace{\vv_2}_{\in W_2}+\cdots+\underbrace{\vv_i}_{\in W_i}+\cdots+\underbrace{\vv_n}_{\in W_n}\]
+					\[\vx = \underbrace{\vv_1}_{\in W_1}+\underbrace{\vv_2}_{\in W_2}+\dotsb+\underbrace{\vv_i}_{\in W_i}+\dotsb+\underbrace{\vv_n}_{\in W_n}\]
 					ところで$\vx\in \bigoplus_{i=1}^n{W_i}$であったから$\vx$は
-					\[\vx = \underbrace{\bm{0}}_{\in W_1}+\underbrace{\bm{0}}_{\in W_2}+\cdots+\underbrace{\vx}_{\in W_i}+\cdots+\underbrace{\bm{0}}_{\in W_n}\]
+					\[\vx = \underbrace{\bm{0}}_{\in W_1}+\underbrace{\bm{0}}_{\in W_2}+\dotsb+\underbrace{\vx}_{\in W_i}+\dotsb+\underbrace{\bm{0}}_{\in W_n}\]
 					と分解される。分解は一意でなくてはならぬから
 					\begin{equation*}
 						\vv_j =
@@ -248,9 +248,9 @@
 					\quad\par
 					$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
 					逆に$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないとする。
-					このとき$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
-					よって$c_1\bm{v}_1 + \cdots + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\cdots c_k=0$である。
-					すなわち$c_1=\cdots=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
+					このとき$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
+					よって$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\dotsb=c_k=0$である。
+					すなわち$c_1=\dotsb=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
 				\end{proof}
 			\subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
 				\begin{shadebox}
@@ -267,7 +267,7 @@
 				\begin{proof}
 					例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
 				\end{proof}
-			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\cdots+W_n = W_1\oplus\cdots\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
+			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\dotsb+W_n = W_1\oplus\dotsb\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
 				\begin{proof}
 					\quad\par
 					例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
@@ -322,13 +322,13 @@
 				\par
 				$W$の任意のベクトルは$W$の基底の一次結合で表されるから、全射性を言うためには$V$の中から適当な$n$個のベクトルを選んで$f$で送ったものの集合で$W$の基底を構成できることを示せば十分である。
 				$V$の基底を$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$として$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が$W$の基底を成すことを示す。
-				\[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\cdots +c_nf(\bm{v}_n) = 0,\;\;\;c_1,c_2,\dots c_n\in\field\]
+				\[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;\;c_1,c_2,\dots c_n\in\field\]
 				とおくと$f$の線形性から
-				\[f(c_1\bm{v}_1+c_2\bm{v}_2+\cdots+c_n\bm{v}_n) = 0\]
+				\[f(c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n) = 0\]
 				$f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
-				\[c_1\bm{v}_1+c_2\bm{v}_2+\cdots+c_n\bm{v}_n = 0\]
+				\[c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n = 0\]
 				$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$は$V$の基底なので
-				\[c_1=c_2=\cdots=c_n = 0\]
+				\[c_1=c_2=\dotsb=c_n = 0\]
 				よって$W$の$n=\dim(W)$個のベクトル$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が一次独立なのでこれは$W$の基底である。
 				\newline\par
 				\noindent
@@ -341,14 +341,14 @@
 				\par
 				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\cdots\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
 				$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
-				ここで$c_1\bm{v}_1 + \cdots + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \cdots + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \cdots + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \cdots + c_n\bm{w}_n$となる。
-				$\{\bm{w}_1,\cdots\bm{w}_n\}$は$W$の基底であったから$c_1=\cdots=c_n=0$である。
+				ここで$c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
+				$\{\bm{w}_1,\cdots\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
 				よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
 				\par
 				$\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
-				$\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\cdots+c_n\bm{v}_n$とすると、
-				\[\bm{0} = f(\bm{x}) = f(c_1\bm{v}_1+\cdots+c_n\bm{v}_n) = c_1\bm{w}_1 + \cdots + c_n\bm{w}_n\]
-				より$c_1=\cdots=c_n=0$となるから$\bm{x}=\bm{0}$である。
+				$\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\dotsb+c_n\bm{v}_n$とすると、
+				\[\bm{0} = f(\bm{x}) = f(c_1\bm{v}_1+\dotsb+c_n\bm{v}_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
+				より$c_1=\dotsb=c_n=0$となるから$\bm{x}=\bm{0}$である。
 				すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
 			\end{proof}
 		\section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
@@ -364,7 +364,7 @@
 		\section{不変部分空間と表現行列}
 			\label{不変部分空間と表現行列}
 			\begin{shadebox}
-				$A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\cdots\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
+				$A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\dotsb\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
 				$\{\bm{w}_{i1},\dotsc,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\dotsc,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\dotsc,\Phi_m]$\\
 				以上の設定の下で、次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
 				\[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
@@ -1020,18 +1020,18 @@
 				$A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
 				$A\bm{x}$の第1成分の絶対値について
 				\begin{align*}
-					|a_{11}x_1 + \cdots a_{1n}x_n| &\geq ||a_{11}x_1| - |a_{12}x_2 + \cdots a_{1n}x_n|| \geq |a_{11}x_1| - |a_{12}x_2 + \cdots a_{1n}x_n| \\
-					& \geq |a_{11}||x_1| - \cdots - |a_{1n}||x_n|
+					|a_{11}x_1 + \dotsb + a_{1n}x_n| &\geq ||a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n|| \geq |a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n| \\
+					& \geq |a_{11}||x_1| - \dotsb - |a_{1n}||x_n|
 				\end{align*}
 				が成り立つが、ここで仮に$|x_1| > |x_2|,\dotsc,|x_n|$とすると、$A$の優対角性から
 				\begin{align*}
-					|a_{11}||x_1| - \cdots - |a_{1n}||x_n| &> |a_{11}||x_1| - |a_{12}||x_1| - \cdots - |a_{1n}||x_1| \\
-					&= (|a_{11}| - |a_{12}| - \cdots - |a_{1n}|)|x_1| > 0 \tag{1}
+					|a_{11}||x_1| - \dotsb - |a_{1n}||x_n| &> |a_{11}||x_1| - |a_{12}||x_1| - \dotsb - |a_{1n}||x_1| \\
+					&= (|a_{11}| - |a_{12}| - \dotsb - |a_{1n}|)|x_1| > 0 \tag{1}
 				\end{align*}
 				となり、$A\bm{x}=\bm{0}_n$に矛盾する。
 				故に$|x_1| \leq \max\{|x_1|,|x_2|,\dotsc,|x_n|\}$である。
 				同様にして$A\bm{x}$の第$2,3,\dotsc,n$成分の絶対値を考えることで$|x_i| \leq \max\{|x_j|\}\;(i,j\in\{1,\dotsc,n\})$が示される。
-				これは$|x_1|=\cdots=|x_n|=c,\;(c$は適当な非負数)に他ならない。
+				これは$|x_1|=\dotsb=|x_n|=c,\;(c$は適当な非負数)に他ならない。
 				仮に$c>0$であるとすると式(1)より$|A\bm{x}\text{の第1成分}| > 0$となり、$A\bm{x}=0$に矛盾する。
 				故に$c=0$、つまり$\bm{x}=\bm{0}_n$である。
 				よって$A\bm{x}=\bm{0}_n \Rightarrow \bm{x}=\bm{0}_n$が成り立つから$A$は正則である。
@@ -1072,14 +1072,14 @@
 				\begin{proof}
 					\quad\par
 					$c_1,\dotsc,c_p$を定数として
-					\[c_1\bm{v}_1 + \cdots + c_p\bm{v}_p = \bm{0}_n\]
+					\[c_1\bm{v}_1 + \dotsb + c_p\bm{v}_p = \bm{0}_n\]
 					とおいて両辺に左から$A$を掛けると
-					\[\lambda_1 c_1\bm{v}_1 + \cdots + \lambda_p c_p\bm{v}_p = \bm{0}_n\]
+					\[\lambda_1 c_1\bm{v}_1 + \dotsb + \lambda_p c_p\bm{v}_p = \bm{0}_n\]
 					となる。これを繰り返して
 					\begin{align*}
-						{\lambda_1}^2 c_1\bm{v}_1 + \cdots + {\lambda_p}^2 c_p\bm{v}_p &= \bm{0}_n \\
+						{\lambda_1}^2 c_1\bm{v}_1 + \dotsb + {\lambda_p}^2 c_p\bm{v}_p &= \bm{0}_n \\
 						& \vdots \\
-						{\lambda_1}^{p-1} c_1\bm{v}_1 + \cdots + {\lambda_p}^{p-1} c_p\bm{v}_p &= \bm{0}_n
+						{\lambda_1}^{p-1} c_1\bm{v}_1 + \dotsb + {\lambda_p}^{p-1} c_p\bm{v}_p &= \bm{0}_n
 					\end{align*}
 					を得る。これより
 					\[
@@ -1094,7 +1094,7 @@
 					\]
 					となるが、$\lambda_i\;(i=1,\dotsc,p)$が相異なることより、上式の等号の左隣のヴァンデルモンド行列は正則だから
 					\[ [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p] = O_{n\times p} \]
-					となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\cdots c_p=0$である。
+					となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
 				\end{proof}
 			\subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
 				\begin{proof}
@@ -1111,7 +1111,7 @@
 					$\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば、$\left|\lambda I-A\right|\neq 0$が示せて、$\lambda$が固有値でないことが示せる。
 					$c_1,\dotsc,c_n$を定数とし、$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと、第$i$成分に着目して
 					\[0 = c_i(\lambda-a) - a\sum_{j\neq i}^{n}{c_j} = c_i\lambda - a\sum_{j=1}^{n}{c_j}\]
-					これと$\lambda\neq 0$より$c_1=\cdots=c_n$である。この値を$c$とおくと$c\lambda = anc$となり、$\lambda\neq an$より$c=0$である。
+					これと$\lambda\neq 0$より$c_1=\dotsb=c_n$である。この値を$c$とおくと$c\lambda = anc$となり、$\lambda\neq an$より$c=0$である。
 				\end{proof}
 			\subsection{転置行列の固有値,固有ベクトル}
 				\begin{shadebox}
@@ -1147,7 +1147,7 @@
 				\end{proof}
 			\subsection{コンパニオン行列}
 				\begin{shadebox}
-					$\lambda$に関する多項式$f_n(\lambda)=\lambda^n+a_{n-1}\lambda^{n-1}+\cdots+a_0$に対して次の行列
+					$\lambda$に関する多項式$f_n(\lambda)=\lambda^n+a_{n-1}\lambda^{n-1}+\dotsb+a_0$に対して次の行列
 					\[
 					A =
 					\begin{bmatrix}
@@ -1185,8 +1185,8 @@
 							0 & \cdots & 0 & -1 & \lambda
 						\end{bmatrix} \\
 						&= \lambda^{n} + a_{n-1}\lambda^{n-1} + \left.f_{n-1}(\lambda)\right|_{a_{n-2}\to a_{n-2}-\lambda} \\
-						&= \lambda^{n} + a_{n-1}\lambda^{n-1} + \lambda^{n-1} + (a_{n-2}-\lambda)\lambda^{n-2} + a_{n-3}\lambda^{n-3} + \cdots + a_1\lambda + a_0 \\
-						&= \lambda^{n} + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \cdots + a_1\lambda + a_0 = f_n(\lambda)
+						&= \lambda^{n} + a_{n-1}\lambda^{n-1} + \lambda^{n-1} + (a_{n-2}-\lambda)\lambda^{n-2} + a_{n-3}\lambda^{n-3} + \dotsb + a_1\lambda + a_0 \\
+						&= \lambda^{n} + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \dotsb + a_1\lambda + a_0 = f_n(\lambda)
 					\end{align*}
 				\end{proof}
 			\subsection{Hadamard行列の固有値}
@@ -1202,7 +1202,7 @@
 					$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
 					$H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\cdots\bm{u}_m^{2^{m-1}}$とし、固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\cdots\bm{v}_m^{2^{m-1}}$とする。
 					このとき次のことが成り立つ。\\
-					$i=1,\dotsc,2^{m-1}$に対して					
+					$i=1,\dotsc,2^{m-1}$に対して
 					\begin{equation}
 						\begin{bmatrix}
 							\bm{u}_m^i \\
@@ -1348,12 +1348,12 @@
 					\end{align*}
 					これより、まず$U^*U$と$UU^*$の第1,1成分が等しいから
 					\[ (U^*U)_{1,1} = (UU^*)_{1,1} \]
-					\[ \therefore |u_{1,1}|^2 = |u_{1,1}|^2 + |u_{1,2}|^2 + \cdots + |u_{1,n}|^2 \]
-					\[ u_{1,2} = u_{1,3} = \cdots = u_{1,n} = 0 \]
+					\[ \therefore |u_{1,1}|^2 = |u_{1,1}|^2 + |u_{1,2}|^2 + \dotsb + |u_{1,n}|^2 \]
+					\[ u_{1,2} = u_{1,3} = \dotsb = u_{1,n} = 0 \]
 					次に、$U^*U$と$UU^*$の第2,2成分が等しいから
-					\[ |u_{1,2}|^2 + |u_{2,2}|^2 = |u_{2,2}|^2 + |u_{2,3}|^2 + \cdots + |u_{2,n}|^2 \]
+					\[ |u_{1,2}|^2 + |u_{2,2}|^2 = |u_{2,2}|^2 + |u_{2,3}|^2 + \dotsb + |u_{2,n}|^2 \]
 					これと先程の結果$|u_{1,2}| = 0$より
-					\[ u_{2,3} = u_{2,4} = \cdots = u_{2,n} = 0 \]
+					\[ u_{2,3} = u_{2,4} = \dotsb = u_{2,n} = 0 \]
 					同じ要領で続けていくと$U$の非対角要素が全て0であることがわかる。
 				\end{proof}
 		\section{一般固有空間}
@@ -1396,7 +1396,7 @@
 					これを上式に右から掛けて
 					\begin{align}
 						A\bm{x} &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
-						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top \nonumber\\
+						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
 						&= \Phi\left[
 								\begin{array}{c}
 									\bm{0}_{{\nu_1}'}\\
@@ -1417,9 +1417,9 @@
 					次に$A_i$の固有値が$\lambda_i$のみであることを背理法で示す。
 					$A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し、$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
 					ベクトル$\bm{x}\in\field^n$を
-					\[\Phi^{-1}\bm{x} = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top\]
+					\[\Phi^{-1}\bm{x} = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top\]
 					すなわち
-					\[\bm{x} = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
+					\[\bm{x} = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
 					で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので、まず次式が成り立つ。
 					\begin{equation}
 						(A-\lambda_iI_n)^{\nu_i}\bm{x} = \bm{0}_n
@@ -1427,7 +1427,7 @@
 					一方で
 					\begin{align*}
 						(A-\lambda_iI_n)\bm{x} &= A\bm{x} - \lambda_i\bm{x} = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\bm{x} - \lambda_i\bm{x}\\
-						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x}\\
+						&= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\bm{x}\\
 						&= \Phi\left[
 							\begin{array}{c}
 								\bm{0}_{{\nu_1}'}\\
@@ -1449,7 +1449,7 @@
 								\bm{0}_{{\nu_p}'}\\
 							\end{array}
 						\right] - \lambda_i\bm{x}\\
-						&= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\cdots+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\cdots+{\nu_p}'}]^\top - \lambda_i\bm{x} = \lambda'\bm{x}-\lambda_i\bm{x}\\
+						&= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\bm{x} = \lambda'\bm{x}-\lambda_i\bm{x}\\
 						&= (\lambda'-\lambda_i)\bm{x}
 					\end{align*}
 					であるから
@@ -1961,7 +1961,7 @@
 					\quad\par
 					$A$はHermite行列だから固有値は全て実数で、適当なユニタリ行列$U$で対角化できる。
 					$A$の対角化を$A = UDU^\mathrm{H}$とする。
-					ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},\;|\lambda_1| \geq \cdots \geq |\lambda_n|$である。
+					ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},\;|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
 					$A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で、$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
 					よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
 				\end{proof}
@@ -1980,7 +1980,7 @@
 					\[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
 					よって
 					\[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i \coloneqq \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
-					これは$c_1=1,\quad c_2=\cdots=c_\sigma=0$のときに最大となる。よって
+					これは$c_1=1,\quad c_2=\dotsb=c_\sigma=0$のときに最大となる。よって
 					\[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
 				\end{proof}
 			\subsection{\texorpdfstring{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}(A^\top A)}\;(A\in\realNumbers^{n\times n})$}{max\_\{||x||=1\} ||Ax|| = sqrt(λ\_max(A\string^⊤ A)) (A∈R\string^(n×n))}}
@@ -2033,7 +2033,7 @@
 				\end{proof}
 			\subsection{逆行列のノルムは元の行列の最小特異値の逆数と等しい}
 				\begin{shadebox}
-					正則行列$A\in\complexNumbers^{n\times n}$の特異値を$\sigma_1\geq\cdots\geq\sigma_n>0$とすると$\norm{A^{-1}}_2=1/\sigma_n$
+					正則行列$A\in\complexNumbers^{n\times n}$の特異値を$\sigma_1\geq\dotsb\geq\sigma_n>0$とすると$\norm{A^{-1}}_2=1/\sigma_n$
 				\end{shadebox}
 				\begin{proof}
 					$A$の特異値分解より明らか。

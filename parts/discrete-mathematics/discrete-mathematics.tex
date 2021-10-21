@@ -102,7 +102,7 @@
 				次に数列$\{|s_i|\}\;(i=1,2,\cdots)$が単調増加であること、特に$|s_2|\leq|s_3|$を除いて他は全て狭義単調増加であることを示す。
 				まず$0 = |s_1| < 1 = |s_2|,\;|s_3| = |-q_2| \geq 1 = |s_2|,\;|s_4| = |s_2 - q_3s_3| = |1 + q_2q_3| > |q_2| = |s_3|$を直接確かめられる。
 				これより始めて帰納的に、$l\geq 2$に対して$|s_{2l+1}| - |s_{2l}| = -s_{2l+1} - s_{2l} = (q_{2l}-1)s_{2l} - s_{2l-1} > 0,\;|s_{2l+2}| - |s_{2l+1}| = (1-q_{2l+1})s_{2l+1} + s_{2l} > 0$が成り立つから$|s_{2l+1}| > |s_{2l}|\;(l=2,3,\cdots)$である。
-				同様にして$|t_0| < |t_1| \leq |t_2| < |t_3| < \cdots$が成り立つ。
+				同様にして$|t_0| < |t_1| \leq |t_2| < |t_3| < \dotsb$が成り立つ。
 				これと項目3より定理の主張が成り立つ。
 			\end{proof}
 	\chapter{整数の合同}
@@ -140,9 +140,9 @@
 				$p=2$のときは、左辺と右辺の差は$(x+y)^2 - (x^2+y) = y(y-1+2x)$なので$y$の偶奇に関わらず$p$の倍数である。
 				以下では$p$は3以上の素数とする。$y$が0のときは明らかに成り立つ。
 				1の結果を用いると、$y$が自然数のときは
-				\[(x+y)^p = [(x+y-1) + 1]^p \equiv_p (x+y-1)^p + 1 \equiv_p (x+y-2)^p + 2 \equiv_p \cdots \equiv_p x^p + y \]
+				\[(x+y)^p = [(x+y-1) + 1]^p \equiv_p (x+y-1)^p + 1 \equiv_p (x+y-2)^p + 2 \equiv_p \dotsb \equiv_p x^p + y \]
 				より成り立つ。$y$が負の整数のときも
-				\[(x+y)^p = [(x+y+1) - 1]^p \equiv_p (x+y+1)^p - 1 \equiv_p (x+y+2)^p - 2 \equiv_p \cdots \equiv_p x^p + (-y)(-1) = x^p + y \]
+				\[(x+y)^p = [(x+y+1) - 1]^p \equiv_p (x+y+1)^p - 1 \equiv_p (x+y+2)^p - 2 \equiv_p \dotsb \equiv_p x^p + (-y)(-1) = x^p + y \]
 				より成り立つ。
 			\end{proof}
 		\section{Fermatの小定理}
@@ -154,9 +154,9 @@
 				「\textcolor{red}{任意の}整数$a$に対して$a^p \equiv_p a$」を示し、$a$と$p$が互いに素である場合に限定して両辺を$a$で割れば良いので、これを示す。
 				$p=2$のときは$a$の偶奇で場合分けすれば簡単に示せる。以下では$p$は3以上の素数であるとする。
 				まず$a=0$のときは明らかに成り立つ。\ref{整数の合同:和のべき乗を展開}を用いると、$a$が自然数のときは
-				\[ a^p \equiv_p [(a-1)+1]^p \equiv_p (a-1)^p + 1 \equiv_p [(a-2) + 1]^p + 1 \equiv_p (a-2)^p + 1 + 1 \equiv_p \cdots \equiv_p a\]
+				\[ a^p \equiv_p [(a-1)+1]^p \equiv_p (a-1)^p + 1 \equiv_p [(a-2) + 1]^p + 1 \equiv_p (a-2)^p + 1 + 1 \equiv_p \dotsb \equiv_p a\]
 				となり、成り立つ。$a$が負の整数のときは
-				\[ a^p \equiv_p [(a+1)-1]^p \equiv_p (a+1)^p - 1 \equiv_p [(a+2) - 1]^p - 1 \equiv_p (a+2)^p - 1 - 1 \equiv_p \cdots \equiv_p (-a)(-1) \equiv_p a \]
+				\[ a^p \equiv_p [(a+1)-1]^p \equiv_p (a+1)^p - 1 \equiv_p [(a+2) - 1]^p - 1 \equiv_p (a+2)^p - 1 - 1 \equiv_p \dotsb \equiv_p (-a)(-1) \equiv_p a \]
 				となり、やはり成り立つ。
 			\end{proof}
 	\chapter{\texorpdfstring{$r$}{r}進法}
@@ -231,10 +231,10 @@
 					\begin{shadebox}
 						任意の集合$A_1,\dotsc,A_n$に対して次の等式が成り立つ。
 						\begin{align*}
-							|A_1\cup\cdots\cup A_n| &= |A_1|+\cdots +|A_n| \\
-							&- |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| \\
-							&+ |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| \\
-							&- \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|
+							|A_1\cup\dotsb\cup A_n| &= |A_1|+\dotsb +|A_n| \\
+							&- |A_1\cap A_2| - |A_1\cap A_3| - \dotsb - |A_{n-1}\cap A_n| \\
+							&+ |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \dotsb + |A_{n-2}\cap A_{n-1}\cap A_n| \\
+							&- \dotsb +(-1)^{n-1}|A_1\cap\dotsb\cap A_n|
 						\end{align*}
 						すなわち
 						\begin{equation}
@@ -290,7 +290,7 @@
 						\par
 						そこで、「2つの集合に属しており、3つ以上の集合に属していない要素」のオーバーカウントを解消するために次の操作を行う。
 						「任意の2つの集合$A_i,A_j$について、$A_i\cap A_j$に属する要素のカウンタを-1する。カウンタを操作する度にメモリも-1する。この操作を全ての$\{i,j\}\in\combi{\numset}{2}$に対して行う。」
-						この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n|$になっている。
+						この操作の実行後、メモリの値は$|A_1|+\dotsb +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \dotsb - |A_{n-1}\cap A_n|$になっている。
 						そしてカウンタの値は次のようになっている。
 						\begin{itemize}
 							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
@@ -308,7 +308,7 @@
 						\par
 						そこで、「3つの集合に属しており、4つ以上の集合に属していない要素」を数え直すために次の操作を実行する。
 						「任意の3つの集合$A_i,A_j,A_k$について、$A_i\cap A_j\cap A_k$に属する要素のカウンタを+1する。カウンタを操作する度にメモリも+1する。この操作を全ての$\{i,j,k\}\in\combi{\numset}{3}$に対して行う。」
-						この操作の実行後、メモリの値は$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n|$になっている。
+						この操作の実行後、メモリの値は$|A_1|+\dotsb +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \dotsb - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \dotsb + |A_{n-2}\cap A_{n-1}\cap A_n|$になっている。
 						そしてカウンタの値は次のようになっている。
 						\begin{itemize}
 							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
@@ -321,7 +321,7 @@
 						\end{itemize}
 						4つ以上の集合に含まれる要素はオーバーカウントされている。
 						\par
-						もう気づいたと思うが、これまでやってきたように「足しすぎては引き、引きすぎては足し、$\cdots$」を繰り返すと最終的にメモリの値は包除原理の主張である$|A_1|+\cdots +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \cdots - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \cdots + |A_{n-2}\cap A_{n-1}\cap A_n| - \cdots +(-1)^{n-1}|A_1\cap\cdots\cap A_n|$になり、カウンタの値は次のようになる。
+						もう気づいたと思うが、これまでやってきたように「足しすぎては引き、引きすぎては足し、$\cdots$」を繰り返すと最終的にメモリの値は包除原理の主張である$|A_1|+\dotsb +|A_n| - |A_1\cap A_2| - |A_1\cap A_3| - \dotsb - |A_{n-1}\cap A_n| + |A_1\cap A_2\cap A_3| + |A_1\cap A_2\cap A_4| + \dotsb + |A_{n-2}\cap A_{n-1}\cap A_n| - \dotsb +(-1)^{n-1}|A_1\cap\dotsb\cap A_n|$になり、カウンタの値は次のようになる。
 						\begin{itemize}
 							\item 1つの集合に属しており、2つ以上の集合に属していない要素のカウンタは1
 							\item 2つの集合に属しており、3つ以上の集合に属していない要素のカウンタは$2-\combi{2}{2}=1$

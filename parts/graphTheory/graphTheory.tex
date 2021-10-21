@@ -68,7 +68,7 @@
 					\quad\par
 					木の任意の1点$v_{0,0}$を選んでこれを赤く塗る。次に$v_{0,0}$に隣接する全ての接点$v_{1,0},v_{1,1},\dotsc,v_{1,k}$を白く塗る。そして$v_{1,0},v_{1,1},\dotsc,v_{1,k}$に隣接する全ての無色の接点$v_{2,0},v_{2,1},\dotsc,v_{2,l}$を赤く塗る。そして$v_{2,0},v_{2,1},\dotsc,v_{2,l}$に隣接する全ての無色の接点を白く塗る。そして...。これを繰り返す。
 					\par
-					ある点$v_{i,j}$に色を塗るとき、$v_{0,0}$から$v_{i,j}$への道は唯一だから塗り方は唯一に決まる(道の上で赤→白→赤→白→$\cdots$と繰り返す)。
+					ある点$v_{i,j}$に色を塗るとき、$v_{0,0}$から$v_{i,j}$への道は唯一だから塗り方は唯一に決まる(道の上で赤→白→赤→白→$\dotsb$と繰り返す)。
 					\par
 					全ての点に色がつくまでこれを繰り返せば木は赤と白の2つの部分に分けられる2部グラフであることがわかる。
 				\end{proof}
@@ -289,9 +289,9 @@
 				$l$本の閉路から重複を許して$k$本選んで回るパターンを$k=1,\dotsc,\infty$まで考えればよい。
 				各パターンの重みは、最初に$s\rightarrow g$を通っていることに注意すると
 				\begin{align*}
-					w_s\sum_{k=1}^\infty{(w_1+\cdots+w_l)^k} &= w_s\left(\frac{1}{1-(w_1+\cdots+w_l)}-1\right) = w_s\frac{w_1+\cdots+w_l}{1-(w_1+\cdots+w_l)}\\
-					&\leq w_s\frac{w_1+\cdots+w_l}{w_s}\quad(\because\;w_s+w_1+\cdots+w_l\leq 1)\\
-					&= w_1+\cdots+w_l
+					w_s\sum_{k=1}^\infty{(w_1+\dotsb+w_l)^k} &= w_s\left(\frac{1}{1-(w_1+\dotsb+w_l)}-1\right) = w_s\frac{w_1+\dotsb+w_l}{1-(w_1+\dotsb+w_l)}\\
+					&\leq w_s\frac{w_1+\dotsb+w_l}{w_s}\quad(\because\;w_s+w_1+\dotsb+w_l\leq 1)\\
+					&= w_1+\dotsb+w_l
 				\end{align*}
 				よって、最初に考えた$s\rightarrow g$で終わりのパターンと合わせると総和は$w_s+w_1+\cdots+w_l\leq 1$となる。
 			\end{proof}
