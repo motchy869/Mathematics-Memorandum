@@ -734,14 +734,14 @@
 			\begin{proof}
 				\quad\par
 				まず列の置換に関して定理の主張を示す。
-				$A$を$n$次正方行列とし、列の置換を表す列置換行列を$\Pi = \Pi_1\Pi_2\cdots\Pi_c$とする。
+				$A$を$n$次正方行列とし、列の置換を表す列置換行列を$\Pi = \Pi_1\Pi_2\dotsm\Pi_c$とする。
 				ここに$\Pi_1, \Pi_2, \dotsc\Pi_c$は単位列置換行列である。すると、
-				$A'^{-1} = (A\Pi)^{-1} = \Pi^{-1}A^{-1} = \Pi_c^{-1}\cdots\Pi_2^{-1}\Pi_1^{-1}A^{-1} = \Pi_c\cdots\Pi_2\Pi_1A^{-1}$
+				$A'^{-1} = (A\Pi)^{-1} = \Pi^{-1}A^{-1} = \Pi_c^{-1}\dotsm\Pi_2^{-1}\Pi_1^{-1}A^{-1} = \Pi_c\dotsm\Pi_2\Pi_1A^{-1}$
 				となるから定理の主張が成り立つ。
 				\par
 				同様にして行の置換に関しても示せる。
-				行の置換を表す行置換行列を$\Pi = \Pi_c\cdots\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \dotsc, \Pi_c$は単位行置換行列)と、
-				$A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\cdots\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\cdots\Pi_c$
+				行の置換を表す行置換行列を$\Pi = \Pi_c\dotsm\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \dotsc, \Pi_c$は単位行置換行列)と、
+				$A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\dotsm\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\dotsm\Pi_c$
 			\end{proof}
 		\section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
 			\label{Sherman-Morrisonの公式の特別な場合}
@@ -1658,7 +1658,7 @@
 				\begin{proof}
 					\quad\par
 					置換行列$\Pi$は基本置換行列$\Pi_1,\Pi_2,\dotsc,\Pi_n$の積で表される。各$\Pi_i$は対称行列であるから
-					\[\Pi^\top A\Pi = {\Pi_n}^\top\cdots{\Pi_1}^\top\;A\;\Pi_1\cdots\Pi_n = \Pi_n\cdots\Pi_1\;A\;\Pi_1\cdots\Pi_n\]
+					\[\Pi^\top A\Pi = {\Pi_n}^\top\dotsm{\Pi_1}^\top\;A\;\Pi_1\dotsm\Pi_n = \Pi_n\dotsm\Pi_1\;A\;\Pi_1\dotsm\Pi_n\]
 					であり、明らかに行と列に同じ入れ替えを行っている。
 				\end{proof}
 			\subsubsection{置換行列は直交行列}
@@ -2102,7 +2102,7 @@
 				より
 				\begin{align*}
 					\Pi^\top(I+A)^{n-1}\Pi &> O\\
-					\Pi^\top(I+A)\Pi\Pi^\top(I+A)\Pi\cdots\Pi^\top(I+A)\Pi &> O\\
+					\Pi^\top(I+A)\Pi\Pi^\top(I+A)\Pi\dotsm\Pi^\top(I+A)\Pi &> O\\
 					\left(\Pi^\top(I+A)\Pi\right)^{n-1}&> O\\
 					\begin{bmatrix}
 						B_{11} & B_{12}\\
