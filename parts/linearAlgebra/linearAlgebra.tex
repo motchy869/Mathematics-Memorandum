@@ -58,7 +58,7 @@
 			\begin{shadebox}
 				列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
 				\[
-				\sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\cdots\bm{a}_{i_l}]
+				\sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\dotsc,\bm{a}_{i_l}]
 				\begin{bmatrix}
 					\bm{b}_{i_i}\\
 					\bm{b}_{i_2}\\
@@ -302,7 +302,7 @@
 					\end{bmatrix},
 					\qquad
 					[\bm{v}_1,\dotsc,\bm{v}_n]B \coloneqq
-					\left[\sum_{i=1}^n b_{i1}\bm{v}_i, \cdots, \sum_{i=1}^n b_{im}\bm{v}_i \right]
+					\left[\sum_{i=1}^n b_{i1}\bm{v}_i, \dotsc, \sum_{i=1}^n b_{im}\bm{v}_i \right]
 				\]
 				これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
 			\subsection{一般のベクトルを要素とする行列同士の積}
@@ -339,10 +339,10 @@
 				$f$は全射であったから$\Img{f}=W$であるので$\dim(\Img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
 				(別証)
 				\par
-				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\cdots\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
+				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
 				$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
 				ここで$c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
-				$\{\bm{w}_1,\cdots\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
+				$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
 				よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
 				\par
 				$\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
@@ -411,7 +411,7 @@
 			\end{proof}
 		\subsection{正規直交基底間での座標変換は直交変換}
 			\begin{shadebox}
-				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\cdots\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
+				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
 				すなわち座標変換行列$P \coloneqq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
 			\end{shadebox}
 			\begin{proof}
@@ -605,7 +605,7 @@
 		\section{(系)結合係数の抽出}
 			\begin{shadebox}
 				$\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$は一次独立であるとする。
-				このとき、任意に与えられたベクトル$\bm{x} = \sum_{i=1}^{n}{c_i\phi_i}\in\field^n$ ($\bm{\phi}_1,\dotsc,\bm{\phi}_n$は$\field^n$の基底だから$\bm{x}$は必ずこのように分解できる!)から$c_1,\cdots c_n$を抽出するには左から$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}$を掛ければよい。
+				このとき、任意に与えられたベクトル$\bm{x} = \sum_{i=1}^{n}{c_i\phi_i}\in\field^n$ ($\bm{\phi}_1,\dotsc,\bm{\phi}_n$は$\field^n$の基底だから$\bm{x}$は必ずこのように分解できる!)から$c_1,\dotsc c_n$を抽出するには左から$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}$を掛ければよい。
 				詳しく言うと、次式が成り立つ。
 				\[[c_1,\dots,c_n]^\top = [\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{x}\]
 			\end{shadebox}
@@ -624,11 +624,11 @@
 			\[
 				A^{-1}A' =
 				\begin{bmatrix}
-					A^{-1}\bm{a}_1, \cdots, A^{-1}\bm{a}_{c-1},\; A^{-1}\bm{a}'_c,\; A^{-1}\bm{a}_{c-1}, \cdots, A^{-1}\bm{a}_n
+					A^{-1}\bm{a}_1, \dotsc, A^{-1}\bm{a}_{c-1},\; A^{-1}\bm{a}'_c,\; A^{-1}\bm{a}_{c-1}, \dotsc, A^{-1}\bm{a}_n
 				\end{bmatrix}
 				=
 				\begin{bmatrix}
-					\bm{e}_1\cdots\bm{e}_c
+					\bm{e}_1\dotsc\bm{e}_c
 					\begin{matrix}
 						p_1 \\
 						\vdots \\
@@ -735,12 +735,12 @@
 				\quad\par
 				まず列の置換に関して定理の主張を示す。
 				$A$を$n$次正方行列とし、列の置換を表す列置換行列を$\Pi = \Pi_1\Pi_2\cdots\Pi_c$とする。
-				ここに$\Pi_1, \Pi_2, \cdots\Pi_c$は単位列置換行列である。すると、
+				ここに$\Pi_1, \Pi_2, \dotsc\Pi_c$は単位列置換行列である。すると、
 				$A'^{-1} = (A\Pi)^{-1} = \Pi^{-1}A^{-1} = \Pi_c^{-1}\cdots\Pi_2^{-1}\Pi_1^{-1}A^{-1} = \Pi_c\cdots\Pi_2\Pi_1A^{-1}$
 				となるから定理の主張が成り立つ。
 				\par
 				同様にして行の置換に関しても示せる。
-				行の置換を表す行置換行列を$\Pi = \Pi_c\cdots\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \cdots, \Pi_c$は単位行置換行列)と、
+				行の置換を表す行置換行列を$\Pi = \Pi_c\cdots\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \dotsc, \Pi_c$は単位行置換行列)と、
 				$A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\cdots\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\cdots\Pi_c$
 			\end{proof}
 		\section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
@@ -931,9 +931,9 @@
 			\end{shadebox}
 			\begin{proof}(ややこしい証明)
 				\par
-				$A$の第$i$列ベクトルを$\bm{a}_i$とすると$\{\bm{a}_1,\bm{a}_2,\cdots\bm{a}_n\}$は一次独立である。
-				これを正規直交化したものを$\{\bm{p}_1,\bm{p}_2,\cdots\bm{p}_n\}$とする。
-				$\bm{p}_i\in\mathrm{span}[\bm{a}_1,\bm{a}_2,\cdots\bm{a}_n]$であるから
+				$A$の第$i$列ベクトルを$\bm{a}_i$とすると$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_n\}$は一次独立である。
+				これを正規直交化したものを$\{\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n\}$とする。
+				$\bm{p}_i\in\mathrm{span}[\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_n]$であるから
 				\[\bm{t}_i\in\field^n,\quad A\bm{t}_i=\bm{p}_i\]
 				なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n$は一次独立である。
 				よって
@@ -1200,7 +1200,7 @@
 					よって$n=1$のとき定理の主張が成り立つ。
 					\par
 					$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
-					$H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\cdots\bm{u}_m^{2^{m-1}}$とし、固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\cdots\bm{v}_m^{2^{m-1}}$とする。
+					$H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$とし、固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\dotsc,\bm{v}_m^{2^{m-1}}$とする。
 					このとき次のことが成り立つ。\\
 					$i=1,\dotsc,2^{m-1}$に対して
 					\begin{equation}
