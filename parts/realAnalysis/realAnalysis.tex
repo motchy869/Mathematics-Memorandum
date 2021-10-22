@@ -113,8 +113,8 @@
 			\subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),\;(r\neq1 ,\;p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),\;(A:\text{ 定数},\;q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
 				\begin{proof}
 					\quad\par
-					$p(n) = b_dn^d + \cdots + b_1n + b_0n$とする。
-					$a_n = Ar^n + q(n)\;\left(q(n) = c_dn^d + \cdots + c_1n + c_0\right)$とおいて漸化式に代入すると次式を得る。
+					$p(n) = b_dn^d + \dotsb + b_1n + b_0n$とする。
+					$a_n = Ar^n + q(n)\;\left(q(n) = c_dn^d + \dotsb + c_1n + c_0\right)$とおいて漸化式に代入すると次式を得る。
 					\[ Ar^{n+1} + q(n+1) = Ar^{n+1} + rq(n) + p(n) \quad \therefore\; q(n+1) = rq(n) + p(n) \]
 					両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$、左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり、$r\neq 1$なので$d$次の係数から順に見てゆき、$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
 					最後に初期条件$a_0$(或いは$a_1,a_2,\cdots$\;値が分かっている項なら何でも良い)の値から$A$を決定できる。
@@ -400,7 +400,7 @@
 					$n=1$の時は明らか。
 					$n=2$のときは凸関数の定義より成り立つ。
 					$n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
-					$w'_i\coloneqq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\cdots+w'_{n_0}=1$だから、仮定より
+					$w'_i\coloneqq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから、仮定より
 					\begin{align*}
 						f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
 						\therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
@@ -412,7 +412,7 @@
 				\end{proof}
 			\subsection{重み付き相加,相乗平均の関係とYoungの不等式}
 				\begin{shadebox}
-					$w_1,\dotsc,w_n\geq 0,\;w_1+\cdots+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+					$w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
 					\[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
 					この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
 				\end{shadebox}
@@ -420,7 +420,7 @@
 					\quad\par
 					対数関数の凹性を利用する。Jensenの不等式より
 					\[ \log\sum_{i=1}^n w_i x_i \geq \sum_{i=1}^n w_i\log x_i \quad \therefore\; \log\sum_{i=1}^n w_i x_i \geq \log\prod_{i=1}^n x_i^{w_i} \quad \therefore\; \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
-					最初の式より、等号成立条件は$x_1=\cdots=x_n$である。
+					最初の式より、等号成立条件は$x_1=\dotsb=x_n$である。
 				\end{proof}
 				この不等式には変形版があり、\textbf{Youngの不等式}と呼ばれている。
 				一時的に上の定理の条件を少し強めて$w_1,\dotsc,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
@@ -430,7 +430,7 @@
 				\[ \sum_{i=1}^n \frac{{y_i}^{p_i}}{p_i} \geq \prod_{i=1}^n y_i \]
 				改めて定理の形で述べると、次のようになる。\\
 				\begin{shadebox}
-					$p_1,\dotsc,p_n>1,\;1/p_1+\cdots+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+					$p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
 					\[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
 				\end{shadebox}
 		\section{Legendre変換}
@@ -945,7 +945,7 @@
 						&= \mLebO{B} \quad(\because A_1\text{は可測})
 					\end{align*}
 				\end{proof}
-			\subsection{系: \texorpdfstring{$A_1,\dotsc,A_n\subset\realNumbers^n$}{A1,...,An⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2\cup\cdots\cup A_n$}{A1,...,Anの和集合}もLebesgue可測}
+			\subsection{系: \texorpdfstring{$A_1,\dotsc,A_n\subset\realNumbers^n$}{A1,...,An⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2\cup\dotsb\cup A_n$}{A1,...,Anの和集合}もLebesgue可測}
 				\begin{proof}
 					直前の定理を繰り返し用いる。
 				\end{proof}
@@ -1006,10 +1006,10 @@
 					測度空間$(S,\mathcal{M},\mu)$を考える。
 					任意の$A_1,\dotsc,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
 					\begin{align*}
-						\mu(A_1\cup\cdots\cup A_n) &= \mu(A_1)+\cdots +\mu(A_n) \\
-						&- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \cdots - \mu(A_{n-1}\cap A_n) \\
-						&+ \mu(A_1\cap A_2\cap A_3) + \mu(A_1\cap A_2\cap A_4) + \cdots + \mu(A_{n-2}\cap A_{n-1}\cap A_n) \\
-						&- \cdots +(-1)^{n-1}\mu(A_1\cap\cdots\cap A_n)
+						\mu(A_1\cup\dotsb\cup A_n) &= \mu(A_1)+\dotsb +\mu(A_n) \\
+						&- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \dotsb - \mu(A_{n-1}\cap A_n) \\
+						&+ \mu(A_1\cap A_2\cap A_3) + \mu(A_1\cap A_2\cap A_4) + \dotsb + \mu(A_{n-2}\cap A_{n-1}\cap A_n) \\
+						&- \dotsb +(-1)^{n-1}\mu(A_1\cap\dotsb\cap A_n)
 					\end{align*}
 					すなわち
 					\begin{equation}
@@ -1084,8 +1084,8 @@
 			\begin{proof}
 				\quad\par
 				$F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
-				$R = [a_1,b_1]\times\cdots\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
-				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし、各小超直方体を$R_{i_1,\dotsc,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\cdots\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
+				$R = [a_1,b_1]\times\dotsb\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
+				第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし、各小超直方体を$R_{i_1,\dotsc,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
 				$R$の対角線の長さを$L = \sqrt{\sum_{d=1}^n (b_d-a_d)^2}$としておく。
 				$C$は面積確定で面積が0であるから、任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し、$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
 				\[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset} |R_{i_1,\dotsc,i_m}| = \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
@@ -1128,14 +1128,14 @@
 				よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integ{-\infty}{\infty}{(f*g)(x)}{x}$は絶対収束する。
 			\end{proof}
 		\section{諸公式}
-			\subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \cdots - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
+			\subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
 			\begin{proof}
 				\begin{align*}
-					&\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \cdots - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
-					&= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-1}=0}^{a-x_1- \cdots - x_{n-3}} (a-x_1- \cdots - x_{n-1}) \mathrm{d}x_{n-1} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
-					&= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-2}=0}^{a-x_1-\cdots-x_{n-4}} (a-x_1- \cdots - x_{n-2})^2 \mathrm{d}x_{n-2} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
-					&= \cdots \\
-                    &= \frac{1}{2\times 3\times\cdots(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \mathrm{d}x_1 \\
+					&\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-1}=0}^{a-x_1- \dotsb - x_{n-3}} (a-x_1- \dotsb - x_{n-1}) \mathrm{d}x_{n-1} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-2}=0}^{a-x_1-\dotsb-x_{n-4}} (a-x_1- \dotsb - x_{n-2})^2 \mathrm{d}x_{n-2} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \dotsb \\
+                    &= \frac{1}{2\times 3\times\dotsb(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \mathrm{d}x_1 \\
                     &= \frac{a^n}{n!}
 				\end{align*}
 			\end{proof}
@@ -1312,18 +1312,18 @@
 		\section{
 			重積分の微分\texorpdfstring{\\}{}
 			\small{
-				\texorpdfstring{$\derivLong{\left(\integ{x_1=0}{x}{\cdots\integ{x_n=0}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$}{} \texorpdfstring{\\}{}
-				\texorpdfstring{$= \int_{x_1=0}^x\cdots\int_{x_{n-1}=0}^{x-x_1-\cdots -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1}) \mathrm{d}x_{n-1}\cdots\mathrm{d}x_{1}$}{}
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=0}{x}{\cdots\integ{x_n=0}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$}{} \texorpdfstring{\\}{}
+				\texorpdfstring{$= \int_{x_1=0}^x\cdots\int_{x_{n-1}=0}^{x-x_1-\dotsb -x_{n-2}} f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1}) \mathrm{d}x_{n-1}\cdots\mathrm{d}x_{1}$}{}
 			}
 		}
 			\label{重積分の微分}
 			\begin{shadebox}
 				$\omega>0$とする。
-				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\dotsb+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1,\dotsc,x_n\geq 0, x_1+\dotsb+x_n = \omega\} \subset \Omega\]
 				$f_1(x),\dotsc,f_n(x)$を$\{x|x\geq 0\}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
-				要するに、領域$x_1,\dotsc,x_n\geq 0$の超平面$x_1+\cdots+x_n=\omega$の原点側の部分における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは領域$x_1,\dotsc,x_n\geq 0$と超平面の共通部分上での積分に等しい。\\
+				要するに、領域$x_1,\dotsc,x_n\geq 0$の超平面$x_1+\dotsb+x_n=\omega$の原点側の部分における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは領域$x_1,\dotsc,x_n\geq 0$と超平面の共通部分上での積分に等しい。\\
 				\\
 				\quad この定理は2つの独立な非負の確率変数の和の確率密度関数を計算する時に役立つ。
 			\end{shadebox}
@@ -1333,14 +1333,14 @@
 				\renewcommand{\d}[1]{{\mathrm{d}#1}}
 				微分の定義に従い$\lim_{\domega \to 0}\frac{F(\omega+\domega)-F(\omega)}{\domega}$を計算する。
 				\begin{align*}
-					F(\omega+\domega) &= \integ{x_1=0}{\omega}{\cdots\integ{x_n=0}{\omega-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1} \\
+					F(\omega+\domega) &= \integ{x_1=0}{\omega}{\cdots\integ{x_n=0}{\omega-x_1-\dotsb-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1} \\
 					&= \left(\int_{x_1=0}^\omega+\int_{x_1=\omega}^{\omega+\domega}\right)f_1(x_1)\textcolor{red}{\left(\int_{x_2=0}^{\omega-x_1}+\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}\right)f_2(x_2)\cdots}\\
-					& \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}}+\int_{x_n=\omega-x_1-\cdots-x_{n-1}}^{\omega-x_1-\cdots-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\cdots\d{x_2}}\d{x_1}
+					& \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\cdots\d{x_2}}\d{x_1}
 				\end{align*}
 				であり、括弧の中身を全部展開すれば$F(\omega)$を含む$2^n$個の項が出る。
 				$\frac{F(\omega+\domega)-F(\omega)}{\domega}$を考えるときは$F(\omega)$は相殺するから放っておけば良い。
 				$F(\omega)$を除いた$2^n-1$項を$\domega$で除して$\domega \to 0$としたとき、ある1項を除いて他は0になり、残った項が$\integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}$になることを以下で示していく。
-				\[g_1(\omega,x_1) \coloneqq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_2}}\]
+				\[g_1(\omega,x_1) \coloneqq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\cdots\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_2}}\]
 				とおけば
 				\begin{align*}
 					F(\omega+\domega) = \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{11}(\omega,\domega)} + \underbrace{\int_{x_1=\omega}^{\omega+\domega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{12}(\omega,\domega)}
@@ -1349,7 +1349,7 @@
 				積分の平均値の定理から$^\exists\theta_1 \in (\omega,\omega+\domega)\st h_{12}(\omega,\domega)=\domega f_1(\theta_1)g_1(\omega,\theta_1)$であるので
 				\[\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}f_1(\theta_1)g_1(\omega,\theta_1) = f_1(\omega)\lim_{\domega\to 0}g_1(\omega,\theta_1) = 0\]
 				結局$h_{11}(\omega,\domega)$だけ考えれば良い。
-				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\cdots\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
+				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\cdots\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
 				とおけば
 				\begin{align*}
 					h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{21}(\omega,\domega)} \\
@@ -1364,14 +1364,14 @@
 				同様の議論を繰り返すと、結局$h_{ij}(\omega,\domega)\quad((i,j)\in\{1,\dotsc,n-1\}\times\{1,2\})$に対して$\lim_{\domega\to 0}\frac{h_{i2}(\omega,\domega)}{\domega}=0$であり、残る項は
 				\begin{align*}
 					&\quad h_{n-1,1}(\omega,\domega) \\
-					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\cdots-x_{n-2}}f_{n-1}(x_{n-1}) \\
-					& \left(\int_{x_n=0}^{\omega-x_1-\cdots-x_{n-1}}+\int_{x_n=\omega-x_1-\cdots-x_{n-1}}^{\omega-x_1-\cdots-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\d{x_{n-1}}\cdots\d{x_1} \\
-					&= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\cdots-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\cdots-x_{n-1}}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}}\d{x_{n-1}}\cdots\d{x_1}}_{=:h_{n2}(\omega,\domega)}
+					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1}) \\
+					& \left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\d{x_{n-1}}\cdots\d{x_1} \\
+					&= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}}\d{x_{n-1}}\cdots\d{x_1}}_{=:h_{n2}(\omega,\domega)}
 				\end{align*}
-				だけである。積分の平均値の定理から$^\exists\theta_n\in(\omega-x_1-\cdots-x_{n-1},\omega-x_1-\cdots-x_{n-1}+\domega)\st\textcolor{red}{\int_{x_n=\omega-x_1-\cdots-x_{n-1}}^{\omega-x_1-\cdots-x_{n-1}+\domega}f_n(x_n)\d{x_n}} = \domega f_n(\theta_n)$であるので
+				だけである。積分の平均値の定理から$^\exists\theta_n\in(\omega-x_1-\dotsb-x_{n-1},\omega-x_1-\dotsb-x_{n-1}+\domega)\st\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}} = \domega f_n(\theta_n)$であるので
 				\begin{align*}
-					\lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\cdots-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\d{x_{n-1}}\cdots\d{x_1} \\
-					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\cdots-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\cdots-x_{n-1})\d{x_{n-1}}\cdots\d{x_1} \\
+					\lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\d{x_{n-1}}\cdots\d{x_1} \\
+					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\dotsb-x_{n-1})\d{x_{n-1}}\cdots\d{x_1} \\
 					&= \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}
 				\end{align*}
 				以上より
@@ -1380,17 +1380,17 @@
 		\section{
 			系\texorpdfstring{\\}{}
 			\small{
-				\texorpdfstring{$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\cdots\integ{x_n=-\infty}{x-x_1-\cdots-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$\\}{}
-				\texorpdfstring{$= \integ{x_1=-\infty}{\infty}{\cdots\integ{x_{n-1}=-\infty}{x-x_1-\cdots-x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\cdots x_{n-1})}{x_{n-1}}\cdots}{x_1}$}{}
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\cdots\integ{x_n=-\infty}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\cdots f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$\\}{}
+				\texorpdfstring{$= \integ{x_1=-\infty}{\infty}{\cdots\integ{x_{n-1}=-\infty}{x-x_1-\dotsb-x_{n-2}}{f_1(x_1)\cdots f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1})}{x_{n-1}}\cdots}{x_1}$}{}
 			}
 		}
 			\label{重積分の微分の系}
 			\begin{shadebox}
-				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1+\cdots+x_n \leq \omega\}\]
-				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1+\cdots+x_n = \omega\} \subset \Omega\]
+				\[\Omega\coloneqq\{(x_1,\dotsc,x_n)|x_1+\dotsb+x_n \leq \omega\}\]
+				\[\overline{\Omega}^+\coloneqq\{(x_1,\dotsc,x_n)|x_1+\dotsb+x_n = \omega\} \subset \Omega\]
 				$f_1(x),\dotsc,f_n(x)$を$\mathbb{R}$上の連続関数とし、$f(\bm{x})\coloneqq f_1(x_1)\cdots f_n(x_n),\quad F(\omega) \coloneqq \integ{\Omega}{}{f(\bm{x})}{\bm{x}}$とするとき、次が成り立つ。
 				\[\deriv{F(\omega)}{\omega}{} = \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}\]
-				要するに、超平面$x_1+\cdots+x_n=\omega$の負領域における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは超平面上での積分に等しい。\\
+				要するに、超平面$x_1+\dotsb+x_n=\omega$の負領域における$f_1(x_1)\cdots f_n(x_n)$の積分を$\omega$で微分したものは超平面上での積分に等しい。\\
 				\\
 				\quad この定理は2つの独立な確率変数の和の確率密度関数を計算する時に役立つ。
 			\end{shadebox}

@@ -391,7 +391,7 @@
 			確率変数$X$がこの分布に従うことを$X \sim \ErlangDist{k}{\mu}$と表すことにする。
 		\section{解釈}
 			単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が、時間$x$の間に$k$以上回数生起する(つまり、$k$回目の事象の発生までの待ち時間が$x$である)確率の累積分布。
-		\section{指数分布との関係: \texorpdfstring{$X_1,\dotsc,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\cdots X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
+		\section{指数分布との関係: \texorpdfstring{$X_1,\dotsc,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\dotsb+X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
 			\label{指数分布とErlang分布の関係}
 			\begin{proof} (直接的な証明)
 				\par
@@ -406,8 +406,8 @@
 			\end{proof}
 			\begin{proof} (特性関数を用いた証明)
 				\par
-				$X_1+\cdots X_k$が従う分布の特性関数は次式である($X_1,\dotsc,X_k$が独立であることに注意)。
-				\[ \E{}{e^{it(X_1+\cdots X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
+				$X_1+\dotsb+ X_k$が従う分布の特性関数は次式である($X_1,\dotsc,X_k$が独立であることに注意)。
+				\[ \E{}{e^{it(X_1+\dotsb+X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
 				一方、$\ErlangDist{k}{\mu}$の特性関数を計算すると次式になる。
 				\begin{align*}
 					&\quad \integ{0}{\infty}{\frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu}e^{itx}}{x} = \frac{1}{(k-1)!\mu^k}\integ{0}{\infty}{x^{k-1}e^{\left(\frac{-x}{\mu} + it\right)x}}{x} \\
@@ -981,7 +981,7 @@
 						&= \frac{1}{n}(\s+\mu^2) + \frac{1}{n^2}(n^2-n)\mu^2 = \frac{1}{n}\s + \mu^2
 					\end{align}
 					\begin{align}
-						\E{}{\mX X_i} &= \frac{1}{n}\E{}{(X_1+X_2+\cdots+X_n)X_i} = \frac{1}{n}\E{}{X_i^2 + \sum_{j=1,\neq i}^{n}{X_jX_i}} \nonumber \\
+						\E{}{\mX X_i} &= \frac{1}{n}\E{}{(X_1+X_2+\dotsb+X_n)X_i} = \frac{1}{n}\E{}{X_i^2 + \sum_{j=1,\neq i}^{n}{X_jX_i}} \nonumber \\
 						&= \frac{1}{n}\E{}{X_i^2} + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\E{}{X_jX_i}} = \frac{1}{n}(\s+\mu^2) + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\E{}{X_j}\E{}{X_i}} \nonumber \\
 						&= \frac{1}{n}(\s+\mu^2) + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\mu^2} = \frac{1}{n}(\s+\mu^2) + \frac{1}{n}(n-1)\mu^2 = \frac{1}{n}\s + \mu^2
 					\end{align}
