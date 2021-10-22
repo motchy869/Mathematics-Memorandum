@@ -1128,12 +1128,12 @@
 				よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integ{-\infty}{\infty}{(f*g)(x)}{x}$は絶対収束する。
 			\end{proof}
 		\section{諸公式}
-			\subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
+			\subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \dotsi \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
 			\begin{proof}
 				\begin{align*}
-					&\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
-					&= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-1}=0}^{a-x_1- \dotsb - x_{n-3}} (a-x_1- \dotsb - x_{n-1}) \mathrm{d}x_{n-1} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
-					&= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \cdots \int_{x_{n-2}=0}^{a-x_1-\dotsb-x_{n-4}} (a-x_1- \dotsb - x_{n-2})^2 \mathrm{d}x_{n-2} \cdots \mathrm{d}x_2\mathrm{d}x_1 \\
+					&\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-1}=0}^{a-x_1- \dotsb - x_{n-3}} (a-x_1- \dotsb - x_{n-1}) \mathrm{d}x_{n-1} \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
+					&= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-2}=0}^{a-x_1-\dotsb-x_{n-4}} (a-x_1- \dotsb - x_{n-2})^2 \mathrm{d}x_{n-2} \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
 					&= \dotsb \\
                     &= \frac{1}{2\times 3\times\dotsb(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \mathrm{d}x_1 \\
                     &= \frac{a^n}{n!}
@@ -1213,7 +1213,7 @@
 				$ \bm{\alpha} = [\alpha_1,\dotsc,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
 				\begin{align*}
 					B(\bm{\alpha}) &\coloneqq \integ{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{\Omega}, \quad \Omega \coloneqq \set*{[x_1,\dotsc,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
-					&= \integ{x_1=0}{1}{\integ{x_2=0}{1-x_1}{\cdots\integ{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{x_{n-1}}\cdots}{x_2}}{x_1}
+					&= \integ{x_1=0}{1}{\integ{x_2=0}{1-x_1}{\dotsi\integ{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{x_{n-1}}\dotsi}{x_2}}{x_1}
 				\end{align*}
 			\end{shadebox}
 		\section{多変量Beta関数とGamma関数の関係}
@@ -1221,7 +1221,7 @@
 				\[B(\bm{\alpha}) = \frac{\prod_{i=1}^n\Gamma(\alpha_i)}{\Gamma(\sum_{i=1}^n \alpha_i)}\]
 			\end{shadebox}
 			\begin{proof}
-				\[ \prod_{i=1}^n \Gamma(\alpha_i) = \prod_{i=1}^n \integ{0}{\infty}{x_i^{\alpha_i-1}e^{-x_i}}{x_i} = \integ{x_1=0}{\infty}{\cdots\integ{x_n=0}{\infty}{\prod_{i=1}^n x_i^{\alpha_i-1}\exp\left(-\sum_{i=1}^n x_i\right)}{x_n}\cdots}{x_1} \]
+				\[ \prod_{i=1}^n \Gamma(\alpha_i) = \prod_{i=1}^n \integ{0}{\infty}{x_i^{\alpha_i-1}e^{-x_i}}{x_i} = \integ{x_1=0}{\infty}{\dotsi\integ{x_n=0}{\infty}{\prod_{i=1}^n x_i^{\alpha_i-1}\exp\left(-\sum_{i=1}^n x_i\right)}{x_n}\dotsi}{x_1} \]
 				ここで
 				\[
 					\bm{y} = P\bm{x},\quad
@@ -1236,12 +1236,12 @@
 				\]
 				なる変数変換を行うと、$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,\;|P|=1$なので
 				\begin{align*}
-					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{\integ{y_1=0}{y_n}{\cdots\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} e^{-y_n}|P|^{-1}}{y_{n-1}}\cdots}{y_1}}{y_n} \\
-					&= \integ{y_n=0}{\infty}{e^{-y_n}\integ{y_1=0}{y_n}{\cdots\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{y_{n-1}}\cdots}{y_1}}{y_n}
+					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{\integ{y_1=0}{y_n}{\dotsi\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} e^{-y_n}|P|^{-1}}{y_{n-1}}\dotsi}{y_1}}{y_n} \\
+					&= \integ{y_n=0}{\infty}{e^{-y_n}\integ{y_1=0}{y_n}{\dotsi\integ{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{y_{n-1}}\dotsi}{y_1}}{y_n}
 				\end{align*}
 				ここで$y_i = z_iy_n\;(i=1,\dotsc,n-1)$と変数変換すると
 				\begin{align*}
-					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{y_n^{\left(\sum_{i=1}^n \alpha_i-1\right)}e^{-y_n}}{y_n}\integ{z_1=0}{1}{\cdots\integ{z_{n-1}=0}{1-\sum_{i=1}^{n-2}z_i}{\prod_{i=1}^{n-1}z_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-1} z_i \right)^{\alpha_n-1}}{z_{n-1}}\cdots}{z_1} \\
+					\prod_{i=1}^n \Gamma(\alpha_i) &= \integ{y_n=0}{\infty}{y_n^{\left(\sum_{i=1}^n \alpha_i-1\right)}e^{-y_n}}{y_n}\integ{z_1=0}{1}{\dotsi\integ{z_{n-1}=0}{1-\sum_{i=1}^{n-2}z_i}{\prod_{i=1}^{n-1}z_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-1} z_i \right)^{\alpha_n-1}}{z_{n-1}}\dotsi}{z_1} \\
 					&= \Gamma\left(\sum_{i=1}^n \alpha_i\right)B(\bm{\alpha})
 				\end{align*}
 			\end{proof}
@@ -1312,8 +1312,8 @@
 		\section{
 			重積分の微分\texorpdfstring{\\}{}
 			\small{
-				\texorpdfstring{$\derivLong{\left(\integ{x_1=0}{x}{\cdots\integ{x_n=0}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$}{} \texorpdfstring{\\}{}
-				\texorpdfstring{$= \int_{x_1=0}^x\cdots\int_{x_{n-1}=0}^{x-x_1-\dotsb -x_{n-2}} f_1(x_1)\dotsm f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1}) \mathrm{d}x_{n-1}\cdots\mathrm{d}x_{1}$}{}
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=0}{x}{\dotsi\integ{x_n=0}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\dotsi}{x_1}\right)}{x}{}$}{} \texorpdfstring{\\}{}
+				\texorpdfstring{$= \int_{x_1=0}^x\dotsi\int_{x_{n-1}=0}^{x-x_1-\dotsb -x_{n-2}} f_1(x_1)\dotsm f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1}) \mathrm{d}x_{n-1}\dotsi\mathrm{d}x_{1}$}{}
 			}
 		}
 			\label{重積分の微分}
@@ -1333,14 +1333,14 @@
 				\renewcommand{\d}[1]{{\mathrm{d}#1}}
 				微分の定義に従い$\lim_{\domega \to 0}\frac{F(\omega+\domega)-F(\omega)}{\domega}$を計算する。
 				\begin{align*}
-					F(\omega+\domega) &= \integ{x_1=0}{\omega}{\cdots\integ{x_n=0}{\omega-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\cdots}{x_1} \\
-					&= \left(\int_{x_1=0}^\omega+\int_{x_1=\omega}^{\omega+\domega}\right)f_1(x_1)\textcolor{red}{\left(\int_{x_2=0}^{\omega-x_1}+\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}\right)f_2(x_2)\cdots}\\
-					& \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\cdots\d{x_2}}\d{x_1}
+					F(\omega+\domega) &= \integ{x_1=0}{\omega}{\dotsi\integ{x_n=0}{\omega-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\dotsi}{x_1} \\
+					&= \left(\int_{x_1=0}^\omega+\int_{x_1=\omega}^{\omega+\domega}\right)f_1(x_1)\textcolor{red}{\left(\int_{x_2=0}^{\omega-x_1}+\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}\right)f_2(x_2)\dotsi}\\
+					& \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\dotsi\d{x_2}}\d{x_1}
 				\end{align*}
 				であり、括弧の中身を全部展開すれば$F(\omega)$を含む$2^n$個の項が出る。
 				$\frac{F(\omega+\domega)-F(\omega)}{\domega}$を考えるときは$F(\omega)$は相殺するから放っておけば良い。
 				$F(\omega)$を除いた$2^n-1$項を$\domega$で除して$\domega \to 0$としたとき、ある1項を除いて他は0になり、残った項が$\integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}$になることを以下で示していく。
-				\[g_1(\omega,x_1) \coloneqq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\cdots\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_2}}\]
+				\[g_1(\omega,x_1) \coloneqq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\dotsi\d{x_2}}\]
 				とおけば
 				\begin{align*}
 					F(\omega+\domega) = \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{11}(\omega,\domega)} + \underbrace{\int_{x_1=\omega}^{\omega+\domega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{12}(\omega,\domega)}
@@ -1349,7 +1349,7 @@
 				積分の平均値の定理から$^\exists\theta_1 \in (\omega,\omega+\domega)\st h_{12}(\omega,\domega)=\domega f_1(\theta_1)g_1(\omega,\theta_1)$であるので
 				\[\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}f_1(\theta_1)g_1(\omega,\theta_1) = f_1(\omega)\lim_{\domega\to 0}g_1(\omega,\theta_1) = 0\]
 				結局$h_{11}(\omega,\domega)$だけ考えれば良い。
-				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\cdots\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
+				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
 				とおけば
 				\begin{align*}
 					h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{21}(\omega,\domega)} \\
