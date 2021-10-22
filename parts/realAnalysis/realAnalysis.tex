@@ -215,7 +215,7 @@
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
-				$\lim_{n\to\infty}a_n=0$より$^\exists C\geq 0\st|a_n|\leq C\mathrm{ for }^\forall n\in\{1,2,\cdots\}$。
+				$\lim_{n\to\infty}a_n=0$より$^\exists C\geq 0\st|a_n|\leq C\mathrm{ for }^\forall n\in\{1,2,\dotsc\}$。
 				また、$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
 				そこで$t\geq T$とすると
 				\begin{align*}
@@ -686,7 +686,7 @@
 					\[ \nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top \]
 				\end{shadebox}
 				\begin{proof}
-					\[ \nabla_{\bm{x}\bm{y}} f = \nabla_\bm{x}\nabla_\bm{y}f = \nabla_\bm{x}\left[\partDeriv{f}{y_1}{}, \cdots, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_{\bm{y}\bm{x}} f)^\top \]
+					\[ \nabla_{\bm{x}\bm{y}} f = \nabla_\bm{x}\nabla_\bm{y}f = \nabla_\bm{x}\left[\partDeriv{f}{y_1}{}, \dotsc, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_{\bm{y}\bm{x}} f)^\top \]
 				\end{proof}
 			\subsection{勾配ベクトルが等値面の接平面と直交することの証明}
 				\begin{shadebox}
@@ -783,7 +783,7 @@
 				であることと$(-1)^{m-i} = (-1)^{m+i}$に注意して
 				\begin{align*}
 					J_{\Fhat}(\ahat)| &= \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}\left[\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})|\matPart{J_F(\bm{a})}{1}{m}{1}{m}|\right. \\
-					&+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\cdots\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}\right|\right]
+					&+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\dotsc\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}\right|\right]
 				\end{align*}
 				上式の$[\;]$内は$|J_F(\bm{a})|$の第$m$行に関する余因子展開と等しいので
 				\[ |J_{\Fhat}(\ahat)| = \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}|J_F(\bm{a})| \neq 0 \]
@@ -885,7 +885,7 @@
 				\begin{proof}
 					\quad\par
 					背理法で示す。仮に$\mLebO{\bigcup_{n=1}^\infty A_n} > \sum_{n=1}^\infty \mLebO{A_n}$とし、その差を$d>0$とおく。
-					数列$\{a_n\},\;a_n = \frac{d}{3}2^{-n+1}\;(n=1,2,\cdots)$とおくと級数$\sum_{n=1}^\infty a_n = 2d/3$となる。
+					数列$\{a_n\},\;a_n = \frac{d}{3}2^{-n+1}\;(n=1,2,\dotsc)$とおくと級数$\sum_{n=1}^\infty a_n = 2d/3$となる。
 					任意の$n\in\naturalNumbers$に対してある直方体領域$R_n$が存在して$A_n\subset R_n,\;|R_n| < \mLebO{A_n} + a_n$となる。
 					$\bigcup_{n=1}^\infty A_n \subset \bigcup_{n=1}^\infty R_n$となるので$\mLebO{\bigcup_{n=1}^\infty A_n} \leq |\bigcup_{n=1}^\infty R_n| \leq \sum_{n=1}^\infty |R_n| = \sum_{n=1}^\infty \mLebO{A_n} + \sum_{n=1}^\infty a_n < \sum_{n=1}^\infty \mLebO{A_n} + d < \mLebO{\bigcup_{n=1}^\infty A_n}$となり矛盾。
 				\end{proof}
@@ -968,7 +968,7 @@
 					直前の定理を繰り返し用いる。
 				\end{proof}
 			\subsection{Lebesgue測度の\texorpdfstring{$\sigma$}{σ}--加法性}
-				Lebesgue可測集合$A_1,A_2,\cdots\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
+				Lebesgue可測集合$A_1,A_2,\dotsc\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
 				\begin{proof}
 					\quad\par
 					$B_n \coloneqq \bigsqcup_{i=1}^n A_i,\;B \coloneqq \bigsqcup_{i=1}^\infty A_i$とする。
@@ -1143,7 +1143,7 @@
 		\section{定義}
 			$\realNumbers^n$上の有界関数$f$と区分的に滑らかな有向曲線$C$に対して$x_d\;(d=1,\dotsc,n)$軸方向の線積分を以下のようにして定義する。
 			\par
-			$C$上にその向きに沿って$n+1$個の分点\quad$\text{始点} = P_0, P_1, \cdots, P_n = \text{終点}$\quad をとる。
+			$C$上にその向きに沿って$n+1$個の分点\quad$\text{始点} = P_0, P_1, \dotsc, P_n = \text{終点}$\quad をとる。
 			添字の意味で隣接する2点$P_{i-1},P_i$は重ならないようにする。さらに添字の順番が曲線の向きと逆行しないようにする。
 			曲線が自己交差する点では複数の点が重なることがあるが、それは構わない。
 			これらの点による$C$の分割を$\Delta$と表し、その「幅」を$|\Delta| \coloneqq \max_{i\in\range{1}{n}}\norm{P_{i-1}P_i}_2$で定義する。
@@ -1156,8 +1156,8 @@
 			その理由を以下で説明する。
 			\par
 			諸々の定義は「定義」で述べたものを引き続き用いる。
-			$t$を$a$から始めて$b$まで増加させると$P_0,P_1,\cdots$と順に分点に出会う。
-			出会った順に対応する$t$を$t_0,t_1,\cdots$と決めてゆく。
+			$t$を$a$から始めて$b$まで増加させると$P_0,P_1,\dotsc$と順に分点に出会う。
+			出会った順に対応する$t$を$t_0,t_1,\dotsc$と決めてゆく。
 			曲線が自己交差する点では複数の点が重なっていることがあるが、このときは添字の若い順にとる。
 			つまり最初の通過で一番若い添字のものが対応し、次の通過で次に若い添字を対応させる。
 			平均値の定理より、各$i$に対して適当な$\mu_i\in(t_{i-1},t_i)$が存在して$(\Delta x_d)_i = \phi_d(t_i) - \phi_d(t_{i-1}) = \phi_d'(\mu_i)(t_i-t_{i-1})$を満たす。
