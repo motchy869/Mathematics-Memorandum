@@ -40,7 +40,7 @@
 				t_{i+1} &= t_{i-1} - q_it_i
 			\end{align*}
 			上の式は、$i\geq 1$については$q_i,r_{i+1}$はそれぞれ$r_{i-1}$を$r_i$で割った商と余りであることを言っている。
-			$r_2,r_3,\cdots$は真に単調減少するから、ある$k\in\naturalNumbers$において$r_{k+1}=0$となる。
+			$r_2,r_3,\dotsc$は真に単調減少するから、ある$k\in\naturalNumbers$において$r_{k+1}=0$となる。
 			この時点で数列の生成を停止する。
 			$a$や$b$が負数の場合は$q_i<0$となることもあるが、それは高々$q_2$までで、$q_3$以降は1以上になる。
 			なぜならば$r_2$以降が非負だからである。
@@ -62,7 +62,7 @@
 				$r_0 = a = as_0 + bt_0,\;r_1 = b = as_1 + bt_1$であり、$r_2 = r_0 - q_1r_1 = as_0 + bt_0 - q_1(as_1 + bt_1) = a(s_0 - q_1s_1) + b(t_0 - q_1t_1) = as_2 + bt_2$が成り立つ。これを続けると$r_i = as_i + bt_i\;(i=0,\dotsc,k+1)$が得られる。
 				\par
 				項目1の証明はこれで済んだが、$\{s_i\},\{t_i\}$の漸化式がどうやって考案されたのか想像してみる。
-				等式$r_i = as_i + bt_i$が$i=0,1,\cdots$について成り立って欲しいのだから、$as_{i-1} + bt_{i-1} = r_{i-1} = r_{i+1} + q_ir_i = as_{i+1} + bt_{i+1} + q_i(as_i + bt_i) = a(s_{i+1} + q_is_i) + b(t_{i+1} + q_it_i)$とおいて最左辺と最右辺の$a,b$の係数を比較すれば漸化式を得られる。
+				等式$r_i = as_i + bt_i$が$i=0,1,\dotsc$について成り立って欲しいのだから、$as_{i-1} + bt_{i-1} = r_{i-1} = r_{i+1} + q_ir_i = as_{i+1} + bt_{i+1} + q_i(as_i + bt_i) = a(s_{i+1} + q_is_i) + b(t_{i+1} + q_it_i)$とおいて最左辺と最右辺の$a,b$の係数を比較すれば漸化式を得られる。
 				\newline
 				(項目2)
 				\[
@@ -95,13 +95,13 @@
 				\newline
 				(項目4)
 				\par
-				まず$s_0,s_2,s_4,\cdots>0,\;s_3,s_5,s_7,\cdots<0$を示す。
+				まず$s_0,s_2,s_4,\dotsc>0,\;s_3,s_5,s_7,\dotsc<0$を示す。
 				$s_0$は定義より正である。さらに$s_2 = s_0 - q_1s_1 = 1,\;s_3 = s_1 - q_2s_2 = -q_2$を直接確かめられる。
 				これより始めて帰納的に、$l\geq 2$に対して$s_{2l} = s_{2l-2} - q_{2l-1}s_{2l-1} > 0,\;s_{2l-1} = s_{2l-3} - q_{2l-2}s_{2l-2} < 0$が成り立つ。
 				\par
-				次に数列$\{|s_i|\}\;(i=1,2,\cdots)$が単調増加であること、特に$|s_2|\leq|s_3|$を除いて他は全て狭義単調増加であることを示す。
+				次に数列$\{|s_i|\}\;(i=1,2,\dotsc)$が単調増加であること、特に$|s_2|\leq|s_3|$を除いて他は全て狭義単調増加であることを示す。
 				まず$0 = |s_1| < 1 = |s_2|,\;|s_3| = |-q_2| \geq 1 = |s_2|,\;|s_4| = |s_2 - q_3s_3| = |1 + q_2q_3| > |q_2| = |s_3|$を直接確かめられる。
-				これより始めて帰納的に、$l\geq 2$に対して$|s_{2l+1}| - |s_{2l}| = -s_{2l+1} - s_{2l} = (q_{2l}-1)s_{2l} - s_{2l-1} > 0,\;|s_{2l+2}| - |s_{2l+1}| = (1-q_{2l+1})s_{2l+1} + s_{2l} > 0$が成り立つから$|s_{2l+1}| > |s_{2l}|\;(l=2,3,\cdots)$である。
+				これより始めて帰納的に、$l\geq 2$に対して$|s_{2l+1}| - |s_{2l}| = -s_{2l+1} - s_{2l} = (q_{2l}-1)s_{2l} - s_{2l-1} > 0,\;|s_{2l+2}| - |s_{2l+1}| = (1-q_{2l+1})s_{2l+1} + s_{2l} > 0$が成り立つから$|s_{2l+1}| > |s_{2l}|\;(l=2,3,\dotsc)$である。
 				同様にして$|t_0| < |t_1| \leq |t_2| < |t_3| < \dotsb$が成り立つ。
 				これと項目3より定理の主張が成り立つ。
 			\end{proof}
@@ -170,7 +170,7 @@
 				左辺は5で割り切れないが右辺は割り切れるので矛盾している。
 			\end{proof}
 	\chapter{公式}
-		\section{\texorpdfstring{$1\cdot3\cdot5\cdots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
+		\section{\texorpdfstring{$1\cdot3\cdot5\dots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
 			\begin{proof}
 				\begin{align*}
 					1\cdot3\cdot5\cdots(2n-1)2n = \frac{1\cdot2\cdot3\cdot4\cdot5\cdot6\cdot7\cdots(2n-2)(2n-1)2n}{\underbrace{2\cdot4\cdot6\cdots(2n-2)2n}_{n\text{個}}}2^n = \frac{(2n)!}{1\cdot2\cdot3\cdots(n-1)n} = \frac{(2n)!}{n!}
@@ -211,13 +211,13 @@
 				\end{align*}
 			\end{proof}
 	\chapter{数え上げ}
-		\section{\texorpdfstring{``for $i=1, \cdots, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\dotsc,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\dotsc,n/d \text{ where } \gcd(j,n/d)=1$''}{数え上げと最大公約数}}
+		\section{\texorpdfstring{``for $i=1, \dotsc, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\dotsc,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\dotsc,n/d \text{ where } \gcd(j,n/d)=1$''}{数え上げと最大公約数}}
 			1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、最初の$\iff$が成り立つ。
 			2つ目の$\iff$については$i=dj$なる変数変換を施すことで分かる。
 			次のような使い方が考えられる。
 			\begin{itemize}
-				\item $\sum_{i=1}^n f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{j=1, \cdots, n/d}{\gcd(j,n/d)=1}} f(dj)$
-				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{i=1, \cdots, n}{\gcd(i,n)=d}} f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{j=1, \cdots, n/d}{\gcd(j,n/d)=1}} f(dj)$
+				\item $\sum_{i=1}^n f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{i=1, \dotsc, n}{\gcd(i,n)=d}} f(i) = \sum_{d \mid n} \sum_{\genfrac{}{}{0pt}{}{j=1, \dotsc, n/d}{\gcd(j,n/d)=1}} f(dj)$
+				\item $\prod_{i=1}^n f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{i=1, \dotsc, n}{\gcd(i,n)=d}} f(i) = \prod_{d \mid n} \prod_{\genfrac{}{}{0pt}{}{j=1, \dotsc, n/d}{\gcd(j,n/d)=1}} f(dj)$
 			\end{itemize}
 		\section{包除原理}
 			\subsection{補題: \texorpdfstring{$A\subseteq U \Rightarrow |A| = \sum_{x\in U}{|A\cap\{x\}|}$}{A⊆Uのときの|A|の計算}}
