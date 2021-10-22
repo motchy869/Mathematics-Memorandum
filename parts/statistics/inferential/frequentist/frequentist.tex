@@ -614,7 +614,7 @@
 						\E{}{\bm{X}} &= \integ{\realNumbers^n}{}{\bm{x}f_{\bm{X}}(\bm{x})}{\bm{x}} = \integ{\realNumbers^n}{}{(V\bm{y}+\bm{\mu})\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
 						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
 						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} \\
-						&= \bm{\mu} + V\integ{y_n=-\infty}{\infty}{\cdots\integ{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_1}\cdots}{y_n}
+						&= \bm{\mu} + V\integ{y_n=-\infty}{\infty}{\dotsi\integ{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_1}\dotsi}{y_n}
 					\end{align*}
 					第二項目はベクトルの各インデックス毎に奇関数の対称積分が起こり、結局全体が0になることがわかる。
 				\end{proof}

@@ -1349,7 +1349,7 @@
 				積分の平均値の定理から$^\exists\theta_1 \in (\omega,\omega+\domega)\st h_{12}(\omega,\domega)=\domega f_1(\theta_1)g_1(\omega,\theta_1)$であるので
 				\[\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}f_1(\theta_1)g_1(\omega,\theta_1) = f_1(\omega)\lim_{\domega\to 0}g_1(\omega,\theta_1) = 0\]
 				結局$h_{11}(\omega,\domega)$だけ考えれば良い。
-				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\cdots\d{x_3}\]
+				\[g_2(\omega,x_1,x_2) \coloneqq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\dotsi\d{x_3}\]
 				とおけば
 				\begin{align*}
 					h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{21}(\omega,\domega)} \\
@@ -1364,14 +1364,14 @@
 				同様の議論を繰り返すと、結局$h_{ij}(\omega,\domega)\quad((i,j)\in\{1,\dotsc,n-1\}\times\{1,2\})$に対して$\lim_{\domega\to 0}\frac{h_{i2}(\omega,\domega)}{\domega}=0$であり、残る項は
 				\begin{align*}
 					&\quad h_{n-1,1}(\omega,\domega) \\
-					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1}) \\
-					& \left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\d{x_{n-1}}\cdots\d{x_1} \\
-					&= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}}\d{x_{n-1}}\cdots\d{x_1}}_{=:h_{n2}(\omega,\domega)}
+					&= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1}) \\
+					& \left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\d{x_{n-1}}\dotsi\d{x_1} \\
+					&= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}}\d{x_{n-1}}\dotsi\d{x_1}}_{=:h_{n2}(\omega,\domega)}
 				\end{align*}
 				だけである。積分の平均値の定理から$^\exists\theta_n\in(\omega-x_1-\dotsb-x_{n-1},\omega-x_1-\dotsb-x_{n-1}+\domega)\st\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}} = \domega f_n(\theta_n)$であるので
 				\begin{align*}
-					\lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\d{x_{n-1}}\cdots\d{x_1} \\
-					&= \int_{x_1=0}^{\omega}f_1(x_1)\cdots\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\dotsb-x_{n-1})\d{x_{n-1}}\cdots\d{x_1} \\
+					\lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\d{x_{n-1}}\dotsi\d{x_1} \\
+					&= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\dotsb-x_{n-1})\d{x_{n-1}}\dotsi\d{x_1} \\
 					&= \integ{\overline{\Omega}^+}{}{f(\bm{x})}{\bm{x}}
 				\end{align*}
 				以上より
@@ -1380,8 +1380,8 @@
 		\section{
 			系\texorpdfstring{\\}{}
 			\small{
-				\texorpdfstring{$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\cdots\integ{x_n=-\infty}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\cdots}{x_1}\right)}{x}{}$\\}{}
-				\texorpdfstring{$= \integ{x_1=-\infty}{\infty}{\cdots\integ{x_{n-1}=-\infty}{x-x_1-\dotsb-x_{n-2}}{f_1(x_1)\dotsm f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1})}{x_{n-1}}\cdots}{x_1}$}{}
+				\texorpdfstring{$\derivLong{\left(\integ{x_1=-\infty}{\infty}{\dotsi\integ{x_n=-\infty}{x-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{x_n}\dotsi}{x_1}\right)}{x}{}$\\}{}
+				\texorpdfstring{$= \integ{x_1=-\infty}{\infty}{\dotsi\integ{x_{n-1}=-\infty}{x-x_1-\dotsb-x_{n-2}}{f_1(x_1)\dotsm f_{n-1}(x_{n-1})f_n(x-x_1-\dotsb-x_{n-1})}{x_{n-1}}\dotsi}{x_1}$}{}
 			}
 		}
 			\label{重積分の微分の系}
