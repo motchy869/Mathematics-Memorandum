@@ -31,7 +31,7 @@
 				\[\bm{v}^\top\Sigma_{\DS}\bm{v} = \frac{1}{D}\sum_{d=1}^D{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})(\bm{x}_d-\overline{\bm{x}})^\top\bm{v}} = \frac{1}{D}\sum_{d=1}^D{\norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2} \geq 0\]
 				であるから少なくとも半正定である。さらに
 				\begin{align*}
-					\textrm{等号成立} &\iff \norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2 = 0,\;^\forall d\in\{1,\cdots,D\},\;^\forall \bm{v}\in\realNumbers^n\setminus{\bm{0}_n} \iff \bm{x}_d = \overline{\bm{x}},\;^\forall d\in{1,\cdots,D} \\
+					\textrm{等号成立} &\iff \norm{\bm{v}^\top(\bm{x}_d-\overline{\bm{x}})}^2 = 0,\;^\forall d\in\{1,\dotsc,D\},\;^\forall \bm{v}\in\realNumbers^n\setminus{\bm{0}_n} \iff \bm{x}_d = \overline{\bm{x}},\;^\forall d\in{1,\dotsc,D} \\
 					&\iff \Var{}{\DS} = 0
 				\end{align*}
 			\end{proof}
@@ -42,13 +42,13 @@
 			\ref{分散共分散行列の定値性}より、分散共分散行列$\Sigma_{\DS}$は半正定であり、特に$\Var{}{\DS}>0$であれば正定である。
 			従って、$\Sigma_{\DS}$は直交行列で対角化でき、対角行列には固有値が並ぶ。しかも固有値は全て実数である。
 			\par
-	% 		$\Sigma_{\DS}$の相異なる固有値の数を$\nev$とし(evは eigen value の略)、固有値を$\lambda_1>\lambda_2>\cdots>\lambda_\nev\geq 0$とする。
-	% 		固有値$\lambda_i$の固有空間の次元を$\nu_i$とし、$\lambda_i$に属する正規直交固有ベクトルを$\bm{p}_{i1},\cdots,\bm{p}_{i\nu_i}$とする。
-	% 		$P \coloneqq [\bm{p}_{11},\cdots,\bm{p}_{1\nu_1},\cdots,\bm{p}_{\nev 1},\cdots,\bm{p}_{\nev,\nu_\nev}]$とすると$P$は直交行列である。
-	% 		$\Lambda_i \coloneqq \diag{\lambda_{i1},\cdots,\lambda_{i\nu_i}}$とし、$\Lambda \coloneqq \diag{\Lambda_1,\cdots,\Lambda_\nev}$とすると$\Sigma_{\DS}$は次のように$P$によって対角化される。
+	% 		$\Sigma_{\DS}$の相異なる固有値の数を$\nev$とし(evは eigen value の略)、固有値を$\lambda_1>\lambda_2>\dotsb>\lambda_\nev\geq 0$とする。
+	% 		固有値$\lambda_i$の固有空間の次元を$\nu_i$とし、$\lambda_i$に属する正規直交固有ベクトルを$\bm{p}_{i1},\dotsc,\bm{p}_{i\nu_i}$とする。
+	% 		$P \coloneqq [\bm{p}_{11},\dotsc,\bm{p}_{1\nu_1},\dotsc,\bm{p}_{\nev 1},\dotsc,\bm{p}_{\nev,\nu_\nev}]$とすると$P$は直交行列である。
+	% 		$\Lambda_i \coloneqq \diag{\lambda_{i1},\dotsc,\lambda_{i\nu_i}}$とし、$\Lambda \coloneqq \diag{\Lambda_1,\dotsc,\Lambda_\nev}$とすると$\Sigma_{\DS}$は次のように$P$によって対角化される。
 			簡単のため固有値に重複はないものとすると、全ての固有空間の次元は1である。
-			固有値を大きい順に$\lambda_1>\cdots>\lambda_n\geq 0$とし、固有値$\lambda_i$に対応する大きさ1の固有ベクトルを$\bm{p}_i$とする。
-			直交行列$P\coloneqq[\bm{p}_1,\cdots,\bm{p}_n]$と対角行列$\Lambda\coloneqq\diag{\lambda_1,\cdots,\lambda_n}$を用いて$\Sigma_{\DS}$は次のように対角化される。
+			固有値を大きい順に$\lambda_1>\dotsb>\lambda_n\geq 0$とし、固有値$\lambda_i$に対応する大きさ1の固有ベクトルを$\bm{p}_i$とする。
+			直交行列$P\coloneqq[\bm{p}_1,\dotsc,\bm{p}_n]$と対角行列$\Lambda\coloneqq\diag{\lambda_1,\dotsc,\lambda_n}$を用いて$\Sigma_{\DS}$は次のように対角化される。
 			\[\Sigma_{\DS} = P\Lambda P^\top\]
 		\section{データセットの射影}
 			\begin{shadebox}

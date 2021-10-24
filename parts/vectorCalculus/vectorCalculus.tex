@@ -103,9 +103,9 @@
 							\end{array}
 						\right] = \left[
 							\begin{array}{c}
-								\left[\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\cdots,\partDerivIIHetero{f}{x_1}{x_n}\right]\bm{v}\\
+								\left[\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\dotsc,\partDerivIIHetero{f}{x_1}{x_n}\right]\bm{v}\\
 								\vdots\\
-								\left[\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\cdots,\partDeriv{f}{x_n}{2}\right]\bm{v}
+								\left[\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\dotsc,\partDeriv{f}{x_n}{2}\right]\bm{v}
 							\end{array}
 						\right] = \left(\nabla^2f\right)\bm{v}
 					\]
@@ -133,18 +133,18 @@
 		\section{諸定理}
 			\subsection{非負領域の共通部分の非負領域}
 				\begin{shadebox}
-					$\realNumbers^n$上で考える。$\bm{v}_1,\cdots,\bm{v}_m\;(m\leq n)$は一次独立であるとし、$\bm{v}$の非負領域を
+					$\realNumbers^n$上で考える。$\bm{v}_1,\dotsc,\bm{v}_m\;(m\leq n)$は一次独立であるとし、$\bm{v}$の非負領域を
 					\[P(\bm{v})\coloneqq\left\{\bm{w}|\inprod{\bm{v}}{\bm{w}}\geq0\right\})\]
 					で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の非負領域にある、すなわち
 					\[\inprod{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\]
-					であるとき、$\bm{u}$は適当な定数$a_i\geq0(i=1,\cdots,m)$によって
+					であるとき、$\bm{u}$は適当な定数$a_i\geq0(i=1,\dotsc,m)$によって
 					\[\bm{u} = \sum_{i=1}^{m}{a_i\bm{v}_i}\]
 					と表せる。
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
-						まず$\bm{u}$が$\bm{v}_1,\cdots,\bm{v}_m$の一次結合で表せることを示す。\\
-						$W \coloneqq \Span{\bm{v}_1,\cdots,\bm{v}_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから、適当な定数$c_1,\cdots,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
+						まず$\bm{u}$が$\bm{v}_1,\dotsc,\bm{v}_m$の一次結合で表せることを示す。\\
+						$W \coloneqq \Span{\bm{v}_1,\dotsc,\bm{v}_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから、適当な定数$c_1,\dotsc,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
 						\begin{equation}
 							\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i} + \bm{w}_t
 						\end{equation}
@@ -162,7 +162,7 @@
 						と表せることになる。
 						\par
 						次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はクロネッカーのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
-						$\bm{v}_1,\cdots,\bm{v}_m\;(m\leq n)$は一次独立であったから次の行列
+						$\bm{v}_1,\dotsc,\bm{v}_m\;(m\leq n)$は一次独立であったから次の行列
 						\[
 							A = \left[
 								\begin{array}{c}

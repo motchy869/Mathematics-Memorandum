@@ -15,9 +15,9 @@
 			\end{proof}
 		\section{ベクトル確率変数の線形写像の像の期待値と分散共分散行列}
 			\begin{shadebox}
-				$X_1,\cdots,X_n\in\realNumbers$を確率変数、$A\in\realNumbers^{n\times m}$、$\bm{X}\coloneqq[X_1,\cdots,X_n]^\top$、$\Sigma_X\coloneqq\CovMat{\bm{X}}$とすると次が成り立つ。
+				$X_1,\dotsc,X_n\in\realNumbers$を確率変数、$A\in\realNumbers^{n\times m}$、$\bm{X}\coloneqq[X_1,\dotsc,X_n]^\top$、$\Sigma_X\coloneqq\CovMat{\bm{X}}$とすると次が成り立つ。
 				\[\E{}{A^\top\bm{X}} = A^\top\E{}{\bm{X}},\quad\CovMat{A^\top\bm{X}} = A^\top\Sigma_X A\]
-				特に$X_1,\cdots,X_n$が独立で同一の分散$\sigma^2$をもち、かつ$A$が$n$次直交行列であれば
+				特に$X_1,\dotsc,X_n$が独立で同一の分散$\sigma^2$をもち、かつ$A$が$n$次直交行列であれば
 				\[\CovMat{A^\top\bm{X}} = \Sigma_X\]
 			\end{shadebox}
 			\begin{proof}
@@ -35,11 +35,11 @@
 				\end{align*}
 				これより$\CovMat{A^\top\bm{X}} = A^\top\Sigma_X A$。
 				\par
-				特に$X_1,\cdots,X_n$が独立で同一の分散$\sigma^2$をもち、かつ$A$が$n$次直交行列であれば
+				特に$X_1,\dotsc,X_n$が独立で同一の分散$\sigma^2$をもち、かつ$A$が$n$次直交行列であれば
 				\[\CovMat{A^\top\bm{X}} = A^\top\Sigma_X A = A^\top\sigma^2I_n A = \sigma^2I_n = \Sigma_X\]
 			\end{proof}
 		\section{スコア関数}
-			$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\cdots,X_n \in \Omega$に対して「スコア関数」を次式で定義する。
+			$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\dotsc,X_n \in \Omega$に対して「スコア関数」を次式で定義する。
 			\[ V_n(\bm{X},\theta) \coloneqq \partDerivLong{\log f(\bm{X};\theta)}{\theta}{} = \partDerivLong{\log \prod_{i=1}^n f(X_i;\theta)}{\theta}{} = \partDerivLong{\sum_{i=1}^n \log f(X_i;\theta)}{\theta}{} = \sum_{i=1}^n V(X_i,\theta) \]
 			\subsection{\texorpdfstring{$\E{\bm{X}}{V(\bm{X},\theta)} = 0$}{E\_X (V(X,Θ)) = 0}}
 				\begin{proof}
@@ -51,7 +51,7 @@
 				\end{proof}
 		\section{Cram\'er-Raoの不等式}
 			\begin{shadebox}
-				$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\cdots,X_n \in \Omega$から計算した$\theta$の不偏推定量$\hat{\theta}(\bm{X})$について次式が成り立つ
+				$\theta$をパラメータとする確率密度関数$f(x;\theta)$に従うi.i.d確率変数$X_1,\dotsc,X_n \in \Omega$から計算した$\theta$の不偏推定量$\hat{\theta}(\bm{X})$について次式が成り立つ
 				\[ \Var{\bm{X}}{\hat{\theta}(\bm{X})} \geq \left(n\E{\textcolor{red}{X}}{V(\textcolor{red}{X},\theta)^2}\right)^{-1} = \left(n\Var{X}{V(X,\theta)}\right)^{-1} \]
 			\end{shadebox}
 			\begin{proof}
@@ -391,7 +391,7 @@
 			確率変数$X$がこの分布に従うことを$X \sim \ErlangDist{k}{\mu}$と表すことにする。
 		\section{解釈}
 			単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が、時間$x$の間に$k$以上回数生起する(つまり、$k$回目の事象の発生までの待ち時間が$x$である)確率の累積分布。
-		\section{指数分布との関係: \texorpdfstring{$X_1,\cdots,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\cdots X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
+		\section{指数分布との関係: \texorpdfstring{$X_1,\dotsc,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\dotsb+X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
 			\label{指数分布とErlang分布の関係}
 			\begin{proof} (直接的な証明)
 				\par
@@ -406,8 +406,8 @@
 			\end{proof}
 			\begin{proof} (特性関数を用いた証明)
 				\par
-				$X_1+\cdots X_k$が従う分布の特性関数は次式である($X_1,\cdots,X_k$が独立であることに注意)。
-				\[ \E{}{e^{it(X_1+\cdots X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
+				$X_1+\dotsb+ X_k$が従う分布の特性関数は次式である($X_1,\dotsc,X_k$が独立であることに注意)。
+				\[ \E{}{e^{it(X_1+\dotsb+X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
 				一方、$\ErlangDist{k}{\mu}$の特性関数を計算すると次式になる。
 				\begin{align*}
 					&\quad \integ{0}{\infty}{\frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu}e^{itx}}{x} = \frac{1}{(k-1)!\mu^k}\integ{0}{\infty}{x^{k-1}e^{\left(\frac{-x}{\mu} + it\right)x}}{x} \\
@@ -423,7 +423,7 @@
 			\[
 				P(X=k) =
 				\begin{cases}
-					\frac{\lambda^k}{k!}e^{-\lambda} & (k = 0,1,2,\cdots) \\
+					\frac{\lambda^k}{k!}e^{-\lambda} & (k = 0,1,2,\dotsc) \\
 					0 & (\text{otherwise})
 				\end{cases}
 			\]
@@ -550,7 +550,7 @@
 			\end{proof}
 		\section{一次結合}
 			\begin{shadebox}
-				\[X_i \sim N(\mu_i,{\sigma_i}^2) \quad (i=1,2,\cdots) \quad \Rightarrow Z = \sum_{i=1}^{n}{c_i X_i} \quad \sim N\left(\sum_{i=1}^{n}{c_i \mu_i},\sum_{i=1}^{n}{(c_i \sigma_i)^2}\right)\]
+				\[X_i \sim N(\mu_i,{\sigma_i}^2) \quad (i=1,2,\dotsc) \quad \Rightarrow Z = \sum_{i=1}^{n}{c_i X_i} \quad \sim N\left(\sum_{i=1}^{n}{c_i \mu_i},\sum_{i=1}^{n}{(c_i \sigma_i)^2}\right)\]
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -570,8 +570,8 @@
 		\section{零平均,同分散の正規分布に独立に従う\texorpdfstring{$n$}{n}個の確率変数の直交変換もまた同じ分布に従う}
 			\label{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}
 			\begin{shadebox}
-				$X_1,\cdots,X_n\sim N(0,\sigma^2),\quad\bm{X}\coloneqq[X_1,\cdots,X_n]^\top$とし、$P\in\realNumbers^{n\times n}$を直交行列とする。
-				$\bm{Y} \coloneqq [Y_1,\cdots,Y_n]^\top \coloneqq P\bm{X}$とすると、$Y_1,\cdots,Y_n\sim N(0,\sigma^2)$
+				$X_1,\dotsc,X_n\sim N(0,\sigma^2),\quad\bm{X}\coloneqq[X_1,\dotsc,X_n]^\top$とし、$P\in\realNumbers^{n\times n}$を直交行列とする。
+				$\bm{Y} \coloneqq [Y_1,\dotsc,Y_n]^\top \coloneqq P\bm{X}$とすると、$Y_1,\dotsc,Y_n\sim N(0,\sigma^2)$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -592,14 +592,14 @@
 			\end{proof}
 		\section{多変量正規分布}
 			\subsection{定義}
-				$\Sigma$を正定値対称行列とし、対角化が$\diag{{\sigma_1}^2,\cdots,{\sigma_n}^2}$であるとする。
-				確率変数$X_1,\cdots,X_n$の同時確率密度関数$f_{\bm{X}}(\bm{x})$が
+				$\Sigma$を正定値対称行列とし、対角化が$\diag{{\sigma_1}^2,\dotsc,{\sigma_n}^2}$であるとする。
+				確率変数$X_1,\dotsc,X_n$の同時確率密度関数$f_{\bm{X}}(\bm{x})$が
 				\[ f_{\bm{X}}(\bm{x}) = \frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}} \exp\left[ -\frac{1}{2}(\bm{x}-\bm{\mu})^\top\Sigma^{-1}(\bm{x}-\bm{\mu}) \right]\]
-				であるとき、$X_1,\cdots,X_n$が従う分布は\textbf{多変量正規分布}と呼ばれ、$N(\bm{\mu},\Sigma)$と表記される。
+				であるとき、$X_1,\dotsc,X_n$が従う分布は\textbf{多変量正規分布}と呼ばれ、$N(\bm{\mu},\Sigma)$と表記される。
 				期待値と共分散行列は$\E{}{\bm{X}}=\bm{\mu},\;\CovMat{\bm{X}} = \Sigma$である。
 			\subsection{密度関数の全空間積分が1になることの確認}
 				\label{subsec:多変量正規分布の密度関数の全空間積分が1になることの確認}
-				$\Sigma$に関する仮定より、適当な直交行列$V$が存在して$\Sigma = V\Lambda V^\top,\;\Lambda=\diag{{\sigma_1}^2,\cdots,{\sigma_n}^2}$と変形できる。
+				$\Sigma$に関する仮定より、適当な直交行列$V$が存在して$\Sigma = V\Lambda V^\top,\;\Lambda=\diag{{\sigma_1}^2,\dotsc,{\sigma_n}^2}$と変形できる。
 				そこで$\bm{x}-\bm{\mu} = V\bm{y}$すなわち$\bm{y} = V^\top(\bm{x}-\bm{\mu})$なる直交変換を行うと、求めたい積分は次のように変形できる。
 				\begin{align*}
 					\integ{\realNumbers^n}{}{f_{\bm{X}}(\bm{x})}{\bm{x}} &= \integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}\bm{y}^\top V (V\Lambda V^\top)^{-1} V\bm{y}\right) |\det V|}{\bm{y}} \\
@@ -614,7 +614,7 @@
 						\E{}{\bm{X}} &= \integ{\realNumbers^n}{}{\bm{x}f_{\bm{X}}(\bm{x})}{\bm{x}} = \integ{\realNumbers^n}{}{(V\bm{y}+\bm{\mu})\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
 						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
 						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} \\
-						&= \bm{\mu} + V\integ{y_n=-\infty}{\infty}{\cdots\integ{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_1}\cdots}{y_n}
+						&= \bm{\mu} + V\integ{y_n=-\infty}{\infty}{\dotsi\integ{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_1}\dotsi}{y_n}
 					\end{align*}
 					第二項目はベクトルの各インデックス毎に奇関数の対称積分が起こり、結局全体が0になることがわかる。
 				\end{proof}
@@ -653,7 +653,7 @@
 						=& -\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left[\left(y_i - i{\sigma_i}^2c_i\right)^2 + {\sigma_i}^4{c_i}^2\right] = -\frac{1}{2}\sum_{i=1}^n{\sigma_i}^2{c_i}^2 - \frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2
 					\end{align*}
 					さらに次式が成り立つ。
-					\[ \sum_{i=1}^n{\sigma_i}^2{c_i}^2 = [c_1,\cdots,c_n]\Lambda[c_1,\cdots,c_n]^\top = \bm{t}^\top V\Lambda V^\top\bm{t} = \bm{t}^\top\Sigma\bm{t} \]
+					\[ \sum_{i=1}^n{\sigma_i}^2{c_i}^2 = [c_1,\dotsc,c_n]\Lambda[c_1,\dotsc,c_n]^\top = \bm{t}^\top V\Lambda V^\top\bm{t} = \bm{t}^\top\Sigma\bm{t} \]
 					よって
 					\begin{align*}
 						\phi_{\bm{X}}(t) &= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{\bm{y}} \\
@@ -777,9 +777,9 @@
 					&= \text{pdf of }{\chi^2}_{n_X+n_Y}
 				\end{align*}
 			\end{proof}
-		\section{\texorpdfstring{$X_1,\cdots,X_n\sim N(\mu,\sigma^2) \Rightarrow \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$}{X1, ..., Xn ～ N(μ,σ\string^2) ⇒ (1/σ\string^2)[(X1 - sampleAvg(X))\string^2 + ... + (Xn-E(X))\string^2] ～ χ\string^2\_(n-1)}}
+		\section{\texorpdfstring{$X_1,\dotsc,X_n\sim N(\mu,\sigma^2) \Rightarrow \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$}{X1, ..., Xn ～ N(μ,σ\string^2) ⇒ (1/σ\string^2)[(X1 - sampleAvg(X))\string^2 + ... + (Xn-E(X))\string^2] ～ χ\string^2\_(n-1)}}
 			\begin{shadebox}
-				$X_1,\cdots,X_n\sim N(\mu,\sigma^2)$とし、$\overline{X}$を標本平均とすると$\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$
+				$X_1,\dotsc,X_n\sim N(\mu,\sigma^2)$とし、$\overline{X}$を標本平均とすると$\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$
 			\end{shadebox}
 			\begin{proof}
 				\quad\par
@@ -787,8 +787,8 @@
 				\begin{equation}
 					\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} = \sum_{i=1}^n{(Z_i-\overline{Z})^2} \quad \textrm{where }\overline{Z}\coloneqq\frac{1}{n}\sum_{i=1}^n{X_i}
 				\end{equation}
-				$\bm{Z} \coloneqq [Z_1,\cdots,Z_n]^\top$とする。
-				最下行が全て$1/\sqrt{n}$である$n$次直交行列を$P$として$\bm{Y} \coloneqq [Y_1,\cdots,Y_n]^\top \coloneqq P\bm{Z}$とすると、\ref{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}より、$Y_1,\cdots,Y_n\sim N(0,1)$であり、$Y_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n{Z_i} = \sqrt{n}\overline{Z} \therefore\;\overline{Z}=Y_n/\sqrt{n}$。
+				$\bm{Z} \coloneqq [Z_1,\dotsc,Z_n]^\top$とする。
+				最下行が全て$1/\sqrt{n}$である$n$次直交行列を$P$として$\bm{Y} \coloneqq [Y_1,\dotsc,Y_n]^\top \coloneqq P\bm{Z}$とすると、\ref{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}より、$Y_1,\dotsc,Y_n\sim N(0,1)$であり、$Y_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n{Z_i} = \sqrt{n}\overline{Z} \therefore\;\overline{Z}=Y_n/\sqrt{n}$。
 				\[(1) = \sum_{i=1}^n{({Z_i}^2 + \overline{Z}^2 -2\overline{Z}Z_i)} = \norm{\bm{Z}}^2 - n\overline{Z}^2 = \norm{\bm{Y}}^2 - \overline{Y_n}^2 = \sum_{i=1}^{n\textcolor{red}{-1}}{{Y_i}^2}\]
 				右から2つ目の等号で、直交変換がノルムを保存する性質を用いた。
 				このように、標準正規分布に従う独立な$n-1$個の確率変数の2乗和で表されたので、\ref{標準正規分布に従うn個の独立な確率変数の2乗和は自由度n-1のカイ2乗分布に従う}よりこれは自由度$n-1$のカイ2乗分布に従う。
@@ -796,7 +796,7 @@
 			\begin{commentary}
 				\quad\par
 				なぜ独立変数の数を減らせたのか考えてみよう。
-				元々の$\bm{Z}$では$Z_1,\cdots,Z_n$が一斉に同じ数だけ増えても$\sum_{i=1}^n{(Z_i-\overline{Z})^2}$の値は変わらない。
+				元々の$\bm{Z}$では$Z_1,\dotsc,Z_n$が一斉に同じ数だけ増えても$\sum_{i=1}^n{(Z_i-\overline{Z})^2}$の値は変わらない。
 				これは、確率密度関数を求めるための重積分中の$\bm{Z}$の拘束領域が、ベクトル$\bm{1}^n$方向に伸び放題であるということだ。
 				$\bm{Z}$はこの方向に無制限に動ける。
 				上述の直交変換で$Y_n$がこの方向に割り当てられたため、確率密度関数を求めるための重積分の中のこの方向に関する$(-\infty,\infty)$の積分結果が$Y_n$の確率密度関数の全域積分すなわち1になり、我々が相手にするべき次元が1個減ったのである。
@@ -981,7 +981,7 @@
 						&= \frac{1}{n}(\s+\mu^2) + \frac{1}{n^2}(n^2-n)\mu^2 = \frac{1}{n}\s + \mu^2
 					\end{align}
 					\begin{align}
-						\E{}{\mX X_i} &= \frac{1}{n}\E{}{(X_1+X_2+\cdots+X_n)X_i} = \frac{1}{n}\E{}{X_i^2 + \sum_{j=1,\neq i}^{n}{X_jX_i}} \nonumber \\
+						\E{}{\mX X_i} &= \frac{1}{n}\E{}{(X_1+X_2+\dotsb+X_n)X_i} = \frac{1}{n}\E{}{X_i^2 + \sum_{j=1,\neq i}^{n}{X_jX_i}} \nonumber \\
 						&= \frac{1}{n}\E{}{X_i^2} + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\E{}{X_jX_i}} = \frac{1}{n}(\s+\mu^2) + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\E{}{X_j}\E{}{X_i}} \nonumber \\
 						&= \frac{1}{n}(\s+\mu^2) + \frac{1}{n}\sum_{j=1,\neq i}^{n}{\mu^2} = \frac{1}{n}(\s+\mu^2) + \frac{1}{n}(n-1)\mu^2 = \frac{1}{n}\s + \mu^2
 					\end{align}
