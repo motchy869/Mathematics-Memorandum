@@ -140,6 +140,17 @@
 					$i=1,2,3$に対して次式が成り立つ。
 					\[ \partDerivLong{\frac{1}{\norm{\bm{r}+\bm{a}}}}{r_i}{} = \partDerivLong{\bigl((r_1+a_1)^2 + (r_2+a_2)^2 + (r_3+a_3)^2\bigr)^{-1/2}}{r_i}{} = -\frac{1}{2} \frac{1}{\norm{\bm{r}+\bm{a}}^3} \cdot 2(r_i+a_i) = -\frac{r_i+a_i}{\norm{\bm{r}+\bm{a}}^3} \]
 				\end{proof}
+			\subsection{\texorpdfstring{$\nabla_\bm{r} f(\bm{r})A = -A\times\nabla_\bm{r}f(\bm{r})$}{関数倍の定数ベクトルの回転}}
+				\begin{shadebox}
+					$\bm{r} := [r_1,r_2,r_3]^\top,A := [A_1,A_2,A_3]^\top\in\realNumbers^3,\;f:\realNumbers^3\to\complexNumbers$とする。次式が成り立つ。
+					\[ \nabla_\bm{r} f(\bm{r})A = -A\times\nabla_\bm{r}f(\bm{r}) \]
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					左辺の第1成分は次式で求まる。
+					\[ \bigl(\nabla_\bm{r} f(\bm{r})A\bigr)[1] = \partDerivLong{A_3f(\bm{r})}{r_2}{} - \partDerivLong{A_2f(\bm{r})}{r_3}{} = A_3\partDerivLong{f(\bm{r})}{r_2}{} - A_2\partDerivLong{f(\bm{r})}{r_3}{} = -\bigl(A\times\nabla_\bm{r}f(\bm{r})\bigr)[1] \]
+					同様のことを他の成分についても示すことができる。
+				\end{proof}
 		\section{諸定理}
 			\subsection{非負領域の共通部分の非負領域}
 				\begin{shadebox}
