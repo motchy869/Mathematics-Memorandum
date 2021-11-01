@@ -63,6 +63,24 @@
 						&= \inprod{A}{C}B - \inprod{A}{B}C
 					\end{align*}
 				\end{proof}
+			\subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r}$}{発散はベクトル場の法線面積分の体積の商の極限である}}
+				\begin{shadebox}
+					$\bm{r}_0\in\realNumbers^3$とし、$\Omega\subset\realNumbers^3$上のベクトル場$A$が$\bm{r}_0$の近傍で$C^1$級であるとする。
+					$\bm{r}_0$を含む微小な領域を$V$とし、$\partial V$を$V$の境界、$|V|$を$V$の体積とする。
+					但し$\partial V$は$C^1$級であるとする。
+					このとき次式が成り立つ。
+					\[ (\nabla\cdot A)(\bm{r}_0) = \frac{1}{|V|}\lim_{|V|\to 0}\int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r} \]
+					ここに$\bm{n}(\bm{r})$は$\bm{r}\in\partial V$に於ける外向きの法線ベクトルである。
+				\end{shadebox}
+				\begin{proof}
+					発散定理より次式が成り立つ。
+					\[ \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r} = \int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3\bm{r} \]
+					$\varepsilon>0$を任意に小さくとる。
+					$A$が$\bm{r}_0$の近傍で$C^1$級であるという仮定から、$V$を充分小さくとれば、$|(\nabla\cdot A)(\bm{r}) - (\nabla\cdot A)(\bm{r}_0)| < \varepsilon$である。
+					よって次式が成り立つ。
+					\[ \left| \frac{1}{|V|}\int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3\bm{r} - (\nabla\cdot A)(\bm{r}_0) \right| < \varepsilon \]
+					$|V|\to 0$とすれば定理の主張が成り立つ。
+				\end{proof}
 			\subsection{直角座標系に於ける Vector Laplacian: \texorpdfstring{$\nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3$}{∇\string^2 A = i1ΔA1 + i2ΔA2 + i3ΔA3}}
 				\begin{shadebox}
 					\ref{VectorLaplacian}に於いて、特に直角座標系を考える場合は次式のように簡約化される。
