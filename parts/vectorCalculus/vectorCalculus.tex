@@ -170,6 +170,28 @@
 					同様のことを他の成分についても示すことができる。
 				\end{proof}
 		\section{Helmholtzの定理}
+			\subsection{補題: 全空間に渡る積分が存在するための十分条件}
+				\label{全空間に渡る積分が存在するための十分条件}
+				\begin{shadebox}
+					$\bm{r}\in\realNumbers^3$とする。
+					$f:\realNumbers^3\to\realNumbers$は十分遠方に於いて、ある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
+					このとき$\realNumbers^3$上での$f$の積分は存在する。
+					すなわち次式が成り立つ。
+					\[ R>0,\; V(R) := \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					$R>0$は十分大きいものとし、$I(R)$を次式で定義する。
+					\[ I(R) := \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
+					球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
+					\[ I(R) = \integ{0}{R}{\integ{0}{\pi}{\integ{0}{2\pi}{f(\bm{r})r^2\sin\theta}{\phi}}{\theta}}{r} \]
+					$0<R_0<R$なる$R_0$をとり、$I(R) = I(R_0) + I_2(R)$と分解する。
+					ここに$I_2(R) := I(R) - I(R_0)$である。
+					\begin{align*}
+						|I_2(R)| &\leq \integ{R_0}{R}{\integ{0}{\pi}{\integ{0}{2\pi}{|f(\bm{r})|r^2\sin\theta}{\phi}}{\theta}}{r} = 4\pi\integ{R_0}{R}{o(\norm{\bm{r}}_2^{-3-\alpha})r^2}{r} \\
+						&= 4\pi\integ{R_0}{R}{o(r^{-1-\alpha})}{r} < \infty \text{ as } R\to\infty
+					\end{align*}
+				\end{proof}
 			\subsection{補題: 与えられた発散を有し、回転が\texorpdfstring{$\bm{0}$}{0}であるベクトル場の構成}
 				\label{与えられた発散を有し、回転が無いベクトル場の構成}
 			\subsection{補題: 与えられた回転を有し、発散が0であるベクトル場の構成}
