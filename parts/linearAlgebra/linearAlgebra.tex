@@ -467,51 +467,51 @@
             \end{proof}
     \chapter{行列式}
         \begin{comment}
-        \section{右下要素が$0$の対称行列の行列式}
-            \begin{shadebox}
-                右下要素が$0$である行列
-                \[
-                    A =
-                    \left[
-                        \begin{array}{ccc|c}
-                            \multicolumn{3}{c|}{}	& b_1 \\
-                            \multicolumn{3}{c|}{A'}	& \vdots \\
-                            \multicolumn{3}{c|}{}	& b_n \\ \hline
-                            b_1 & \cdots & b_n		& 0
-                        \end{array}
-                    \right]
-                    =
-                    \left[
-                        \begin{array}{ccc|c}
-                            \multicolumn{3}{c|}{} \\
-                            \multicolumn{3}{c|}{A'}	& \bm{b} \\
-                            \multicolumn{3}{c|}{} \\ \hline
-                            \quad & \bm{b}^\top & \quad & 0
-                        \end{array}
-                    \right]
-                \]
-                の行列式は
-                \[\det{A} = -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b}\]
-                \begin{flushright}
-                    (※$\tilde{A'}$は$A'$の余因子行列)
-                \end{flushright}
-            \end{shadebox}
-            \begin{proof}
-                \quad\par
-                第$n$行に関して余因子展開すると
-                \[\det{A} = \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\det{C_i}}\]
-                但し$C_i$とは、$[A',\bm{b}]$の第$i$列を除去した小行列である。
-                $C_i$を第$n$列に関して余因子展開すると
-                \[\det{C_i} = \sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}\]
-                但し$A'_{ji}$とは、$C_i$の第$n$列と第$j$行を除去したもの、すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
-                よって
-                \begin{align*}
-                    \det{A} &= \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}} = -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j(-1)^{i+j}\det{A'_{ji}}}} \\
-                    &= -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j\tilde{a'}_{ij}}} \quad (\tilde{a'}_{ij}\text{は}\tilde{A'}\text{の}(i,j)\text{成分}) \\
-                    &= -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b} \quad (\because\;\tilde{A'}=-\det{(A')}{A'}^{-1})
-                \end{align*}
-            \end{proof}
-            \end{comment}
+            \section{右下要素が$0$の対称行列の行列式}
+                \begin{shadebox}
+                    右下要素が$0$である行列
+                    \[
+                        A =
+                        \left[
+                            \begin{array}{ccc|c}
+                                \multicolumn{3}{c|}{}	& b_1 \\
+                                \multicolumn{3}{c|}{A'}	& \vdots \\
+                                \multicolumn{3}{c|}{}	& b_n \\ \hline
+                                b_1 & \cdots & b_n		& 0
+                            \end{array}
+                        \right]
+                        =
+                        \left[
+                            \begin{array}{ccc|c}
+                                \multicolumn{3}{c|}{} \\
+                                \multicolumn{3}{c|}{A'}	& \bm{b} \\
+                                \multicolumn{3}{c|}{} \\ \hline
+                                \quad & \bm{b}^\top & \quad & 0
+                            \end{array}
+                        \right]
+                    \]
+                    の行列式は
+                    \[\det{A} = -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b}\]
+                    \begin{flushright}
+                        (※$\tilde{A'}$は$A'$の余因子行列)
+                    \end{flushright}
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    第$n$行に関して余因子展開すると
+                    \[\det{A} = \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\det{C_i}}\]
+                    但し$C_i$とは、$[A',\bm{b}]$の第$i$列を除去した小行列である。
+                    $C_i$を第$n$列に関して余因子展開すると
+                    \[\det{C_i} = \sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}\]
+                    但し$A'_{ji}$とは、$C_i$の第$n$列と第$j$行を除去したもの、すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
+                    よって
+                    \begin{align*}
+                        \det{A} &= \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}} = -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j(-1)^{i+j}\det{A'_{ji}}}} \\
+                        &= -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j\tilde{a'}_{ij}}} \quad (\tilde{a'}_{ij}\text{は}\tilde{A'}\text{の}(i,j)\text{成分}) \\
+                        &= -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b} \quad (\because\;\tilde{A'}=-\det{(A')}{A'}^{-1})
+                    \end{align*}
+                \end{proof}
+        \end{comment}
         \section{\texorpdfstring{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$}{A∈R\string^(n×m), B∈R\string^(m×n)}に対して\texorpdfstring{$|I_m-AB| = |I_n-BA|$}{|Im-AB| = |In-BA|}}
             \label{I-ABの行列式}
             \begin{proof}
