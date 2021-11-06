@@ -946,14 +946,21 @@
             \label{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}
             \begin{shadebox}
                 $A\in\field^{m\times n}$の階数が$r$であるなら、適当な正則行列$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$が存在して
+                % \[
+                %     AT_x = T_y
+                %     \begin{array}{r cc l l}
+                %         \multicolumn{5}{c}{\vspace{1em}}\\
+                %         \ldelim[{2}{1pt} & I_{r\times r}                                        & O_{r\times(n-r)}     & \rdelim]{2}{1pt} & \rdelim\}{2}{1pt}[m行] \\
+                %                          & O_{(m-r)\times r}                                    & O_{(m-r)\times(n-r)} &                  & \\
+                %                          & \multicolumn{2}{c}{\underbrace{\hspace{12em}}_{n列}} &                      &
+                %     \end{array}
+                % \]
                 \[
                     AT_x = T_y
-                    \begin{array}{r cc l l}
-                        \multicolumn{5}{c}{\vspace{1em}}\\
-                        \ldelim[{2}{1pt}	&	I_{r\times r}		& O_{r\times(n-r)}				& \rdelim]{2}{1pt}	&	\rdelim\}{2}{1pt}[m行]\\
-                                            &	O_{(m-r)\times r}	& O_{(m-r)\times(n-r)}			&					&	\\
-                                            &	\multicolumn{2}{c}{\underbrace{\hspace{12em}}_{n列}}	&					&
-                    \end{array}
+                    \begin{bmatrix}
+                        I_{r\times r}     & O_{r\times(n-r)} \\
+                        O_{(m-r)\times r} & O_{(m-r)\times(n-r)}
+                    \end{bmatrix}
                 \]
             \end{shadebox}
             \begin{proof}
@@ -967,12 +974,16 @@
                     AT_x &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\\
                     &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m][\bm{e}_1,\bm{e}_2,\dotsc,\bm{e}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
                     &= T_y
-                    \begin{array}{r cc l l}
-                        \multicolumn{5}{c}{\vspace{1em}}\\
-                        \ldelim[{2}{1pt}	&	I_{r\times r}		& O_{r\times(n-r)}				&	\rdelim]{2}{1pt}	&	\rdelim\}{2}{1pt}[m行]\\
-                                            &	O_{(m-r)\times r}	& O_{(m-r)\times(n-r)}			&						&	\\
-                                            &	\multicolumn{2}{c}{\underbrace{\hspace{12em}}_{n列}}	&						&
-                    \end{array}
+                    % \begin{array}{r cc l l}
+                    %     \multicolumn{5}{c}{\vspace{1em}}\\
+                    %     \ldelim[{2}{1pt}	&	I_{r\times r}		& O_{r\times(n-r)}				&	\rdelim]{2}{1pt}	&	\rdelim\}{2}{1pt}[m行]\\
+                    %                         &	O_{(m-r)\times r}	& O_{(m-r)\times(n-r)}			&						&	\\
+                    %                         &	\multicolumn{2}{c}{\underbrace{\hspace{12em}}_{n列}}	&						&
+                    % \end{array}
+                    \begin{bmatrix}
+                        I_{r\times r}     & O_{r\times(n-r)} \\
+                        O_{(m-r)\times r} & O_{(m-r)\times(n-r)}
+                    \end{bmatrix}
                 \end{align*}
             \end{proof}
         \section{同じ型の行列の階数が等しいための必要十分条件}
