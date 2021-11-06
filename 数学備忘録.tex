@@ -17,6 +17,7 @@
 \usepackage{pxjahyper}
 \usepackage{ifthen}
 \usepackage{indent}
+\usepackage{listingsutf8, jvlisting}
 \usepackage{mathtools}
 \usepackage{multirow}
 \usepackage{siunitx}
@@ -88,6 +89,7 @@
 \setcounter{tocdepth}{4}%subsubsubsection まで目次に表示する
 
 \input{macros/LaTeX-motchyMacros/motchyMacros}
+\newcommand{\inlineCode}[1]{{\raggedright \lstinline[inputencoding=utf8, basicstyle=\ttfamily, breaklines=true]|#1|}}
 
 \begin{document}
 	\title{motchyの数学備忘録}
