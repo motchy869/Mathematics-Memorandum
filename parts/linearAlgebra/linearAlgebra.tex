@@ -1627,16 +1627,16 @@
                 \[\lambda = \frac{1}{b_k}\sum_{j=1}^{n}{a_{ij}b_j} > 0\]
                 これと$|\lambda|=\hat{\lambda}$より$\lambda=\hat{\lambda}$
             \end{proof}
-	\section{置換行列}
-		\subsection{定義}
+	\chapter{置換行列}
+		\section{定義}
 			\begin{definition}
 				\quad\par
 				$I_{n\times n}$の２つの列(第$i,j$列)を入れ替えてできる対称行列を基本置換行列という。
 				これを左から掛けると第$i,j$行の交換になり、右から掛けると第$i,j$行の交換になる。
 				基本置換行列の積を置換行列という。置換行列は各行,各列に1つだけ$1$をもち、他は全て$0$である。
 			\end{definition}
-		\subsection{諸定理}
-			\subsubsection{行と列の同期入れ替え}
+		\section{諸定理}
+			\subsection{行と列の同期入れ替え}
 				\begin{shadebox}
 					$\Pi$を$n$次の置換行列とする。$A\in\field^{n\times n}$に対して$\Pi^\top A\Pi$は$A$の行と列に同じ入れ替えを行う。
 				\end{shadebox}
@@ -1646,7 +1646,7 @@
 					\[\Pi^\top A\Pi = {\Pi_n}^\top\dotsm{\Pi_1}^\top\;A\;\Pi_1\dotsm\Pi_n = \Pi_n\dotsm\Pi_1\;A\;\Pi_1\dotsm\Pi_n\]
 					であり、明らかに行と列に同じ入れ替えを行っている。
 				\end{proof}
-			\subsubsection{置換行列は直交行列}
+			\subsection{置換行列は直交行列}
 				\begin{shadebox}
 					置換行列は直交行列である
 				\end{shadebox}
