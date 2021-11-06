@@ -1,563 +1,563 @@
 ﻿\part{線形代数}
-	\newcommand{\vv}{\bm{v}}
-	\newcommand{\vx}{\bm{x}}
-	\newcommand{\vy}{\bm{y}}
-	\chapter{表記}
-		\begin{itemize}
-			\item $E_A(\lambda)$ : 行列$A$の固有値$\lambda$に対する固有空間
-			\item $F_{A,k}(\lambda)$ : 行列$A$の固有値$\lambda$に対する$k$階一般固有空間
-			\item $F_A(\lambda)$ : 行列$A$の固有値$\lambda$に対する一般固有空間
-		\end{itemize}
-	\chapter{行列の演算}
-		\section{結合則}
-			\begin{shadebox}
-				$A,B,C$が$l \times m,\; m \times n,\; n \times o$行列であるとき$(AB)C = A(BC)$
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				まず下準備。
-				\[A \coloneqq \left[a_{ij}\right]_{l\times m},\quad B \coloneqq \left[b_{ij}\right]_{m\times n},\quad C \coloneqq \left[c_{ij}\right]_{n\times o}\]
-				\[M_{AB} \coloneqq \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} \coloneqq [m_{{BC}_{ij}}]_{m\times o} = BC\]
-				\[N_1 \coloneqq \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneqq \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
-				とする。
-				$N_1 = N_2$すなわち$n_{1_{ij}} = n_{2_{ij}}$を示せば良い。\\
-				まず
-				\[m_{{AB}_{ij}} = \sum_{k=1}^{m}{a_{ik}b_{kj}},\quad m_{{BC}_{ij}} = \sum_{k=1}^{n}{b_{ik}c_{kj}}\]
-				である。これを用いて
-				\[n_{1_{ij}} = \sum_{k=1}^{\textcolor{red}{n}}{m_{{AB}_{ik}}c_{kj}} = \sum_{k=1}^{n}{\left(\sum_{l=1}^{m}{a_{il}b_{lk}}\right)c_{kj}} = \sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}}\]
-				\[n_{2_{ij}} = \sum_{k=1}^{\textcolor{red}{m}}{a_{ik}m_{{BC}_{kj}}} = \sum_{k=1}^{m}{a_{ik}\left(\sum_{l=1}^{n}{b_{kl}c_{lj}}\right)} = \sum_{\textcolor{red}{l}=1}^{n}{\sum_{\textcolor{red}{k}=1}^{m}{\left(a_{ik}b_{kl}c_{lj}\right)}}\]
-				上式の$k$と$l$を交換(純粋に紙の上で文字として書き換える)しても何ら問題はない。そうすると上式は
-				\[\sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}} = n_{1_{ij}}\]
-				となり結局$n_{1_{ij}}$と一致する。
-			\end{proof}
-		\section{上(下)三角行列のべき乗}
-			\label{上(下)三角行列のべき乗}
-			\begin{shadebox}
-				上三角行列$A$の$n$乗もまた上三角行列であり、特に第$i$対角成分は${a_{ii}}^n$である。
-				下三角行列についても上と同様の定理が成り立つ。
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				上三角行列について示す。下三角行列については同様に示せる。\\
-				$n=1$のときは明らか。まず$n=2$のときを示す。
-				\[A^2[i][j] = \sum_{k=1}^{n}{a_{ik}a_{kj}} = \sum_{i\leq k,k\leq j}{a_{ik}a_{kj}}\quad(\because\;a_{ij}=0\mathrm{ when }i>j)\]
-				であるから次の2つの式が成り立つ。
-				\[A^2[i][i] = \sum_{i\leq k,k\leq i}{a_{ik}a_{ki}} = {a_{ii}}^2,\quad A^2[i][j](i>j) = 0\]
-				次に、$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
-				\begin{align*}
-					A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\left(b_{kj} = A^n[k][j]\right) \\
-					&= \sum_{i\leq k, k\leq j}^{n}{a_{ik}b_{kj}}\quad(\because\;\mathrm{帰納法の仮定より }b_{ij}=0\mathrm{ when }i>j)
-				\end{align*}
-				であるから帰納法の仮定より次の2つの式が成り立つ。
-				\begin{align*}
-					A^{n+1}[i][i] &= \sum_{i\leq k, k\leq i}^{n}{a_{ik}b_{ki}} = a_{ii}b_{ii} = a_{ii}{a_{ii}}^n = {a_{ii}}^{n+1}\\
-					A^{n+1}[i][i]&(i>j) = 0
-				\end{align*}
-			\end{proof}
-		\section{列ベクトルと行ベクトルの積の和}
-			\begin{shadebox}
-				列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
-				\[
-				\sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\dotsc,\bm{a}_{i_l}]
-				\begin{bmatrix}
-					\bm{b}_{i_i}\\
-					\bm{b}_{i_2}\\
-					\cdots\\
-					\bm{b}_{i_l}
-				\end{bmatrix}
-				\]
-			\end{shadebox}
-			\begin{proof}
-				行列のブロック演算を考えればわかる。
-			\end{proof}
-		\section{巡回行列の可換則}
-			\begin{proof}
-				\quad\par
-				$A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
-				まず
-				\[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
-				であり、添字に剰余を用いていることと総和の範囲に注意して、
-				\begin{align*}
-					(BA)[i][j] &= \sum_{k=0}^{n-1} b_{ik}a_{kj} = \sum_{k=0}^{n-1} d_{(i-k)\%n}c_{(k-j)\%n} = \sum_{k=0}^{n-1} d_{(i-(k+i+j))\%n}c_{((k+i+j)-j)\%n} \\
-					&= \sum_{k=0}^{n-1} d_{(-k-j)\%n}c_{(k+i)\%n} = \sum_{k=0}^{n-1} d_{(-(-k)-j)\%n}c_{((-k)+i)\%n} \\
-					&= \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} = (AB)[i][j]
-				\end{align*}
-			\end{proof}
-		\section{\texorpdfstring{$\realNumbers^{\textcolor{red}{2}}$}{R\string^2}の対称行列同士の積は対称}
-			\begin{proof}
-				$
-					A = \begin{bmatrix}
-						a & b \\
-						b & a
-					\end{bmatrix},\quad
-					B = \begin{bmatrix}
-						c & d \\
-						d & c
-					\end{bmatrix}
-				$
-				とすると
-				$
-					AB = \begin{bmatrix}
-						ac + bd & ad + bc \\
-						ad + bc & ac + bd
-					\end{bmatrix}
-				$
-			\end{proof}
-			\begin{attention}
-				$\realNumbers^3$以上では成り立たない。
-			\end{attention}
-		\section{Kronecker積}
-			\subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
-				\begin{shadebox}
-					行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					$A$の行数を$m_A$, 列数を$n_A$, $C$の列数を$n_C$とする。
-					\begin{align*}
-						(A\otimes B)(C\otimes D) &= \begin{bmatrix}
-							a_{1,1}B & a_{1,2}B & \cdots & a_{1,n_A}B \\
-							a_{2,1}B & \ddots & & \vdots \\
-							\vdots \\
-							a_{m_A, 1}B & \cdots & & a_{m_A, n_A}B
-						\end{bmatrix}
-						\begin{bmatrix}
-							c_{1,1}D & c_{1,2}D & \cdots & c_{1,n_C}D \\
-							c_{2,1}D & \ddots & & \vdots \\
-							\vdots \\
-							c_{n_A, 1}D & \cdots & & c_{n_A, n_C}D
-						\end{bmatrix} \\
-						&= \begin{bmatrix}
-							(AC)[1,1]BD & (AC)[1,2]BD & \cdots & (AC)[1,n_C]BD \\
-							(AC)[2,1]BD & \ddots & & \vdots \\
-							\vdots \\
-							(AC)[m_A,1]BD & \cdots & & (AC)[m_A,n_C]BD
-						\end{bmatrix} = (AC)\otimes(BD)
-					\end{align*}
-				\end{proof}
-			\subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
-				\begin{proof}
-					\quad\par
-					$A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。
-					混合積の性質から
-					\[
-						(A\otimes B)^*(A\otimes B) = (A^*\otimes B^*)(A\otimes B) = (A^*A)\otimes(B^*B) = I_m\otimes I_n = I_{m+n}
-					\]
-				\end{proof}
-	\chapter{ベクトル空間}
-		\section{基底}
-			\subsection{基底変換}
-				\begin{shadebox}
-					$V$の基底$\{\bm{v}_1,\dotsc,\bm{v}_n\}$に以下の操作を行っても依然として基底である。
-					\begin{itemize}
-						\item $\bm{v}_i$を非零倍する
-						\item $\bm{v}_j$に$\bm{v}_i$の定数倍を加える
-					\end{itemize}
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					操作後のベクトルの線形和を0にするためには全ての係数を0にせねばならないことに気付く。
-				\end{proof}
-			\subsection{諸定理}
-				\subsubsection{三角関数ベクトルによる直交展開}
-					\begin{shadebox}
-						$\complexNumbers^n$を考える。$n$本のベクトルの集合
-						\[\left\{\bm{v}_1,\dotsc,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
-						は$\complexNumbers^n$の正規直交基底を成す。
-					\end{shadebox}
-					\begin{proof}
-						\quad\par
-						まず各ベクトルの2ノルムが1であることが次のようにして簡単に確かめられる。
-						\[\norm{\bm{v}_k}_2 = \frac{1}{\sqrt{n}}\sqrt{\sum_{l=1}^n{\abs{\exp\left(i\frac{k}{n}2\pi l\right)}^2}} = \frac{1}{\sqrt{n}}\sqrt{n} = 1\]
-						次に、相異なる$k,l$に対して$\bm{v}_k$と$\bm{v}_l$が直交することは次のようにして確かめられる。
-						\[\inprod{\bm{v}_k}{\bm{v}_l} = {\bm{v}_k}^*\bm{v}_l = \frac{1}{n}\sum_{m=1}^n{\exp\left(-i\frac{k}{n}2\pi m\right)\exp\left(i\frac{l}{n}2\pi m\right)} = \frac{1}{n}\sum_{m=1}^n{\exp\left(i\frac{l-k}{n}2\pi m\right)} = 0\quad(\because\;\ref{fml:花びら定理})\]
-					\end{proof}
-		\section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
-			\subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}
-				\begin{shadebox}
-					$n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\dotsb+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					まず
-					\begin{align*}
-						\quad& d_1\bm{v}_1 + \dotsb + d_p\bm{v}_p = \bm{0} \tag{1} \\
-						\iff& d_1(c_{11}\bm{b}_1 + \dotsb + c_{n1}\bm{b}_n) + \dotsb + d_p(c_{1p}\bm{b}_1 + \dotsb + c_{np}\bm{b}_n) = \bm{0} \\
-						\iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \dotsb + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
-						\iff& d_1 c_{11} + \dotsb + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \dotsb + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
-						\iff&
-						\begin{bmatrix}
-							c_{11} & \cdots & c_{1p} \\
-							\vdots & \ddots & \vdots \\
-							c_{n1} & \cdots & c_{np}
-						\end{bmatrix}
-						\begin{bmatrix}
-							d_1 \\
-							\vdots \\
-							d_n
-						\end{bmatrix}
-						=\bm{0}_n \tag{2}
-					\end{align*}
-					が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\dotsb=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
-					逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\dotsb=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
-				\end{proof}
-		\section{諸定理}
-			\subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
-				\begin{proof}
-					\quad\par
-					($\Leftarrow$) 容易。
-					\par
-					($\Rightarrow$) 背理法で示す。
-					$\exists \bm{v}_1\in V_1\setminus V_2, \;\bm{v}_2\in V_2\setminus V_1$と仮定する。
-					$V_1\cup V_2$がベクトル空間であるから$\bm{v}_1 + \bm{v}_2 \in V_1\cup V_2$である。
-					$\bm{v}_1 + \bm{v}_2 \in V_1$であるとすると
-					\[ \bm{v}_2 = \underbrace{(\bm{v}_1 + \bm{v}_2)}_{\in V_1} - \bm{v}_1 \]
-					となり、左辺$\notin V_1$ であるが、右辺$\in V_1$となり矛盾する。
-					同様に$\bm{v}_1 + \bm{v}_2 \in V_2$であるとしても矛盾が生じる。
-					従って$V_1\cup V_2$がベクトル空間であることに矛盾する。
-				\end{proof}
-			\subsection{\texorpdfstring{$V_i \subseteq W_i,\;\bigoplus_{i=1}^n {W_i} = \bigoplus_{i=1}^n {V_i}\quad\Rightarrow V_i=W_i$}{Vi⊆Wi, V1⊕...⊕Vn = W1⊕...⊕Wn ⇒ Vi=Wi}}
-				\begin{shadebox}
-					\[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\dotsc,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\dotsc,n)\]
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					$W_i\subseteq V_i$を示せば良い。
-					$\vx\in W_i$を任意にとると$\vx\in \bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i}$でもあるから適当なベクトル$\vv_i\in V_i$が存在して
-					\[\vx = \vv_1+\vv_2+\dotsb+\vv_i+\dotsb+\vv_n\]
-					と一意に分解できるが、$V_i\subseteq W_i$より$\vv_i\in W_i$であるので
-					\[\vx = \underbrace{\vv_1}_{\in W_1}+\underbrace{\vv_2}_{\in W_2}+\dotsb+\underbrace{\vv_i}_{\in W_i}+\dotsb+\underbrace{\vv_n}_{\in W_n}\]
-					ところで$\vx\in \bigoplus_{i=1}^n{W_i}$であったから$\vx$は
-					\[\vx = \underbrace{\bm{0}}_{\in W_1}+\underbrace{\bm{0}}_{\in W_2}+\dotsb+\underbrace{\vx}_{\in W_i}+\dotsb+\underbrace{\bm{0}}_{\in W_n}\]
-					と分解される。分解は一意でなくてはならぬから
-					\begin{equation*}
-						\vv_j =
-						\begin{cases}
-							\vx & (j=i)\\
-							\bm{0} & (\mathrm{otherwise})
-						\end{cases}
-					\end{equation*}
-					よって$\vx\in V_i$
-				\end{proof}
-			\subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
-				\label{subsec:一次独立なベクトルの、独立集合族としての性質}
-				\begin{shadebox}
-					$V$を線形ベクトル空間とし、$\bm{v}_1,\dotsc,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことと同値である。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
-					逆に$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないとする。
-					このとき$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
-					よって$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\dotsb=c_k=0$である。
-					すなわち$c_1=\dotsb=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
-				\end{proof}
-			\subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
-				\begin{shadebox}
-					線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次独立である。
-				\end{shadebox}
-				\begin{proof}
-					\quad\par
-					背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\dotsc,\bm{w}_l$の一次結合で表せる。
-					よって$A_v$は$l$個の一次独立なベクトルの一次結合で表された$k>l$個以上のベクトルの集合なので一次従属であるが、これは$A_v$の一次独立性の仮定に矛盾する。
-				\end{proof}
-		\section{諸注意}
-			\subsection{
-				\texorpdfstring{$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$}{\{v1,v2\},\{w1,w2\},\{v1,v2,w1\},\{v1,v2,w2\}}が各々一次独立でも\texorpdfstring{\\}{}
-				\texorpdfstring{$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$}{\{v1,v2,w1,w2\}}が一次独立とは限らない}
-				\begin{proof}
-					例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
-				\end{proof}
-			\subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\dotsb+W_n = W_1\oplus\dotsb\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
-				\begin{proof}
-					\quad\par
-					例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
-				\end{proof}
-			\subsection{\texorpdfstring{$W=V\oplus X,\;W=V\oplus Y$}{W=V⊕X, W=V⊕Y}でも\texorpdfstring{$X=Y$}{X=Y}とは限らない}
-				\begin{proof}
-					例えば$W=\realNumbers^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
-				\end{proof}
-			\subsection{\texorpdfstring{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$}{Span[a,b,c]/Span[a,b]=Span[c]}とは限らない}
-				\begin{proof}
-					\quad\par
-					例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realNumbers^3$のとき、
-					$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}}$は$\realNumbers^3$から第1要素が0である点だけを抜いたものであり、$[x,*,*]^\top,\;x\neq 0$のような点は残っている。
-					このような点は$\Span{\bm{c}}$には属さない。
-				\end{proof}
-	\chapter{線形写像}
-		\section{表記の規則}
-			\subsection{一般のベクトルを要素とする配列と行列の積}
-				$\bm{v}_1,\dotsc,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
-				これと$m\times n$行列$A=[a_{ij}]_{m\times n}$, $n\times m$行列$B=[b_{ij}]_{n\times m}$に対して次のように演算を定義する。
-				\[
-					A
-					\begin{bmatrix}
-						\bm{v}_1 \\
-						\vdots \\
-						\bm{v}_n
-					\end{bmatrix} \coloneqq
-					\begin{bmatrix}
-						\sum_{j=1}^n a_{1j}\bm{v}_j \\
-						\vdots \\
-						\sum_{j=1}^n a_{mj}\bm{v}_j
-					\end{bmatrix},
-					\qquad
-					[\bm{v}_1,\dotsc,\bm{v}_n]B \coloneqq
-					\left[\sum_{i=1}^n b_{i1}\bm{v}_i, \dotsc, \sum_{i=1}^n b_{im}\bm{v}_i \right]
-				\]
-				これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
-			\subsection{一般のベクトルを要素とする行列同士の積}
-				ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して、
-				これらを要素とする行列$A\coloneqq[\bm{a}_{ij}]_{l\times m},\;B\coloneqq[\bm{b}_{ij}]_{m\times n}$の積$C$を
-				$C\coloneqq[c_{ij}]_{m\times n},\;c_{ij} \coloneqq \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
-				これは$\bm{a}_{ij},\bm{b}_{ij}$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
-		\section{\texorpdfstring{$\dim(V)=\dim(W),\;f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき、\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
-			\begin{shadebox}
-				$f$を$V\rightarrow W$への線形写像とする。$\dim(V)=\dim(W)$であるとき、$f$が単射であることと全射であることは同値。
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				\noindent
-				$n=\dim(V)=\dim(W)$とする。\\
-				($\Rightarrow$)
-				\par
-				$W$の任意のベクトルは$W$の基底の一次結合で表されるから、全射性を言うためには$V$の中から適当な$n$個のベクトルを選んで$f$で送ったものの集合で$W$の基底を構成できることを示せば十分である。
-				$V$の基底を$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$として$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が$W$の基底を成すことを示す。
-				\[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;\;c_1,c_2,\dots c_n\in\field\]
-				とおくと$f$の線形性から
-				\[f(c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n) = 0\]
-				$f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
-				\[c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n = 0\]
-				$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$は$V$の基底なので
-				\[c_1=c_2=\dotsb=c_n = 0\]
-				よって$W$の$n=\dim(W)$個のベクトル$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が一次独立なのでこれは$W$の基底である。
-				\newline\par
-				\noindent
-				($\Leftarrow$)
-				\par
-				次元定理から
-				\[\dim(\Img{f}) + \dim(\Ker{f}) = \dim(V) = \dim(W) = n\]
-				$f$は全射であったから$\Img{f}=W$であるので$\dim(\Img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
-				(別証)
-				\par
-				$f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
-				$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
-				ここで$c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
-				$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
-				よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
-				\par
-				$\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
-				$\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\dotsb+c_n\bm{v}_n$とすると、
-				\[\bm{0} = f(\bm{x}) = f(c_1\bm{v}_1+\dotsb+c_n\bm{v}_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
-				より$c_1=\dotsb=c_n=0$となるから$\bm{x}=\bm{0}$である。
-				すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
-			\end{proof}
-		\section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
-			\begin{proof}
-				\quad\par
-				$n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
-				写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
-				さらに単射であることが次のようにして確かめられる。
-				\par
-				$\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
-				$\bm{x},\bm{y}$を基底で展開して$\bm{x}=\sum_{i=1}^n x_i\bm{v}_i, \bm{y}=\sum_{i=1}^n y_i\bm{v}_i$とすると$\bm{x}=\sum_{i=1}^n x_i\bm{w}_i = \bm{y}=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\bm{x}=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\dotsc,n)$であるので$\bm{x}=\bm{y}$である。直前の定理より$f$は全射でもあるから全単射である。
-			\end{proof}
-		\section{不変部分空間と表現行列}
-			\label{不変部分空間と表現行列}
-			\begin{shadebox}
-				$A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\dotsb\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
-				$\{\bm{w}_{i1},\dotsc,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\dotsc,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\dotsc,\Phi_m]$\\
-				以上の設定の下で、次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
-				\[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
-				$A_i$は次式で得られる。
-				\[A_i = \left({\Phi_i}^\top\Phi_i\right)^{-1}{\Phi_i}^\top A\Phi_i\]
-				特に$W_i$の基底を正規直交基底にしておけば、より簡単に次式で得られる。
-				\[A_i = {\Phi_i}^\top A\Phi_i\]
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				$A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
-				$\Phi$は$\field$から来る入力ベクトルを$A$の不変部分空間の成分に分解する変換器になっている。
-				\par
-				$A_i$の構成法を示す。一般の場合を示すのは別に難しくないが、式が煩雑になって無意味に難解になるので、具体的な場合を示す。
-				例えば$n=4, m=2, d_1=d_2=2$としてみる。この場合の証明が理解できれば一般の証明は楽勝である。
-				まず
-				\[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
-				とおく。まず$A_1$を求めてみる。定理\ref{逆行列にその構成縦ベクトルを掛ける}からヒントを得て両辺に$[\bm{w}_1,\bm{w}_2]$を右から掛けて
-				\begin{align*}
-					A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}
-					\left[
-						\begin{array}{c}
-							I_2\\
-							O_2
-						\end{array}
-					\right] = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]
-					\left[
-						\begin{array}{c}
-							A_1\\
-							O_2
-						\end{array}
-					\right]\\
-					&= [\bm{w}_1,\bm{w}_2]A_1
-				\end{align*}
-				$[\bm{w}_1,\bm{w}_2]$は列フルランクであるから定理\ref{列フルランク行列を掛けあわせて正則行列を作る}より$[\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2]$は逆行列を持つ。
-				そこで上式に左から$[\bm{w}_1,\bm{w}_2]^\top$を掛けて
-				\begin{align*}
-					[\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2]A_1\\
-					\therefore\;A_1 &= ([\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2])^{-1}[\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2]
-				\end{align*}
-				特に、予め$\{\bm{w}_1,\bm{w}_2\}$を正規直交基底にしておけば$[\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2] = I_2$なので$A_1$は次式で得られる。
-				\[A_1 = [\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2]\]
-				同様にして$A_2$も求められる。一般の場合も同じ要領でやれば良い。
-			\end{proof}
-		\subsection{正規直交基底間での座標変換は直交変換}
-			\begin{shadebox}
-				$n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
-				すなわち座標変換行列$P \coloneqq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
-			\end{shadebox}
-			\begin{proof}
-				\[ \bm{v}_i = \sum_{k=1}^n \inprod{\bm{v}_i}{\bm{u}_k}\bm{u}_k = \sum_{k=1}^n P[i][k]\bm{u}_k \]
-				だから
-				\begin{align*}
-					\delta_{ij} &= \inprod{\bm{v}_i}{\bm{v}_j} = \inprod{\sum_{k=1}^n P[i][k]\bm{u}_k}{\sum_{l=1}^n P[j][l]\bm{u}_l} = \sum_{k=1}^n\sum_{l=1}^n \inprod{P[i][k]\bm{u}_k}{P[j][l]\bm{u}_l}\\
-					&= \sum_{k=1}^n\sum_{l=1}^n P[i][k]P[j][l]\delta_{kl} = \sum_{k=1}^n P[i][k]P[j][k] = \sum_{k=1}^n P[i][k]P^\top[k][j] = (PP^\top)[i][j]
-				\end{align*}
-			\end{proof}
-	\chapter{双対空間}
-		\section{基底変換と座標変換の関係}
-			\begin{shadebox}
-				$V$を$n$次元ベクトル空間とし($\realNumbers^n$や$\complexNumbers^n$とは限らないことに注意)、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$と$\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$を$V$の基底とする。
-				これらが$n$次正則行列$A$により次の関係式に従うとする。
-				\[
-					\begin{bmatrix}
-						{\bm{v}_1}' \\
-						\vdots \\
-						{\bm{v}_n}'
-					\end{bmatrix}
-					= A
-					\begin{bmatrix}
-						\bm{v}_1 \\
-						\vdots \\
-						\bm{v}_n
-					\end{bmatrix}
-				\]
-				$\{\bm{v}_1,\dotsc,\bm{v}_n\},\;\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$の双対基底をそれぞれ$\{\bm{v}^1,\dotsc,\bm{v}^n\}\,\{{\bm{v}^1}',\dotsc,{\bm{v}^n}'\}$とし、
-				$\underline{\bm{x}} \coloneqq [x_1,\dotsc,x_n]^\top,\;\underline{\bm{x}}' \coloneqq [{x_1}',\dotsc,{x_n}']^\top$とする。
-				このとき$[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$であれば$\underline{\bm{x}}' = A\underline{\bm{x}}$である。
-				すなわち、双対空間での座標変換と元の空間の基底間の線形変換が同じ形になる。
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				$[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$より
-				\begin{align*}
-					\underline{\bm{x}}' &= 
-					\begin{bmatrix}
-						{\bm{v}_1}' \\
-						\vdots \\
-						{\bm{v}_n}'
-					\end{bmatrix}
-					[\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A
-					\begin{bmatrix}
-						\bm{v}_1 \\
-						\vdots \\
-						\bm{v}_n
-					\end{bmatrix}
-					[\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A I_3\underline{\bm{x}} = A\underline{\bm{x}}
-				\end{align*}
-			\end{proof}
-	\chapter{行列式}
-		\begin{comment}
-		\section{右下要素が$0$の対称行列の行列式}
-			\begin{shadebox}
-				右下要素が$0$である行列
-				\[
-					A =
-					\left[
-						\begin{array}{ccc|c}
-							\multicolumn{3}{c|}{}	& b_1 \\
-							\multicolumn{3}{c|}{A'}	& \vdots \\
-							\multicolumn{3}{c|}{}	& b_n \\ \hline
-							b_1 & \cdots & b_n		& 0
-						\end{array}
-					\right]
-					=
-					\left[
-						\begin{array}{ccc|c}
-							\multicolumn{3}{c|}{} \\
-							\multicolumn{3}{c|}{A'}	& \bm{b} \\
-							\multicolumn{3}{c|}{} \\ \hline
-							\quad & \bm{b}^\top & \quad & 0
-						\end{array}
-					\right]
-				\]
-				の行列式は
-				\[\det{A} = -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b}\]
-				\begin{flushright}
-					(※$\tilde{A'}$は$A'$の余因子行列)
-				\end{flushright}
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				第$n$行に関して余因子展開すると
-				\[\det{A} = \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\det{C_i}}\]
-				但し$C_i$とは、$[A',\bm{b}]$の第$i$列を除去した小行列である。
-				$C_i$を第$n$列に関して余因子展開すると
-				\[\det{C_i} = \sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}\]
-				但し$A'_{ji}$とは、$C_i$の第$n$列と第$j$行を除去したもの、すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
-				よって
-				\begin{align*}
-					\det{A} &= \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}} = -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j(-1)^{i+j}\det{A'_{ji}}}} \\
-					&= -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j\tilde{a'}_{ij}}} \quad (\tilde{a'}_{ij}\text{は}\tilde{A'}\text{の}(i,j)\text{成分}) \\
-					&= -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b} \quad (\because\;\tilde{A'}=-\det{(A')}{A'}^{-1})
-				\end{align*}
-			\end{proof}
-			\end{comment}
-		\section{\texorpdfstring{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$}{A∈R\string^(n×m), B∈R\string^(m×n)}に対して\texorpdfstring{$|I_m-AB| = |I_n-BA|$}{|Im-AB| = |In-BA|}}
-			\label{I-ABの行列式}
-			\begin{proof}
-				\[
-					M \coloneqq \begin{bmatrix}
-						I_n & A \\
-						B & I_m
-					\end{bmatrix}
-				\]
-				とすると
-				\[
-					\det{M} = \det{
-						\left(M
-						\begin{bmatrix}
-							I_n & -A \\
-							O & I_m
-						\end{bmatrix}
-						\right)
-					} = \det{
-						\begin{bmatrix}
-							I_n & O \\
-							B & I_m-BA
-						\end{bmatrix}
-					} = |I_m-BA|
-				\]
-				一方で
-				\[
-					\det{M} = \det{
-						\left(M
-						\begin{bmatrix}
-							I_n & O \\
-							-B & I_m
-						\end{bmatrix}
-						\right)
-					} = \det{
-						\begin{bmatrix}
-							I_n-AB & A \\
-							~ & I_m
-						\end{bmatrix}
-					} = |I_n-AB|
-				\]
-			\end{proof}
-		\section{系: \texorpdfstring{$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}{|In-vv\string^| = 1 - ||v||\string^2}}
-			\begin{shadebox}
-				$\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
-			\end{shadebox}
+    \newcommand{\vv}{\bm{v}}
+    \newcommand{\vx}{\bm{x}}
+    \newcommand{\vy}{\bm{y}}
+    \chapter{表記}
+        \begin{itemize}
+            \item $E_A(\lambda)$ : 行列$A$の固有値$\lambda$に対する固有空間
+            \item $F_{A,k}(\lambda)$ : 行列$A$の固有値$\lambda$に対する$k$階一般固有空間
+            \item $F_A(\lambda)$ : 行列$A$の固有値$\lambda$に対する一般固有空間
+        \end{itemize}
+    \chapter{行列の演算}
+        \section{結合則}
+            \begin{shadebox}
+                $A,B,C$が$l \times m,\; m \times n,\; n \times o$行列であるとき$(AB)C = A(BC)$
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                まず下準備。
+                \[A \coloneqq \left[a_{ij}\right]_{l\times m},\quad B \coloneqq \left[b_{ij}\right]_{m\times n},\quad C \coloneqq \left[c_{ij}\right]_{n\times o}\]
+                \[M_{AB} \coloneqq \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} \coloneqq [m_{{BC}_{ij}}]_{m\times o} = BC\]
+                \[N_1 \coloneqq \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneqq \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
+                とする。
+                $N_1 = N_2$すなわち$n_{1_{ij}} = n_{2_{ij}}$を示せば良い。\\
+                まず
+                \[m_{{AB}_{ij}} = \sum_{k=1}^{m}{a_{ik}b_{kj}},\quad m_{{BC}_{ij}} = \sum_{k=1}^{n}{b_{ik}c_{kj}}\]
+                である。これを用いて
+                \[n_{1_{ij}} = \sum_{k=1}^{\textcolor{red}{n}}{m_{{AB}_{ik}}c_{kj}} = \sum_{k=1}^{n}{\left(\sum_{l=1}^{m}{a_{il}b_{lk}}\right)c_{kj}} = \sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}}\]
+                \[n_{2_{ij}} = \sum_{k=1}^{\textcolor{red}{m}}{a_{ik}m_{{BC}_{kj}}} = \sum_{k=1}^{m}{a_{ik}\left(\sum_{l=1}^{n}{b_{kl}c_{lj}}\right)} = \sum_{\textcolor{red}{l}=1}^{n}{\sum_{\textcolor{red}{k}=1}^{m}{\left(a_{ik}b_{kl}c_{lj}\right)}}\]
+                上式の$k$と$l$を交換(純粋に紙の上で文字として書き換える)しても何ら問題はない。そうすると上式は
+                \[\sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}} = n_{1_{ij}}\]
+                となり結局$n_{1_{ij}}$と一致する。
+            \end{proof}
+        \section{上(下)三角行列のべき乗}
+            \label{上(下)三角行列のべき乗}
+            \begin{shadebox}
+                上三角行列$A$の$n$乗もまた上三角行列であり、特に第$i$対角成分は${a_{ii}}^n$である。
+                下三角行列についても上と同様の定理が成り立つ。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                上三角行列について示す。下三角行列については同様に示せる。\\
+                $n=1$のときは明らか。まず$n=2$のときを示す。
+                \[A^2[i][j] = \sum_{k=1}^{n}{a_{ik}a_{kj}} = \sum_{i\leq k,k\leq j}{a_{ik}a_{kj}}\quad(\because\;a_{ij}=0\mathrm{ when }i>j)\]
+                であるから次の2つの式が成り立つ。
+                \[A^2[i][i] = \sum_{i\leq k,k\leq i}{a_{ik}a_{ki}} = {a_{ii}}^2,\quad A^2[i][j](i>j) = 0\]
+                次に、$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
+                \begin{align*}
+                    A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\left(b_{kj} = A^n[k][j]\right) \\
+                    &= \sum_{i\leq k, k\leq j}^{n}{a_{ik}b_{kj}}\quad(\because\;\mathrm{帰納法の仮定より }b_{ij}=0\mathrm{ when }i>j)
+                \end{align*}
+                であるから帰納法の仮定より次の2つの式が成り立つ。
+                \begin{align*}
+                    A^{n+1}[i][i] &= \sum_{i\leq k, k\leq i}^{n}{a_{ik}b_{ki}} = a_{ii}b_{ii} = a_{ii}{a_{ii}}^n = {a_{ii}}^{n+1}\\
+                    A^{n+1}[i][i]&(i>j) = 0
+                \end{align*}
+            \end{proof}
+        \section{列ベクトルと行ベクトルの積の和}
+            \begin{shadebox}
+                列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
+                \[
+                \sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\dotsc,\bm{a}_{i_l}]
+                \begin{bmatrix}
+                    \bm{b}_{i_i}\\
+                    \bm{b}_{i_2}\\
+                    \cdots\\
+                    \bm{b}_{i_l}
+                \end{bmatrix}
+                \]
+            \end{shadebox}
+            \begin{proof}
+                行列のブロック演算を考えればわかる。
+            \end{proof}
+        \section{巡回行列の可換則}
+            \begin{proof}
+                \quad\par
+                $A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
+                まず
+                \[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
+                であり、添字に剰余を用いていることと総和の範囲に注意して、
+                \begin{align*}
+                    (BA)[i][j] &= \sum_{k=0}^{n-1} b_{ik}a_{kj} = \sum_{k=0}^{n-1} d_{(i-k)\%n}c_{(k-j)\%n} = \sum_{k=0}^{n-1} d_{(i-(k+i+j))\%n}c_{((k+i+j)-j)\%n} \\
+                    &= \sum_{k=0}^{n-1} d_{(-k-j)\%n}c_{(k+i)\%n} = \sum_{k=0}^{n-1} d_{(-(-k)-j)\%n}c_{((-k)+i)\%n} \\
+                    &= \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} = (AB)[i][j]
+                \end{align*}
+            \end{proof}
+        \section{\texorpdfstring{$\realNumbers^{\textcolor{red}{2}}$}{R\string^2}の対称行列同士の積は対称}
+            \begin{proof}
+                $
+                    A = \begin{bmatrix}
+                        a & b \\
+                        b & a
+                    \end{bmatrix},\quad
+                    B = \begin{bmatrix}
+                        c & d \\
+                        d & c
+                    \end{bmatrix}
+                $
+                とすると
+                $
+                    AB = \begin{bmatrix}
+                        ac + bd & ad + bc \\
+                        ad + bc & ac + bd
+                    \end{bmatrix}
+                $
+            \end{proof}
+            \begin{attention}
+                $\realNumbers^3$以上では成り立たない。
+            \end{attention}
+        \section{Kronecker積}
+            \subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
+                \begin{shadebox}
+                    行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    $A$の行数を$m_A$, 列数を$n_A$, $C$の列数を$n_C$とする。
+                    \begin{align*}
+                        (A\otimes B)(C\otimes D) &= \begin{bmatrix}
+                            a_{1,1}B & a_{1,2}B & \cdots & a_{1,n_A}B \\
+                            a_{2,1}B & \ddots & & \vdots \\
+                            \vdots \\
+                            a_{m_A, 1}B & \cdots & & a_{m_A, n_A}B
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            c_{1,1}D & c_{1,2}D & \cdots & c_{1,n_C}D \\
+                            c_{2,1}D & \ddots & & \vdots \\
+                            \vdots \\
+                            c_{n_A, 1}D & \cdots & & c_{n_A, n_C}D
+                        \end{bmatrix} \\
+                        &= \begin{bmatrix}
+                            (AC)[1,1]BD & (AC)[1,2]BD & \cdots & (AC)[1,n_C]BD \\
+                            (AC)[2,1]BD & \ddots & & \vdots \\
+                            \vdots \\
+                            (AC)[m_A,1]BD & \cdots & & (AC)[m_A,n_C]BD
+                        \end{bmatrix} = (AC)\otimes(BD)
+                    \end{align*}
+                \end{proof}
+            \subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
+                \begin{proof}
+                    \quad\par
+                    $A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。
+                    混合積の性質から
+                    \[
+                        (A\otimes B)^*(A\otimes B) = (A^*\otimes B^*)(A\otimes B) = (A^*A)\otimes(B^*B) = I_m\otimes I_n = I_{m+n}
+                    \]
+                \end{proof}
+    \chapter{ベクトル空間}
+        \section{基底}
+            \subsection{基底変換}
+                \begin{shadebox}
+                    $V$の基底$\{\bm{v}_1,\dotsc,\bm{v}_n\}$に以下の操作を行っても依然として基底である。
+                    \begin{itemize}
+                        \item $\bm{v}_i$を非零倍する
+                        \item $\bm{v}_j$に$\bm{v}_i$の定数倍を加える
+                    \end{itemize}
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    操作後のベクトルの線形和を0にするためには全ての係数を0にせねばならないことに気付く。
+                \end{proof}
+            \subsection{諸定理}
+                \subsubsection{三角関数ベクトルによる直交展開}
+                    \begin{shadebox}
+                        $\complexNumbers^n$を考える。$n$本のベクトルの集合
+                        \[\left\{\bm{v}_1,\dotsc,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
+                        は$\complexNumbers^n$の正規直交基底を成す。
+                    \end{shadebox}
+                    \begin{proof}
+                        \quad\par
+                        まず各ベクトルの2ノルムが1であることが次のようにして簡単に確かめられる。
+                        \[\norm{\bm{v}_k}_2 = \frac{1}{\sqrt{n}}\sqrt{\sum_{l=1}^n{\abs{\exp\left(i\frac{k}{n}2\pi l\right)}^2}} = \frac{1}{\sqrt{n}}\sqrt{n} = 1\]
+                        次に、相異なる$k,l$に対して$\bm{v}_k$と$\bm{v}_l$が直交することは次のようにして確かめられる。
+                        \[\inprod{\bm{v}_k}{\bm{v}_l} = {\bm{v}_k}^*\bm{v}_l = \frac{1}{n}\sum_{m=1}^n{\exp\left(-i\frac{k}{n}2\pi m\right)\exp\left(i\frac{l}{n}2\pi m\right)} = \frac{1}{n}\sum_{m=1}^n{\exp\left(i\frac{l-k}{n}2\pi m\right)} = 0\quad(\because\;\ref{fml:花びら定理})\]
+                    \end{proof}
+        \section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
+            \subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}
+                \begin{shadebox}
+                    $n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\dotsb+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    まず
+                    \begin{align*}
+                        \quad& d_1\bm{v}_1 + \dotsb + d_p\bm{v}_p = \bm{0} \tag{1} \\
+                        \iff& d_1(c_{11}\bm{b}_1 + \dotsb + c_{n1}\bm{b}_n) + \dotsb + d_p(c_{1p}\bm{b}_1 + \dotsb + c_{np}\bm{b}_n) = \bm{0} \\
+                        \iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \dotsb + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
+                        \iff& d_1 c_{11} + \dotsb + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \dotsb + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
+                        \iff&
+                        \begin{bmatrix}
+                            c_{11} & \cdots & c_{1p} \\
+                            \vdots & \ddots & \vdots \\
+                            c_{n1} & \cdots & c_{np}
+                        \end{bmatrix}
+                        \begin{bmatrix}
+                            d_1 \\
+                            \vdots \\
+                            d_n
+                        \end{bmatrix}
+                        =\bm{0}_n \tag{2}
+                    \end{align*}
+                    が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\dotsb=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
+                    逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\dotsb=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
+                \end{proof}
+        \section{諸定理}
+            \subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
+                \begin{proof}
+                    \quad\par
+                    ($\Leftarrow$) 容易。
+                    \par
+                    ($\Rightarrow$) 背理法で示す。
+                    $\exists \bm{v}_1\in V_1\setminus V_2, \;\bm{v}_2\in V_2\setminus V_1$と仮定する。
+                    $V_1\cup V_2$がベクトル空間であるから$\bm{v}_1 + \bm{v}_2 \in V_1\cup V_2$である。
+                    $\bm{v}_1 + \bm{v}_2 \in V_1$であるとすると
+                    \[ \bm{v}_2 = \underbrace{(\bm{v}_1 + \bm{v}_2)}_{\in V_1} - \bm{v}_1 \]
+                    となり、左辺$\notin V_1$ であるが、右辺$\in V_1$となり矛盾する。
+                    同様に$\bm{v}_1 + \bm{v}_2 \in V_2$であるとしても矛盾が生じる。
+                    従って$V_1\cup V_2$がベクトル空間であることに矛盾する。
+                \end{proof}
+            \subsection{\texorpdfstring{$V_i \subseteq W_i,\;\bigoplus_{i=1}^n {W_i} = \bigoplus_{i=1}^n {V_i}\quad\Rightarrow V_i=W_i$}{Vi⊆Wi, V1⊕...⊕Vn = W1⊕...⊕Wn ⇒ Vi=Wi}}
+                \begin{shadebox}
+                    \[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\dotsc,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\dotsc,n)\]
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    $W_i\subseteq V_i$を示せば良い。
+                    $\vx\in W_i$を任意にとると$\vx\in \bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i}$でもあるから適当なベクトル$\vv_i\in V_i$が存在して
+                    \[\vx = \vv_1+\vv_2+\dotsb+\vv_i+\dotsb+\vv_n\]
+                    と一意に分解できるが、$V_i\subseteq W_i$より$\vv_i\in W_i$であるので
+                    \[\vx = \underbrace{\vv_1}_{\in W_1}+\underbrace{\vv_2}_{\in W_2}+\dotsb+\underbrace{\vv_i}_{\in W_i}+\dotsb+\underbrace{\vv_n}_{\in W_n}\]
+                    ところで$\vx\in \bigoplus_{i=1}^n{W_i}$であったから$\vx$は
+                    \[\vx = \underbrace{\bm{0}}_{\in W_1}+\underbrace{\bm{0}}_{\in W_2}+\dotsb+\underbrace{\vx}_{\in W_i}+\dotsb+\underbrace{\bm{0}}_{\in W_n}\]
+                    と分解される。分解は一意でなくてはならぬから
+                    \begin{equation*}
+                        \vv_j =
+                        \begin{cases}
+                            \vx & (j=i)\\
+                            \bm{0} & (\mathrm{otherwise})
+                        \end{cases}
+                    \end{equation*}
+                    よって$\vx\in V_i$
+                \end{proof}
+            \subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
+                \label{subsec:一次独立なベクトルの、独立集合族としての性質}
+                \begin{shadebox}
+                    $V$を線形ベクトル空間とし、$\bm{v}_1,\dotsc,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことと同値である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    $\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
+                    逆に$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないとする。
+                    このとき$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
+                    よって$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\dotsb=c_k=0$である。
+                    すなわち$c_1=\dotsb=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
+                \end{proof}
+            \subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
+                \begin{shadebox}
+                    線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次独立である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\dotsc,\bm{w}_l$の一次結合で表せる。
+                    よって$A_v$は$l$個の一次独立なベクトルの一次結合で表された$k>l$個以上のベクトルの集合なので一次従属であるが、これは$A_v$の一次独立性の仮定に矛盾する。
+                \end{proof}
+        \section{諸注意}
+            \subsection{
+                \texorpdfstring{$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$}{\{v1,v2\},\{w1,w2\},\{v1,v2,w1\},\{v1,v2,w2\}}が各々一次独立でも\texorpdfstring{\\}{}
+                \texorpdfstring{$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$}{\{v1,v2,w1,w2\}}が一次独立とは限らない}
+                \begin{proof}
+                    例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
+                \end{proof}
+            \subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\dotsb+W_n = W_1\oplus\dotsb\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
+                \begin{proof}
+                    \quad\par
+                    例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
+                \end{proof}
+            \subsection{\texorpdfstring{$W=V\oplus X,\;W=V\oplus Y$}{W=V⊕X, W=V⊕Y}でも\texorpdfstring{$X=Y$}{X=Y}とは限らない}
+                \begin{proof}
+                    例えば$W=\realNumbers^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
+                \end{proof}
+            \subsection{\texorpdfstring{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$}{Span[a,b,c]/Span[a,b]=Span[c]}とは限らない}
+                \begin{proof}
+                    \quad\par
+                    例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realNumbers^3$のとき、
+                    $\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}}$は$\realNumbers^3$から第1要素が0である点だけを抜いたものであり、$[x,*,*]^\top,\;x\neq 0$のような点は残っている。
+                    このような点は$\Span{\bm{c}}$には属さない。
+                \end{proof}
+    \chapter{線形写像}
+        \section{表記の規則}
+            \subsection{一般のベクトルを要素とする配列と行列の積}
+                $\bm{v}_1,\dotsc,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
+                これと$m\times n$行列$A=[a_{ij}]_{m\times n}$, $n\times m$行列$B=[b_{ij}]_{n\times m}$に対して次のように演算を定義する。
+                \[
+                    A
+                    \begin{bmatrix}
+                        \bm{v}_1 \\
+                        \vdots \\
+                        \bm{v}_n
+                    \end{bmatrix} \coloneqq
+                    \begin{bmatrix}
+                        \sum_{j=1}^n a_{1j}\bm{v}_j \\
+                        \vdots \\
+                        \sum_{j=1}^n a_{mj}\bm{v}_j
+                    \end{bmatrix},
+                    \qquad
+                    [\bm{v}_1,\dotsc,\bm{v}_n]B \coloneqq
+                    \left[\sum_{i=1}^n b_{i1}\bm{v}_i, \dotsc, \sum_{i=1}^n b_{im}\bm{v}_i \right]
+                \]
+                これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
+            \subsection{一般のベクトルを要素とする行列同士の積}
+                ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して、
+                これらを要素とする行列$A\coloneqq[\bm{a}_{ij}]_{l\times m},\;B\coloneqq[\bm{b}_{ij}]_{m\times n}$の積$C$を
+                $C\coloneqq[c_{ij}]_{m\times n},\;c_{ij} \coloneqq \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
+                これは$\bm{a}_{ij},\bm{b}_{ij}$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
+        \section{\texorpdfstring{$\dim(V)=\dim(W),\;f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき、\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
+            \begin{shadebox}
+                $f$を$V\rightarrow W$への線形写像とする。$\dim(V)=\dim(W)$であるとき、$f$が単射であることと全射であることは同値。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                \noindent
+                $n=\dim(V)=\dim(W)$とする。\\
+                ($\Rightarrow$)
+                \par
+                $W$の任意のベクトルは$W$の基底の一次結合で表されるから、全射性を言うためには$V$の中から適当な$n$個のベクトルを選んで$f$で送ったものの集合で$W$の基底を構成できることを示せば十分である。
+                $V$の基底を$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$として$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が$W$の基底を成すことを示す。
+                \[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;\;c_1,c_2,\dots c_n\in\field\]
+                とおくと$f$の線形性から
+                \[f(c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n) = 0\]
+                $f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
+                \[c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n = 0\]
+                $\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$は$V$の基底なので
+                \[c_1=c_2=\dotsb=c_n = 0\]
+                よって$W$の$n=\dim(W)$個のベクトル$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が一次独立なのでこれは$W$の基底である。
+                \newline\par
+                \noindent
+                ($\Leftarrow$)
+                \par
+                次元定理から
+                \[\dim(\Img{f}) + \dim(\Ker{f}) = \dim(V) = \dim(W) = n\]
+                $f$は全射であったから$\Img{f}=W$であるので$\dim(\Img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
+                (別証)
+                \par
+                $f$が全射であるから、$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
+                $f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
+                ここで$c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n = \bm{0}$とおくと、$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
+                $\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
+                よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり、$\dim{V}=n$よりこれらは$V$の基底である。
+                \par
+                $\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
+                $\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\dotsb+c_n\bm{v}_n$とすると、
+                \[\bm{0} = f(\bm{x}) = f(c_1\bm{v}_1+\dotsb+c_n\bm{v}_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
+                より$c_1=\dotsb=c_n=0$となるから$\bm{x}=\bm{0}$である。
+                すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
+            \end{proof}
+        \section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
+            \begin{proof}
+                \quad\par
+                $n=\dim{V}=\dim{W}$とし、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$を$V$の基底、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
+                写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
+                さらに単射であることが次のようにして確かめられる。
+                \par
+                $\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
+                $\bm{x},\bm{y}$を基底で展開して$\bm{x}=\sum_{i=1}^n x_i\bm{v}_i, \bm{y}=\sum_{i=1}^n y_i\bm{v}_i$とすると$\bm{x}=\sum_{i=1}^n x_i\bm{w}_i = \bm{y}=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\bm{x}=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが、$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\dotsc,n)$であるので$\bm{x}=\bm{y}$である。直前の定理より$f$は全射でもあるから全単射である。
+            \end{proof}
+        \section{不変部分空間と表現行列}
+            \label{不変部分空間と表現行列}
+            \begin{shadebox}
+                $A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\dotsb\oplus W_m,\quad d_i \coloneqq \dim{W_i}$\\
+                $\{\bm{w}_{i1},\dotsc,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneqq [\bm{w}_{i1},\dotsc,\bm{w}_{id_i}],\quad \Phi \coloneqq [\Phi_1,\dotsc,\Phi_m]$\\
+                以上の設定の下で、次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
+                \[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
+                $A_i$は次式で得られる。
+                \[A_i = \left({\Phi_i}^\top\Phi_i\right)^{-1}{\Phi_i}^\top A\Phi_i\]
+                特に$W_i$の基底を正規直交基底にしておけば、より簡単に次式で得られる。
+                \[A_i = {\Phi_i}^\top A\Phi_i\]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
+                $\Phi$は$\field$から来る入力ベクトルを$A$の不変部分空間の成分に分解する変換器になっている。
+                \par
+                $A_i$の構成法を示す。一般の場合を示すのは別に難しくないが、式が煩雑になって無意味に難解になるので、具体的な場合を示す。
+                例えば$n=4, m=2, d_1=d_2=2$としてみる。この場合の証明が理解できれば一般の証明は楽勝である。
+                まず
+                \[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
+                とおく。まず$A_1$を求めてみる。定理\ref{逆行列にその構成縦ベクトルを掛ける}からヒントを得て両辺に$[\bm{w}_1,\bm{w}_2]$を右から掛けて
+                \begin{align*}
+                    A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}
+                    \left[
+                        \begin{array}{c}
+                            I_2\\
+                            O_2
+                        \end{array}
+                    \right] = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]
+                    \left[
+                        \begin{array}{c}
+                            A_1\\
+                            O_2
+                        \end{array}
+                    \right]\\
+                    &= [\bm{w}_1,\bm{w}_2]A_1
+                \end{align*}
+                $[\bm{w}_1,\bm{w}_2]$は列フルランクであるから定理\ref{列フルランク行列を掛けあわせて正則行列を作る}より$[\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2]$は逆行列を持つ。
+                そこで上式に左から$[\bm{w}_1,\bm{w}_2]^\top$を掛けて
+                \begin{align*}
+                    [\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2]A_1\\
+                    \therefore\;A_1 &= ([\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2])^{-1}[\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2]
+                \end{align*}
+                特に、予め$\{\bm{w}_1,\bm{w}_2\}$を正規直交基底にしておけば$[\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2] = I_2$なので$A_1$は次式で得られる。
+                \[A_1 = [\bm{w}_1,\bm{w}_2]^\top A[\bm{w}_1,\bm{w}_2]\]
+                同様にして$A_2$も求められる。一般の場合も同じ要領でやれば良い。
+            \end{proof}
+        \subsection{正規直交基底間での座標変換は直交変換}
+            \begin{shadebox}
+                $n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して、$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
+                すなわち座標変換行列$P \coloneqq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
+            \end{shadebox}
+            \begin{proof}
+                \[ \bm{v}_i = \sum_{k=1}^n \inprod{\bm{v}_i}{\bm{u}_k}\bm{u}_k = \sum_{k=1}^n P[i][k]\bm{u}_k \]
+                だから
+                \begin{align*}
+                    \delta_{ij} &= \inprod{\bm{v}_i}{\bm{v}_j} = \inprod{\sum_{k=1}^n P[i][k]\bm{u}_k}{\sum_{l=1}^n P[j][l]\bm{u}_l} = \sum_{k=1}^n\sum_{l=1}^n \inprod{P[i][k]\bm{u}_k}{P[j][l]\bm{u}_l}\\
+                    &= \sum_{k=1}^n\sum_{l=1}^n P[i][k]P[j][l]\delta_{kl} = \sum_{k=1}^n P[i][k]P[j][k] = \sum_{k=1}^n P[i][k]P^\top[k][j] = (PP^\top)[i][j]
+                \end{align*}
+            \end{proof}
+    \chapter{双対空間}
+        \section{基底変換と座標変換の関係}
+            \begin{shadebox}
+                $V$を$n$次元ベクトル空間とし($\realNumbers^n$や$\complexNumbers^n$とは限らないことに注意)、$\{\bm{v}_1,\dotsc,\bm{v}_n\}$と$\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$を$V$の基底とする。
+                これらが$n$次正則行列$A$により次の関係式に従うとする。
+                \[
+                    \begin{bmatrix}
+                        {\bm{v}_1}' \\
+                        \vdots \\
+                        {\bm{v}_n}'
+                    \end{bmatrix}
+                    = A
+                    \begin{bmatrix}
+                        \bm{v}_1 \\
+                        \vdots \\
+                        \bm{v}_n
+                    \end{bmatrix}
+                \]
+                $\{\bm{v}_1,\dotsc,\bm{v}_n\},\;\{{\bm{v}_1}',\dotsc,{\bm{v}_n}'\}$の双対基底をそれぞれ$\{\bm{v}^1,\dotsc,\bm{v}^n\}\,\{{\bm{v}^1}',\dotsc,{\bm{v}^n}'\}$とし、
+                $\underline{\bm{x}} \coloneqq [x_1,\dotsc,x_n]^\top,\;\underline{\bm{x}}' \coloneqq [{x_1}',\dotsc,{x_n}']^\top$とする。
+                このとき$[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$であれば$\underline{\bm{x}}' = A\underline{\bm{x}}$である。
+                すなわち、双対空間での座標変換と元の空間の基底間の線形変換が同じ形になる。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $[{\bm{v}^1}',\dotsc,{\bm{v}^n}']\underline{\bm{x}}' = [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}}$より
+                \begin{align*}
+                    \underline{\bm{x}}' &= 
+                    \begin{bmatrix}
+                        {\bm{v}_1}' \\
+                        \vdots \\
+                        {\bm{v}_n}'
+                    \end{bmatrix}
+                    [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A
+                    \begin{bmatrix}
+                        \bm{v}_1 \\
+                        \vdots \\
+                        \bm{v}_n
+                    \end{bmatrix}
+                    [\bm{v}^1,\dotsc,\bm{v}^n]\underline{\bm{x}} = A I_3\underline{\bm{x}} = A\underline{\bm{x}}
+                \end{align*}
+            \end{proof}
+    \chapter{行列式}
+        \begin{comment}
+        \section{右下要素が$0$の対称行列の行列式}
+            \begin{shadebox}
+                右下要素が$0$である行列
+                \[
+                    A =
+                    \left[
+                        \begin{array}{ccc|c}
+                            \multicolumn{3}{c|}{}	& b_1 \\
+                            \multicolumn{3}{c|}{A'}	& \vdots \\
+                            \multicolumn{3}{c|}{}	& b_n \\ \hline
+                            b_1 & \cdots & b_n		& 0
+                        \end{array}
+                    \right]
+                    =
+                    \left[
+                        \begin{array}{ccc|c}
+                            \multicolumn{3}{c|}{} \\
+                            \multicolumn{3}{c|}{A'}	& \bm{b} \\
+                            \multicolumn{3}{c|}{} \\ \hline
+                            \quad & \bm{b}^\top & \quad & 0
+                        \end{array}
+                    \right]
+                \]
+                の行列式は
+                \[\det{A} = -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b}\]
+                \begin{flushright}
+                    (※$\tilde{A'}$は$A'$の余因子行列)
+                \end{flushright}
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                第$n$行に関して余因子展開すると
+                \[\det{A} = \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\det{C_i}}\]
+                但し$C_i$とは、$[A',\bm{b}]$の第$i$列を除去した小行列である。
+                $C_i$を第$n$列に関して余因子展開すると
+                \[\det{C_i} = \sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}\]
+                但し$A'_{ji}$とは、$C_i$の第$n$列と第$j$行を除去したもの、すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
+                よって
+                \begin{align*}
+                    \det{A} &= \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}} = -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j(-1)^{i+j}\det{A'_{ji}}}} \\
+                    &= -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j\tilde{a'}_{ij}}} \quad (\tilde{a'}_{ij}\text{は}\tilde{A'}\text{の}(i,j)\text{成分}) \\
+                    &= -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b} \quad (\because\;\tilde{A'}=-\det{(A')}{A'}^{-1})
+                \end{align*}
+            \end{proof}
+            \end{comment}
+        \section{\texorpdfstring{$A\in\realNumbers^{n\times m}, B\in\realNumbers^{m\times n}$}{A∈R\string^(n×m), B∈R\string^(m×n)}に対して\texorpdfstring{$|I_m-AB| = |I_n-BA|$}{|Im-AB| = |In-BA|}}
+            \label{I-ABの行列式}
+            \begin{proof}
+                \[
+                    M \coloneqq \begin{bmatrix}
+                        I_n & A \\
+                        B & I_m
+                    \end{bmatrix}
+                \]
+                とすると
+                \[
+                    \det{M} = \det{
+                        \left(M
+                        \begin{bmatrix}
+                            I_n & -A \\
+                            O & I_m
+                        \end{bmatrix}
+                        \right)
+                    } = \det{
+                        \begin{bmatrix}
+                            I_n & O \\
+                            B & I_m-BA
+                        \end{bmatrix}
+                    } = |I_m-BA|
+                \]
+                一方で
+                \[
+                    \det{M} = \det{
+                        \left(M
+                        \begin{bmatrix}
+                            I_n & O \\
+                            -B & I_m
+                        \end{bmatrix}
+                        \right)
+                    } = \det{
+                        \begin{bmatrix}
+                            I_n-AB & A \\
+                            ~ & I_m
+                        \end{bmatrix}
+                    } = |I_n-AB|
+                \]
+            \end{proof}
+        \section{系: \texorpdfstring{$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$}{|In-vv\string^| = 1 - ||v||\string^2}}
+            \begin{shadebox}
+                $\bm{v} \in \complexNumbers^n$に対して$\left|I_n-\bm{v}\bm{v}^\top\right| = 1-\norm{\bm{v}}_2^2$
+            \end{shadebox}
 			\begin{comment}
 			\begin{proof}
 				\begin{align*}
