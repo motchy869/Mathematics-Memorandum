@@ -23,14 +23,14 @@
 			連続型の場合は少し厄介だ。
 			まずいくつか定義を行う。
 			\begin{itemize}
-				\item $p(x,\theta)$: $x,\theta$の同時確率密度関数。$\integ{\xmin}{\xmax}{\integ{\thetamin}{\thetamax}{p(x,\theta)}{\theta}}{x} = 1$
-				\item $\pi(\theta) \coloneqq p_\Theta(\theta) \coloneqq \integ{\xmin}{\xmax}{p(x,\theta)}{x}$ \quad: $\Theta$の周辺確率密度。これが所謂「\textbf{事前分布}」。
-				\item $f(x) \coloneqq p_X(x) \coloneqq \integ{\thetamin}{\thetamax}{p(x,\theta)}{\theta}$ \quad: $X$の周辺確率密度。
-				\item $f(x|\theta) \coloneqq p_X(x|\Theta=\theta) = \frac{p(x,\theta)}{\pi(\theta)}$ \quad: $X$の条件付き確率密度。これが所謂「\textbf{尤度}」。$\integ{\xmin}{\xmax}{f(x|\theta)}{x} = 1$
-				\item $\pi(\theta|x) \coloneqq p_\Theta(\theta|X=x) = \frac{p(x,\theta)}{f(x)}$ \quad: $\Theta$の条件付き確率密度。これが所謂「\textbf{事後分布}」。$\integ{\thetamin}{\thetamax}{\pi(\theta|x)}{\theta} = 1$
+				\item $p(x,\theta)$: $x,\theta$の同時確率密度関数。$\integrate{\xmin}{\xmax}{\integrate{\thetamin}{\thetamax}{p(x,\theta)}{}{\theta}}{}{x} = 1$
+				\item $\pi(\theta) \coloneqq p_\Theta(\theta) \coloneqq \integrate{\xmin}{\xmax}{p(x,\theta)}{}{x}$ \quad: $\Theta$の周辺確率密度。これが所謂「\textbf{事前分布}」。
+				\item $f(x) \coloneqq p_X(x) \coloneqq \integrate{\thetamin}{\thetamax}{p(x,\theta)}{}{\theta}$ \quad: $X$の周辺確率密度。
+				\item $f(x|\theta) \coloneqq p_X(x|\Theta=\theta) = \frac{p(x,\theta)}{\pi(\theta)}$ \quad: $X$の条件付き確率密度。これが所謂「\textbf{尤度}」。$\integrate{\xmin}{\xmax}{f(x|\theta)}{}{x} = 1$
+				\item $\pi(\theta|x) \coloneqq p_\Theta(\theta|X=x) = \frac{p(x,\theta)}{f(x)}$ \quad: $\Theta$の条件付き確率密度。これが所謂「\textbf{事後分布}」。$\integrate{\thetamin}{\thetamax}{\pi(\theta|x)}{}{\theta} = 1$
 			\end{itemize}
 			以上の定義の下で、巷で使われている式が導かれる。
-			\[\pi(\theta|x) = \frac{p(x,\theta)}{f(x)} = \frac{f(x|\theta)\pi(\theta)}{\integ{\thetamin}{\thetamax}{p(x,\theta)}{\theta}} = \frac{f(x|\theta)\pi(\theta)}{\integ{\thetamin}{\thetamax}{f(x|\theta)\pi(\theta)}{\theta}}\]
+			\[\pi(\theta|x) = \frac{p(x,\theta)}{f(x)} = \frac{f(x|\theta)\pi(\theta)}{\integrate{\thetamin}{\thetamax}{p(x,\theta)}{}{\theta}} = \frac{f(x|\theta)\pi(\theta)}{\integrate{\thetamin}{\thetamax}{f(x|\theta)\pi(\theta)}{}{\theta}}\]
 			上式から分かるように、尤度$f(x|\theta)$には\underline{定数倍の任意性}があるので、単純に$f(x|\theta)\coloneqq p(x,\theta)$としても上式は成り立つ。
 			\par
 			実際の計算では、$\pi(\theta)$と$f(x|\theta)$がわかれば、その積を$\theta$に関して規格化すれば$\pi(\theta|x)$が求まる。
@@ -49,16 +49,16 @@
 			\item $L(\theta,x): \realNumbers^2\to\realNumbers_+$: 損失関数。$\theta$の推定値$x$に対して「損失」を返す。通常、$\theta$と$x$の差が大きいほど損失も大きくなるような損失関数を想定する。
 		\end{itemize}
 		以上の準備の下で、事前分布$\pi(\theta)$と推定関数$\delta$に対する期待損失$\E{\Theta,X}{L(\Theta,\delta(X))}$は次のように定義される。
-		\[\E{\Theta,X}{L(\Theta,\delta(X))} \coloneqq \integ{\Omega_X}{}{\integ{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{\theta}}{x}\]
+		\[\E{\Theta,X}{L(\Theta,\delta(X))} \coloneqq \integrate{\Omega_X}{}{\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}}{}{x}\]
 		\par
 		損失関数が\underline{$\theta$の凸関数}であれば、上式で定義された\ul{期待損失を最小化する推定関数は事後分布の期待値と一致する}ことを示す。
-		期待損失を最小化するためには、各$x$に対して$\integ{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{\theta}$を最小化する$\delta(x)$を構成すれば良い。
-		Jensenの不等式を使うために、$p(x,\theta)$を$\theta$に関して規格化した$\frac{p(x,\theta)}{f(x)}$を使うと、$\integ{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{\theta}$の最小化は$\integ{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{\theta}$の最小化と等価である。
+		期待損失を最小化するためには、各$x$に対して$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}$を最小化する$\delta(x)$を構成すれば良い。
+		Jensenの不等式を使うために、$p(x,\theta)$を$\theta$に関して規格化した$\frac{p(x,\theta)}{f(x)}$を使うと、$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}$の最小化は$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{}{\theta}$の最小化と等価である。
 		Jensenの不等式より
-		\[\integ{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{\theta} \geq L\left(\integ{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{\theta} , \delta(x)\right)\]
-		常識的な損失関数であれば$\delta(x)=\integ{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{\theta}$のときに損失が最小になり、\ref{subsec:連続型の事後分布}でやったように、
+		\[\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{}{\theta} \geq L\left(\integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta} , \delta(x)\right)\]
+		常識的な損失関数であれば$\delta(x)=\integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta}$のときに損失が最小になり、\ref{subsec:連続型の事後分布}でやったように、
 		\begin{align*}
-			\integ{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{\theta} &= \integ{\Omega_\Theta}{}{\theta\pi(\theta|x)}{\theta} = \E{\Theta\sim\pi(\Theta|x)}{\Theta}
+			\integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta} &= \integrate{\Omega_\Theta}{}{\theta\pi(\theta|x)}{}{\theta} = \E{\Theta\sim\pi(\Theta|x)}{\Theta}
 		\end{align*}
 		となる。これは、事後分布の平均値を使えば期待損失を最小化できることを主張している。
 		そして、期待損失を最小化する推定量、すなわち事後分布の平均値を\textbf{ベイズ推定量}と呼ぶ。

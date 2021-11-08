@@ -184,12 +184,12 @@
 					$R>0$は十分大きいものとし、$I(R)$を次式で定義する。
 					\[ I(R) := \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
 					球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
-					\[ I(R) = \integ{0}{R}{\integ{0}{\pi}{\integ{0}{2\pi}{f(\bm{r})r^2\sin\theta}{\phi}}{\theta}}{r} \]
+					\[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
 					$0<R_0<R$なる$R_0$をとり、$I(R) = I(R_0) + I_2(R)$と分解する。
 					ここに$I_2(R) := I(R) - I(R_0)$である。
 					\begin{align*}
-						|I_2(R)| &\leq \integ{R_0}{R}{\integ{0}{\pi}{\integ{0}{2\pi}{|f(\bm{r})|r^2\sin\theta}{\phi}}{\theta}}{r} = 4\pi\integ{R_0}{R}{o(\norm{\bm{r}}_2^{-3-\alpha})r^2}{r} \\
-						&= 4\pi\integ{R_0}{R}{o(r^{-1-\alpha})}{r} < \infty \text{ as } R\to\infty
+						|I_2(R)| &\leq \integrate{R_0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{|f(\bm{r})|r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} = 4\pi\integrate{R_0}{R}{o(\norm{\bm{r}}_2^{-3-\alpha})r^2}{}{r} \\
+						&= 4\pi\integrate{R_0}{R}{o(r^{-1-\alpha})}{}{r} < \infty \text{ as } R\to\infty
 					\end{align*}
 				\end{proof}
 			\subsection{補題: 与えられた発散を有し、回転が\texorpdfstring{$\bm{0}$}{0}であるベクトル場の構成}
@@ -326,8 +326,8 @@
 				\end{align*}
 				次に\ctext{B}を見る。$t$による偏微分を$\dot{}$で表すことにする。線積分の定義に従って
 				\begin{align*}
-					\ctext{B} &= \integ{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{t} \\
-					&= \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{t} + \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{t} \\
+					\ctext{B} &= \integrate{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{}{t} \\
+					&= \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{}{t} + \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{}{t} \\
 					&= \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx} + \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy} \\
 					&= \oint_{\partial \Omega}{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx + A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy\right)}
 				\end{align*}
