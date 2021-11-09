@@ -44,8 +44,8 @@
 			\subsection{\texorpdfstring{$\E{\bm{X}}{V(\bm{X},\theta)} = 0$}{E\_X (V(X,Θ)) = 0}}
 				\begin{proof}
 					\begin{align*}
-						\E{\bm{X}}{V_n(\bm{X},\theta)} &= \integ{\Omega^n}{}{V_n(\bm{x},\theta) \prod_{i=1}^n f(x_i;\theta)}{\bm{x}} = \integ{\Omega^n}{}{\partDerivLong{\prod_{i=1}^n f(x_i;\theta)}{\theta}{}}{\bm{x}} \\
-						&= \partDerivLong{\integ{\Omega^n}{}{\prod_{i=1}^n f(x_i;\theta)}{\bm{x}}}{\theta}{} \quad (\text{微分と積分の順序交換可能性を仮定}) \\
+						\E{\bm{X}}{V_n(\bm{X},\theta)} &= \integrate{\Omega^n}{}{V_n(\bm{x},\theta) \prod_{i=1}^n f(x_i;\theta)}{}{\bm{x}} = \integrate{\Omega^n}{}{\partDerivLong{\prod_{i=1}^n f(x_i;\theta)}{\theta}{}}{}{\bm{x}} \\
+						&= \partDerivLong{\integrate{\Omega^n}{}{\prod_{i=1}^n f(x_i;\theta)}{}{\bm{x}}}{\theta}{} \quad (\text{微分と積分の順序交換可能性を仮定}) \\
 						&= \partDeriv{1}{\theta}{} = 0
 					\end{align*}
 				\end{proof}
@@ -58,12 +58,12 @@
 				\quad\par
 				(参考: \url{https://to-kei.net/estimator/cramer-rao/})\\
 				\begin{align*}
-					\Var{\bm{X}}{\hat{\theta}(\bm{X})}\E{\bm{X}}{V_n(\bm{X},\theta)^2} &= \integ{\Omega}{}{\left(\hat{\theta}(\bm{x}) - \theta\right)^2 f(\bm{x};\theta)}{\bm{x}} \integ{\Omega}{}{V_n(\bm{x},\theta)^2 f(\bm{x};\theta)}{\bm{x}} \\
-					&= \integ{\Omega}{}{\left(\left(\hat{\theta}(\bm{x}) - \theta\right)\sqrt{f(\bm{x};\theta)}\right)^2}{\bm{x}} \integ{\Omega}{}{\left(V_n(\bm{x},\theta)\sqrt{f(\bm{x};\theta)}\right)^2}{\bm{x}} \\
-					&\geq \integ{\Omega}{}{\left(\hat{\theta}(\bm{x}) - \theta\right)V_n(\bm{x},\theta)f(\bm{x};\theta)}{\bm{x}} \quad (\text{Cauchy-Schwarzの不等式を用いた}) \\
-					&= \integ{\Omega}{}{\hat{\theta}(\bm{x})V_n(\bm{x},\theta)f(\bm{x},\theta)}{\bm{x}} \quad \left(\because\; \text{直前の定理より }\E{\bm{X}}{V_n(\bm{X},\theta)} = 0\right) \\
-					&= \integ{\Omega}{}{\hat{\theta}(\bm{x})\left(\partDerivLong{\log f(\bm{x};\theta)}{\theta}{}\right)f(\bm{x};\theta)}{\bm{x}} = \integ{\Omega}{}{\hat{\theta}(\bm{x})\partDerivLong{f(\bm{x};\theta)}{\theta}{}}{\bm{x}} \\
-					&= \partDerivLong{\integ{\Omega}{}{\hat{\theta}(\bm{x})f(\bm{x};\theta)}{\bm{x}}}{\theta}{} \quad (\text{微分と積分の順序交換可能性を仮定した}) \\
+					\Var{\bm{X}}{\hat{\theta}(\bm{X})}\E{\bm{X}}{V_n(\bm{X},\theta)^2} &= \integrate{\Omega}{}{\left(\hat{\theta}(\bm{x}) - \theta\right)^2 f(\bm{x};\theta)}{}{\bm{x}} \integrate{\Omega}{}{V_n(\bm{x},\theta)^2 f(\bm{x};\theta)}{}{\bm{x}} \\
+					&= \integrate{\Omega}{}{\left(\left(\hat{\theta}(\bm{x}) - \theta\right)\sqrt{f(\bm{x};\theta)}\right)^2}{}{\bm{x}} \integrate{\Omega}{}{\left(V_n(\bm{x},\theta)\sqrt{f(\bm{x};\theta)}\right)^2}{}{\bm{x}} \\
+					&\geq \integrate{\Omega}{}{\left(\hat{\theta}(\bm{x}) - \theta\right)V_n(\bm{x},\theta)f(\bm{x};\theta)}{}{\bm{x}} \quad (\text{Cauchy-Schwarzの不等式を用いた}) \\
+					&= \integrate{\Omega}{}{\hat{\theta}(\bm{x})V_n(\bm{x},\theta)f(\bm{x},\theta)}{}{\bm{x}} \quad \left(\because\; \text{直前の定理より }\E{\bm{X}}{V_n(\bm{X},\theta)} = 0\right) \\
+					&= \integrate{\Omega}{}{\hat{\theta}(\bm{x})\left(\partDerivLong{\log f(\bm{x};\theta)}{\theta}{}\right)f(\bm{x};\theta)}{}{\bm{x}} = \integrate{\Omega}{}{\hat{\theta}(\bm{x})\partDerivLong{f(\bm{x};\theta)}{\theta}{}}{}{\bm{x}} \\
+					&= \partDerivLong{\integrate{\Omega}{}{\hat{\theta}(\bm{x})f(\bm{x};\theta)}{}{\bm{x}}}{\theta}{} \quad (\text{微分と積分の順序交換可能性を仮定した}) \\
 					&= \partDerivLong{\E{\bm{X}}{\hat{\theta}(\bm{X})}}{\theta}{} = \partDeriv{\theta}{\theta}{} = 1
 				\end{align*}
 				ここで
@@ -90,13 +90,13 @@
 				\end{proof}
 		\section{条件付き確率密度関数}
 			連続型2変数$X,Y$に関して、条件付き確率密度関数を次のように定義する。
-			\[p_Y(y|X=x) \coloneqq \frac{p(x,y)}{\integ{\ymin}{\ymax}{p(x,y)}{y}}\]
+			\[p_Y(y|X=x) \coloneqq \frac{p(x,y)}{\integrate{\ymin}{\ymax}{p(x,y)}{}{y}}\]
 			($p(x,y)$は$X,Y$の同時確率密度関数)
 		\section{条件付き期待値}
 			2変数$X,Y$に関して、条件付き期待値を次のように定義する。
 			\begin{align*}
 				\textrm{(離散)} &: \E{Y}{Y|X=x} \coloneqq \sum_y y\Pr{Y=y|X=x} = \sum_y y\frac{\Pr{Y=y,X=x}}{\Pr{X=x}} \\
-				\textrm{(連続)} &: \E{Y}{Y|X=x} \coloneqq \integ{\ymin}{\ymax}{yp_Y(y|X=x)}{y}
+				\textrm{(連続)} &: \E{Y}{Y|X=x} \coloneqq \integrate{\ymin}{\ymax}{yp_Y(y|X=x)}{}{y}
 			\end{align*}
 			\subsection{\texorpdfstring{$\E{X,Y}{\E{Y}{Y|X}} = \E{X,Y}{Y}$}{E\_(X,Y) (E\_Y (Y|X)) = E\_(X,Y) (Y)}}
 				\begin{shadebox}
@@ -115,9 +115,9 @@
 					(連続型)\\
 					$X,Y$の同時確率密度関数を$p(x,y)$とし、$X$の周辺確率密度関数を$p_X(x)$とする。
 					\begin{align*}
-						\E{X,Y}{\E{Y}{Y|X}} &= \integ{\xmin}{\xmax}{\integ{\ymin}{\ymax}{\E{Y}{Y|X=x}p(x,y)}{y}}{x} \\
-						&= \integ{\xmin}{\xmax}{\E{Y}{Y|X=x}\integ{\ymin}{\ymax}{p(x,y)}{y}}{x} \quad (\because\;\E{Y}{Y|X=x}\textrm{は}y\textrm{に無関係}) \\
-						&= \integ{\xmin}{\xmax}{\left(\integ{\ymin}{\ymax}{y\frac{p(x,y)}{p_X(x)}}{y}\right)p_X(x)}{x} = \integ{\xmin}{\xmax}{\integ{\ymin}{\ymax}{yp(x,y)}{y}}{x} = \E{X,Y}{Y}
+						\E{X,Y}{\E{Y}{Y|X}} &= \integrate{\xmin}{\xmax}{\integrate{\ymin}{\ymax}{\E{Y}{Y|X=x}p(x,y)}{}{y}}{}{x} \\
+						&= \integrate{\xmin}{\xmax}{\E{Y}{Y|X=x}\integrate{\ymin}{\ymax}{p(x,y)}{}{y}}{}{x} \quad (\because\;\E{Y}{Y|X=x}\textrm{は}y\textrm{に無関係}) \\
+						&= \integrate{\xmin}{\xmax}{\left(\integrate{\ymin}{\ymax}{y\frac{p(x,y)}{p_X(x)}}{}{y}\right)p_X(x)}{}{x} = \integrate{\xmin}{\xmax}{\integrate{\ymin}{\ymax}{yp(x,y)}{}{y}}{}{x} = \E{X,Y}{Y}
 					\end{align*}
 				\end{proof}
 		\begin{comment}
@@ -172,7 +172,7 @@
 					\begin{align*}
 						\Pr{|X-\mu| \geq a\sigma} &= \left(\int_{-\infty}^{\mu-a\sigma} + \int_{\mu+a\sigma}^\infty\right) \leq \left(\int_{-\infty}^{\mu-a\sigma} + \int_{\mu+a\sigma}^\infty\right)\frac{(x-\mu)^2}{a^2\sigma^2}f(x)\mathrm{d}x \\
 						&\left(\because\;\frac{(x-\mu)^2}{a^2\sigma^2} \geq 1, x\in(-\infty,\mu-a\sigma]\cup[\mu+a\sigma,\infty)\right) \\
-						&\leq \integ{-\infty}{\infty}{\frac{(x-\mu)^2}{a^2\sigma^2}f(x)}{x} = 1/a^2
+						&\leq \integrate{-\infty}{\infty}{\frac{(x-\mu)^2}{a^2\sigma^2}f(x)}{}{x} = 1/a^2
 					\end{align*}
 				\end{proof}
 			\subsection{ヘフディングの補題}
@@ -364,9 +364,9 @@
 				\quad\par
 				「観測開始から時間$s$の間イベントが起こらなかったという事象の下、それから時間$\Delta t$以内にイベントが起こる条件付き確率」が「観測開始($t=0$)から時間$\Delta t$以内にイベントが起こる確率」に等しいという条件より次式が成り立つ。
 				\begin{align*}
-					\frac{\integ{s}{s+\Delta t}{f(x)}{x}}{\integ{s}{\infty}{f(x)}{x}} &= \integ{0}{\Delta t}{f(x)}{x} \\
-					\therefore\; \integ{s}{s+\Delta t}{f(x)}{x} &= \integ{0}{\Delta t}{f(x)}{x} \integ{s}{\infty}{f(x)}{x} \\
-					\therefore\; f(s+\Delta t) - f(s) &= -f(s)\integ{0}{\Delta t}{f(x)}{x} \quad (\text{両辺を}s\text{で微分した}) \\
+					\frac{\integrate{s}{s+\Delta t}{f(x)}{}{x}}{\integrate{s}{\infty}{f(x)}{}{x}} &= \integrate{0}{\Delta t}{f(x)}{}{x} \\
+					\therefore\; \integrate{s}{s+\Delta t}{f(x)}{}{x} &= \integrate{0}{\Delta t}{f(x)}{}{x} \integrate{s}{\infty}{f(x)}{}{x} \\
+					\therefore\; f(s+\Delta t) - f(s) &= -f(s)\integrate{0}{\Delta t}{f(x)}{}{x} \quad (\text{両辺を}s\text{で微分した}) \\
 					\therefore\; f'(s) &= -f(0)f(s) \quad (\text{両辺を}\Delta t\text{で割った後}\Delta t \to +0\text{とした})
 				\end{align*}
 				この微分方程式を解いて規格化すると$f(x) = f(0)\exp(-f(0)x)\;(f(0)>0)$となる。$\lambda = f(0)$とすれば$f(x) = \lambda e^{-\lambda x}$となる。
@@ -375,7 +375,7 @@
 			\label{指数分布の特性関数}
 			尺度母数$\mu$の指数分布の特性関数は次式である。
 			\begin{align*}
-				\E{}{e^{itX}} &= \integ{0}{\infty}{\frac{1}{\mu}e^\frac{-x}{\mu}e^{itx}}{x} = \frac{1}{\mu}\integ{0}{\infty}{e^{\left(\frac{-1}{\mu} + it\right)x}}{x} = \frac{1}{\mu}\frac{1}{\frac{-1}{\mu} + it}\left[e^{\left(\frac{-1}{\mu} + it\right)x}\right]_0^\infty = \frac{1}{1-i\mu t}
+				\E{}{e^{itX}} &= \integrate{0}{\infty}{\frac{1}{\mu}e^\frac{-x}{\mu}e^{itx}}{}{x} = \frac{1}{\mu}\integrate{0}{\infty}{e^{\left(\frac{-1}{\mu} + it\right)x}}{}{x} = \frac{1}{\mu}\frac{1}{\frac{-1}{\mu} + it}\left[e^{\left(\frac{-1}{\mu} + it\right)x}\right]_0^\infty = \frac{1}{1-i\mu t}
 			\end{align*}
 	\chapter{Erlang分布}
 		\section{定義}
@@ -400,8 +400,8 @@
 				まず$k=1$のときに成り立つことは簡単に確かめられる。
 				$k=l\in\naturalNumbers$まで成り立つと仮定して$k=l+1$のときに成り立つことを示す。
 				\begin{align*}
-					f_{l+1}(x) &= \integ{0}{x}{f_l(y)f(x-y)}{y} = \integ{0}{x}{\frac{y^{l-1}}{(l-1)!\mu^l}e^\frac{-y}{\mu}\frac{1}{\mu}e^\frac{-(x-y)}{\mu}}{y} \\
-					&= \frac{1}{(l-1)!\mu^{l+1}}e^\frac{-x}{\mu}\integ{0}{x}{y^{l-1}}{y} = \frac{x^l}{l!\mu^{l+1}}e^\frac{-x}{\mu}
+					f_{l+1}(x) &= \integrate{0}{x}{f_l(y)f(x-y)}{}{y} = \integrate{0}{x}{\frac{y^{l-1}}{(l-1)!\mu^l}e^\frac{-y}{\mu}\frac{1}{\mu}e^\frac{-(x-y)}{\mu}}{}{y} \\
+					&= \frac{1}{(l-1)!\mu^{l+1}}e^\frac{-x}{\mu}\integrate{0}{x}{y^{l-1}}{}{y} = \frac{x^l}{l!\mu^{l+1}}e^\frac{-x}{\mu}
 				\end{align*}
 			\end{proof}
 			\begin{proof} (特性関数を用いた証明)
@@ -410,7 +410,7 @@
 				\[ \E{}{e^{it(X_1+\dotsb+X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
 				一方、$\ErlangDist{k}{\mu}$の特性関数を計算すると次式になる。
 				\begin{align*}
-					&\quad \integ{0}{\infty}{\frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu}e^{itx}}{x} = \frac{1}{(k-1)!\mu^k}\integ{0}{\infty}{x^{k-1}e^{\left(\frac{-x}{\mu} + it\right)x}}{x} \\
+					&\quad \integrate{0}{\infty}{\frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu}e^{itx}}{}{x} = \frac{1}{(k-1)!\mu^k}\integrate{0}{\infty}{x^{k-1}e^{\left(\frac{-x}{\mu} + it\right)x}}{}{x} \\
 					&= \frac{1}{(k-1)!\mu^k}\left[(-1)^{k+1}(k-1)!\frac{1}{\left(\frac{-1}{\mu}+it\right)^k}e^{\left(\frac{-x}{\mu} + it\right)x}\right]_0^\infty \quad (瞬間部分積分を用いた) \\
 					&= \frac{1}{(1-i\mu t)^k}
 				\end{align*}
@@ -440,7 +440,7 @@
 			\]
 			一方でErlang分布の視点で求めると次式となり、当然だが上式と一致する。
 			\begin{align*}
-				&\integ{0}{1}{\frac{1}{(k-1)!\mu^k}x^{k-1}e^{-x/\mu}}{x} = \frac{1}{(k-1)!\mu^k} \integ{0}{1}{x^{k-1}e^{-x/\mu}}{x} \\
+				&\integrate{0}{1}{\frac{1}{(k-1)!\mu^k}x^{k-1}e^{-x/\mu}}{}{x} = \frac{1}{(k-1)!\mu^k} \integrate{0}{1}{x^{k-1}e^{-x/\mu}}{}{x} \\
 				&\quad = \frac{1}{(k-1)!\mu^k}\left[ -\sum_{l=0}^{k-1}\perm{k-1}{l}\mu^{l+1}x^{k-1-l}e^{-x/\mu} \right]_0^1 = \left[ -\sum_{l=0}^{k-1} \frac{1}{(k-1-l)!\mu^{k-1-l}}x^{k-1-l}e^{-x/\mu} \right]_0^1 \\
 				&= \left[ -\sum_{l=0}^{k-1} \frac{x^l}{l!\mu^l}e^{-x/\mu} \right]_0^1 = 1 - \sum_{l=0}^{k-1} \frac{1}{l!\mu^l}e^{-1/\mu} = \sum_{l=0}^\infty \frac{\lambda^l}{l!}e^{-\lambda} - \sum_{l=0}^{k-1} \frac{\lambda^l}{l!}e^{-\lambda} = \sum_{l=k}^\infty \frac{\lambda^l}{l!}e^{-\lambda}
 			\end{align*}
@@ -459,12 +459,12 @@
 					$Z=\frac{X}{X+Y}$とおく。
 					\begin{align*}
 						\PDF{Z}{z} &= \partDerivLong{\Pr{Z\leq z}}{z}{} = \partDerivLong{\Pr{X\leq\frac{z}{1-z}Y}}{z}{} \\
-						&= \partDerivLong{\integ{y=0}{\infty}{\integ{x=0}{\frac{z}{1-z}y}{ \PDF{\GammaDist{\alpha}{1}}{x}\PDF{\GammaDist{\beta}{1}}{y} }{x}}{y}}{z}{} \\
-						&= \partDerivLong{\integ{y=0}{\infty}{\integ{x=0}{\frac{z}{1-z}y}{\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}\frac{y^{\beta-1}e^{-y}}{\Gamma(\beta)}}{x}}{y}}{z}{} \\
-						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integ{y=0}{\infty}{\partDerivLong{\integ{x=0}{\frac{z}{1-z}y}{x^{\alpha-1}e^{-x}y^{\beta-1}e^{-y}}{x}}{z}{}}{y} \\
-						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integ{y=0}{\infty}{y^{\beta-1}e^{-y}\left(\frac{z}{1-z}y\right)^{\alpha-1}\exp\left(-\frac{z}{1-z}y\right)\left(\partDerivLong{\frac{z}{1-z}y}{z}{}\right)}{y} \\
-						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integ{y=0}{\infty}{y^{\beta-1}\exp\left(\frac{-y}{1-z}y\right)\left(\frac{y}{1-z}\right)^{\alpha-1}z^{\alpha-1}\frac{1}{(1-z)^2}}{y} \\
-						&= \frac{z^{\alpha-1}(1-z)^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)}\integ{0}{\infty}{u^{\alpha+\beta-1}e^{-u}}{u} \quad\left(u=\frac{y}{1-z}\textrm{とおいた}\right) \\
+						&= \partDerivLong{\integrate{y=0}{\infty}{\integrate{x=0}{\frac{z}{1-z}y}{ \PDF{\GammaDist{\alpha}{1}}{x}\PDF{\GammaDist{\beta}{1}}{y} }{}{x}}{}{y}}{z}{} \\
+						&= \partDerivLong{\integrate{y=0}{\infty}{\integrate{x=0}{\frac{z}{1-z}y}{\frac{x^{\alpha-1}e^{-x}}{\Gamma(\alpha)}\frac{y^{\beta-1}e^{-y}}{\Gamma(\beta)}}{}{x}}{}{y}}{z}{} \\
+						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integrate{y=0}{\infty}{\partDerivLong{\integrate{x=0}{\frac{z}{1-z}y}{x^{\alpha-1}e^{-x}y^{\beta-1}e^{-y}}{}{x}}{z}{}}{}{y} \\
+						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integrate{y=0}{\infty}{y^{\beta-1}e^{-y}\left(\frac{z}{1-z}y\right)^{\alpha-1}\exp\left(-\frac{z}{1-z}y\right)\left(\partDerivLong{\frac{z}{1-z}y}{z}{}\right)}{}{y} \\
+						&= \frac{1}{\Gamma(\alpha)\Gamma(\beta)}\integrate{y=0}{\infty}{y^{\beta-1}\exp\left(\frac{-y}{1-z}y\right)\left(\frac{y}{1-z}\right)^{\alpha-1}z^{\alpha-1}\frac{1}{(1-z)^2}}{}{y} \\
+						&= \frac{z^{\alpha-1}(1-z)^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)}\integrate{0}{\infty}{u^{\alpha+\beta-1}e^{-u}}{}{u} \quad\left(u=\frac{y}{1-z}\textrm{とおいた}\right) \\
 						&= \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)}z^{\alpha-1}(1-z)^{\beta-1} = \frac{z^{\alpha-1}(1-z)^{\beta-1}}{B(\alpha,\beta)} = \PDF{\Beta{\alpha}{\beta}}{z}
 					\end{align*}
 				\end{proof}
@@ -476,10 +476,10 @@
 			\end{shadebox}
 			\begin{proof}
 				標準正規分布の確率密度関数を$\phi(\alpha)$とすると、任意の$\alpha>0$に対して次式が成り立つ。
-				\[1-\Phi(\alpha) = \integ{\alpha}{\infty}{\phi(x)}{x} \leq \integ{\alpha}{\infty}{\frac{x}{\alpha}\phi(x)}{x} = \frac{1}{\alpha}\left[-\phi(x)\right]_\alpha^\infty = \frac{1}{\alpha}\phi(\alpha)\]
+				\[1-\Phi(\alpha) = \integrate{\alpha}{\infty}{\phi(x)}{}{x} \leq \integrate{\alpha}{\infty}{\frac{x}{\alpha}\phi(x)}{}{x} = \frac{1}{\alpha}\left[-\phi(x)\right]_\alpha^\infty = \frac{1}{\alpha}\phi(\alpha)\]
 				よって$\alpha\geq 1$に対しては
 				\[1-\Phi(\alpha) \leq \phi(\alpha) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}\alpha^2} \leq \frac{1}{2}e^{-\frac{1}{2}\alpha^2}\]
-				$\alpha<1$に対しては別のやり方で示す。$1-\Phi(\alpha) = 1/2 - \integ{0}{\alpha}{\phi(x)}{x} =: 1/2-S(\alpha)$であり、$\phi(x)$の変曲点は$x=\pm 1$である。
+				$\alpha<1$に対しては別のやり方で示す。$1-\Phi(\alpha) = 1/2 - \integrate{0}{\alpha}{\phi(x)}{}{x} =: 1/2-S(\alpha)$であり、$\phi(x)$の変曲点は$x=\pm 1$である。
 				\begin{figure}[H]
 					\centering
 					\includegraphics[keepaspectratio, scale=0.5]
@@ -525,7 +525,7 @@
 				\quad\par
 				$X,Y,Z$の確率密度関数を$f^X(x),f^Y(y),f^Z(z)$と書くことにすると
 				\begin{align*}
-					f^Z(z) &= \derivLong{\integ{x=-\infty}{\infty}{\integ{y=-\infty}{z-x}{f^X(x)f^Y(y)}{y}}{x}}{z}{} = \int_{-\infty}^{\infty}{f^X(x)f^Y(-x+z) dx} \quad(\because\ref{重積分の微分の系}) \\
+					f^Z(z) &= \derivLong{\integrate{x=-\infty}{\infty}{\integrate{y=-\infty}{z-x}{f^X(x)f^Y(y)}{}{y}}{}{x}}{z}{} = \int_{-\infty}^{\infty}{f^X(x)f^Y(-x+z) dx} \quad(\because\ref{重積分の微分の系}) \\
 					&= \int_{-\infty}^{\infty}{\frac{1}{\sqrt{2\pi}\sigma_X}\exp{\left[-\frac{(x-\mu_X)^2}{2{\sigma_X}^2}\right]}\frac{1}{\sqrt{2\pi}\sigma_Y}\exp{\left[-\frac{(-x+z-\mu_Y)^2}{2{\sigma_Y}^2}\right]} dx}\\
 					&= \frac{1}{2\pi\sigma_X\sigma_Y}\int_{-\infty}^{\infty}{\exp{\left[-\frac{(x-\mu_X)^2}{2{\sigma_X}^2} - \frac{(-x+z-\mu_Y)^2}{2{\sigma_Y}^2}\right]} dx}
 				\end{align*}
@@ -558,12 +558,12 @@
 			\end{proof}
 		\section{分散\texorpdfstring{$\sigma^2$}{σ\string^2},平均\texorpdfstring{$\mu$}{μ}のときの累積分布関数は\texorpdfstring{$\Phi(\frac{z-\mu}{\sigma})$}{Φ((z-μ)/σ)}}
 			\begin{shadebox}
-				標準正規分布の累積分布関数を$\Phi(z) \coloneqq \integ{-\infty}{z}{\phi(x)}{x}$とするとき、
+				標準正規分布の累積分布関数を$\Phi(z) \coloneqq \integrate{-\infty}{z}{\phi(x)}{}{x}$とするとき、
 				$X\sim N(\mu,\sigma)$の累積分布関数は$\Phi_X(Z) = \Phi(\frac{z-\mu}{\sigma})$となる。
 			\end{shadebox}
 			\begin{proof}
 				\begin{align*}
-					\Phi_X(z) &= \integ{-\infty}{z}{\frac{1}{\sigma}\func{\phi}{\frac{z-\mu}{\sigma}}}{x} = \integ{-\infty}{\frac{z-\mu}{\sigma}}{\phi(y)}{y}\quad\left(\frac{z-\mu}{\sigma}=y\textrm{とおいた}\right) \\
+					\Phi_X(z) &= \integrate{-\infty}{z}{\frac{1}{\sigma}\func{\phi}{\frac{z-\mu}{\sigma}}}{}{x} = \integrate{-\infty}{\frac{z-\mu}{\sigma}}{}{\phi(y)}{y}\quad\left(\frac{z-\mu}{\sigma}=y\textrm{とおいた}\right) \\
 					&= \func{\Phi}{\frac{z-\mu}{\sigma}}
 				\end{align*}
 			\end{proof}
@@ -580,12 +580,12 @@
 				任意の点$\bm{y}_0\in\realNumbers^n$における$p_{\bm{Y}}$を計算するために、$\Omega$を、$\bm{y}_0$を含む任意の領域とする。
 				$\Omega$を直交変換$P$の逆写像で写した領域を$P^\top(\Omega)$と表記すると
 				\begin{align}
-					p_{\bm{Y}}(\bm{y}_0) &\coloneqq \lim_{|\Omega|\to 0}\frac{\Pr{\bm{y}\in\Omega}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{\Pr{\bm{x}\in P^\top(\Omega)}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P^\top(\Omega)}{}{p_{\bm{X}}(\bm{x})}{\bm{x}} \nonumber\\
-					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P^\top(\Omega)}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{\bm{x}}^2}{2\sigma^2}\right)} }{\bm{x}} \nonumber\\
-					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{P(P^\top(\Omega))}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{P^\top\bm{y}}^2}{2\sigma^2}\right)} |\det{P^\top}|}{\bm{y}} \\
+					p_{\bm{Y}}(\bm{y}_0) &\coloneqq \lim_{|\Omega|\to 0}\frac{\Pr{\bm{y}\in\Omega}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{\Pr{\bm{x}\in P^\top(\Omega)}}{|\Omega|} = \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integrate{P^\top(\Omega)}{}{p_{\bm{X}}(\bm{x})}{}{\bm{x}} \nonumber\\
+					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integrate{P^\top(\Omega)}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{\bm{x}}^2}{2\sigma^2}\right)} }{}{\bm{x}} \nonumber\\
+					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integrate{P(P^\top(\Omega))}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{P^\top\bm{y}}^2}{2\sigma^2}\right)} |\det{P^\top}|}{}{\bm{y}} \\
 					&\quad \quad(\text{↑重積分の変数変換}\bm{x}=P^\top\bm{y}\textrm{を用いた}) \nonumber\\
-					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{\Omega}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{\bm{y}}^2}{2\sigma^2}\right)} }{\bm{y}} \quad(P\textrm{は直交行列だから}\det{P^\top}=\pm 1,\;\norm{P^\top\bm{y}}=\norm{\bm{y}}) \nonumber\\
-					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integ{\Omega}{}{ p_{\bm{X}}(\bm{y}) }{\bm{y}}
+					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integrate{\Omega}{}{ \frac{1}{(2\pi\sigma^2)^{n/2}}\exp{\left(-\frac{\norm{\bm{y}}^2}{2\sigma^2}\right)} }{}{\bm{y}} \quad(P\textrm{は直交行列だから}\det{P^\top}=\pm 1,\;\norm{P^\top\bm{y}}=\norm{\bm{y}}) \nonumber\\
+					&= \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}\integrate{\Omega}{}{ p_{\bm{X}}(\bm{y}) }{}{\bm{y}}
 				\end{align}
 				重積分の平均値の定理より、ある$\tilde{\bm{y}}\in\Omega$が存在して
 				\[(1) = \lim_{|\Omega|\to 0}\frac{1}{|\Omega|}|\Omega|p_{\bm{X}}(\tilde{\bm{y}}) = \lim_{|\Omega|\to 0}p_{\bm{X}}(\tilde{\bm{y}}) = p_{\bm{X}}(\bm{y}_0)\]
@@ -602,19 +602,19 @@
 				$\Sigma$に関する仮定より、適当な直交行列$V$が存在して$\Sigma = V\Lambda V^\top,\;\Lambda=\diag{{\sigma_1}^2,\dotsc,{\sigma_n}^2}$と変形できる。
 				そこで$\bm{x}-\bm{\mu} = V\bm{y}$すなわち$\bm{y} = V^\top(\bm{x}-\bm{\mu})$なる直交変換を行うと、求めたい積分は次のように変形できる。
 				\begin{align*}
-					\integ{\realNumbers^n}{}{f_{\bm{X}}(\bm{x})}{\bm{x}} &= \integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}\bm{y}^\top V (V\Lambda V^\top)^{-1} V\bm{y}\right) |\det V|}{\bm{y}} \\
-					&= \integ{\realNumbers^n}{}{\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \quad (\because\;\text{は直交行列なので}|\det V|=1) \\
-					&= \integ{\realNumbers^n}{}{\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} = \prod_{i=1}^n \integ{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_i} = 1
+					\integrate{\realNumbers^n}{}{f_{\bm{X}}(\bm{x})}{}{\bm{x}} &= \integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp\left(-\frac{1}{2}\bm{y}^\top V (V\Lambda V^\top)^{-1} V\bm{y}\right) |\det V|}{}{\bm{y}} \\
+					&= \integrate{\realNumbers^n}{}{\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{}{\bm{y}} \quad (\because\;\text{は直交行列なので}|\det V|=1) \\
+					&= \integrate{\realNumbers^n}{}{\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{\bm{y}} = \prod_{i=1}^n \integrate{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{y_i} = 1
 				\end{align*}
 			\subsection{期待値の導出}
 				\begin{proof}
 					\quad\par
 					先程の直交変換をここでも用いる。
 					\begin{align*}
-						\E{}{\bm{X}} &= \integ{\realNumbers^n}{}{\bm{x}f_{\bm{X}}(\bm{x})}{\bm{x}} = \integ{\realNumbers^n}{}{(V\bm{y}+\bm{\mu})\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
-						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{\bm{y}} \\
-						&= \bm{\mu} + V\integ{\realNumbers^n}{}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} \\
-						&= \bm{\mu} + V\integ{y_n=-\infty}{\infty}{\dotsi\integ{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{y_1}\dotsi}{y_n}
+						\E{}{\bm{X}} &= \integrate{\realNumbers^n}{}{\bm{x}f_{\bm{X}}(\bm{x})}{}{\bm{x}} = \integrate{\realNumbers^n}{}{(V\bm{y}+\bm{\mu})\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{}{\bm{y}} \\
+						&= \bm{\mu} + V\integrate{\realNumbers^n}{}{\bm{y}\frac{1}{\prod_{i=1}^n \sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)}{}{\bm{y}} \\
+						&= \bm{\mu} + V\integrate{\realNumbers^n}{}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{\bm{y}} \\
+						&= \bm{\mu} + V\integrate{y_n=-\infty}{\infty}{\dotsi\integrate{y_1=-\infty}{\infty}{\bm{y}\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{y_1}\dotsi}{}{y_n}
 					\end{align*}
 					第二項目はベクトルの各インデックス毎に奇関数の対称積分が起こり、結局全体が0になることがわかる。
 				\end{proof}
@@ -623,14 +623,14 @@
 					\quad\par
 					\ref{subsec:多変量正規分布の密度関数の全空間積分が1になることの確認}で用いた直交変換をここでも用いる。
 					\begin{align*}
-						\CovMat{\bm{X}} &= \E{}{(\bm{X}-\E{}{\bm{X}})(\bm{X}-\E{}{\bm{X}})^\top} = \integ{\realNumbers^n}{}{(\bm{x}-\bm{\mu})(\bm{x}-\bm{\mu})^\top f_{\bm{X}}(\bm{x})}{\bm{x}} \\
-						&= \integ{\realNumbers^n}{}{V\bm{y}\bm{y}^\top V^\top\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} \\
-						&= V\left(\integ{\realNumbers^n}{}{\bm{y}\bm{y}^\top \prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}}\right)V^\top
+						\CovMat{\bm{X}} &= \E{}{(\bm{X}-\E{}{\bm{X}})(\bm{X}-\E{}{\bm{X}})^\top} = \integrate{\realNumbers^n}{}{(\bm{x}-\bm{\mu})(\bm{x}-\bm{\mu})^\top f_{\bm{X}}(\bm{x})}{}{\bm{x}} \\
+						&= \integrate{\realNumbers^n}{}{V\bm{y}\bm{y}^\top V^\top\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{\bm{y}} \\
+						&= V\left(\integrate{\realNumbers^n}{}{\bm{y}\bm{y}^\top \prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{\bm{y}}\right)V^\top
 					\end{align*}
 					積分の部分に着目すると、非対角要素では奇関数の対称積分が起こり、0になる。
 					第$k$対角成分は、$y_i(i\neq k)$に関する積分を先に実行することで
 					\begin{align*}
-						\integ{\realNumbers^n}{}{{y_k}^2\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{\bm{y}} = \integ{-\infty}{\infty}{{y_k}^2\frac{1}{\sqrt{2\pi}\sigma_k}\exp\left(-\frac{1}{2{\sigma_k}^2}{y_k}^2\right)}{y_k} = {\sigma_k}^2
+						\integrate{\realNumbers^n}{}{{y_k}^2\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}{y_i}^2\right)}{}{\bm{y}} = \integrate{-\infty}{\infty}{{y_k}^2\frac{1}{\sqrt{2\pi}\sigma_k}\exp\left(-\frac{1}{2{\sigma_k}^2}{y_k}^2\right)}{}{y_k} = {\sigma_k}^2
 					\end{align*}
 					となることがわかる。
 					よって
@@ -641,11 +641,11 @@
 					\quad\par
 					\ref{subsec:多変量正規分布の密度関数の全空間積分が1になることの確認}で用いた直交変換をここでも用いる。
 					\begin{align*}
-						\phi_{\bm{X}}(\bm{t}) &= \E{}{\exp(i\bm{t}^\top \bm{X})} = \integ{\realNumbers^n}{}{\exp(i\bm{t}^\top\bm{x})f_{\bm{X}}(\bm{x})}{\bm{x}} \\
-						&= \integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(i\bm{t}^\top\bm{x})\exp\left(-\frac{1}{2}(\bm{x}-\bm{\mu})^\top\Sigma^{-1}(\bm{x}-\bm{\mu})\right)}{\bm{x}} \\
-						&= \integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp(i\bm{t}^\top(V\bm{y}+\bm{\mu}))\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)|\det V|}{\bm{y}} \\
-						&= \exp(i\bm{t}^\top\bm{\mu})\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y} + i\bm{t}^\top V\bm{y}\right)}{\bm{y}} \\
-						&= \exp(i\bm{t}^\top\bm{\mu})\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}{y_i}^2 + i\bm{t}^\top V\bm{y}\right)}{\bm{y}}
+						\phi_{\bm{X}}(\bm{t}) &= \E{}{\exp(i\bm{t}^\top \bm{X})} = \integrate{\realNumbers^n}{}{\exp(i\bm{t}^\top\bm{x})f_{\bm{X}}(\bm{x})}{}{\bm{x}} \\
+						&= \integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(i\bm{t}^\top\bm{x})\exp\left(-\frac{1}{2}(\bm{x}-\bm{\mu})^\top\Sigma^{-1}(\bm{x}-\bm{\mu})\right)}{}{\bm{x}} \\
+						&= \integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp(i\bm{t}^\top(V\bm{y}+\bm{\mu}))\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y}\right)|\det V|}{}{\bm{y}} \\
+						&= \exp(i\bm{t}^\top\bm{\mu})\integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\bm{y}^\top\Lambda^{-1}\bm{y} + i\bm{t}^\top V\bm{y}\right)}{}{\bm{y}} \\
+						&= \exp(i\bm{t}^\top\bm{\mu})\integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}{y_i}^2 + i\bm{t}^\top V\bm{y}\right)}{}{\bm{y}}
 					\end{align*}
 					ここで$c_i \coloneqq (\bm{t}^\top V)[i]$とするとexpの引数は次のように変形できる。
 					\begin{align*}
@@ -656,9 +656,9 @@
 					\[ \sum_{i=1}^n{\sigma_i}^2{c_i}^2 = [c_1,\dotsc,c_n]\Lambda[c_1,\dotsc,c_n]^\top = \bm{t}^\top V\Lambda V^\top\bm{t} = \bm{t}^\top\Sigma\bm{t} \]
 					よって
 					\begin{align*}
-						\phi_{\bm{X}}(t) &= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integ{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{\bm{y}} \\
-						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integ{\realNumbers^n}{}{\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{\bm{y}} \\
-						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\prod_{i=1}^n I_i\quad \left(I_i \coloneqq \integ{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{y_i}\right)
+						\phi_{\bm{X}}(t) &= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integrate{\realNumbers^n}{}{\frac{1}{(2\pi)^{n/2}\prod_{i=1}^n\sigma_i}\exp\left(-\frac{1}{2}\sum_{i=1}^n\frac{1}{{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{}{\bm{y}} \\
+						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\integrate{\realNumbers^n}{}{\prod_{i=1}^n\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{}{\bm{y}} \\
+						&= \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right)\prod_{i=1}^n I_i\quad \left(I_i \coloneqq \integrate{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma_i}\exp\left(-\frac{1}{2{\sigma_i}^2}\left(y_i - i{\sigma_i}^2c_i\right)^2\right)}{}{y_i}\right)
 					\end{align*}
 					$I_i$は複素積分により1である(矩形閉路ABCDA: $A=(-L,0),\;B=(L,0),\;C=(L,i{\sigma_i}^2c_i),\;D=(-L,i{\sigma_i}^2c_i)$を用いて$L\to\infty$とするとよい)ので
 					\[ \phi_{\bm{X}}(t) = \exp\left(i\bm{t}^\top\bm{\mu} - \frac{1}{2}\bm{t}^\top\Sigma\bm{t}\right) \]
@@ -701,7 +701,7 @@
 			\begin{proof}
 				\quad\par
 				$X$の確率密度関数を$f^X(x)$と書くことにすると
-				\[P(0\leq Z \leq z) = P(-\sqrt{z}\leq X \leq\sqrt{z}) = \integ{-\sqrt{z}}{\sqrt{z}}{f^X(x)}{x} = 2\integ{0}{\sqrt{z}}{f^X(x)}{x} = \]
+				\[P(0\leq Z \leq z) = P(-\sqrt{z}\leq X \leq\sqrt{z}) = rate{-\sqrt{z}}{\sqrt{z}}{f^X(x)}{}{x} = 2\integrate{0}{\sqrt{z}}{f^X(x)}{}{x} = \]
 				\begin{align*}
 					\therefore \; f^Z(z) &= \derivLong{P(0\leq Z \leq z)}{z}{} = \left(\derivLong{P(0\leq Z \leq z)}{\sqrt{z}}{}\right)\deriv{\sqrt{z}}{z}{} = \frac{1}{\sqrt{z}}f^X(\sqrt{z}) = \frac{1}{\sqrt{z}\sqrt{2\pi}}e^{-\frac{z}{2}}\\
 					&= \frac{1}{2^{\frac{1}{2}}\Gamma(\frac{1}{2})}e^{-\frac{z}{2}}z^{\frac{1}{2}-1} = \text{pdf of}\;\chi^2_1
@@ -763,7 +763,7 @@
 				\quad\par
 				$Z=X+Y$とする。$X,Y,Z$の確率密度関数を$f^X(x),f^Y(y),f^Z(z)$とすると
 				\begin{align*}
-					f^Z(z) &= \derivLong{\integ{x=0}{z}{\integ{y=0}{z-x}{f^X(x)f^Y(y)}{y}}{x}}{z}{} = \int_{0}^{z}{f^X(x)f^Y(z-x) dx} \quad(\because\ref{重積分の微分})\\
+					f^Z(z) &= \derivLong{\integrate{x=0}{z}{\integrate{y=0}{z-x}{f^X(x)f^Y(y)}{}{y}}{}{x}}{z}{} = \int_{0}^{z}{f^X(x)f^Y(z-x) dx} \quad(\because\ref{重積分の微分})\\
 					&= \int_{0}^{z}{\frac{1}{2^{\frac{n_X}{2}}\Gamma{\left(\frac{n_X}{2}\right)}}x^{\frac{n_X}{2}-1}e^{-\frac{x}{2}}\frac{1}{2^{\frac{n_Y}{2}}\Gamma{\left(\frac{n_Y}{2}\right)}}(z-x)^{\frac{n_Y}{2}-1}e^{-\frac{z-x}{2}} dx}\\
 					&= \frac{1}{2^{\frac{n_X+n_Y}{2}}\Gamma{\left(\frac{n_X}{2}\right)}\Gamma{\left(\frac{n_Y}{2}\right)}}e^{-\frac{z}{2}}\int_{0}^{z}{x^{\frac{n_X}{2}-1}(z-x)^{\frac{n_Y}{2}-1} dx}
 				\end{align*}

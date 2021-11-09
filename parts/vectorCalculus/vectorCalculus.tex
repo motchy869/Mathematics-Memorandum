@@ -169,6 +169,39 @@
 					\[ \bigl(\nabla_\bm{r} f(\bm{r})A\bigr)[1] = \partDerivLong{A_3f(\bm{r})}{r_2}{} - \partDerivLong{A_2f(\bm{r})}{r_3}{} = A_3\partDerivLong{f(\bm{r})}{r_2}{} - A_2\partDerivLong{f(\bm{r})}{r_3}{} = -\bigl(A\times\nabla_\bm{r}f(\bm{r})\bigr)[1] \]
 					同様のことを他の成分についても示すことができる。
 				\end{proof}
+		\section{Helmholtzの定理}
+			\subsection{補題: 全空間に渡る積分が存在するための十分条件}
+				\label{全空間に渡る積分が存在するための十分条件}
+				\begin{shadebox}
+					$\bm{r}\in\realNumbers^3$とする。
+					$f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて、その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
+					このとき$\realNumbers^3$上での$f$の積分は存在する。
+					すなわち次式が成り立つ。
+					\[ R>0,\; V(R) := \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+				\end{shadebox}
+				\begin{proof}
+					\quad\par
+					$R>0$は十分大きいものとし、$I(R)$を次式で定義する。
+					\[ I(R) := \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
+					球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
+					\[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
+					$0<R_0<R$なる$R_0$をとり、$I(R) = I(R_0) + I_2(R)$と分解する。
+					ここに$I_2(R) := I(R) - I(R_0)$である。
+					\begin{align*}
+						|I_2(R)| &\leq \integrate{R_0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{|f(\bm{r})|r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} = 4\pi\integrate{R_0}{R}{o(\norm{\bm{r}}_2^{-3-\alpha})r^2}{}{r} \\
+						&= 4\pi\integrate{R_0}{R}{o(r^{-1-\alpha})}{}{r} < \infty \text{ as } R\to\infty
+					\end{align*}
+				\end{proof}
+			\subsection{補題: 与えられた発散を有し、回転が\texorpdfstring{$\bm{0}$}{0}であるベクトル場の構成}
+				\label{与えられた発散を有し、回転が無いベクトル場の構成}
+				未証明。今後の課題。
+			\subsection{補題: 与えられた回転を有し、発散が0であるベクトル場の構成}
+				\label{与えられた回転を有し、発散が無いベクトル場の構成}
+				未証明。今後の課題。
+			\subsection{Helmholtzの定理: 任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場は回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
+				任意に与えられた、発散および回転が十分遠方で0に収束するような$\mathrm{C}^1$級のベクトル場$A$が与えられたとき、補題\ref{与えられた発散を有し、回転が無いベクトル場の構成}により$A$と同じ発散を持ち、かつ回転が$\bm{0}$であるようなベクトル場$B$を構成できる。
+				このとき$A - B$は発散が0であるので、補題\ref{与えられた回転を有し、発散が無いベクトル場の構成}により、回転がこれに一致するようなベクトル場$C$を構成できる。
+				これらを用いて$A = B + C$と分解すればよい。
 		\section{諸定理}
 			\subsection{球殻定理}
 				\begin{shadebox}
@@ -341,8 +374,8 @@
 				\end{align*}
 				次に\ctext{B}を見る。$t$による偏微分を$\dot{}$で表すことにする。線積分の定義に従って
 				\begin{align*}
-					\ctext{B} &= \integ{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{t} \\
-					&= \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{t} + \integ{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{t} \\
+					\ctext{B} &= \integrate{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{}{t} \\
+					&= \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{}{t} + \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{}{t} \\
 					&= \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx} + \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy} \\
 					&= \oint_{\partial \Omega}{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx + A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy\right)}
 				\end{align*}
