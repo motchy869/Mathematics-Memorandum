@@ -147,36 +147,36 @@
 				\end{proof}
 	\chapter{特殊関数}
 		\section{Gamma関数}
-			\subsection{\texorpdfstring{$\lim_{n\to\infty} \integ{0}{n}{t^{z-1}(1+t/n)^n}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}{Gamma関数の無限乗積表示}}
+			\subsection{\texorpdfstring{$\lim_{n\to\infty} \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}{Gamma関数の無限乗積表示}}
 				Wikipediaで紹介されている無限乗積表示の導出過程でこの主張が使われているが、その根拠が薄かったので自力で証明してみた。
 				\begin{proof}
 					\quad\par
 					$\varepsilon>0$を任意にとる。
-					$G_n(z) \coloneqq \integ{0}{n}{t^{z-1}(1+t/n)^n}{t}$とする。
+					$G_n(z) \coloneqq \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t}$とする。
 					\par
-					Gamma関数$\integ{0}{\infty}{t^{z-1}e^{-t}}{t}$は収束するから、十分大きい$T_1(\varepsilon)>0$を取れば
-					\[ \left|\integ{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{t}\right| \leq \integ{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{t} < \varepsilon/3 \]
+					Gamma関数$\integrate{0}{\infty}{t^{z-1}e^{-t}}{}{t}$は収束するから、十分大きい$T_1(\varepsilon)>0$を取れば
+					\[ \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{}{t} < \varepsilon/3 \]
 					\par
 					\ref{(1-t/n)^nは単調増加}より$(1-t/n)^n$は$n$について単調増加であり、かつ$\lim_{n\to\infty}(1-t/n)^n = e^{-t}$なので、$n \geq T_1(\varepsilon)$ならば
 					\begin{align*}
-						&\left|\integ{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{t}\right| \leq \integ{T_1(\varepsilon)}{n}{\left|t^{z-1}(1-t/n)^n\right|}{t} \\
-						&= \integ{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{t} \leq \integ{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{t} < \varepsilon/3
+						&\left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{n}{\left|t^{z-1}(1-t/n)^n\right|}{}{t} \\
+						&= \integrate{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{}{t} < \varepsilon/3
 					\end{align*}
 					また、十分大きい自然数$N_1(\varepsilon,T_1(\varepsilon))$をとると、$n \geq N_1(\varepsilon,T_1(\varepsilon))$ならば次式が成り立つ。
-					\[ \left|\integ{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{t}\right| < \varepsilon/3 \]
+					\[ \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t}\right| < \varepsilon/3 \]
 					以上より、$n \geq \max\{T_1(\varepsilon), N_1(\varepsilon,T_1(\varepsilon))\}$ならば次式が成り立つ。
 					\begin{align*}
-						\left|\Gamma(z) - G_n(z)\right| &= \left|\integ{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{t} + \integ{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{t} - \integ{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{t}\right| \\
-						&\leq \left|\integ{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{t}\right| + \left|\integ{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{t}\right| + \left|\integ{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{t}\right| < \varepsilon
+						\left|\Gamma(z) - G_n(z)\right| &= \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t} + \integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t} - \integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \\
+						&\leq \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t}\right| + \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t}\right| + \left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| < \varepsilon
 					\end{align*}
 				\end{proof}
 	\chapter{複素積分}
 		\section{例題}
-			\subsection{\texorpdfstring{$\integ{0}{2\pi}{\Log(1-a\exp(i\theta))}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
+			\subsection{\texorpdfstring{$\integrate{0}{2\pi}{\Log(1-a\exp(i\theta))}{}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
 				\begin{solution}
 					\quad\par
 					$a=0$のときは明らかに成り立つ。$a\neq0$のときは$z=e^{i\theta}$とすると
-					\[\integ{0}{2\pi}{\Log(1-ae^{i\theta})}{\theta} = \integ{C}{}{\frac{\Log(1-az)}{iz}}{z}\quad (C:\text{原点中心の左回り単位円})\]
+					\[\integrate{0}{2\pi}{\Log(1-ae^{i\theta})}{}{\theta} = \integrate{C}{}{\frac{\Log(1-az)}{iz}}{}{z}\quad (C:\text{原点中心の左回り単位円})\]
 					被積分関数の$C$内部の特異点は$z=0$である。原点の近傍(具体的には$|z|<1/|a|$の範囲)においては
 					\[\frac{\Log(1-az)}{iz} = \frac{-1}{iz}\sum_{n=1}^\infty\frac{(az)^n}{n}=\frac{-1}{i}\sum_{n=1}^\infty\frac{a^nz^{n-1}}{n} = \frac{-1}{i}\sum_{n=0}^\infty\frac{a^{n+1}}{n+1}z^n\]
 					であり、特異点$z=0$は除去可能であることから従う。
@@ -190,50 +190,50 @@
 			\begin{proof}
 				\quad\par
 				まず
-				\[ \lim_{k\to\infty}\integ{-\pi}{\pi}{f(x)\sin kx}{x} = 0 \]
+				\[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = 0 \]
 				を示す。ここで
-				\[ \integ{-\pi}{\pi}{f(x)\sin kx}{x} = \integ{0}{\pi}{(f(x)-f(-x))\sin kx}{x} \]
+				\[ \integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = \integrate{0}{\pi}{(f(x)-f(-x))\sin kx}{}{x} \]
 				であり、$f(x)-f(-x)$は$[0,\pi]$で連続なので結局のところ区間$[0,\pi]$の任意の連続関数$f$に対して
-				\[ \lim_{k\to\infty}\integ{0}{\pi}{f(x)\sin kx}{x} = 0 \]
+				\[ \lim_{k\to\infty}\integrate{0}{\pi}{f(x)\sin kx}{}{x} = 0 \]
 				が成り立つことを示せば良い。
 				$f$は閉区間で連続だから有界であり、特に一様連続なので、任意の$\varepsilon>0$に対してある$\delta>0$が存在して
 				$\forall (x,y\in[0,\pi],|x-y|\leq\delta),|f(x)-f(y)|<\varepsilon$が成り立つ。
 				$k \geq 2,\;\pi/k < \delta$となるように$k$を十分大きくとる。
 				\begin{align*}
-					\integ{0}{\pi}{f(x)\sin kx}{x} &= \sum_{l=0}^{\floor{k/2}-1}\left(\integ{2l\pi/k}{(2l+1)\pi/k}{f(x) \sin kx}{x} + \integ{(2l+1)\pi/k}{(2l+2)\pi/k}{f(x) \sin kx}{x}\right) \\
-					&\quad + \integ{2\floor{k/2}\pi/k}{\pi}{f(x)\sin kx}{x}
+					\integrate{0}{\pi}{f(x)\sin kx}{}{x} &= \sum_{l=0}^{\floor{k/2}-1}\left(\integrate{2l\pi/k}{(2l+1)\pi/k}{f(x) \sin kx}{}{x} + \integrate{(2l+1)\pi/k}{(2l+2)\pi/k}{f(x) \sin kx}{}{x}\right) \\
+					&\quad + \integrate{2\floor{k/2}\pi/k}{\pi}{f(x)\sin kx}{}{x}
 				\end{align*}
 				最後の項は$k\to\infty$のとき$0$に収束する。
 				最初の2項は$y=kx$と変数変換して
 				\begin{align*}
-					&\quad \sum_{l=0}^{\floor{k/2}-1}\frac{1}{k}\left(\integ{2l\pi}{(2l+1)\pi}{f(y/k) \sin y}{y} + \integ{(2l+1)\pi}{(2l+2)\pi}{f(y/k) \sin y}{y}\right) \\
-					&= \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integ{2l\pi}{(2l+1)\pi}{(f(y/k) - f(y/k+\pi/k)) \sin y}{y}
+					&\quad \sum_{l=0}^{\floor{k/2}-1}\frac{1}{k}\left(\integrate{2l\pi}{(2l+1)\pi}{f(y/k) \sin y}{}{y} + \integrate{(2l+1)\pi}{(2l+2)\pi}{f(y/k) \sin y}{}{y}\right) \\
+					&= \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{(f(y/k) - f(y/k+\pi/k)) \sin y}{}{y}
 				\end{align*}
 				となる。これの絶対値は
 				\begin{align*}
-					&\leq \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integ{2l\pi}{(2l+1)\pi}{\abs{f(y/k) - f(y/k+\pi/k) \sin y}}{y} \\
-					&< \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integ{2l\pi}{(2l+1)\pi}{\varepsilon\abs{\sin y}}{y} = \frac{2\varepsilon}{k} \sum_{l=0}^{\floor{k/2}-1}1 = \frac{2\varepsilon}{k}\floor{k/2} \leq \frac{2\varepsilon}{k}\frac{k}{2} = \varepsilon
+					&\leq \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{\abs{f(y/k) - f(y/k+\pi/k) \sin y}}{}{y} \\
+					&< \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{\varepsilon\abs{\sin y}}{}{y} = \frac{2\varepsilon}{k} \sum_{l=0}^{\floor{k/2}-1}1 = \frac{2\varepsilon}{k}\floor{k/2} \leq \frac{2\varepsilon}{k}\frac{k}{2} = \varepsilon
 				\end{align*}
 				同様にして
-				\[ \lim_{k\to\infty}\integ{-\pi}{\pi}{f(x)\cos kx}{x} = 0 \]
+				\[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\cos kx}{}{x} = 0 \]
 				も示せる。
 			\end{proof}
-		\section{\texorpdfstring{$\integ{-\pi}{\pi}{\frac{\sin nx}{2\tan\frac{x}{2}}}{x} = \pi\;(n\in\naturalNumbers)$}{sin(nx)/(2 tan(x/2))の[-π,π]での積分はπ}}
+		\section{\texorpdfstring{$\integrate{-\pi}{\pi}{\frac{\sin nx}{2\tan\frac{x}{2}}}{}{x} = \pi\;(n\in\naturalNumbers)$}{sin(nx)/(2 tan(x/2))の[-π,π]での積分はπ}}
 			\label{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}
 			\begin{proof}
 				\quad\par
 				求めたい積分の値を$I_n$とする。
 				分子の$\sin nx$について$nx = (n-1/2)x + x/2$として加法定理により展開すると
-				\[ I_n = \frac{1}{2}\integ{-\pi}{\pi}{\frac{\cos^2(x/2)}{\sin(x/2)}\sin(n-1/2)x}{x} + \frac{1}{2}\integ{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{x} \]
+				\[ I_n = \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\cos^2(x/2)}{\sin(x/2)}\sin(n-1/2)x}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{}{x} \]
 				第一項の分子で$\cos^2(x/2) = 1-\sin^2(x/2)$とすると
 				\begin{align*}
-					I_n &= \frac{1}{2}\integ{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{x} - \frac{1}{2}\integ{-\pi}{\pi}{\sin(x/2)\sin(n-1/2)x}{x} + \frac{1}{2}\integ{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{x} \\
-					&= \frac{1}{2}\integ{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{x} + \frac{1}{2}\integ{-\pi}{\pi}{\cos nx}{x} \quad (\text{↑の第2,3項を加法定理でまとめた}) \\
-					&= \frac{1}{2}\integ{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{x} \quad (\because\;\text{第2項は}0)
+					I_n &= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} - \frac{1}{2}\integrate{-\pi}{\pi}{\sin(x/2)\sin(n-1/2)x}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{}{x} \\
+					&= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos nx}{}{x} \quad (\text{↑の第2,3項を加法定理でまとめた}) \\
+					&= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} \quad (\because\;\text{第2項は}0)
 				\end{align*}
 				さらに$(n-1/2)x = (n-1)x + x/2$として加法定理を使うと
 				\[
-					I_n = \frac{1}{2}\integ{-\pi}{\pi}{\frac{\sin(n-1)x\;\cos(x/2)}{\sin(x/2)}}{x} + \frac{1}{2}\integ{-\pi}{\pi}{\cos(n-1)x}{x} = I_{n-1} +
+					I_n = \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1)x\;\cos(x/2)}{\sin(x/2)}}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(n-1)x}{}{x} = I_{n-1} +
 					\begin{cases}
 						\pi & (n=1) \\
 						0 & (\text{otherwise})
@@ -242,18 +242,18 @@
 				これと$I_0 = 0$より定理が成り立つ。
 			\end{proof}
 		\section{Fourier級数の応用}
-			\subsection{\texorpdfstring{$\integ{0}{\infty}{\frac{\sin x}{x}}{x} = \pi/2$}{sin(x)/xの0から∞までの積分はπ/2}}
+			\subsection{\texorpdfstring{$\integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} = \pi/2$}{sin(x)/xの0から∞までの積分はπ/2}}
 			\begin{proof}
 				\quad\par
 				複素積分を使った導出がよく知られているが、実解析の範囲で導出してみる。
 				この積分が収束することは、$(\sin x)/x$が$[0,\pi/2]$で連続であることから$[0,\pi/2]$で積分可能であること、および$\sin x = (-\cos x)'$を用いて部分積分することで$[\pi/2,\infty)$で積分が絶対収束することから示せる。
 				よって、
 				\begin{align*}
-					\integ{0}{\infty}{\frac{\sin x}{x}}{x} &= \lim_{n\to\infty}\integ{0}{n\pi}{\frac{\sin x}{x}}{x} = \lim_{n\to\infty}\integ{0}{\pi}{\frac{\sin nt}{t}}{t} \quad (t=x/n\text{とおいた}) \\
-					&= \lim_{n\to\infty}\frac{1}{2}\integ{-\pi}{\pi}{\frac{\sin nt}{t}}{t} = \lim_{n\to\infty}\frac{1}{2}\integ{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}\right)\sin nt}{t}
+					\integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} &= \lim_{n\to\infty}\integrate{0}{n\pi}{\frac{\sin x}{x}}{}{x} = \lim_{n\to\infty}\integrate{0}{\pi}{\frac{\sin nt}{t}}{}{t} \quad (t=x/n\text{とおいた}) \\
+					&= \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin nt}{t}}{}{t} = \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t}
 				\end{align*}
 				$\frac{1}{t} - \frac{1}{2\tan(t/2)}$は$[-\pi,\pi]$で連続だから\ref{連続関数のFourier級数の高周波成分は0に収束する}より
-				\[ \lim_{n\to\infty}\frac{1}{2}\integ{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)}\right)\sin nt}{t} = 0 \]
+				\[ \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t} = 0 \]
 				であること、および\ref{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}より証明が済む。
 			\end{proof}
 	\chapter{Fourier変換}
@@ -266,12 +266,12 @@
 			\begin{indentation}{1zw}{0zw}
 				$f(t)$の余弦変換$C(\omega)$,正弦変換$S(\omega)$は次のように定義される。
 				\begin{align*}
-					C(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{f(x)\cos{\omega t}}{t}\\
-					S(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{f(x)\sin{\omega t}}{t}
+					C(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\cos{\omega t}}{}{t}\\
+					S(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\sin{\omega t}}{}{t}
 				\end{align*}
 				$C,S$はそれぞれ\textcolor{red}{$\omega$の偶関数,奇関数}になっていることに注意。そして$t\geq0$において
 				\begin{equation}
-					f(t) \sim \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{C(\omega)\cos{\omega t}}{\omega} = \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{S(\omega)\sin{\omega t}}{\omega} \nonumber
+					f(t) \sim \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega} \nonumber
 				\end{equation}
 				が成り立つ。注意すべきは、この逆変換は$t<0$に関しては何も教えてくれないということだ。変換時に$t<0$における情報を捨ててしまっているのだから当然である。
 				以下、上の関係を示す。
@@ -290,9 +290,9 @@
 					\end{align}
 					$\ge,\go$はそれぞれ$f$を偶関数,奇関数として拡張したものである。両者のフーリエ変換を$\Ge(\omega),\Go(\omega)$とすると
 					\begin{align*}
-						\Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{\ge(t)e^{-i\omega t}}{t} = \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{\ge(t)(\cos{\omega t}-i\sin{\omega t})}{t}\\
-						&= \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{\ge(t)\cos{\omega t}}{t}\;\;\;(\because \ge(t)\sin{\omega t}\text{は奇関数なので対称積分の結果は0})\\
-						&= \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{\ge(t)\cos{\omega t}}{t} = \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{f(t)\cos{\omega t}}{t} = C(\omega)
+						\Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)e^{-i\omega t}}{}{t} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)(\cos{\omega t}-i\sin{\omega t})}{}{t}\\
+						&= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)\cos{\omega t}}{}{t}\;\;\;(\because \ge(t)\sin{\omega t}\text{は奇関数なので対称積分の結果は0})\\
+						&= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{\ge(t)\cos{\omega t}}{}{t} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(t)\cos{\omega t}}{}{t} = C(\omega)
 					\end{align*}
 					となり余弦変換と一致する。同様にして
 					\[\Go(\omega) = -iS(\omega)\]
@@ -300,17 +300,17 @@
 					\newline\par
 					次に逆フーリエ変換で$\ge,\go$を復元してみる。
 					\begin{align*}
-						\ge(t) &\sim \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{\Ge(\omega)e^{i\omega t}}{\omega} = \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{C(\omega)e^{i\omega t}}{\omega} = \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{\omega}\\
-						&= \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{C(\omega)\cos{\omega t}}{\omega}\;\;(\because C(\omega)\sin{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
-						&= \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{C(\omega)\cos{\omega t}}{\omega}
+						\ge(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Ge(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+						&= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}\;\;(\because C(\omega)\sin{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
+						&= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}
 					\end{align*}
 					\begin{align*}
-						\go(t) &\sim \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{\Go(\omega)e^{i\omega t}}{\omega} = \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{-iS(\omega)e^{i\omega t}}{\omega} = \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{\omega}\\
-						&= \frac{1}{\sqrt{2\pi}}\integ{-\infty}{\infty}{S(\omega)\sin{\omega t}}{\omega}\;\;(\because S(\omega)\cos{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
-						&= \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{S(\omega)\sin{\omega t}}{\omega}
+						\go(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Go(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+						&= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\;\;(\because S(\omega)\cos{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
+						&= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}
 					\end{align*}
 					$t\geq0$では$f,\ge,\go$は等しいから
-					\[f(t) \sim \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{C(\omega)\cos{\omega t}}{\omega} = \sqrt{\frac{2}{\pi}}\integ{0}{\infty}{S(\omega)\sin{\omega t}}{\omega}\]
+					\[f(t) \sim \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\]
 				\end{proof}
 				繰り返しになるが上式は$t\geq0$でしか成り立たない。$t<0$のことはわからないのである。クレイジーな変換だと思うかもしれないが、ちゃんと利点もある。実験データや音声,映像データは普通、記録開始を時刻0として扱う。この場合は$t<0$に関しては知る必要がない(どうでもいい)のだ。そういう状況下では複素数が登場する本家のフーリエ変換よりもsin,cosどっちか好きな方だけ使えば済むような正弦,余弦変換が役に立つことがある。
 			\end{indentation}
@@ -325,13 +325,13 @@
 			すなわち
 			\begin{equation}
 				\label{eqn:explicit definition of 1st kind n-th Bessel function}
-				J_n(z) = \frac{1}{2\pi}\integ{-\pi}{\pi}{e^{iz\sin x}e^{-inx}}{x}
+				J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{e^{iz\sin x}e^{-inx}}{}{x}
 			\end{equation}
 			\subsection{簡単化}
 				式\eqref{eqn:explicit definition of 1st kind n-th Bessel function}は次のようにして簡単化できる。
-				\[ J_n(z) = \frac{1}{2\pi}\integ{-\pi}{\pi}{\exp i\left(z\sin x -nx\right)}{x} = \frac{1}{2\pi}\integ{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{x} + \frac{1}{2\pi}\integ{-\pi}{\pi}{i\sin\left(z\sin x -nx\right)}{x} \]
+				\[ J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\exp i\left(z\sin x -nx\right)}{}{x} = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} + \frac{1}{2\pi}\integrate{-\pi}{\pi}{i\sin\left(z\sin x -nx\right)}{}{x} \]
 				第1項は偶関数の対称積分であり、第2項は奇関数の対称積分なので0だから結局次のようになる。
-				\[ J_n(z) = \frac{1}{2\pi}\integ{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{x} = \frac{1}{\pi}\integ{0}{\pi}{\cos\left(z\sin x -nx\right)}{x} \]
+				\[ J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} = \frac{1}{\pi}\integrate{0}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} \]
 		\section{Maclaurin展開}
 			式\eqref{eqn:implicit definition of 1st kind n-th Bessel function}の左辺を指数関数に関してMaclaurin展開すると$x$を変数としたFourier級数展開が得られることを利用して$J_n(z)$のMaclaurin展開を求める。
 			\[ e^{iz\sin x} = \exp\left( z\frac{e^{ix} - e^{-ix}}{2} \right) = \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k (e^{ix}-e^{-ix})^k \] %= \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k \sum_{l=0}^k \binom{k}{l} (-1)^{k-l} e^{i(2l-k)x}
