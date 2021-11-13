@@ -403,6 +403,49 @@
 					&= \oint_c{A\cdot\dc}
 				\end{align*}
 			\end{proof}
+	\chapter{一般の直交座標系と直角座標系の関係}
+		\section{座標変換}
+			$f:\realNumbers^3\to\realNumbers^3$は可逆であり$\mathrm{C}^1$級であるとする。
+			$f$のJacobi行列の列は互いに直交するものとする。
+			$\bm{u}\in\realNumbers^3,\;\bm{r} = f(\bm{u})$とする。
+			例えば球座標系では$\bm{u} = [r,\theta,\phi]^\top$であり、$\bm{r} = [x,y,z]^\top = [r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta]^\top$である。
+			次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数と呼ぶ。
+			\[ h_i \coloneqq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
+			次式で定める単位ベクトルを「$u_i$方向単位ベクトル」と呼ぶ。
+			\[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} \]
+			$f$のJacobi行列の列が互いに直交するため、$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
+		\section{勾配}
+			\begin{shadebox}
+				既出の記号の定義は引き継ぐ。
+				$\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^1$級であるとする。
+				$\hat{\phi}(\bm{u}) \coloneqq \phi(f(\bm{u}))$とする。
+				$\phi$の勾配$\nabla_\bm{r}\phi(\bm{r})$は$\bm{u}$を用いて次式で表せる。
+				\[ \nabla_\bm{r}\phi(\bm{r}) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\phi}{u_i}{} = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\hat{\phi}(\bm{u}) \]
+			\end{shadebox}
+			\begin{proof}
+				\begin{gather*}
+					\bm{j}_i = \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}\right]^\top \\
+					\therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\frac{1}{h_j}\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2} = JH^{-1} \\
+					\text{where} \quad H \coloneqq \diag{h_1,h_2,h_3}, \quad J \coloneqq \left[\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2}
+				\end{gather*}
+				$J$は$f$のJacobi行列である。
+				以上より次式が成り立つ。
+				\[ [\bm{i}_1,\bm{i}_2,\bm{i}_3] = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1} \]
+				$\partDeriv{\phi}{r_i}{}$を評価すると次式を得る。
+				\begin{gather*}
+					\partDeriv{\phi}{r_i}{} = \sum_{j=1}^3\partDeriv{\hat{\phi}}{u_j}{}\partDeriv{u_j}{r_i}{} \\
+					\begin{split}
+						\therefore \quad \nabla_\bm{r}\phi(\bm{r}) &= \left[\partDeriv{\phi}{r_1}{}, \partDeriv{\phi}{r_2}{}, \partDeriv{\phi}{r_3}{}\right]^\top = \left[\partDeriv{u_j}{r_i}{}\right]_{(i,j)\in\{1,2,3\}^2}\left[\partDeriv{\hat{\phi}}{u_1}{},\partDeriv{\hat{\phi}}{u_2}{},\partDeriv{\hat{\phi}}{u_3}{}\right]^\top \\
+						&= \left(J^{-1}\right)^\top\nabla_\bm{u}\hat{\phi}(\bm{u})
+					\end{split}
+				\end{gather*}
+				最後の等号は$\bm{u} = f^{-1}(\bm{r})$と逆関数定理による。
+				以上より、次式が成り立つ。
+				\[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1}\left(J^{-1}\right)^\top\nabla_\bm{u}\hat{\phi}(\bm{u}) \]
+				$J^{-1}\left(J^{-1}\right)^\top = J^{-1}\left(J^\top\right)^{-1} = \left(J^\top J\right)^{-1}$であり、$f$に関する仮定から$J$の列は互いに直交し、計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
+				よって$\left(J^\top J\right)^{-1} = H^{-2}$であり、次式が成り立つ。
+				\[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\hat{\phi}(\bm{u}) = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\hat{\phi}(\bm{u}) \]
+			\end{proof}
 	\chapter{円柱座標系}
 		\section{計量係数}
 			\begin{shadebox}

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `grad(1/r)`, `rot f(r)A`.
 - Add `div(A) = lim_{|V|->0} (1/|V|)∫_V A・ds`
 - Add sufficient condition for existence of integral over R^3
+- Add translation of gradient between Cartesian and orthogonal coordinate.
 
 ## [0.4.0] - 2021/9/3
 
