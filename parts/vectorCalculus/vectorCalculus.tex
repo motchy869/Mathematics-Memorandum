@@ -150,7 +150,7 @@
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla_\bm{r}\frac{1}{\norm{\bm{r}+\bm{a}}} = -\frac{\bm{r}+\bm{a}}{\norm{\bm{r}+\bm{a}}^3}$}{距離に反比例するポテンシャルの勾配}}
 				\begin{shadebox}
-					$\bm{r} := [r_1,r_2,r_3]^\top,\bm{a} := [a_1,a_2,a_3]^\top\in\realNumbers^3$とする。次式が成り立つ。
+					$\bm{r} \coloneqq [r_1,r_2,r_3]^\top,\bm{a} \coloneqq [a_1,a_2,a_3]^\top\in\realNumbers^3$とする。次式が成り立つ。
 					\[ \nabla_\bm{r}\frac{1}{\norm{\bm{r}+\bm{a}}} = -\frac{\bm{r}+\bm{a}}{\norm{\bm{r}+\bm{a}}^3} \]
 				\end{shadebox}
 				\begin{proof}
@@ -160,7 +160,7 @@
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla_\bm{r} f(\bm{r})A = -A\times\nabla_\bm{r}f(\bm{r})$}{関数倍の定数ベクトルの回転}}
 				\begin{shadebox}
-					$\bm{r} := [r_1,r_2,r_3]^\top,A := [A_1,A_2,A_3]^\top\in\realNumbers^3,\;f:\realNumbers^3\to\complexNumbers$とする。次式が成り立つ。
+					$\bm{r} \coloneqq [r_1,r_2,r_3]^\top,A \coloneqq [A_1,A_2,A_3]^\top\in\realNumbers^3,\;f:\realNumbers^3\to\complexNumbers$とする。次式が成り立つ。
 					\[ \nabla_\bm{r} f(\bm{r})A = -A\times\nabla_\bm{r}f(\bm{r}) \]
 				\end{shadebox}
 				\begin{proof}
@@ -177,16 +177,16 @@
 					$f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて、その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
 					このとき$\realNumbers^3$上での$f$の積分は存在する。
 					すなわち次式が成り立つ。
-					\[ R>0,\; V(R) := \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+					\[ R>0,\; V(R) \coloneqq \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
 				\end{shadebox}
 				\begin{proof}
 					\quad\par
 					$R>0$は十分大きいものとし、$I(R)$を次式で定義する。
-					\[ I(R) := \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
+					\[ I(R) \coloneqq \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
 					球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
 					\[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
 					$0<R_0<R$なる$R_0$をとり、$I(R) = I(R_0) + I_2(R)$と分解する。
-					ここに$I_2(R) := I(R) - I(R_0)$である。
+					ここに$I_2(R) \coloneqq I(R) - I(R_0)$である。
 					\begin{align*}
 						|I_2(R)| &\leq \integrate{R_0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{|f(\bm{r})|r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} = 4\pi\integrate{R_0}{R}{o(\norm{\bm{r}}_2^{-3-\alpha})r^2}{}{r} \\
 						&= 4\pi\integrate{R_0}{R}{o(r^{-1-\alpha})}{}{r} < \infty \text{ as } R\to\infty
@@ -205,9 +205,9 @@
 		\section{諸定理}
 			\subsection{球殻定理}
 				\begin{shadebox}
-					$R>0,\;V := \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
+					$R>0,\;V \coloneqq \set{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
 					ベクトル場$\bm{A}(\bm{r})$を次式で定義する。
-					\[ \bm{A}(\bm{r}) := \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
+					\[ \bm{A}(\bm{r}) \coloneqq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
 					このとき次が成り立つ。
 					\[
 						\bm{A}(\bm{r}) = \frac{4}{3}\pi
@@ -221,14 +221,14 @@
 					\quad\par
 					必要なら系全体を回転させ、一般性を失わず$\bm{r} = [0,0,r]^\top\;(r>0)$とする。
 					球座標変換を用いて積分を実行する。
-					$\bm{r}' := r'[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$とすると
+					$\bm{r}' \coloneqq r'[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$とすると
 					\begin{align*}
 						\bm{A}(\bm{r}) &= \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{\frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3}r'^2(\sin\theta)}{}{\phi}}{}{\theta}}{}{r'} \\
 						&= 2\pi\bm{i}_3\integrate{0}{R}{\integrate{0}{\pi}{\frac{r-r'\cos\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}}r'^2(\sin\theta)}{}{\theta}}{}{r'}
 					\end{align*}
 					ここに$\bm{i}_3$は第3軸方向の単位ベクトルである。
 					\par
-					$f(r) := -(r^2+r'^2-2rr'\cos\theta)^{-1/2}r'^2\sin\theta$とすると次式が成り立つ。
+					$f(r) \coloneqq -(r^2+r'^2-2rr'\cos\theta)^{-1/2}r'^2\sin\theta$とすると次式が成り立つ。
 					\[ \deriv{f}{r}{}(r) = \frac{(r-r'\cos\theta)r'^2\sin\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}} \]
 					上式右辺の$(r',\theta)=(0,0)$近傍での振る舞いを考える。
 					$r'=r+\Delta r\;(\Delta r\neq 0)$とすると、$\sin\theta = O(\theta),\;\cos\theta = 1+O(\theta^2)$なので分母・分子ともに$r^3 O(\theta^3)$となる。
@@ -237,7 +237,7 @@
 						\bm{A}(\bm{r}) &= 2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\integrate{0}{\pi}{f(r)}{}{\theta}}{}{r'}}{r}{} \\
 						&= -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\integrate{0}{\pi}{\frac{r'^2\sin\theta}{\sqrt{r^2+r'^2-2rr'\cos\theta}}}{}{\theta}}{}{r'}}{r}{}
 					\end{align*}
-					$g(\theta) := \frac{r'}{r}\sqrt{r^2+r'^2-2rr'\cos\theta}$とすると次式が成り立つ。
+					$g(\theta) \coloneqq \frac{r'}{r}\sqrt{r^2+r'^2-2rr'\cos\theta}$とすると次式が成り立つ。
 					\[ \deriv{g}{\theta}{}(\theta) = \frac{r'^2\sin\theta}{\sqrt{r^2+r'^2-2rr'\cos\theta}} \]
 					よって次式が成り立つ。
 					\[ \bm{A}(\bm{r}) = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\left[g(\theta)\right]_0^\pi}{}{r'}}{r}{} = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\frac{r'}{r}\bigl(|r+r'|-|r-r'|\bigr)}{}{r'}}{r}{} \]
