@@ -542,6 +542,7 @@
 					\iz &= \ir\costh - \ith\sinth
 				\end{align*}
 			\end{shadebox}
+			\noindent(手間が大きい証明)
 			\begin{proof}
 				\quad\par
 				位置ベクトルは
@@ -560,6 +561,12 @@
 				\end{equation}
 				$(4)\times\cosph-(3)\times\sinph$より$\ix = \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph$\\
 				$(3)\times\cosph+(4)\times\sinph$より$\iy = \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph$
+			\end{proof}
+			\noindent(手間が少ない証明)
+			\begin{proof}
+				\quad\par
+				$\ir,\ith,\iph$の導出までは上の証明と同じ。
+				$\ir,\ith,\iph$が直交系を成すことを利用し、$\ix = (\ix\cdot\ir)\ir + (\ix\cdot\ith)\ith + (\ix\cdot\iph)\iph,\quad \iy = (\iy\cdot\ir)\ir + (\iy\cdot\ith)\ith + (\iy\cdot\iph)\iph,\quad \iz = (\iz\cdot\ir)\ir + (\iz\cdot\ith)\ith + (\iz\cdot\iph)\iph$として導出できる。
 			\end{proof}
 		\section{Laplacian}
 			\begin{shadebox}
