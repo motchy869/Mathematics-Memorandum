@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add sufficient condition for existence of integral over R^3
 - Add translation of gradient between Cartesian and orthogonal coordinate.
 - Add orthogonality of columns/rows of matrix and its inverse-matrix.
+- Add Laplacian on spherical coordinates.
 
 ## [0.4.0] - 2021/9/3
 
