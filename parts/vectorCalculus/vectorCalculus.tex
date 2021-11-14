@@ -575,24 +575,24 @@
 				\begin{align*}
 					\Delta_\bm{r}\phi(\bm{r}) &= \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} + \frac{\partial^2 \phi}{\partial z^2} \\
 					\begin{split}
-						&= \frac{\partial }{\partial x}\left(\frac{\partial \phi}{\partial r}\frac{\partial r}{\partial x} + \frac{\partial \phi}{\partial \theta}\frac{\partial \theta}{\partial x} + \frac{\partial \phi}{\partial \varphi}\frac{\partial \varphi}{\partial x}\right) + \frac{\partial }{\partial y}\left(\frac{\partial \phi}{\partial r}\frac{\partial r}{\partial y} + \frac{\partial \phi}{\partial \theta}\frac{\partial \theta}{\partial y} + \frac{\partial \phi}{\partial \varphi}\frac{\partial \varphi}{\partial y}\right) \\
-						&\phantom{=} + \frac{\partial }{\partial z}\left(\frac{\partial \phi}{\partial r}\frac{\partial r}{\partial z} + \frac{\partial \phi}{\partial \theta}\frac{\partial \theta}{\partial z} + \frac{\partial \phi}{\partial \varphi}\frac{\partial \varphi}{\partial z}\right)
+						&= \frac{\partial }{\partial x}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial x} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial x} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial x}\right) + \frac{\partial }{\partial y}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial y} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial y} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial y}\right) \\
+						&\phantom{=} + \frac{\partial }{\partial z}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial z} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial z} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial z}\right)
 					\end{split} \tag{1}
 				\end{align*}
 				右辺第1項を展開すると次式を得る。
 				\begin{align*}
-					&\phantom{=} \frac{\partial^2\phi}{\partial r^2}\left(\frac{\partial r}{\partial x}\right)^2 + \frac{\partial \phi}{\partial r}\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2\phi}{\partial \theta^2}\left(\frac{\partial \theta}{\partial x}\right)^2 + \frac{\partial \phi}{\partial \theta}\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2\phi}{\partial \varphi^2}\left(\frac{\partial \varphi}{\partial x}\right)^2 + \frac{\partial \phi}{\partial \varphi}\frac{\partial^2 \varphi}{\partial x^2} \\
-					&\phantom{=} + 2\frac{\partial^2 \phi}{\partial \theta \partial r}\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + 2\frac{\partial^2 \phi}{\partial \varphi \partial \theta}\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + 2\frac{\partial^2 \phi}{\partial r \partial \varphi}\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x}
+					&\phantom{=} \frac{\partial^2\phi}{\partial r^2}\left(\frac{\partial r}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial r}\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2\phi}{\partial \theta^2}\left(\frac{\partial \theta}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2\phi}{\partial \varphi^2}\left(\frac{\partial \varphi}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial^2 \varphi}{\partial x^2} \\
+					&\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \theta \partial r}\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + 2\frac{\partial^2 \hat{\phi}}{\partial \varphi \partial \theta}\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + 2\frac{\partial^2 \hat{\phi}}{\partial r \partial \varphi}\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x}
 				\end{align*}
 				式(1)の右辺第2,3項はそれぞれ上式の$x$を$y,z$で置き換えたものになる。
 				以上より式(1)は次式になる。
 				\begin{align*}
-					(1) &= \frac{\partial^2\phi}{\partial r^2}\left[\left(\frac{\partial r}{\partial x}\right)^2 + \left(\frac{\partial r}{\partial y}\right)^2 + \left(\frac{\partial r}{\partial z}\right)^2\right] + \frac{\partial \phi}{\partial r}\left(\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2 r}{\partial y^2} + \frac{\partial^2 r}{\partial z^2}\right) \tag{2} \\
-					&\phantom{=} + \frac{\partial^2\phi}{\partial \theta^2}\left[\left(\frac{\partial \theta}{\partial x}\right)^2 + \left(\frac{\partial \theta}{\partial y}\right)^2 + \left(\frac{\partial \theta}{\partial z}\right)^2\right] + \frac{\partial \phi}{\partial \theta}\left(\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2 \theta}{\partial y^2} + \frac{\partial^2 \theta}{\partial z^2}\right) \tag{3} \\
-					&\phantom{=} + \frac{\partial^2\phi}{\partial \varphi^2}\left[\left(\frac{\partial \varphi}{\partial x}\right)^2 + \left(\frac{\partial \varphi}{\partial y}\right)^2 + \left(\frac{\partial \varphi}{\partial z}\right)^2\right] + \frac{\partial \phi}{\partial \varphi}\left(\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2}\right) \tag{4} \\
-					&\phantom{=} + 2\frac{\partial^2 \phi}{\partial \theta \partial r}\left(\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + \frac{\partial \theta}{\partial y}\frac{\partial r}{\partial y} + \frac{\partial \theta}{\partial z}\frac{\partial r}{\partial z}\right) \tag{5} \\
-					&\phantom{=} + 2\frac{\partial^2 \phi}{\partial \varphi \partial \theta}\left(\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + \frac{\partial \varphi}{\partial y}\frac{\partial \theta}{\partial y} + \frac{\partial \varphi}{\partial z}\frac{\partial \theta}{\partial z}\right) \tag{6} \\
-					&\phantom{=} + 2\frac{\partial^2 \phi}{\partial r \partial \varphi}\left(\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x} + \frac{\partial r}{\partial y}\frac{\partial \varphi}{\partial y} + \frac{\partial r}{\partial z}\frac{\partial \varphi}{\partial z}\right) \tag{7}
+					(1) &= \frac{\partial^2 \hat{\phi}}{\partial r^2}\left[\left(\frac{\partial r}{\partial x}\right)^2 + \left(\frac{\partial r}{\partial y}\right)^2 + \left(\frac{\partial r}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial r}\left(\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2 r}{\partial y^2} + \frac{\partial^2 r}{\partial z^2}\right) \tag{2} \\
+					&\phantom{=} + \frac{\partial^2 \hat{\phi}}{\partial \theta^2}\left[\left(\frac{\partial \theta}{\partial x}\right)^2 + \left(\frac{\partial \theta}{\partial y}\right)^2 + \left(\frac{\partial \theta}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial \theta}\left(\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2 \theta}{\partial y^2} + \frac{\partial^2 \theta}{\partial z^2}\right) \tag{3} \\
+					&\phantom{=} + \frac{\partial^2 \hat{\phi}}{\partial \varphi^2}\left[\left(\frac{\partial \varphi}{\partial x}\right)^2 + \left(\frac{\partial \varphi}{\partial y}\right)^2 + \left(\frac{\partial \varphi}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial \varphi}\left(\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2}\right) \tag{4} \\
+					&\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \theta \partial r}\left(\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + \frac{\partial \theta}{\partial y}\frac{\partial r}{\partial y} + \frac{\partial \theta}{\partial z}\frac{\partial r}{\partial z}\right) \tag{5} \\
+					&\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \varphi \partial \theta}\left(\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + \frac{\partial \varphi}{\partial y}\frac{\partial \theta}{\partial y} + \frac{\partial \varphi}{\partial z}\frac{\partial \theta}{\partial z}\right) \tag{6} \\
+					&\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial r \partial \varphi}\left(\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x} + \frac{\partial r}{\partial y}\frac{\partial \varphi}{\partial y} + \frac{\partial r}{\partial z}\frac{\partial \varphi}{\partial z}\right) \tag{7}
 				\end{align*}
 				まず式(5),(6),(7)が0であることを示す。
 				$J$を$f$のJacobi行列とすると、式(5)の括弧の内側は$J^{-1}$の1行目と2行目の内積である。
@@ -615,8 +615,8 @@
 				\end{gather*}
 				これらを用いて
 				\begin{align*}
-					(2) &= \frac{\partial^2\phi}{\partial r^2} + \frac{2}{r}\frac{\partial \phi}{\partial r} = \frac{1}{r^2}\frac{\partial}{\partial r}r^2\frac{\partial \phi}{\partial r} \\
-					(3) &= \frac{1}{r^2}\frac{\partial^2\phi}{\partial \theta^2} + \frac{\cos\theta}{r^2\sin\theta}\frac{\partial\phi}{\partial \theta} \\
-					(4) &= \frac{1}{r^2\sin^2\theta}\frac{\partial^2\phi}{\partial \varphi^2}
+					(2) &= \frac{\partial^2 \hat{\phi}}{\partial r^2} + \frac{2}{r}\frac{\partial \hat{\phi}}{\partial r} = \frac{1}{r^2}\frac{\partial}{\partial r}r^2\frac{\partial \hat{\phi}}{\partial r} \\
+					(3) &= \frac{1}{r^2}\frac{\partial^2 \hat{\phi}}{\partial \theta^2} + \frac{\cos\theta}{r^2\sin\theta}\frac{\partial \hat{\phi}}{\partial \theta} \\
+					(4) &= \frac{1}{r^2\sin^2\theta}\frac{\partial^2 \hat{\phi}}{\partial \varphi^2}
 				\end{align*}
 			\end{proof}
