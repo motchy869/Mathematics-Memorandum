@@ -405,15 +405,20 @@
 			\end{proof}
 	\chapter{一般の直交座標系と直角座標系の関係}
 		\section{座標変換}
-			$f:\realNumbers^3\to\realNumbers^3$は可逆であり$\mathrm{C}^1$級であるとする。
-			$f$のJacobi行列の列は互いに直交するものとする。
-			$\bm{u}\in\realNumbers^3,\;\bm{r} = f(\bm{u})$とする。
-			例えば球座標系では$\bm{u} = [r,\theta,\varphi]^\top$であり、$\bm{r} = [x,y,z]^\top = [r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta]^\top$である。
-			次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数と呼ぶ。
+			$T:\realNumbers^3\to\realNumbers^3$は可逆であり$\mathrm{C}^2$級であるとする。
+			$T$のJacobi行列の列は互いに直交するものとする。
+			$\bm{u}\in\realNumbers^3,\;\bm{r} = T(\bm{u})$とする。
+			例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり、$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,\;(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
+			次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数(Lam\'{e} coefficient)と呼ぶ。
 			\[ h_i \coloneqq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
 			次式で定める単位ベクトルを「$u_i$方向単位ベクトル」と呼ぶ。
 			\[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} \]
-			$f$のJacobi行列の列が互いに直交するため、$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
+			$T$のJacobi行列の列が互いに直交するため、$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
+		\section{表記の慣習上の注意}
+			$\realNumbers^n$という記号は複数の文脈で使われる。
+			ある時は単に$\realNumbers$の直積集合を表す記号として、またある時は$n$次元Euclid空間を表す記号として使われる。
+			例えば球座標系の$(r,\theta,\varphi)$が属する構造は3次元Euclid空間ではなく単に$\realNumbers$の3つの直積集合であり、その$T$による像$(x,y,z)$もまた$\realNumbers$の3つの直積集合上の量である。
+			そして$(x,y,z)$と3次元Euclid空間上のベクトル$\bm{i}_x x + \bm{i}_y y + \bm{i}_z z$は一対一で対応するから、しばしばこれらを同一視する。
 		\section{単位ベクトルの変換}
 			\begin{shadebox}
 				既出の記号の定義は引き継ぐ。
@@ -440,7 +445,7 @@
 					\therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\frac{1}{h_j}\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2} = JH^{-1} \\
 					\text{where} \quad H \coloneqq \diag{h_1,h_2,h_3}, \quad J \coloneqq \left[\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2}
 				\end{gather*}
-				$J$は$f$のJacobi行列である。
+				$J$は$T$のJacobi行列である。
 				以上より次式が成り立つ。
 				\[ [\bm{i}_1,\bm{i}_2,\bm{i}_3] = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1} \]
 				$\partDeriv{\phi}{r_i}{}$を評価すると次式を得る。
@@ -451,7 +456,7 @@
 						&= \left(J^{-1}\right)^\top\nabla_\bm{u}\hat{\phi}(\bm{u})
 					\end{split}
 				\end{gather*}
-				最後の等号は$\bm{u} = f^{-1}(\bm{r})$と逆関数定理による。
+				最後の等号は$\bm{u} = T^{-1}(\bm{r})$と逆関数定理による。
 				以上より、次式が成り立つ。
 				\[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1}\left(J^{-1}\right)^\top\nabla_\bm{u}\hat{\phi}(\bm{u}) \]
 				$J^{-1}\left(J^{-1}\right)^\top = J^{-1}\left(J^\top\right)^{-1} = \left(J^\top J\right)^{-1}$であり、$f$に関する仮定から$J$の列は互いに直交し、計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
