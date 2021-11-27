@@ -15,7 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add orthogonality of columns/rows of matrix and its inverse-matrix.
 - Add Laplacian on spherical coordinates.
 - Add easier derivation of relationship between unit vectors on spherical and Cartesian coordinates.
-- Add translation of unit vectors from Cartesian coordinate to general orthogonal coordinate.
+- Add conversion of unit vectors from Cartesian coordinate to general orthogonal coordinate.
+- Add components conversion for a vector from Cartesian coordinate to general orthogonal coordinate.
 
 ## [0.4.0] - 2021/9/3
 
