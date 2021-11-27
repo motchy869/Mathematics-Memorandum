@@ -446,12 +446,10 @@
 				ここに$J$は$T$のJacobi行列であり、$H := \diag{h_1,h_2,h_3}$である。
 			\end{shadebox}
 			\begin{proof}
-				\quad\par
-				まず次式が成り立つ。
-				\[ \bm{A}(\bm{r}) = \bm{j}_1 A_1(\bm{r}) + \bm{j}_2 A_2(\bm{r}) + \bm{j}_3 A_3(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3][\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \]
-				一方で\ref{単位ベクトルの変換}より次式が成り立つ。
-				\[ \bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r}) = [\bm{i}_1,\bm{i}_2,\bm{i}_3][A_1,A_2,A_3]^\top = [\bm{j}_1, \bm{j}_2, \bm{j}_3]JH^{-1}[A_1,A_2,A_3]^\top \]
-				2つの式の最右辺を比較すれば定理の主張が得られる。
+				\begin{align*}
+					\phantom{=} &[\bm{i}_1,\bm{i}_2,\bm{i}_3][A_1,A_2,A_3] = \bm{A}(\bm{r}) = \bm{j}_1 \tilde{A}_1 + \bm{j}_2 \tilde{A}_2 + \bm{j}_3 \tilde{A}_3 = [\bm{j}_1,\bm{j}_2,\bm{j}_3][\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \\
+					= &[\bm{i}_1,\bm{i}_2,\bm{i}_3]JH^{-1}[\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top
+				\end{align*}
 			\end{proof}
 		\section{勾配}
 			\begin{shadebox}
