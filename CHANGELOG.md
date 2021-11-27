@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add easier derivation of relationship between unit vectors on spherical and Cartesian coordinates.
 - Add conversion of unit vectors from Cartesian coordinate to general orthogonal coordinate.
 - Add components conversion for a vector from Cartesian coordinate to general orthogonal coordinate.
+- Add representation of divergence in general orthogonal coordinate.
 
 ## [0.4.0] - 2021/9/3
 
