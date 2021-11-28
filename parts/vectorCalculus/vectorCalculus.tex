@@ -522,7 +522,7 @@
 					= &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \right] \\
 					= &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})h_k^2\delta_{k,j} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}h_k^2\delta_{k,j} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \right] \\
 					= &\frac{1}{h_k^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_k}{}\right)\tilde{A}_k(\bm{u})h_k^2 + h_k\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} \right] + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \\
-					= &\frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \underbrace{\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_k}{}}_{(2)} \quad \left(\because \text{仮定より}\partDerivLong{\frac{1}{h_k}}{u_j}{} = 0\right)
+					= &\frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \underbrace{\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{}}_{(2)} \quad \left(\because \text{仮定より}\partDerivLong{\frac{1}{h_k}}{u_j}{} = 0\right)
 				\end{align*}
 				式(2)を評価する。
 				$j=k$のとき次式を得る。
