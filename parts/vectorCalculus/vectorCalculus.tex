@@ -530,7 +530,7 @@
 				$j\neq k$のとき次式を得る。
 				\[ \partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} = \partDerivLong{\left(\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{}\right)}{u_j}{} - \partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{2} = -\partDeriv{\bm{r}}{u_j}{2}\cdot\partDeriv{\bm{r}}{u_k}{} \]
 				以上より、式(1)の$\tilde{A}_k(\bm{u})$に関する項は次式である。
-				\[ \frac{1}{h_k}\left[ \partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} - \tilde{A}_k(\bm{u})\left(\sum_{j\in\{1,2,3\}\setminus\{i\}} \frac{1}{h_j^2}\partDeriv{\bm{r}}{u_j}{2}\right)\cdot\partDeriv{\bm{r}}{u_k}{} \right] \]
+				\[ \frac{1}{h_k}\left[ \partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} - \tilde{A}_k(\bm{u})\left(\sum_{j\in\{1,2,3\}\setminus\{k\}} \frac{1}{h_j^2}\partDeriv{\bm{r}}{u_j}{2}\right)\cdot\partDeriv{\bm{r}}{u_k}{} \right] \]
 			\end{proof}
 		\section{回転}
 			\begin{shadebox}
