@@ -551,7 +551,8 @@
 					= &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \quad (\because \text{\ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
 				\end{align*}
 				以下では表記の簡便さのため、$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
-				上式の第$m\in\{1,2,3\}$成分を評価すると次式を得る。
+				上式の第$m\in\{1,2,3\}$成分を評価する。
+				第$m$成分に寄与するのは$(j,l)=\bigl([m+1],[m+2]\bigr),\bigl([m+2],[m+1]\bigr)$のときであり、計算すると次式を得る。
 				\begin{align*}
 					\phantom{=} &\sum_{i=1}^3 \left[ \frac{1}{h_{[m+1]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}\right)\frac{1}{h_{[m+2]}}\partDeriv{r_i}{u_{[m+2]}}{} \right. \\
 					&\left. - \frac{1}{h_{[m+2]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}\right)\frac{1}{h_{[m+1]}}\partDeriv{r_i}{u_{[m+1]}}{} \right] \\
