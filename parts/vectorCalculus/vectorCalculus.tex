@@ -470,6 +470,7 @@
 				\end{align*}
 			\end{proof}
 		\section{勾配}
+			\label{勾配}
 			\begin{shadebox}
 				既出の記号の定義は引き継ぐ。
 				$\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^1$級であるとする。
@@ -501,6 +502,7 @@
 				\[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\tilde{\phi}(\bm{u}) = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
 			\end{proof}
 		\section{発散}
+			label{発散}
 			\begin{shadebox}
 				既出の記号の定義は引き継ぐ。
 				さらに$T$は$\textrm{C}^2$級であるとし、$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
@@ -552,7 +554,7 @@
 			\begin{proof}
 				\begin{align*}
 					\phantom{=} &\nabla_\bm{r}\times\bm{A}(\bm{r}) = \nabla_\bm{r} \times \sum_{i=1}^3 A_i(\bm{r})\bm{i}_i = \sum_{i=1}^3 \nabla_\bm{r} \times A_i(\bm{r})\bm{i}_i = \sum_{i=1}^3 (\nabla_\bm{r}A_i(\bm{r}))\times\bm{i}_i\quad (\because \text{\ref{ベクトルのスカラー関数倍の回転}}) \\
-					= &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \quad (\because \text{\ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
+					= &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \quad (\because \text{\ref{勾配}, \ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
 				\end{align*}
 				以下では表記の簡便さのため、$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
 				上式の第$m\in\{1,2,3\}$成分を評価する。
@@ -598,6 +600,18 @@
 					&= \partDeriv{h_{[m+2]}\tilde{A}_{[m+2]}}{u_{[m+1]}}{} - \partDeriv{h_{[m+1]}\tilde{A}_{[m+1]}}{u_{[m+2]}}{}
 				\end{align*}
 				これを式(2)に適用して定理の主張を得る。
+			\end{proof}
+		\section{Laplacian}
+			\begin{shadebox}
+				既出の記号の定義は引き継ぐ。
+				さらに$T$は$\textrm{C}^2$級であるとし、$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
+				$\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^2$級であるとする。
+				$\tilde{\phi}(\bm{u}) \coloneqq \phi(T(\bm{u}))$とする。
+				$\nabla^2_\bm{r}\phi(\bm{r})$は$\bm{u}$を用いて次式で表せる。
+				\[ \nabla^2_\bm{r}\phi(\bm{r}) = \frac{1}{h_1 h_2 h_3}\left[ \partDerivLong{\left(\frac{h_2 h_3}{h_1}\partDeriv{\tilde{\phi}(\bm{u})}{u_1}{}\right)}{u_1}{} + \partDerivLong{\left(\frac{h_3 h_1}{h_2}\partDeriv{\tilde{\phi}(\bm{u})}{u_2}{}\right)}{u_2}{} + \partDerivLong{\left(\frac{h_1 h_2}{h_3}\partDeriv{\tilde{\phi}(\bm{u})}{u_3}{}\right)}{u_3}{} \right] \]
+			\end{shadebox}
+			\begin{proof}
+				\ref{勾配},\ref{発散}を用いて容易に示せる。
 			\end{proof}
 	\chapter{円柱座標系}
 		\section{計量係数}
