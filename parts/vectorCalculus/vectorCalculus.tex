@@ -554,7 +554,8 @@
 			\begin{proof}
 				\begin{align*}
 					\phantom{=} &\nabla_\bm{r}\times\bm{A}(\bm{r}) = \nabla_\bm{r} \times \sum_{i=1}^3 A_i(\bm{r})\bm{i}_i = \sum_{i=1}^3 \nabla_\bm{r} \times A_i(\bm{r})\bm{i}_i = \sum_{i=1}^3 (\nabla_\bm{r}A_i(\bm{r}))\times\bm{i}_i\quad (\because \text{\ref{ベクトルのスカラー関数倍の回転}}) \\
-					= &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \quad (\because \text{\ref{勾配}, \ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
+					= &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \\
+					&(\because \text{\ref{勾配}, \ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
 				\end{align*}
 				以下では表記の簡便さのため、$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
 				上式の第$m\in\{1,2,3\}$成分を評価する。
