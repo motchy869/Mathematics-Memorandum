@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add divergence in general orthogonal coordinate.
 - Add rotation of multiple of scalar-valued function and vector.
 - Add rotation in general orthogonal coordinate.
+- Add Laplacian in general orthogonal coordinate
 
 ## [0.4.0] - 2021/9/3
 
