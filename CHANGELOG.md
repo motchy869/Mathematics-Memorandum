@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [0.5.0] - 2021/11/29
 
 - Replaced `:=` with `\coloneqq`.
 - Add `grad(1/r)`, `rot f(r)A`.
@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add sufficient condition for existence of integral over R^3
 - Add translation of gradient between Cartesian and orthogonal coordinate.
 - Add orthogonality of columns/rows of matrix and its inverse-matrix.
-- Add Laplacian on spherical coordinates.
 - Add easier derivation of relationship between unit vectors on spherical and Cartesian coordinates.
 - Add conversion of unit vectors from Cartesian coordinate to general orthogonal coordinate.
 - Add components conversion for a vector from Cartesian coordinate to general orthogonal coordinate.
