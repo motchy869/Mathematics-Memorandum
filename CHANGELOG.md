@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Remove `indent` environment
+- Add equation: `rot(C x A) = div(A)C - J_A C` where `C` is constant 3-D vector.
 
 ## [0.5.0] - 2021/11/29
 
