@@ -48,6 +48,17 @@
 					$x=X\textcolor{red}{-}m_x,\;y=Y\textcolor{red}{-}m_y,\;X,Y\in\mathbb{Z},\;m_x,m_y\in[0,1)$とすると$\ceil{x}+\ceil{y} = X+Y$であり、
 					一方で$\ceil{x+y} = \ceil{X+Y-m_x-m_y} = X+Y + \ceil{-m_x-m_y} \leq X+Y$であるので、主張が従う。
 				\end{proof}
+	\chapter{極限}
+		\section{問題例}
+			\subsection{\texorpdfstring{$\lim_{x\to\infty} \sqrt{x^2+1} - x = 0$}{√(x\string^2+1)-x → 0 (as x→∞)}}
+				\begin{proof}
+					\quad\par
+					$y(x) := \sqrt{x^2+1} - x$とおく。
+					$y(x) > 0$は明らか。
+					\[ y(x)+x = \sqrt{x^2+1} \quad \therefore y(x)^2 + 2xy(x) + x^2 = x^2 + 1 \quad \therefore y(x)^2 + 2xy(x) = 1 \]
+					\[ \therefore y(x)\bigl(y(x) + 2x\bigr) = 1 \quad \therefore 0 < y(x) = \frac{1}{2x + y(x)} < \frac{1}{2x} \to 0\;\text{as}\;x\to\infty \]
+					挟みうちの原理から$y(x) \to 0$である。
+				\end{proof}
 	\chapter{数列}
 		% \section{実数を要素とする有界集合の上限と下限の存在(考察)}
 		% 	$A\in\realNumbers$を上に有界な集合とし、$A$の上限$\sup A$の存在を確かめる。
