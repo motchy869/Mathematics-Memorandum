@@ -9,7 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove `indent` environment
 - Add equation: `rot(C x A) = div(A)C - J_A C` where `C` is constant 3-D vector.
-- Add example problem: sqrt(x^2+x) - x -> 0 as x -> ∞
+- Add example problems:
+  - sqrt(x^2+x) - x -> 0 as x -> ∞
+  - x^2/(sqrt(x^2+a^2)-a) → 2a as x -> +0
 
 ## [0.5.0] - 2021/11/29
 
