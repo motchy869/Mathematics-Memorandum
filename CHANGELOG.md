@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add example problems:
   - sqrt(x^2+x) - x -> 0 as x -> ∞
   - x^2/(sqrt(x^2+a^2)-a) → 2a as x -> +0
+- Add theorem: ||x-a|| - ||x|| -> -(x・a)/||x|| as x -> 0
 
 ## [0.5.0] - 2021/11/29
 
