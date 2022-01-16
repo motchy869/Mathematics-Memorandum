@@ -331,7 +331,8 @@
 				第1項は偶関数の対称積分であり、第2項は奇関数の対称積分なので0だから結局次のようになる。
 				\[ J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} = \frac{1}{\pi}\integrate{0}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} \]
 			\subsection{性質}
-				$J_n(-z) = -J_{-n}(z)$であることが簡単に解る。
+				\subsubsection{\texorpdfstring{$J_n(-z) = J_{-n}(z)$}{次数と引数の符号反転}}
+					式\eqref{eqn:simplified definition of 1st kind n-th Bessel function}より容易に示せる。
 		\section{Maclaurin展開}
 			式\eqref{eqn:implicit definition of 1st kind n-th Bessel function}の左辺を指数関数に関してMaclaurin展開すると$x$を変数としたFourier級数展開が得られることを利用して$J_n(z)$のMaclaurin展開を求める。
 			\[ e^{iz\sin x} = \exp\left( z\frac{e^{ix} - e^{-ix}}{2} \right) = \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k (e^{ix}-e^{-ix})^k \] %= \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k \sum_{l=0}^k \binom{k}{l} (-1)^{k-l} e^{i(2l-k)x}
