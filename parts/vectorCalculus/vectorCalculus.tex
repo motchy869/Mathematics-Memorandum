@@ -102,6 +102,19 @@
 					\[ \left| \frac{1}{|V|}\int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3\bm{r} - (\nabla\cdot A)(\bm{r}_0) \right| < \varepsilon \]
 					$|V|\to 0$とすれば定理の主張が成り立つ。
 				\end{proof}
+			\subsection{\texorpdfstring{$\nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r})$}{ベクトルのスカラー倍の発散}}
+				\begin{shadebox}
+					$\bm{r}\in\realNumbers$とする。
+					$f: \realNumbers^3\to\complexNumbers,\;A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
+					このとき次式が成り立つ。
+					\[ \nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r}) \]
+				\end{shadebox}
+				\begin{proof}
+					\begin{align*}
+						\nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) &= \sum_{i=1}^3 \partDerivLong{f(\bm{r})\bm{A}_i(\bm{r})}{r_i}{} = \sum_{i=1}^3 \left(\partDeriv{f(\bm{r})}{r_i}{}A_i(\bm{r}) + f(\bm{r})\partDeriv{A_i(\bm{r})}{r_i}{}\right) \\
+						&= \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r})
+					\end{align*}
+				\end{proof}
 			\subsection{\texorpdfstring{$\nabla_\bm{r}\times f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\times \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\times\bm{A}(\bm{r})$}{ベクトルのスカラー関数倍の回転}}
 				\label{ベクトルのスカラー関数倍の回転}
 				\begin{shadebox}
