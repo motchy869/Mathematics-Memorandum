@@ -5,13 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.6.0] - 2022/1/22
 
 - Remove `indent` environment
 - Add equation: `rot(C x A) = div(A)C - J_A C` where `C` is constant 3-D vector.
 - Add example problems:
   - sqrt(x^2+x) - x -> 0 as x -> ∞
   - x^2/(sqrt(x^2+a^2)-a) → 2a as x -> +0
+- Add theorem: ||x-a|| - ||x|| -> -(x・a)/||x|| as x -> 0
+- Add Bessel function's property: J_n(-z) = J_{-n}(z)
+- Add Bessel function's order and parity
 
 ## [0.5.0] - 2021/11/29
 

@@ -63,6 +63,26 @@
 						&= \inprod{A}{C}B - \inprod{A}{B}C
 					\end{align*}
 				\end{proof}
+			\subsection{\texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
+				\begin{proof}
+					\quad\par
+					ベクトル三重積の公式を利用する。
+					\[ \inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inprod{a}{\inprod{\bm{d}}{\bm{b}}\bm{c} - \inprod{\bm{b}}{\bm{c}}\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}} \]
+				\end{proof}
+			\subsection{(系) \texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}{(a×b)・(a×c) = ||a||\string^2(b・c) - (a・b)(a・c)}}
+				%実は直前の公式よりもこちらの方を先に思いついた。直前の公式から直ちに導かれるが、当時思いついた証明を書き残しておく。
+				\begin{proof}
+					直前の公式から直ちに導ける。
+					% \begin{align*}
+					% 	\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} &= (a_2b_1 - a_1b_2) (a_2c_1 - a_1c_2) + (a_3b_1 - a_1b_3) (a_3c_1 - a_1c_3) + (a_3b_2 - a_2b_3) (a_3c_2 - a_2c_3) \\
+					% 	&=  {a_1}^2 b_2 c_2 + {a_1}^2 b_3 c_3 - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 + {a_2}^2 b_1 c_1 \\
+					% 	&\quad + {a_2}^2 b_3 c_3 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 + {a_3}^2 b_1 c_1 + {a_3}^2 b_2 c_2 \\
+					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - {a_1}^2b_1c_1 - {a_2}^2b_2c_2 - {a_3}^2b_3c_3 \\
+					% 	&\quad - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 \\
+					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - (a_1b_1 + a_2b_2 + a_3b_3)(a_1c_1 + a_2c_2 + a_3c_3) \\
+					% 	&= \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}
+					% \end{align*}
+				\end{proof}
 			\subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r}$}{発散はベクトル場の法線面積分の体積の商の極限である}}
 				\begin{shadebox}
 					$\bm{r}_0\in\realNumbers^3$とし、$\Omega\subset\realNumbers^3$上のベクトル場$A$が$\bm{r}_0$の近傍で$C^1$級であるとする。
@@ -165,26 +185,6 @@
 							\end{array}
 						\right] = \left(\nabla^2f\right)\bm{v}
 					\]
-				\end{proof}
-			\subsection{\texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
-			\begin{proof}
-				\quad\par
-				ベクトル三重積の公式を利用する。
-				\[ \inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inprod{a}{\inprod{\bm{d}}{\bm{b}}\bm{c} - \inprod{\bm{b}}{\bm{c}}\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}} \]
-			\end{proof}
-			\subsection{(系) \texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}{(a×b)・(a×c) = ||a||\string^2(b・c) - (a・b)(a・c)}}
-				%実は直前の公式よりもこちらの方を先に思いついた。直前の公式から直ちに導かれるが、当時思いついた証明を書き残しておく。
-				\begin{proof}
-					直前の公式から直ちに導ける。
-					% \begin{align*}
-					% 	\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} &= (a_2b_1 - a_1b_2) (a_2c_1 - a_1c_2) + (a_3b_1 - a_1b_3) (a_3c_1 - a_1c_3) + (a_3b_2 - a_2b_3) (a_3c_2 - a_2c_3) \\
-					% 	&=  {a_1}^2 b_2 c_2 + {a_1}^2 b_3 c_3 - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 + {a_2}^2 b_1 c_1 \\
-					% 	&\quad + {a_2}^2 b_3 c_3 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 + {a_3}^2 b_1 c_1 + {a_3}^2 b_2 c_2 \\
-					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - {a_1}^2b_1c_1 - {a_2}^2b_2c_2 - {a_3}^2b_3c_3 \\
-					% 	&\quad - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 \\
-					% 	&= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - (a_1b_1 + a_2b_2 + a_3b_3)(a_1c_1 + a_2c_2 + a_3c_3) \\
-					% 	&= \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}
-					% \end{align*}
 				\end{proof}
 			\subsection{\texorpdfstring{$\nabla_\bm{r}\frac{1}{\norm{\bm{r}+\bm{a}}} = -\frac{\bm{r}+\bm{a}}{\norm{\bm{r}+\bm{a}}^3}$}{距離に反比例するポテンシャルの勾配}}
 				\begin{shadebox}
