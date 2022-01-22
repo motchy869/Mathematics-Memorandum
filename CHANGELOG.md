@@ -9,13 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed
   - typos
-
 - Changed
   - title: motchyの数学備忘録 -> 数学備忘録
-
 - Deleted
   - grad of 1/||r+a||. This is replaced with grad of ||r+a||^n.
-
 - Added
   - grad of ||r+a||^n
 
