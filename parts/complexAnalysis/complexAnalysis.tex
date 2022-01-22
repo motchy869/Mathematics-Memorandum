@@ -329,7 +329,26 @@
 				式\eqref{eqn:explicit definition of 1st kind n-th Bessel function}は次のようにして簡単化できる。
 				\[ J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\exp i\left(z\sin x -nx\right)}{}{x} = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} + \frac{1}{2\pi}\integrate{-\pi}{\pi}{i\sin\left(z\sin x -nx\right)}{}{x} \]
 				第1項は偶関数の対称積分であり、第2項は奇関数の対称積分なので0だから結局次のようになる。
-				\[ J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} = \frac{1}{\pi}\integrate{0}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} \]
+				\begin{equation}
+					\label{eqn:simplified definition of 1st kind n-th Bessel function}
+					J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos\left(z\sin x -nx\right)}{}{x} = \frac{1}{\pi}\integrate{0}{\pi}{\cos\left(z\sin x -nx\right)}{}{x}
+				\end{equation}
+		\section{性質}
+			\subsection{\texorpdfstring{$J_n(-z) = J_{-n}(z)$}{y軸に関する鏡像反転}}
+				式\eqref{eqn:simplified definition of 1st kind n-th Bessel function}より容易に示せる。
+			\subsection{\texorpdfstring{$J_{2m}(-z) = J_{2m}(z),\;J_{2m+1}(-z) = -J_{2m+1}(z)$}{次数と偶関数,奇関数}}
+				$m\in\integers$とするとき、次式が成り立つ。
+				\[ J_{2m}(-z) = J_{2m}(z),\;J_{2m+1}(-z) = -J_{2m+1}(z) \]
+				\begin{proof}
+					\quad\par
+					$n=2m$とする。
+					\begin{align*}
+						J_{2m}(-z) &= \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos(-z\sin x - 2mx)}{}{x} \\
+						&= \frac{1}{2\pi}\integrate{-2\pi}{0}{\cos(z\sin y - 2m(y+\pi))}{}{y} \quad (\text{変数変換 }x=y+\pi) \\
+						&= \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos(z\sin y - 2m(y+\pi))}{}{y} = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\cos(z\sin y - 2my)}{}{y} = J_{2m}(z)
+					\end{align*}
+					同様にして$J_{2m+1}(-z) = -J_{2m+1}(z)$も示せる。
+				\end{proof}
 		\section{Maclaurin展開}
 			式\eqref{eqn:implicit definition of 1st kind n-th Bessel function}の左辺を指数関数に関してMaclaurin展開すると$x$を変数としたFourier級数展開が得られることを利用して$J_n(z)$のMaclaurin展開を求める。
 			\[ e^{iz\sin x} = \exp\left( z\frac{e^{ix} - e^{-ix}}{2} \right) = \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k (e^{ix}-e^{-ix})^k \] %= \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k \sum_{l=0}^k \binom{k}{l} (-1)^{k-l} e^{i(2l-k)x}
