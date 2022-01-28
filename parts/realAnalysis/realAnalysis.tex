@@ -1,72 +1,7 @@
 \part{実解析}
-	\chapter{表記}
-		\begin{itemize}
-			\item $\realNumbers_+ \coloneqq \{x\in\realNumbers|x\geq 0\}$ : 非負の実数全体の集合
-			\item $\realNumbers_{++} \coloneqq \{x\in\realNumbers|x > 0\}$ : 正の実数全体の集合
-			\item $\bm{1}_n$ : 要素が全て1である$n$次元列ベクトル
-			\item $\bm{0}_n$ : 要素が全て0である$n$次元列ベクトル
-			\item $\bm{x}[i]$ : 列(行)ベクトルの第$i$成分
-			\item $\matEntry{A}{i}{j},\;A_{i,j}$ : 行列$A$の第$(i,j)$成分
-			\item $\matPart{A}{i_1}{i_2}{j_1}{j_2}$ : 行列$A$の第$i_1$行から第$i_2$行までの部分と第$j_1$列から第$j_2$列までの部分を抽出したもの
-			\item $\matEntry{A}{i}{:}$ : 行列$A$の第$i$行
-			\item $\matEntry{A}{:}{j}$ : 行列$A$の第$j$列
-			\item $[A]_{i,j}$ : 行列$A$の第$i$行$j$列を取り除いてできる部分行列。
-		\end{itemize}
-	\chapter{離散数学との関係}
-		\section{DirichletのDiophantine近似定理}
-			\begin{shadebox}
-				$\forall \alpha \in \realNumbers$, $\forall N \in \naturalNumbers$, $\exists (N \geq ) q \in \naturalNumbers, p \in \integers \st \abs{\alpha - \frac{p}{q}} < \frac{1}{qN}$
-			\end{shadebox}
-			\begin{proof}
-				\quad\par
-				示したい式を変形して$\abs{q\alpha - p} < 1/N$と見る。
-				$q\in\{1,\dotsc,N\}$と変化させるとき、$q\alpha$の中に格子点との距離が$1/N$未満のものが存在することを示せば良い。
-				つまり$q\alpha\%1$のうちで$[0,1/N)$に含まれるものが存在することを示せば良い。
-				区間$I_k \coloneqq [k/N,(k+1)/N)\;(k=0,\dotsc,N-1)$を考える。
-				$q\alpha\%1$は$I_0,\dotsc,I_{N-1}$のどれかに入る。
-				もし仮に$I_0$に入るものが無いとすると、鳩ノ巣原理よりある自然数$1 \leq q_1 < q_2 \leq N$が存在して$q_1\alpha\%1$と$q_2\alpha\%1$がともにある区間$I_k$に含まれる。
-				つまりある$m\in\integers,\;\varepsilon\in\realNumbers,|\varepsilon|<1/N$が存在して$q_2\alpha = q_1\alpha + m + \varepsilon$となる。
-				このとき$|(q_2-q_1)\alpha - m|=|\varepsilon|<1/N$が成り立つ。
-				$q=q_2-q_1,p=m$とすれば定理の主張を満たす$p/q$が得られる。
-			\end{proof}
-		\section{床関数と天井関数}
-			\subsection{\texorpdfstring{$\forall x\in\realNumbers,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}{∀x∈R, floor(-1) = -ceil(x), ceil(-x) = -floor(x)}}
-				\begin{proof}
-					\quad\par
-					前者は次のようにして示せる。
-					\[ n = \floor{-x} \iff n\in\integers,\; -x-1 < n \leq -x \iff n\in\integers,\; x \leq -n < x+1 \iff -n = \ceil{x} \iff n = -\ceil{x} \]
-					前者の式で$x$を$-x$で置き換えれば後者が得られる。
-				\end{proof}
-			\subsection{\texorpdfstring{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}{∀x,y∈R, floor(x)+floor(y) ≦ floor(x+y), ceil(x)+ceil(y) ≧ ceil(x+y)}}
-				\begin{proof}
-					\quad\\
-					($\floor{x}+\floor{y}\leq\floor{x+y}$の証明)\\
-					$x=X+m_x,\;y=Y+m_y,\;X,Y\in\mathbb{Z},\;m_x,m_y\in[0,1)$とすると$\floor{x}+\floor{y} = X+Y$であり、
-					一方で$\floor{x+y} = \floor{X+Y+m_x+m_y} = X+Y + \floor{m_x+m_y} \geq X+Y$であるので、主張が従う。\\
-					\newline
-					($\ceil{x}+\ceil{y}\geq\ceil{x+y}$の証明)\\
-					$x=X\textcolor{red}{-}m_x,\;y=Y\textcolor{red}{-}m_y,\;X,Y\in\mathbb{Z},\;m_x,m_y\in[0,1)$とすると$\ceil{x}+\ceil{y} = X+Y$であり、
-					一方で$\ceil{x+y} = \ceil{X+Y-m_x-m_y} = X+Y + \ceil{-m_x-m_y} \leq X+Y$であるので、主張が従う。
-				\end{proof}
-	\chapter{極限}
-		\section{問題例}
-			\subsection{\texorpdfstring{$\lim_{x\to\infty} \sqrt{x^2+1} - x = 0$}{√(x\string^2+1)-x → 0 as x→∞}}
-				\begin{proof}
-					\quad\par
-					$y(x) := \sqrt{x^2+1} - x$とおく。
-					$y(x) > 0$は明らか。
-					\[ y(x)+x = \sqrt{x^2+1} \quad \therefore y(x)^2 + 2xy(x) + x^2 = x^2 + 1 \quad \therefore y(x)^2 + 2xy(x) = 1 \]
-					\[ \therefore y(x)\bigl(y(x) + 2x\bigr) = 1 \quad \therefore 0 < y(x) = \frac{1}{2x + y(x)} < \frac{1}{2x} \to 0\;\text{as}\;x\to\infty \]
-					挟みうちの原理から$y(x) \to 0$である。
-				\end{proof}
-			\subsection{\texorpdfstring{$a>0,\;\lim_{x\to+0}\frac{x^2}{\sqrt{x^2+a^2}-a} = 2a$}{x\string^2/(√(x\string^2+a\string^2)-a) → 2a as x → +0}}
-				\begin{proof}
-					\quad\par
-					$y = x + \sqrt{x^2+a^2} - a$とおき、$x$について解くと$x = \frac{y(y+2a)}{2(y+a)}$となる。
-					また、$\sqrt{x^2+a^2}-a = y - x = \frac{y^2}{2(y+a)}$となる。
-					$x\to+0$のとき$y\to+0$であり、
-					\[ \lim_{x\to+0}\frac{x^2}{\sqrt{x^2+a^2}-a} = \lim_{y\to+0} \frac{(y+2a)^2}{2(y+a)} = 4a^2/(2a) = 2a \]
-				\end{proof}
+	\input{\currfiledir/chapters/notation}
+	\input{\currfiledir/chapters/relationship_between_discrete_mathematics}
+	\input{\currfiledir/chapters/limit}
 	\chapter{数列}
 		% \section{実数を要素とする有界集合の上限と下限の存在(考察)}
 		% 	$A\in\realNumbers$を上に有界な集合とし、$A$の上限$\sup A$の存在を確かめる。
