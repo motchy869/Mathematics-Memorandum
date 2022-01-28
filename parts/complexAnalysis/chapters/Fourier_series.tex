@@ -1,0 +1,75 @@
+\chapter{Fourier級数}
+    \section{連続関数のFourier級数の高周波成分は0に収束する}
+        \label{連続関数のFourier級数の高周波成分は0に収束する}
+        \begin{shadebox}
+            $f$は区間$[-\pi,\pi]$で連続とする。$f$のFourier係数を$c_k$とすると$\lim_{k\to\infty}c_k = 0$となる。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            まず
+            \[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = 0 \]
+            を示す。ここで
+            \[ \integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = \integrate{0}{\pi}{(f(x)-f(-x))\sin kx}{}{x} \]
+            であり、$f(x)-f(-x)$は$[0,\pi]$で連続なので結局のところ区間$[0,\pi]$の任意の連続関数$f$に対して
+            \[ \lim_{k\to\infty}\integrate{0}{\pi}{f(x)\sin kx}{}{x} = 0 \]
+            が成り立つことを示せば良い。
+            $f$は閉区間で連続だから有界であり、特に一様連続なので、任意の$\varepsilon>0$に対してある$\delta>0$が存在して
+            $\forall (x,y\in[0,\pi],|x-y|\leq\delta),|f(x)-f(y)|<\varepsilon$が成り立つ。
+            $k \geq 2,\;\pi/k < \delta$となるように$k$を十分大きくとる。
+            \begin{align*}
+                \integrate{0}{\pi}{f(x)\sin kx}{}{x} &= \sum_{l=0}^{\floor{k/2}-1}\left(\integrate{2l\pi/k}{(2l+1)\pi/k}{f(x) \sin kx}{}{x} + \integrate{(2l+1)\pi/k}{(2l+2)\pi/k}{f(x) \sin kx}{}{x}\right) \\
+                &\quad + \integrate{2\floor{k/2}\pi/k}{\pi}{f(x)\sin kx}{}{x}
+            \end{align*}
+            最後の項は$k\to\infty$のとき$0$に収束する。
+            最初の2項は$y=kx$と変数変換して
+            \begin{align*}
+                &\quad \sum_{l=0}^{\floor{k/2}-1}\frac{1}{k}\left(\integrate{2l\pi}{(2l+1)\pi}{f(y/k) \sin y}{}{y} + \integrate{(2l+1)\pi}{(2l+2)\pi}{f(y/k) \sin y}{}{y}\right) \\
+                &= \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{(f(y/k) - f(y/k+\pi/k)) \sin y}{}{y}
+            \end{align*}
+            となる。これの絶対値は
+            \begin{align*}
+                &\leq \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{\abs{f(y/k) - f(y/k+\pi/k) \sin y}}{}{y} \\
+                &< \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{\varepsilon\abs{\sin y}}{}{y} = \frac{2\varepsilon}{k} \sum_{l=0}^{\floor{k/2}-1}1 = \frac{2\varepsilon}{k}\floor{k/2} \leq \frac{2\varepsilon}{k}\frac{k}{2} = \varepsilon
+            \end{align*}
+            同様にして
+            \[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\cos kx}{}{x} = 0 \]
+            も示せる。
+        \end{proof}
+    \section{\texorpdfstring{$\integrate{-\pi}{\pi}{\frac{\sin nx}{2\tan\frac{x}{2}}}{}{x} = \pi\;(n\in\naturalNumbers)$}{sin(nx)/(2 tan(x/2))の[-π,π]での積分はπ}}
+        \label{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}
+        \begin{proof}
+            \quad\par
+            求めたい積分の値を$I_n$とする。
+            分子の$\sin nx$について$nx = (n-1/2)x + x/2$として加法定理により展開すると
+            \[ I_n = \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\cos^2(x/2)}{\sin(x/2)}\sin(n-1/2)x}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{}{x} \]
+            第一項の分子で$\cos^2(x/2) = 1-\sin^2(x/2)$とすると
+            \begin{align*}
+                I_n &= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} - \frac{1}{2}\integrate{-\pi}{\pi}{\sin(x/2)\sin(n-1/2)x}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{}{x} \\
+                &= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos nx}{}{x} \quad (\text{↑の第2,3項を加法定理でまとめた}) \\
+                &= \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1/2)x}{\sin(x/2)}}{}{x} \quad (\because\;\text{第2項は}0)
+            \end{align*}
+            さらに$(n-1/2)x = (n-1)x + x/2$として加法定理を使うと
+            \[
+                I_n = \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin(n-1)x\;\cos(x/2)}{\sin(x/2)}}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(n-1)x}{}{x} = I_{n-1} +
+                \begin{cases}
+                    \pi & (n=1) \\
+                    0 & (\text{otherwise})
+                \end{cases}
+            \]
+            これと$I_0 = 0$より定理が成り立つ。
+        \end{proof}
+    \section{Fourier級数の応用}
+        \subsection{\texorpdfstring{$\integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} = \pi/2$}{sin(x)/xの0から∞までの積分はπ/2}}
+        \begin{proof}
+            \quad\par
+            複素積分を使った導出がよく知られているが、実解析の範囲で導出してみる。
+            この積分が収束することは、$(\sin x)/x$が$[0,\pi/2]$で連続であることから$[0,\pi/2]$で積分可能であること、および$\sin x = (-\cos x)'$を用いて部分積分することで$[\pi/2,\infty)$で積分が絶対収束することから示せる。
+            よって、
+            \begin{align*}
+                \integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} &= \lim_{n\to\infty}\integrate{0}{n\pi}{\frac{\sin x}{x}}{}{x} = \lim_{n\to\infty}\integrate{0}{\pi}{\frac{\sin nt}{t}}{}{t} \quad (t=x/n\text{とおいた}) \\
+                &= \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin nt}{t}}{}{t} = \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t}
+            \end{align*}
+            $\frac{1}{t} - \frac{1}{2\tan(t/2)}$は$[-\pi,\pi]$で連続だから\ref{連続関数のFourier級数の高周波成分は0に収束する}より
+            \[ \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t} = 0 \]
+            であること、および\ref{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}より証明が済む。
+        \end{proof}

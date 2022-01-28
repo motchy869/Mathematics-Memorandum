@@ -1,0 +1,105 @@
+\chapter{複素数}
+    \section{複素数の定義}
+        任意の2つの実数$a,b\in\realNumbers$に対する2項組$(a,b)$\;(※ここでは(,)という記号を用いているが、どんな記号を用いるかはどうでもいい。別の記号を使っても差し支えない。)を「\textcolor{red}{複素数}」と\underline{名付ける}。
+        複素数$(a,b)$の第1要素$a$を「\textcolor{red}{実部}」、第2要素$b$を「\textcolor{red}{虚部}」と\underline{名付ける}。
+        複素数全体の集合を$\complexNumbers$と表記することにする。
+        \par
+        任意の2つの複素数$(a_1,b_1),(a_2,b_2)\in\complexNumbers$に対して演算「和(+)」,「実数倍(スカラー倍)」及び「積($\times$)」を次のように\textcolor{red}{定義}する。
+        \begin{align*}
+            \textrm{和} &: (a_1,b_1)+(a_2,b_2) = (a_1+a_2,\;b_1+b_2)\\
+            \textrm{実数倍}\;(a\in\mathbb{R}) &: a(a_1,b_1) = (aa_1,\;ab_1)\\
+            \textrm{積} &: (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,\;a_1b_2+b_2a_1)
+        \end{align*}
+        \par
+        特に、実部が0である複素数$(0,b)$を「\textcolor{red}{純虚数}」と名付ける。
+        純虚数のうち虚部が1であるもの$(0,1)$を特に「\textcolor{red}{虚数単位}」と名付け、\textcolor{red}{$i$}と表記することにする。\\
+        \par
+        $(a,0)$を簡略化して$a$と書くことを許せば、読者が高校以来慣れ親しんでいるであろう、次のような計算が意味を持つ。\\
+        例えば
+        \[(a_1+ib_1)(a_2+ib_2) = (a_1a_2-b_1b_2)+i(a_1b_2+b_2a_1)\]
+        なぜならば、
+        \begin{align*}
+            (a_1+ib_1)(a_2+ib_2) &= \left[(a_1,0)+i(b_1,0)\right]\times\left[(a_2,0)+i(b_2,0)\right] \\
+            &= \left[(a_1,0)+(0,1)\times(b_1,0)\right]\times\left[(a_2,0)+(0,1)\times(b_2,0)\right] \\
+            &= \left[(a_1,0)+(0,b_1)\right]\times\left[(a_2,0)+(0,b_2)\right] \\
+            &= (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,\;a_1b_2+b_2a_1) \\
+            &= (a_1a_2-b_1b_2)+i(a_1b_2+b_2a_1)
+        \end{align*}
+        また、例えば、
+        \[i^2 = -1\]
+        なぜならば
+        \[i^2 = (0,1)\times(0,1) = (0\times0-1\times1,\;0\times1+1\times0) = (-1,0) = -1\]
+        \underline{$i^2 = -1$が虚数単位の定義なのではなく、そうなるように先回りして巧妙に複素数を構築しただけ}であることに注意して欲しい。
+        \subsection{注意}
+            実数$a$と複素数$(a,0)$は\textcolor{red}{等しくない}。
+            イカメシく言うと実数と複素数は「型(type)」が異なる。
+            複素数はあくまで上で定義した2実数の\textcolor{red}{組}であって、単一の実数ではない。
+            だから、\textcolor{red}{実数と複素数の間}に演算「和」は定義されていない。
+            つまり、$a+ib$という書き方は厳密には\textcolor{red}{誤り}である。
+            本来$(a,0)+i\times(b,0)$であるものを簡略化して書いているに過ぎない。
+        \subsection{コラム \texorpdfstring{$i^2=-1\;?$}{虚数単位の2乗は-1?}}
+            「2乗して\textcolor{red}{実数}-1になる」数は無い!! 代わりに、「2乗して\textcolor{red}{複素数}(-1,0)になる」数はある。
+            それは先程定義した虚数単位$i=(0,1)$である。
+            \par
+            いい加減な教科書では、「2乗して-1になる数を虚数単位として定義し、$i$と表記する」と言っているが、この定義は\textcolor{red}{間違っている}。
+            複素数の集合の定義が完了していない段階で演算「2乗」と口走っているのがおかしい。
+            \par
+            \underline{まず数の集合があって、その上に初めて演算を定義できる。}
+            先述の「2乗して...」の「2乗」はこの文章中では未定義なのである!!
+            百歩譲って実数の集合$\mathbb{R}$上で定義された「2乗」と解釈したとしても、実数の集合に属さない数に対してこの演算を適用できる保証など無い。
+            ガソリンの給油口に紅茶を注いで「走れ」と祈るようなものだ。
+            \par
+            高校で「2乗して-1になる\textcolor{red}{仮想的}な数(\textcolor{red}{imaginary} number)を「虚数単位」$i$と呼ぶ。」
+            と教わったはいいものの、「そんな数は自然界にないよなぁ。なんか気持ち悪い...」という\textcolor{red}{違和感}に取り憑かれる原因は、そもそもの定義の間違いにある。
+            違和感があって当然である。
+            \par
+            確かに、人類が複素数を考えた動機は「2乗して-1になる数はないか？」という問題であった。
+            新しい理論がそういう動機から始まるのは自然である。
+            しかし数学的に「ちゃんとした」理論を作るためには、既存の枠組みのままでは不可能だと分かり次第、思い切ってルールを拡張し、所望の性質が得られるように理屈を先回りして演算を機械的に定義するような break through が必要なこともある。
+            その際に、既存の理論に矛盾しないように構築しなければならないのは言うまでもない。
+    \section{諸公式}
+        \subsection{\texorpdfstring{$x>0,\;z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^\Re{z}$}{x\string^zの絶対値はx\string^Re(z)}}
+            \begin{proof}
+                \quad\par
+                $z = a + bi\;(a,b\in\realNumbers)$とする。
+                \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |e^{bi\log{x}}| = x^\Re{z} \]
+            \end{proof}
+        \subsection{\texorpdfstring{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
+            \label{fml:花びら定理}
+            \begin{proof}
+                \begin{align*}
+                    \sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} &= \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\exp\left(i\frac{k}{n}2\pi\right)^n\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} = \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-e^{ik2\pi}\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} =0
+                \end{align*}
+            \end{proof}
+    \section{代数方程式}
+        \subsection{諸定理}
+            \subsubsection{実係数\texorpdfstring{$n$}{n}次方程式が複素数解\texorpdfstring{$s=\alpha+i\beta$}{s=α+iβ}を解に持つならばその複素共役\texorpdfstring{$s^* = \alpha-i\beta$}{}もまた解である}
+                \begin{shadebox}
+                    実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    最高次の係数を常に1として一般性を失わないので方程式は
+                    \[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realNumbers\]
+                    と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
+                    \[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
+                    両辺の複素共役をとると
+                    \begin{align*}
+                        \left[s^n + \sum_{k=n-1}^{0}{c_ks^k}\right]^* &= 0^* = 0\\
+                        \therefore \; {s^*}^n + \sum_{k=n-1}^{0}{c_k{s^*}^k} &= 0
+                    \end{align*}
+                    これは$s^*$が解であることに他ならない。
+                \end{proof}
+        \subsection{例題}
+            \subsection{\texorpdfstring{$z^n+z^{n-1}+\dots+z^2+z+1 = 0$}{zのべき乗の和=0}}
+                \begin{shadebox}
+                    次の方程式を解け。
+                    \[z^n+z^{n-1}+\dots+z^2+z+1 = 0\]
+                \end{shadebox}
+                \begin{solution}
+                    \quad\par
+                    $z=1$が解ではないから両辺に$z-1$を掛けて
+                    \[z^{n+1}-1=0\]
+                    の形にする。$z$の絶対値が1だと分かるので$z=e^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
+                    \qed
+                \end{solution}
