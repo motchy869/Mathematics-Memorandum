@@ -69,24 +69,24 @@
                 両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$、左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり、$r\neq 1$なので$d$次の係数から順に見てゆき、$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
                 最後に初期条件$a_0$(或いは$a_1,a_2,\dotsc,$\;値が分かっている項なら何でも良い)の値から$A$を決定できる。
             \end{proof}
-        \begin{comment}
-            \subsection{連立線形項間漸化式の添字の有効範囲}
-                \begin{shadebox}
-                    $N\in\naturalNumbers,\; a\neq b$とする。数列${x_i}$に関する漸化式
-                    \[
-                        \begin{cases}
-                            x_{i+1} + a x_i = c_i \\
-                            x_{i+1} + b x_i = d_i
-                        \end{cases}
-                        (1\leq i \leq N\textcolor{red}{-1})
-                    \]
-                    の解の添字の有効範囲が1つ拡張されて$1\leq i\leq\textcolor{red}{N}$になる必要十分条件は$c_N - d_N = a d_{N-1} - b c_{N-1}$である。
-                \end{shadebox}
-                \begin{proof}
-                    \quad\par
-                    上の連立方程式を$x_{i+1}$を消去する方針で解くと次になる。
-                    \[ x_i = \frac{c_i-d_i}{a-b} \quad (1\leq i \leq N\textcolor{red}{-1}) \]
-                    一方で$x_{i+1}$を消去する方針で解くと次になる。
-                    \[ x_{i+1} = \frac{a d_i - b c_i}{a-b} \quad (1\leq i \leq N\textcolor{red}{-1}) \quad \therefore x_i = \frac{a d_{i-1} - b c_{i-1}}{a-b} \quad (2\leq i \leq \textcolor{red}{N}) \]
-                \end{proof}
-        \end{comment}
+        % \begin{comment}
+        %     \subsection{連立線形項間漸化式の添字の有効範囲}
+        %         \begin{shadebox}
+        %             $N\in\naturalNumbers,\; a\neq b$とする。数列${x_i}$に関する漸化式
+        %             \[
+        %                 \begin{cases}
+        %                     x_{i+1} + a x_i = c_i \\
+        %                     x_{i+1} + b x_i = d_i
+        %                 \end{cases}
+        %                 (1\leq i \leq N\textcolor{red}{-1})
+        %             \]
+        %             の解の添字の有効範囲が1つ拡張されて$1\leq i\leq\textcolor{red}{N}$になる必要十分条件は$c_N - d_N = a d_{N-1} - b c_{N-1}$である。
+        %         \end{shadebox}
+        %         \begin{proof}
+        %             \quad\par
+        %             上の連立方程式を$x_{i+1}$を消去する方針で解くと次になる。
+        %             \[ x_i = \frac{c_i-d_i}{a-b} \quad (1\leq i \leq N\textcolor{red}{-1}) \]
+        %             一方で$x_{i+1}$を消去する方針で解くと次になる。
+        %             \[ x_{i+1} = \frac{a d_i - b c_i}{a-b} \quad (1\leq i \leq N\textcolor{red}{-1}) \quad \therefore x_i = \frac{a d_{i-1} - b c_{i-1}}{a-b} \quad (2\leq i \leq \textcolor{red}{N}) \]
+        %         \end{proof}
+        % \end{comment}
