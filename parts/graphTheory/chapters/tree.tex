@@ -1,0 +1,61 @@
+\chapter{木}
+    \section{諸定理}
+        \subsection{木は2部グラフである}
+            \label{subsec:木は2部グラフである}
+            \begin{proof}
+                \quad\par
+                木の任意の1点$v_{0,0}$を選んでこれを赤く塗る。次に$v_{0,0}$に隣接する全ての接点$v_{1,0},v_{1,1},\dotsc,v_{1,k}$を白く塗る。そして$v_{1,0},v_{1,1},\dotsc,v_{1,k}$に隣接する全ての無色の接点$v_{2,0},v_{2,1},\dotsc,v_{2,l}$を赤く塗る。そして$v_{2,0},v_{2,1},\dotsc,v_{2,l}$に隣接する全ての無色の接点を白く塗る。そして...。これを繰り返す。
+                \par
+                ある点$v_{i,j}$に色を塗るとき、$v_{0,0}$から$v_{i,j}$への道は唯一だから塗り方は唯一に決まる(道の上で赤→白→赤→白→$\dotsb$と繰り返す)。
+                \par
+                全ての点に色がつくまでこれを繰り返せば木は赤と白の2つの部分に分けられる2部グラフであることがわかる。
+            \end{proof}
+        \subsection{1本以上の辺を持つ有限な木は次数1の枝を少なくとも2個持つ}
+            \begin{proof}
+                \quad\par
+                \ref{subsec:木は2部グラフである}と同じように色を塗ることを考える。点数$n$が有限なので有限時間内に塗り終わる。塗り終わる(色塗りの旅(複数に分岐することもある)が行き止まりになって終わる)のは必ず次数1の点である。$v_{0,0}$の次数が1であれば塗り終わりの点(次数1)が必ず1つ以上ある。$v_{0,0}$の次数が2以上であれば色塗りの旅は2本以上に分岐するが、全て必ず終わるので塗り終わりの点(次数1)が$v_{0,0}$の次数以上必ずある。いずれにせよ次数1の点が少なくとも2個ある。
+            \end{proof}
+        \subsection{どこへでも行ける点が1個あればその点を根として木を作れる}
+            \begin{shadebox}
+                グラフ$G(\nu,\varepsilon)$にある点$i$があり、そこから$G$の任意の点への有向道があるとき、$G$は$i$を根とする全域木を持つ。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $G$の全ての点と辺を白く塗る。
+                件の点を$i$とし、それ以外の点を1つ任意に選んで$j_0$とする。
+                仮定より$i$から$j_0$への有向道が存在するから、その点と辺を全て黒く塗ると、その部分は木たる条件を満たしている。
+                $G$に白い点が残っていなければ証明は完了。
+                残っていればそこから1つ任意に選んでそれを$j_1$と呼ぶ。
+                仮定より$i$から$j_1$への有向道$l_1$が存在する。$l_1$の末尾の連続した最長の白い部分(別の言い方をすれば、「$j_1$から$i$に向かって$l_1$を(逆向きに)歩いたときに初めて黒い点に踏み込む一歩手前の白い点」から$j_1$までの道)を黒く塗ると、$G$の黒い点と辺だけを通って$i$から$j_1$まで行けるようになっているし、黒い部分は依然として木たる条件を満たす。
+                \par
+                以上の操作を白い点がなくなるまで繰り返した暁には、黒い点と辺から成る木が出来上がっている。
+            \end{proof}
+        \subsection{\texorpdfstring{$\mathcal{I}$}{I} : グラフ\texorpdfstring{$G$}{G}の非閉路部分グラフ全体の集合。\texorpdfstring{$I_1,I_2\in \mathcal{I},\;|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}{I1,I2∈I, |I1|<|I2|とすると、あるa∈I2が存在してI1∪{a}∈I}}
+            \begin{proof}
+                \quad\par
+                背理法で示す。
+                $I_2$のどの辺を$I_1$に加えても$I_1$に閉路ができると仮定する。
+                そのような辺数最小の$I_1$は、下図のように$I_2$に含まれない1点から$I_2$の各点に1本ずつ辺を伸ばしたものである。
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[keepaspectratio, scale=0.4]
+                    {\currfiledir/imgs/Matroid/independentsetwise-property.eps}
+                    \caption{最小の$I_1$}
+                \end{figure}
+                このとき$|I_1| = |I_2| + 1$となる。よって仮定が正しくない。
+            \end{proof}
+        \subsection{\texorpdfstring{$\mathcal{T}$}{T} : グラフ\texorpdfstring{$G$}{G}の全域木の集合。\texorpdfstring{$T_1,T_2\in\mathcal{T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 \st (T_1\setminus {a_1}) \cup {a_2} \in \mathcal{T}$}{T1,T2∈T, T1≠T2とする。for ∀ a1∈T1＼T2, ∃a2∈T2 s.t. (T1＼\{a1\})∪\{a2\}∈T}}
+            \begin{proof}
+                \quad\par
+                全域木の性質より、$T_2$に$a_1$を加えると$T_2$に閉路$C$がただ１つできる。
+                その閉路上に、$T_1$に属さない辺が少なくとも1つ存在する(そうでなければ$T_1$がその閉路を含んでしまう)。
+                それを$a_2$とする。$T_1$は木だから、$a_1$の両端点から$C$上の各点に至る経路がそれぞれただ1つずつ存在する。
+                いくつかは$C$と共通しているかもしれない。
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[keepaspectratio, scale=0.6]
+                    {\currfiledir/imgs/Matroid/matroidwise-property.eps}
+                    \caption{辺を取り替えて新しい$T_1$を作る}
+                \end{figure}
+                $T_1$から$a_1$を除去して$a_2$を加えると新しい木ができる。
+            \end{proof}
