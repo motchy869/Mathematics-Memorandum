@@ -1,0 +1,247 @@
+\chapter{逆行列}
+    \section{\texorpdfstring{$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}{[φ1,...,φn]\string^(-1)φi = ei}}
+        \label{逆行列にその構成縦ベクトルを掛ける}
+        \begin{shadebox}
+            $\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$が一次独立であるとき、$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $\Phi \coloneqq [\bm{\phi}_1,\dotsc,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
+            \[[\bm{e}_1,\dotsc,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\dotsc,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\dotsc,\Phi^{-1}\bm{\phi}_n]\]
+        \end{proof}
+        この定理から直ちに次の系が得られる。
+    \section{(系)結合係数の抽出}
+        \begin{shadebox}
+            $\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$は一次独立であるとする。
+            このとき、任意に与えられたベクトル$\bm{x} = \sum_{i=1}^{n}{c_i\phi_i}\in\field^n$ ($\bm{\phi}_1,\dotsc,\bm{\phi}_n$は$\field^n$の基底だから$\bm{x}$は必ずこのように分解できる!)から$c_1,\dotsc c_n$を抽出するには左から$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}$を掛ければよい。
+            詳しく言うと、次式が成り立つ。
+            \[[c_1,\dots,c_n]^\top = [\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{x}\]
+        \end{shadebox}
+    \section{上(下)三角行列が逆行列をもてば、それも上(下)三角行列である}
+        \begin{proof}
+            \quad\par
+            $A\in \complexNumbers^{n\times n}$を正則な上三角行列とすると、$A$の対角成分は全て非零である(さもなくば$\det{A}=0$となり、正則でない)ので、
+            $[A|I_n]$の簡約化による逆行列の計算を考えれば、$A^{-1}$も上三角行列であることが容易にわかる。
+            $A$が下三角行列である場合は、$A^\top$について簡約化による逆行列の計算を行えば$(A^\top)^{-1} = (A^{-1})^\top$が上三角行列になり、$A^{-1}$は下三角行列になる。
+        \end{proof}
+    \section{正則行列\texorpdfstring{$A$}{A}の列(行)が直交系を成すとき、\texorpdfstring{$A^{-1}$}{Aの逆行列}の行(列)は直交系を成す}
+        \label{行列の列(行)の直交性と逆行列の行(列)の直交性}
+        \begin{proof}
+            \quad\par
+            $A$の列が直交系を成すとする。
+            $A^{-1}\left(A^{-1}\right)^\top = A^{-1}\left(A^\top\right)^{-1} = \left(A^\top A\right)^{-1}$であるが、仮定より$A^\top A$が正則な対角行列であるので$\left(A^\top A\right)^{-1}$は対角行列になり、定理の主張が成り立つ。
+            $A$の行が直交系を成すときに$A^{-1}$の列が直交系を成すことも同様にして示せる。
+        \end{proof}
+    \section{1列(or 1行)だけ置き換えた行列の逆行列}
+        $A=[\bm{a}_1,\dotsc,\bm{a}_n]\in\complexNumbers^{n\times n}$を正則な行列とし、$c$列目を置き換えた行列$A'=[\bm{a}_1,\dotsc,\bm{a}'_c,\dotsc,\bm{a}_n]$も正則であるとする。
+        $A^{-1}$が既知であれば$A'^{-1}$を以下のようにして少ない手間で計算できる。
+        \par
+        まず$A^{-1}A'$は$c$列目以外は単位行列と同じである、次のような行列になる。
+        \[
+            A^{-1}A' =
+            \begin{bmatrix}
+                A^{-1}\bm{a}_1, \dotsc, A^{-1}\bm{a}_{c-1},\; A^{-1}\bm{a}'_c,\; A^{-1}\bm{a}_{c-1}, \dotsc, A^{-1}\bm{a}_n
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                \bm{e}_1\dotsc\bm{e}_c
+                \begin{matrix}
+                    p_1 \\
+                    \vdots \\
+                    p_c \\
+                    \vdots \\
+                    p_n
+                \end{matrix}
+                \bm{e}_{c+1}\cdots\bm{e}_n
+            \end{bmatrix}
+        \]
+        ここで$p_c\neq 0$である(もしそうでなければ$c$列目が他の列の一次結合で表せるので非正則になるが、これは左辺が正則行列同士の積で正則であることに矛盾する)。
+        右辺の$c$列目を$\bm{e}_c$に変形するためには、両辺に次の行基本変形行列を左から掛ければよい。
+        \[
+            M =
+            \begin{bmatrix}
+                \bm{e}_1\cdots\bm{e}_c
+                \begin{matrix}
+                    -p_1/p_c \\
+                    \vdots \\
+                    -p_{c-1}/p_c \\
+                    1/p_c \\
+                    -p_{c+1}/p_c \\
+                    \vdots \\
+                    -p_n/p_c
+                \end{matrix}
+                \bm{e}_{c+1}\cdots\bm{e}_n
+            \end{bmatrix}
+        \]
+        そうすると$MA^{-1}A'=I_n$となるので$A'^{-1} = MA^{-1}$である。
+        要するに$A^{-1}\bm{a}'_c$より$p_1,\dotsc,p_n$を計算して$A^{-1}$の第$c$行を$p_c$で割った後、第$i\neq c$行から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
+        \newline\par
+        上と同様にして、1行だけ置き換えた行列の逆行列も、元の逆行列が既知であれば少ない手間で計算できる。
+        $
+            A =
+            \begin{bmatrix}
+                \bm{a}_1 \\
+                \vdots \\
+                \bm{a}_n
+            \end{bmatrix}
+            \in\complexNumbers^{n\times n}
+        $
+        を正則行列とし、第$c$行を入れ替えてできる行列
+        $
+            A' =
+            \begin{bmatrix}
+                \bm{a}_1 \\
+                \vdots \\
+                \bm{a}'_c \\
+                \vdots \\
+                \bm{a}_n
+            \end{bmatrix}
+            \in\complexNumbers^{n\times n}
+        $
+        も正則であるとする。
+        まず$A'A^{-1}$は第$c$列以外は単位行列と同じである、次のような行列になる。
+        \[
+            A'A^{-1} =
+            \begin{bmatrix}
+                \bm{a}_1 A^{-1} \\
+                \vdots \\
+                \bm{a}_{c-1} A^{-1} \\
+                \bm{a}'_c A^{-1} \\
+                \bm{a}_{c+1} A^{-1} \\
+                \vdots \\
+                \bm{a}_n A^{-1}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                \bm{e}_1 \\
+                \vdots \\
+                \bm{e}_{c-1} \\
+                \begin{matrix}
+                    p_1 & \cdots & p_c & \cdots & p_n
+                \end{matrix} \\
+                \bm{e}_{c+1} \\
+                \vdots \\
+                \bm{e}_n
+            \end{bmatrix}
+        \]
+        ここで$p_c\neq 0$である(もしそうでなければ第$c$行が他の行の一次結合で表せるので非正則になるが、これは左辺が正則行列同士の積で正則であることに矛盾する)。
+        右辺の第$c$行を$\bm{e}_c$に変形するためには、両辺に次の列基本変形行列を右から掛ければよい。
+        \[
+            M =
+            \begin{bmatrix}
+                \bm{e}_1 \\
+                \vdots \\
+                \bm{e}_{c-1} \\
+                \begin{matrix}
+                    -p_1/p_c & \cdots & -p_{c-1}/p_c & 1/p_c & -p_{c+1}/p_c & \cdots & p_n
+                \end{matrix} \\
+                \bm{e}_{c+1} \\
+                \vdots \\
+                \bm{e}_n
+            \end{bmatrix}
+        \]
+        そうすると
+        $A'A^{-1}M = I_n$となるので$A'^{-1} = A^{-1}M$である。
+        要するに$\bm{a}'_c A^{-1}$より$p_1,\dotsc,p_n$を計算して$A^{-1}$の第$c$列を$p_c$で割った後、第$i\neq c$列から第$c$行の$p_i$倍を引くだけで$A'^{-1}$が計算できる。
+    \section{列(or 行)を入れ替えた行列の逆行列}
+        \begin{shadebox}
+            正方行列$A$の幾つかの列(行)を入れ替えた行列$A'$の逆行列は、$A^{-1}$の行(列)に対して同じ並べ替えを適用して得られる。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            まず列の置換に関して定理の主張を示す。
+            $A$を$n$次正方行列とし、列の置換を表す列置換行列を$\Pi = \Pi_1\Pi_2\dotsm\Pi_c$とする。
+            ここに$\Pi_1, \Pi_2, \dotsc\Pi_c$は単位列置換行列である。すると、
+            $A'^{-1} = (A\Pi)^{-1} = \Pi^{-1}A^{-1} = \Pi_c^{-1}\dotsm\Pi_2^{-1}\Pi_1^{-1}A^{-1} = \Pi_c\dotsm\Pi_2\Pi_1A^{-1}$
+            となるから定理の主張が成り立つ。
+            \par
+            同様にして行の置換に関しても示せる。
+            行の置換を表す行置換行列を$\Pi = \Pi_c\dotsm\Pi_2\Pi_1$とする($\Pi_1, \Pi_2, \dotsc, \Pi_c$は単位行置換行列)と、
+            $A'^{-1} = (\Pi A)^{-1} = A^{-1}\Pi^{-1} = A^{-1}\Pi_1^{-1}\Pi_2^{-1}\dotsm\Pi_1^{-1} = A^{-1}\Pi_1\Pi_2\dotsm\Pi_c$
+        \end{proof}
+    \section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\bm{v}^*)^{-1} = (I-\bm{u}\bm{v}^*/(1+\bm{v}^*\bm{u}))$}{}}
+        \label{Sherman-Morrisonの公式の特別な場合}
+        \begin{shadebox}
+            $\bm{u},\bm{v} \in \complexNumbers^m,\; 1+\bm{v}^*\bm{u} \neq 0$とするとき次式が成り立つ。
+            \[ (I+\bm{u}\bm{v}^*)^{-1} = I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^* \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            Woodburyの公式の特別な場合として片付けるのが一般的だが、ここではJordan分解を用いて導出してみる。
+            $\bm{u}\bm{v}^* = 0$のときは定理の主張は明らかに成り立つ。
+            以下では$\bm{u}\bm{v}^* \neq 0$とする。
+            仮定$1+\bm{v}^*\bm{u} \neq 0$と\ref{I-ABの行列式}より$I+\bm{u}\bm{v}^*$には逆行列が存在する。
+            $\bm{u}\bm{v}^*$の階数は1であり($\Img{\bm{u}\bm{v}^*} = \Span{\bm{u}}$)、唯一の固有値は$\bm{v}^*\bm{u}$である(対応する固有ベクトルは$\bm{u}$)。
+            よって$\bm{u}\bm{v}^*$をJordan分解すると、適当な正則行列$J$を用いて次のように表せる。
+            \[
+                \bm{u}\bm{v}^* =
+                \begin{bmatrix}
+                    \bm{v}^*\bm{u} & \bm{0}^\top \\
+                    \bm{0} & O
+                \end{bmatrix}
+                =: J\Lambda J^{-1}
+            \]
+            よって
+            \begin{align*}
+                (I+\bm{u}\bm{v}^*)^{-1} &= J(I + \Lambda)^{-1}J^{-1} = J
+                \begin{bmatrix}
+                    1+\bm{v}^*\bm{u} & \bm{0}^\top \\
+                    \bm{0} & I
+                \end{bmatrix}
+                ^{-1}J^{-1} = J
+                \begin{bmatrix}
+                    \frac{1}{1+\bm{v}^*\bm{u}} & \bm{0}^\top \\
+                    \bm{0} & I
+                \end{bmatrix}
+                J^{-1} \\
+                &= J\frac{1}{1+\bm{v}^*\bm{u}}
+                \begin{bmatrix}
+                    1 & \bm{0}^\top \\
+                    \bm{0} & (1+\bm{v}^*\bm{u})I
+                \end{bmatrix}
+                J^{-1} = J\frac{1}{1+\bm{v}^*\bm{u}}((1+\bm{v}^*\bm{u})I - \Lambda)J^{-1} \\
+                &= I - \frac{1}{1+\bm{v}^*\bm{u}}\bm{u}\bm{v}^*
+            \end{align*}
+        \end{proof}
+    \section{Sherman-Morrisonの公式\texorpdfstring{: $(A+\bm{u}\bm{v}^*)^{-1} = (I-A^{-1}\bm{u}\bm{v}^*/(1+\bm{v}^*A^{-1}\bm{u}))A^{-1}$}{}}
+        \begin{shadebox}
+            $A \in \complexNumbers^{m\times m}, \bm{u},\bm{v} \in \complexNumbers^m$とする。
+            $A$は可逆であるとし、$1+\bm{v}^*A^{-1}\bm{u} \neq 0$とする。
+            このとき次式が成り立つ。
+            \[ (A+\bm{u}\bm{v}^*)^{-1} = \left( I - \frac{1}{1+\bm{v}^*A^{-1}\bm{u}}A^{-1}\bm{u}\bm{v}^* \right)A^{-1} \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $A+\bm{u}\bm{v}^* = A(I + A^{-1}\bm{u}\bm{v}^*)$だから$(A+\bm{u}\bm{v}^*)^{-1} = (I + A^{-1}\bm{u}\bm{v}^*)^{-1}A^{-1}$であり、2つ目の因子に\ref{Sherman-Morrisonの公式の特別な場合}を適用すればよい。
+        \end{proof}
+    \section{Woodburyの公式の特別な場合\texorpdfstring{: $(I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V$}{}}
+        \label{Woodburyの公式の特別な場合}
+        \begin{shadebox}
+            $I_n, I_k$をそれぞれ$n,k$次の単位行列とする。
+            $U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし、$I_k+VU$が可逆であるとする。
+            このとき次式が成り立つ。
+            \[ (I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V \]
+        \end{shadebox}
+        \ref{Sherman-Morrisonの公式の特別な場合}からの類推でこの等式が予想され、直接代入することで予想が正しいことが確認される。
+        \begin{proof}
+            \quad\par
+            直接代入して確認する。
+            \begin{align*}
+                &\phantom{=} (I_n+UV)(I_n-U(I_k+VU)^{-1}V) = I_n - U(I_k+VU)^{-1}V + UV - UVU(I_k+VU)^{-1}V \\
+                &= I_n - U(I_k+VU)^{-1}V + UV - U[(I_k + VU) - I_k](I_k+VU)^{-1}V \\
+                &= I_n - U(I_k+VU)^{-1}V + UV - UV - U(I_k+VU)^{-1}V = I_n
+            \end{align*}
+        \end{proof}
+    \section{Woodburyの公式\texorpdfstring{: $(A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1}$}{}}
+        \begin{shadebox}
+            $I_n$を$n$次の単位行列とする。
+            $A\in\complexNumbers^{n\times n},\; C\in\complexNumbers^{k\times k},\; U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし、$A,\;C,\;I_k + CVA^{-1}U$が可逆であるとする(結果として$C^{-1} + VA^{-1}U$も可逆になる)。
+            このとき次式が成り立つ。
+            \[ (A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1} \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $A+UCV = A(I_n + A^{-1}UCV)$であるから$(A+UCV)^{-1} = (I_n + A^{-1}UCV)^{-1}A^{-1}$である。
+            \ref{Woodburyの公式の特別な場合}で$U$を$A^{-1}U$で、$V$を$CV$で置き換えて上式に適用すると次式を得る。
+            \[ (A+UCV)^{-1} = \left[I_n - A^{-1}U(I_k + CVA^{-1}U)^{-1}CV\right]A^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1} \]
+        \end{proof}

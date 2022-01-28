@@ -1,0 +1,27 @@
+\chapter{トレース}
+    \section{\texorpdfstring{$\tr{AB}=\tr{BA}$}{tr(AB)=tr(BA)}}
+        \begin{shadebox}
+            $m\times n$行列$A$と$n\times m$行列$B$に対して$\tr{AB}=\tr{BA}$
+        \end{shadebox}
+        \begin{proof}
+            \[ \tr{BA} = \sum_{l=1}^n (BA)[l][l] = \sum_{l=1}^n\sum_{k=1}^m b_{lk}a_{kl} = \sum_{k=1}^m\sum_{l=1}^n a_{kl}b_{lk} = \sum_{k=1}^m (AB)[k][k] = \tr{AB} \]
+        \end{proof}
+    \section{Hermite行列\texorpdfstring{$A,B$}{A,B}に対して\texorpdfstring{$\tr{AB} \in \realNumbers$}{tr(AB)∈R}}
+        \begin{shadebox}
+            $A,B\in\complexNumbers^{n\times n}$がエルミート行列であるとき、$\tr{AB}$は実数である。
+        \end{shadebox}
+        \begin{proof}
+            \[ \overline{\tr{AB}} = \tr{\overline{AB}} = \tr{\overline{A^*B^*}} = \tr{A^\top B^\top} = \tr{(BA)^\top} = \tr{BA} = \tr{AB} \]
+        \end{proof}
+    \section{正定値行列\texorpdfstring{$A \in \realNumbers^{m\times m}$}{A∈R\string^(m×m)}に対して\texorpdfstring{$\tr{X^\top AX}\;(X \in \realNumbers^{m\times n})$}{tr(X\string^AX (X∈R\string^(m×n)))}は\texorpdfstring{$X$}{X}の狭義凸関数である}
+        \begin{proof}
+            \quad\par
+            $\lambda \in [0,1],\;X,Y \in \realNumbers^{m\times n}$とする。
+            \begin{align*}
+                &\phantom{=} (1-\lambda)f(X) + \lambda f(Y) - \left(f((1-\lambda)X + \lambda Y)\right) \\
+                &= (1-\lambda)\tr{X^\top AX} + \lambda\tr{Y^\top AY} - \tr{((1-\lambda)X + \lambda Y)^\top A((1-\lambda)X + \lambda Y)} \\
+                &= \lambda(1-\lambda)\tr{(X-Y)^\top A(X-Y)} \\
+                &= \lambda(1-\lambda)\sum_{i=1}^n (X[:,i]-Y[:,i])^\top A (X[:,i]-Y[:,i])
+            \end{align*}
+            $A$は正定なので上式の$\Sigma$の中身は正であるから、上式は$\lambda=0,1$でない限り正である。
+        \end{proof}

@@ -1,0 +1,30 @@
+\chapter{擬逆行列}
+    \section{諸定理: \texorpdfstring{$(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$}{(A\string^H A)\string^† A\string^H = A\string^†}など}
+        以下のものは特異値分解を用いて示せる。
+        \begin{enumerate}
+            \item $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$
+            \item $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$ \label{foo}
+        \end{enumerate}
+        以下のものも上と同様に示せる。
+        $AA^\mathrm{H},\;A^\mathrm{H}A$が半正定値Hermite行列であることと、半正定値Hermite行列とその擬逆行列が可換であること(半正定値Hermite行列は固有値が全て非負であることと、特異値分解が直交行列による対角化と一致することから解る)を用いる。
+        \begin{enumerate}
+            \item $(AA^\mathrm{H})^\dagger A = {A^\mathrm{H}}^\dagger (= {A^\dagger}^\mathrm{H})$
+            \item $(AA^\mathrm{H})(AA^\mathrm{H})^\dagger A = (AA^\mathrm{H})\dagger(AA^\mathrm{H})A = A$
+            \item $(A^\mathrm{H}A)(A^\mathrm{H}A)^\dagger A^\mathrm{H} = (A^\mathrm{H}A)^\dagger(A^\mathrm{H}A)A^\mathrm{H} = A^\mathrm{H}$
+            \item $A(A^\mathrm{H}A)(A^\mathrm{H}A)^\dagger = A(A^\mathrm{H}A)^\dagger(A^\mathrm{H}A) = A$
+        \end{enumerate}
+    \section{行フルランクな行列の擬逆行列を用いた線形方程式の解がノルム最小であること}
+        \begin{shadebox}
+            $A\in\complexNumbers^{m\times n}$は行フルランクであるとし、$\bm{b}\in\complexNumbers^m$とする。
+            線形方程式$A\bm{x} = \bm{b}$の解の一つである$\bm{A^\dagger}\bm{b}$は全ての解の中で$L^2$ノルムが最小である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $A^\dagger\bm{b}$が解であることと、$A^\dagger = A^*(AA^*)^{-1}$であることは既知とする(特異値分解を用いて確かめられる)。
+            $A\bm{x} = \bm{b}$の任意の解を$\bm{x}$とすると、$A(A^\dagger\bm{x} - \bm{x}) = \bm{0}$だから$A^\dagger\bm{x} - \bm{x} \in \Ker{A}$つまりある適当な$\bm{v}\in\Ker{A}$が存在して$\bm{x} = A^\dagger + \bm{v}$である。
+            \begin{align*}
+                \norm{\bm{x}}_2^2 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\inprod{\bm{v}}{A^\dagger\bm{b}}} = \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\bm{v}^*A^*(AA^*)^{-1}\bm{b}} \\
+                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{(A\bm{v})^*(AA^*)^{-1}\bm{b}} \quad (\because \bm{v} \in \Ker{A}) \\
+                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 \geq \norm{A^\dagger\bm{b}}_2^2
+            \end{align*}
+        \end{proof}
