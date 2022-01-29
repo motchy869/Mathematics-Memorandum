@@ -174,6 +174,20 @@
 					$A_1,A_2,A_3$が$\mathrm{C}^2$級であるから偏微分の順序が交換可能であるので、
 					\[ \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
 				\end{proof}
+			\subsection{\texorpdfstring{$\nabla\cdot(\nabla^2\bm{A}) = \Delta(\nabla\cdot\bm{A})$}{ベクトルLaplacianの発散}}
+				\label{ベクトルLaplacianの発散}
+				\begin{shadebox}
+					$\bm{r}\in\realNumbers$とする。
+					$A: \realNumbers^3\to\realNumbers^3$は$\mathrm{C}^3$級とする。
+					次式が成り立つ。
+					\[ \nabla\cdot(\nabla^2\bm{A}) = \Delta(\nabla\cdot\bm{A}) \]
+				\end{shadebox}
+				\begin{proof}
+					\begin{align*}
+						\nabla\cdot\nabla^2\bm{A} &= \nabla\cdot\left(\bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3\right) = \partDerivLong{\Delta A_1}{r_1}{} + \partDerivLong{\Delta A_2}{r_2}{} + \partDerivLong{\Delta A_3}{r_3}{} \\
+						&= \Delta\left(\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}\right) = \Delta(\nabla\cdot\bm{A})
+					\end{align*}
+				\end{proof}
 			\subsection{\texorpdfstring{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left(\nabla^2f\right)\bm{v}$}{∇(∇f v) = (∇\string^2 f)v}}
 				\begin{shadebox}
 					$\bm{v}$を定数ベクトルとするとき
