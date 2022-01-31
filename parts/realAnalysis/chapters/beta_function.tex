@@ -1,0 +1,53 @@
+\chapter{Beta関数}
+    \section{Beta関数とGamma関数の関係}
+        \begin{shadebox}
+            \[B(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\]
+        \end{shadebox}
+        \begin{proof}
+            \[\Gamma(p)\Gamma(q) = \left(\int_{0}^{\infty}{x^{p-1}e^{-x} dx}\right)\left(\int_{0}^{\infty}{y^{q-1}e^{-y} dy}\right) = \int_{x=0}^{\infty}{\int_{y=0}^{\infty}{x^{p-1}y^{q-1}e^{-x-y} dy} dx}\]
+            積分経路を変更する。線分$(0,z)\to(z,0)$に沿った積分を$z:0 \to \infty$まで足し合わせる。上式の$y$は$z-x$に変わり
+            \[\int_{z=0}^{\infty}{\left(\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1}e^{-x+x-z} dx}\right) dz} = \int_{z=0}^{\infty}{e^{-z}\left[\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1} dx}\right] dz}\]
+            (詳しく言えば、$x=u,y=v-u$なる変数変換を行ったのと等しい。ヤコビアンは1となる。)
+            \\$x=uz$なる変数変換を行って
+            \begin{align*}
+                &\quad\int_{z=0}^{\infty}{e^{-z}\left[\int_{u=0}^{1}{z^{p-1}u^{p-1}z^{q-1}(1-u)^{q-1} zdu}\right] dz} = \int_{z=0}^{\infty}{e^{-z}z^{p+q-1}\left[\int_{u=0}^{1}{u^{p-1}(1-u)^{q-1} du}\right] dz}\\
+                &= \int_{0}^{\infty}{e^{-z}z^{p+q-1}B(p,q) dz} = B(p,q)\int_{0}^{\infty}{e^{-z}z^{p+q-1} dz} = B(p,q)\Gamma(p+q)
+            \end{align*}
+        \end{proof}
+    \section{多変量Beta関数}
+        \begin{shadebox}
+            $ \bm{\alpha} = [\alpha_1,\dotsc,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
+            \begin{align*}
+                B(\bm{\alpha}) &\coloneqq \integrate{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{}{\Omega}, \quad \Omega \coloneqq \set*{[x_1,\dotsc,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
+                &= \integrate{x_1=0}{1}{\integrate{x_2=0}{1-x_1}{\dotsi\integrate{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{}{x_{n-1}}\dotsi}{}{x_2}}{}{x_1}
+            \end{align*}
+        \end{shadebox}
+    \section{多変量Beta関数とGamma関数の関係}
+        \begin{shadebox}
+            \[B(\bm{\alpha}) = \frac{\prod_{i=1}^n\Gamma(\alpha_i)}{\Gamma(\sum_{i=1}^n \alpha_i)}\]
+        \end{shadebox}
+        \begin{proof}
+            \[ \prod_{i=1}^n \Gamma(\alpha_i) = \prod_{i=1}^n \integrate{0}{\infty}{x_i^{\alpha_i-1}e^{-x_i}}{}{x_i} = \integrate{x_1=0}{\infty}{\dotsi\integrate{x_n=0}{\infty}{\prod_{i=1}^n x_i^{\alpha_i-1}\exp\left(-\sum_{i=1}^n x_i\right)}{}{x_n}\dotsi}{}{x_1} \]
+            ここで
+            \[
+                \bm{y} = P\bm{x},\quad
+                P \coloneqq
+                \begin{bmatrix}
+                    \bm{e}_1^\top \\
+                    \bm{e}_2^\top \\
+                    \vdots \\
+                    \bm{e}_{n-1}^\top \\
+                    \bm{1}_n^\top
+                \end{bmatrix}
+            \]
+            なる変数変換を行うと、$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,\;|P|=1$なので
+            \begin{align*}
+                \prod_{i=1}^n \Gamma(\alpha_i) &= \integrate{y_n=0}{\infty}{\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} e^{-y_n}|P|^{-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n} \\
+                &= \integrate{y_n=0}{\infty}{e^{-y_n}\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n}
+            \end{align*}
+            ここで$y_i = z_iy_n\;(i=1,\dotsc,n-1)$と変数変換すると
+            \begin{align*}
+                \prod_{i=1}^n \Gamma(\alpha_i) &= \integrate{y_n=0}{\infty}{y_n^{\left(\sum_{i=1}^n \alpha_i-1\right)}e^{-y_n}}{}{y_n}\integrate{z_1=0}{1}{\dotsi\integrate{z_{n-1}=0}{1-\sum_{i=1}^{n-2}z_i}{\prod_{i=1}^{n-1}z_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-1} z_i \right)^{\alpha_n-1}}{}{z_{n-1}}\dotsi}{}{z_1} \\
+                &= \Gamma\left(\sum_{i=1}^n \alpha_i\right)B(\bm{\alpha})
+            \end{align*}
+        \end{proof}

@@ -1,0 +1,21 @@
+\chapter{積分}
+    \section{変数変換 : \texorpdfstring{$\integrate{x(t_0)}{x(t)}{f(x)}{}{x} = \integrate{t_0}{t}{f(x)x'(t)}{}{t}$}{∫\_x(t0)\string^x(t) f(x)dx = ∫\_t0\string^t f(x)x'(t)dt}}
+        \begin{shadebox}
+            $t$の関数$x(t)$とその関数$f(x)$について
+            \[\integrate{x(t_0)}{x(t)}{f(x)}{}{x} = \integrate{t_0}{t}{f(x)x'(t)}{}{t}\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $t=0$について
+            \[\integrate{x(t_0)}{x(t)}{f(x)}{}{x} = \integrate{x(t_0)}{x(t_0)}{f(x)}{}{x} = 0\]
+            \[\integrate{t_0}{t}{f(x)x'(t)}{}{t} = \integrate{t_0}{t_0}{f(x)x'(t)}{}{t} = 0\]
+            より両者は一致する。
+            次に
+            \[\derivLong{\integrate{x(t_0)}{x(t)}{f(x)}{}{x}}{t}{} = \left(\derivLong{\integrate{x(t_0)}{x(t)}{f(x)}{}{x}}{x}{}\right)\deriv{x}{t}{} = f(x)x'(t) = \derivLong{\integrate{t_0}{t}{f(x)x'(t)}{}{t}}{t}{}\]
+            より両者の微分係数は一致する。
+            以上より両者は等しい。
+        \end{proof}
+    \section{FKG不等式 : 可積分な単調増加関数\texorpdfstring{$f,g$}{f,g}に対して\texorpdfstring{$\left(\integrate{0}{1}{f(x)}{}{x}\right)\left(\integrate{0}{1}{g(x)}{}{x}\right) \leq \integrate{0}{1}{f(x)g(x)}{}{x}$}{(fの定積分)×(gの定積分)≦f×gの定積分}}
+        \begin{proof}
+            積分区間$[0,1]$の$n$等分割のリーマン和に対してFKG不等式(離散)(\ref{subsec:FKG不等式(離散)})を適用すればよい。
+        \end{proof}
