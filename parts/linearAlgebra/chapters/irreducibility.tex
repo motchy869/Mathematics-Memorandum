@@ -1,0 +1,37 @@
+\chapter{既約性}
+    \section{非負行列が既約であるための必要十分条件}
+        \begin{shadebox}
+            $A\in\realNumbers^{n\times n},\;A\geq O$が既約であるための必要十分条件は$\left(I+A\right)^{n-1}>O$
+        \end{shadebox}
+        \begin{proof}
+            \quad\\
+            (必要)
+            \par
+            \cite{システム線形代数} 170頁 定理6.10を参照。\\
+            (十分)
+            \par
+            既約でないと仮定して矛盾を導く。
+            $A$が既約であることと$I+A$が既約であることは同値である。
+            $A$が既約でないと仮定したから$I+A$も既約でないので、適当な置換行列$\Pi$が存在して$\Pi^\top (I+A)\Pi$が上三角行列
+            \[
+                \begin{bmatrix}
+                    B_{11} & B_{12}\\
+                    O & B_{22}
+                \end{bmatrix}
+            \]
+            になる($B_{11},B_{22}$は正方行列)。
+            正行列の左から$\Pi^\top$を掛けても、右から$\Pi$を掛けてもその結果は正行列である。
+            また、$\Pi$は直交行列であったから$\Pi\Pi^\top=I$。よって前提の式
+            \[\left(I+A\right)^{n-1}>O\]
+            より
+            \begin{align*}
+                \Pi^\top(I+A)^{n-1}\Pi &> O\\
+                \Pi^\top(I+A)\Pi\Pi^\top(I+A)\Pi\dotsm\Pi^\top(I+A)\Pi &> O\\
+                \left(\Pi^\top(I+A)\Pi\right)^{n-1}&> O\\
+                \begin{bmatrix}
+                    B_{11} & B_{12}\\
+                    O & B_{22}
+                \end{bmatrix}^{n-1} &> O
+            \end{align*}
+            然るに左辺の左下ブロックは$O$だから矛盾している。
+        \end{proof}

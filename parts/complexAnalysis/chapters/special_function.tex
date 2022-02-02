@@ -1,0 +1,25 @@
+\chapter{特殊関数}
+    \section{Gamma関数}
+        \subsection{\texorpdfstring{$\lim_{n\to\infty} \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}{Gamma関数の無限乗積表示}}
+            Wikipediaで紹介されている無限乗積表示の導出過程でこの主張が使われているが、その根拠が薄かったので自力で証明してみた。
+            \begin{proof}
+                \quad\par
+                $\varepsilon>0$を任意にとる。
+                $G_n(z) \coloneqq \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t}$とする。
+                \par
+                Gamma関数$\integrate{0}{\infty}{t^{z-1}e^{-t}}{}{t}$は収束するから、十分大きい$T_1(\varepsilon)>0$を取れば
+                \[ \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{}{t} < \varepsilon/3 \]
+                \par
+                \ref{(1-t/n)^nは単調増加}より$(1-t/n)^n$は$n$について単調増加であり、かつ$\lim_{n\to\infty}(1-t/n)^n = e^{-t}$なので、$n \geq T_1(\varepsilon)$ならば
+                \begin{align*}
+                    &\left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{n}{\left|t^{z-1}(1-t/n)^n\right|}{}{t} \\
+                    &= \integrate{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}e^{-t}\right|}{}{t} < \varepsilon/3
+                \end{align*}
+                また、十分大きい自然数$N_1(\varepsilon,T_1(\varepsilon))$をとると、$n \geq N_1(\varepsilon,T_1(\varepsilon))$ならば次式が成り立つ。
+                \[ \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t}\right| < \varepsilon/3 \]
+                以上より、$n \geq \max\{T_1(\varepsilon), N_1(\varepsilon,T_1(\varepsilon))\}$ならば次式が成り立つ。
+                \begin{align*}
+                    \left|\Gamma(z) - G_n(z)\right| &= \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t} + \integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t} - \integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \\
+                    &\leq \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}e^{-t}}{}{t}\right| + \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{e^{-t} - (1-t/n)^n\}}{}{t}\right| + \left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| < \varepsilon
+                \end{align*}
+            \end{proof}

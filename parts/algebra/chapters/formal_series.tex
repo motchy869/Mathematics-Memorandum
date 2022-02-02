@@ -1,0 +1,116 @@
+\chapter{形式的冪級数}
+    \section{規約}
+        \begin{itemize}
+            \item 体$F$上の、$x$を不定元とする形式的冪級数全体の集合を$F[[x]]$と表記する。
+            \item 体$F$上の、$x$を不定元とする形式的Laurent級数全体の集合を$F((x))$と表記する。
+        \end{itemize}
+    \section{原始多項式}
+        \subsection{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a0 x0 + a1 x1 + ...}が原始多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\{n-1\} x0 + a\{n-2\} x1 + ...}も原始多項式である}
+            \begin{shadebox}
+                $p$を素数とする。
+                $n$次多項式$f_1(x) \coloneqq \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) \coloneqq \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                \ref{既約多項式の係数の順番反転}より$f_2(x)$は$\GaloisField{p}$上で既約である。
+                あとは$f_2(x) \mid x^l - 1$となる最小の自然数$l$が$p^m-1$であることを示せば良い。
+                \par
+                まず$f_2(x) \mid x^{p^n-1}-1$を示す。
+                $f_1(x)$が原始多項式だから適当な$p^n-1-n$次多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                \[ x^{p^n-1} - 1 = g_1(x)f_1(x) \]
+                上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
+                \[ \frac{1}{x^{p^n-1}} - 1 = g_1(x^{-1})f_1(x^{-1}) \]
+                両辺に$x^{p^n-1}$を掛けると
+                \[ 1 - x^{p^n-1} = x^{p^n-1-n}g_1(x^{-1}) x^n f_1(x^{-1}) =: g_2(x)f_2(x) \]
+                \[ \therefore x^{p^n-1} -1 \equiv 0 \mod f_2(x) \]
+                ここに$g_2(x)$は$g_1(x)$の係数の順番を逆にしたものである。
+                \par
+                次に$l=1,2,\dotsc,p^n-2$について$f_2(x) \nmid x^l-1$を背理法で示す。
+                仮にある$l$に対して$l-n$次多項式$h_1(x) \in \GaloisField{p}[x]$が存在して
+                \[ x^l - 1 = h_1(x)f_2(x) \]
+                が成り立つとする。
+                上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
+                \[ \frac{1}{x^l} - 1 = h_1(x^{-1})f_2(x^{-1}) \]
+                両辺に$x^l$を掛けると
+                \[ 1 - x^l = x^{l-n}h_1(x^{-1}) x^n f_2(x^{-1}) =: h_2(x)f_1(x) \]
+                \[ \therefore x^l - 1 \equiv 0 \mod f_1(x) \]
+                ここに$h_2(x)$は$h_1(x)$の係数の順番を逆にしたものである。
+                これは$f_1(x)$が原始多項式であることに矛盾する。
+                \par
+                以上より$f_2(x) \mid x^l - 1$となる最小の自然数$l$は$p^m-1$である。
+            \end{proof}
+        \subsection{原始多項式の逆数の係数列は周期的}
+            \label{原始多項式の逆数の係数列は周期的}
+            \begin{shadebox}
+                $p$を素数とする。
+                $n$次の原始多項式$f(x) \in \GaloisField{p}[[x]]$の逆数$f(x)^{-1}$の係数列は周期的であり、その周期は$p^n-1$である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                まず係数列が周期的であることを示す。
+                $f(x)$が原始多項式だから、適当な$p^n-1-n$次多項式$g(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                \begin{align*}
+                    x^{p^n-1} - 1 &= g(x)f(x) \\
+                    \therefore f(x)^{-1} &= -g(x)\left(1 - x^{p^n-1}\right)^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
+                \end{align*}
+                $\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり、その周期は高々$p^n-1$である。
+                「高々」と言ったのは、$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
+                この周期が真に$p^n-1$であることを背理法で示す。
+                \par
+                仮に周期が$p^n-2$次以下であるとする、
+                つまりある$l\in\{1,2,\dotsc,p^n-2\}$と適当な$l-1$次以下の多項式$h(x) \in \GaloisField{p}[[x]]$が存在して
+                \[ f(x)^{-1} = -h(x) \sum_{i=0}^\infty x^{il} \]
+                が成り立つと仮定すると次式を得る。
+                \begin{align*}
+                    f(x)^{-1} &= -h(x) \sum_{i=0}^\infty x^{il} = h(x)(x^l - 1)^{-1} \\
+                    \therefore x^l - 1 &= h(x)f(x) \equiv 0 \mod f(x)
+                \end{align*}
+                これは$f(x)$が原始多項式であることに矛盾する。
+            \end{proof}
+        \subsection{原始多項式\texorpdfstring{$f_1(x)$}{f1(x)}の係数の順番を逆転した\texorpdfstring{$f_2(x)$}{f2(x)}の逆数の係数列は\texorpdfstring{$f_1(x)^{-1}$}{1/f1(x)}の係数列の逆順逆符号}
+            \begin{shadebox}
+                $p$を素数とする。
+                $n$次の原始多項式$f_1(x) \in \GaloisField{p}[[x]]$の係数の順番を逆転させ$f_2(x)$とする。
+                $f_1(x)^{-1} =: a_0 + a_1x + \dotsb$とする。
+                このとき次式が成り立つ。
+                \[ f_2(x)^{-1} = -\sum_{j=0}^{p^n-1-n} a_{p^n-1-n-j}x^j \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                視覚的に言えば、$f_2(x)^{-1}$の係数列は周期的であり、$f_1(x)^{-1}$の係数列に現れるパターンを逆転させ、符号を逆にしたものになる。
+            \end{shadebox}
+            \subsubsection{例}
+                \newcommand{\redtext}[1]{\textcolor{red}{#1}}
+                $f_1(x) = 1+x^2+x^3 \in \GaloisField{2}[[x]]$とすると$f_2(x) = 1+x+x^3$である。
+                \begin{align*}
+                    f_1(x)^{-1} &= \redtext{1} + 0x + \redtext{1}x^2 + \redtext{1}x^3 + \redtext{1}x^4 + 0x^5 + 0x^6 \\
+                    &\phantom{=}+ \redtext{1}x^7 + 0x^8 + \redtext{1}x^9 + \redtext{1}x^{10} + \redtext{1}x^{11} + 0x^{12} + 0x^{13} \\
+                    &\phantom{=}+ \redtext{1}x^{14} + 0x^{15} + \redtext{1}x^{16} + \dotsb \\
+                    &= (\redtext{1} + 0x + \redtext{1}x^2 + \redtext{1}x^3 + \redtext{1}x^4 + 0x^5 + 0x^6) \sum_{i=0}^\infty x^{7i}
+                \end{align*}
+                $f_2(x)^{-1}$は次のようになる。
+                \begin{align*}
+                    f_2(x)^{-1} &= \redtext{1} + \redtext{1}x + \redtext{1}x^2 + 0x^3 + \redtext{1}x^4 + 0x^5 + 0x^6 \\
+                    &\phantom{=}+ \redtext{1}x^7 + \redtext{1}x^8 + \redtext{1}x^9 + 0x^{10} + \redtext{1}x^{11} + 0x^{12} + 0x^{13} \\
+                    &\phantom{=}+ \redtext{1}x^{14} + \redtext{1}x^{15} + \redtext{1}x^{16} + \dotsb \\
+                    &= (\redtext{1} + \redtext{1}x + \redtext{1}x^2 + 0x^3 + \redtext{1}x^4 + 0x^5 + 0x^6) \sum_{i=0}^\infty x^{7i}
+                \end{align*}
+                $f_2(x)^{-1}$の係数列のパターンは$f_1(x)^{-1}$のそれを逆転させたものになっている。
+                係数体が$\GaloisField{2}$なので符号反転は起こらない。
+            \subsubsection{証明}
+                \begin{proof}
+                    \quad\par
+                    \ref{原始多項式の逆数の係数列は周期的}より$f_1(x)^{-1}$の係数列は周期$p^n-1$であるから、適当な$p^n-1$次未満の多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                    \[ f_1(x)^{-1} = g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                    この式をLaurent多項式に拡張して変形してゆく。
+                    \begin{align*}
+                        f_1(x)^{-1} &= g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} = -g_1(x) \left(x^{p^n-1} - 1\right)^{-1} \\
+                        \therefore x^{p^n-1} - 1 &= -g_1(x)f_1(x) = -g_1(x) x^n f_2(x^{-1})
+                    \end{align*}
+                    ここに$f_2(x)$は$f_1(x)$の係数の順番を逆転させたものである。
+                    初めに$\deg g_1(x) < p^n-1$としていたが、上式より$\deg g_1(x) = p^n-1-n$が確定する。
+                    上式の$x$を$x^{-1}$で置き換えると次式を得る。
+                    \[ x^{-(p^n-1)} - 1 = -g_1(x^{-1}) x^{-n} f_2(x) \]
+                    両辺に$x^{p^n-1}$を掛けると
+                    \[ 1 - x^{p^n-1} = -x^{p^n-1-n}g_1(x^{-1}) f_2(x) =: -g_2(x)f_2(x) \]
+                    ここに$g_2(x)$は$g_1(x)$の係数の順番を逆転させたものである。
+                    これより次式を得る。
+                    \[ f_2(x)^{-1} = -g_2(x) \left(1 - x^{p^n-1}\right)^{-1} = -g_2(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                \end{proof}

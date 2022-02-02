@@ -1,0 +1,53 @@
+\chapter{微分}
+    \section{\texorpdfstring{$f(a)<0<f(b) \Rightarrow \;\exists x \in (a,b) \st f(x)=0, f'(x)\geq 0$}{f(a)<0<f(b) ⇔ ∃x∈(a,b) s.t. f(x)=0, f'(x)≦0}}
+        \begin{shadebox}
+            区間$[a,b]\;(a<b)$で定義された連続関数$f$が開区間$(a,b)$で微分可能であるとする。
+            $f(a)<0<f(b)$であるとき、ある$x\in(a,b)$が存在して$f(x)=0, f'(x)\geq 0$を満たす。
+        \end{shadebox}
+    \begin{proof}
+        \quad\par
+        $f(x)=0$となる$x\in(a,b)$の存在は中間値の定理が保証している。
+        そのような点のうち最小のものを$x_0$とするとこれが定理の主張を満たすことを背理法で示す。
+        もしも$f'(x_0)<0$であれば、微分係数の定義より、十分小さい$\delta>0$が存在して$a<x_0-\delta, f(x_0-\delta)>0$なので
+        中間値の定理より、ある$y\in(a,x_0-\delta)$が存在して$f(y=0)$となる。
+        これは$x_0$が$f(x=0)$を満たす最小の点であったことに矛盾する。
+    \end{proof}
+    \section{\texorpdfstring{$\lim_{x\to\infty}{f(x)}=0$}{lim\_\{x→∞\}f(x)=0}であっても\texorpdfstring{$\displaystyle \lim_{x\to0}{f'(x)} = 0$}{lim\_\{x→∞\}f'(x)=0}とは限らない}
+        \begin{shadebox}
+            $\textup{C}^1$級関数$f(x)$について$\displaystyle \lim_{x\to\infty}{f(x)}=0$であっても$\displaystyle \lim_{x\to0}{f'(x)} = 0$とは限らない。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            例えば$\displaystyle (x) = \frac{\sin{x^2}}{x}$は$\displaystyle \lim_{x\to\infty}{f(x)}=0$であるが$\displaystyle f'(x) = \frac{2x^2\cos{x^2} - x\sin^2{x^2}}{x^2}$であって$x\to\infty$で0にならない。
+        \end{proof}
+    \section{soft-step 関数}
+        工学的な道具として使うための恣意的な関数を考えてみる。
+        ここでは滑らかに0から1に変化するステップ状の関数を考えてみる。
+        \subsection{\texorpdfstring{$C^{n-1}$}{C\string^(n-1)}級の soft-step 関数}
+            $\sigma>0, n\in\naturalNumbers$とする。次の関数は$\realNumbers$上で$C^{n-1}$級である。
+            \[
+                f(x) =
+                \begin{cases}
+                    0 & (x < -\sigma) \\
+                    \frac{1}{2\sigma^n}(x+\sigma)^n & (-\sigma\leq x < 0) \\
+                    \frac{(-1)^{n+1}}{2\sigma^n}(x-\sigma)^n & (0 \leq x < \sigma) \\
+                    1 & (x \geq \sigma)
+                \end{cases}
+            \]
+            \begin{figure}[H]
+                \centering
+                \includegraphics[keepaspectratio, scale=0.7]
+                {\currfiledir/imgs/softStep.eps}
+                \caption{グラフ}
+            \end{figure}
+            $k(<n-1)$階微分は次のようになる
+            \[
+                f(x) =
+                \begin{cases}
+                    0 & (x < -\sigma) \\
+                    \frac{1}{2\sigma^n}\perm{n}{k}(x+\sigma)^{n-k} & (-\sigma < x < 0) \\
+                    \frac{(-1)^{n+1}}{2\sigma^n}\perm{n}{k}(x-\sigma)^{n-k} & (0 < x < \sigma) \\
+                    1 & (x < \sigma)
+                \end{cases}
+            \]
+            $k\in\range{1}{n-1}$に対して隣接する領域同士の境界点で左側,右側微分係数が一致するので$C^{n-1}$級である。

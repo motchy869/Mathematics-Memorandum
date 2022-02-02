@@ -1,0 +1,25 @@
+\chapter{変数変換}
+    \section{三角関数}
+        \subsection{\texorpdfstring{$x,y\in\realNumbers,x^2+y^2=1\iff x=\cos{\theta},y=\sin{\theta}$}{2乗和が1である2実数x,yは適当なΘ∈Rを用いてx=cos(Θ), y=sin(Θ)と表せる}}
+            \begin{shadebox}
+                \[x^2+y^2=1\iff x=\cos{\theta},y=\sin{\theta}\]
+                $x=\cos{\theta},y=-\sin{\theta}$とか$x=-\cos{\theta},y=\sin{\theta}$とか$x=-\cos{\theta},y=-\sin{\theta}$とか\\
+                $x=\sin{\theta},y=\cos{\theta}$とか$x=\sin{\theta},y=-\cos{\theta}$とか$x=-\sin{\theta},y=-\cos{\theta}$とかは全部同値である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $\theta$に上手く定数を足せばどれも表現できる。
+            \end{proof}
+    \section{極座標表示}
+        \subsection{極方程式から曲線を導くときの注意 : \texorpdfstring{$r,\theta$}{r,Θ}空間の2つの異なる集合から\texorpdfstring{$x,y$}{x,y}空間へ写像した2つの集合の排他的論理和が\texorpdfstring{$\emptyset$}{∅}なら\texorpdfstring{$x,y$}{x,y}空間において両者の違いは無い}
+            言われてみれば当たり前だと思えることだが、計算問題を解いている最中は意外と戸惑うことが多い。
+            レムニスケート$(x^2+y^2)^2 = x^2-y^2$を例に考えてみる。
+            極座標変換$x=r\cos\theta,\;y=r\sin\theta$を施せば$(x^2+y^2)^2 = x^2-y^2 \iff r\geq 0\land r^4 = r^2\cos 2\theta \iff r\geq 0\land r^2(r^2-\cos 2\theta) = 0$となる。
+            多くの参考書ではこの後いきなり$r = \sqrt{\cos 2\theta}$としているが、その裏には次に述べる論理が隠れている。
+            \par
+            $r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす$r,\theta$空間の集合を考える。
+            極座標変換だから$\theta$は適当な$2\pi$区間の部分集合を選べば良い。
+            よって$r\geq 0\land r^2(r^2-\cos 2\theta) = 0$を満たす集合は$S = \set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]} \cup \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$である。
+            しかし$\set*{(r,\theta)}{r=0, \theta \in [-\pi,\pi]}$の$xy$空間での像は原点であり、$\set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$の像にも原点が含まれる。
+            そこで$S_2 \coloneqq \set*{(r,\theta)}{\theta \in [-\pi,\pi], r=\sqrt{\cos 2\theta}}$とすると、$S,S_2$それぞれを$x,y$空間に写像してできる2つの曲線の排他的論理和は$\emptyset$である。
+            だから曲線を表現するという目的では$r = \sqrt{\cos 2\theta}$で十分なのである。

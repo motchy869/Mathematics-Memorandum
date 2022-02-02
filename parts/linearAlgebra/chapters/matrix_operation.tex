@@ -1,0 +1,136 @@
+\chapter{行列の演算}
+    \section{結合則}
+        \begin{shadebox}
+            $A,B,C$が$l \times m,\; m \times n,\; n \times o$行列であるとき$(AB)C = A(BC)$
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            まず下準備。
+            \[A \coloneqq \left[a_{ij}\right]_{l\times m},\quad B \coloneqq \left[b_{ij}\right]_{m\times n},\quad C \coloneqq \left[c_{ij}\right]_{n\times o}\]
+            \[M_{AB} \coloneqq \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} \coloneqq [m_{{BC}_{ij}}]_{m\times o} = BC\]
+            \[N_1 \coloneqq \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneqq \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
+            とする。
+            $N_1 = N_2$すなわち$n_{1_{ij}} = n_{2_{ij}}$を示せば良い。\\
+            まず
+            \[m_{{AB}_{ij}} = \sum_{k=1}^{m}{a_{ik}b_{kj}},\quad m_{{BC}_{ij}} = \sum_{k=1}^{n}{b_{ik}c_{kj}}\]
+            である。これを用いて
+            \[n_{1_{ij}} = \sum_{k=1}^{\textcolor{red}{n}}{m_{{AB}_{ik}}c_{kj}} = \sum_{k=1}^{n}{\left(\sum_{l=1}^{m}{a_{il}b_{lk}}\right)c_{kj}} = \sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}}\]
+            \[n_{2_{ij}} = \sum_{k=1}^{\textcolor{red}{m}}{a_{ik}m_{{BC}_{kj}}} = \sum_{k=1}^{m}{a_{ik}\left(\sum_{l=1}^{n}{b_{kl}c_{lj}}\right)} = \sum_{\textcolor{red}{l}=1}^{n}{\sum_{\textcolor{red}{k}=1}^{m}{\left(a_{ik}b_{kl}c_{lj}\right)}}\]
+            上式の$k$と$l$を交換(純粋に紙の上で文字として書き換える)しても何ら問題はない。そうすると上式は
+            \[\sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}} = n_{1_{ij}}\]
+            となり結局$n_{1_{ij}}$と一致する。
+        \end{proof}
+    \section{上(下)三角行列のべき乗}
+        \label{上(下)三角行列のべき乗}
+        \begin{shadebox}
+            上三角行列$A$の$n$乗もまた上三角行列であり、特に第$i$対角成分は${a_{ii}}^n$である。
+            下三角行列についても上と同様の定理が成り立つ。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            上三角行列について示す。下三角行列については同様に示せる。\\
+            $n=1$のときは明らか。まず$n=2$のときを示す。
+            \[A^2[i][j] = \sum_{k=1}^{n}{a_{ik}a_{kj}} = \sum_{i\leq k,k\leq j}{a_{ik}a_{kj}}\quad(\because\;a_{ij}=0\mathrm{ when }i>j)\]
+            であるから次の2つの式が成り立つ。
+            \[A^2[i][i] = \sum_{i\leq k,k\leq i}{a_{ik}a_{ki}} = {a_{ii}}^2,\quad A^2[i][j](i>j) = 0\]
+            次に、$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
+            \begin{align*}
+                A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\left(b_{kj} = A^n[k][j]\right) \\
+                &= \sum_{i\leq k, k\leq j}^{n}{a_{ik}b_{kj}}\quad(\because\;\mathrm{帰納法の仮定より }b_{ij}=0\mathrm{ when }i>j)
+            \end{align*}
+            であるから帰納法の仮定より次の2つの式が成り立つ。
+            \begin{align*}
+                A^{n+1}[i][i] &= \sum_{i\leq k, k\leq i}^{n}{a_{ik}b_{ki}} = a_{ii}b_{ii} = a_{ii}{a_{ii}}^n = {a_{ii}}^{n+1}\\
+                A^{n+1}[i][i]&(i>j) = 0
+            \end{align*}
+        \end{proof}
+    \section{列ベクトルと行ベクトルの積の和}
+        \begin{shadebox}
+            列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
+            \[
+            \sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\dotsc,\bm{a}_{i_l}]
+            \begin{bmatrix}
+                \bm{b}_{i_i}\\
+                \bm{b}_{i_2}\\
+                \cdots\\
+                \bm{b}_{i_l}
+            \end{bmatrix}
+            \]
+        \end{shadebox}
+        \begin{proof}
+            行列のブロック演算を考えればわかる。
+        \end{proof}
+    \section{巡回行列の可換則}
+        \begin{proof}
+            \quad\par
+            $A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
+            まず
+            \[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
+            であり、添字に剰余を用いていることと総和の範囲に注意して、
+            \begin{align*}
+                (BA)[i][j] &= \sum_{k=0}^{n-1} b_{ik}a_{kj} = \sum_{k=0}^{n-1} d_{(i-k)\%n}c_{(k-j)\%n} = \sum_{k=0}^{n-1} d_{(i-(k+i+j))\%n}c_{((k+i+j)-j)\%n} \\
+                &= \sum_{k=0}^{n-1} d_{(-k-j)\%n}c_{(k+i)\%n} = \sum_{k=0}^{n-1} d_{(-(-k)-j)\%n}c_{((-k)+i)\%n} \\
+                &= \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} = (AB)[i][j]
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$\realNumbers^{\textcolor{red}{2}}$}{R\string^2}の対称行列同士の積は対称}
+        \begin{proof}
+            $
+                A = \begin{bmatrix}
+                    a & b \\
+                    b & a
+                \end{bmatrix},\quad
+                B = \begin{bmatrix}
+                    c & d \\
+                    d & c
+                \end{bmatrix}
+            $
+            とすると
+            $
+                AB = \begin{bmatrix}
+                    ac + bd & ad + bc \\
+                    ad + bc & ac + bd
+                \end{bmatrix}
+            $
+        \end{proof}
+        \begin{attention}
+            $\realNumbers^3$以上では成り立たない。
+        \end{attention}
+    \section{Kronecker積}
+        \subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
+            \begin{shadebox}
+                行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $A$の行数を$m_A$, 列数を$n_A$, $C$の列数を$n_C$とする。
+                \begin{align*}
+                    (A\otimes B)(C\otimes D) &= \begin{bmatrix}
+                        a_{1,1}B & a_{1,2}B & \cdots & a_{1,n_A}B \\
+                        a_{2,1}B & \ddots & & \vdots \\
+                        \vdots \\
+                        a_{m_A, 1}B & \cdots & & a_{m_A, n_A}B
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        c_{1,1}D & c_{1,2}D & \cdots & c_{1,n_C}D \\
+                        c_{2,1}D & \ddots & & \vdots \\
+                        \vdots \\
+                        c_{n_A, 1}D & \cdots & & c_{n_A, n_C}D
+                    \end{bmatrix} \\
+                    &= \begin{bmatrix}
+                        (AC)[1,1]BD & (AC)[1,2]BD & \cdots & (AC)[1,n_C]BD \\
+                        (AC)[2,1]BD & \ddots & & \vdots \\
+                        \vdots \\
+                        (AC)[m_A,1]BD & \cdots & & (AC)[m_A,n_C]BD
+                    \end{bmatrix} = (AC)\otimes(BD)
+                \end{align*}
+            \end{proof}
+        \subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
+            \begin{proof}
+                \quad\par
+                $A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。
+                混合積の性質から
+                \[
+                    (A\otimes B)^*(A\otimes B) = (A^*\otimes B^*)(A\otimes B) = (A^*A)\otimes(B^*B) = I_m\otimes I_n = I_{m+n}
+                \]
+            \end{proof}

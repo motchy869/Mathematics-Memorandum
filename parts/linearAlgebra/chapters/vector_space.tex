@@ -1,0 +1,140 @@
+\chapter{ベクトル空間}
+    \section{基底}
+        \subsection{基底変換}
+            \begin{shadebox}
+                $V$の基底$\{\bm{v}_1,\dotsc,\bm{v}_n\}$に以下の操作を行っても依然として基底である。
+                \begin{itemize}
+                    \item $\bm{v}_i$を非零倍する
+                    \item $\bm{v}_j$に$\bm{v}_i$の定数倍を加える
+                \end{itemize}
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                操作後のベクトルの線形和を0にするためには全ての係数を0にせねばならないことに気付く。
+            \end{proof}
+        \subsection{諸定理}
+            \subsubsection{三角関数ベクトルによる直交展開}
+                \begin{shadebox}
+                    $\complexNumbers^n$を考える。$n$本のベクトルの集合
+                    \[\left\{\bm{v}_1,\dotsc,\bm{v}_n \left| \bm{v}_k[l] = \frac{1}{\sqrt{n}}\exp\left(i\frac{k}{n}2\pi l\right) \right. \right\}\]
+                    は$\complexNumbers^n$の正規直交基底を成す。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    まず各ベクトルの2ノルムが1であることが次のようにして簡単に確かめられる。
+                    \[\norm{\bm{v}_k}_2 = \frac{1}{\sqrt{n}}\sqrt{\sum_{l=1}^n{\abs{\exp\left(i\frac{k}{n}2\pi l\right)}^2}} = \frac{1}{\sqrt{n}}\sqrt{n} = 1\]
+                    次に、相異なる$k,l$に対して$\bm{v}_k$と$\bm{v}_l$が直交することは次のようにして確かめられる。
+                    \[\inprod{\bm{v}_k}{\bm{v}_l} = {\bm{v}_k}^*\bm{v}_l = \frac{1}{n}\sum_{m=1}^n{\exp\left(-i\frac{k}{n}2\pi m\right)\exp\left(i\frac{l}{n}2\pi m\right)} = \frac{1}{n}\sum_{m=1}^n{\exp\left(i\frac{l-k}{n}2\pi m\right)} = 0\quad(\because\;\ref{fml:花びら定理})\]
+                \end{proof}
+    \section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
+        \subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}
+            \begin{shadebox}
+                $n$次元ベクトル空間$V$の基底$\bm{b}_1,\dotsc,\bm{b}_n$の一次結合から成る$p\leq n$個のベクトル$\bm{v}_i=c_{1i}\bm{b}_1+\dotsb+c_{ni}\bm{b}_n\;(i=1,\dotsc,p)$が一次独立であることと、その係数からなる$p$個のベクトル$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることは同値。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                まず
+                \begin{align*}
+                    \quad& d_1\bm{v}_1 + \dotsb + d_p\bm{v}_p = \bm{0} \tag{1} \\
+                    \iff& d_1(c_{11}\bm{b}_1 + \dotsb + c_{n1}\bm{b}_n) + \dotsb + d_p(c_{1p}\bm{b}_1 + \dotsb + c_{np}\bm{b}_n) = \bm{0} \\
+                    \iff& (d_1 c_{11} + d_p c_{1p})\bm{b}_1 + \dotsb + (d_1 c_{n1} + d_p c_{np})\bm{b}_n = \bm{0} \\
+                    \iff& d_1 c_{11} + \dotsb + d_p c_{1p} = 0,\dotsc,d_1 c_{n1} + \dotsb + d_p c_{np} = 0\;(\bm{b}_1,\dotsc,\bm{b}_n\mathrm{は基底}) \\
+                    \iff&
+                    \begin{bmatrix}
+                        c_{11} & \cdots & c_{1p} \\
+                        \vdots & \ddots & \vdots \\
+                        c_{n1} & \cdots & c_{np}
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        d_1 \\
+                        \vdots \\
+                        d_n
+                    \end{bmatrix}
+                    =\bm{0}_n \tag{2}
+                \end{align*}
+                が成り立つから、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立なら(1)より$d_1=\dotsb=d_n=0$であるが、これが$(2)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立であることになる。
+                逆に$[c_{1i},\dotsc,c_{ni}]^\top\;(i=1,\dotsc,p)$が一次独立なら(2)より$d_1=\dotsb=d_n=0$であるが、これが$(1)\Rightarrow\;d_1=\dotsb=d_n=0$と等価なので、$\bm{v}_1,\dotsc,\bm{v}_p$が一次独立であることになる。
+            \end{proof}
+    \section{諸定理}
+        \subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について、「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
+            \begin{proof}
+                \quad\par
+                ($\Leftarrow$) 容易。
+                \par
+                ($\Rightarrow$) 背理法で示す。
+                $\exists \bm{v}_1\in V_1\setminus V_2, \;\bm{v}_2\in V_2\setminus V_1$と仮定する。
+                $V_1\cup V_2$がベクトル空間であるから$\bm{v}_1 + \bm{v}_2 \in V_1\cup V_2$である。
+                $\bm{v}_1 + \bm{v}_2 \in V_1$であるとすると
+                \[ \bm{v}_2 = \underbrace{(\bm{v}_1 + \bm{v}_2)}_{\in V_1} - \bm{v}_1 \]
+                となり、左辺$\notin V_1$ であるが、右辺$\in V_1$となり矛盾する。
+                同様に$\bm{v}_1 + \bm{v}_2 \in V_2$であるとしても矛盾が生じる。
+                従って$V_1\cup V_2$がベクトル空間であることに矛盾する。
+            \end{proof}
+        \subsection{\texorpdfstring{$V_i \subseteq W_i,\;\bigoplus_{i=1}^n {W_i} = \bigoplus_{i=1}^n {V_i}\quad\Rightarrow V_i=W_i$}{Vi⊆Wi, V1⊕...⊕Vn = W1⊕...⊕Wn ⇒ Vi=Wi}}
+            \begin{shadebox}
+                \[\bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i},\;V_i \subseteq W_i\quad(i=1,2,\dotsc,n)\quad\Rightarrow W_i=V_i\quad(i=1,2,\dotsc,n)\]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $W_i\subseteq V_i$を示せば良い。
+                $\vx\in W_i$を任意にとると$\vx\in \bigoplus_{i=1}^n{W_i}=\bigoplus_{i=1}^n{V_i}$でもあるから適当なベクトル$\vv_i\in V_i$が存在して
+                \[\vx = \vv_1+\vv_2+\dotsb+\vv_i+\dotsb+\vv_n\]
+                と一意に分解できるが、$V_i\subseteq W_i$より$\vv_i\in W_i$であるので
+                \[\vx = \underbrace{\vv_1}_{\in W_1}+\underbrace{\vv_2}_{\in W_2}+\dotsb+\underbrace{\vv_i}_{\in W_i}+\dotsb+\underbrace{\vv_n}_{\in W_n}\]
+                ところで$\vx\in \bigoplus_{i=1}^n{W_i}$であったから$\vx$は
+                \[\vx = \underbrace{\bm{0}}_{\in W_1}+\underbrace{\bm{0}}_{\in W_2}+\dotsb+\underbrace{\vx}_{\in W_i}+\dotsb+\underbrace{\bm{0}}_{\in W_n}\]
+                と分解される。分解は一意でなくてはならぬから
+                \begin{equation*}
+                    \vv_j =
+                    \begin{cases}
+                        \vx & (j=i)\\
+                        \bm{0} & (\mathrm{otherwise})
+                    \end{cases}
+                \end{equation*}
+                よって$\vx\in V_i$
+            \end{proof}
+        \subsection{一次独立なベクトル\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\bm{v}\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\bm{v}$}{⇔ v}が\texorpdfstring{$\bm{v}_1,\dotsc,\bm{v}_k$}{v1,...,vk}の一次結合で表せない}
+            \label{subsec:一次独立なベクトルの、独立集合族としての性質}
+            \begin{shadebox}
+                $V$を線形ベクトル空間とし、$\bm{v}_1,\dotsc,\bm{v}_k\in V$が一次独立であるとする。この時、別のベクトル$\bm{v}\in V$を付け加えたものが一次独立であることは、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことと同値である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$が一次独立なら、$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないことは一次独立性の定義から明らか。
+                逆に$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せないとする。
+                このとき$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k + c\bm{v} = \bm{0}$とおくと、$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = -c\bm{v}$となるが、もし$c\neq 0$とすると両辺を$-c$で割れば$\bm{v}$が$\bm{v}_1,\dotsc,\bm{v}_k$の一次結合で表せることになってしまい、仮定に矛盾するので$c=0$でなければならない。
+                よって$c_1\bm{v}_1 + \dotsb + c_k\bm{v}_k = \bm{0}$であるが、$\bm{v}_1,\dotsc,\bm{v}_k$は一次独立であるから$c_1=\dotsb=c_k=0$である。
+                すなわち$c_1=\dotsb=c_k=c=0$なので$\bm{v}_1,\dotsc,\bm{v}_k,\bm{v}$は一次独立である。
+            \end{proof}
+        \subsection{\texorpdfstring{$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$}{Av := \{v1,...,vk\}}と\texorpdfstring{$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$}{Aw := \{w1,...,wl\}}が各々一次独立で\texorpdfstring{$k>l\; \Rightarrow\; ^\exists\bm{v}\in A_v \st \bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$}{k>k ⇒ ∃v∈Av s.t. w1,...,wl,v}が一次独立}
+            \begin{shadebox}
+                線形空間$V$のベクトルの集合$A_v\coloneqq\{\bm{v}_1,\dotsc,\bm{v}_k\}$と$A_w\coloneqq\{\bm{w}_1,\dotsc,\bm{w}_l\}$がそれぞれ一次独立で$k>l$であれば、ある$\bm{v}\in A_v$が存在して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次独立である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\dotsc,\bm{w}_l$の一次結合で表せる。
+                よって$A_v$は$l$個の一次独立なベクトルの一次結合で表された$k>l$個以上のベクトルの集合なので一次従属であるが、これは$A_v$の一次独立性の仮定に矛盾する。
+            \end{proof}
+    \section{諸注意}
+        \subsection{
+            \texorpdfstring{$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$}{\{v1,v2\},\{w1,w2\},\{v1,v2,w1\},\{v1,v2,w2\}}が各々一次独立でも\texorpdfstring{\\}{}
+            \texorpdfstring{$\{\bm{v}_1,\bm{v}_2,\bm{w}_1,\bm{w}_2\}$}{\{v1,v2,w1,w2\}}が一次独立とは限らない}
+            \begin{proof}
+                例えば$\realNumbers^4$で考えて$\bm{v}_1=\bm{e}_1,\bm{v}_2=\bm{e}_2,\bm{w}_1=\bm{e}_3,\bm{w}_2=\bm{e}_1+\bm{e}_2+\bm{e}_3$
+            \end{proof}
+        \subsection{\texorpdfstring{$W_i\cap W_j=\{\bm{0}\}\;(i\in\{1,\dotsc,n\},\;i\neq j)$}{Wi⋂Wj=\{0\}}であっても\texorpdfstring{$W_1+\dotsb+W_n = W_1\oplus\dotsb\oplus W_n$}{W1+...+Wn = W1⊕...⊕Wn}とは限らない}
+            \begin{proof}
+                \quad\par
+                例えば$W_1,W_2,W_3\subseteq\realNumbers^2,\;W_1=\{\bm{e}_1\},W_2=\{\bm{e}_2\},W_3=\{\bm{e}_1+\bm{e}_2\}$とするとベクトル$\bm{e}_1+\bm{e}_2$に対して分解が一意でない($W_1,W_2,W_3$から$\bm{e}_1,\bm{e}_2,\bm{0}$を持ってくる方法と、$W_1,W_2,W_3$から$\bm{0},\bm{0},\bm{e}_1+\bm{e}_2$を持ってくる方法がある)。
+            \end{proof}
+        \subsection{\texorpdfstring{$W=V\oplus X,\;W=V\oplus Y$}{W=V⊕X, W=V⊕Y}でも\texorpdfstring{$X=Y$}{X=Y}とは限らない}
+            \begin{proof}
+                例えば$W=\realNumbers^2,\;V=\{[1,0]^\top\},\;X=\{[0,1]^\top\},\;Y=\{[1,1]^\top\}$
+            \end{proof}
+        \subsection{\texorpdfstring{$\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}} = \Span{\bm{c}}$}{Span[a,b,c]/Span[a,b]=Span[c]}とは限らない}
+            \begin{proof}
+                \quad\par
+                例えば$\bm{a}=[1,0,0]^\top,\;\bm{b}=[0,1,0]^\top,\;\bm{c}=[0,0,1]^\top$、すなわち$\Span{\bm{a},\bm{b},\bm{c}}=\realNumbers^3$のとき、
+                $\Span{\bm{a},\bm{b},\bm{c}}/\Span{\bm{a},\bm{b}}$は$\realNumbers^3$から第1要素が0である点だけを抜いたものであり、$[x,*,*]^\top,\;x\neq 0$のような点は残っている。
+                このような点は$\Span{\bm{c}}$には属さない。
+            \end{proof}

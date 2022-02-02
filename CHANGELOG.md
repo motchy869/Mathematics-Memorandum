@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Added div(f(r)A(r)) = (div f(r))・A(r) + f(r)div(A(r))
+- equation: div(vector Laplacian(A)) = Laplacian(div(A))
+- log-normal distribution
 
 ## [0.7.0] - 2022/1/22
 

@@ -1,0 +1,85 @@
+\chapter{凸関数}
+    \section{諸定理}
+        \subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
+        \begin{proof}
+            \quad\par
+            $g(\bm{x}) \coloneqq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
+            $g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
+            \[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
+            であるが、maxの性質から
+            \[ \max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} \geq f_1(\bm{x}_1), f_2(\bm{x}_1) \text{かつ} \max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \geq f_1(\bm{x}_2), f_2(\bm{x}_2) \]
+            であるので
+            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_1(\bm{x}_1) + \theta f_1(\bm{x}_2) \geq f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            かつ
+            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_2(\bm{x}_1) + \theta f_2(\bm{x}_2) \geq f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            である。このことから
+            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq \max\{f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2], f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\} = g[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+        \end{proof}
+        \subsection{Jensenの不等式}
+            \begin{shadebox}
+                $f(x)$を凸関数とし、$w_i\geq 0(i=1,\dotsc,n),\;\sum_{i=1}^n w_i=1$とするとき、次式が成り立つ。
+                \[ f\left(\sum_{i=1}^n w_i x_i\right) \leq \sum_{i=1}^n w_i f(x_i) \]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $n=1$の時は明らか。
+                $n=2$のときは凸関数の定義より成り立つ。
+                $n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
+                $w'_i\coloneqq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから、仮定より
+                \begin{align*}
+                    f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
+                    \therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
+                    \therefore\; (1-w_{n_0+1})f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0} w_i f(x_i) \\
+                    \therefore\; w_{n_0+1}f(x_{n_0+1}) + (1-w_{n_0+1})f\left(X_{n_0}\right) &\leq \sum_{i=1}^{n_0+1} w_i f(x_i) \quad \left(X_{n_0} = \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i \text{とおいた}\right)
+                \end{align*}
+                $f$の凸性より
+                \[ \text{左辺} \geq f(w_{n_0+1}x_{n_0+1} + (1-w_{n_0+1})X_{n_0}) = f\left(\sum_{i=1}^{n_0+1}w_i x_i\right)\]
+            \end{proof}
+        \subsection{重み付き相加,相乗平均の関係とYoungの不等式}
+            \begin{shadebox}
+                $w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+                \[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
+                この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                対数関数の凹性を利用する。Jensenの不等式より
+                \[ \log\sum_{i=1}^n w_i x_i \geq \sum_{i=1}^n w_i\log x_i \quad \therefore\; \log\sum_{i=1}^n w_i x_i \geq \log\prod_{i=1}^n x_i^{w_i} \quad \therefore\; \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
+                最初の式より、等号成立条件は$x_1=\dotsb=x_n$である。
+            \end{proof}
+            この不等式には変形版があり、\textbf{Youngの不等式}と呼ばれている。
+            一時的に上の定理の条件を少し強めて$w_1,\dotsc,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
+            これらを重み付き相加,相乗平均の関係に代入して
+            \[ \sum_{i=1}^n w_i y^{1/w_i} \geq \prod_{i=1}^n y_i \]
+            を得る。$p_i=1/w_i$とすると次式を得る。
+            \[ \sum_{i=1}^n \frac{{y_i}^{p_i}}{p_i} \geq \prod_{i=1}^n y_i \]
+            改めて定理の形で述べると、次のようになる。\\
+            \begin{shadebox}
+                $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+                \[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
+            \end{shadebox}
+    \section{Legendre変換}
+        \subsection{十分滑らかな狭義凸関数に対してLegendre変換を2回施すと元の関数に戻る}
+            \newcommand{\fd}{{f^{(1)}}}
+            \newcommand{\fStarD}{{{f^*}^{(1)}}}
+            \begin{proof}
+                \quad\par
+                $f$を開区間$I$で定義された$C^2$級の狭義凸関数とする。
+                (よって1階導関数$f^{(1)}$は狭義単調増加だから逆関数が存在する。)
+                $\fd$の値域を$I_2$とする。$f$のLegendre変換$f^*$は次のようになる。
+                \[ f^*(p) = p\fd^{-1}(p) - f\left(\fd^{-1}(p)\right) \quad (p \in I_2) \]
+                $f^*$のLegendre変換$f^{**}$を求めるためにまず${f^*}^{(1)}$の値域を調べる。
+                \[ \fStarD(q)\;(q \in I_2) = \fd^{-1}(q) + q\frac{1}{f^{(2)}(q)} - \fd\left(\fd^{-1}(q)\right)\frac{1}{f^{(2)}(q)} = \fd^{-1}(q) \]
+                より$\fStarD$の値域は$I$である。
+                さらに、$\fd^{-1}$は狭義単調増加なので上式より$\fStarD$の逆関数が存在して$\fStarD^{-1} = \fd$である。
+                $\fStarD^{-1}$の定義域は$I$である。
+                以上より$f^{**}$は次のようになる。
+                \begin{align*}
+                    f^{**}(q)\; (q \in I) &= q\fStarD^{-1}(q) - f^*\left(\fStarD^{-1}(q)\right) \\
+                    &= q\fd(q) - f^*(\fd) \\
+                    &= q\fd(q) - \fd(q)\fd^{-1}\left(\fd(q)\right) + f\left(\fd^{-1}\left(\fd(q)\right)\right) \\
+                    &= f(q)
+                \end{align*}
+            \end{proof}
+            \let\fd\undefined
+            \let\fStarD\undefined

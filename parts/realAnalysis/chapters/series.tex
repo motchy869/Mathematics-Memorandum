@@ -1,0 +1,108 @@
+\chapter{級数}
+    \section{\texorpdfstring{$S_l = \sum_{k=0}^\infty k^l r^k$}{A\_l = Σ\_\{k=0\}\string^∞ k\string^l r\string^k}を逐次的に求める}
+        \begin{shadebox}
+            $S_l \coloneqq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
+            \[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $rS_l = \sum_{k=0}^\infty k^l r^{k+1} = \sum_{k=1}^\infty (k-1)^l r^k$より
+            \begin{align*}
+                (1-r)S_l &= \sum_{k=1}^\infty \left[ k^l-(k-1)^l \right]r^k = \sum_{k=1}^{\infty}\sum_{m=0}^{l-1}\combi{l}{m}k^m(-1)^{l-m+1}r^k = \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}\sum_{k=1}^{\infty}k^m r^k \\
+                &= \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}(S_m - 0^m)
+            \end{align*}
+        \end{proof}
+        $l=2$まで具体的に求めた結果:
+        \[ S_0 = 1/(1-r),\quad S_1 = r/(1-r)^2,\quad S_2 = r(r+1)/(1-r)^3 \]
+    \section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
+        \begin{shadebox}
+            数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
+            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneqq \sum_{j=1}^i a_j \right) \]
+        \end{shadebox}
+        \begin{proof}
+                \quad\\
+                (泥臭い証明)\\
+            \begin{minipage}{0.45\hsize}
+                \begin{table}[H]
+                    \centering
+                    \caption{第2項目の寄与}
+                    \begin{tabular}{cc}
+                        $i$			& $a_j$の係数 \\\hline\hline
+                        $1$			& $0$\\
+                        $\vdots$	& $\vdots$\\
+                        $j-1$		& $0$\\
+                        $j$			& $-b_{j+1} + b_j$\\
+                        $j+1$		& $-b_{j+2} + b_{j+1}$\\
+                        $\vdots$	& $\vdots$\\
+                        $n-1$		& $-b_n + b_{n-1}$\\\hline
+                    \end{tabular}
+                \end{table}
+            \end{minipage}
+            \begin{minipage}{0.45\hsize}
+                右辺の各$a_j\;(j=1,\dotsc,n)$について、その係数が正味$b_i$だけであることを示せば良い。
+                $(\text{右辺}) = A_nb_n - \sum_{i=1}^{n-1}\sum_{j=1}^ia_j(b_{i+1}-b_i)$
+                であるから、右辺に現れる$a_j$の係数として、まず第1項目より$b_n$がある。
+                第2項目の寄与は左の表のようになり、殆ど相殺して$b_j$のみが残る。
+            \end{minipage}\\
+            \newline
+            (エレガントな証明)\\
+            \quad $A_i \coloneqq \sum_{j=1}^i a_j,\;A_0 \coloneqq 0$と定義すると
+            \begin{align*}
+                \sum_{i=1}^n a_ib_i &= \sum_{i=1}^n (A_i-A_{i-1})b_i = \sum_{i=1}^n A_ib_i - \sum_{i=2}^n A_{i-1}b_i = \sum_{i=1}^n A_ib_i - \sum_{i=1}^n A_{i}b_{i+1} \\
+                &= A_nb_n + \sum_{i=1}^n A_i(b_i-b_{i+1}) = A_nb_n - \sum_{i=1}^n A_i(b_{i+1} - b_i)
+            \end{align*}
+        \end{proof}
+    \section{FKG不等式(離散) : 単調増加列\texorpdfstring{$\{a_n\},\{b_n\}$}{\{a\_n\}, \{b\_n\}}について、\texorpdfstring{$\left(\sum_{i=1}^n a_i\right)\left(\sum_{i=1}^n b_i\right) \leq n\sum_{i=1}^n a_ib_i$}{(Σ\_\{i=1\}\string^n a\_i)(Σ\_\{j=1\}\string^n b\_i)≦Σ\_\{i=1\}\string^n a\_i b\_i}}
+        \label{subsec:FKG不等式(離散)}
+        \begin{proof}
+            \quad\par
+            まず$\{a_n\},\{b_n\}$が非負数列である場合に示す。
+            $A_i \coloneqq \sum_{j=1}^i a_j,\;B_i \coloneqq \sum_{j=1}^i b_j$としてAbelの総和公式を用いる。
+            $\{a_n\},\{b_n\}$が非負単調増加数列であることより$nb_n \geq \sum_{i=1}^n b_i = B_n \geq 0,\;A_i(b_{i+1}-b_i) \geq 0\;(i=1,\dotsc,n-1)$だから次式より定理の不等式が成り立つ。
+            \[ n\sum_{i=1}^n a_ib_i = nA_nb_n - n\sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \geq A_nB_n \]
+            次に、$\{a_n\},\{b_n\}$が非負数列とは限らない場合は適当な$\alpha,\beta \geq 0$を用いて$a'_n \coloneqq a_n + \alpha \geq 0,\;b'_n \coloneqq b_n + \beta \geq 0$とすれば$\{a'_n\},\{b'_n\}$は非負単調増加列であるから定理の不等式が成り立つ。
+            そして
+            \[ \left(\sum_{i=1}^n a'_i\right)\left(\sum_{i=1}^n b'_i\right) = (A_n + n\alpha)(B_n + n\beta) = A_nB_n + n\alpha B_n + n\beta A_n + n\alpha\beta \]
+            \[ n\sum_{i=1}^n a'_ib'_i = n\sum_{i=1}^n (a_ib_i + \alpha b_i + \beta a_i + \alpha\beta) = n\sum_{i=1}^n a_ib_i + n\alpha B_n + n\beta A_n + n\alpha\beta \]
+            であるから$\{a'_n\},\{b'_n\}$が定理の不等式を満たすことと$\{a_n\},\{b_n\}$が定理の不等式を満たすことは同値である。以上で定理が示された。
+        \end{proof}
+    \section{等比級数と0収束列の畳み込み: {\normalsize \texorpdfstring{$|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}{|r|<1, lim\_\{n→∞\}a\_n=0 ⇒ lim\_\{t→∞\} Σ\_\{τ=0\}\string^t r\string^(t-τ) a\_τ} = 0}}
+        \begin{shadebox}
+            $|r|<1$とし, 数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき、次が成り立つ。
+            \[\lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $\lim_{n\to\infty}a_n=0$より$^\exists C\geq 0\st|a_n|\leq C\mathrm{ for }^\forall n\in\{1,2,\dotsc\}$。
+            また、$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
+            そこで$t\geq T$とすると
+            \begin{align*}
+                \left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| &\leq \left|\sum_{\tau=0}^{T-1}{r^{t-\tau}a_\tau}\right| + \left|\sum_{\tau=T}^t{r^{t-\tau}a_\tau}\right| \leq \sum_{\tau=0}^{T-1}|r|^{t-\tau}|a_\tau| + \sum_{\tau=T}^{t}|r|^{t-\tau}|a_\tau| \\
+                &\leq C|r|^{t-T+1}\frac{1-|r|^{T-1}}{1-|r|} + \varepsilon\frac{1-|r|^{t-T}}{1-|r|} \leq C\frac{|r|^{t-T+1}}{1-|r|} + \varepsilon\frac{1}{1-|r|}
+            \end{align*}
+            $|r|<1$であるから$^\exists T_2\geq T\st t\geq T_2\Rightarrow C|r|^{t-T+1} \leq \varepsilon$。
+            そこで$t\geq T_2$と取り直すと、上の式より
+            \[\left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| \leq \frac{2\varepsilon}{1-|r|}\]
+        \end{proof}
+    \section{\texorpdfstring{$\sum_{k=1}^n \cos kx = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n cos(kx) = -1/2 + (sin(n+1/2)x)/(2sin(x/2))}}
+        \begin{proof}
+            \begin{align*}
+                (\sin x) \sum_{k=1}^n \cos kx &= \frac{1}{2}\sum_{k=1}^n (\sin(1+k)x+\sin(1-k)x) \\
+                &= \frac{1}{2}\left(\sum_{l=2}^{n-1} (\sin lx + \sin(-lx)) + \sin 0x + \sin(-x) + \sin nx + \sin(n+1)x\right) \\
+                \therefore\; \sum_{k=1}^n \cos kx &= -\frac{1}{2} + \frac{1}{2\sin x}(\sin nx + \sin(n+1)x) \\
+                &= -\frac{1}{2} + \frac{1}{4\sin\frac{x}{2}\cos\frac{x}{2}}2\sin\frac{(2n+1)x}{2}\cos\frac{-x}{2} = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin\frac{x}{2}}
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$\sum_{k=1}^n \sin kx = \frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n sin(kx) = (sin(nx/2)sin((n+1)x/2))/(2sin(x/2))}}
+        \begin{proof}
+            \begin{align*}
+                (\sin x) \sum_{k=1}^n \sin kx &= \frac{1}{2}\sum_{k=1}^n (\cos(1-k)x-\cos(1+k)x) \\
+                &= \frac{1}{2}\left(\sum_{l=2}^{n-1}(\cos lx - \cos(-lx)) + \cos 0x + \cos x - \cos nx - \cos (n+1)x \right) \\
+                &= \frac{1}{2}\left(1 + \cos x - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}\right) \\
+                \therefore\; \sum_{k=1}^n \sin kx &= \frac{1}{2\sin x}\left(2\cos^2\frac{x}{2} - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}\right) \\
+                &= \frac{1}{2\sin\frac{x}{2}\cos\frac{x}{2}}\left(\cos^2\frac{x}{2} - \cos\frac{(2n+1)x}{2}\cos\frac{x}{2}\right) \\
+                &= \frac{1}{2\sin\frac{x}{2}}\left(\cos\frac{x}{2} - \cos\frac{(2n+1)x}{2}\right) \\
+                &= \frac{1}{2\sin\frac{x}{2}}(-2)\sin\frac{(n+1)x}{2}\sin\frac{-nx}{2} \\
+                &= \frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{2\sin(x/2)}
+            \end{align*}
+        \end{proof}
