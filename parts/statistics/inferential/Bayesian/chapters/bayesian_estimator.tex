@@ -1,0 +1,25 @@
+\chapter{ベイズ推定量}
+    結論から言うと、\textbf{ベイズ推定量}は\textbf{期待損失}を最小化する推定量として定義される。
+    以下で、期待損失の定義とベイズ推定量の導出を行う。
+    まずいくつか定義を行う。
+    \begin{itemize}
+        \item $\Omega_X$: 標本空間。ここからの標本$X$は、我々が推定したいパラメータ$\Theta$の値$\theta$により決まる分布に従う。
+        \item $\Omega_\Theta$: パラメータ$\Theta$が属する確率空間。
+        \item $p(x,\theta)$: $X$と$\Theta$の同時確率密度
+        \item $\delta: \Omega_X\to\realNumbers$: 推定関数。標本$X$を入力すると$\theta$の推定値を返す。
+        \item $L(\theta,x): \realNumbers^2\to\realNumbers_+$: 損失関数。$\theta$の推定値$x$に対して「損失」を返す。通常、$\theta$と$x$の差が大きいほど損失も大きくなるような損失関数を想定する。
+    \end{itemize}
+    以上の準備の下で、事前分布$\pi(\theta)$と推定関数$\delta$に対する期待損失$\E{\Theta,X}{L(\Theta,\delta(X))}$は次のように定義される。
+    \[\E{\Theta,X}{L(\Theta,\delta(X))} \coloneqq \integrate{\Omega_X}{}{\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}}{}{x}\]
+    \par
+    損失関数が\underline{$\theta$の凸関数}であれば、上式で定義された\ul{期待損失を最小化する推定関数は事後分布の期待値と一致する}ことを示す。
+    期待損失を最小化するためには、各$x$に対して$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}$を最小化する$\delta(x)$を構成すれば良い。
+    Jensenの不等式を使うために、$p(x,\theta)$を$\theta$に関して規格化した$\frac{p(x,\theta)}{f(x)}$を使うと、$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))p(x,\theta)}{}{\theta}$の最小化は$\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{}{\theta}$の最小化と等価である。
+    Jensenの不等式より
+    \[\integrate{\Omega_\Theta}{}{L(\theta,\delta(x))\frac{p(x,\theta)}{f(x)}}{}{\theta} \geq L\left(\integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta} , \delta(x)\right)\]
+    常識的な損失関数であれば$\delta(x)=\integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta}$のときに損失が最小になり、\ref{subsec:連続型の事後分布}でやったように、
+    \begin{align*}
+        \integrate{\Omega_\Theta}{}{\theta\frac{p(x,\theta)}{f(x)}}{}{\theta} &= \integrate{\Omega_\Theta}{}{\theta\pi(\theta|x)}{}{\theta} = \E{\Theta\sim\pi(\Theta|x)}{\Theta}
+    \end{align*}
+    となる。これは、事後分布の平均値を使えば期待損失を最小化できることを主張している。
+    そして、期待損失を最小化する推定量、すなわち事後分布の平均値を\textbf{ベイズ推定量}と呼ぶ。
