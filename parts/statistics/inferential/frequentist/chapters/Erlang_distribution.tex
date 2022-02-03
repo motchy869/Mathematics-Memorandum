@@ -1,0 +1,39 @@
+\chapter{Erlang分布}
+    \section{定義}
+        $k\in\naturalNumbers,\;\mu>0$とする。
+        確率密度関数$f(x)$が次式となる分布を、形状母数$k$,尺度母数$\mu$のErlang分布という。
+        \[
+            f(x) =
+            \begin{cases}
+                \frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu} & (x\geq 0) \\
+                0 & (x<0)
+            \end{cases}
+        \]
+        確率変数$X$がこの分布に従うことを$X \sim \ErlangDist{k}{\mu}$と表すことにする。
+    \section{解釈}
+        単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が、時間$x$の間に$k$以上回数生起する(つまり、$k$回目の事象の発生までの待ち時間が$x$である)確率の累積分布。
+    \section{指数分布との関係: \texorpdfstring{$X_1,\dotsc,X_k (\text{独立}) \sim \ExpDist{\mu} \Rightarrow X_1+\dotsb+X_k \sim \ErlangDist{k}{\mu}$}{X1, ..., Xk が互いに独立で母数μの指数分布に従う ⇒ X1+...+Xk は母数μのk次のErlang分布に従う。}}
+        \label{指数分布とErlang分布の関係}
+        \begin{proof} (直接的な証明)
+            \par
+            数学的帰納法で示す。
+            尺度母数$\mu$の指数分布の確率密度関数を$f$とし、$\sum_{l=1}^k X_l$が従う分布の確率密度関数を$f_k$とする。
+            まず$k=1$のときに成り立つことは簡単に確かめられる。
+            $k=l\in\naturalNumbers$まで成り立つと仮定して$k=l+1$のときに成り立つことを示す。
+            \begin{align*}
+                f_{l+1}(x) &= \integrate{0}{x}{f_l(y)f(x-y)}{}{y} = \integrate{0}{x}{\frac{y^{l-1}}{(l-1)!\mu^l}e^\frac{-y}{\mu}\frac{1}{\mu}e^\frac{-(x-y)}{\mu}}{}{y} \\
+                &= \frac{1}{(l-1)!\mu^{l+1}}e^\frac{-x}{\mu}\integrate{0}{x}{y^{l-1}}{}{y} = \frac{x^l}{l!\mu^{l+1}}e^\frac{-x}{\mu}
+            \end{align*}
+        \end{proof}
+        \begin{proof} (特性関数を用いた証明)
+            \par
+            $X_1+\dotsb+ X_k$が従う分布の特性関数は次式である($X_1,\dotsc,X_k$が独立であることに注意)。
+            \[ \E{}{e^{it(X_1+\dotsb+X_k)}} = \prod_{l=1}^k\E{}{e^{itX_l}} = \E{}{e^{itX_1}}^k = \frac{1}{(1-i\mu t)^k} \quad (\text{\ref{指数分布の特性関数}}を用いた) \]
+            一方、$\ErlangDist{k}{\mu}$の特性関数を計算すると次式になる。
+            \begin{align*}
+                &\quad \integrate{0}{\infty}{\frac{x^{k-1}}{(k-1)!\mu^k}e^\frac{-x}{\mu}e^{itx}}{}{x} = \frac{1}{(k-1)!\mu^k}\integrate{0}{\infty}{x^{k-1}e^{\left(\frac{-x}{\mu} + it\right)x}}{}{x} \\
+                &= \frac{1}{(k-1)!\mu^k}\left[(-1)^{k+1}(k-1)!\frac{1}{\left(\frac{-1}{\mu}+it\right)^k}e^{\left(\frac{-x}{\mu} + it\right)x}\right]_0^\infty \quad (瞬間部分積分を用いた) \\
+                &= \frac{1}{(1-i\mu t)^k}
+            \end{align*}
+            両者は一致する。
+        \end{proof}

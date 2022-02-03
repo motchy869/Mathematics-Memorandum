@@ -1,0 +1,42 @@
+\chapter{対数正規分布}
+    \section{確率密度関数の導出}
+        \begin{shadebox}
+            対数正規分布$\Lambda(\mu,\sigma^2)$の確率密度関数$f$は次式である。
+            \[ f(x) = \frac{1}{\sqrt{2\pi}\sigma x_2}\exp\left(-\frac{(\log x-\mu)^2}{2\sigma^2}\right) \]
+        \end{shadebox}
+        確率変数$X>0$の対数$Y=\log X$が期待値$\mu$, 分散$\sigma$の正規分布$N(\mu,\sigma^2)$に従うという条件から$X$の確率密度関数$f_X$を導出する。
+        $x_1,x_2>0$とすると次式が成り立つ。
+        \[ \Pr{x_1\leq X<x_2} = \Pr{\log x_1 \leq Y<\log x_2} = \integrate{\log x_1}{\log x_2}{f_Y(y)}{}{y} \]
+        ここに$f_Y$は$N(\mu,\sigma^2)$の確率密度関数である。
+        $f_X$は次式となる。
+        \begin{align*}
+            f_X(x_2) &= \partDerivLong{\Pr{x_1\leq X<x_2}}{x_2}{} = f_Y(\log x_2)\derivLong{\log x_2}{x_2}{} = \frac{1}{x_2}f_Y(\log x_2) \\
+            &= \frac{1}{\sqrt{2\pi}\sigma x_2}\exp\left(-\frac{(\log x_2-\mu)^2}{2\sigma^2}\right)
+        \end{align*}
+    \section{最頻値}
+        \begin{shadebox}
+            対数正規分布$\Lambda(\mu,\sigma^2)$の最頻値は$e^{\mu-\sigma^2}$である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            対数正規分布の確率密度関数$f$が1峰性であることは既知として、最頻値すなわち$f$の導関数が0となる点を求める。
+            \begin{align*}
+                \deriv{f_X(x)}{x}{} = -\frac{1}{\sqrt{2\pi}\sigma x^2}\exp\left(-\frac{(\log x_2-\mu)^2}{2\sigma^2}\right)\left(1+\frac{\log x-\mu}{\sigma^2}\right)
+            \end{align*}
+            これが0となる$x$の値は$e^{\mu-\sigma^2}$である。
+        \end{proof}
+    \section{期待値}
+        \begin{shadebox}
+            対数正規分布$\Lambda(\mu,\sigma^2)$の期待値は$e^{\mu+\sigma^2/2}$である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $X\sim\Lambda(\mu,\sigma^2)$とする。
+            $X$の確率密度関数を$f$とする。
+            \begin{align*}
+                \E{}{X} &= \integrate{+0}{\infty}{xf(x)}{}{x} = \integrate{+0}{\infty}{\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(\log x-\mu)^2}{2\sigma^2}\right)}{}{x} \\
+                &= \integrate{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y-\mu)^2}{2\sigma^2}\right)e^y}{}{y} \quad (\text{変数変換 }y=\log x) \\
+                &=  \integrate{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y-\mu-\sigma^2)^2}{2\sigma^2} + \mu+\sigma^2/2\right)}{}{y} \\
+                &= e^{\mu+\sigma^2/2}\integrate{-\infty}{\infty}{\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y-\mu-\sigma^2)^2}{2\sigma^2}\right)}{}{y} = e^{\mu+\sigma^2/2}
+            \end{align*}
+        \end{proof}

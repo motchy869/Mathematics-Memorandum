@@ -1,0 +1,35 @@
+\chapter{Poisson分布}
+    \section{定義}
+        $k\in\naturalNumbers\cup\{0\},\;\mu>0,\;\lambda=1/\mu$とする。
+        確率質量関数$P(X=k)$が次式となる分布を、母数$\lambda$のPoisson分布という。
+        \[
+            P(X=k) =
+            \begin{cases}
+                \frac{\lambda^k}{k!}e^{-\lambda} & (k = 0,1,2,\dotsc) \\
+                0 & (\text{otherwise})
+            \end{cases}
+        \]
+        確率変数$X$がこの分布に従うことを$X \sim \PoissonDist{k}{\mu}$と表すことにする。
+    \section{解釈}
+        単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が単位時間内に$k$回生起する確率。
+        \subsection{指数分布からの導出}
+            指数分布とErlang分布の関係を用いる。\ref{指数分布とErlang分布の関係}において$x=1$(= 単位時間)とすればよい。
+    \section{Erlang分布との関係}
+        単位時間当たりの生起回数の期待値が$\lambda = 1/\mu$である事象が単位時間内に$k$回以上生起する確率をPoisson分布，Erlang分布の両方の視点から求めてみる。
+        Poisson分布の視点で求めると次式となる。
+        \[
+            \sum_{l=k}^\infty \frac{\lambda^l}{l!}e^{-\lambda}
+        \]
+        一方でErlang分布の視点で求めると次式となり、当然だが上式と一致する。
+        \begin{align*}
+            &\integrate{0}{1}{\frac{1}{(k-1)!\mu^k}x^{k-1}e^{-x/\mu}}{}{x} = \frac{1}{(k-1)!\mu^k} \integrate{0}{1}{x^{k-1}e^{-x/\mu}}{}{x} \\
+            &\quad = \frac{1}{(k-1)!\mu^k}\left[ -\sum_{l=0}^{k-1}\perm{k-1}{l}\mu^{l+1}x^{k-1-l}e^{-x/\mu} \right]_0^1 = \left[ -\sum_{l=0}^{k-1} \frac{1}{(k-1-l)!\mu^{k-1-l}}x^{k-1-l}e^{-x/\mu} \right]_0^1 \\
+            &= \left[ -\sum_{l=0}^{k-1} \frac{x^l}{l!\mu^l}e^{-x/\mu} \right]_0^1 = 1 - \sum_{l=0}^{k-1} \frac{1}{l!\mu^l}e^{-1/\mu} = \sum_{l=0}^\infty \frac{\lambda^l}{l!}e^{-\lambda} - \sum_{l=0}^{k-1} \frac{\lambda^l}{l!}e^{-\lambda} = \sum_{l=k}^\infty \frac{\lambda^l}{l!}e^{-\lambda}
+        \end{align*}
+    \section{再生性}
+        \begin{shadebox}
+            $X_1 \sim \PoissonDist{\lambda_1},\;X_2 \sim \PoissonDist{\lambda_2}\;\Rightarrow\;X_1+X_2 \sim \PoissonDist{\lambda_1 + \lambda_2}$
+        \end{shadebox}
+        \begin{proof}
+            \[ P(X_1+X_2 = k) = \sum_{l=0}^k \frac{\lambda_1^l}{l!}e^{-\lambda_1}\frac{\lambda_2^{k-l}}{(k-l)!}e^{-\lambda_2} = \frac{1}{k!}e^{-(\lambda_1+\lambda_2)} \sum_{l=0}^k \frac{k!}{l!(k-l)!}\lambda_1^l\lambda_2^{k-l} = \frac{1}{k!}(\lambda_1+\lambda_2)^k e^{-(\lambda_1+\lambda_2)} \]
+        \end{proof}
