@@ -1,0 +1,114 @@
+\chapter{\texorpdfstring{$\chi^2$}{χ\string^2}分布}
+    \section{定義}
+        \begin{shadebox}
+            関数$f(x)$を次のように定義する。
+            \[f(x) \coloneqq \frac{1}{2^{\frac{n}{2}\Gamma\left(\frac{n}{2}\right)}}e^{-\frac{x}{2}}x^{\frac{n}{2}-1}\]
+            確率密度関数が上式で与えられるような分布を「自由度$n$の$\chi^2$分布」と呼び、${\chi^2}_n$と書くことにする。
+        \end{shadebox}
+    \section{\texorpdfstring{$X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1$}{X～N(0,1) ⇒ X\string^2～χ\string^2\_1}}
+        \begin{shadebox}
+            \[X \sim N(0,1) \quad \Rightarrow \quad X^2 \sim \chi^2_1\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $X$の確率密度関数を$f^X(x)$と書くことにすると
+            \[P(0\leq Z \leq z) = P(-\sqrt{z}\leq X \leq\sqrt{z}) = rate{-\sqrt{z}}{\sqrt{z}}{f^X(x)}{}{x} = 2\integrate{0}{\sqrt{z}}{f^X(x)}{}{x} = \]
+            \begin{align*}
+                \therefore \; f^Z(z) &= \derivLong{P(0\leq Z \leq z)}{z}{} = \left(\derivLong{P(0\leq Z \leq z)}{\sqrt{z}}{}\right)\deriv{\sqrt{z}}{z}{} = \frac{1}{\sqrt{z}}f^X(\sqrt{z}) = \frac{1}{\sqrt{z}\sqrt{2\pi}}e^{-\frac{z}{2}}\\
+                &= \frac{1}{2^{\frac{1}{2}}\Gamma(\frac{1}{2})}e^{-\frac{z}{2}}z^{\frac{1}{2}-1} = \text{pdf of}\;\chi^2_1
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$X_i \sim N(0,1) \quad \Rightarrow \quad Z_n = \sum_{i=1}^{n}{{X_i}^2} \sim {\chi^2}_n$}{Xi～N(0,1) ⇒ Zn = (X1)\string^2 + ... + (Xn)\string^2 ～ χ\string^2\_n}}
+        \label{標準正規分布に従うn個の独立な確率変数の2乗和は自由度n-1のカイ2乗分布に従う}
+        \begin{shadebox}
+            \[X_i \sim N(0,1) \quad \Rightarrow \quad Z_n = \sum_{i=1}^{n}{{X_i}^2} \sim {\chi^2}_n\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            定理1より$n=1$のとき成り立つ。$n-1$まで成り立つと仮定して$n$のとき成り立つことを示せば良い。\\
+            $Z_n$の確率密度関数を$f^{Z_n}(z)$と書くことにする。$n-1$まで成り立つと仮定すると当然
+            \[f^{Z_{n-1}}(z) = \frac{1}{2^{\frac{n-1}{2}}\Gamma\left(\frac{n-1}{2}\right)}e^{-\frac{z}{2}}z^{\frac{n-1}{2}-1}\]
+            であるから
+            \begin{align*}
+                f^{Z_n}(z) &= \int_{x=0}^{\infty}{\int_{y=0}^{\infty}{\delta(x+y-z)f^{Z_{n-1}}(x)f^{Z_1}(y) dy} dx} = \int_{x=0}^{\infty}{f^{Z_{n-1}}(x)\left[\int_{y=0}^{\infty}{\delta(x+y-z)f^{Z_1}(y) dy}\right] dx}\\
+                &= \int_{x=0}^{\textcolor{red}{z}}{f^{Z_{n-1}}(x)f^{Z_1}(z-x) dx} = \int_{0}^{z}{\frac{e^{-\frac{x}{2}}}{2^{\frac{n-1}{2}}\Gamma\left(\frac{n-1}{2}\right)}x^{\frac{n-1}{2}-1}\frac{e^{\frac{x-z}{2}}}{2^{\frac{1}{2}}\Gamma\left(\frac{1}{2}\right)}(z-x)^{-\frac{1}{2}} dx}\\
+                &= \frac{e^{-\frac{z}{2}}}{2^{\frac{n}{2}}\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}\int_{0}^{z}{x^{\frac{n-1}{2}-1}(z-x)^{\frac{n}{2}-1} dx}
+            \end{align*}
+            $x=uz$なる変数変換を行って
+            \begin{align*}
+                &\frac{e^{-\frac{z}{2}}}{2^{\frac{n}{2}}\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}\int_{0}^{1}{(uz)^{\frac{n-1}{2}-1}z^{-\frac{1}{2}}(1-u)^{-\frac{1}{2}} zdu}\\
+                &= \frac{e^{-\frac{z}{2}}}{2^{\frac{n}{2}}\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}z^{\frac{n}{2}-1}\int_{0}^{1}{u^{\frac{n-1}{2}-1}(1-u)^{\frac{1}{2}-1} du} = \frac{e^{\frac{z}{2}}}{2^{\frac{n}{2}}\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}z^{\frac{n}{2}-1}B\left(\frac{n-1}{2},\frac{1}{2}\right)\\
+                &= \frac{e^{-\frac{z}{2}}}{2^{\frac{n}{2}}\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}z^{\frac{n}{2}-1}\frac{\Gamma\left(\frac{n-1}{2}\right)\Gamma\left(\frac{1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)} \hspace{10pt} (\because \; (定理1.3.1 : ベータ関数とガンマ関数の関係))\\
+                &= \frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}e^{-\frac{z}{2}}z^{\frac{n}{2}-1} = \text{pdf of} \quad {\chi^2}_n
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$X \sim {\chi^2}_n \quad \Rightarrow \quad E[X] = n,\;\;\;V[x] = 2n$}{X～χ\string^2\_n ⇒ E(X) = n, V(X) = 2n}}
+        \begin{shadebox}
+            \[X \sim {\chi^2}_n \quad \Rightarrow \quad E[X] = n,\;\;\;V[x] = 2n\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $X$の確率密度関数を$f(x)$と書くことにする。\\
+            まず
+            \[E[X] = \int_{0}^{\infty}{xf(x) dx} = \frac{1}{2^{\frac{n}{2}}\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{x^{\frac{n}{2}}e^{-\frac{x}{2}} dx}\]
+            $\frac{x}{2} = u$なる変数変換を行って
+            \begin{align*}
+                & \frac{1}{2^{\frac{n}{2}}\Gamma\left(\frac{n}{2}\right)}\int_0^{\infty}{(2u)^{\frac{n}{2}}e^{-u} 2du} = \frac{2}{\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{u^{\frac{n}{2}}e^{-u} du} = \frac{2}{\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{u^{\left(\frac{n}{2}+1\right)-1}e^{-u} du}\\
+                &= \frac{2\Gamma{\left(\frac{n}{2}+1\right)}}{\Gamma{\left(\frac{n}{2}\right)}} =  \frac{2\frac{n}{2}\Gamma{\left(\frac{n}{2}\right)}}{\Gamma{\left(\frac{n}{2}\right)}} = n
+            \end{align*}
+            期待値が$n$になることが示された。分散を求めるために2乗の期待値も計算しておく。
+            \[E[X^2] = \int_{0}^{\infty}{x^2f(x) dx} = \frac{1}{2^{\frac{n}{2}}\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{x^{\frac{n}{2}+1}e^{-\frac{x}{2}} dx}\]
+            $\frac{x}{2} = u$なる変数変換を行って
+            \begin{align*}
+                &\frac{1}{2^{\frac{n}{2}}\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{(2u)^{\frac{n}{2}+1}e^{-u} 2du} = \frac{4}{\Gamma{\left(\frac{n}{2}\right)}}\int_0^{\infty}{u^{\left(\frac{n}{2}+2\right)-1}e^{-u} du}\\
+                &= \frac{4}{\Gamma{\left(\frac{n}{2}\right)}}\Gamma{\left(\frac{n}{2}+2\right)} = \frac{4}{\Gamma{\left(\frac{n}{2}\right)}}\left(\frac{n}{2}+1\right)\left(\frac{n}{2}\right)\Gamma{\left(\frac{n}{2}\right)} = n^2+2n
+            \end{align*}
+            最後に分散は
+            \[V[X] = E[X^2] - {E[X]}^2 = n^2+2n-n^2 = 2n\]
+        \end{proof}
+    \section{再生性}
+        \begin{shadebox}
+            $X\sim{\chi^2}_{n_X}, Y\sim{\chi^2}_{n_Y} \Rightarrow X+Y\sim{\chi^2}_{n_X+n_Y}$
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $Z=X+Y$とする。$X,Y,Z$の確率密度関数を$f^X(x),f^Y(y),f^Z(z)$とすると
+            \begin{align*}
+                f^Z(z) &= \derivLong{\integrate{x=0}{z}{\integrate{y=0}{z-x}{f^X(x)f^Y(y)}{}{y}}{}{x}}{z}{} = \int_{0}^{z}{f^X(x)f^Y(z-x) dx} \quad(\because\ref{重積分の微分})\\
+                &= \int_{0}^{z}{\frac{1}{2^{\frac{n_X}{2}}\Gamma{\left(\frac{n_X}{2}\right)}}x^{\frac{n_X}{2}-1}e^{-\frac{x}{2}}\frac{1}{2^{\frac{n_Y}{2}}\Gamma{\left(\frac{n_Y}{2}\right)}}(z-x)^{\frac{n_Y}{2}-1}e^{-\frac{z-x}{2}} dx}\\
+                &= \frac{1}{2^{\frac{n_X+n_Y}{2}}\Gamma{\left(\frac{n_X}{2}\right)}\Gamma{\left(\frac{n_Y}{2}\right)}}e^{-\frac{z}{2}}\int_{0}^{z}{x^{\frac{n_X}{2}-1}(z-x)^{\frac{n_Y}{2}-1} dx}
+            \end{align*}
+            積分値の係数が煩わしいのでこれを$A$と書くことにし、$u=\frac{x}{z}$なる変数変換を行って
+            \begin{align*}
+                f^Z(z) &= Az^{\frac{n_X+n_Y}{2}-1}\int_{0}^{1}{u^{\frac{n_X}{2}-1}(1-u)^{\frac{n_Y}{2}-1} du}\\
+                &= Az^{\frac{n_X+n_Y}{2}-1}B\left(\frac{n_X}{2},\frac{n_Y}{2}\right)\\
+                &= Az^{\frac{n_X+n_Y}{2}-1}\frac{\Gamma{\left(\frac{n_X}{2}\right)}\Gamma{\left(\frac{n_Y}{2}\right)}}{\Gamma{\left(\frac{n_X+n_Y}{2}\right)}}\\
+                &= \frac{1}{2^{\frac{n_X+n_Y}{2}}\Gamma{\left(\frac{n_X}{2}\right)}\Gamma{\left(\frac{n_Y}{2}\right)}}e^{-\frac{z}{2}}z^{\frac{n_X+n_Y}{2}-1}\frac{\Gamma{\left(\frac{n_X}{2}\right)}\Gamma{\left(\frac{n_Y}{2}\right)}}{\Gamma{\left(\frac{n_X+n_Y}{2}\right)}}\\
+                &= \frac{1}{2^{\frac{n_X+n_Y}{2}}\Gamma{\left(\frac{n_X+n_Y}{2}\right)}}z^{\frac{n_X+n_Y}{2}-1}e^{-\frac{z}{2}}\\
+                &= \text{pdf of }{\chi^2}_{n_X+n_Y}
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$X_1,\dotsc,X_n\sim N(\mu,\sigma^2) \Rightarrow \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$}{X1, ..., Xn ～ N(μ,σ\string^2) ⇒ (1/σ\string^2)[(X1 - sampleAvg(X))\string^2 + ... + (Xn-E(X))\string^2] ～ χ\string^2\_(n-1)}}
+        \begin{shadebox}
+            $X_1,\dotsc,X_n\sim N(\mu,\sigma^2)$とし、$\overline{X}$を標本平均とすると$\frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} \sim \chi^2_{n-1}$
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $Z_i \coloneqq \frac{X_i-\mu}{\sigma}$とすると$Z_i \sim N(0,1)$であり
+            \begin{equation}
+                \frac{1}{\sigma^2}\sum_{i=1}^n{(X_i-\overline{X})^2} = \sum_{i=1}^n{(Z_i-\overline{Z})^2} \quad \textrm{where }\overline{Z}\coloneqq\frac{1}{n}\sum_{i=1}^n{X_i}
+            \end{equation}
+            $\bm{Z} \coloneqq [Z_1,\dotsc,Z_n]^\top$とする。
+            最下行が全て$1/\sqrt{n}$である$n$次直交行列を$P$として$\bm{Y} \coloneqq [Y_1,\dotsc,Y_n]^\top \coloneqq P\bm{Z}$とすると、\ref{零平均,同分散の正規分布に独立に従うn個の確率変数の直交変換もまた同じ分布に従う}より、$Y_1,\dotsc,Y_n\sim N(0,1)$であり、$Y_n = \frac{1}{\sqrt{n}}\sum_{i=1}^n{Z_i} = \sqrt{n}\overline{Z} \therefore\;\overline{Z}=Y_n/\sqrt{n}$。
+            \[(1) = \sum_{i=1}^n{({Z_i}^2 + \overline{Z}^2 -2\overline{Z}Z_i)} = \norm{\bm{Z}}^2 - n\overline{Z}^2 = \norm{\bm{Y}}^2 - \overline{Y_n}^2 = \sum_{i=1}^{n\textcolor{red}{-1}}{{Y_i}^2}\]
+            右から2つ目の等号で、直交変換がノルムを保存する性質を用いた。
+            このように、標準正規分布に従う独立な$n-1$個の確率変数の2乗和で表されたので、\ref{標準正規分布に従うn個の独立な確率変数の2乗和は自由度n-1のカイ2乗分布に従う}よりこれは自由度$n-1$のカイ2乗分布に従う。
+        \end{proof}
+        \begin{commentary}
+            \quad\par
+            なぜ独立変数の数を減らせたのか考えてみよう。
+            元々の$\bm{Z}$では$Z_1,\dotsc,Z_n$が一斉に同じ数だけ増えても$\sum_{i=1}^n{(Z_i-\overline{Z})^2}$の値は変わらない。
+            これは、確率密度関数を求めるための重積分中の$\bm{Z}$の拘束領域が、ベクトル$\bm{1}^n$方向に伸び放題であるということだ。
+            $\bm{Z}$はこの方向に無制限に動ける。
+            上述の直交変換で$Y_n$がこの方向に割り当てられたため、確率密度関数を求めるための重積分の中のこの方向に関する$(-\infty,\infty)$の積分結果が$Y_n$の確率密度関数の全域積分すなわち1になり、我々が相手にするべき次元が1個減ったのである。
+        \end{commentary}
