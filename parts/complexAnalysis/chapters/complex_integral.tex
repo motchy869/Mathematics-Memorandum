@@ -1,0 +1,11 @@
+\chapter{複素積分}
+    \section{例題}
+        \subsection{\texorpdfstring{$\integrate{0}{2\pi}{\Log(1-a\exp(i\theta))}{}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
+            \begin{solution}
+                \quad\par
+                $a=0$のときは明らかに成り立つ。$a\neq0$のときは$z=e^{i\theta}$とすると
+                \[\integrate{0}{2\pi}{\Log(1-ae^{i\theta})}{}{\theta} = \integrate{C}{}{\frac{\Log(1-az)}{iz}}{}{z}\quad (C:\text{原点中心の左回り単位円})\]
+                被積分関数の$C$内部の特異点は$z=0$である。原点の近傍(具体的には$|z|<1/|a|$の範囲)においては
+                \[\frac{\Log(1-az)}{iz} = \frac{-1}{iz}\sum_{n=1}^\infty\frac{(az)^n}{n}=\frac{-1}{i}\sum_{n=1}^\infty\frac{a^nz^{n-1}}{n} = \frac{-1}{i}\sum_{n=0}^\infty\frac{a^{n+1}}{n+1}z^n\]
+                であり、特異点$z=0$は除去可能であることから従う。
+            \end{solution}

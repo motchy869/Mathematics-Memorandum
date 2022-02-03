@@ -5,17 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0] - 2022/2/4
+
+- Added div(f(r)A(r)) = (div f(r))・A(r) + f(r)div(A(r))
+- equation: div(vector Laplacian(A)) = Laplacian(div(A))
+- log-normal distribution
+- subdivided large files into chapters
+
 ## [0.7.0] - 2022/1/22
 
 - Fixed
   - typos
-
 - Changed
   - title: motchyの数学備忘録 -> 数学備忘録
-
 - Deleted
   - grad of 1/||r+a||. This is replaced with grad of ||r+a||^n.
-
 - Added
   - grad of ||r+a||^n
 

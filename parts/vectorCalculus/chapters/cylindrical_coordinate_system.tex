@@ -1,0 +1,67 @@
+\chapter{円柱座標系}
+    \section{計量係数}
+        \begin{shadebox}
+            \[h_r = 1, \hph = r, h_z = 1\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            位置ベクトルは
+            \[\vr = \dthv{r\cosph}{r\sinph}{z}\]
+            よって
+            \begin{align*}
+                h_r &\coloneqq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
+                \hph &\coloneqq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
+                h_z &\coloneqq \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
+            \end{align*}
+        \end{proof}
+    \section{単位ベクトルに関する3次元Euclid空間との関係}
+        \begin{shadebox}
+            \begin{align*}
+                \ir &= \ix\cosph + \iy\sinph\\
+                \iph &= -\ix\sinph + \iy\cosph
+            \end{align*}
+            \begin{align*}
+                \ix &= \ir\cosph - \iph\sinph\\
+                \iy &= \ir\sinph + \iph\cosph
+            \end{align*}
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            位置ベクトルは
+            \[\vr = \dthv{r\cosph}{r\sinph}{z}\]
+            よって
+            \begin{align}
+                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \ix\cosph+\iy\sinph \\
+                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\ix\sinph+\iy\cosph
+            \end{align}
+            これを逆に解いてみる。\\
+            $(1)\times\cosph-(2)\times\sinph$より$\ix = \ir\cosph - \iph\sinph$\\
+            $(1)\times\sinph+(2)\times\cosph$より$\iy = \ir\sinph + \iph\cosph$\\
+            を得る。
+        \end{proof}
+    \section{微分演算に関する直交座標系との関係}
+        \begin{shadebox}
+            \begin{align*}
+                \partDeriv{}{x}{} &= \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\\
+                \partDeriv{}{y}{} &= \sinph\partDeriv{}{r}{} + \frac{\cosph}{r}\partDeriv{}{\varphi}{}
+            \end{align*}
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            スカラー関数$\phi(x,y,z)$を微分することを考える。
+            \def \phr {\partDeriv{\phi}{r}{}}
+            \def \php {\partDeriv{\phi}{\varphi}{}}
+            \def \phz {\partDeriv{\phi}{z}{}}
+            $d\phi \coloneqq \phr dr + \php d\varphi + \phz dz$であるから
+            \begin{align*}
+                \partDeriv{\phi}{x}{} &= \phr\partDeriv{r}{x}{} + \php\partDeriv{\varphi}{x}{} + \phz\partDeriv{z}{x}{}\\
+                &= \phr\ppx{\sqrt{x^2+y^2}} + \php\ppx{\varphi}
+            \end{align*}
+            第1項に関して
+            \[\ppx{\sqrt{x^2+y^2}} = \frac{x}{\sqrt{x^2+y^2}} = \frac{r\cosph}{r} = \cosph\]
+            第2項に関して
+            \[\ppx{\varphi} = \ppx\atanEx{x}{y} = \frac{-y}{x^2+y^2} = \frac{-r\sin{\phi}}{r^2} = -\frac{\sin{\phi}}{r}\]
+            以上より
+            \[\partDeriv{}{x}{} = \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\]
+            $y$に関しても全く同様にして導出できる。
+        \end{proof}

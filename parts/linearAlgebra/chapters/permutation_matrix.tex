@@ -1,0 +1,28 @@
+\chapter{置換行列}
+    \section{定義}
+        \begin{definition}
+            \quad\par
+            $I_{n\times n}$の２つの列(第$i,j$列)を入れ替えてできる対称行列を基本置換行列という。
+            これを左から掛けると第$i,j$行の交換になり、右から掛けると第$i,j$行の交換になる。
+            基本置換行列の積を置換行列という。置換行列は各行,各列に1つだけ$1$をもち、他は全て$0$である。
+        \end{definition}
+    \section{諸定理}
+        \subsection{行と列の同期入れ替え}
+            \begin{shadebox}
+                $\Pi$を$n$次の置換行列とする。$A\in\field^{n\times n}$に対して$\Pi^\top A\Pi$は$A$の行と列に同じ入れ替えを行う。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                置換行列$\Pi$は基本置換行列$\Pi_1,\Pi_2,\dotsc,\Pi_n$の積で表される。各$\Pi_i$は対称行列であるから
+                \[\Pi^\top A\Pi = {\Pi_n}^\top\dotsm{\Pi_1}^\top\;A\;\Pi_1\dotsm\Pi_n = \Pi_n\dotsm\Pi_1\;A\;\Pi_1\dotsm\Pi_n\]
+                であり、明らかに行と列に同じ入れ替えを行っている。
+            \end{proof}
+        \subsection{置換行列は直交行列}
+            \begin{shadebox}
+                置換行列は直交行列である
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                置換行列は単位行列の列を適当に入れ替えて作ることができる(または行を入れ替えて作ることもできる)。
+                単位行列の各列ベクトルは正規直交であるが、列を入れ替えても正規直交性は維持され、置換行列の各列ベクトルは正規直交なので直交行列である。
+            \end{proof}

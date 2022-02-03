@@ -1,0 +1,10 @@
+\chapter{\texorpdfstring{$r$}{r}進法}
+    \section{\texorpdfstring{$1/10$}{1/10}が2進表記で無限小数になることの証明}
+        \begin{proof}
+            \quad\par
+            $\frac{1}{10}=\frac{1}{2}\times\frac{1}{5}$なので$1/5$が2進表記で無限小数になることを示せば十分。
+            背理法で示す。
+            ある適当な自然数$m$を用いて$\frac{1}{5} = \sum_{i=1}^m a_i 2^{-i} \quad (a_i\in\{0,1\})$と表せると仮定する。
+            両辺に$2^m\times 5$を掛けて$2^m = 5\sum_{i=1}^m a_i 2^{m-i} = 5\sum_{i=0}^{m-1}a_{m-i}2^i$となる。
+            左辺は5で割り切れないが右辺は割り切れるので矛盾している。
+        \end{proof}

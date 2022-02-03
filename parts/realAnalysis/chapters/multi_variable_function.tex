@@ -1,0 +1,146 @@
+\chapter{多変数関数}
+    \section{Jacobi行列}
+        \subsection{\texorpdfstring{$J_{G\circ F}=J_GJ_F$}{J\_\{G∘F\}}}
+            \label{subsec:合成関数のJacobi行列}
+            \begin{shadebox}
+                $F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
+            \end{shadebox}
+            \begin{proof}
+                \[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
+            \end{proof}
+        \subsection{\texorpdfstring{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}{J\_\{f\string^⊤g\} = g\string^⊤ J\_f + f\string^⊤ J\_g}}
+        \begin{shadebox}
+            $\bm{f},\bm{g}:\realNumbers^m\to\realNumbers^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると、$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                J_{\bm{f}^\top \bm{g}}[1,j] &= \partDerivLong{\sum_{k=1}^n f_k(\bm{x})g_k(\bm{x})}{x_j}{} = \sum_{k=1}^n \partDerivLong{f_k(\bm{x})g_k(\bm{x})}{x_j}{} = \sum_{k=1}^n \left(\partDeriv{f_k(\bm{x})}{x_j}{}g_k(\bm{x}) + f_k(\bm{x})\partDeriv{g_k(\bm{x})}{x_j}{}\right) \\
+                &= \sum_{k=1}^n \left(J_\bm{f}[k,j]g_k(\bm{x}) + f_k(\bm{x})J_\bm{g}[k,j]\right) = (\bm{g}^\top J_\bm{f})[1,j] + (\bm{f}^\top J_\bm{g})[1,j]
+            \end{align*}
+        \end{proof}
+    \section{勾配とHessian}
+        \subsection{\texorpdfstring{$\nabla(G\circ F) = \nabla F \nabla G$}{∇(G∘F) = ∇F ∇G}}
+            \begin{shadebox}
+                $F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$に対して$F,G$の合成写像$G\circ F$の勾配は$\nabla(G\circ F) = \nabla F \nabla G$である。
+            \end{shadebox}
+            \begin{proof}
+                $\nabla F = {J_F}^\top$であることと\ref{subsec:合成関数のJacobi行列}より直ちに従う。
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top$}{∇\_\{xy\}f = (∇\_\{yx\} f)\string^⊤}}
+            \begin{shadebox}
+                $\bm{x}\in\realNumbers^{n_1}, \bm{y}\in\realNumbers^{n_2}$とし、$f:(\bm{x},\bm{y})\in\realNumbers^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realNumbers$とするとき、次が成り立つ。
+                \[ \nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top \]
+            \end{shadebox}
+            \begin{proof}
+                \[ \nabla_{\bm{x}\bm{y}} f = \nabla_\bm{x}\nabla_\bm{y}f = \nabla_\bm{x}\left[\partDeriv{f}{y_1}{}, \dotsc, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_{\bm{y}\bm{x}} f)^\top \]
+            \end{proof}
+        \subsection{勾配ベクトルが等値面の接平面と直交することの証明}
+            \begin{shadebox}
+                $n$変数関数$f(\bm{x}),\;(\bm{x}\coloneqq[x_1,\dotsc,x_n]^\top)$の点$\bm{a}\coloneqq[a_1,\dotsc,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $\nabla f(\bm{a})\neq\bm{0}$だから$f_{x_1}(\bm{a}),\dotsc,f_{x_n}(\bm{a})$のうち少なくとも1つは0でない。
+                一般性を失わずに$f_{x_n}(\bm{a})\neq 0$であるとする(変数の添字をそのように付け替えれば良い)。
+                このとき陰関数定理より点$\bm{a}'\coloneqq[a_1,\dotsc,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\dotsc,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
+                $n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
+                \[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
+                であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
+                \[ W \coloneqq \Span{\set*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
+                のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
+            \begin{proof}
+                \quad $\nabla(A\bm{x})[i][j] = \partDeriv{(A\bm{x})[j]}{x_i}{} = \partDerivLong{\sum_{k=1}^n a_{jk} x_k}{x_i}{} = a_{ji}$
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla \bm{x}^\top\bm{x} = 2\bm{x}$}{∇ x\string^⊤ x = 2x}}
+            \begin{proof}
+                \quad $\partDeriv{\bm{x}^\top\bm{x}}{x_i}{} = \partDerivLong{\sum_{j=1}^n x_j^2}{x_i}{} = 2x_i \quad\therefore \nabla \bm{x}^\top\bm{x} = 2\bm{x}$
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla \bm{x}^\top A\bm{x} = (A+A^\top)\bm{x}$}{∇ x\string⊤ Ax}}
+            \begin{proof}
+                \quad\par
+                \[\nabla \bm{x}^\top A\bm{x} = \nabla\sum_{i=1}^{n}{\sum_{j=1}^{n}{a_{ij}x_ix_j}} = \nabla\left(\sum_{i=1}^{n}{a_{ii}{x_i}^2} + \sum_{i\neq j}^{n}{a_{ij}x_ix_j}\right)\]
+                よって第$i$要素は
+                \[\left(\nabla \bm{x}^\top A\bm{x}\right)[i] = 2a_{ii}x_i + \sum_{j\neq i}^{n}{(a_{ij}+a_{ji})x_j} = \sum_{j=1}^{n}{(a_{ij}+a_{ji})x_j} = \left((A+A^\top)\bm{x}\right)[i]\]
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla\norm{A\bm{x}+\bm{b}}_2^2 = 2A^\top(A\bm{x}+\bm{b})$}{∇||Ax+b||\_2\string^2 = 2A\string^⊤(Ax+b)}}
+            \begin{proof}
+                \quad\par
+                合成関数の微分法より
+                \[ \nabla \norm{A\bm{x}+\bm{b}}_2^2 = (\nabla(A\bm{x}+\bm{b}))\left.(\nabla\bm{y}^\top\bm{y})\right|_{\bm{y}=A\bm{x}+\bm{b}} = A^\top 2(A\bm{x}+\bm{b}) = 2A^\top(A\bm{x}+\bm{b}) \]
+                % \begin{comment}
+                % \begin{align*}
+                % 	\partDerivLong{\norm{A\bm{x}+\bm{b}}_2^2}{x_i}{} &= \partDerivLong{\left(\norm{A\bm{x}}_2^2 + 2\inprod{A\bm{x}}{\bm{b}} + \norm{\bm{b}}_2^2}{x_i}{}\right) = \partDerivLong{\left(\sum_{j=1}^n (A\bm{x})[j]^2 + 2\sum_{j=1}^n (A\bm{x})[j]b_j\right)}{x_i}{} \\
+                % 	&= \partDerivLong{\left[\sum_{j=1}^n\left(\sum_{k=1}^n a_{jk}x_k\right)^2 + 2\sum_{j=1}^n \left(\sum_{k=1}^n a_{jk}x_k\right)b_j\right]}{x_i}{} \\
+                % 	&= \sum_{j=1}^n 2\left(\sum_{k=1}^n a_{jk}x_k\right)a_{ji} + 2\sum_{j=1}^n a_{ji}b_j = 2\sum_{j=1}^n a_{ji}\left(\sum_{k=1}^n a_{jk}x_k + b_j\right) \\
+                % 	&= 2\sum_{j=1}^n a_{ji}\left((A\bm{x})[j] + b_j\right) = 2\left(A^\top(A\bm{x}+\bm{b})\right)[i]
+                % \end{align*}
+                % \end{comment}
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = A^\top(B+B^\top)(A\bm{x}+\bm{b})$}{∇ (Ax+b)\string^⊤ B(Ax+b) = A\string^⊤ (B+B\string^⊤)(Ax+b)}}
+            \begin{proof}
+                \quad\par
+                合成関数の微分法より
+                \[ \nabla (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = \nabla(A\bm{x} + \bm{b})\left(\left.\nabla(\bm{y}^\top B\bm{y})\right|_{\bm{y}=A\bm{x}+\bm{b}}\right) = A^\top(B+B^\top)(A\bm{x}+\bm{b}) \]
+            \end{proof}
+        \subsection{\texorpdfstring{$\nabla^2 \bm{x}^\top A\bm{x} = A+A^\top$}{∇\string^2 x\string^⊤ Ax = A+A\string^⊤}}
+            \begin{proof}
+                \quad $\nabla^2\bm{x}^\top A\bm{x} = \nabla \nabla\bm{x}^\top A\bm{x} = \nabla(A+A^\top)\bm{x} = A+A^\top$
+            \end{proof}
+        \subsection{公式集}
+            \begin{itemize}
+                \item $\nabla^2 \norm{A\bm{x}+\bm{b}}_2^2 = 2A^\top A$
+                \item $\nabla^2 (A\bm{x}+\bm{b})^\top B(A\bm{x}+\bm{b}) = A^\top(B+B^\top)A$
+            \end{itemize}
+    \section{逆関数定理}
+        \begin{shadebox}
+            $F\in C^1(\realNumbers^n\to\realNumbers^n),\;\bm{x}\mapsto\bm{y}(\bm{x})$のJacobi行列を$J_F(\bm{x})$とする。
+            ある$\bm{a}\in\dom{F}$に対して$J_F(\bm{a})$が正則なら$F(\bm{a})$の近傍で$\textcolor{red}{C^1}$級の$F$の逆写像$F^{-1}$が存在して$J_{F^{-1}}(F(\bm{a})) = J_F(\bm{a})^{-1}$
+        \end{shadebox}
+        \newcommand{\xhat}{\hat{\bm{x}}}
+        \newcommand{\ahat}{\hat{\bm{a}}}
+        \newcommand{\uhat}{\hat{\bm{u}}}
+        \newcommand{\fhat}{\hat{f}}
+        \newcommand{\Fhat}{\hat{F}}
+        \begin{proof}
+            \quad\par
+            $n=1$のときは1変数関数の逆関数定理より従う。$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
+            \par
+            $F = [f_1,\dotsc,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneqq [x_1,\dotsc,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
+            \par
+            $J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
+            一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
+            この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
+            \par
+            $\fhat_i(\xhat) \coloneqq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneqq [\fhat_i(\xhat),\dotsc,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
+            帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
+            すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
+            \par
+            \[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
+            \[ \text{where}\quad \bm{p}_j \coloneqq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m+1),\;\lambda_j \coloneqq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m) \]
+            行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが、$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから、結局次のようになる。
+            \begin{align*}
+                |J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\dotsc,\bm{p}_m\right| \\
+                &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}\right|
+            \end{align*}
+            ここで
+            \[ \lambda_i = -\frac{\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})} \]
+            であることと$(-1)^{m-i} = (-1)^{m+i}$に注意して
+            \begin{align*}
+                J_{\Fhat}(\ahat)| &= \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}\left[\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})|\matPart{J_F(\bm{a})}{1}{m}{1}{m}|\right. \\
+                &+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\dotsc\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}\right|\right]
+            \end{align*}
+            上式の$[\;]$内は$|J_F(\bm{a})|$の第$m$行に関する余因子展開と等しいので
+            \[ |J_{\Fhat}(\ahat)| = \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}|J_F(\bm{a})| \neq 0 \]
+            以上より$F$の逆関数が存在して$C^1$級であることが示された。
+            そして$F^{-1}\circ F$は恒等写像だから$I_n = J_{F^{-1}\circ F}(\bm{a}) = J_{F^{-1}}(\bm{a})J_F(\bm{a})$より$J_{F^{-1}}(\bm{a}) = J_F(\bm{a})^{-1}$となる。
+        \end{proof}
+    \section{2次形式}
+        \subsection{\texorpdfstring{$^\forall A\in\realNumbers^{n\times n},\bm{x}\in\realNumbers^n,\;^\exists$}{∀A∈R\string^(n×n), x∈R\string^n, ∃}対称行列\texorpdfstring{$B\in\realNumbers^{n\times n} \text{ s.t. } \bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}$}{B∈R\string^(n×n) s.t. x\string^⊤Ax}}
+            \begin{proof}
+                \quad\par
+                \[\bm{x}^\top A\bm{x} = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A\bm{x}\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \left(\bm{x}^\top A\bm{x}\right)^\top\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A^\top\bm{x}\right) = \bm{x}^\top\frac{A+A^\top}{2}\bm{x}\]
+                であるので$B \coloneqq \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
+                \[\bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}\]
+            \end{proof}

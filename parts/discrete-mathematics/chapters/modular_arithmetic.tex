@@ -1,0 +1,54 @@
+\chapter{整数の合同}
+    \section{定数倍と加減乗除}
+        $n$を2以上の整数とする。$x_1\equiv_n x_2$かつ$y_1\equiv_n y_2$であるとき次が成り立つ。
+        \begin{itemize}
+            \item 任意の整数$a$に対して$a x_1 \equiv_n a x_2$
+            \item $x_1+y_1 \equiv_n x_2+y_2$
+            \item $x_1y_1 \equiv_n x_2y_2$
+            \item $x_1,\;x_2$が共に整数$m$で割り切れて$m$と$n$が互いに素ならば$x_1/m \equiv_n x_2/m$
+        \end{itemize}
+    \section{\texorpdfstring{$a,m\in \naturalNumbers$}{自然数a,m}が互いに素であるとき、\texorpdfstring{$0,a,2a,\dotsc,(m-1)a$}{0,a,2a,...,(m-1)a}を\texorpdfstring{$m$}{m}で割った余りは全て異なる}
+        \label{a,mが互いに素のとき、0,a,...a(m-1)をmで割った余りは全て異なる}
+        \begin{proof}
+            \quad\par
+            $b_1,b_2\;(0 \leq b_1 < b_2 \leq m-1)$を任意にとる。$a$と$m$が互いに素であるから$(m/\gcd(b_2-b_1, m)) \nmid (a(b_2-b_1)/\gcd(b_2-b_1, m))$であるので$m \nmid a(b_2-b_1)$、すなわち$ab_1 \not \equiv_m ab_2$である。
+        \end{proof}
+    \section{和のべき乗を展開}
+        \label{整数の合同:和のべき乗を展開}
+        $x,\;y$を整数、$p$を素数とするとき次が成り立つ。
+        \begin{enumerate}
+            \item $(x+y)^p \equiv_p x^p + y^p$
+            \item $(x+y)^p \equiv_p x^p + y$
+        \end{enumerate}
+        \begin{proof}
+            \quad\par
+            まず1を示す。
+            \[(x+y)^p \equiv_p x^p + \sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k + y^p\]
+            であるが$\sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k$は$p$の倍数である。何故ならば
+            \[ \combi{p}{k} =\frac{p!}{k!(p-k)!} \quad (k=1,\dotsc,p-1) \]
+            において$p$は素数であり$k<p$なので分子の$p$は約分されないから。
+            よって次式より1が成り立つ。
+            \[ x^p + \sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k + y^p \equiv_p x^p + y^p \]
+            次に2を示す。
+            $p=2$のときは、左辺と右辺の差は$(x+y)^2 - (x^2+y) = y(y-1+2x)$なので$y$の偶奇に関わらず$p$の倍数である。
+            以下では$p$は3以上の素数とする。$y$が0のときは明らかに成り立つ。
+            1の結果を用いると、$y$が自然数のときは
+            \[(x+y)^p = [(x+y-1) + 1]^p \equiv_p (x+y-1)^p + 1 \equiv_p (x+y-2)^p + 2 \equiv_p \dotsb \equiv_p x^p + y \]
+            より成り立つ。$y$が負の整数のときも
+            \[(x+y)^p = [(x+y+1) - 1]^p \equiv_p (x+y+1)^p - 1 \equiv_p (x+y+2)^p - 2 \equiv_p \dotsb \equiv_p x^p + (-y)(-1) = x^p + y \]
+            より成り立つ。
+        \end{proof}
+    \section{Fermatの小定理}
+        \begin{shadebox}
+            素数$p$と整数$a$が互いに素であるとき、$a^{p-1} \equiv_p 1$である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            「\textcolor{red}{任意の}整数$a$に対して$a^p \equiv_p a$」を示し、$a$と$p$が互いに素である場合に限定して両辺を$a$で割れば良いので、これを示す。
+            $p=2$のときは$a$の偶奇で場合分けすれば簡単に示せる。以下では$p$は3以上の素数であるとする。
+            まず$a=0$のときは明らかに成り立つ。\ref{整数の合同:和のべき乗を展開}を用いると、$a$が自然数のときは
+            \[ a^p \equiv_p [(a-1)+1]^p \equiv_p (a-1)^p + 1 \equiv_p [(a-2) + 1]^p + 1 \equiv_p (a-2)^p + 1 + 1 \equiv_p \dotsb \equiv_p a\]
+            となり、成り立つ。$a$が負の整数のときは
+            \[ a^p \equiv_p [(a+1)-1]^p \equiv_p (a+1)^p - 1 \equiv_p [(a+2) - 1]^p - 1 \equiv_p (a+2)^p - 1 - 1 \equiv_p \dotsb \equiv_p (-a)(-1) \equiv_p a \]
+            となり、やはり成り立つ。
+        \end{proof}

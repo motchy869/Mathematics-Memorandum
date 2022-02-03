@@ -1,0 +1,41 @@
+\chapter{公式}
+    \section{\texorpdfstring{$1\cdot3\cdot5\dots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
+        \begin{proof}
+            \begin{align*}
+                1 \cdot 3 \cdot 5 \dotsm (2n-1)2n = \frac{1 \cdot 2 \cdot 3 \cdot 4 \cdot 5 \cdot 6 \cdot 7 \dotsm (2n-2)(2n-1)2n}{\underbrace{2 \cdot 4 \cdot 6 \dotsm(2n-2)2n}_{n\text{個}}}2^n = \frac{(2n)!}{1 \cdot 2 \cdot 3 \dotsm (n-1)n} = \frac{(2n)!}{n!}
+            \end{align*}
+        \end{proof}
+    \section{\texorpdfstring{$a^n-b^n = (a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k$}{a\string^n-b\string^nの分解}}
+        \begin{proof}
+            \begin{align*}
+                (a-b)\sum_{k=0}^{n-1} a^{n-1-k}b^k &= \sum_{k=0}^{n-1} a^{n-k}b^k - \sum_{k=0}^{n-1} a^{n-1-k}b^{k+1} \\
+                &= a^n + \sum_{k=1}^{n-1} a^{n-k}b^k - \sum_{k=1}^{n} a^{n-k}b^{k} = a^n - b^n
+            \end{align*}
+        \end{proof}
+    \section{M\"obiusの反転公式}
+        \begin{shadebox}
+            $f,g$を自然数から複素数への写像とする。
+            \begin{enumerate}
+                \item 任意の自然数$n$に対して$g(n) = \sum_{d \mid n}f(d)$が成り立つならば$f(n) = \sum_{d \mid n} \mu(d)g(n/d) = \sum_{d \mid n} \mu(n/d)g(n)$が成り立つ。
+                \item 任意の自然数$n$に対して$g(n) = \prod_{d \mid n}f(d)$が成り立つならば$f(n) = \prod_{d \mid n} g(n/d)^{\mu(d)} = \prod_{d \mid n} g(d)^{\mu(n/d)}$が成り立つ。
+            \end{enumerate}
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            (1について)
+            \par
+            結論の式の左から2つ目の等号は約数の意味から明らかである。
+            1つ目の等号成立を示す。
+            \begin{align*}
+                \sum_{d \mid n} \mu(d)g(n/d) &= \sum_{d \mid n} \mu(d)\sum_{e \mid n/d} f(e) = \sum_{d \mid n} \sum_{e \mid n/d} \mu(d)f(e) = \sum_{\genfrac{}{}{0pt}{}{d,e}{de \mid n}} \mu(d)f(e) \\
+                &= \sum_{e \mid n} \sum_{d \mid n/e} \mu(d)f(e) = \sum_{e \mid n} f(e) \sum_{d \mid n/e} \mu(d) = \sum_{e \mid n} f(e) \indII{e=n} = f(n)
+            \end{align*}
+            \newline
+            \newline
+            (2について)
+            \par
+            \begin{align*}
+                \prod_{d \mid n} g(n/d)^{\mu(d)} &= \prod_{d \mid n} \left(\prod_{e \mid n/d} f(e)\right)^{\mu(d)} = \prod_{d \mid n} \prod_{e \mid n/d} f(e)^{\mu(d)} = \prod_{\genfrac{}{}{0pt}{}{d,e}{de \mid n}} f(e)^{\mu(d)} \\
+                &= \prod_{e \mid n} \prod_{d \mid n/e} f(e)^{\mu(d)} = \prod_{e \mid n} f(e)^{\sum_{d \mid n/e} \mu(d)} = \prod_{e \mid n} f(e)^{\indII{e=n}} = f(n)
+            \end{align*}
+        \end{proof}
