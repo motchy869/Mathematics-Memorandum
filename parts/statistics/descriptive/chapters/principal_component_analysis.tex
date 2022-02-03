@@ -1,0 +1,53 @@
+\chapter{主成分分析}
+    \section{分散共分散行列の対角化}
+        %\newcommand{\nev}{{n_{\textrm{ev}}}}
+        $D$個の$n$次元ベクトルから成るデータ集合$\DS \coloneqq \{\bm{x}_d\in\realNumbers^n\}_{d=1}^D$を考える。
+        \ref{分散共分散行列の定値性}より、分散共分散行列$\Sigma_{\DS}$は半正定であり、特に$\Var{}{\DS}>0$であれば正定である。
+        従って、$\Sigma_{\DS}$は直交行列で対角化でき、対角行列には固有値が並ぶ。しかも固有値は全て実数である。
+        \par
+% 		$\Sigma_{\DS}$の相異なる固有値の数を$\nev$とし(evは eigen value の略)、固有値を$\lambda_1>\lambda_2>\dotsb>\lambda_\nev\geq 0$とする。
+% 		固有値$\lambda_i$の固有空間の次元を$\nu_i$とし、$\lambda_i$に属する正規直交固有ベクトルを$\bm{p}_{i1},\dotsc,\bm{p}_{i\nu_i}$とする。
+% 		$P \coloneqq [\bm{p}_{11},\dotsc,\bm{p}_{1\nu_1},\dotsc,\bm{p}_{\nev 1},\dotsc,\bm{p}_{\nev,\nu_\nev}]$とすると$P$は直交行列である。
+% 		$\Lambda_i \coloneqq \diag{\lambda_{i1},\dotsc,\lambda_{i\nu_i}}$とし、$\Lambda \coloneqq \diag{\Lambda_1,\dotsc,\Lambda_\nev}$とすると$\Sigma_{\DS}$は次のように$P$によって対角化される。
+        簡単のため固有値に重複はないものとすると、全ての固有空間の次元は1である。
+        固有値を大きい順に$\lambda_1>\dotsb>\lambda_n\geq 0$とし、固有値$\lambda_i$に対応する大きさ1の固有ベクトルを$\bm{p}_i$とする。
+        直交行列$P\coloneqq[\bm{p}_1,\dotsc,\bm{p}_n]$と対角行列$\Lambda\coloneqq\diag{\lambda_1,\dotsc,\lambda_n}$を用いて$\Sigma_{\DS}$は次のように対角化される。
+        \[\Sigma_{\DS} = P\Lambda P^\top\]
+    \section{データセットの射影}
+        \begin{shadebox}
+            任意の$\bm{x}_d\in\DS$の、単位ベクトル$\bm{u}\in\realNumbers^n$方向成分$y_d\coloneqq\bm{u}^\top\bm{x}_d$から成るデータ集合$\DS_y\coloneqq\{y_d\}_{d=1}^D$の分散$\Var{}{\DS_y}$は$\bm{u}^\top\Sigma_\DS\bm{u}$である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $\DS_y$の平均$\overline{y}$は
+            \[\overline{y} = \frac{1}{D}\sum_{d=1}^{D}{y_d} = \frac{1}{D}\sum_{d=1}^{D}{\bm{u}^\top\bm{x}_d} = \bm{u}^\top\frac{1}{D}\sum_{d=1}^{D}{\bm{x}} = \bm{u}^\top\overline{\bm{x}}\]
+            これを用いて
+            \begin{align*}
+                \Var{}{\DS_y} &= \frac{1}{D}\sum_{d=1}^{D}{(y_d-\overline{y})^2} = \frac{1}{D}\sum_{d=1}^{D}{(\bm{u}^\top\bm{x}_d-\bm{u}^\top\overline{\bm{x}})^2} = \frac{1}{D}\sum_{d=1}^{D}{\left[\bm{u}^\top(\bm{x}_d-\overline{\bm{x}})\right]^2} \\
+                &= \frac{1}{D}\sum_{d=1}^{D}{\bm{u}^\top(\bm{x}-\overline{\bm{x}})\bm{u}^\top(\bm{x}-\overline{\bm{x}})} = \frac{1}{D}\sum_{d=1}^{D}{\bm{u}^\top(\bm{x}-\overline{\bm{x}})(\bm{x}-\overline{\bm{x}})^\top\bm{u}} \\
+                &= \bm{u}^\top\left(\frac{1}{D}\sum_{d=1}^D{(\bm{x}_d-\overline{\bm{x}})^\top(\bm{x}_d-\overline{\bm{x}})}\right)\bm{u} = \bm{u}^\top\Sigma_\DS\bm{u}
+            \end{align*}
+        \end{proof}
+    \section{主成分}
+        任意の$\bm{x}_d\in\DS$について、$\bm{p}_i$方向成分$y_d\coloneqq\bm{p}_i^\top\bm{x}_d$を「$\bm{x}_d$の第$i$主成分」と呼ぶ。
+        そのような$y_d$の集合$\DS_y\coloneqq\{y_d\}_{d=1}^D = \{\bm{p}_i^\top\bm{x}_d\}_{d=1}^D$を「DSの第$i$主成分」と呼ぶ。
+        $\bm{x}_d$の$P$による直交変換$\bm{y}_d\coloneqq P^\top\bm{x}_d$の集合$\DS_{\bm{y}}\coloneqq\{\bm{y}_d\}_{d=1}^D = \{P^\top\bm{x}_d\}_{d=1}^D$を考えると、これはDSの$P$による直交変換である。
+        \subsection{主成分の分散共分散行列}
+            \begin{shadebox}
+                上述の$\DS_{\bm{y}}$の分散共分散行列$\Sigma_{\DS_{\bm{y}}}$は先述の$\Lambda$に等しい。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $\DS_{\bm{y}}$の平均$\overline{\bm{y}}$は
+                \[\overline{\bm{y}} = \frac{1}{D}\sum_{d=1}^D{\bm{y}_d} = \frac{1}{D}\sum_{d=1}^D{P^\top\bm{x}_d} = P^\top\frac{1}{D}\sum_{d=1}^D{\bm{x}_d} = P^\top\overline{\bm{x}}\]
+                これを用いて
+                \begin{align*}
+                    \Sigma_{\DS_{\bm{y}}} &= \frac{1}{D}\sum_{d=1}^D{(\bm{y}_d-\overline{\bm{y}})(\bm{y}_d-\overline{\bm{y}})^\top} = \frac{1}{D}\sum_{d=1}^D{P^\top(\bm{x}_d-\overline{\bm{x}})(\bm{x}_d-\overline{\bm{x}})^\top P} = P^\top\Sigma_\DS P \\
+                    &= P^\top P\Lambda P^\top P = \Lambda
+                \end{align*}
+            \end{proof}
+        この定理から、第$i$主成分の分散が$\lambda_i$であり、第$i$主成分と第$j\neq i$主成分の共分散は0であることがわかる。
+        つまり、どんなデータ集合でも上述の直交変換で回してやることで異なる次元方向の間の共分散を0にできる。
+        \par
+        第1主成分に対応する固有ベクトル$\bm{p}_i$は、最も散らばりが大きい方向を指している。
+        例えばDSの分布がラグビーボールのような形をしていれば、その長軸方向が第1主成分の方向である。

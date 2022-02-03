@@ -1,12 +1,12 @@
-\part{ブール代数}
-	\chapter{双対原理}
+\chapter{ブール代数}
+	\section{双対原理}
 		\begin{proof}
 			\quad\par
 			論理式$P(\bm{x})$の双対$P(\bm{x})^\mathrm{d}$は$\overline{P(\overline{\bm{x}})}$で表せる。
 			$P(\bm{x})=Q(\bm{x})$ならば$\overline{P(\overline{\bm{x}})} = \overline{Q(\overline{\bm{x}})}$なので$P(\bm{x})^\mathrm{d} = Q(\bm{x})^\mathrm{d}$である。
 		\end{proof}
-	\chapter{応用}
-		\section{2進Grayコードへの変換}
+	\section{応用}
+		\subsection{2進Grayコードへの変換}
 			$x$の2進表現からGrayコードへの変換は$x$の2進表現と、それを1ビット右シフトして先頭に0をつけたものとの排他的論理和で得られる。
 			これで上手くいく理由を考えてみる。
 			$x$の$n$bit 2進表現を$b_{n-1},b_{n-2},\dotsc,b_1,b_0$とする。

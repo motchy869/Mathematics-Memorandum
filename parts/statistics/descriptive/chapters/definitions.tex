@@ -1,0 +1,18 @@
+\chapter{諸定義}
+    \section{平均, 分散, 共分散}
+        $D$個の$n$次元ベクトルから成るデータ集合$\DS \coloneqq \{\bm{x}_d\in\realNumbers^n\}_{d=1}^D$に対して「平均$\overline{\bm{x}}$」,「分散$\Var{}{\DS}$」を次のように定義する。
+        \begin{itemize}
+            \item $\overline{\bm{x}} \coloneqq \frac{1}{S}\sum_{d=1}^D{\bm{x}_d}$
+            \item $\Var{}{\DS} \coloneqq \frac{1}{D}\sum_{d=1}^D{\norm{\bm{x}_d-\overline{\bm{x}}}^2} = \frac{1}{D}\sum_{d=1}^D{(\bm{x}_d-\overline{\bm{x}})^\top(\bm{x}_d-\overline{\bm{x}})}$
+        \end{itemize}
+        「第$i$次元成分の平均$\overline{x_i}$」,「第$i$次元成分と第$j$次元成分の共分散$\Cov{x_i}{x_j}$」を次のように定義する。
+        \begin{itemize}
+            \item $\overline{x_i} \coloneqq \overline{\bm{x}}[i]$
+            \item $\Cov{x_i}{x_j} \coloneqq \frac{1}{D}\sum_{d=1}^D{(\bm{x}_d[i]-\overline{x}_i)(\bm{x}_d[j]-\overline{x}_j)}$
+        \end{itemize}
+        共分散において$i=j$のときは$\Cov{x_i}{x_j} = \frac{1}{D}\sum_{d=1}^D{(\bm{x}_d[i]-\overline{x}_i)^2}$となり、特に「第$i$次元成分の分散$\Var{}{x_i}$」と呼ぶ。
+    \section{分散共分散行列}
+        上述のデータ集合に対して、$\Cov{x_i}{x_j}$を縦と横に並べてできる行列、すなわちその第$(i,j)$成分が$\Cov{x_i}{x_j}$である行列を「分散共分散行列$\Sigma_{\DS}$」と定義する。
+        この行列は次式で得られる。
+        \[\Sigma_{\DS} = \frac{1}{D}\sum_{d=1}^D{(\bm{x}_d-\overline{\bm{x}})(\bm{x}_d-\overline{\bm{x}})^\top}\]
+        \par

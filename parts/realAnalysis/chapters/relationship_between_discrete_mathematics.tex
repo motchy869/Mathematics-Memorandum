@@ -1,0 +1,36 @@
+\chapter{離散数学との関係}
+    \section{DirichletのDiophantine近似定理}
+        \begin{shadebox}
+            $\forall \alpha \in \realNumbers$, $\forall N \in \naturalNumbers$, $\exists (N \geq ) q \in \naturalNumbers, p \in \integers \st \abs{\alpha - \frac{p}{q}} < \frac{1}{qN}$
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            示したい式を変形して$\abs{q\alpha - p} < 1/N$と見る。
+            $q\in\{1,\dotsc,N\}$と変化させるとき、$q\alpha$の中に格子点との距離が$1/N$未満のものが存在することを示せば良い。
+            つまり$q\alpha\%1$のうちで$[0,1/N)$に含まれるものが存在することを示せば良い。
+            区間$I_k \coloneqq [k/N,(k+1)/N)\;(k=0,\dotsc,N-1)$を考える。
+            $q\alpha\%1$は$I_0,\dotsc,I_{N-1}$のどれかに入る。
+            もし仮に$I_0$に入るものが無いとすると、鳩ノ巣原理よりある自然数$1 \leq q_1 < q_2 \leq N$が存在して$q_1\alpha\%1$と$q_2\alpha\%1$がともにある区間$I_k$に含まれる。
+            つまりある$m\in\integers,\;\varepsilon\in\realNumbers,|\varepsilon|<1/N$が存在して$q_2\alpha = q_1\alpha + m + \varepsilon$となる。
+            このとき$|(q_2-q_1)\alpha - m|=|\varepsilon|<1/N$が成り立つ。
+            $q=q_2-q_1,p=m$とすれば定理の主張を満たす$p/q$が得られる。
+        \end{proof}
+    \section{床関数と天井関数}
+        \subsection{\texorpdfstring{$\forall x\in\realNumbers,\;\floor{-x} = -\ceil{x},\;\ceil{-x} = -\floor{x}$}{∀x∈R, floor(-1) = -ceil(x), ceil(-x) = -floor(x)}}
+            \begin{proof}
+                \quad\par
+                前者は次のようにして示せる。
+                \[ n = \floor{-x} \iff n\in\integers,\; -x-1 < n \leq -x \iff n\in\integers,\; x \leq -n < x+1 \iff -n = \ceil{x} \iff n = -\ceil{x} \]
+                前者の式で$x$を$-x$で置き換えれば後者が得られる。
+            \end{proof}
+        \subsection{\texorpdfstring{$^\forall x,y\in\realNumbers,\;\floor{x}+\floor{y}\leq\floor{x+y},\;\ceil{x}+\ceil{y}\geq\ceil{x+y}$}{∀x,y∈R, floor(x)+floor(y) ≦ floor(x+y), ceil(x)+ceil(y) ≧ ceil(x+y)}}
+            \begin{proof}
+                \quad\\
+                ($\floor{x}+\floor{y}\leq\floor{x+y}$の証明)\\
+                $x=X+m_x,\;y=Y+m_y,\;X,Y\in\mathbb{Z},\;m_x,m_y\in[0,1)$とすると$\floor{x}+\floor{y} = X+Y$であり、
+                一方で$\floor{x+y} = \floor{X+Y+m_x+m_y} = X+Y + \floor{m_x+m_y} \geq X+Y$であるので、主張が従う。\\
+                \newline
+                ($\ceil{x}+\ceil{y}\geq\ceil{x+y}$の証明)\\
+                $x=X\textcolor{red}{-}m_x,\;y=Y\textcolor{red}{-}m_y,\;X,Y\in\mathbb{Z},\;m_x,m_y\in[0,1)$とすると$\ceil{x}+\ceil{y} = X+Y$であり、
+                一方で$\ceil{x+y} = \ceil{X+Y-m_x-m_y} = X+Y + \ceil{-m_x-m_y} \leq X+Y$であるので、主張が従う。
+            \end{proof}

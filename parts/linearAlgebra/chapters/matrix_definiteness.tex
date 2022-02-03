@@ -1,0 +1,80 @@
+\chapter{定値性}
+    \section{正定Hermite対称行列の逆行列も正定}
+        \begin{proof}
+            \quad\par
+            $A\in\complexNumbers^{n\times n}$をHermite対称な正定行列とし、重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
+            $A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\dotsc,\lambda_n}P^*$と表せるので
+            $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}P^* = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}P^*$である。
+            よって$A^{-1}$は対称で固有値が全て正なので正定である。
+        \end{proof}
+    \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\bm{x}^\top A\bm{x}=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\bm{x}\in\Ker{A}$}{x∈Ker(A)}}
+        \begin{proof}
+            \quad\par
+            $A$を$n\times n$実対称行列とする。
+            $A$を対角化する実直交行列を$P = [\bm{p}_1,\dotsc,\bm{p}_n]$とし、$\bm{p}_i$に対応する固有値を$\lambda_i$とすると、$A$が半正定だから$\lambda_i\geq 0$である。
+            $\bm{x}$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
+            ゆえに$\bm{x}$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
+        \end{proof}
+    \section{Gram行列は半正定}
+        \begin{proof}
+            \quad\par
+            $V$を内積空間とし、$\bm{v}_1,\dotsc,\bm{v}_n\in V$のGram行列を$G=[\inprod{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
+            $\bm{x}\in \complexNumbers^n$に対して
+            \[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inprod{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inprod{x_i\bm{v}_i}{x_j\bm{v}_j} = \inprod{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
+        \end{proof}
+    \section{正定値行列同士の積は正定値とは限らない}
+        \begin{proof}
+            \quad\par
+            (例) : $75^\circ$左回転行列同士の積\\
+            (※ : 行列が正定値というのは、飛ばす前のベクトルと飛ばしたあとのベクトルの成す角が$90^\circ$未満であることと同値)
+        \end{proof}
+    \section{対角成分が全て非負の対称行列が半正定とは限らない}
+        \begin{proof}
+            \quad\par
+            例えば
+            $
+                A =
+                \left[
+                    \begin{array}{cc}
+                        1 & -2\\
+                        -2 & 1\\
+                    \end{array}
+                \right]
+            $
+            とすると$x_1=x_2$なる$\bm{x}$に対して$\bm{x}^\top A\bm{x} = -2{x_1}^2 < 0$
+        \end{proof}
+    \section{非対称行列は固有値が全て正でも正定とは限らない}
+        \begin{proof}
+            \quad\par
+            例えば
+            $
+                A =
+                \begin{bmatrix}
+                    1 & -3 \\
+                    0 & 1
+                \end{bmatrix}
+            $
+            の固有値は全て$1$であるが
+            $
+                [1,1]A
+                \begin{bmatrix}
+                    1 \\
+                    1
+                \end{bmatrix}
+                = -1
+            $
+        \end{proof}
+    \section{\texorpdfstring{$A$}{A}: Hermite対称で正定\texorpdfstring{$\Rightarrow (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) \geq |\bm{x}^*\bm{y}|^2$}{⇒ (x\string^*Ax)(y\string^*A\string^(-1)y) ≧ |x\string^*y|\string^2}}
+        \begin{shadebox}
+            $A \in \complexNumbers^{n\times n}$はHermite対称で正定であるとする。
+            このとき、任意の$\bm{x}, \bm{y} \in \complexNumbers^n$に対して次式が成り立つ。
+            \[ (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) \geq \|\bm{x}^*\bm{y}\|_2^2 \]
+            等号が成立するのは$\bm{x}$と$\bm{y}$どちらかが$\bm{0}$であるか、そうでなければ$\bm{y}$と$A\bm{x}$が平行であるとき、かつそのときである。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $A$はHermite対称で正定であるから、適当なユニタリ行列で対角化可能であり、固有値が全て正であることに注意すれば、$\sqrt{A},\;\sqrt{A^{-1}}$を定義できる。
+            これを用いると次式を得る。
+            \[ (\bm{x}^*A\bm{x})(\bm{y}^*A^{-1}\bm{y}) = \norm{\sqrt{A}\bm{x}}_2^2 \norm{\sqrt{A^{-1}}\bm{y}}_2^2 \geq \left|\inprod{\sqrt{A}\bm{x}}{\sqrt{A^{-1}}\bm{y}}\right|^2 = |\bm{x}^*\bm{y}|^2 \]
+            2つ目の不等号はCauchy-Schwartzの不等式より導かれる。
+        \end{proof}

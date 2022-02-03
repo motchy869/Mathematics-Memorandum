@@ -1,0 +1,153 @@
+\chapter{行列のノルム}
+    \section{2-ノルム(2-演算子ノルム)}
+        \subsection{定義}
+            \begin{shadebox}
+                $A\in\complexNumbers^{m\times n}$の2-ノルム(「2-演算子ノルム」とも呼ばれる)$\norm{A}_2$は次の3つの等価な式で定義される。\\
+                \begin{align*}
+                    \norm{A}_2 &= \max\left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\}\\
+                    &= \max\{\norm{A\vx}_2:\norm{\vx}_2=1\}\\
+                    &= \min\{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}
+                \end{align*}
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                上述の3式が等しいことを示す。
+                第1,2,3式の与える値を$c_1,c_2,c_3$とし、3つの式に対応する集合を3つ定義する。
+                \[S_1 \coloneqq \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 \coloneqq \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 \coloneqq \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
+                まず
+                \[S_2 = \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\norm{\vx}_2=1\right\}\subseteq S_1\]
+                より$c_1\geq c_2$である。
+                \par$c_1$を与えるベクトル$\vx_1$に対して$\vx_1' \coloneqq \vx_1/\norm{\vx_1}_2$とすれば$\norm{\vx_1'}_2=1$であり、$\norm{A\vx_1'}_2=\frac{\norm{A\vx_1}_2}{\norm{\vx_1}_2}$であるからつまり$c_1\in S_2$である($S_1$の最大要素が$S_2$に属する)。
+                よって$c_1\leq c_2$。これと$c_1\geq c_2$より$c_1=c_2$。
+                \par
+                $c\in S_3$は任意の$\vx\neq0$に対して$\frac{\norm{A\vx}_2}{\norm{\vx}_2}\leq c$を満たすから$c_1\leq c$。よって$c_1\leq c_3$。
+                \par
+                $c_1$はその定義より任意の$\vx\neq0$に対して$\frac{\norm{A\vx}_2}{\norm{\vx}_2}\leq c_1$を満たすから任意の$\vx$に対して$\norm{A\vx}_2\leq c_1\norm{\vx}_2$を満たす。よって$c_1\geq c_3$。
+                これと$c_1\leq c_3$より$c_1=c_3$。
+                \par
+                以上より$c_1=c_2=c_3$
+            \end{proof}
+            以降、特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
+        \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
+            \begin{proof}
+                \quad\par
+                $\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して、$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると、$||\bm{x}'|| = 1,\;||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
+            \end{proof}
+        \subsection{スペクトル半径の上界}
+            \begin{shadebox}
+                $A\in\complexNumbers^{n\times n}$について$\rho(A)\leq\norm{A}$
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $A$の絶対値最大固有値を$\lambda_{max}$, その任意の固有ベクトルを$\vx$とすると
+                \[\rho(A) \coloneqq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
+            \end{proof}
+        \subsection{Hermite行列の絶対値最大固有値の絶対値は2-演算子ノルムと一致する}
+            \begin{shadebox}
+                $A\in\complexNumbers^{n\times n}$がHermite行列であるとき$\max |\lambda(A)| = \norm{A}$
+            \end{shadebox}
+            \noindent
+            (短いが高度な知識を前提とした証明)
+            \begin{proof}
+                \quad\par
+                $A$はHermite行列だから固有値は全て実数で、適当なユニタリ行列$U$で対角化できる。
+                $A$の対角化を$A = UDU^\mathrm{H}$とする。
+                ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},\;|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
+                $A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で、$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
+                よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
+            \end{proof}
+            \noindent
+            (初等的な証明)
+            \begin{proof}
+                \quad\par
+                $A$はHermite行列であるから固有値は全て実数で、$A$がユニタリ交行列で対角化できることは既知とする。
+                $A$の異なる固有値を、絶対値が大きい順に$\lambda_1,\lambda_2,\dotsc,\lambda_\sigma\quad(\sigma\leq n)$とし、$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
+                $\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$とすると
+                $\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
+                \par
+                $\norm{A}$の定義は$\norm{A} \coloneqq \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
+                任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\dotsc,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
+                $\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
+                \[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
+                よって
+                \[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i \coloneqq \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
+                これは$c_1=1,\quad c_2=\dotsb=c_\sigma=0$のときに最大となる。よって
+                \[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
+            \end{proof}
+        \subsection{\texorpdfstring{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}(A^\top A)}\;(A\in\realNumbers^{n\times n})$}{max\_\{||x||=1\} ||Ax|| = sqrt(λ\_max(A\string^⊤ A)) (A∈R\string^(n×n))}}
+            \begin{shadebox}
+                実正方行列$A \in \realNumbers^{n\times n}$と実ベクトル$\vx \in \realNumbers^n$について
+                \[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\text{max}}(A^\top A)}\]
+            \end{shadebox}
+            \noindent
+            (簡潔だが、高度な知識を前提とする証明)
+            \begin{proof}
+                左辺は$A$の最大特異値である。
+                $A$の特異値分解を$A=U\Sigma V^\top\;(U,V\text{は}n\text{次実直交行列})$とすると$A^\top A = V\Sigma^2V^\top$であり、定理の主張の右辺が$A$の最大特異値であることがわかる。
+            \end{proof}
+            \noindent
+            (初等的な証明)
+            \begin{proof}
+                \[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\text{max}}(A^\top A)\]
+                を示せば良い。\\
+                \[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inprod{\vx}{A^\top A\vx} = \inprod{A^\top A\vx}{\vx}\]
+                であり、$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から、固有値は全て実数であり、固有空間の基底に正規直交基を選べる。\\
+                $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i \coloneqq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
+                $\mbox{\boldmath $b$}_{i1},\mbox{\boldmath $b$}_{i2},\dots,\mbox{\boldmath $b$}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると、
+                ノルムが1であるような任意のベクトル$\vx \in \realNumbers^n$は適当な実数$c_{ij}$を用いて
+                \[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
+                と表現できる。但し、$\displaystyle \sum_{ij}{{c_{ij}}^2} = 1 \cdots(\text{i})$。\\
+                よって
+                \[A^\top A\vx = A^\top A\sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}A^\top A\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\lambda_i\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
+                となるから、$\mbox{\boldmath $b$}_{ij}$の正規直交性に注意して
+                \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
+                条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}(A^\top A)$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
+                \begin{numcases}
+                    {}
+                    g\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) = \sum_{ij}{{c_{ij}}^2} - 1 & \nonumber \\
+                    f\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}} & \nonumber \\
+                    F\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r},\lambda\right) = f-\lambda g & \nonumber
+                \end{numcases}
+                とする。\\
+                $F_{c_{ij}} = 0$とおくと$2\lambda_i c_{ij} - 2\lambda c_{ij} = 0$となるから$\lambda = \lambda_i$ or $c_{ij} = 0$。$\lambda$が$\lambda_1,\lambda_2,\dots,\lambda_r$のいずれとも一致しなければ$c_{ij}$が全ての$ij$で0になり条件(i)を満たさない。
+                従って$\lambda$は$\lambda_1,\lambda_2,\dots,\lambda_r$のいずれか一つと一致しなければならない。\\
+                $\lambda = \lambda_p \;\;\;(1 \leq p \leq r)$であるとき$c_{ij}|_{i \neq p} = 0\cdots(\text{iii})$となり、これと条件(i)から
+                \[\sum_{j=1}^{n_p}{c_{pj}}^2 = 1\cdots(\text{iv})\]
+                となるので
+                \[f = (A^\top A\vx,\vx) = \lambda_p\sum_{j=1}^{n_p}{c_{pj}}^2 = \lambda_p\]
+                これは$p=1$のとき最大値$\lambda_1 = \lambda_{\text{max}}(A^\top A)$をとる。\\
+                さて、これが果たして$f$の最大値なのかどうかを吟味する必要がある。条件(i)の表す領域は(iii)に注意すると(iv)の表す$n_1$次元超球面であるから、最大値は極大値と同じ意味になる。
+                (iv)より$c_{11},c_{12},\dots,c_{1n_1}$の少なくとも1つは0でない。0でないものが$c_{1q}$であったとしよう。すると$\frac{\partial g}{\partial c_{1q}} = 2c_{1q} \neq 0$だから陰関数定理より先述の超球面は$c_{1q}$の近傍で
+                \[{c_{1q}}^2 = 1 - \sum_{j=1}^{q-1}{{c_{1j}}^2} - \sum_{j=q+1}^{n_1}{{c_{1j}}^2}\]
+                と表現される。$f$は定数関数$\lambda_1$となっているから、その$c_{11},c_{12},\dots,c_{1(q-1)},c_{1(q+1)}\dots,c_{1n_1}$による一階偏微分,二階偏微分はともに0であり、$\lambda_1$が極値たる条件を満たす。\\
+                よって$\lambda_1 = \lambda_{\text{max}}(A^\top A)$は$f$の最大値である。
+            \end{proof}
+        \subsection{逆行列のノルムは元の行列の最小特異値の逆数と等しい}
+            \begin{shadebox}
+                正則行列$A\in\complexNumbers^{n\times n}$の特異値を$\sigma_1\geq\dotsb\geq\sigma_n>0$とすると$\norm{A^{-1}}_2=1/\sigma_n$
+            \end{shadebox}
+            \begin{proof}
+                $A$の特異値分解より明らか。
+            \end{proof}
+        \subsection{\texorpdfstring{$A \in \complexNumbers^{m\times n}$}{A∈C\string^(m×n)}について\texorpdfstring{$\alpha = \max|A_{ij}|$}{α = max|A\_(i,j)|}とすると\texorpdfstring{$\alpha \leq \|A\|_2$}{α ≦ ||A||\_2}}
+            \begin{proof}
+                \quad\par
+                絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \|A\bm{e}_q\|_2 \leq \|A\|_2$
+            \end{proof}
+        \subsection{\texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の各列ベクトルのノルムが高々\texorpdfstring{$a$}{a}ならば\texorpdfstring{$\norm{A}_2\leq a\sqrt{n}$}{||A||\_2 ≦ a√n}}
+            \label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
+            \begin{proof}
+                \quad\par
+                $A$の第$i$列ベクトルを$\bm{a}_i$とし、$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1$とすると
+                \[\norm{A\bm{x}}_2=\norm{x_1\bm{a}_1+\dotsb+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \dotsb + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\dotsb+|x_n|)a\]
+                これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\dotsb+|x_n|\leq\sqrt{n}$なので定理が従う。
+            \end{proof}
+            \subsubsection{系: \texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の全要素の絶対値が\texorpdfstring{$\varepsilon$}{ε}以下であれば\texorpdfstring{$\norm{A}_2\leq \varepsilon\sqrt{mn}$}{||A||\_2 ≦ ε√(mn)}}
+                \begin{proof}
+                    $A$の各列ベクトルのノルムが高々$\varepsilon\sqrt{m}$なので直前の定理より従う。
+                \end{proof}
+            \subsubsection{系: \texorpdfstring{$n$}{n}次確率行列のノルムは高々\texorpdfstring{$\sqrt{n}$}{√n}}
+                \begin{proof}
+                    \quad\par
+                    転置してもノルムが変わらないことと、確率ベクトル(の転置)のノルムは高々$1$であることを使えば\ref{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}より従う。
+                \end{proof}

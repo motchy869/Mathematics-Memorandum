@@ -1,0 +1,42 @@
+\chapter{多項分布}
+    以下 $(X_1,X_2,\dots,X_n) \sim B_N(n,p_1,p_2,\dots,p_n)$ とする。
+    \section{周辺分布は2項分布}
+        \begin{shadebox}
+            \[P(X_h = x_h) = \frac{n!}{x_h!(n-x_h)!}p_h^{x_h}(1-p_h)^{x_h}\]
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                P(X=x_h) &= \sum_{x_1=0}^{n-x_h}\sum_{x_2=0}^{n-x_h-x_1}\cdots\sum_{x_{h-1}=0}^{n-x_h-\sum_{j=1}^{h-2}{x_j}}\sum_{x_{h+1}=0}^{n-\sum_{j=1}^{h}{x_j}}\cdots\sum_{x_n=0}^{n-\sum_{j=1}^{n-1}{x_j}}{P(X_1=x_1,\dots,X_n=x_n)}\\
+                &= \sum_{x_1=0}^{n-x_h}\sum_{x_2=0}^{n-x_h-x_1}\cdots\sum_{x_{h-1}=0}^{n-x_h-\sum_{j=1}^{h-2}{x_j}}\sum_{x_{h+1}=0}^{n-\sum_{j=1}^{h}{x_j}}\cdots\sum_{x_n=0}^{n-\sum_{j=1}^{n-1}{x_j}} \\
+                &\quad \frac{n!}{\left(\prod_{i=1}^{n}{x_i!}\right)\left(n-\sum_{i=1}^{n}{x_i}\right)!}\left(\prod_{i=1}^{n}{{p_i}^{x_i}}\right)\left(1-\sum_{i=1}^{n}{p_i}\right)^{n-\sum_{i=1}^{n}{x_i}}\\
+                &= \frac{n!}{x_h!(n-x_h)!}{p_h}^{x_h}\cdots\sum_{x_{h-1}=0}^{n-x_h-\sum_{j=1}^{h-2}{x_j}}{\frac{\left(n-x_h-\sum_{j=1}^{h-2}{x_j}\right)!}{x_{h-1}!\left(n-x_h-\sum_{j=1}^{h-2}{x_j}-x_{h-1}\right)!}{p_{h-1}}^{x_{h-1}}}\\
+                &{} \sum_{x_{h+1}=0}^{n-\sum_{j=1}^{h}{x_j}}{\frac{\left(n-\sum_{j=1}^{h}{x_j}\right)!}{x_{h+1}!\left[\left(n-\sum_{j=1}^{h}{x_j}\right)-x_{h+1}\right]!}{p_{h+1}}^{x_{h+1}}}\cdots\\
+                &{} \sum_{x_n=0}^{n-\sum_{j=1}^{n-1}{x_j}}{\frac{\left(n-\sum_{j=1}^{n-1}{x_j}\right)!}{x_n!\left[\left(n-\sum_{j=1}^{n-1}{x_j}\right)-x_n\right]!}{p_n}^{x_n}}\left[\left(1-\sum_{j=1}^{n-1}{p_j}\right)-p_n\right]^{\left[\left(n-\sum_{j=1}^{n-1}{x_j}\right)-x_n\right]}
+            \end{align*}
+            式の末尾の$\Sigma$は
+            \[\left[\left(1-\sum_{j=1}^{n-1}{p_j}\right) - p_n + p_n\right]^{n-\sum_{j=1}^{n-1}{x_j}} = \left[1-\sum_{j=1}^{n-1}{p_j}\right]^{n-\sum_{j=1}^{n-1}{x_j}}\]
+            と等しい。同様のことを繰り返すと次の結論に至る。
+            \[P(X_h = x_h) = \frac{n!}{x_h!(n-x_h)!}p_h^{x_h}(1-p_h)^{x_h}\]
+        \end{proof}
+    \section{共分散}
+        \begin{shadebox}
+            \[\Cov{X_i}{X_j} = -np_ip_j\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            一般に$\Cov{X}{Y} = \E{}{XY}  -\E{}{X}\E{}{Y}$であって、$\E{}{X_i} = np_i, \E{}{X_j} = np_j$は既知であるから$\E{}{X_iX_j}$を計算すれば良い。定理1より
+            \[P(X_i=x_i,X_j=x_j) = \frac{n!}{x_i!x_j!(n-x_i-x_j)!}{p_i}^{x_i}{p_j}^{x_j}(1-p_i-p_j)^{n-x_i-x_j}\]
+            であることを利用する。$X_i+X_j \leq n$であるから一方が0或いは$n$であれば積が0になることに注意して
+            \begin{align*}
+                \E{}{X_iX_j} &= \sum_{x_i=\textcolor{red}{1}}^{\textcolor{red}{n-1}}{\sum_{x_j=\textcolor{red}{1}}^{\textcolor{red}{n-x_i}}{x_ix_jP(X_i=x_i,X_j=x_j)}}\\
+                &= \sum_{x_i=1}^{n-1}{\sum_{x_j=1}^{n-x_i}{x_ix_j\frac{n!}{x_i!x_j!(n-x_i-x_j)!}{p_i}^{x_i}{p_j}^{x_j}(1-p_i-p_j)^{n-x_i-x_j}}}\\
+                &= \sum_{x_i=1}^{n-1}{\frac{n!}{(x_i-1)!(n-x_i)!}{p_i}^{x_i}\sum_{x_j=1}^{n-x_i}{\frac{(n-x_i)!}{(x_j-1)!(n-x_i-x_j)!}{p_j}^{x_j}(1-p_i-p_j)^{n-x_i-x_j}}}\\
+                &= \sum_{x_i=1}^{n-1} \frac{n!}{(x_i-1)!(n-x_i)!}{p_i}^{x_i}(n-x_i)p_j \\
+                &\quad \sum_{{x_j}'=0}^{n-x_i-1}{\frac{(n-x_i-1)!}{{x_j}'!(n-x_i-1-{x_j}')!}{p_j}^{{x_j}'}(1-p_i-p_j)^{n-x_i-1-{x_j}'}}\\
+                &= \sum_{x_i=1}^{n-1}{\frac{n!}{(x_i-1)!(n-x_i)!}{p_i}^{x_i}(n-x_i)p_j(1-p_i)^{n-x_i-1}}\\
+                &= p_ip_jn(n-1)\sum_{{x_i}'=0}^{n-2}{\frac{(n-2)!}{{x_i}'!(n-2-{x_i}')!}{p_i}^{{x_i}'}(1-p_i)^{n-2-{x_i}'}}\\
+                &= p_ip_jn(n-1)
+            \end{align*}
+            よって
+            \[\Cov{X_i}{X_j} = \E{}{X_iX_j} - \E{}{X_i}\E{}{x_j} = p_ip_jn(n-1) - np_inp_j =  -np_ip_j\]
+        \end{proof}

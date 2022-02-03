@@ -1,0 +1,246 @@
+\chapter{測度}
+    \newcommand{\mJi}[1]{\protect\underline{m}_\textrm{J}\left(#1\right)}
+    \newcommand{\mJo}[1]{\protect\overline{m}_\textrm{J}\left(#1\right)}
+    \newcommand{\mJordan}[1]{m_\textrm{J}\left(#1\right)}	%本当は \mJ を使いたいが、Debian だとバグる。"already defined"というくせに、ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
+    \section{\texorpdfstring{$\sigma$}{σ}--加法族}
+        \subsection{2つの\texorpdfstring{$\sigma$}{σ}--加法族の和集合は\texorpdfstring{$\sigma$}{σ}--加法族になるとは限らない}
+            例えば$S=\{1,2,3\},\;X=\{\emptyset,\{1\},\{2,3\},S\},\;Y=\{\emptyset,\{1,2\},\{3\},S\}$とすると$X,Y$は$S$上の$\sigma$--加法族であり、$X\cup Y=\{\emptyset,\{1\},\{3\},\{2,3\},\{1,2\},S\}$である。$\{1\},\{3\}\subset X\cup Y$だが$\{1\}\cup\{3\} = \{1,3\} \notin X\cup Y$なので$X\cup Y$は$\sigma$--加法族ではない。
+        \subsection{\texorpdfstring{$\sigma$}{σ}--加法族の要素同士の直積集合の族は\texorpdfstring{$\sigma$}{σ}--加法族になるとは限らない}
+            例えば$S=\{1,2,3\},\;X=\{\emptyset,\{1\},\{2,3\},S\},\;Y=\{\emptyset,\{1,2\},\{3\},S\}$とすると$X,Y$は$S$上の$\sigma$--加法族であり、その要素同士の直積集合の集合族を$Z$とすると
+            $Z=\{\emptyset,\{1\}\times\{1,2\},\{1,3\},\{1\}\times S,\{2,3\}\times\{1,2\},\{2,3\}\times\{3\},\{2,3\}\times S,S\times\{1,2\},S\times\{3\},S\times S\}$である。
+            $\{2,3\}\times\{1,2\}\in Z$であるが$(\{2,3\}\times\{1,2\})^\complement = \{(1,1),(1,2),(1,3),(2,3),(3,3)\} \notin Z$なので$Z$は$\sigma$--加法族ではない。
+        \subsection{\texorpdfstring{$X$}{X}を集合とする。\texorpdfstring{$A,B\subset 2^X,\;A\subset B\Rightarrow\sigma(A)\subset\sigma(B)$}{A,B⊂2\string^X, A⊂B ⇒ σ(A)⊂σ(B)}}
+            \begin{proof}
+                \quad\par
+                まず、$\sigma(\cdot)$の定義より$B\subset\sigma(B)$であり、これと$A\subset B$より$A\subset\sigma(B)$である。
+                よって
+                \[ \sigma(A) = A\text{を含む全ての}\sigma\text{--加法族の共通部分} \subset \sigma(B)\;(\supset B \supset A) \]
+            \end{proof}
+    \section{Jordan測度}
+        いくつか記号の約束を決めておく。
+        \begin{itemize}
+            \item 閉直方体$E$上の有界関数$f$と、$E$の分割$\Delta$に対して過剰和と不足和を
+            \[ S(f,\Delta) \coloneqq \sum_{r\in\Delta} \sup_{\bm{x}\in r}f(\bm{x})|r|,\quad s(f,\Delta) \coloneqq \sum_{r\in\Delta} \inf_{\bm{x}\in r}f(\bm{x})|r| \]
+            と定義する。
+            \item 有界集合$A$のJordan外測度,内測度,測度をそれぞれ$\mJo{A}, \mJi{A}, \mJordan{A}$と書く。
+        \end{itemize}
+        \subsection{Jordan測度の有限加法性}
+            \begin{shadebox}
+                $A_1,A_2$がJordan可測ならば$A_1\cap A_2,\;A_1\cup A_2$も可測で$\mJordan{A_1\cup A_2} = \mJordan{A_1} + \mJordan{A_2} - \mJordan{A_1\cap A_2}$
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $A_1,A_2$を包含する直方体$E$を考える。
+                $A_1,A_2$がJordan可測だから任意の正数$\varepsilon$に対して$E$のある分割$\Delta$が存在して次式を満たす。
+                \[ S(\ind{A_1}{\cdot},\Delta) - s(\ind{A_1}{\cdot},\Delta),\; S(\ind{A_2}{\cdot},\Delta) - s(\ind{A_2}{\cdot},\Delta) < \varepsilon/2 \]
+                $\partial(A_1\cap A_2),\;\partial(A_1\cup A_2) \subseteq A_1, A_2$だから
+                \begin{align*}
+                    &S(\ind{A_1\cap A_2}{\cdot},\Delta) - s(\ind{A_1\cap A_2}{\cdot},\Delta),\quad S(\ind{A_1\cup A_2}{\cdot},\Delta) - s(\ind{A_1\cup A_2}{\cdot},\Delta) \\
+                    &\leq S(\ind{A_1}{\cdot},\Delta) - s(\ind{A_1}{\cdot},\Delta) + S(\ind{A_2}{\cdot},\Delta) - s(\ind{A_2}{\cdot},\Delta) < \varepsilon
+                \end{align*}
+                ($S$と$s$の差は境界で発生することに注意すれば上の式に納得できる。)より$A_1\cap A_2,\;A_1\cup A_2$も可測である。
+                ここで
+                \begin{align*}
+                    S(\ind{A_1}{\cdot},\Delta) + S(\ind{A_2}{\cdot},\Delta) - S(\ind{A_1\cap A_2}{\cdot},\Delta) &\geq s(\ind{A_1\cup A_2}{\cdot},\Delta) \\
+                    &\geq s(\ind{A_1}{\cdot},\Delta) + s(\ind{A_2}{\cdot},\Delta) - s(\ind{A_1\cap A_2}{\cdot},\Delta)
+                \end{align*}
+                が成り立っており、これとダルブーの定理より次式が従う。
+                \[ \mJordan{A_1\cup A_2} = \mJordan{A_1} + \mJordan{A_2} - \mJordan{A_1\cap A_2} \]
+            \end{proof}
+        \subsection{\texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)のとき\texorpdfstring{$\mJi{A} = |E| - \mJo{A^\complement\cap E}$}{mJi(A) = |E| - mJo(A\string^∁ ∩ E)}}
+            \begin{proof}
+                \quad\par
+                外測度と内測度の定義より任意の正数$\varepsilon$に対して$E$のある分割$\Delta$が存在して$\mJi{A} - s(\ind{A}{\cdot},\Delta),\;S(\ind{A^\complement\cap E}{\cdot},\Delta) - \mJo{A^\complement\cap E} < \varepsilon/2$
+                であることと$s(\ind{A}{\cdot},\Delta) = |E| - S(\ind{A^\complement\cap E}{\cdot},\Delta)$より従う。
+            \end{proof}
+        \subsection{系: \texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)がJordan可測のとき\texorpdfstring{$A\complement\cap E$}{A\string^∁ ∩ E}もJordan可測である}
+            \label{subsec: Jordan可測集合の補集合もJordan可測}
+            \begin{proof}
+                \quad\par
+                直前の定理より
+                \[ \mJi{A^\complement\cap E} = |E| - \mJo{(A^\complement\cap E)^\complement\cap E} = |E| - \mJo{A} = |E| - \mJi{A} = \mJo{A^\complement\cap E} \]
+            \end{proof}
+    \section{Lebesgue測度}
+        \newcommand{\mLebO}[1]{\protect\overline{m}_\textrm{L}\left(#1\right)}
+        \newcommand{\mLeb}[1]{m_\textrm{L}\left(#1\right)}
+        いくつか記号の約束を決めておく。
+        \begin{itemize}
+            \item 有界集合$A$のLebesgue外測度,測度を$\mLebO{A}, \mLeb{A}$と書く。
+        \end{itemize}
+        \subsection{\texorpdfstring{$A\subset B$}{A⊂B}ならば\texorpdfstring{$\mLebO{A}\leq\mLebO{B}$}{mLo(A)<mLo(B)}}
+            \begin{proof}
+                \quad\par
+                背理法で示す。仮に$\mLebO{A} > \mLebO{B}$であるとする。
+                任意の$0 < \varepsilon < \mLebO{A} - \mLebO{B}$に対してある直方体領域の集合$R$が存在して$B\subset R,\;|R| < \mLebO{B} + \varepsilon$となる。
+                $A\subset B\subset R$となるので$\mLebO{A} \leq |R| < \mLebO{B} + \varepsilon < \mLebO{A}$となり矛盾。
+            \end{proof}
+        \subsection{\texorpdfstring{$\mLebO{A\cup B}\leq\mLebO{A} + \mLebO{B}$}{mLo(A∪B)≦mLo(A)+mLo(B)}}
+            \begin{proof}
+                \quad\par
+                背理法で示す。仮に$\mLebO{A\cup B} > \mLebO{A} + \mLebO{B}$とする。
+                任意の$0 < \varepsilon < (\mLebO{A\cup B} - (\mLebO{A} + \mLebO{B}))/2$に対してある直方体領域の集合$R_1,R_2$が存在して$A\subset R_1, B\subset R_2,\;|R_1|<\mLebO{A} + \varepsilon,\;|R_2| < \mLebO{B} + \varepsilon$となる。
+                $A\cup B \subset R_1\cup R_2$となるので$\mLebO{A\cup B} \leq |R_1\cup R_2| \leq |R_1|+|R_2| < \mLebO{A} + \mLebO{B} + 2\varepsilon < \mLebO{A\cup B}$となり矛盾。
+            \end{proof}
+        \subsection{Lebesgue外測度の劣加法性: \texorpdfstring{$\mLebO{\bigcup_{n=1}^\infty A_n} \leq \sum_{n=1}^\infty \mLebO{A_n}$}{}}
+            \begin{proof}
+                \quad\par
+                背理法で示す。仮に$\mLebO{\bigcup_{n=1}^\infty A_n} > \sum_{n=1}^\infty \mLebO{A_n}$とし、その差を$d>0$とおく。
+                数列$\{a_n\},\;a_n = \frac{d}{3}2^{-n+1}\;(n=1,2,\dotsc)$とおくと級数$\sum_{n=1}^\infty a_n = 2d/3$となる。
+                任意の$n\in\naturalNumbers$に対してある直方体領域$R_n$が存在して$A_n\subset R_n,\;|R_n| < \mLebO{A_n} + a_n$となる。
+                $\bigcup_{n=1}^\infty A_n \subset \bigcup_{n=1}^\infty R_n$となるので$\mLebO{\bigcup_{n=1}^\infty A_n} \leq |\bigcup_{n=1}^\infty R_n| \leq \sum_{n=1}^\infty |R_n| = \sum_{n=1}^\infty \mLebO{A_n} + \sum_{n=1}^\infty a_n < \sum_{n=1}^\infty \mLebO{A_n} + d < \mLebO{\bigcup_{n=1}^\infty A_n}$となり矛盾。
+            \end{proof}
+        \subsection{有界集合\texorpdfstring{$A$}{A}に対して\texorpdfstring{$\mLebO{A}\leq\mJo{A}$}{Lebesgue外測度≦Jordan外測度}}
+            \label{subsec: Lebesgue外測度≦Jordan外測度}
+            \begin{proof}
+                \quad\par
+                背理法で示す。仮に$\mLebO{A} > \mJo{A}$とし、$0<\varepsilon<\mLebO{A} - \mJo{A}$とする。
+                $A$を包含する直方体領域を$E$とする。
+                Jordan外測度の定義より$E$のある分割$\Delta$が存在して$S(\ind{A}{\cdot},\Delta) < \mJo{A} + \varepsilon$となる。
+                $A \subset \bigcup_{r\in\Delta,r\cap A\neq\emptyset}r$なので$\mLebO{A} \leq \sum_{r\in\Delta,r\cap A\neq\emptyset}|r| = S(\ind{A}{\cdot},\Delta) < \mJo{A} + \varepsilon < \mLebO{A}$となり矛盾。
+            \end{proof}
+        \subsection{有界閉集合\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}に対して\texorpdfstring{$\mLebO{A}=0 \iff \mJordan{A}=0$}{AのLebesgue外測度=0 ⇔ AのJordan外測度}}
+            \begin{proof}
+                \quad\par
+                $\Leftarrow$は直前の定理より明らか。$\Rightarrow$を示す。
+                $\mLebO{A}=0$より、任意の$\varepsilon>0$に対してある直方体集合$R=\bigcup_{n=1}^\infty E_n$が存在して$A\subset R,\;|R|<\varepsilon/2$を満たす。
+                任意の直方体$r$に対して、その中心を保ったまま$k$倍に相似拡大した直方体を$kr$と書くことにする。
+                $\bigcup_{n=1}^\infty \textrm{Int}(2E_n)$は$A$の開被覆であり、$A$は$\realNumbers^n$の有界閉集合なのでコンパクトであるから、ある$N\in\naturalNumbers$が存在して$A\subset \bigcup_{n=1}^N \textrm{Int}(2E_n)$となる。
+                $\bigcup_{n=1}^N \textrm{Int}(2E_n)$を包含する十分大きな直方体$B$を考え、$2E_n\;(n=1,\dotsc,N)$を非交差的になるように適当に分割した直方体群を全て要素に持つような$B$の分割$\Delta$に対して$S(A,\Delta) \leq 2|R| <\varepsilon$となるから$\mJo{A}<\varepsilon$となる。
+            \end{proof}
+        \subsection{\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}とする。任意の直方体\texorpdfstring{$E$}{E}に対して\texorpdfstring{$\mLebO{A\cap E} + \mLebO{A^\complement\cap E} = \mLebO{E} \iff$}{mLo(A∩E) + mLo(A\string^C E) = mLo(E) ⇔}任意の\texorpdfstring{$B\subset\realNumbers^n$}{B⊂R\string^n}に対して\texorpdfstring{$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} = \mLebO{B}$}{mLebo(A∩B) + mLo(A\string^C ∩B)}}
+            \begin{proof}
+                \quad\par
+                $\Leftarrow$は明らか。$\Rightarrow$を示す。
+                $(A\cap B)\cup(A^\complement\cap B) = B$なのでまず$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} \geq \mLebO{B}$が成り立つ。
+                $\mLebO{A\cap B} + \mLebO{A^\complement\cap B} > \mLebO{B}$と仮定して矛盾を導く。
+                $0<\varepsilon < \mLebO{A\cap B} + \mLebO{A^\complement\cap B} - \mLebO{B}$とすると、ある直方体集合$R$が存在して$B\subset R,\;|R| < \mLebO{B}+\varepsilon$を満たす。
+                $B\subset R$なので$A\cap B\subset A\cap R,\;A^\complement\cap B\subset A^\complement\cap R$だから$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} \leq \mLebO{A\cap R} + \mLebO{A^\complement\cap R} = \mLebO{R} = |R|$となる。
+                これと$|R| < \mLebO{B}+\varepsilon < \mLebO{A\cap B} + \mLebO{A^\complement\cap B}$より$|R|<|R|$となり矛盾。
+            \end{proof}
+        \subsection{有界集合\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}がJordan可測ならばLebesgue可測であり、\texorpdfstring{$\mLeb{A}=\mJordan{A}$}{AのLebesgue測度とJordan測度は等しい}}
+            \begin{proof}
+                \quad\par
+                $A$を包含する任意の直方体$R$に対して
+                \begin{align*}
+                    \mLebO{A} &\geq |R| - \mLebO{A^\complement\cap R} \geq |R| - \mJo{A^\complement\cap R} \quad(\because\text{\ref{subsec: Lebesgue外測度≦Jordan外測度}}) \\
+                    &= |R| - \mJordan{A^\complement\cap E} = \mJordan{A} \quad(\because\text{\ref{subsec: Jordan可測集合の補集合もJordan可測}})
+                \end{align*}
+                これと\ref{subsec: Lebesgue外測度≦Jordan外測度}\;($\mLebO{A} \leq \mJo{A} = \mJordan{A}$)より$\mLebO{A}=\mJordan{A}$。
+                さらに
+                \[ \mLebO{A} \leq \mJo{A} = \mJordan{A} = |R| - \mJordan{A^\complement\cap R} \leq |R| - \mLebO{A^\complement\cap R} \]
+                と$\mLebO{A} \geq |R| - \mLebO{A^\complement\cap R}$より$\mLebO{A} = |R| - \mLebO{A^\complement\cap R}$なので$A$はLebesgue可測である。
+                以上より$\mLeb{A}=\mLebO{A}=\mJordan{A}$
+            \end{proof}
+        \subsection{\texorpdfstring{$A_1,A_2\subset\realNumbers^n$}{A1,A2⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2$}{A1とA2の和集合}もLebesgue可測}
+            \begin{proof}
+                \quad\par
+                $B\in\realNumbers^n$を任意の集合とする。
+                $\mLebO{(A_1\cup A_2)\cap B} + \mLebO{(A_1\cup A_2)^\complement\cap B} = \mLebO{B}$を示せばよい。
+                $\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
+                \begin{align*}
+                    &\mLebO{(A_1\cup A_2)\cap B} + \mLebO{(A_1\cup A_2)^\complement\cap B} \\
+                    &= \mLebO{(A_1\cap B)\cup(A_2\cap A_1^\complement\cap B)} + \mLebO{A_2^\complement\cap A_1^\complement\cap B} \\
+                    &\leq \mLebO{A_1\cap B} + \mLebO{A_2\cap A_1^\complement\cap B} + \mLebO{A_2^\complement\cap A_1^\complement\cap B} \\
+                    &= \mLebO{A_1\cap B} + \mLebO{A_1^\complement\cap B} \quad(\because A_2\text{は可測}) \\
+                    &= \mLebO{B} \quad(\because A_1\text{は可測})
+                \end{align*}
+            \end{proof}
+        \subsection{系: \texorpdfstring{$A_1,\dotsc,A_n\subset\realNumbers^n$}{A1,...,An⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2\cup\dotsb\cup A_n$}{A1,...,Anの和集合}もLebesgue可測}
+            \begin{proof}
+                直前の定理を繰り返し用いる。
+            \end{proof}
+        \subsection{Lebesgue可測集合\texorpdfstring{$A_1,A_2\subset\realNumbers^n$}{A1,A2⊂R\string^n}が非交差的なら\texorpdfstring{$\mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2}$}{A1とA2の和集合のLebesgue測度はそれぞれのLebesgue測度の和に等しい}}
+            \begin{proof}
+                \quad\par
+                直前の定理の証明の式の3行目第2項で$A_2\cap A_1^\complement\cap B = A_2\cap B$となるので
+                \begin{align*}
+                    \mLebO{B} &\leq \mLebO{(A_1\sqcup A_2)\cap B} + \mLebO{(A_1\sqcup A_2)^\complement\cap B} \\
+                    &\leq \mLebO{A_1\cap B} + \mLebO{A_2\cap B} + \mLebO{(A_1\sqcup A_2)^\complement\cap B} \leq \mLebO{B}
+                \end{align*}
+                すなわち
+                \[ \mLebO{(A_1\sqcup A_2)\cap B} = \mLebO{A_1\cap B} + \mLebO{A_2\cap B} \]
+                $B$は任意なので$B=\realNumbers^n$とすると$\mLebO{A_1\sqcup A_2} = \mLebO{A_1} + \mLebO{A_2}$となるが、$A_1,A_2, A_1\sqcup A_2$が可測であるので外測度=測度であるから結局
+                \[ \mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2} \]
+            \end{proof}
+        \subsection{系: Lebesgue測度の有限加法性}
+            Lebesgue可測集合$A_1,\dotsc,A_n\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^n A_i} = \sum_{i=1}^n \mLeb{A_i}$
+            \begin{proof}
+                直前の定理を繰り返し用いる。
+            \end{proof}
+        \subsection{Lebesgue測度の\texorpdfstring{$\sigma$}{σ}--加法性}
+            Lebesgue可測集合$A_1,A_2,\dotsc\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
+            \begin{proof}
+                \quad\par
+                $B_n \coloneqq \bigsqcup_{i=1}^n A_i,\;B \coloneqq \bigsqcup_{i=1}^\infty A_i$とする。
+                任意の集合$S\in\realNumbers^n$に対して
+                \[ \mLebO{S\cap B} + \mLebO{S\cap B^\complement} = \mLebO{S} \]
+                となることを示す。$\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
+                Lebesgue測度の有限加法性より
+                \begin{align*}
+                    \mLebO{S} &= \mLebO{S\cap B_n} + \mLebO{S\cap B_n^\complement} \\
+                    &\geq \mLebO{S\cap B_n} + \mLebO{S\cap B^\complement} \quad(\because S\cap B^\complement\subset S\cap B_n^\complement) \\
+                    &= \sum_{i=1}^n \mLebO{S\cap A_i} + \mLebO{S\cap B^\complement}
+                \end{align*}
+                上式で$n\to\infty$として
+                \begin{align*}
+                    \mLebO{S} &\geq \sum_{i=1}^\infty \mLebO{S\cap A_i} + \mLebO{S\cap B^\complement} \\
+                    &\geq \mLebO{S\cap B} + \mLebO{S\cap B^\complement} \quad(\because\text{Lebesgue外測度の劣加法性}) \\
+                    &\geq \mLebO{S}
+                \end{align*}
+                よって$B$はLebesgue可測であり$\mLebO{S\cap B} = \sum_{i=1}^\infty \mLebO{S\cap A_i}$である。$S=\realNumbers^n$とすると
+                $\mLeb{B} = \mLeb{S\cap B} = \mLebO{S\cap B} = \sum_{i=1}^\infty \mLebO{S\cap A_i} = \sum_{i=1}^\infty \mLeb{S\cap A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
+            \end{proof}
+        \subsection{Lebesgue可測の直感的理解}
+            集合$A$に対する直方体領域を加えたり切り取ったりする(切り取るという操作は、元の直方体領域を別の複数の直方体領域の和に変換することと等しいことに注意)\textcolor{red}{可算無限回}の近似操作により作られる近似集合$B_n$が存在して
+            \[ \forall x\in A,\;\exists N(x)\in\naturalNumbers \st n\geq N(x), x\in B_n \]
+            \[ \forall y\notin A,\;\exists N(y)\in\naturalNumbers \st n\geq N(y), y\notin B_n \]
+            が成り立つとき、$A$はLebesgue可測であるのだと思う。理解が深まったら書き直すかもしれない。
+        \subsection{Jordan測度とLebesgue測度の違い}
+            Lebesgue外測度がもつ劣加法性に対応する性質がJordan外測度にはない($\rationalNumbers\cap[0,1]$を考えてみればわかる)。
+            Jordan外側度では有限の分割に対して指示関数の$\sup$をとってから、分割数$\to\infty$とすることしか許されていないのに対し、Lebesgue外測度では個々の小直方体の体積の評価と、小直方体の増産を同時に実行することを許されている。
+            この点がJordan測度とLebesgue測度の違いを生んでいると思う。
+    \section{包除原理}
+        {
+            \newcommand{\numset}{{\{1,\dotsc,n\}}}
+            \begin{shadebox}
+                測度空間$(S,\mathcal{M},\mu)$を考える。
+                任意の$A_1,\dotsc,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
+                \begin{align*}
+                    \mu(A_1\cup\dotsb\cup A_n) &= \mu(A_1)+\dotsb +\mu(A_n) \\
+                    &- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \dotsb - \mu(A_{n-1}\cap A_n) \\
+                    &+ \mu(A_1\cap A_2\cap A_3) + \mu(A_1\cap A_2\cap A_4) + \dotsb + \mu(A_{n-2}\cap A_{n-1}\cap A_n) \\
+                    &- \dotsb +(-1)^{n-1}\mu(A_1\cap\dotsb\cap A_n)
+                \end{align*}
+                すなわち
+                \begin{equation}
+                    \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n (-1)^{k-1}\sum_{I\in\combi{\numset}{k}} \func{\mu}{\bigcap_{i\in I}A_i}
+                \end{equation}
+                もっと短く書けば
+                \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                式(1)を証明する。
+                \begin{align*}
+                    \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
+                    \textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
+                    &= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
+                    &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneqq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
+                \end{align*}
+                $U\coloneqq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
+                まず$x\notin U\Rightarrow c(x)=0$は明らか。
+                各$x\in U$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
+                \begin{center}
+                    「$x$は$m(x)$個の集合$A_{i_1},\dotsc,A_{i_{m(x)}}$に共通して属し、他の$n-m(x)$個の集合には属さない。」
+                \end{center}
+                従って、$c(x)$の$\sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
+                \[ c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}} (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x} \]
+                上式の$\ind{\bigcap_{i\in I}A_i}{x}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから、$c(x)$はさらに次のように書き直される。
+                \begin{align*}
+                    c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
+                    &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
+                    &= -\left((1-1)^{m(x)} - 1\right) = 1
+                \end{align*}
+                よって確かに$c(x)=\ind{U}{x}$である。
+            \end{proof}
+        }
