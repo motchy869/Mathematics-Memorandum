@@ -6,35 +6,42 @@
             \[ f(x;a,\sigma) := \frac{x^2}{\sigma^2}\exp\left(-\frac{x^2+a^2}{2\sigma^2}\right)I_0\left(\frac{ax}{\sigma^2}\right) \]
             ここに$I_0$は0次の第一種変形Bessel関数である。
         \end{shadebox}
-    \section{正規分布する成分を持つ2次元ベクトルと定数ベクトルの和のノルムとの関係}
-        \begin{shadebox}
-            $\bm{a}\in\realNumbers^2$とする。
+    \section{正規分布する成分を持つ2次元ベクトルと定数ベクトルとの関係}
+        \subsection{記号の準備}
+            以下で用いる記号ここでを定義しておく。
+            $\bm{a} := [a_1,a_2]^\top\in\realNumbers^2$とする。
             $\tilde{\bm{X}}\in\realNumbers^2$の各成分が正規分布$N(0,\sigma^2)$に従う独立な確率変数であるとする。
-            $\bm{X} := \bm{a} + \tilde{\bm{X}}$とする。
+            $\bm{X} := \bm{a} + \tilde{\bm{X}}$とし、$\bm{X}$の第$i$成分を$X_i$と表す。
+        \subsection{ノルムとの関係}
             $\norm{\bm{X}}_2$は母数$\sigma$のRayleigh分布に従う。
-        \end{shadebox}
-        \begin{proof}
-            \quad\par
-            $a := \norm{\bm{a}}_2$とする。
-            座標系を適当に回転させて$\bm{a} = [a,0]^\top$とでき、この操作は$\norm{\bm{X}}_2$を変化させない。
-            よって一般性を失わずに$\bm{a} = [a,0]^\top$であるとする。
-            \par
-            $\bm{X}$の第$i$成分を$X_i$と表し、$X_i$の確率密度分布を$f_i$とする。
-            $f_1$は$N(0,\sigma^2)$の、$f_2$は$N(a,\sigma^2)$の確率密度関数である。
-            $r \geq 0$とし、原点を中心とする半径$r$の円盤領域を$\Omega(r)$とする。
-            \begin{align*}
-                \Pr{\norm{\bm{X}}_2 \leq r} &= \int_{\Omega(r)} f_1(x_1)f_2(x_2) \mathrm{d}x_1\mathrm{d}x_2 = \integrate{0}{r}{\integrate{0}{2\pi}{f_1(r'\cos\theta)f_2(r'\sin\theta)r'}{}{\theta}}{}{r'} \\
-                &= \integrate{0}{r}{\integrate{0}{2\pi}{\frac{1}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta-a)^2+r'^2\sin\theta\right)\right)r'}{}{\theta}}{}{r'} \\
-                &= \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)\underbrace{\frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\cos\theta}{\sigma^2}\right)}{}{\theta}}_{(A)}}{}{r'}
-            \end{align*}
-            (A)を評価する。
-            \begin{align*}
-                (A) &= \frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\sin\theta}{\sigma^2}\right)}{}{\theta} = \frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{-ar'\sin\theta}{\sigma^2}\right)}{}{\theta} \\
-                &\phantom{=} (\text{被積分関数の$2\pi$周期性を用いた}) \\
-                &= J_0\left(i\frac{ar'}{\sigma^2}\right) = I_0\left(\frac{ar'}{\sigma^2}\right)
-            \end{align*}
-            よって次式が成り立つ。
-            \[ \Pr{\norm{\bm{X}}_2 \leq r} = \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)I_0\left(\frac{ar'}{\sigma^2}\right)}{}{r'} \]
-            $\norm{\bm{X}}_2$の確率密度関数は次式である。
-            \[ \partDerivLong{\Pr{\norm{\bm{X}}_2 \leq r}}{r}{} = \frac{1}{\sigma^2}r\exp\left(-\frac{1}{2\sigma^2}\left(r^2+a^2\right)^2\right)I_0\left(\frac{ar}{\sigma^2}\right) \]
-        \end{proof}
+            \begin{proof}
+                \quad\par
+                $a := \norm{\bm{a}}_2$とする。
+                座標系を適当に回転させて$\bm{a} = [a,0]^\top$とでき、この操作は$\norm{\bm{X}}_2$を変化させない。
+                よって一般性を失わずに$\bm{a} = [a,0]^\top$であるとする。
+                \par
+                $X_i$の確率密度分布を$f_i$とする。
+                $f_1$は$N(0,\sigma^2)$の、$f_2$は$N(a,\sigma^2)$の確率密度関数である。
+                $r \geq 0$とし、原点を中心とする半径$r$の円盤領域を$\Omega(r)$とする。
+                \begin{align*}
+                    \Pr{\norm{\bm{X}}_2 \leq r} &= \int_{\Omega(r)} f_1(x_1)f_2(x_2) \mathrm{d}x_1\mathrm{d}x_2 = \integrate{0}{r}{\integrate{0}{2\pi}{f_1(r'\cos\theta)f_2(r'\sin\theta)r'}{}{\theta}}{}{r'} \\
+                    &= \integrate{0}{r}{\integrate{0}{2\pi}{\frac{1}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta-a)^2+r'^2\sin\theta\right)\right)r'}{}{\theta}}{}{r'} \\
+                    &= \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)\underbrace{\frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\cos\theta}{\sigma^2}\right)}{}{\theta}}_{(A)}}{}{r'}
+                \end{align*}
+                (A)を評価する。
+                \begin{align*}
+                    (A) &= \frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\sin\theta}{\sigma^2}\right)}{}{\theta} = \frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{-ar'\sin\theta}{\sigma^2}\right)}{}{\theta} \\
+                    &\phantom{=} (\text{被積分関数の$2\pi$周期性を用いた}) \\
+                    &= J_0\left(i\frac{ar'}{\sigma^2}\right) = I_0\left(\frac{ar'}{\sigma^2}\right)
+                \end{align*}
+                よって次式が成り立つ。
+                \[ \Pr{\norm{\bm{X}}_2 \leq r} = \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)I_0\left(\frac{ar'}{\sigma^2}\right)}{}{r'} \]
+                $\norm{\bm{X}}_2$の確率密度関数は次式である。
+                \[ \partDerivLong{\Pr{\norm{\bm{X}}_2 \leq r}}{r}{} = \frac{1}{\sigma^2}r\exp\left(-\frac{1}{2\sigma^2}\left(r^2+a^2\right)^2\right)I_0\left(\frac{ar}{\sigma^2}\right) \]
+            \end{proof}
+        \subsection{偏角との関係}
+            \begin{shadebox}
+                $\theta_0 := \Arg{a_1 + ia_2},\;\theta := \Arg{X_1 + iX_2}$とする。
+                $\theta$の確率密度関数は次式である。
+                \[ \rho(\theta;\bm{a},\sigma) \]
+            \end{shadebox}
