@@ -25,6 +25,10 @@
             \begin{align*}
                 \Pr{\norm{\bm{X}}_2 \leq r} &= \int_{\Omega(r)} f_1(x_1)f_2(x_2) \mathrm{d}x_1\mathrm{d}x_2 = \integrate{0}{r}{\integrate{0}{2\pi}{f_1(r'\cos\theta)f_2(r'\sin\theta)r'}{}{\theta}}{}{r'} \\
                 &= \integrate{0}{r}{\integrate{0}{2\pi}{\frac{1}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta-a)^2+r'^2\sin\theta\right)\right)r'}{}{\theta}}{}{r'} \\
-                &= \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)\frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\cos\theta}{\sigma^2}\right)}{}{\theta}}{}{r'}
+                &= \frac{1}{\sigma^2}\integrate{0}{r}{r'\exp\left(-\frac{1}{2\sigma^2}\left(r'^2+a^2\right)^2\right)\underbrace{\frac{1}{2\pi}\integrate{0}{2\pi}{\exp\left(\frac{ar'\cos\theta}{\sigma^2}\right)}{}{\theta}}_{\eqqcolon S(r')}}{}{r'}
+            \end{align*}
+            $S(r')$を評価する。
+            \begin{align*}
+                %
             \end{align*}
         \end{proof}
