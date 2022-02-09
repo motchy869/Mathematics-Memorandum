@@ -53,6 +53,13 @@
                 \[ \Pr{0\leq\Theta\leq\theta} = \integrate{\theta'=0}{\theta}{\integrate{r'=0}{\infty}{\frac{r'}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta'-a)^2+r'^2\sin^2\theta'\right)\right)}{}{r'}}{}{\theta'} \]
                 よって$\Theta$の確率密度関数を$\rho(\Theta;a,\sigma)$とすると
                 \begin{align*}
-                    \rho(\Theta;a,\sigma) &= 
+                    \rho(\Theta;a,\sigma) &= \partDerivLong{\Pr{0\leq\Theta\leq\theta}}{\theta}{} = \integrate{r'=0}{\infty}{\frac{r'}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta'-a)^2+r'^2\sin^2\theta'\right)\right)}{}{r'} \\\
+                    &= \frac{1}{2\pi}\exp\left(-\frac{a^2\sin^2\theta}{2\sigma^2}\right)\underbrace{\integrate{r'=0}{\infty}{\frac{r'}{\sigma^2}\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)}{}{r'}}_{(A)}
+                \end{align*}
+                ここで
+                \[ -\partDerivLong{\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)}{r'}{} = \frac{r'-a\cos\theta}{\sigma^2}\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right) \]
+                を利用し、
+                \begin{align*}
+                    (A) &= \left[-\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)\right]_{r'=0}^\infty + \integrate{r'=0}{\infty}{}{}{}
                 \end{align*}
             \end{proof}
