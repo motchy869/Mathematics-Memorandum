@@ -9,14 +9,13 @@
     \section{正規分布する成分を持つ2次元ベクトルと定数ベクトルとの関係}
         \subsection{記号の準備}
             以下で用いる記号ここでを定義しておく。
-            $\bm{a} := [a_1,a_2]^\top\in\realNumbers^2$とする。
+            $\bm{a} := [a_1,a_2]^\top\in\realNumbers^2,\;a := \norm{\bm{a}}_2$とする。
             $\tilde{\bm{X}}\in\realNumbers^2$の各成分が正規分布$N(0,\sigma^2)$に従う独立な確率変数であるとする。
             $\bm{X} := \bm{a} + \tilde{\bm{X}}$とし、$\bm{X}$の第$i$成分を$X_i$と表す。
         \subsection{ノルムとの関係}
             $\norm{\bm{X}}_2$は母数$\sigma$のRayleigh分布に従う。
             \begin{proof}
                 \quad\par
-                $a := \norm{\bm{a}}_2$とする。
                 座標系を適当に回転させて$\bm{a} = [a,0]^\top$とでき、この操作は$\norm{\bm{X}}_2$を変化させない。
                 よって一般性を失わずに$\bm{a} = [a,0]^\top$であるとする。
                 \par
@@ -41,7 +40,19 @@
             \end{proof}
         \subsection{偏角との関係}
             \begin{shadebox}
-                $\theta_0 := \Arg{a_1 + ia_2},\;\theta := \Arg{X_1 + iX_2}$とする。
-                $\theta$の確率密度関数は次式である。
-                \[ \rho(\theta;\bm{a},\sigma) \]
+                $\theta_0 := \Arg{a_1 + ia_2},\;\Theta := \Arg{X_1 + iX_2}$とする。
+                $\Theta$の確率密度関数は次式である。
+                {\small \[ \rho(\theta;\bm{a},\sigma) = \frac{1}{2\pi}\exp\left(-\frac{a^2}{2\sigma^2}\right)\left[1+\frac{a\cos(\theta-\theta_0)}{\sigma}\sqrt{\frac{\pi}{2}}\exp\left(-\frac{a^2\cos^2(\theta-\theta_0)}{2\sigma^2}\right)\left(1+\erf\left(\frac{a\cos(\theta-\theta_0)}{\sqrt{2}\sigma}\right)\right)\right] \]}
             \end{shadebox}
+            \begin{proof}
+                \quad\par
+                まず$\bm{a} = [a,0]^\top$の場合を考え、その後で一般化する。
+                $X_i$の確率密度分布を$f_i$とする。
+                $f_1$は$N(0,\sigma^2)$の、$f_2$は$N(a,\sigma^2)$の確率密度関数である。
+                系は$\Theta$に関して偶対称であるから、$\Theta\in[0,\pi]$の範囲で考えた結果を$\Theta<0$の場合に偶対称に拡張できる。
+                \[ \Pr{0\leq\Theta\leq\theta} = \integrate{\theta'=0}{\theta}{\integrate{r'=0}{\infty}{\frac{r'}{2\pi\sigma^2}\exp\left(-\frac{1}{2\sigma^2}\left((r'\cos\theta'-a)^2+r'^2\sin^2\theta'\right)\right)}{}{r'}}{}{\theta'} \]
+                よって$\Theta$の確率密度関数を$\rho(\Theta;a,\sigma)$とすると
+                \begin{align*}
+                    \rho(\Theta;a,\sigma) &= 
+                \end{align*}
+            \end{proof}
