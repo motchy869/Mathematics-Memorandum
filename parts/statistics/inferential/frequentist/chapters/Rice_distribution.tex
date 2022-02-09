@@ -60,6 +60,8 @@
                 \[ -\partDerivLong{\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)}{r'}{} = \frac{r'-a\cos\theta}{\sigma^2}\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right) \]
                 を利用し、
                 \begin{align*}
-                    (A) &= \left[-\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)\right]_{r'=0}^\infty + \integrate{r'=0}{\infty}{}{}{}
+                    (A) &= \left[-\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)\right]_{r'=0}^\infty + \frac{a\cos\theta}{\sigma^2}\underbrace{\integrate{r'=0}{\infty}{\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)}{}{r'}}_{(B)} \\
+                    (B) &= \integrate{-\frac{r'-a\cos\theta}{\sqrt{2\sigma}}}{\infty}{e^{-t^2}\sqrt{2}\sigma}{}{t} \quad \bigl(\text{変数変換 }t\coloneqq(r'-a\cos\theta)/(\sqrt{2}\sigma)\bigr) \\
+                    &= \sigma\sqrt{\frac{\pi}{2}}\frac{2}{\sqrt{\pi}}\integrate{-\frac{r'-a\cos\theta}{\sqrt{2\sigma}}}{\infty}{e^{-t^2}}{}{t} = \sigma\sqrt{\frac{\pi}{2}}
                 \end{align*}
             \end{proof}
