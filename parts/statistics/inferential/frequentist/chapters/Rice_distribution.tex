@@ -46,7 +46,7 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                まず$\bm{a} = [a,0]^\top$の場合を考え、その後で一般化する。
+                まず$\theta_0 = 0$の場合を考え、その後で一般化する。
                 $X_i$の確率密度分布を$f_i$とする。
                 $f_1$は$N(0,\sigma^2)$の、$f_2$は$N(a,\sigma^2)$の確率密度関数である。
                 系は$\Theta$に関して偶対称であるから、$\Theta\in[0,\pi]$の範囲で考えた結果を$\Theta<0$の場合に偶対称に拡張できる。
@@ -62,6 +62,9 @@
                 \begin{align*}
                     (A) &= \left[-\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)\right]_{r'=0}^\infty + \frac{a\cos\theta}{\sigma^2}\underbrace{\integrate{r'=0}{\infty}{\exp\left(-\frac{(r'-a\cos\theta)^2}{2\sigma^2}\right)}{}{r'}}_{(B)} \\
                     (B) &= \integrate{-\frac{r'-a\cos\theta}{\sqrt{2\sigma}}}{\infty}{e^{-t^2}\sqrt{2}\sigma}{}{t} \quad \bigl(\text{変数変換 }t\coloneqq(r'-a\cos\theta)/(\sqrt{2}\sigma)\bigr) \\
-                    &= \sigma\sqrt{\frac{\pi}{2}}\frac{2}{\sqrt{\pi}}\integrate{-\frac{r'-a\cos\theta}{\sqrt{2\sigma}}}{\infty}{e^{-t^2}}{}{t} = \sigma\sqrt{\frac{\pi}{2}}
+                    &= \sigma\sqrt{\frac{\pi}{2}}\frac{2}{\sqrt{\pi}}\integrate{-\frac{r'-a\cos\theta}{\sqrt{2\sigma}}}{\infty}{e^{-t^2}}{}{t} = \sigma\sqrt{\frac{\pi}{2}}\left(1+\erf\left(\frac{a\cos\theta}{\sqrt{2}\sigma}\right)\right)
                 \end{align*}
+                よって
+                \[ \rho(\Theta;a,\sigma) = \frac{1}{2\pi}\exp\left(-\frac{a^2}{2\sigma^2}\right)\left[1 + \frac{a\cos\theta}{\sigma}\sqrt{\frac{\pi}{2}}\exp\left(\frac{a^2\cos^2\theta}{2\sigma^2}\right)\left(1+\erf\left(\frac{a\cos\theta}{\sqrt{2}\sigma}\right)\right)\right] \]
+                $\theta_0 = 0$とは限らない一般の場合は分布を$-\theta_0$だけ並行移動したものとなるので、冒頭に掲げた$\rho(\theta;\bm{a},\sigma)$の式が成り立つ。
             \end{proof}
