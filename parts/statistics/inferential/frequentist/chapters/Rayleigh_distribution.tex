@@ -1,0 +1,23 @@
+\chapter{Rayleigh分布}
+    \section{定義}
+        \begin{shadebox}
+            $\sigma>0$とする。
+            母数$\sigma$のRayleigh分布の連続確率密度関数を次式で定義する。
+            \[ f(x;\sigma) := \frac{x}{\sigma^2}\exp\left(-\frac{x^2}{2\sigma^2}\right) \]
+        \end{shadebox}
+    \section{正規分布する成分を持つ2次元ベクトルのノルムとの関係}
+        \begin{shadebox}
+            $\bm{X}\in\realNumbers^2$の各成分が正規分布$N(0,\sigma^2)$に従う独立な確率変数であるとき、$\norm{\bm{X}}_2$は母数$\sigma$のRayleigh分布に従う。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $N(0,\sigma^2)$の確率密度関数を$p$と表す。
+            $r\geq 0$とする。
+            $\Omega(r)$を半径$r$の円盤領域とする。
+            \begin{align*}
+                \Pr{\norm{\bm{X}}_2 \leq r} &= \int_{\Omega(r)} p(x_1)p(x_2) \mathrm{d}x_1\mathrm{d}x_2 = \integrate{0}{r}{\integrate{0}{2\pi}{p(r'\cos\theta)p(r'\sin\theta)r'}{}{\theta}}{}{r'} \\
+                &= \integrate{0}{r}{\integrate{0}{2\pi}{\frac{r'}{2\pi\sigma^2}\exp\left(-\frac{r'^2}{2\sigma^2}\right)r'}{}{\theta}}{}{r'} = \integrate{0}{r}{\frac{r'}{\sigma^2}\exp\left(-\frac{r'^2}{2\sigma^2}\right)}{}{r'}
+            \end{align*}
+            よって$\norm{\bm{X}}_2$の確率密度関数は次式である。
+            \[ \derivLong{\Pr{\norm{\bm{X}}_2 \leq r}}{r}{} = \frac{r}{\sigma^2}\exp\left(-\frac{r^2}{2\sigma^2}\right) \]
+        \end{proof}
