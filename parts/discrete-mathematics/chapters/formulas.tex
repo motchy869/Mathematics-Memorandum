@@ -1,4 +1,12 @@
 \chapter{公式}
+    \section{\texorpdfstring{$\sum_{k=1}^n k^2 = n(n+1)(2n+1)/2$}{2乗和の公式}}
+        \begin{proof}
+            \quad\par
+            $S_n := \sum_{k=1}^n k^2$とする。
+            $S_n$に何らかの項を付け加え、$T_n$とし、$T_{n+1} - T_n$が$n$の高々1次式となるようにできれば、$T_n$を求めることができ、$S_n$も求まる。
+            $S_{n+1} - S_n = (n+1)^2$であり、$n^2$の項を消去するには$S_n$に$n^3$に比例する項を付け加えればよい($n$の2次式では不足である。
+            なぜなら$T_{n+1} - T_n$の段階で$n^2$に比例する項が相殺して消えるから$S_{n+1} - S_n$由来の$n^2$の項を決してキャンセルできないからである)。
+        \end{proof}
     \section{\texorpdfstring{$1\cdot3\cdot5\dots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
         \begin{proof}
             \begin{align*}
