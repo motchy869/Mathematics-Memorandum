@@ -47,6 +47,8 @@
             \begin{align*}
                 \integrate{\Omega}{}{\partDeriv{f}{x_2}{}u}{}{\Omega} &= \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{\partDeriv{f}{x_2}{}u}{}{x_2}}{}{x_1} = \integrate{x_1=a}{b}{\left\{\left[fu\right]_{x_2=\psi_2(x_1)}^{\psi_1(x_1)} - \integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}\right\}}{}{x_1} \\
                 &= \integrate{x_1=a}{b}{\left[f(x1,\psi_1(x1))u(x1,\psi_1(x1)) - f(x1,\psi_2(x1))u(x1,\psi_2(x1))\right]}{}{x_1} \\
-                &\phantom{=} - \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}}{}{x_1}
+                &\phantom{=} - \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}}{}{x_1} \\
+                &= -\integrate{C_1}{}{fu}{}{x_1} - \integrate{C_2}{}{fu}{}{x_1} - \integrate{\Omega}{}{f\partDeriv{u}{x_2}{}}{}{\Omega} \\
+                &= -\integrate{\partial\Omega}{}{fu}{}{x_1} - \integrate{\Omega}{}{f\partDeriv{u}{x_2}{}}{}{\Omega}
             \end{align*}
         \end{proof}
