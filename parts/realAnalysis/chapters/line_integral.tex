@@ -46,6 +46,7 @@
             このように積分しても、2つの閉曲線同士で共有された境界上での積分は相殺して0となるから、$\partial\Omega$で線積分した結果と一致する。
             \begin{align*}
                 \integrate{\Omega}{}{\partDeriv{f}{x_2}{}u}{}{\Omega} &= \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{\partDeriv{f}{x_2}{}u}{}{x_2}}{}{x_1} = \integrate{x_1=a}{b}{\left\{\left[fu\right]_{x_2=\psi_2(x_1)}^{\psi_1(x_1)} - \integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}\right\}}{}{x_1} \\
-                &= \integrate{}{}{}{}{x_1}
+                &= \integrate{x_1=a}{b}{\left[f(x1,\psi_1(x1))u(x1,\psi_1(x1)) - f(x1,\psi_2(x1))u(x1,\psi_2(x1))\right]}{}{x_1} \\
+                &\phantom{=} - \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}}{}{x_1}
             \end{align*}
         \end{proof}
