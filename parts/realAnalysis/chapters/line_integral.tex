@@ -26,3 +26,35 @@
         \par
         曲線を別のパラメータ表示$\bm{x} = \bm{\psi}(u),\; u:\alpha\to\beta$で表しても、線積分の値は変わらない。
         なぜなら、既に見たように線積分は\textcolor{red}{パラメータ表示に依存せずに定義されている}からである。
+    \section{Greenの定理の拡張}
+        \begin{shadebox}
+            $\Omega\subset\realNumbers^2$とし、その境界$\partial\Omega$は区分的に滑らかであるとする。
+            $f,u$は$\Omega$上で定義された$\textrm{C}^1$級の関数であるとする。
+            このとき、次式が成り立つ。
+            \begin{gather}
+                \integrate{\Omega}{}{\partDeriv{f}{x_1}{}u}{}{\Omega} = \integrate{\partial\Omega}{}{fu}{}{x_2} - \integrate{\Omega}{}{f\partDeriv{u}{x_1}{}}{}{\Omega} \\
+                \integrate{\Omega}{}{\partDeriv{f}{x_2}{}u}{}{\Omega} = -\integrate{\partial\Omega}{}{fu}{}{x_1} - \integrate{\Omega}{}{f\partDeriv{u}{x_2}{}}{}{\Omega}
+            \end{gather}
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            式(2)を示す。
+            式(1)は同様にして容易に示せる。
+            \par
+            一般性を失わずに$\partial\Omega$は下図のように$x_1$に関して単純な2つの部分に分けられる形状であるとする。
+            \begin{figure}[H]
+                \centering
+                \includegraphics[keepaspectratio, scale=0.4]
+                {\currfiledir/imgs/Green_theorem/Green_theorem.eps}
+                \caption{積分領域}
+            \end{figure}
+            なぜなら、そうでない場合は、条件を満たすように複数の閉曲線に分割して其々に対して以下の証明を適用して合算すればよいからである。
+            このように積分しても、2つの閉曲線同士で共有された境界上での積分は相殺して0となるから、$\partial\Omega$で線積分した結果と一致する。
+            \begin{align*}
+                \integrate{\Omega}{}{\partDeriv{f}{x_2}{}u}{}{\Omega} &= \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{\partDeriv{f}{x_2}{}u}{}{x_2}}{}{x_1} = \integrate{x_1=a}{b}{\left\{\left[fu\right]_{x_2=\psi_2(x_1)}^{\psi_1(x_1)} - \integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}\right\}}{}{x_1} \\
+                &= \integrate{x_1=a}{b}{\left[f(x1,\psi_1(x1))u(x1,\psi_1(x1)) - f(x1,\psi_2(x1))u(x1,\psi_2(x1))\right]}{}{x_1} \\
+                &\phantom{=} - \integrate{x_1=a}{b}{\integrate{x_2=\psi_2(x_1)}{\psi_1(x_1)}{f\partDeriv{u}{x_2}{}}{}{x_2}}{}{x_1} \\
+                &= -\integrate{C_1}{}{fu}{}{x_1} - \integrate{C_2}{}{fu}{}{x_1} - \integrate{\Omega}{}{f\partDeriv{u}{x_2}{}}{}{\Omega} \\
+                &= -\integrate{\partial\Omega}{}{fu}{}{x_1} - \integrate{\Omega}{}{f\partDeriv{u}{x_2}{}}{}{\Omega}
+            \end{align*}
+        \end{proof}
