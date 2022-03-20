@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added
   - formula for sum of square: 1+4+9+...+n^2 = n(n+1)(2n+1)/6
   - Green's theorem with product
+  - complex integral of `e^(iz)/z` on infinitely-large semicircle
 
 ## [0.9.1]
 
