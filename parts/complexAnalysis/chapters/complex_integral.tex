@@ -1,4 +1,21 @@
 \chapter{複素積分}
+    \section{無限に大きい半円周上での\texorpdfstring{$e^{iz}/z$}{e\string^(iz)/z}の積分}
+        \begin{shadebox}
+            $R>0$とし、パラメータ表示された曲線$C:\;z = Re^{i\theta};\;\theta :0\to\pi$を考える。
+            このとき次式が成り立つ。
+            \[ \abs{\integrate{C}{}{\frac{e^{iz}}{z}}{}{z}} < \frac{\pi}{R}\left(1-e^{-R}\right) \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $\mathrm{d}z = iRe^{i\theta}\mathrm{d}\theta$であるから
+            \begin{align*}
+                S &:= \integrate{C}{}{\frac{e^{iz}}{z}}{}{z} = \integrate{0}{\pi}{\frac{1}{Re^{i\theta}}\exp iR(\cos\theta + i\sin\theta) iRe^{i\theta}}{}{\theta} = i\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta} \\
+                |S| &= \abs{\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta}} \leq \integrate{0}{\pi}{\abs{\exp (iR\cos\theta - R\sin\theta)}}{}{\theta} \\
+                &= \integrate{0}{\pi}{e^{-R\sin\theta}}{}{\theta} = 2\integrate{0}{\pi/2}{e^{-R\sin\theta}}{}{\theta}
+            \end{align*}
+            $2\theta/\pi < \sin\theta\;(\theta\in(0,\pi/2))$であるから次式が成り立つ。
+            \[ 2\integrate{0}{\pi/2}{e^{-R\sin\theta}}{}{\theta} < 2\integrate{0}{\pi/2}{e^{-2R\theta/\pi}}{}{\theta} = \frac{\pi}{R}\left(1-e^{-R}\right) \]
+        \end{proof}
     \section{例題}
         \subsection{\texorpdfstring{$\integrate{0}{2\pi}{\Log(1-a\exp(i\theta))}{}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
             \begin{solution}
