@@ -1,5 +1,6 @@
 \chapter{公式}
     \section{\texorpdfstring{$\sum_{k=1}^n k^2 = n(n+1)(2n+1)/6$}{2乗和の公式}}
+        \label{2乗和の公式}
         \begin{proof}
             \quad\par
             $S_n := \sum_{k=1}^n k^2$とする。
@@ -15,6 +16,14 @@
             上式は$n=1$のとき$2/3$となるが、これは$T_1$と等しいので、上式は$n=1$のときも含めて成り立つ。
             以上より
             \[ S_n = T_n + n^3/3 = \frac{1}{6}n(n+1)(2n+1) \]
+        \end{proof}
+    \section{\texorpdfstring{$\sum_{k=0}^n (2k+1)^2 = (n+1)(2n+1)(2n+3)/3$}{奇数の2乗和の公式}}
+        \begin{proof}
+            \begin{align*}
+                \sum_{k=0}^n (2k+1)^2 &= \sum_{k=0}^n (4k^2+4k+1) = 4\sum_{k=1}^n k^2 + 4\sum_{k=1}^n k + n+1 \\
+                &= \frac{2}{3}n(n+1)(2n+1) + 2n(n+1) + (n+1) \quad (\because \ref{2乗和の公式}) \\
+                &= \frac{1}{3}(n+1)\left[2n(2n+1) + 6n + 3\right] = \frac{1}{3}(n+1)(2n+1)(2n+3)
+            \end{align*}
         \end{proof}
     \section{\texorpdfstring{$1\cdot3\cdot5\dots(2n-1)2n = (2n)!/n!$}{1・3・5・(2n-1)・2n = (2n!)/n!}}
         \begin{proof}
