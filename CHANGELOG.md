@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - broken proof of FKG inequality
 - Added
   - sum of squared odd numbers
+  - relationship between convexity and 2nd derivative
 
 ## [0.10.1] - 2022/3/20
 
