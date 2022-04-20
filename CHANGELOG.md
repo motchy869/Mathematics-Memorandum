@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added
   - sum of squared odd numbers
   - relationship between convexity and 2nd derivative
+  - sufficient condition for minimal point of convex functional
 
 ## [0.10.1] - 2022/3/20
 
