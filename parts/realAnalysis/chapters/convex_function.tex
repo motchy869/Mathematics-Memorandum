@@ -58,6 +58,58 @@
                 $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
                 \[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
             \end{shadebox}
+        \subsection{2階導関数と凸性の関係}
+            \begin{shadebox}
+                $a\in\realNumbers$とし、$I$は$a$の開近傍であるとする。
+                $f:I\to\realNumbers$は$I$上で$\mathrm{C}^2$級であるとする。
+                次の3つの事項
+                \begin{enumerate}
+                    \item $\forall x\in I, f^{(2)}(x) > 0$
+                    \item $\forall (x_1,x_2\in I,x_1\neq x_2),\;f(x_2) > f(x_1) + f^{(1)}(x_1)(x_2-x_1)$
+                    \item $f$は$I$上で狭義に下に凸である。
+                \end{enumerate}
+                に対して$1\Rightarrow 2,\;2\iff 3$である。
+                さらに$1\Leftarrow 2$は偽である。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $1\Leftarrow 2$が偽であることは反例$f(x) = x^4$から直ちに示される。
+                \par
+                $1\Rightarrow 2$を示す。
+                $x\in I,x\neq x_1$とする。
+                $g(x) \coloneqq f(x) - \bigl(f(x_1) - f^{(1)}(x-x_1)\bigr)$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
+                さらに$g^{(2)}(x) = f^{(2)}(x) > 0$である。
+                よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり、2が成り立つ。
+                \par
+                $2\Rightarrow 3$を示す。
+                $x_1,x_2\in I,\;x_1\neq x_2,\;0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
+                \[ f(x_1) > f(x_3) + f^{(1)}(x_3)(x_1-x_3),\quad f(x_2) > f(x_3) + f^{(1)}(x_3)(x_2-x_3) \]
+                よって次式が成り立つ。
+                \begin{align*}
+                    (1-\lambda)f(x_1) + \lambda f(x_2) &> f(x_3) + (1-\lambda)f^{(1)}(x_3)(x_1-x_3) + \lambda f^{(1)}(x_3)(x_2-x_3) \\
+                    &= f(x_3) + f^{(1)}(x_3)\left[(1-\lambda)(x_1-x_3) + \lambda(x_2-x_3)\right] \\
+                    &= f(x_3) + f^{(1)}(x_3)\left[(1-\lambda)x_1 + \lambda x_2 - x_3\right] \\
+                    &= f(x_3) + f^{(1)}(x_3)(x_3-x_3) = f(x_3)
+                \end{align*}
+                \par
+                $3\Rightarrow 2$を示す。
+                $x_1<x_2$の場合について示すが、逆の場合も同様にして示せる。
+                $0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
+                \begin{align*}
+                    \frac{f(x_2)-f(x_1)}{x_2-x_1} &= \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{x_3-x_1} = \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{\lambda(x_2-x_1)} \\
+                    &> \frac{f(x_3) - f(x_1)}{\lambda(x_2-x_1)} = \frac{f(x_1 + \lambda(x_2-x_1)) - f(x_1)}{\lambda(x_2-x_1)} \tag{1} \\
+                    &\to f^{(1)}(x_1)\; \text{as}\; \lambda\to 0 \\
+                    \therefore \frac{f(x_2)-f(x_1)}{x_2-x_1} &\geq f^{(1)}(x_1) \quad \text{(真に大きいとまでは言えないことに注意)} \\
+                    f(x_2) &\geq f(x_1) + f^{(1)}(x_1)(x_2-x_1)
+                \end{align*}
+                よって$x_4 \coloneqq (x_1 + x_2)/2$とすると$f(x_4) \geq f(x_1) + f^{(1)}(x_1)(x_4-x_1)$となる。
+                式(1)で$\lambda=1/2$とすると次式を得る。
+                \begin{align*}
+                    \frac{f(x_2)-f(x_1)}{x_2-x_1} &> \frac{f(x_4) - f(x_1)}{(x_2-x_1)/2} \\
+                    f(x_2)-f(x_1) &> 2f(x_4) - 2f(x_1) \geq 2f^{(1)}(x_1)(x_4-x_1) = f^{(1)}(x_1)(x_2-x_1) \\
+                    \therefore f(x_2) &> f(x_1) + f^{(1)}(x_1)(x_2-x_1)
+                \end{align*}
+            \end{proof}
     \section{Legendre変換}
         \subsection{十分滑らかな狭義凸関数に対してLegendre変換を2回施すと元の関数に戻る}
             \newcommand{\fd}{{f^{(1)}}}
