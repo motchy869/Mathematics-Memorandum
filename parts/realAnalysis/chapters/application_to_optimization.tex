@@ -20,3 +20,46 @@
             \[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
             $f$は狭義凸であるので$H(f,\bm{x}_0)$は正定であり、$O(\|\bm{h}\|_2^2)$であるから、十分小さい$\bm{h}$に対して上式の右辺は$f(\bm{x}_0)$を厳密に上回る。
         \end{proof}
+    \section{変分法}
+        \subsection{大域的最小点の十分条件}
+            \label{汎関数の大域的最小点の十分条件}
+            \begin{shadebox}
+                $a,b\in\realNumbers,\;a<b$とする。
+                $\Omega_1,\Omega_1'\subseteq\realNumbers$は空でない開凸領域であるとする。
+                $v_a,v_b\in\Omega_1$とする。
+                $[a,b]$から$\Omega_1$への$\mathrm{C}^1$級の写像であって、$f(a)=b_a,\;f(b)=v_b$を満たし、導関数の値域が$\Omega_1'$に含まれるもの全体の集合を$\mathcal{F}_1$とする。
+                写像$g:\Omega_1\times\Omega_1'\to\realNumbers$は$\mathrm{C}^2$級かつ狭義凸であるとする。
+                汎関数$I$を次式で定義する。
+                \[I: f\in\mathcal{F}_1 \mapsto \integrate{a}{b}{g(f(x),f'(x))}{}{x}\]
+                このとき、積分の線形性と$g$の狭義凸性から$I$は狭義凸である。
+                さらに次が成り立つ。
+                \[ f_0 = \argmin_{f\in\mathcal{F}}I(f) \iff g^{(1,0)}(f_0(x),f_0'(x)) = \partDerivLong{g^{(0,1)(f_0(x),f_0'(x))}}{x}{} \]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                $\Rightarrow$については$f_0$が変分法のEuler方程式を満たすことが必要条件であるため、直ちに従う。
+                \par
+                以下、$\Leftarrow$を示す。
+                $I$の狭義凸性から、$I$の極小点が存在すれば、それは最小点である。
+                よって$f_0$が極小点であることを示せば十分である。
+                今、$\eta:[a,b]\to\Omega_1$が$\Omega_1$上で$\mathrm{C}^1$級かつ$\eta(a)=\eta(b)=0$であるとする。
+                さらに$\norm{\eta}_2 := \sqrt{\integrate{a}{b}{[\eta(x)^2+\eta'(x)^2]}{}{x}}$は十分小さく、$f_0+\eta\in\mathcal{F}_1$であるとする。
+                $\norm{\eta}_2>0$である任意の$\eta$について$I(f_0+\eta) > I(f_0)$であることを示す。
+                \begin{align*}
+                    I(f_0+\eta) &= \integrate{a}{b}{g(f_0(x)+\eta(x),f_0'(x)+\eta'(x))}{}{x} \\
+                    &= \integrate{a}{b}{g(f_0(x),f_0'(x))}{}{x} + \underbrace{\integrate{a}{b}{(\nabla g)(f_0(x),f_0'(x))^\top[\eta(x),\eta'(x)]^\top}{}{x}}_{(1)} \\
+                    &\phantom{=} + \underbrace{\frac{1}{2}\integrate{a}{b}{[\eta(x),\eta'(x)]H(g)(\eta(x),\eta'(x))[\eta(x),\eta'(x)]^\top}{}{x}}_{(2)} + o(\norm{\eta}_2^2)
+                \end{align*}
+                ここに$H(g):\Omega_1\times\Omega_1'\to\realNumbers^2$は$g$のHesse行列から構成され、次式で定義される。
+                \[
+                    H(g)(x_1,x_2) :=
+                    \begin{bmatrix}
+                        g^{(2,0)}(x_1,x_2) & g^{(1,1)}(x_1,x_2) \\
+                        g^{(1,1)}(x_1,x_2) & g^{(0,2)}(x_1,x_2)
+                    \end{bmatrix}
+                \]
+                $f_0$がEuler方程式を満たすことから$(1)=0$である(Euler方程式の導出と同じ要領で示せる)。
+                $g$の狭義凸性より$H(g)(\eta(x),\eta'(x))$は正定であり、これと$\norm{\eta}_2>0$より$(2)>0$である。
+                よって、$\norm{\eta}_2^2$が十分に小さいとき$I(f_0+\eta) > I(f_0)$が成り立つ。
+            \end{proof}
+
