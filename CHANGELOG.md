@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - some typos
   - a defect in proof of Young's inequality
   - a defect in Hölder's inequality
+- Added
+  - minimizer of discrete distribution entropy
 
 ## [0.11.0]
 

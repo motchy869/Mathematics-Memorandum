@@ -1,4 +1,22 @@
 \chapter{エントロピー}
+    \section{離散型確率分布の場合}
+        \subsection{一様分布がエントロピーを最大化する}
+        \begin{shadebox}
+            $M\in\naturalNumbers$とし、確率変数$X$の取り得る値が$\{x_1,x_2,\dots,x_M\}$であるとする。
+            $X$が$x_i\;(i=1,2,\dots,M)$となる確率を$p_i$とする。
+            この確率分布のエントロピーが最大となるのは、$p_1=p_2=\dots=p_M=1/M$のとき、かつそのときに限る。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            Lagrangeの未定乗数法を用いても示せるが、もっと初等的に示せる。
+            $\bm{P} := [p_1,\dots,p_M]^\top$とする。
+            $X$の確率分布のエントロピー$H(\bm{P})$について次式が成り立つ。
+            \begin{align*}
+                H(\bm{p}) &= \sum_{m=1}^M p_m\log_2 (1/p_m) \leq \log_2\left(\sum_{m=1}^M p_m/p_m\right) = \log_2 M
+            \end{align*}
+            不等号の導出には対数関数が上に凸であることとJensenの不等式を用いた。
+            等号成立の必要十分条件は$p_1 = p_2 = \dots = p_M = 1/M$である。
+        \end{proof}
     \section{連続型確率分布の場合}
         \subsection{一様分布がエントロピーを最大化する}
             \begin{shadebox}
