@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Fixed
+  - some typos
   - a defect in proof of Young's inequality
   - a defect in Hölder's inequality
 
