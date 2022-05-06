@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - a defect in Hölder's inequality
 - Added
   - minimizer of discrete distribution entropy
+  - an elementary derivation of the minimizer of sum of square under sum=1 constraint
 
 ## [0.11.0]
 
