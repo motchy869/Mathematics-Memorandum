@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added
   - minimizer of discrete distribution entropy
   - an elementary derivation of the minimizer of sum of square under sum=1 constraint
+  - The product of two non-negative convex functions is not always convex.
 
 ## [0.11.0]
 
