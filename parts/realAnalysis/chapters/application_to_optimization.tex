@@ -62,4 +62,23 @@
                 $g$の狭義凸性より$H(g)(\eta(x),\eta'(x))$は正定であり、これと$\norm{\eta}_2>0$より$(2)>0$である。
                 よって、$\norm{\eta}_2^2$が十分に小さいとき$I(f_0+\eta) > I(f_0)$が成り立つ。
             \end{proof}
-
+    \section{例題}
+        \subsection{非負かつ総和1の下での2乗和の最小化}
+            \begin{shadebox}
+                $N\in\naturalNumbers$とし、$x_1,x_2,\dots,x_N \geq 0,\;\sum_{i=1}^N x_i = 1$であるとする。
+                $\sum_{i=1}^N x_i^2$が最小となる必要十分条件は$x_1 = x_2 = \dots = x_N = 1/N$である。
+            \end{shadebox}
+            数理最適化の分野では、この問題は線形制約付き凸最適化問題に分類され、解法はLagrangeの未定乗数法が定石であるが、ここでは敢えて初等的な証明を与えてみる。
+            \begin{proof}
+                \quad\par
+                次式が成り立つ。
+                \[ \sum_{i=1}^N x_i^2 = \sum_{i=1}^N (x_i - 1/N)^2 + 1/N \tag{1} \]
+                なぜならば
+                \begin{align*}
+                    &\phantom{=} \sum_{i=1}^N (x_i - 1/N)^2 + 1/N = \sum_{i=1}^N x_i^2 - \frac{2}{N}\sum_{i=1}^N x_i + \frac{2}{N} \\
+                    &= \sum_{i=1}^N x_i^2 + \frac{2}{N}\left(1 - \sum_{i=1}^N x_i\right) = \sum_{i=1}^N x_i^2 \quad \left(\because \sum_{i=1}^N x_i = 1\right)
+                \end{align*}
+                \par
+                式(1)より$\sum_{i=1}^N x_i^2$が最小となるのは$x_1 = x_2 = \dots = x_N = 1/N$のとき、かつその時に限る。
+                最小値は$1/N$である。
+            \end{proof}

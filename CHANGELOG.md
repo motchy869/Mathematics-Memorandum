@@ -5,7 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.11.0]
+## [0.12.0] - 2022/5/16
+
+- Fixed
+  - some typos
+  - a defect in proof of Young's inequality
+  - a defect in Hölder's inequality
+- Added
+  - minimizer of discrete distribution entropy
+  - an elementary derivation of the minimizer of sum of square under sum=1 constraint
+  - The product of two non-negative convex functions is not always convex.
+
+## [0.11.0] - 2022/4/22
 
 - Fixed
   - broken proof of FKG inequality

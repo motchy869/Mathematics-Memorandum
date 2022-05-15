@@ -43,6 +43,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
+                $x_i=0$である$i$が存在するときは明らかに成り立つ。
+                以下では全ての$i$について$x_i>0$とする。
                 対数関数の凹性を利用する。Jensenの不等式より
                 \[ \log\sum_{i=1}^n w_i x_i \geq \sum_{i=1}^n w_i\log x_i \quad \therefore\; \log\sum_{i=1}^n w_i x_i \geq \log\prod_{i=1}^n x_i^{w_i} \quad \therefore\; \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
                 最初の式より、等号成立条件は$x_1=\dotsb=x_n$である。
@@ -135,3 +137,7 @@
             \end{proof}
             \let\fd\undefined
             \let\fStarD\undefined
+    \section{諸注意}
+        \subsection{非負の凸関数同士の積は凸関数とは限らない}
+            反例として$x^2$と$(x+1)^2$の積がある。
+            両者は単体では下に凸であるが、両者の積は$x=-1/2$で上に凸である。
