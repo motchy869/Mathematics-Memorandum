@@ -5,7 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.12.0] - 2022/5/16
+## [Unreleased]
+
+- Added:
+  - eigenvalue decomposition of cyclic matrix
+
+## [0.12.0] - 2022-05-16
 
 - Fixed
   - some typos
@@ -16,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - an elementary derivation of the minimizer of sum of square under sum=1 constraint
   - The product of two non-negative convex functions is not always convex.
 
-## [0.11.0] - 2022/4/22
+## [0.11.0] - 2022-04-22
 
 - Fixed
   - broken proof of FKG inequality
@@ -26,7 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - sufficient condition for minimal point of convex functional
   - minimizer of continuous distribution entropy
 
-## [0.10.1] - 2022/3/20
+## [0.10.1] - 2022-03-20
 
 - Added
   - formula for sum of square: 1+4+9+...+n^2 = n(n+1)(2n+1)/6
@@ -35,25 +40,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed
   - forgotten version number update
 
-## [0.9.1] - 2022/2/14
+## [0.9.1] - 2022-02-14
 
 - Fixed
   - missing label "定数ベクトルとの外積の回転"
 
-## [0.9.0] - 2022/2/13
+## [0.9.0] - 2022-02-13
 
 - Added
   - Rayleigh distribution
   - Rice distribution
 
-## [0.8.0] - 2022/2/4
+## [0.8.0] - 2022-02-04
 
 - Added div(f(r)A(r)) = (div f(r))・A(r) + f(r)div(A(r))
 - equation: div(vector Laplacian(A)) = Laplacian(div(A))
 - log-normal distribution
 - subdivided large files into chapters
 
-## [0.7.0] - 2022/1/22
+## [0.7.0] - 2022-01-22
 
 - Fixed
   - typos
@@ -64,7 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added
   - grad of ||r+a||^n
 
-## [0.6.0] - 2022/1/22
+## [0.6.0] - 2022-01-22
 
 - Remove `indent` environment
 - Add equation: `rot(C x A) = div(A)C - J_A C` where `C` is constant 3-D vector.
@@ -75,7 +80,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add Bessel function's property: J_n(-z) = J_{-n}(z)
 - Add Bessel function's order and parity
 
-## [0.5.0] - 2021/11/29
+## [0.5.0] - 2021-11-29
 
 - Replaced `:=` with `\coloneqq`.
 - Add `grad(1/r)`, `rot f(r)A`.
@@ -91,7 +96,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add rotation in general orthogonal coordinate.
 - Add Laplacian in general orthogonal coordinate
 
-## [0.4.0] - 2021/9/3
+## [0.4.0] - 2021-09-03
 
 - Added a theorem: Any graph with n vertexes such that the shortest path between any 2 vertexes is no more than 2 has at least n-1 edges.
 - Added a theorem: Minimal norm solution for a linear equation "Ax=b" is (A^+)b, where A is a full-row-rank complex matrix, and A^+ is pseudo-inverse matrix of A.
@@ -104,7 +109,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a theorem: not always `rank(AB)=rank(BA)`.
 - Added Woodbury matrix identity
 
-## [0.3.0] - 2021/7/3
+## [0.3.0] - 2021-07-03
 
 - Fixed wrong letters: Replaced `\mu` with `\theta` in explanation of the posterior distribution of the expectation value of normal distribution.
 - Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwartz' inequality.

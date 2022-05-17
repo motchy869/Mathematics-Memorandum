@@ -125,6 +125,45 @@
                     &= \lambda^{n} + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \dotsb + a_1\lambda + a_0 = f_n(\lambda)
                 \end{align*}
             \end{proof}
+        \subsection{巡回行列の固有値}
+            \begin{shadebox}
+                $N\in\naturalNumbers,\;a_0,a_1,\dots,a_{N-1}\in\complexNumbers,\;\bm{a}\coloneqq[a_0,\dots,a_{N-1}]^\top$とする。
+                $\bm{a}$の要素を$m\in\{0,1,\dots,N-1\}$だけ巡回シフトしたベクトル$\bm{a}_m$を次式で定義する。
+                \[
+                    \bm{a}_m \coloneqq
+                    \begin{cases}
+                        \bm{a} & (m=0) \\
+                        [a_{N-m},\dots,a_{N-1},a_0,a_1,\dots,a_{N-1-m}]^\top & (m=1,2,\dots,N-1)
+                    \end{cases}
+                \]
+                $A\in\complexNumbers^{N\times N}$を次式で定義する。
+                \[ A \coloneqq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
+                このとき$A$は次のように対角化可能である。
+                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}W^* \]
+                ここに$W$は$N\times N$ DFT基底行列であり、第$(n,k)$要素は次式で定義される。
+                \[ W_{n,k} \coloneqq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
+                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり、次式で定義される。
+                \[ \DFT{\bm{a}} \coloneqq W^*\bm{a} \]
+                すなわち第$k$要素は次式である。
+                \[ \sum_{n=0}^{N-1}\overline{W_{k,n}}a_n \]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                \cite{信号処理備忘録}で述べられているDFTの性質を用いる。
+                $\bm{e}_m\in\realNumbers^N$を第$m$要素が1でそれ以外は0のベクトルとする。
+                $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
+                \[ \bm{a}_m = \cycConv{\bm{a}}{\bm{e}_m} \]
+                巡回畳み込みのDFTの性質より次式が成り立つ。
+                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd W^*[:,m] \]
+                これより次式が成り立つ。
+                \begin{align*}
+                    W^*A &= [\DFT{\bm{a}_0},\DFT{\bm{a}_1},\dots,\DFT{\bm{a}_{N-1}}] \\
+                    &= \sqrt{N}[\DFT{\bm{a}}\HadamardProd W^*[:,0],\DFT{\bm{a}}\HadamardProd W^*[:,1],\dots,\DFT{\bm{a}}\HadamardProd W^*[:,N-1]] \\
+                    &= \sqrt{N}\diag{\DFT{\bm{a}}}W^*
+                \end{align*}
+                両辺に左から$W$を掛け、$W$のユニタリ性$WW^* = I$を用いて次式を得る。
+                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}W^* \]
+            \end{proof}
         \subsection{Hadamard行列の固有値}
             \begin{shadebox}
                 $2^n\;(n\in\naturalNumbers)$次のHadamard行列の固有値は$2^{n/2}$と$-2^{n/2}$が$2^{n-1}$個ずつである\cite{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n}。
