@@ -64,6 +64,7 @@
             \end{proof}
     \section{例題}
         \subsection{非負かつ総和1の下での2乗和の最小化}
+            \label{非負かつ総和1の下での2乗和の最小化}
             \begin{shadebox}
                 $N\in\naturalNumbers$とし、$x_1,x_2,\dots,x_N \geq 0,\;\sum_{i=1}^N x_i = 1$であるとする。
                 $\sum_{i=1}^N x_i^2$が最小となる必要十分条件は$x_1 = x_2 = \dots = x_N = 1/N$である。
@@ -81,4 +82,12 @@
                 \par
                 式(1)より$\sum_{i=1}^N x_i^2$が最小となるのは$x_1 = x_2 = \dots = x_N = 1/N$のとき、かつその時に限る。
                 最小値は$1/N$である。
+            \end{proof}
+        \subsection{正かつ総和1の下での逆数和の最小化}
+            \begin{shadebox}
+                $N\in\naturalNumbers$とし、$x_1,x_2,\dots,x_N > 0,\;\sum_{i=1}^N x_i = 1$であるとする。
+                $\sum_{i=1}^N 1/x_i$が最小となる必要十分条件は$x_1 = x_2 = \dots = x_N = 1/N$である。
+            \end{shadebox}
+            この問題も\ref{非負かつ総和1の下での2乗和の最小化}と同じくLagrangeの未定乗数法が定石であるが、ここでは敢えて初等的な証明を与えてみる。
+            \begin{proof}
             \end{proof}
