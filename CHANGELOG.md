@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - a typo in 'relationship between 2nd-derivative and convexity'
 - Added:
   - eigenvalue decomposition of cyclic matrix
+  - minimizer of sum of reciprocals
 
 ## [0.12.0] - 2022-05-16
 
