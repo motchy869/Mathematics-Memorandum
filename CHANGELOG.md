@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added:
   - eigenvalue decomposition of cyclic matrix
   - minimizer of sum of reciprocals
+  - inequality between arithmetic mean and harmonic mean
 
 ## [0.12.0] - 2022-05-16
 
