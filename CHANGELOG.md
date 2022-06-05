@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed:
   - a typo in 'relationship between 2nd-derivative and convexity'
+  - missing equation in Markov' inequality
 - Added:
   - eigenvalue decomposition of cyclic matrix
   - minimizer of sum of reciprocals

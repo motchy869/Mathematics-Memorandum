@@ -138,7 +138,7 @@
     %         \end{proof}
     % \end{comment}
     \section{確率不等式}
-        \subsection{マルコフの不等式}
+        \subsection{Markovの不等式}
             \begin{shadebox}
                 $(X,\mathcal{M},\mu)$を測度空間、$f:X\to[-\infty,\infty]$を可測関数、$a>0$とするとき、次が成り立つ。
                 \[\displaystyle \mu(\{x\in X\,|\,|f(x)|\ge a\})\le\frac{1}{a}\int_{X}|f(x)|\mu(dx)\]
@@ -149,8 +149,8 @@
                 \par
                 \begin{equation*}
                     \begin{split}
-                        \int_{X}|f(x)|\mu(dx) & =\int_{|f(x)|\ge a}+\int_{|f(x)|<a}\\
-                        & \ge\int_{|f(x)|\ge a}\\
+                        \int_{X}|f(x)|\mu(dx) & =\int_{|f(x)|\ge a} |f(x)|\mu(dx) + \int_{|f(x)|<a}|f(x)|\mu(dx) \\
+                        & \ge\int_{|f(x)|\ge a} |f(x)|\mu(dx) \\
                         & \ge a\,\mu(\{x\in X\,|\,|f(x)|\ge a\})
                     \end{split}
                 \end{equation*}
