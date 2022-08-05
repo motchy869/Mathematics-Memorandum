@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - eigenvalue decomposition of cyclic matrix
   - minimizer of sum of reciprocals
   - inequality between arithmetic mean and harmonic mean
+  - theorem: an analytic and real-value complex function is always a constant-valued function.
 
 ## [0.12.0] - 2022-05-16
 

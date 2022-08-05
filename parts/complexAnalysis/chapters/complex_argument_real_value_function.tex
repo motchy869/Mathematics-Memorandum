@@ -1,0 +1,30 @@
+\chapter{複素引数実数値関数}
+    \section{解析的な複素引数実数値関数は定数関数である}
+        \begin{shadebox}
+            $G\subseteq\complexNumbers$を開領域とし、$f:G\to\realNumbers$は$G$上で解析的であるとする。
+            このとき、$f$は定数関数である。
+        \end{shadebox}
+        \noindent
+        (証明1)
+        \begin{proof}
+            Cauchy-Riemannの関係式から直ちに従う。
+        \end{proof}
+        \noindent
+        (証明2)
+        \begin{proof}
+            \newcommand{\Rh}{\prescript{\text{R}}{}{h}}
+            \newcommand{\Ih}{\prescript{\text{I}}{}{h}}
+            \quad\par
+            $x_0\in G$を任意にとる。
+            絶対値が十分小さい$\Rh,\Ih$を$x_0+\Rh, x_0+i\Ih \in G$となるように任意にとる。
+            $f$が$x_0$に於いて解析的であるから$f'(x_0)$が存在し、次式が成り立つ。
+            \begin{align*}
+                \frac{f(x_0+\Rh) - f(x_0)}{\Rh} &= f'(x_0) + \frac{o(|\Rh|)}{\Rh} \tag{1}\\
+                \frac{f(x_0+i\Ih) - f(x_0)}{i\Ih} &= f'(x_0) + \frac{o(|\Ih|)}{i\Ih} \tag{2}
+            \end{align*}
+            式(1),(2)の左辺はそれぞれ実数, 純虚数であるので、$\Rh\to 0,\Ih\to 0$の極限を考えると、$f'(x_0) = 0$でなくてはならない
+            (背理法で容易に示せる)。
+            \let\Rh\undefined
+            \let\Ih\undefined
+            $x_0$は$G$内の任意の点であったから、$f$は$G$上で定数関数である。
+        \end{proof}
