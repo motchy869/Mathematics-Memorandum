@@ -11,9 +11,9 @@
         \end{proof}
         \noindent
         (証明2)
+        \newcommand{\Rh}{\prescript{\text{R}}{}{h}}
+        \newcommand{\Ih}{\prescript{\text{I}}{}{h}}
         \begin{proof}
-            \newcommand{\Rh}{\prescript{\text{R}}{}{h}}
-            \newcommand{\Ih}{\prescript{\text{I}}{}{h}}
             \quad\par
             $x_0\in G$を任意にとる。
             絶対値が十分小さい$\Rh,\Ih$を$x_0+\Rh, x_0+i\Ih \in G$となるように任意にとる。
@@ -24,7 +24,46 @@
             \end{align*}
             式(1),(2)の左辺はそれぞれ実数, 純虚数であるので、$\Rh\to 0,\Ih\to 0$の極限を考えると、$f'(x_0) = 0$でなくてはならない
             (背理法で容易に示せる)。
-            \let\Rh\undefined
-            \let\Ih\undefined
             $x_0$は$G$内の任意の点であったから、$f$は$G$上で定数関数である。
         \end{proof}
+    \section{複素引数凸関数}
+        \subsection{複素引数凸関数の例}
+            \label{複素引数凸関数の例}
+            \subsubsection{\texorpdfstring{$\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,\;X_i \in \complexNumbers^{m\times n})$}{行列X1,X2,...,XNの線形結合×ベクトル+定数のノルム}は\texorpdfstring{$X_1,\dotsc,X_N$}{X1,X2,...,XN}に関して凸である。}
+                \begin{proof}
+                    \quad\par
+                    $T_X \coloneqq (X_1,\dotsc,X_N),\;T_Y \coloneqq (Y_1,\dotsc,Y_N),\;\lambda \in [0,1]$とし、$f(T_X) \coloneqq \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
+                    \begin{align*}
+                        f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
+                        &= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\
+                        &= (1-\lambda)^2\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \lambda^2\left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 \\
+                        &\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
+                    \end{align*}
+                    よって
+                    \begin{align*}
+                        &\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
+                        &= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
+                        &= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
+                    \end{align*}
+                \end{proof}
+            \subsubsection{\texorpdfstring{$\norm{A\bm{x}+\bm{b}}_2^2$}{||Ax+b||\string^2}が狭義凸\texorpdfstring{$\iff A^*A\succ O$}{⇔ A*Aが正定}}
+                \begin{shadebox}
+                    $A \in \complexNumbers^{m\times n}, \bm{x} \in \complexNumbers^n, \bm{b} \in \complexNumbers^m$とする。
+                    $f(\bm{x}) \coloneqq \norm{A\bm{x}+\bm{b}}_2^2$が$\bm{x}$に関して狭義凸となる必要十分条件は$A^*A\succ O$である。
+                \end{shadebox}
+                $\lambda \in (0,1),\; \bm{x},\bm{y} \in \complexNumbers^m, \bm{x}\neq\bm{y}$とする。
+                \begin{proof}
+                    まず次式が成り立つ。
+                    \begin{align*}
+                        f((1-\lambda)\bm{x} + \lambda\bm{y}) &\coloneqq \norm{(1-\lambda)(A\bm{x}+\bm{b}) + \lambda(A\bm{y}+\bm{b})}_2^2 \\
+                        &= (1-\lambda)^2 f(\bm{x}) + \lambda^2 f(\bm{y}) + 2\lambda(1-\lambda)\Re{(A\bm{x}+\bm{b})^*(A\bm{y}+\bm{b})}
+                    \end{align*}
+                    これより
+                    \begin{align*}
+                        &\phantom{=} (1-\lambda)f(\bm{x}) + \lambda f(\bm{y}) - f((1-\lambda)\bm{x} + \lambda\bm{y}) \\
+                        &= \lambda(1-\lambda)\left[f(\bm{x}) + f(\bm{y}) - 2\Re{(A\bm{x}+\bm{b})^*(A\bm{y}+\bm{b})}\right] \\
+                        &= \lambda(1-\lambda)\norm{(A\bm{x}+\bm{b}) - (A\bm{y}+\bm{b})}_2^2 = \lambda(1-\lambda)\norm{A(\bm{x}-\bm{y})}_2^2 \\
+                        &= \lambda(1-\lambda)(\bm{x}-\bm{y})^*A^*A(\bm{x}-\bm{y})
+                    \end{align*}
+                    $\lambda \in (0,1),\;\bm{x}\neq\bm{y}$に対して上式が正となる必要十分条件は$A^*A\succ O$である。
+                \end{proof}
