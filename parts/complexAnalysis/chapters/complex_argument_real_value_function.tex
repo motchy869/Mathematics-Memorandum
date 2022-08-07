@@ -1,5 +1,6 @@
 \chapter{複素引数実数値関数}
     \section{解析的な複素引数実数値関数は定数関数である}
+        \label{解析的な複素引数実数値関数は定数関数である}
         \begin{shadebox}
             $G\subseteq\complexNumbers$を開領域とし、$f:G\to\realNumbers$は$G$上で解析的であるとする。
             このとき、$f$は定数関数である。
@@ -37,10 +38,17 @@
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $x=\Re{z},\;y=\Im{z},\;h=\Re{h},k=\Im{z}$とすると次式が成り立つ。
+            $x=\Re{z},\;y=\Im{z},\;\Rh=\Re{h},\Ih=\Im{h}$とすると次式が成り立つ。
             \begin{align*}
-                f(z+h) - f(z) &= \Rf(x+h,y+k) - \Rf(x,y) = \partDeriv{\Rf}{x}{}(x,y)h + \partDeriv{\Rf}{y}{}(x,y)k + o(\sqrt{h^2+k^2})
+                &\phantom{=} f(z+h) - f(z) \\
+                &= \Rf(x+\Rh,y+\Ih) - \Rf(x,y) = \partDeriv{\Rf}{x}{}(x,y)\Rh + \partDeriv{\Rf}{y}{}(x,y)\Ih + o(\sqrt{\Rh^2+\Ih^2}) \\
+                &= \frac{1}{2}\left[\partDeriv{\Rf}{x}{}(x,y)\Rh - i\partDeriv{\Rf}{y}{}(x,y)(\Ih i)\right] + \frac{1}{2}\left[\partDeriv{\Rf}{x}{}(x,y)\Rh + i\partDeriv{\Rf}{y}{}(x,y)(-\Ih i)\right] + o(|h|) \\
+                &= \frac{1}{2}\underbrace{\left[\partDeriv{\Rf}{x}{}(x,y) - i\partDeriv{\Rf}{y}{}(x,y)\right]}_{\text{(1)}}h + \frac{1}{2}\underbrace{\left[\partDeriv{\Rf}{x}{}(x,y) + i\partDeriv{\Rf}{y}{}(x,y)\right]}_{\text{(2)}}\overline{h} + o(|h|)
             \end{align*}
+            式(1)は複素引数実数値関数に対して複素微分係数の実関数表示を形式的に適用して計算したものと一致する。
+            今、これを形式的に$f'(z)$と書くことにする。
+            なお、\ref{解析的な複素引数実数値関数は定数関数である}で述べている通り、複素引数実数値関数で解析的なものは常に定数関数であるため、形式的に導入した$f'(z)$は本来の複素微分の意味とは似て非なるものである。
+            \[ f(z+h) - f(z) = \frac{1}{2}f'(z)h + \frac{1}{2}\overline{f'(z)h} + o(|h|) = \Re{f'(z)h} + o(|h|)\]
         \end{proof}
     \let\Rh\undefined
     \let\Ih\undefined
