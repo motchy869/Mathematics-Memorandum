@@ -265,7 +265,7 @@
             \begin{proof}
                 \quad\par
                 \[\psi(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\mu_i}}\]
-                とする。但し$\lambda_i$は$A$の相異なる$p$個の固有値である。このとき$\field^n$は次のように直和分解できる(\cite{新微分方程式対話}\;P77\;「$e^{Mt}$と一般固有値問題」)。
+                とする。但し$\lambda_i$は$A$の相異なる$p$個の固有値である。このとき$\field^n$は次のように直和分解できる(\cite{新微分方程式対話}\;P77\;「$\NapierE^{Mt}$と一般固有値問題」)。
                 \[\field^n = \bigoplus_{i=1}^p{\Ker{(A-\lambda I)^{\mu_i}}}\]
                 $\psi(\lambda)$より低次のいかなる多項式によっても消去できない$\vx\in\field^n$を構成しよう。
                 \[\Ker{(A-\lambda_i I)^{\mu_i}}/\Ker{(A-\lambda_i I)^{\mu_i-1}}\supset\{\bm{0}\}\]
@@ -517,12 +517,12 @@
                 \[J(\lambda, n) = \JBn\]
                 に対して
                 \[
-                    e^{J(\lambda, n)t} =
+                    \NapierE^{J(\lambda, n)t} =
                     \begin{bmatrix}
-                        e^{\lambda t}	& te^{\lambda t}	& \cdots	& \frac{t^{n-1}}{(n-1)!}e^{\lambda t}\\
-                        0				& e^{\lambda t}		& \ddots	& \vdots\\
-                        \vdots			& \ddots			& \ddots	& te^{\lambda t}\\
-                        0				& \cdots			& 0			& e^{\lambda t}
+                        \NapierE^{\lambda t}	& t\NapierE^{\lambda t}	& \cdots	& \frac{t^{n-1}}{(n-1)!}\NapierE^{\lambda t}\\
+                        0				& \NapierE^{\lambda t}		& \ddots	& \vdots\\
+                        \vdots			& \ddots			& \ddots	& t\NapierE^{\lambda t}\\
+                        0				& \cdots			& 0			& \NapierE^{\lambda t}
                     \end{bmatrix}
                 \]
             \end{shadebox}
@@ -568,11 +568,11 @@
                         $p$			& $\lambda^{p-(j-i)}\combi{p}{j-i}$\\\hline
                     \end{tabular}
                 \end{table}
-                よって$e^{J(\lambda, n)t}$の$(i,j)$成分は
+                よって$\NapierE^{J(\lambda, n)t}$の$(i,j)$成分は
                 \begin{align*}
                     \sum_{p=0}^{\infty}{\frac{1}{p!}t^p a_{i,j}(p)} &= \sum_{p=j-i}^{\infty}{\frac{1}{p!}t^p\lambda^{p-(j-i)}\combi{p}{j-i}}\\
                     &= \sum_{l=0}^{\infty}{\frac{1}{\left(l+(j-i)\right)!}t^{l+(j-i)}\lambda^l\frac{\left(l+(j-i)\right)!}{(j-i)!l!}}\quad(l=p-(j-i)\mathrm{とおいた})\\
-                    &= \frac{t^{j-i}}{(j-i)!}\sum_{l=0}^{\infty}{\frac{(t\lambda)^l}{l!}} = \frac{t^{j-i}}{(j-i)!}e^{\lambda t}
+                    &= \frac{t^{j-i}}{(j-i)!}\sum_{l=0}^{\infty}{\frac{(t\lambda)^l}{l!}} = \frac{t^{j-i}}{(j-i)!}\NapierE^{\lambda t}
                 \end{align*}
             \end{proof}
     \section{Perronの定理}

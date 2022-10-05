@@ -7,14 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Fixed:
+- Fixed
   - a typo in 'relationship between 2nd-derivative and convexity'
   - missing equation in Markov' inequality
   - mistake in semi-positive-definiteness of sample covariance matrix
   - typos in the special case of Sherman-Morrison formula
-- Changed:
+- Changed
   - Moved probability and statistics parts to Probability-Memorandum.
-- Added:
+- Improved:
+  - Use Roman 'e' as exp function
+- Added
   - eigenvalue decomposition of cyclic matrix
   - minimizer of sum of reciprocals
   - inequality between arithmetic mean and harmonic mean

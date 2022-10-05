@@ -3,8 +3,8 @@
         \begin{proof}
             \quad\par
             $a_i=0$となる$i\in\naturalNumbers$が存在する場合は命題の主張は明らかに成り立つので、以下では$a_i\in(0,1]$とする。
-            $b_i=-\log a_i$とすると$a_i=e^{-b_i}$であり、$\forall x\in\realNumbers,\;1-e^{-x}\leq x$より$1-a_i=1-e^{-b_i}\leq b_i$なので次式が成り立つ。
+            $b_i=-\log a_i$とすると$a_i=\NapierE^{-b_i}$であり、$\forall x\in\realNumbers,\;1-\NapierE^{-x}\leq x$より$1-a_i=1-\NapierE^{-b_i}\leq b_i$なので次式が成り立つ。
             \[ \infty = \sum_{i=1}^\infty (1-a_i) \leq \sum_{i=1}^\infty b_i \]
             よって
-            \[ \prod_{i=1}^\infty a_i = \prod_{i=1}^\infty e^{-b_i} = \exp\left(-\sum_{i=1}^\infty b_i\right) = 0 \]
+            \[ \prod_{i=1}^\infty a_i = \prod_{i=1}^\infty \NapierE^{-b_i} = \exp\left(-\sum_{i=1}^\infty b_i\right) = 0 \]
         \end{proof}

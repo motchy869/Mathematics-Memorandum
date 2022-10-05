@@ -1,14 +1,14 @@
 \chapter{Bessel関数}
     \section{定義}
-        $x\in\realNumbers,\;z\in\complexNumbers$に対して$e^{iz\sin x}$のFourier級数展開により「$n$次の第一種Bessel関数$J_n(z)$」を次のように定義する。
+        $x\in\realNumbers,\;z\in\complexNumbers$に対して$\NapierE^{iz\sin x}$のFourier級数展開により「$n$次の第一種Bessel関数$J_n(z)$」を次のように定義する。
         \begin{equation}
             \label{eqn:implicit definition of 1st kind n-th Bessel function}
-            e^{iz\sin x} = \sum_{n = -\infty}^\infty J_n(z)e^{inx}
+            \NapierE^{iz\sin x} = \sum_{n = -\infty}^\infty J_n(z)\NapierE^{inx}
         \end{equation}
         すなわち
         \begin{equation}
             \label{eqn:explicit definition of 1st kind n-th Bessel function}
-            J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{e^{iz\sin x}e^{-inx}}{}{x}
+            J_n(z) = \frac{1}{2\pi}\integrate{-\pi}{\pi}{\NapierE^{iz\sin x}\NapierE^{-inx}}{}{x}
         \end{equation}
         \subsection{簡単化}
             式\eqref{eqn:explicit definition of 1st kind n-th Bessel function}は次のようにして簡単化できる。
@@ -36,9 +36,9 @@
             \end{proof}
     \section{Maclaurin展開}
         式\eqref{eqn:implicit definition of 1st kind n-th Bessel function}の左辺を指数関数に関してMaclaurin展開すると$x$を変数としたFourier級数展開が得られることを利用して$J_n(z)$のMaclaurin展開を求める。
-        \[ e^{iz\sin x} = \exp\left( z\frac{e^{ix} - e^{-ix}}{2} \right) = \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k (e^{ix}-e^{-ix})^k \] %= \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k \sum_{l=0}^k \binom{k}{l} (-1)^{k-l} e^{i(2l-k)x}
-        $n\geq 0$のとき、$(e^{ix}-e^{-ix})^k$の展開で$e^{inx}$が生じるのは$k=n+2l\;(l=0,1,2,\dotsc)$のときで、その係数は$(-1)^l\binom{k}{l} = (-1)^l\binom{n+2l}{l}$である。
-        $n<0$のとき、$(e^{ix}-e^{-ix})^k$の展開で$e^{inx}$が生じるのは$k=-n+2l\;(l=0,1,2,\dotsc)$のときで、その係数は$(-1)^{k-l}\binom{k}{l} = (-1)^{-n+l}\binom{-n+2l}{l}$である。
+        \[ \NapierE^{iz\sin x} = \exp\left( z\frac{\NapierE^{ix} - \NapierE^{-ix}}{2} \right) = \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k (\NapierE^{ix}-\NapierE^{-ix})^k \] %= \sum_{k=0}^\infty \frac{1}{k!} \left(\frac{z}{2}\right)^k \sum_{l=0}^k \binom{k}{l} (-1)^{k-l} \NapierE^{i(2l-k)x}
+        $n\geq 0$のとき、$(\NapierE^{ix}-\NapierE^{-ix})^k$の展開で$\NapierE^{inx}$が生じるのは$k=n+2l\;(l=0,1,2,\dotsc)$のときで、その係数は$(-1)^l\binom{k}{l} = (-1)^l\binom{n+2l}{l}$である。
+        $n<0$のとき、$(\NapierE^{ix}-\NapierE^{-ix})^k$の展開で$\NapierE^{inx}$が生じるのは$k=-n+2l\;(l=0,1,2,\dotsc)$のときで、その係数は$(-1)^{k-l}\binom{k}{l} = (-1)^{-n+l}\binom{-n+2l}{l}$である。
         式\eqref{eqn:implicit definition of 1st kind n-th Bessel function}の両辺のFourier展開基底の係数同士が一致せねばならぬから
         \[
             J_n(z) =

@@ -31,7 +31,7 @@
             \end{align}
             $\ge,\go$はそれぞれ$f$を偶関数,奇関数として拡張したものである。両者のフーリエ変換を$\Ge(\omega),\Go(\omega)$とすると
             \begin{align*}
-                \Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)e^{-i\omega t}}{}{t} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)(\cos{\omega t}-i\sin{\omega t})}{}{t}\\
+                \Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)\NapierE^{-i\omega t}}{}{t} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)(\cos{\omega t}-i\sin{\omega t})}{}{t}\\
                 &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)\cos{\omega t}}{}{t}\;\;\;(\because \ge(t)\sin{\omega t}\text{は奇関数なので対称積分の結果は0})\\
                 &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{\ge(t)\cos{\omega t}}{}{t} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(t)\cos{\omega t}}{}{t} = C(\omega)
             \end{align*}
@@ -41,12 +41,12 @@
             \newline\par
             次に逆フーリエ変換で$\ge,\go$を復元してみる。
             \begin{align*}
-                \ge(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Ge(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+                \ge(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Ge(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
                 &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}\;\;(\because C(\omega)\sin{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
                 &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}
             \end{align*}
             \begin{align*}
-                \go(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Go(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)e^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+                \go(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Go(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
                 &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\;\;(\because S(\omega)\cos{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
                 &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}
             \end{align*}
