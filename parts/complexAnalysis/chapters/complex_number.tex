@@ -62,13 +62,13 @@
             \begin{proof}
                 \quad\par
                 $z = a + bi\;(a,b\in\realNumbers)$とする。
-                \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |e^{bi\log{x}}| = x^\Re{z} \]
+                \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |\NapierE^{bi\log{x}}| = x^\Re{z} \]
             \end{proof}
         \subsection{\texorpdfstring{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
             \label{fml:花びら定理}
             \begin{proof}
                 \begin{align*}
-                    \sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} &= \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\exp\left(i\frac{k}{n}2\pi\right)^n\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} = \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-e^{ik2\pi}\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} =0
+                    \sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} &= \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\exp\left(i\frac{k}{n}2\pi\right)^n\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} = \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\NapierE^{ik2\pi}\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} =0
                 \end{align*}
             \end{proof}
     \section{代数方程式}
@@ -100,6 +100,6 @@
                     \quad\par
                     $z=1$が解ではないから両辺に$z-1$を掛けて
                     \[z^{n+1}-1=0\]
-                    の形にする。$z$の絶対値が1だと分かるので$z=e^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
+                    の形にする。$z$の絶対値が1だと分かるので$z=\NapierE^{\theta i}\; (0\leq\theta \leq 2\pi)$とおいて解き、$z=1$という不要な解を除去する。
                     \qed
                 \end{solution}
