@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Moved the content of the chapter on the characteristic-polynomial to the chapter on the eigenvalues-and-eigenvectors.
 - Added:
   - theorem: Img(A) = Img(AA^T)
+  - determinant of Kronecker product
 
 ## [0.13.0] - 2022-10-06
 

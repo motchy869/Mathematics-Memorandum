@@ -125,6 +125,22 @@
                     \end{bmatrix} = (AC)\otimes(BD)
                 \end{align*}
             \end{proof}
+        \subsection{行列式}
+            \begin{shadebox}
+                $A,B$ をそれぞれ$m_A\times m_A, m_B\times m_B$の正方行列とするとき、次式が成り立つ。
+                \[ \det\parens{A\otimes B} = \det\parens{A}^{m_B}\det\parens{B}^{m_A} \]
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                混合積の性質から次式が成り立つ。
+                \[ A\otimes B = (A I_{m_A})\otimes(I_{m_B} B) = (A\otimes I_{m_B})(I_{m_A}\otimes B) \]
+                ここに $I_{m_A}, I_{m_B}$ はそれぞれ $m_A\times m_A, m_B\times m_B$ の単位行列である。
+                よって次式が成り立つ。
+                \[ \det\parens{A\otimes B} = \det(A\otimes I_{m_B})\det(I_{m_A}\otimes B) = \det(A\otimes I_{m_B})\det(B)^{m_A} \]
+                適当な置換行列 $S$ が存在して $A\otimes I_{m_B} = S^\top(I_{m_B}\otimes A)S$ が成り立つので次式が成り立つ。
+                \[ \det(A\otimes I_{m_B}) = det(S^\top)\det(I_{m_B}\otimes A)\det(S) = \det(A)^{m_B} \]
+                ただし $\det(S) = \pm 1$ であることを用いた。
+            \end{proof}
         \subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
             \begin{proof}
                 \quad\par
