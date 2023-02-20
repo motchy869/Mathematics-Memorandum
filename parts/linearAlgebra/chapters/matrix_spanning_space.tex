@@ -1,0 +1,17 @@
+\chapter{行列が生成する空間}
+    \section{\texorpdfstring{$\Img{A}=\Img{AA^\top}$}{Img(A)=Img(AA\string^T)}}
+        \begin{proof}
+            \quad\par
+            $\Img{A}\supseteq\Img{AA^\top}$は明らか。
+            その逆を示す。
+            $A\in\complexNumbers^{m\times n},\;r=\rank{A}$ とする。
+            適当な列置換行列 $P$ により$\tilde{A} \coloneqq AP$ とし、$\tilde{A}$ の第 $1,2,\dots,r$ 列ベクトルが生成する部分空間が $\Img{A}$ と等しくなるようにする。
+            $\tilde{A}$ の第 $i$ 列を $\tilde{a}_i$ とする。
+            \par
+            $\bm{v}\in\Img{A}$とする。
+            第 $r+1$ 要素以降が0である適当な $\tilde{\bm{y}}$ が存在して $\bm{v}=\tilde{A}\tilde{y}$ となる。
+            $\bm{v} = AA^\top\bm{x}$ を満たす $\bm{x}$ の存在を示す。
+            \[ \bm{v} = AA^\top\bm{x} \iff \tilde{A}\tilde{y} = APP^\top A^\top\bm{x} = \tilde{A}\tilde{A}^\top\bm{x} \]
+            であるから $\tilde{y} = \tilde{A}^\top\bm{x}$ を満たす $\bm{x}$ が存在することを示せばよい。
+            $\rank{\tilde{A}^\top} = r$ であることと $\tilde{\bm{y}}$ の第 $r+1$ 要素以降が0であることから $\bm{x}$ が存在する。
+        \end{proof}
