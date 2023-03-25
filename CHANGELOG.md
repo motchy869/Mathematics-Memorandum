@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Added:
+- Refactor:
+  - Updated LaTeX-motchyMacros submodule.
+- Add:
   - Gaussian integral with offset
 
 ## [0.14.0] - 2023-2-20
