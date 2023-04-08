@@ -31,7 +31,7 @@
         \newcommand{\RG}{\prescript{\text{R}}{}{G}}
         \newcommand{\Rf}{\prescript{\text{R}}{}{f}}
         \begin{shadebox}
-            $G\subseteq\complexNumbers$を開領域とし、$\RG\coloneqq\setParens{(x,y)\in\realNumbers^2}{x+iy\in G}$とする。
+            $G\subseteq\complexNumbers$を開領域とし、$\RG\coloneqq\setComprehension{(x,y)\in\realNumbers^2}{x+iy\in G}$とする。
             $\Rf:\RG\to\realNumbers$は$\RG$上で$\mathrm{C}^1$級であるとし、$f:z\in G\mapsto\Rf\parens{\Re{z},\Im{z}}\in\realNumbers$とする。
             $z\in G$を任意にとり、絶対値が十分小さい$h\in G$を$z+h\in G$となるように任意にとる。
             $f(z+h)-f(z)$の$h$に関する1次の項は、Cauchy-Riemannの関係式から導かれる微分係数を形式的に計算して得られる$f$の形式的な微分係数$f'(z)$と$h$の積の実部$\Re{f'(z)h}$である。

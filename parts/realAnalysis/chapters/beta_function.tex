@@ -18,7 +18,7 @@
         \begin{shadebox}
             $ \bm{\alpha} = [\alpha_1,\dotsc,\alpha_n]^\top > \bm{0}$に対して\textbf{多変量Beta関数}を次の広義積分で定義する。
             \begin{align*}
-                B(\bm{\alpha}) &\coloneqq \integrate{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{}{\Omega}, \quad \Omega \coloneqq \setParens*{[x_1,\dotsc,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
+                B(\bm{\alpha}) &\coloneqq \integrate{\Omega}{}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1} \left(1-\sum_{i=1}^{n-1} x_i\right)^{\alpha_n-1}}{}{\Omega}, \quad \Omega \coloneqq \setComprehension*{[x_1,\dotsc,x_{n-1}]^\top}{x_i\geq 0, \sum_{i=1}^{n-1} x_i\leq 1} \\
                 &= \integrate{x_1=0}{1}{\integrate{x_2=0}{1-x_1}{\dotsi\integrate{x_{n-1}=0}{1-\sum_{i=1}^{n-1} x_i}{\prod_{i=1}^{n-1} x_i^{\alpha_i-1}\left(1-\sum_{i=1}^{n-2} x_i\right)^{\alpha_n-1}}{}{x_{n-1}}\dotsi}{}{x_2}}{}{x_1}
             \end{align*}
         \end{shadebox}

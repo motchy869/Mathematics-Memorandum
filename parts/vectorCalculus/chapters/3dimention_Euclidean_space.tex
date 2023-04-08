@@ -205,7 +205,7 @@
                 $f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて、その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
                 このとき$\realNumbers^3$上での$f$の積分は存在する。
                 すなわち次式が成り立つ。
-                \[ R>0,\; V(R) \coloneqq \setParens{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+                \[ R>0,\; V(R) \coloneqq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -233,7 +233,7 @@
     \section{諸定理}
         \subsection{球殻定理}
             \begin{shadebox}
-                $R>0,\;V \coloneqq \setParens{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
+                $R>0,\;V \coloneqq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
                 ベクトル場$\bm{A}(\bm{r})$を次式で定義する。
                 \[ \bm{A}(\bm{r}) \coloneqq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
                 このとき次が成り立つ。

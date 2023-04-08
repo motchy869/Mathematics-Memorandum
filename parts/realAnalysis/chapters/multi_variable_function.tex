@@ -46,7 +46,7 @@
                 $n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
                 \[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
                 であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
-                \[ W \coloneqq \Span{\setParens*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
+                \[ W \coloneqq \Span{\setComprehension*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
                 のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
             \end{proof}
         \subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
