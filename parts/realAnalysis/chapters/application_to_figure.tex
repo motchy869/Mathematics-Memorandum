@@ -13,7 +13,7 @@
     \section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
         \begin{proof}
             \quad\par
-            $\Omega(n,r)\;(r\in\realNumbers) \coloneqq \set*{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
+            $\Omega(n,r)\;(r\in\realNumbers) \coloneqq \setComprehension*{\bm{x}\in\realNumbers^n}{\norm{\bm{x}}_{2}\leq r}$とすると
             \begin{align*}
                 V_n &= \integrate{\Omega(n,1)}{}{1}{}{\bm{x}} = \integrate{-1}{1}{\left(\integrate{\Omega(n-1,1-{x_n}^2)}{}{1}{}{\bm{x}}\right)}{}{x_n} = \integrate{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{}{x_n} \\
                     &= V_{n-1}\integrate{-1}{1}{(1-x^2)^{(n-1)/2}}{}{x} = 2V_{n-1} \integrate{0}{1}{(1-x^2)^{(n-1)/2}}{}{x} \\

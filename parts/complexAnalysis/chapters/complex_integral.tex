@@ -1,4 +1,24 @@
 \chapter{複素積分}
+    \section{\texorpdfstring{$\integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a}$}{Gauss積分で積分変数にオフセットがある場合}}
+        \begin{shadebox}
+            $a>0,\;b\in\complexNumbers$ とするとき、次式が成り立つ。
+            \[ \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a} \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            複素積分を用いて導出する。
+            求めたい積分値を $I$ とする。
+            $b_\mathrm{R} = \Re{b},\;b_\mathrm{I} = \Im{b}$ として変数変換 $x+b_\mathrm{R} = u$ を施すと次式が成り立つ。
+            \[ I = \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \integrate{-\infty}{\infty}{\exp(-a(u+b_\mathrm{I}i)^2)}{}{u} \]
+            $R>0,\quad f(z) \coloneqq \exp(-az^2)\;(z\in\complexNumbers)$ とし以下で説明する長方形の積分路を考える。
+            \begin{gather*}
+                C_1 \coloneqq [-R+b_\mathrm{I}i,R+b_\mathrm{I}i],\quad C_2 \coloneqq [R+b_\mathrm{I}i,R],\quad C_3 \coloneqq [R,-R] \\
+                \quad C_4 \coloneqq [-R,-R+b_\mathrm{I}i],\quad C \coloneqq C_1+C_2+C_3+C_4
+            \end{gather*}
+            $f(z)$ は $-C$ の内部で正則なので $\integrate{C}{}{f(z)}{}{z} = -\integrate{-C}{}{f(z)}{}{z} = 0$ である。
+            $R\to\infty$ の極限で $C_2,C_4$ 上の積分は0に収束するので次式が成り立つ。
+            \[ I = \lim_{R\to\infty}\integrate{C_1}{}{f(z)}{}{z} = -\lim_{R\to\infty}\integrate{C_3}{}{f(z)}{}{z} = \sqrt{\pi/a} \]
+        \end{proof}
     \section{無限に大きい半円周上での\texorpdfstring{$\NapierE^{iz}/z$}{e\string^(iz)/z}の積分}
         \label{無限に大きい半円周上でのe^(iz)/zの積分}
         \begin{shadebox}
