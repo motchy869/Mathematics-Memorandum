@@ -24,7 +24,7 @@
             \[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset} |R_{i_1,\dotsc,i_m}| = \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
             各$R_{i_1,\dotsc,i_n}$の対角線の長さは$L/m$であり、$F$がLipschitz連続だから各$R_{i_1,\dotsc,i_n}$について、その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
             つまり各$F(R_{i_1,\dotsc,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\dotsc,i_n}$で覆うことができる。
-            よって$F(C)$は$\set*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
+            よって$F(C)$は$\setComprehension*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
             \[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
         \end{proof}
     \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\;\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
