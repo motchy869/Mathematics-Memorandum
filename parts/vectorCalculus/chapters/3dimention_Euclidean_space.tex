@@ -377,7 +377,7 @@
             迂闊に計算すると罠にはまる。
             特に危ない所では敢えて引数を明示する。
             \begin{align*}
-                \oint_c{A\cdot\dc} &= \oint_{\partial S}{\left(\ix A_x+\iy A_y+\iz A_z\right)\cdot\left(\ix \dx+\iy \dy+\iz \dz\right)} \\
+                \oint_c{A\cdot\dc} &= \oint_{\partial S}{\left(\vix A_x+\viy A_y+\viz A_z\right)\cdot\left(\vix \dx+\viy \dy+\viz \dz\right)} \\
                 &= \oint_{\partial S}{\left(A_x\dx+A_y\dy\right)} + \oint_{\partial S}{A_z\dz} \\
                 &= \underbrace{\oint_{\partial \textcolor{red}{\Omega}}{\left(A_x(x,y,S(x,y))\dx+A_y(x,y,S(x,y))\dy\right)}}_{\ctext{A}} + \underbrace{\oint_{\partial S}{A_z\dz}}_{\ctext{B}}
             \end{align*}
@@ -423,10 +423,10 @@
             所謂「面積ベクトル」である。
             \par
             厳密にはRiemann和を取る段階で定義され、$S$上の点$(x,y,S(x,y))$における接平面のうち、その射影が$xy$平面上の矩形$\dx\dy$に収まる部分(3次元上の平行四辺形)の面積をノルムに持ち、向きは接平面の上向き法線ベクトルと一致するようなベクトルである。
-            \[\dS = \left(\ix\dx+\iz\partDeriv{S}{x}{}\dx\right)\times\left(\iy\dy+\iz\partDeriv{S}{y}{}\dy\right) = \left(-\ix\partDeriv{S}{x}{} - \iy\partDeriv{S}{y}{} + \iz\right)\dx\dy\]
+            \[\dS = \left(\vix\dx+\viz\partDeriv{S}{x}{}\dx\right)\times\left(\viy\dy+\viz\partDeriv{S}{y}{}\dy\right) = \left(-\vix\partDeriv{S}{x}{} - \viy\partDeriv{S}{y}{} + \viz\right)\dx\dy\]
             よって定理の右辺は
             \begin{align*}
-                \iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\left[\ix\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)+\iy\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)+\iz\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\cdot\dS} \\
+                \iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\left[\vix\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)+\viy\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)+\viz\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\cdot\dS} \\
                 &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy} \\
                 &= \oint_c{A\cdot\dc}
             \end{align*}
