@@ -233,8 +233,6 @@
                 このとき$A - B$は発散が0であるので、補題\ref{与えられた回転を有し、発散が無いベクトル場の構成}により、回転がこれに一致するようなベクトル場$C$を構成できる。
                 これらを用いて$A = B + C$と分解すればよい。
         \subsection{試み2}
-            \newcommand{\vBP}{\bm{B}_\text{P}(\vomega)}
-            \newcommand{\vBO}{\bm{B}_\text{O}(\vomega)}
             これはFourier変換を用いる発想であり、\cite{qm3_chap5_j} 11.2 節の内容を筆者が理解してまとめたものである。
             \subsubsection{Helmholtzの定理: 任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場は回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
             \begin{proof}
@@ -249,22 +247,31 @@
                 \begin{align*}
                     \parens*{\nabla\cdot\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\nabla\cdot\parens*{\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}}{3}{\vomega} \\
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\cdot\vB(\vomega)}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\cdot\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \\
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\cdot\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \tag{1} \\
                     \parens*{\nabla\times\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\nabla\times\parens*{\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}}{3}{\vomega} \\
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\times\vB(\vomega)}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \tag{2}
                 \end{align*}
+                \newcommand{\vBP}{\bm{B}_\text{P}(\vomega)}
+                \newcommand{\vBO}{\bm{B}_\text{O}(\vomega)}
                 上式中の $\vB(\omega)$ を $\vomega$ 方向の成分 $\vBP$ とそれに垂直な成分 $\vBO \coloneqq \vB(\omega) - \vBP$ に分解する(`P': `parallel', `O': `orthogonal')。
                 $\vBP$ を具体的に書くと次式である。
-                \[ \vBP = \parens*{\frac{\vomega}{\norm{\vomega}_2}\cdot\vB(\omega)}\frac{\vomega}{\norm{\vomega}_2} = \parens*{\frac{\vomega}{\norm{\vomega}_2^2}\cdot\vBP}\vomega \]
+                \[ \vBP = \parens*{\frac{\vomega}{\norm{\vomega}_2}\cdot\vB(\omega)}\frac{\vomega}{\norm{\vomega}_2} = \parens*{\frac{\vomega}{\norm{\vomega}_2^2}\cdot\vB(\vomega)}\vomega \]
                 これを用いて $\vA$ を分解する。
                 \newcommand{\vARL}{\vA_\text{RL}}
                 \newcommand{\vADL}{\vA_\text{DL}}
                 \begin{align*}
-                    \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(B)}} \\
+                    \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(B)}} \tag{3}\\
                     &= \vARL(\vr) + \vADL(\vr) \quad \text{where} \quad \vARL(\vr) \coloneq \text{(A)}, \quad \vADL(\vr) \coloneq \text{(B)}
                 \end{align*}
-                `RL', `DL' はそれぞれ `rotation-less', `divergence-less' の意味であるが、その理由は以降で明らかになる。
+                `RL', `DL' はそれぞれ `rotation-less', `divergence-less' の意味であるが、その理由は直後に明らかになる。
+                \par
+                式(1),(2)の計算と全く同様にして次式を得る。
+                \begin{align*}
+                    \nabla\cdot\vADL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\cdot\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} = 0 \\
+                    \nabla\times\vARL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} = \bm{0}
+                \end{align*}
+                これと式(3)より $(\nabla\cdot\vARL)(\vomega) = \parens*{\nabla\cdot\vA}(\vr),\quad (\nabla\times\vADL)(\vomega) = \parens*{\nabla\times\vA}(\vr)$ も成り立つ。
             \end{proof}
     \section{諸定理}
         \subsection{球殻定理}
