@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Added:
-  - An approach to Helmholtz theorem by Fourier transform.
+  - an approach to Helmholtz theorem by Fourier transform
+  - an example of idempotent matrix
 
 ## [0.15.0] - 2023-4-12
 
