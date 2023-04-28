@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added:
   - an approach to Helmholtz theorem by Fourier transform
   - an example of idempotent matrix
+  - orthonormality of normalized sinc function
 
 ## [0.15.0] - 2023-4-12
 
