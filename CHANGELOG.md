@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - an approach to Helmholtz theorem by Fourier transform
   - an example of idempotent matrix
   - orthonormality of normalized sinc function
+  - theory: If v_1,...,v_N are linearly independent, then there exists a vector w such that <w,v_i> = 0 for i={1,...,N}\{n} and <w,v_n> = 0.
 
 ## [0.15.0] - 2023-4-12
 
