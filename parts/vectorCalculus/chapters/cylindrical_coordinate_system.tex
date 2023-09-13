@@ -17,12 +17,12 @@
     \section{単位ベクトルに関する3次元Euclid空間との関係}
         \begin{shadebox}
             \begin{align*}
-                \ir &= \ix\cosph + \iy\sinph\\
-                \iph &= -\ix\sinph + \iy\cosph
+                \ir &= \vix\cosph + \viy\sinph\\
+                \iph &= -\vix\sinph + \viy\cosph
             \end{align*}
             \begin{align*}
-                \ix &= \ir\cosph - \iph\sinph\\
-                \iy &= \ir\sinph + \iph\cosph
+                \vix &= \ir\cosph - \iph\sinph\\
+                \viy &= \ir\sinph + \iph\cosph
             \end{align*}
         \end{shadebox}
         \begin{proof}
@@ -31,12 +31,12 @@
             \[\vr = \dthv{r\cosph}{r\sinph}{z}\]
             よって
             \begin{align}
-                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \ix\cosph+\iy\sinph \\
-                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\ix\sinph+\iy\cosph
+                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \vix\cosph+\viy\sinph \\
+                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\vix\sinph+\viy\cosph
             \end{align}
             これを逆に解いてみる。\\
-            $(1)\times\cosph-(2)\times\sinph$より$\ix = \ir\cosph - \iph\sinph$\\
-            $(1)\times\sinph+(2)\times\cosph$より$\iy = \ir\sinph + \iph\cosph$\\
+            $(1)\times\cosph-(2)\times\sinph$より$\vix = \ir\cosph - \iph\sinph$\\
+            $(1)\times\sinph+(2)\times\cosph$より$\viy = \ir\sinph + \iph\cosph$\\
             を得る。
         \end{proof}
     \section{微分演算に関する直交座標系との関係}

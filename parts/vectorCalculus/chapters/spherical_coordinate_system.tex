@@ -17,14 +17,14 @@
     \section{単位ベクトルに関する3次元Euclid空間との関係}
         \begin{shadebox}
             \begin{align*}
-                \ir &= \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh\\
-                \ith &= \ix\costh\cosph + \iy\costh\sinph - \iz\sinth\\
-                \iph &= -\ix\sinph + \iy\cosph
+                \ir &= \vix\sinth\cosph + \viy\sinth\sinph + \viz\costh\\
+                \ith &= \vix\costh\cosph + \viy\costh\sinph - \viz\sinth\\
+                \iph &= -\vix\sinph + \viy\cosph
             \end{align*}
             \begin{align*}
-                \ix &= \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph\\
-                \iy &= \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph\\
-                \iz &= \ir\costh - \ith\sinth
+                \vix &= \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph\\
+                \viy &= \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph\\
+                \viz &= \ir\costh - \ith\sinth
             \end{align*}
         \end{shadebox}
         \noindent(手間が大きい証明)
@@ -34,24 +34,24 @@
             \[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
             よって
             \begin{align}
-                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \ix\sinth\cosph + \iy\sinth\sinph + \iz\costh \\
-                \ith &\coloneqq \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \ix\costh\cosph + \iy\costh\sinph - \iz\sinth \\
-                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\ix\sinph + \iy\cosph
+                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \vix\sinth\cosph + \viy\sinth\sinph + \viz\costh \\
+                \ith &\coloneqq \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \vix\costh\cosph + \viy\costh\sinph - \viz\sinth \\
+                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\vix\sinph + \viy\cosph
             \end{align}
             これを逆に解いてみる。\\
-            $(1)\times\costh-(2)\times\sinth$より$\iz = \ir\costh - \ith\sinth$\\
+            $(1)\times\costh-(2)\times\sinth$より$\viz = \ir\costh - \ith\sinth$\\
             $(1)\times\sinth+(2)\times\costh$より
             \begin{equation}
-                \ir\sinth+\ith\costh = \ix\cosph+\iy\sinph
+                \ir\sinth+\ith\costh = \vix\cosph+\viy\sinph
             \end{equation}
-            $(4)\times\cosph-(3)\times\sinph$より$\ix = \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph$\\
-            $(3)\times\cosph+(4)\times\sinph$より$\iy = \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph$
+            $(4)\times\cosph-(3)\times\sinph$より$\vix = \ir\sinth\cosph + \ith\costh\cosph -\iph\sinph$\\
+            $(3)\times\cosph+(4)\times\sinph$より$\viy = \ir\sinth\sinph + \ith\costh\sinph + \iph\cosph$
         \end{proof}
         \noindent(手間が少ない証明)
         \begin{proof}
             \quad\par
             $\ir,\ith,\iph$の導出までは上の証明と同じ。
-            $\ir,\ith,\iph$が直交系を成すことを利用し、$\ix = (\ix\cdot\ir)\ir + (\ix\cdot\ith)\ith + (\ix\cdot\iph)\iph,\quad \iy = (\iy\cdot\ir)\ir + (\iy\cdot\ith)\ith + (\iy\cdot\iph)\iph,\quad \iz = (\iz\cdot\ir)\ir + (\iz\cdot\ith)\ith + (\iz\cdot\iph)\iph$として導出できる。
+            $\ir,\ith,\iph$が直交系を成すことを利用し、$\vix = (\vix\cdot\ir)\ir + (\vix\cdot\ith)\ith + (\vix\cdot\iph)\iph,\quad \viy = (\viy\cdot\ir)\ir + (\viy\cdot\ith)\ith + (\viy\cdot\iph)\iph,\quad \viz = (\viz\cdot\ir)\ir + (\viz\cdot\ith)\ith + (\viz\cdot\iph)\iph$として導出できる。
         \end{proof}
     % \section{Laplacian}
     % 	\begin{shadebox}

@@ -115,6 +115,20 @@
                 背理法で示す。任意の$\bm{v}\in A_v$に対して$\bm{w}_1,\dotsc,\bm{w}_l,\bm{v}$が一次従属であると仮定すると、\ref{subsec:一次独立なベクトルの、独立集合族としての性質}より、任意の$\bm{v}\in A_v$が$\bm{w}_1,\dotsc,\bm{w}_l$の一次結合で表せる。
                 よって$A_v$は$l$個の一次独立なベクトルの一次結合で表された$k>l$個以上のベクトルの集合なので一次従属であるが、これは$A_v$の一次独立性の仮定に矛盾する。
             \end{proof}
+        \subsection{\texorpdfstring{$\bm{v}_1,\dots,\bm{v}_N$}{v1,...,vN}が一次独立ならば任意の1つ\texorpdfstring{$\bm{v}_n$}{vi}を除く全てに直交し、かつ\texorpdfstring{$\bm{v}_n$}{vi}には直交しないベクトルが存在する。}
+            \begin{shadebox}
+                $N\in\naturalNumbers,\;n\in\braces{1,2,\dots,N}$ とする。
+                $V$ を線形空間とし、$d \coloneqq \dim{V} \geq N$ とする。
+                $\bm{v}_1,\dots,\bm{v}_N \in V$ は一次独立であるとする。
+                このとき $\braces{\bm{v}_1,\dots,\bm{v}_N}\setminus\braces{\bm{v}_n}$ の全てに直交し、かつ $\bm{v}_n$ に直交しない $V$ のベクトルが存在する。
+            \end{shadebox}
+            \begin{proof}
+                \quad\par
+                必要ならば番号を振りなおすことで、一般性を失わずに $n=N$ とできる。
+                $V$ の正規直交基底を用いた $\bm{v}_i\;(i=1,\dots,N)$ の座標ベクトルを $\bm{a}_i\in F^d$ とし($F$ は $V$ の係数体)、$N\times d$ 行列 $A$ は第 $i$ 行が $\bm{a}_i^\top$ であるとする。
+                $A$ は行フルランクであり $A\bm{x} = [\underbrace{0,\dots,0}_{(N-1)\text{個}},1]^\top$ は解をもつ。
+                この解を座標とする $V$ のベクトルは $\bm{v}_1,\dots,\bm{v}_{N-1}$ に直交し、$\bm{v}_N$ とは直交しない。
+            \end{proof}
     \section{諸注意}
         \subsection{
             \texorpdfstring{$\{\bm{v}_1,\bm{v}_2\},\{\bm{w}_1,\bm{w}_2\},\{\bm{v}_1,\bm{v}_2,\bm{w}_1\},\{\bm{v}_1,\bm{v}_2,\bm{w}_2\}$}{\{v1,v2\},\{w1,w2\},\{v1,v2,w1\},\{v1,v2,w2\}}が各々一次独立でも\texorpdfstring{\\}{}
