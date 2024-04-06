@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added:
   - relationship between weighted geometric mean and weighted harmonic mean
+- Changed:
+  - Updated LaTeX-motchyMacros submodule.
 
 ## [0.16.0] - 2023-09-13
 
