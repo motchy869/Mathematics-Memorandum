@@ -4,9 +4,9 @@
             \begin{shadebox}
                 $A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
                 $f(\bm{x}) \coloneqq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
-                \[ A^*A\mathring{\bm{x}} = -A^*\bm{b} \]
-                特に$A$が列フルランクであれば$A^*A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
-                \[ \mathring{\bm{x}} = -(A^*A)^{-1}A^*\bm{b} \]
+                \[ \HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b} \]
+                特に$A$が列フルランクであれば$\HerConj{A}A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
+                \[ \mathring{\bm{x}} = -(\HerConj{A}A)^{-1}\HerConj{A}\bm{b} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -15,22 +15,22 @@
                 これは$f(\mathring{\bm{x}} + \mathrm{d}\bm{x})$の$\mathrm{d}\bm{x}$に関する1次の項が0であることと同値である。
                 この1次の項を$g(\mathrm{d}\bm{x})$とすると
                 \begin{align*}
-                    g(\mathrm{d}\bm{x}) &= (A\mathrm{d}\bm{x})^*(A\mathring{\bm{x}} + \bm{b}) + (A\mathring{\bm{x}} + \bm{b})^*(A\mathrm{d}\bm{x}) = 2\Re{(\mathring{\bm{x}}^*A^*A + \bm{b}^*A)\mathrm{d}\bm{x}}
+                    g(\mathrm{d}\bm{x}) &= \HerConj{(A\mathrm{d}\bm{x})}(A\mathring{\bm{x}} + \bm{b}) + \HerConj{(A\mathring{\bm{x}} + \bm{b})}(A\mathrm{d}\bm{x}) = 2\Re{(\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A)\mathrm{d}\bm{x}}
                 \end{align*}
-                であるから、$\mathring{\bm{x}}$に関する条件は$\mathring{\bm{x}}^*A^*A + \bm{b}^*A = O$、すなわち$A^*A\mathring{\bm{x}} = -A^*\bm{b}$である。
+                であるから、$\mathring{\bm{x}}$に関する条件は$\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A = O$、すなわち$\HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b}$である。
             \end{proof}
         \subsection{線形制約付きの場合}
             \begin{shadebox}
                 $f$の定義は前小節のものとする。
                 $m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneqq \bm{c}_i^\top\bm{x}+d_i$とする。
-                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; (A\mathring{\bm{x}}+\bm{b})^*A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
+                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $\bm{h} \in \complexNumbers^n,\;g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
                 $g_i(\mathring{\bm{x}} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
                 \begin{align*}
-                    f(\mathring{\bm{x}} + \bm{h}) &= f(\mathring{\bm{x}}) + 2\Re{(A\mathring{\bm{x}}+\bm{b})^*A\bm{h}} + \bm{h}^*A^*A\bm{h} = f(\mathring{\bm{x}}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \bm{h}^*A^*A\bm{h} \\
-                    &= f(\mathring{\bm{x}}) + \bm{h}^*A^*A\bm{h} \geq f(\mathring{\bm{x}})
+                    f(\mathring{\bm{x}} + \bm{h}) &= f(\mathring{\bm{x}}) + 2\Re{\HerConj{(A\mathring{\bm{x}}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\bm{x}}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\
+                    &= f(\mathring{\bm{x}}) + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \geq f(\mathring{\bm{x}})
                 \end{align*}
             \end{proof}

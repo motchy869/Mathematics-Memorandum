@@ -54,31 +54,31 @@
             まず、$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
             $A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
         \end{proof}
-    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{A^* A} = \rank{AA^*}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
+    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
         次元定理を用いる証明
         \begin{proof}
             \quad\par
             $\bm{x} \in \complexNumbers^n$とする。
             まず主張の左側の等号成立を示す。
-            $\bm{x} \in \ker{A}$ならば$A^* A\bm{x} = A^*\bm{0} = \bm{0}$だから$\ker{A} \subseteq \ker{A^* A}$。
-            逆に$\bm{x} \in \ker{A^*A}$ならば$A^*A\bm{x} = \bm{0}$なので$0 = \bm{x}^*A^*A\bm{x} = \norm{A\bm{x}}_2^2$より$A\bm{x} = \bm{0}$。
-            つまり$\bm{x} \in \ker{A}$だから$\ker{A} \supseteq \ker{A^* A}$。
-            以上より$\ker{A} = \ker{A^* A}$。
-            これと次元定理より$\rank{A} = \dim(\Img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{A^*A}) = \dim(\Img{A^*A}) = \rank{A^*A}$。
+            $\bm{x} \in \ker{A}$ならば$\HerConj{A} A\bm{x} = \HerConj{A}\bm{0} = \bm{0}$だから$\ker{A} \subseteq \ker{\HerConj{A} A}$。
+            逆に$\bm{x} \in \ker{\HerConj{A}A}$ならば$\HerConj{A}A\bm{x} = \bm{0}$なので$0 = \HerConj{\bm{x}}\HerConj{A}A\bm{x} = \norm{A\bm{x}}_2^2$より$A\bm{x} = \bm{0}$。
+            つまり$\bm{x} \in \ker{A}$だから$\ker{A} \supseteq \ker{\HerConj{A} A}$。
+            以上より$\ker{A} = \ker{\HerConj{A} A}$。
+            これと次元定理より$\rank{A} = \dim(\Img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{\HerConj{A}A}) = \dim(\Img{\HerConj{A}A}) = \rank{\HerConj{A}A}$。
             \par
             この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
-            $\rank{A} = \rank{A^*} = \rank{(A^*)^*(A^*)} = \rank{AA^*}$。
+            $\rank{A} = \rank{\HerConj{A}} = \rank{\HerConj{(\HerConj{A})}(\HerConj{A})} = \rank{A\HerConj{A}}$。
         \end{proof}
         特異値分解を用いる証明
         \begin{proof}
             \quad\par
-            $A$の特異値分解を$U\Sigma V^*$とすると、$\rank{AA^*} = \rank{U\Sigma V^*V\Sigma U^*} = \rank{U\Sigma^2 U^*} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
-            同様にして$\rank{A^*A} = \rank{A}$も示せる。
+            $A$の特異値分解を$U\Sigma \HerConj{V}$とすると、$\rank{A\HerConj{A}} = \rank{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank{U\Sigma^2 \HerConj{U}} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
+            同様にして$\rank{\HerConj{A}A} = \rank{A}$も示せる。
         \end{proof}
-    \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$A^* A$}{A\string^*A}は正則}
+    \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$\HerConj{A} A$}{A\string^*A}は正則}
         \label{列フルランク行列を掛けあわせて正則行列を作る}
         \begin{shadebox}
-            $A\in\field^{m\times n}$が列フルランクならば$A^* A$は正則
+            $A\in\field^{m\times n}$が列フルランクならば$\HerConj{A} A$は正則
         \end{shadebox}
         \begin{proof}(ややこしい証明)
             \par
@@ -94,15 +94,15 @@
             \end{align*}
             とすれば
             \[AT = P\quad(A = PT^{-1})\]
-            であり、$T$は正則である。さらに$P^* P = I_{n\times n}$であるから
-            \[\rank{A^* A} = \rank{\left(T^{-1}\right)^* P^* PT^{-1}} = \rank{\left(T^{-1}\right)^* I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
+            であり、$T$は正則である。さらに$\HerConj{P} P = I_{n\times n}$であるから
+            \[\rank{\HerConj{A} A} = \rank{\HerConj{\left(T^{-1}\right)} \HerConj{P} PT^{-1}} = \rank{\HerConj{\left(T^{-1}\right)} I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
         \end{proof}
         \begin{proof}
             (より簡単な証明)
             \par
-            $\bm{x}\in\field^n$を任意にとって$A^* A\bm{x}=\bm{0}$とおいてみると
-            \[A^* A\bm{x}=\bm{0} \Rightarrow \bm{x}^* A^* A\bm{x}=\bm{0} \iff \inprod{A\bm{x}}{A\bm{x}}=\bm{0} \iff \norm{A\bm{x}}=0 \iff A\bm{x}=\bm{0}\]
-            $A$は列フルランクであったから$\bm{x}=\bm{0}$となるので$A^* A$は正則である。
+            $\bm{x}\in\field^n$を任意にとって$\HerConj{A} A\bm{x}=\bm{0}$とおいてみると
+            \[\HerConj{A} A\bm{x}=\bm{0} \Rightarrow \HerConj{\bm{x}} \HerConj{A} A\bm{x}=\bm{0} \iff \inprod{A\bm{x}}{A\bm{x}}=\bm{0} \iff \norm{A\bm{x}}=0 \iff A\bm{x}=\bm{0}\]
+            $A$は列フルランクであったから$\bm{x}=\bm{0}$となるので$\HerConj{A} A$は正則である。
         \end{proof}
     \section{(系)\texorpdfstring{\quad$A\in\field^{m\times n}$}{A∈F\string^(m×n)}が行フルランクならば\texorpdfstring{$AA^\top$}{AA\string^⊤}は正則}
         \begin{shadebox}
