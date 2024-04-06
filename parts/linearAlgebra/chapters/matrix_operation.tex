@@ -96,7 +96,15 @@
         \begin{attention}
             $\realNumbers^3$以上では成り立たない。
         \end{attention}
-    \section{Kronecker積}
+    \section{Kronecker 積}
+        \subsection{諸注意}
+            \subsubsection{\texorpdfstring{$m\times 1,\;n\times 1$}{m×1,n×1} 行列の Kronecker 積で表せない \texorpdfstring{$(m+n)\times 1$}{(m+n)×1} 行列が存在する}
+            \begin{proof}
+                例えば $m=n=2$ のとき $[1, 2, 1, 3]^\top$ は $\complexNumbers^2$ の元の Kronecker 積で表せない。
+            \end{proof}
+            （補足）
+            \par
+            $\complexNumbers^{m\times n}$ と $\complexNumbers^{m+n}$ の間に一対一の対応が存在すること、および $\bm{a}\in\complexNumbers^m,\;\bm{b}\in\complexNumbers^n$ に対して $\bm{a}\bm{b}^\top$ の階数が高々 1 であることからも直ちに判る。
         \subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
             \begin{shadebox}
                 行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
