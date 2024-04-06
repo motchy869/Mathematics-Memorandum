@@ -150,11 +150,11 @@
                 $A\in\complexNumbers^{N\times N}$を次式で定義する。
                 \[ A \coloneqq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
                 このとき$A$は次のように対角化可能である。
-                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}W^* \]
+                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
                 ここに$W$は$N\times N$ DFT基底行列であり、第$(n,k)$要素は次式で定義される。
                 \[ W_{n,k} \coloneqq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
                 $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり、次式で定義される。
-                \[ \DFT{\bm{a}} \coloneqq W^*\bm{a} \]
+                \[ \DFT{\bm{a}} \coloneqq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
                 \[ \sum_{n=0}^{N-1}\overline{W_{k,n}}a_n \]
             \end{shadebox}
@@ -165,15 +165,15 @@
                 $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
                 \[ \bm{a}_m = \cycConv{\bm{a}}{\bm{e}_m} \]
                 巡回畳み込みのDFTの性質より次式が成り立つ。
-                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd W^*[:,m] \]
+                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
                 これより次式が成り立つ。
                 \begin{align*}
-                    W^*A &= [\DFT{\bm{a}_0},\DFT{\bm{a}_1},\dots,\DFT{\bm{a}_{N-1}}] \\
-                    &= \sqrt{N}[\DFT{\bm{a}}\HadamardProd W^*[:,0],\DFT{\bm{a}}\HadamardProd W^*[:,1],\dots,\DFT{\bm{a}}\HadamardProd W^*[:,N-1]] \\
-                    &= \sqrt{N}\diag{\DFT{\bm{a}}}W^*
+                    \HerConj{W}A &= [\DFT{\bm{a}_0},\DFT{\bm{a}_1},\dots,\DFT{\bm{a}_{N-1}}] \\
+                    &= \sqrt{N}[\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,0],\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,1],\dots,\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,N-1]] \\
+                    &= \sqrt{N}\diag{\DFT{\bm{a}}}\HerConj{W}
                 \end{align*}
-                両辺に左から$W$を掛け、$W$のユニタリ性$WW^* = I$を用いて次式を得る。
-                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}W^* \]
+                両辺に左から$W$を掛け、$W$のユニタリ性$W\HerConj{W} = I$を用いて次式を得る。
+                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
             \end{proof}
         \subsection{Hadamard行列の固有値}
             \begin{shadebox}
@@ -318,25 +318,25 @@
         \subsection{正規行列\texorpdfstring{$\iff$}{⇔}ユニタリ行列で対角化可能}
             \begin{shadebox}
                 $n$を自然数とする。
-                $A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は、ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda Q^*$となることである。
+                $A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は、ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda \HerConj{Q}$となることである。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 十分性は容易に示せるので省略し、必要性のみ示す。
                 $A$を正規行列とする。
-                $A$のSchur分解を$A = SUS^*$とする。
+                $A$のSchur分解を$A = SU\HerConj{S}$とする。
                 ここに$S,U \in \complexNumbers^{n \times n}$はそれぞれ適当なユニタリ行列, 上三角行列である。
                 $A$が正規だから
                 \begin{align*}
-                    O = A^*A - AA^* &= SU^*US^* - SUU^*S^* = S(U^*U - UU^*)S^* \\
-                    \therefore\;U^*U - UU^* &= S^*OS = O \\
-                    \therefore\;U^*U &= UU^*
+                    O = \HerConj{A}A - A\HerConj{A} &= S\HerConj{U}U\HerConj{S} - SU\HerConj{U}\HerConj{S} = S(\HerConj{U}U - U\HerConj{U})\HerConj{S} \\
+                    \therefore\;\HerConj{U}U - U\HerConj{U} &= \HerConj{S}OS = O \\
+                    \therefore\;\HerConj{U}U &= U\HerConj{U}
                 \end{align*}
-                これより、まず$U^*U$と$UU^*$の第1,1成分が等しいから
-                \[ (U^*U)_{1,1} = (UU^*)_{1,1} \]
+                これより、まず$\HerConj{U}U$と$U\HerConj{U}$の第1,1成分が等しいから
+                \[ (\HerConj{U}U)_{1,1} = (U\HerConj{U})_{1,1} \]
                 \[ \therefore |u_{1,1}|^2 = |u_{1,1}|^2 + |u_{1,2}|^2 + \dotsb + |u_{1,n}|^2 \]
                 \[ u_{1,2} = u_{1,3} = \dotsb = u_{1,n} = 0 \]
-                次に、$U^*U$と$UU^*$の第2,2成分が等しいから
+                次に、$\HerConj{U}U$と$U\HerConj{U}$の第2,2成分が等しいから
                 \[ |u_{1,2}|^2 + |u_{2,2}|^2 = |u_{2,2}|^2 + |u_{2,3}|^2 + \dotsb + |u_{2,n}|^2 \]
                 これと先程の結果$|u_{1,2}| = 0$より
                 \[ u_{2,3} = u_{2,4} = \dotsb = u_{2,n} = 0 \]

@@ -36,6 +36,7 @@
                 \[ \text{左辺} \geq f(w_{n_0+1}x_{n_0+1} + (1-w_{n_0+1})X_{n_0}) = f\left(\sum_{i=1}^{n_0+1}w_i x_i\right)\]
             \end{proof}
         \subsection{重み付き相加,相乗平均の関係とYoungの不等式}
+            \label{重み付き相加,相乗平均の関係とYoungの不等式}
             \begin{shadebox}
                 $w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
                 \[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
@@ -60,21 +61,19 @@
                 $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
                 \[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
             \end{shadebox}
-        \subsection{算術平均と調和平均の関係}
+        \subsection{重み付き幾何平均と重み付き調和平均の関係}
             \begin{shadebox}
-                $n\in\naturalNumbers,\;x_1,\dotsc,x_n>0$ とするとき、これらの算術平均は調和平均を下回ることはない。
+                $n\in\naturalNumbers,\;x_i,w_i>0\;(i=1,\dots,n),\;\sum_{i=1}^n w_i = 1$ とするとき、$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
                 つまり次式が成り立つ。
-                \[ \frac{1}{n} \sum_{i=1}^n x_i \geq \frac{n}{\sum_{i=1}^n 1/x_i} \]
+                \[ \prod_{i=1}^n {x_i}^{w_i} \geq \frac{1}{\sum_{i=1}^n w_i/x_i} \tag{1} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                関数 $f:x\in\setComprehension{x\in\realNumbers}{x>0}\mapsto 1/x$ は狭義下に凸であるから Jensen の不等式より次式が成り立つ。
-                \[
-                    \sum_{i=1}^n \frac{1}{n} f(x_i) \geq f\left(\sum_{i=1}^n \frac{1}{n} x_i\right) \tag{1}
-                \]
-                等号成立の必要十分条件は $x_1=x_2=\dots=x_n$ である。
-                式(1)を変形すると次式を得る。
-                \[ \frac{1}{n} \sum_{i=1}^n 1/x_i \geq \frac{1}{\frac{1}{n} \sum_{i=1}^n x_i} \quad \therefore \frac{1}{n} \sum_{i=1}^n x_i \geq \frac{n}{\sum_{i=1}^n 1/x_i} \]
+                式 (1) は次式と等価である。
+                \[ \sum_{i=1}^n w_i/x_i \geq \frac{1}{\prod_{i=1}^n {x_i}^{w_i}} \]
+                ここで $\tilde{x}_i \coloneqq x_i$ とすると上式は次式と等価である。
+                \[ \sum_{i=1}^n w_i\tilde{x}_i \geq \prod_{i=1}^n {\tilde{x}_i}^{w_i} \]
+                上式の成立は \ref{重み付き相加,相乗平均の関係とYoungの不等式} より明らかである。
             \end{proof}
         \subsection{2階導関数と凸性の関係}
             \begin{shadebox}

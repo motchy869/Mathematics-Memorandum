@@ -20,11 +20,11 @@
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $A^\dagger\bm{b}$が解であることと、$A^\dagger = A^*(AA^*)^{-1}$であることは既知とする(特異値分解を用いて確かめられる)。
+            $A^\dagger\bm{b}$が解であることと、$A^\dagger = \HerConj{A}(A\HerConj{A})^{-1}$であることは既知とする(特異値分解を用いて確かめられる)。
             $A\bm{x} = \bm{b}$の任意の解を$\bm{x}$とすると、$A(A^\dagger\bm{x} - \bm{x}) = \bm{0}$だから$A^\dagger\bm{x} - \bm{x} \in \Ker{A}$つまりある適当な$\bm{v}\in\Ker{A}$が存在して$\bm{x} = A^\dagger + \bm{v}$である。
             \begin{align*}
-                \norm{\bm{x}}_2^2 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\inprod{\bm{v}}{A^\dagger\bm{b}}} = \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\bm{v}^*A^*(AA^*)^{-1}\bm{b}} \\
-                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{(A\bm{v})^*(AA^*)^{-1}\bm{b}} \quad (\because \bm{v} \in \Ker{A}) \\
+                \norm{\bm{x}}_2^2 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\inprod{\bm{v}}{A^\dagger\bm{b}}} = \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\HerConj{\bm{v}}\HerConj{A}(A\HerConj{A})^{-1}\bm{b}} \\
+                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 + 2\Re{\HerConj{(A\bm{v})}(A\HerConj{A})^{-1}\bm{b}} \quad (\because \bm{v} \in \Ker{A}) \\
                 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\bm{v}}_2^2 \geq \norm{A^\dagger\bm{b}}_2^2
             \end{align*}
         \end{proof}

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0] - 2024-04-06
+
+- Added:
+  - relationship between weighted geometric mean and weighted harmonic mean
+  - a minor caution about Kronecker product
+  - eigenvalue and eigenvector of Kronecker product
+  - new derivation of determinant of Kronecker product
+- Changed:
+  - Updated LaTeX-motchyMacros submodule.
+
 ## [0.16.0] - 2023-09-13
 
 - Added:

@@ -24,7 +24,7 @@
                     まず各ベクトルの2ノルムが1であることが次のようにして簡単に確かめられる。
                     \[\norm{\bm{v}_k}_2 = \frac{1}{\sqrt{n}}\sqrt{\sum_{l=1}^n{\abs{\exp\left(i\frac{k}{n}2\pi l\right)}^2}} = \frac{1}{\sqrt{n}}\sqrt{n} = 1\]
                     次に、相異なる$k,l$に対して$\bm{v}_k$と$\bm{v}_l$が直交することは次のようにして確かめられる。
-                    \[\inprod{\bm{v}_k}{\bm{v}_l} = {\bm{v}_k}^*\bm{v}_l = \frac{1}{n}\sum_{m=1}^n{\exp\left(-i\frac{k}{n}2\pi m\right)\exp\left(i\frac{l}{n}2\pi m\right)} = \frac{1}{n}\sum_{m=1}^n{\exp\left(i\frac{l-k}{n}2\pi m\right)} = 0\quad(\because\;\ref{fml:花びら定理})\]
+                    \[\inprod{\bm{v}_k}{\bm{v}_l} = \HerConj{{\bm{v}_k}}\bm{v}_l = \frac{1}{n}\sum_{m=1}^n{\exp\left(-i\frac{k}{n}2\pi m\right)\exp\left(i\frac{l}{n}2\pi m\right)} = \frac{1}{n}\sum_{m=1}^n{\exp\left(i\frac{l-k}{n}2\pi m\right)} = 0\quad(\because\;\ref{fml:花びら定理})\]
                 \end{proof}
     \section{一般のベクトル空間と配列型ベクトル空間の橋渡し}
         \subsection{合成ベクトルの一次独立性と係数ベクトルの一次独立性は等価}

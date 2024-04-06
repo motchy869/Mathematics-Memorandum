@@ -73,9 +73,9 @@
             \end{proof}
     \section{代数方程式}
         \subsection{諸定理}
-            \subsubsection{実係数\texorpdfstring{$n$}{n}次方程式が複素数解\texorpdfstring{$s=\alpha+i\beta$}{s=α+iβ}を解に持つならばその複素共役\texorpdfstring{$s^* = \alpha-i\beta$}{}もまた解である}
+            \subsubsection{実係数\texorpdfstring{$n$}{n}次方程式が複素数解\texorpdfstring{$s=\alpha+i\beta$}{s=α+iβ}を解に持つならばその複素共役\texorpdfstring{$\HerConj{s} = \alpha-i\beta$}{}もまた解である}
                 \begin{shadebox}
-                    実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$s^* = \alpha-i\beta$もまた解である。
+                    実係数$n$次方程式が複素数解$s=\alpha+i\beta$を解に持つならばその複素共役$\HerConj{s} = \alpha-i\beta$もまた解である。
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
@@ -85,10 +85,10 @@
                     \[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
                     両辺の複素共役をとると
                     \begin{align*}
-                        \left[s^n + \sum_{k=n-1}^{0}{c_ks^k}\right]^* &= 0^* = 0\\
-                        \therefore \; {s^*}^n + \sum_{k=n-1}^{0}{c_k{s^*}^k} &= 0
+                        \HerConj{\bracks{s^n + \sum_{k=n-1}^{0}{c_ks^k}}} &= \HerConj{0} = 0\\
+                        \therefore \; {\HerConj{s}}^n + \sum_{k=n-1}^{0}{c_k{\HerConj{s}}^k} &= 0
                     \end{align*}
-                    これは$s^*$が解であることに他ならない。
+                    これは$\HerConj{s}$が解であることに他ならない。
                 \end{proof}
         \subsection{例題}
             \subsection{\texorpdfstring{$z^n+z^{n-1}+\dots+z^2+z+1 = 0$}{zのべき乗の和=0}}
