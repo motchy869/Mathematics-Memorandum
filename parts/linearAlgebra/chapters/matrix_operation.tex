@@ -134,6 +134,7 @@
                 \end{align*}
             \end{proof}
         \subsection{固有値，固有ベクトル}
+            \label{Kronecker 積の固有値，固有ベクトル}
             \begin{shadebox}
                 $A,B$ をそれぞれ $m_A\times m_A, m_B\times m_B$ の正方行列とする。
                 $A$ の固有値を重複を含めて $\lambda_{A,1},\dots,\lambda_{A,m_A}$ 、 $B$ の固有値を重複を含めて $\lambda_{B,1},\dots,\lambda_{B,m_B}$ とする。
@@ -166,7 +167,18 @@
                 \[ \det(A\otimes I_{m_B}) = det(S^\top)\det(I_{m_B}\otimes A)\det(S) = \det(A)^{m_B} \]
                 ただし $\det(S) = \pm 1$ であることを用いた。
             \end{proof}
-        \subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
+            （別解）
+            \begin{proof}
+                \quad\par
+                \ref{Kronecker 積の固有値，固有ベクトル} の証明を用いる。
+                \begin{align*}
+                    \det\parens{A\otimes B} &= \det\parens{S_A\otimes S_B}\det\parens{U_A\otimes U_B}\det\parens{\HerConj{S_A}\otimes\HerConj{S_B}} \\
+                    &= \det\parens{S_A\otimes S_B}\det\parens{\HerConj{S_A}\otimes\HerConj{S_B}}\det\parens{U_A\otimes U_B} \\
+                    &= \det\parens{(S_A\otimes S_B)(\HerConj{S_A}\otimes\HerConj{S_B})}\det\parens{U_A\otimes U_B} \\
+                    &= \det\parens{(S_A\HerConj{S_A})\otimes(S_B\HerConj{S_B})}\prod_{i=1}^{m_A} \lambda_{A,i}^{m_B}\det{B} = \det{A}^{m_B}\det{B}^{m_A}
+                \end{align*}
+            \end{proof}
+        \subsection{ユニタリ行列同士のKronecker 積はユニタリ行列である}
             \begin{proof}
                 \quad\par
                 $A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。

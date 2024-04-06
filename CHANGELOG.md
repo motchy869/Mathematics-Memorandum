@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - relationship between weighted geometric mean and weighted harmonic mean
   - a minor caution about Kronecker product
   - eigenvalue and eigenvector of Kronecker product
+  - new derivation of determinant of Kronecker product
 - Changed:
   - Updated LaTeX-motchyMacros submodule.
 
