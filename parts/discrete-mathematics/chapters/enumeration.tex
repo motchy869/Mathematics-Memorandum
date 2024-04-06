@@ -1,5 +1,13 @@
 \chapter{数え上げ}
-    \section{\texorpdfstring{``for $i=1, \dotsc, n(\in \naturalNumbers)$''$\iff$``for $d \mid n, \text{ for } i=1,\dotsc,n \text{ where } \gcd(i,n)=d$''$\iff$``for $d \mid n, \text{ for } j=1,\dotsc,n/d \text{ where } \gcd(j,n/d)=1$''}{数え上げと最大公約数}}
+    \section{\texorpdfstring{`for $i=1, \dotsc, n(\in \naturalNumbers)$'$\iff$`for $d \mid n, \text{ for } i=1,\dotsc,n \text{ where } \gcd(i,n)=d$'}{数え上げと最大公約数}}
+        \begin{shadebox}
+            次は同値である。
+            \begin{enumerate}
+                \item `for $i=1, \dotsc, n(\in \naturalNumbers)$'
+                \item `for $d \mid n, \text{ for } i=1,\dotsc,n \text{ where } \gcd(i,n)=d$'
+                \item `for $d \mid n, \text{ for } j=1,\dotsc,n/d \text{ where } \gcd(j,n/d)=1$'
+            \end{enumerate}
+        \end{shadebox}
         1から$n$までの自然数に対して、それと$n$との最大公約数は$n$の約数のどれかと一致するから、最初の$\iff$が成り立つ。
         2つ目の$\iff$については$i=dj$なる変数変換を施すことで分かる。
         次のような使い方が考えられる。
