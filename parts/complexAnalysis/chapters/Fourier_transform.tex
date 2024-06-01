@@ -71,12 +71,12 @@
                     &\phantom{=} \integrate{-\infty}{\infty}{\nsinc(x)\nsinc(x-n)}{}{x} = \integrate{-\infty}{\infty}{\sinc(\pi x)\sinc(\pi(n-x))}{}{x} \\
                     &= \integrate{-\infty}{\infty}{\psi(x)\psi(n-x)}{}{x} = (\psi*\psi)(n) \tag{1}
                 \end{align*}
-                ここに $\psi: \realNumbers\to\complexNumbers;\;x\mapsto\mathcal{F}\parens*{t\mapsto\frac{1}{\sqrt{2\pi}}\rect{t/\pi}}(x)$ である。
+                ここに $\psi: \realNumbers\to\complexNumbers;\;x\mapsto\mathcal{F}\parens*{t\mapsto\frac{1}{\sqrt{2\pi}}\rect\parens*{t/\pi}}(x)$ である。
                 最後の行では矩形関数の Fourier 変換(次式)を用いた。
-                \[ \mathcal{F}\parens{t\mapsto\rect{at}}(\omega) = \sqrt{\frac{2}{\pi}}\frac{1}{a}\sinc\frac{\omega}{a} \]
+                \[ \mathcal{F}\parens{t\mapsto\rect\parens*{at}}(\omega) = \sqrt{\frac{2}{\pi}}\frac{1}{a}\sinc\frac{\omega}{a} \]
                 式(1)の計算を続ける。
                 \begin{align*}
-                    (1) &= \sqrt{2\pi}\mathcal{F}\parens*{\parens*{t\mapsto\frac{1}{\sqrt{2\pi}}\rect{t/\pi}}^2}(n) \\
+                    (1) &= \sqrt{2\pi}\mathcal{F}\parens*{\parens*{t\mapsto\frac{1}{\sqrt{2\pi}}\rect\parens*{t/\pi}}^2}(n) \\
                     &= \integrate{-\pi}{\pi}{\frac{1}{2\pi}\exp(-i n t)}{}{t} = \delta_{1,n}
                 \end{align*}
             \end{proof}
