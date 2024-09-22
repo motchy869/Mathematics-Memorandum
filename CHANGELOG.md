@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - directive for SpiX
 - Changed:
   - miscellaneous corrections and refactors in the top-level file
+  - Updated LaTeX-motchyMacros submodule.
 
 ## [0.17.0] - 2024-04-06
 
