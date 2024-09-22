@@ -1,4 +1,10 @@
-﻿% ---------- document information ----------
+﻿% ---------- SpiX build information ----------
+%$ lualatex --cmdx -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error $texname
+% Although this document can be built with SpiX, it is recommended to use LaTeX Workshop plugin for VSCode.
+% Above command is intended to show what to be done in the LaTeX Workshop recipe.
+% --------------------
+
+% ---------- document information ----------
 % document version number
 \def\docVerMajor{0}
 \def\docVerMinor{16}
@@ -9,7 +15,7 @@
 \title{数学備忘録}
 \author{motchy}
 \date{\西暦 2015年5月27日 $\sim$ \today \\ver \docVer}
-% ------------------------------------------
+% --------------------
 
 \RequirePackage{plautopatch}
 \RequirePackage[l2tabu, orthodox]{nag} % check for obsolete commands
