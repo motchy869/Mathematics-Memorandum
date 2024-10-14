@@ -95,12 +95,12 @@
             $A$を$n$次対角行列とし、その逆対角転置を$A'$とする。
             $S_n$を$n$次の置換全体の集合とする。
             \begin{align*}
-                |A'| &= \sum_{\sigma\in S_n} \sgn{\sigma} \prod_{i=1}^n A'[i,\sigma(i)] = \sum_{\sigma\in S_n} \sgn{\sigma} \prod_{i=1}^n A[n-\sigma(i)+1, n-i+1] \\
-                &= \sum_{\sigma\in S_n} \sgn{\sigma} \prod_{j=1}^n A[j, n- \sigma^{-1}(n-j+1)+1] \\
-                &= \sum_{\sigma\in S_n} \sgn{\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \quad (\tilde\sigma: j \mapsto n+1-\sigma^{-1}(n-j+1))
+                |A'| &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{i=1}^n A'[i,\sigma(i)] = \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{i=1}^n A[n-\sigma(i)+1, n-i+1] \\
+                &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{j=1}^n A[j, n- \sigma^{-1}(n-j+1)+1] \\
+                &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \quad (\tilde\sigma: j \mapsto n+1-\sigma^{-1}(n-j+1))
             \end{align*}
-            ここで逆置換の符号が元の置換の符号と等しいこと、および\ref{置換の引数を逆順にしたときの符号}, \ref{出力を逆順にしたときの置換の符号}より$\sgn{\tilde\sigma} = s^2\sgn{\sigma} = \sgn{\sigma}$であるから
-            \[ |A'| = \sum_{\sigma\in S_n} \sgn{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \]
+            ここで逆置換の符号が元の置換の符号と等しいこと、および\ref{置換の引数を逆順にしたときの符号}, \ref{出力を逆順にしたときの置換の符号}より$\sgn\parens*{\tilde\sigma} = s^2\sgn\parens*{\sigma} = \sgn\parens*{\sigma}$であるから
+            \[ |A'| = \sum_{\sigma\in S_n} \sgn\parens*{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \]
             $\sigma$と$\tilde\sigma$は一対一で対応するので$\sigma$が$S_n$全体を動くとき$\tilde\sigma$もそうだから上式の$\sum_{\sigma\in S_n}$を$\sum_{\tilde\sigma\in S_n}$で置き換えて
-            \[ |A'| = \sum_{\tilde\sigma\in S_n} \sgn{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] = |A| \]
+            \[ |A'| = \sum_{\tilde\sigma\in S_n} \sgn\parens*{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] = |A| \]
         \end{proof}

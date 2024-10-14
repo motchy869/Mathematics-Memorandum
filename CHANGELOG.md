@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+- Added:
+  - directive for SpiX
+- Changed:
+  - miscellaneous corrections and refactors in the top-level file
+  - Updated LaTeX-motchyMacros submodule.
+
 ## [0.17.0] - 2024-04-06
 
 - Added:

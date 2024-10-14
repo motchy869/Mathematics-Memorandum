@@ -5,11 +5,11 @@
             \[
                 \atanEx{x}{y} \coloneqq
                 \begin{cases}
-                    \atan{\frac{y}{x}}+\pi	& (\text{領域$1$ : }x<0,y>0)\\
-                    \frac{\pi}{2}			& (\text{領域$2$ : }x=0,y>0)\\
-                    \atan{\frac{y}{x}}		& (\text{領域$3$ : }x>0,y\neq0)\\
-                    -\frac{\pi}{2}			& (\text{領域$4$ : }x=0,y<0) \\
-                    \atan{\frac{y}{x}}-\pi	& (\text{領域$5$ : }x<0,y<0)
+                    \atan\parens*{\frac{y}{x}}+\pi & (\text{領域$1$ : }x<0,y>0)\\
+                    \frac{\pi}{2} & (\text{領域$2$ : }x=0,y>0)\\
+                    \atan\parens*{\frac{y}{x}} & (\text{領域$3$ : }x>0,y\neq0)\\
+                    -\frac{\pi}{2} & (\text{領域$4$ : }x=0,y<0) \\
+                    \atan\parens*{\frac{y}{x}}-\pi & (\text{領域$5$ : }x<0,y<0)
                 \end{cases}
             \]
             $\atanEx{x}{y}$は原点及び$y$軸の負の領域の領域では定義されない。\\
@@ -30,8 +30,8 @@
             \[
                 d=
                 \begin{cases}
-                    \frac{\pi}{2}-\atan{\frac{b+k}{h}}\rightarrow0		& \text{as }h\rightarrow+0,k\rightarrow0 \\
-                    \frac{\pi}{2}-\left(\atan{\frac{b+k}{h}}+\pi\right)	& \text{as }h\rightarrow-0,k\rightarrow0 \\
+                    \frac{\pi}{2}-\atan\parens*{\frac{b+k}{h}}\rightarrow0 & \text{as }h\rightarrow+0,k\rightarrow0 \\
+                    \frac{\pi}{2}-\left(\atan\parens*{\frac{b+k}{h}}+\pi\right) & \text{as }h\rightarrow-0,k\rightarrow0 \\
                 \end{cases}
             \]
             であり、領域2における連続性が示せた。領域4における連続性も同様に示せる。
