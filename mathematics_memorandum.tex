@@ -1,0 +1,203 @@
+﻿% ---------- SpiX build information ----------
+%$ lualatex --cmdx -file-line-error -synctex=1 -interaction=nonstopmode -halt-on-error $texname
+% Although this document can be built with SpiX, it is recommended to use LaTeX Workshop plugin for VSCode.
+% Above command is intended to show what to be done in the LaTeX Workshop recipe.
+% --------------------
+
+% ---------- document information ----------
+% document version number
+\def\docVerMajor{0}
+\def\docVerMinor{18}
+\def\docVerPatch{0}
+\def\docVerWip{} % \def\docVerWip{-wip}
+\def\docVer{\docVerMajor.\docVerMinor.\docVerPatch\docVerWip}
+
+\title{数学備忘録}
+\author{motchy}
+\date{\西暦 2015年5月27日 $\sim$ \today \\ver \docVer}
+% --------------------
+
+\RequirePackage{plautopatch}
+\RequirePackage[l2tabu, orthodox]{nag} % check for obsolete commands
+
+\documentclass[titlepage]{ltjsreport}
+
+% packages
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{array}
+\usepackage{arydshln}
+\usepackage{ascmac}
+\usepackage{bbm}
+%\usepackage{bytefield} % currently not used
+\usepackage{cases}
+\usepackage{chngcntr} % for counterwithin command
+\usepackage[usenames]{color}
+\usepackage{currfile}
+% \usepackage{datatool} % currently not used
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage{here}
+\usepackage[unicode,bookmarksopenlevel=4,bookmarksnumbered=true,colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref} % must be included AFTER hyperref
+\usepackage{ifthen}
+\usepackage{listingsutf8, jvlisting}
+\usepackage{longtable}
+\usepackage{luacode}
+\usepackage{makecell} % [How to add a forced line break inside a table cell](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
+\usepackage{pdflscape}
+\usepackage[group-separator={,}]{siunitx}
+
+% for \arrayrulecolor command
+% To know the colors defined, see: [All you need to know about colors in LaTeX](https://latex-tutorial.com/color-latex/)
+\usepackage[table,x11names]{xcolor}
+
+\usepackage{tocloft} % to remove paragraph indentation in table of contents
+\usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
+\usepackage{xurl}
+
+% ---------- structure settings ----------
+	\makeatletter
+	\hypersetup{
+		pdftitle={\@title},
+		pdfauthor={\@author}
+	}
+	\makeatother
+
+	\setcounter{tocdepth}{5} % show table of contents up to subparagraph
+	\setcounter{secnumdepth}{5} % show number up to subparagraph
+
+	\renewcommand*\thepart{\arabic{part}} % arabic numbers for part
+
+	% Add part number to the beginning of section, subsection, and subsubsection numbers.
+	\counterwithin{chapter}{part}\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+	\counterwithin{section}{chapter}\renewcommand{\thesection}{\thechapter.\arabic{section}}
+	\counterwithin{subsection}{section}\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+	\counterwithin{subsubsection}{subsection}\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+	% Store current level number and title (later used in header).
+	\newcommand\currLevelNo{} % up to chapter
+	\newcommand\currLevelTitle{NOT YET SET}
+	\let\oldpart\part
+	\renewcommand{\part}[1]{\oldpart{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % Set the the part name to the title storage at the beginning of each part because there is possibly no chapter in the part.
+	\let\oldchapter\chapter
+	\renewcommand{\chapter}[1]{\oldchapter{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+
+	% Reset equation and figure numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
+	\counterwithin{equation}{section}
+	\counterwithin{figure}{section}
+
+	% no upper case in header
+	\fancyhead{\nouppercase{\rightmark}}
+	\fancyhead{\nouppercase{\leftmark}}
+
+	% longtable settings
+	\setcounter{LTchunksize}{200}
+
+	% cleveref settings
+	% see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
+	\crefname{equation}{式}{式} % {環境名}{単数形}{複数形}
+	\crefname{figure}{図}{図}
+	\crefname{table}{表}{表}
+	\newcommand{\crefpairconjunction}{と}
+	\newcommand{\crefrangeconjunction}{から}
+	\newcommand{\crefmiddleconjunction}{，}
+	\newcommand{\creflastconjunction}{，および}
+
+	% datatool settings
+	%% currently not used
+
+	% compile-switches
+	%% currently not used
+% --------------------
+
+% ---------- style settings ----------
+	% header and footer settings
+	\fancypagestyle{plain}{
+		\cfoot{\thepage}
+		\rfoot{}
+	}
+	\pagestyle{fancy}
+		\lhead{
+			\ifthenelse{\equal{\currLevelTitle}{NOT YET SET}}
+			{}
+			{\currLevelNo.\;\currLevelTitle}
+		}
+		\chead{}
+		\rhead{}
+		\lfoot{}
+		\cfoot{\thepage}
+		\rfoot{}
+
+	% Avoid overlap of number and text in table of contents
+	\setlength{\cftchapnumwidth}{4em}
+	\setlength{\cftsecnumwidth}{3.0em}
+	\setlength{\cftsubsecnumwidth}{3.5em}
+	\setlength{\cftsubsubsecnumwidth}{4.0em}
+	\setlength{\cftparanumwidth}{4.5em}
+
+	% Place dots between chapter titles and page numbers in table of contents.
+	% see: [LaTeXにおいて体裁を整えるのに便利なパッケージ](https://qiita.com/shohirose/items/52f778ebd21f8e5f5c0e)
+	\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+	\renewcommand{\cftchapdotsep}{\cftdotsep}
+
+	% theorem styles
+	\theoremstyle{definition} % non-italic font for definition
+	\newtheorem*{commentary}{解説}
+	\newtheorem*{attention}{注意}
+	\newtheorem*{solution}{解法}
+	\newtheorem*{definition}{定義}
+
+	% table settings
+	\renewcommand\theadfont{} % don't change the font
+
+	% % bytefield hack % not used for now
+	% % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
+	% % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
+	% \newcommand{\colorbitbox}[3]{%
+	% 	\rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
+	% 	\bitbox{#2}{#3}%
+	% }
+
+	% listings settings
+	\lstset{
+		basicstyle=\ttfamily,
+		identifierstyle=\small,
+		commentstyle=\smallitshape,
+		keywordstyle=\small\bfseries,
+		ndkeywordstyle=\small,
+		stringstyle=\small\ttfamily,
+		frame=lines,
+		breaklines=true,
+		columns=[l]{fullflexible},
+		numbers=left,
+		stepnumber=1,
+	}
+% --------------------
+
+\input{cmds/MtyLaTeXCmds/MtyLaTeXCmds}
+
+\begin{document}
+	\maketitle
+	{\scriptsize \tableofcontents}
+	\input{parts/discrete-mathematics/discrete-mathematics}
+	\input{parts/algebra/algebra}
+	\input{parts/realAnalysis/realAnalysis}
+	\input{parts/complexAnalysis/complexAnalysis}
+	\input{parts/linearAlgebra/linearAlgebra}
+	\input{parts/vectorCalculus/vectorCalculus}
+	\input{parts/geometry/geometry}
+	\input{parts/graphTheory/graphTheory}
+	\input{parts/misc/misc}
+	\begin{thebibliography}{99}
+		\bibitem{現代線形代数入門} 池辺八洲彦、池辺淑子、浅井信吉、宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
+		\bibitem{システム線形代数} 谷野哲三 (2013) 『システム線形代数』 朝倉書店.
+		\bibitem{新微分方程式対話} 笠原晧司 (1995) 『新微分方程式対話』 日本評論社
+		\bibitem{入門線形代数} 三宅敏恒 著 (1991) 『入門線形代数』 培風館
+		\bibitem{マルチエージェントシステムの制御} 東 俊一, 永原 正章 編著, 石井秀明, 林 直樹, 桜間 一徳, 畑中 健志 共著 (2015) 『マルチエージェントシステムの制御』 コロナ社
+		\bibitem{離散数学}Seymour Lipschitz 著, 成嶋 弘 監訳 (2010) 『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
+		\bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey 共著 ``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
+		\bibitem{信号処理備忘録} motchy (2022) 『信号処理備忘録 v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
+		\bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学 \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
+	\end{thebibliography}
+\end{document}
