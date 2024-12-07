@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Fixed:
+  - minor typos
 - Added:
   - definition of Fourier series, and its relationship with infinite order vector space
 
