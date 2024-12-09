@@ -57,122 +57,128 @@
 \usepackage{xurl}
 
 % ---------- structure settings ----------
-	\makeatletter
-	\hypersetup{
-		pdftitle={\@title},
-		pdfauthor={\@author}
-	}
-	\makeatother
+\makeatletter
+\hypersetup{
+	pdftitle={\@title},
+	pdfauthor={\@author}
+}
+\makeatother
 
-	\setcounter{tocdepth}{5} % show table of contents up to subparagraph
-	\setcounter{secnumdepth}{5} % show number up to subparagraph
+\setcounter{tocdepth}{5} % show table of contents up to subparagraph
+\setcounter{secnumdepth}{5} % show number up to subparagraph
 
-	\renewcommand*\thepart{\arabic{part}} % arabic numbers for part
+\renewcommand*\thepart{\arabic{part}} % arabic numbers for part
 
-	% Add part number to the beginning of section, subsection, and subsubsection numbers.
-	\counterwithin{chapter}{part}\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
-	\counterwithin{section}{chapter}\renewcommand{\thesection}{\thechapter.\arabic{section}}
-	\counterwithin{subsection}{section}\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-	\counterwithin{subsubsection}{subsection}\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+% Add part number to the beginning of section, subsection, and subsubsection numbers.
+\counterwithin{chapter}{part}\renewcommand{\thechapter}{\thepart.\arabic{chapter}}
+\counterwithin{section}{chapter}\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\counterwithin{subsection}{section}\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\counterwithin{subsubsection}{subsection}\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 
-	% Store current level number and title (later used in header).
-	\newcommand\currLevelNo{} % up to chapter
-	\newcommand\currLevelTitle{NOT YET SET}
-	\let\oldpart\part
-	\renewcommand{\part}[1]{\oldpart{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % Set the the part name to the title storage at the beginning of each part because there is possibly no chapter in the part.
-	\let\oldchapter\chapter
-	\renewcommand{\chapter}[1]{\oldchapter{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+% Store current level number and title (later used in header).
+\newcommand\currLevelNo{} % up to chapter
+\newcommand\currLevelTitle{NOT YET SET}
+\makeatletter
+\let\oldPart\part
+\newcommand{\countedPart}[1]{\oldPart{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % Set the the part name to the title storage at the beginning of each part because there is possibly no chapter in the part.
+\newcommand{\uncountedPart}[1]{\oldPart*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % *-ed version is necessary. See: [https://tex.stackexchange.com/questions/639072/bibliography-title-prints-strange-asterisk-after-i-renewcommand-ed-the-ch]
+\renewcommand{\part}{\@ifstar\uncountedPart\countedPart}
+\let\oldChapter\chapter
+\newcommand{\countedChapter}[1]{\oldChapter{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+\newcommand{\uncountedChapter}[1]{\oldChapter*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+\renewcommand{\chapter}{\@ifstar\uncountedChapter\countedChapter}
+\makeatother
 
-	% Reset equation and figure numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
-	\counterwithin{equation}{section}
-	\counterwithin{figure}{section}
+% Reset equation and figure numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
+\counterwithin{equation}{section}
+\counterwithin{figure}{section}
 
-	% no upper case in header
-	\fancyhead{\nouppercase{\rightmark}}
-	\fancyhead{\nouppercase{\leftmark}}
+% no upper case in header
+\fancyhead{\nouppercase{\rightmark}}
+\fancyhead{\nouppercase{\leftmark}}
 
-	% longtable settings
-	\setcounter{LTchunksize}{200}
+% longtable settings
+\setcounter{LTchunksize}{200}
 
-	% cleveref settings
-	% see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
-	\crefname{equation}{式}{式} % {環境名}{単数形}{複数形}
-	\crefname{figure}{図}{図}
-	\crefname{table}{表}{表}
-	\newcommand{\crefpairconjunction}{と}
-	\newcommand{\crefrangeconjunction}{から}
-	\newcommand{\crefmiddleconjunction}{，}
-	\newcommand{\creflastconjunction}{，および}
+% cleveref settings
+% see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
+\crefname{equation}{式}{式} % {環境名}{単数形}{複数形}
+\crefname{figure}{図}{図}
+\crefname{table}{表}{表}
+\newcommand{\crefpairconjunction}{と}
+\newcommand{\crefrangeconjunction}{から}
+\newcommand{\crefmiddleconjunction}{，}
+\newcommand{\creflastconjunction}{，および}
 
-	% datatool settings
-	%% currently not used
+% datatool settings
+%% currently not used
 
-	% compile-switches
-	%% currently not used
+% compile-switches
+%% currently not used
 % --------------------
 
 % ---------- style settings ----------
-	% header and footer settings
-	\fancypagestyle{plain}{
-		\cfoot{\thepage}
-		\rfoot{}
+% header and footer settings
+\fancypagestyle{plain}{
+	\cfoot{\thepage}
+	\rfoot{}
+}
+\pagestyle{fancy}
+	\lhead{
+		\ifthenelse{\equal{\currLevelTitle}{NOT YET SET}}
+		{}
+		{\currLevelNo.\;\currLevelTitle}
 	}
-	\pagestyle{fancy}
-		\lhead{
-			\ifthenelse{\equal{\currLevelTitle}{NOT YET SET}}
-			{}
-			{\currLevelNo.\;\currLevelTitle}
-		}
-		\chead{}
-		\rhead{}
-		\lfoot{}
-		\cfoot{\thepage}
-		\rfoot{}
+	\chead{}
+	\rhead{}
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
 
-	% Avoid overlap of number and text in table of contents
-	\setlength{\cftchapnumwidth}{4em}
-	\setlength{\cftsecnumwidth}{3.0em}
-	\setlength{\cftsubsecnumwidth}{3.5em}
-	\setlength{\cftsubsubsecnumwidth}{4.0em}
-	\setlength{\cftparanumwidth}{4.5em}
+% Avoid overlap of number and text in table of contents
+\setlength{\cftchapnumwidth}{4em}
+\setlength{\cftsecnumwidth}{3.0em}
+\setlength{\cftsubsecnumwidth}{3.5em}
+\setlength{\cftsubsubsecnumwidth}{4.0em}
+\setlength{\cftparanumwidth}{4.5em}
 
-	% Place dots between chapter titles and page numbers in table of contents.
-	% see: [LaTeXにおいて体裁を整えるのに便利なパッケージ](https://qiita.com/shohirose/items/52f778ebd21f8e5f5c0e)
-	\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
-	\renewcommand{\cftchapdotsep}{\cftdotsep}
+% Place dots between chapter titles and page numbers in table of contents.
+% see: [LaTeXにおいて体裁を整えるのに便利なパッケージ](https://qiita.com/shohirose/items/52f778ebd21f8e5f5c0e)
+\renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+\renewcommand{\cftchapdotsep}{\cftdotsep}
 
-	% theorem styles
-	\theoremstyle{definition} % non-italic font for definition
-	\newtheorem*{commentary}{解説}
-	\newtheorem*{attention}{注意}
-	\newtheorem*{solution}{解法}
-	\newtheorem*{definition}{定義}
+% theorem styles
+\theoremstyle{definition} % non-italic font for definition
+\newtheorem*{commentary}{解説}
+\newtheorem*{attention}{注意}
+\newtheorem*{solution}{解法}
+\newtheorem*{definition}{定義}
 
-	% table settings
-	\renewcommand\theadfont{} % don't change the font
+% table settings
+\renewcommand\theadfont{} % don't change the font
 
-	% % bytefield hack % not used for now
-	% % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
-	% % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
-	% \newcommand{\colorbitbox}[3]{%
-	% 	\rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
-	% 	\bitbox{#2}{#3}%
-	% }
+% % bytefield hack % not used for now
+% % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
+% % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
+% \newcommand{\colorbitbox}[3]{%
+% 	\rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
+% 	\bitbox{#2}{#3}%
+% }
 
-	% listings settings
-	\lstset{
-		basicstyle=\ttfamily,
-		identifierstyle=\small,
-		commentstyle=\smallitshape,
-		keywordstyle=\small\bfseries,
-		ndkeywordstyle=\small,
-		stringstyle=\small\ttfamily,
-		frame=lines,
-		breaklines=true,
-		columns=[l]{fullflexible},
-		numbers=left,
-		stepnumber=1,
-	}
+% listings settings
+\lstset{
+	basicstyle=\ttfamily,
+	identifierstyle=\small,
+	commentstyle=\smallitshape,
+	keywordstyle=\small\bfseries,
+	ndkeywordstyle=\small,
+	stringstyle=\small\ttfamily,
+	frame=lines,
+	breaklines=true,
+	columns=[l]{fullflexible},
+	numbers=left,
+	stepnumber=1,
+}
 % --------------------
 
 \input{cmds/MtyLaTeXCmds/MtyLaTeXCmds}
