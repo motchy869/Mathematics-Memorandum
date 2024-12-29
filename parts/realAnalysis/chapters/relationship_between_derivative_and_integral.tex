@@ -18,7 +18,7 @@
         \end{shadebox}
         \begin{proof}
             \[ \derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{}= \lim_{h\rightarrow0}{\frac{1}{h}\left(\integrate{a}{x+h}{f(u)}{}{u}-\integrate{a}{x}{f(u)}{}{u}\right)} =  \lim_{h\rightarrow0}{\frac{1}{h}\integrate{x}{x+h}{f(u)}{}{u}} \tag{1} \]
-            $h>0$の場合を示す。$h<0$の場合も同じ要領で示せる。
+            以下では $h\to +0$の極限を導く。$h\to -0$の極限も同じ要領で導ける。
             積分の平均値の定理よりある$\xi\in(x,x+h)$が存在して
             \[hf(\xi)=\integrate{x}{x+h}{f(u)}{}{u}\]
             となるから
