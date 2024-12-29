@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - spurious chapter whose name is printed as '*' just before the bibliography
 - Added:
   - definition of Fourier series, and its relationship with infinite order vector space
+  - ∫_a^b 2x/sqrt((x^2-a^2)(b^2-x^2)) = π (0<a<b)
 
 ## [0.18.0]
 

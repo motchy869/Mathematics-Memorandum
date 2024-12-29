@@ -22,3 +22,16 @@
 			大阪大学 大学院 工学研究科 平成21年度 院試 数学 問題4 の解答を参照。
 		\section{\texorpdfstring{$\sum_{n=1}^\infty{\frac{1}{(1+n^2)^2}}=\frac{-1}{2}+\frac{\pi^2}{4\sinh^2{\pi}}+\frac{\pi}{4}\coth\pi$}{Σ\_\{n=1\}\string^∞ 1/(1+n\string^2)\string^2 = -1/2 + π\string^2/(4sinh\string^2(π)) + (π/4)coth(π)}}
 			大阪大学 大学院 工学研究科 平成20年度 院試 数学 問題4 の解答を参照。
+	\chapter{積分公式集}
+		\section{\texorpdfstring{$\integrate{a}{b}{2x/\sqrt{(x^2-a^2)(b^2-x^2)}}{}{x}=\pi\;(0<a<b)$}{∫\_a\string^b 2x/sqrt((x\string^2-a\string^2)(b\string^2-x\string^2)) = π (0<a<b)}}
+			\begin{proof}
+				\quad\par
+				求めたい積分値を $S$ とする。
+				変数変換 $x=a+t$ により次式を得る。
+				\[ S = \integrate{0}{b-a}{\frac{2(a+t)}{\sqrt{(t^2+2at)\parens*{(b^2-a^2)-(t^2+2at)}}}}{}{t} \]
+				変数変換 $t^2+2at=u$ により次式を得る。
+				\[ S = \integrate{0}{b^2-a^2}{\frac{1}{\sqrt{u\parens*{(b^2-a^2)-u}}}}{}{u} \]
+				変数変換 $u=(b^2-a^2)v$ により次式を得る。
+				\[ S = \integrate{0}{1}{\frac{1}{\sqrt{v(1-v)}}}{}{v} = \Beta{1/2}{1/2} = \pi \]
+				（$v=\sin^2\theta$ とおくことで $\Beta{1/2}{1/2} = \pi$ が解る。）
+			\end{proof}
