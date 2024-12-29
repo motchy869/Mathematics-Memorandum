@@ -5,7 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.18.0]
+## [v0.19.0] - 2024-12-29
+
+- Fixed:
+  - minor typos
+  - spurious chapter whose name is printed as '*' just before the bibliography
+- Added:
+  - definition of Fourier series, and its relationship with infinite order vector space
+  - ∫_a^b 2x/sqrt((x^2-a^2)(b^2-x^2)) = π (0<a<b)
+
+## [0.18.0] - 2024-10-14
 
 - Added:
   - directive for SpiX
