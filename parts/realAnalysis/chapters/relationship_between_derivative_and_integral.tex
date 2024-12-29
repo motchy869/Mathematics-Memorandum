@@ -28,7 +28,7 @@
         \end{proof}
     \section{
         畳み込みの微分\texorpdfstring{\\}{}
-        \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{}{s}$}{}
+        \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}$}{}
     }
         \begin{proof}
             \newcommand{\dx}{{\Delta x}}
@@ -42,7 +42,7 @@
             積分の平均値の定理より$^\exists\theta\in(x,x+\dx)\st\integrate{x}{x+\dx}{f(s)g(x+\dx-s)}{}{s} = \dx f(\theta)g(x+\dx-\theta)$であるから
             \begin{align*}
                 \lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx} &= \lim_{\dx\to 0}\left[f(\theta)g(x+\dx-\theta) + \integrate{0}{x}{f(s)\frac{g(x-s+\dx)-g(x-s)}{\dx}}{}{s}\right] \\
-                &= f(x)g(0) + \integrate{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{}{s}
+                &= f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}
             \end{align*}
         \end{proof}
     \section{
