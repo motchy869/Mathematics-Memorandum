@@ -11,18 +11,18 @@
             $\epsilon \to 0$のとき$X(\epsilon) \to \infty$であるから結局
             \[\int_{0}^{\infty}{f'(x) dx} = f(\infty)-f(0)\]
         \end{proof}
-    \section{\texorpdfstring{$\derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{} = f(x)$}{(d/dx)∫\_a\string^x f(x) dx = f(x)}}
+    \section{\texorpdfstring{$\derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{} = f(x)$}{(d/dx)∫\_a\string^x f(u) du = f(x)}}
         \begin{shadebox}
             連続関数$f(x)$について
-            \[\derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{} = f(x)\]
+            \[\derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{} = f(x)\]
         \end{shadebox}
         \begin{proof}
             \begin{equation}
-                \derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{}= \lim_{h\rightarrow0}{\frac{1}{h}\left(\integrate{a}{x+h}{f(x)}{}{x}-\integrate{a}{x}{f(x)}{}{x}\right)} =  \lim_{h\rightarrow0}{\frac{1}{h}\integrate{x}{x+h}{f(x)}{}{x}}
+                \derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{}= \lim_{h\rightarrow0}{\frac{1}{h}\left(\integrate{a}{x+h}{f(u)}{}{u}-\integrate{a}{x}{f(u)}{}{u}\right)} =  \lim_{h\rightarrow0}{\frac{1}{h}\integrate{x}{x+h}{f(u)}{}{u}}
             \end{equation}
             $h>0$の場合を示す。$h<0$の場合も同じ要領で示せる。
             積分の平均値の定理よりある$\xi\in(x,x+h)$が存在して
-            \[hf(\xi)=\integrate{x}{x+h}{f(x)}{}{x}\]
+            \[hf(\xi)=\integrate{x}{x+h}{f(u)}{}{u}\]
             となるから
             \[(1) = \lim_{h\rightarrow0}{f(\xi)}=f(x)\]
         \end{proof}
