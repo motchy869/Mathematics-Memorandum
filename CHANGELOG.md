@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fixed
   - minor abuse of notations
+- Added:
+  - partial differential of integral whose integrand has the end-point of the integral range as one of its arguments
 
 ## [v0.19.0] - 2024-12-29
 
