@@ -38,7 +38,7 @@
             \end{align*}
             $h\to +0$ の極限を導く。$h\to -0$ の極限も同様に導ける。
             \[ (1) = \frac{1}{h}\integrate{a}{y+h}{\bracks*{\partDeriv{f}{y}{}(x,y)h + \LittleO{h\to 0}{h}}}{}{x} = \integrate{a}{y+h}{\partDeriv{f}{y}{}(x,y)}{}{x} + \integrate{a}{y+h}{\frac{\LittleO{h\to 0}{h}}{h}}{}{x} \to \integrate{a}{y}{\partDeriv{f}{y}{}(x,y)}{}{x}\as h\to +0 \]
-            式 (2) については積分の中間値の定理から適当な $\zeta\in[y,y+h]$ が存在して $\integrate{y}{y+h}{f(x,y+h)}{}{x} = hf(\zeta,y+h)$ である。
+            式 (2) については積分の平均値の定理から適当な $\zeta\in[y,y+h]$ が存在して $\integrate{y}{y+h}{f(x,y+h)}{}{x} = hf(\zeta,y+h)$ である。
             よって次式が成り立つ。
             \[ (2) = f(\zeta,y+h) \to f(y,y)\as h\to +0 \]
         \end{proof}
