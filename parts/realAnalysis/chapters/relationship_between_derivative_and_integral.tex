@@ -11,24 +11,42 @@
             $\epsilon \to 0$のとき$X(\epsilon) \to \infty$であるから結局
             \[\int_{0}^{\infty}{f'(x) dx} = f(\infty)-f(0)\]
         \end{proof}
-    \section{\texorpdfstring{$\derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{} = f(x)$}{(d/dx)∫\_a\string^x f(x) dx = f(x)}}
+    \section{\texorpdfstring{$\derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{} = f(x)$}{(d/dx)∫\_a\string^x f(u) du = f(x)}}
         \begin{shadebox}
             連続関数$f(x)$について
-            \[\derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{} = f(x)\]
+            \[\derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{} = f(x)\]
         \end{shadebox}
         \begin{proof}
-            \begin{equation}
-                \derivLong{\integrate{a}{x}{f(x)}{}{x}}{x}{}= \lim_{h\rightarrow0}{\frac{1}{h}\left(\integrate{a}{x+h}{f(x)}{}{x}-\integrate{a}{x}{f(x)}{}{x}\right)} =  \lim_{h\rightarrow0}{\frac{1}{h}\integrate{x}{x+h}{f(x)}{}{x}}
-            \end{equation}
-            $h>0$の場合を示す。$h<0$の場合も同じ要領で示せる。
+            \[ \derivLong{\integrate{a}{x}{f(u)}{}{u}}{x}{}= \lim_{h\rightarrow0}{\frac{1}{h}\left(\integrate{a}{x+h}{f(u)}{}{u}-\integrate{a}{x}{f(u)}{}{u}\right)} =  \lim_{h\rightarrow0}{\frac{1}{h}\integrate{x}{x+h}{f(u)}{}{u}} \tag{1} \]
+            以下では $h\to +0$の極限を導く。$h\to -0$の極限も同じ要領で導ける。
             積分の平均値の定理よりある$\xi\in(x,x+h)$が存在して
-            \[hf(\xi)=\integrate{x}{x+h}{f(x)}{}{x}\]
+            \[hf(\xi)=\integrate{x}{x+h}{f(u)}{}{u}\]
             となるから
             \[(1) = \lim_{h\rightarrow0}{f(\xi)}=f(x)\]
         \end{proof}
+    \section{\texorpdfstring{$\partDerivLong{\integrate{a}{y}{f(x,y)}{}{x}}{y}{} = \integrate{a}{y}{\partDeriv{f}{y}{}(x,y)}{}{x} + f(y,y)$}{(∂/∂y)∫\_a\string^yf(x,y)dx = ∫\_a\string^y(∂f/∂y)dx + f(y,y)}}
+        \label{2変数関数が積分区間の端点を引数にもつ場合の積分の偏微分}
+        \begin{shadebox}
+            $a,b\in\realNumbers,\;a<b$ とし、関数 $f:(a,b)^2\to\complexNumbers$ は定義域に於いて第 1 の変数に関して連続であり、第 2 の変数に関して偏微分可能であるとする。
+            このとき次式が成り立つ。
+            \[ \partDerivLong{\integrate{a}{y}{f(x,y)}{}{x}}{y}{} = \integrate{a}{y}{\partDeriv{f}{y}{}(x,y)}{}{x} + f(y,y)\quad (a<y<b) \]
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                \partDerivLong{\integrate{a}{y}{f(x,y)}{}{x}}{y}{} &= \lim_{h\to 0}\frac{1}{h}\bracks*{\integrate{a}{y+h}{f(x,y+h)}{}{x} - \integrate{a}{y}{f(x,y)}{}{x}} \\
+                &= \lim_{h\to 0}\bracks*{\underbrace{\frac{1}{h}\integrate{a}{y}{f(x,y+h)-f(x,y)}{}{x}}_{(1)} + \underbrace{\frac{1}{h}\integrate{y}{y+h}{f(x,y+h)}{}{x}}_{(2)}}
+            \end{align*}
+            $h\to +0$ の極限を導く。$h\to -0$ の極限も同様に導ける。
+            \[ (1) = \frac{1}{h}\integrate{a}{y+h}{\bracks*{\partDeriv{f}{y}{}(x,y)h + \LittleO{h\to 0}{h}}}{}{x} = \integrate{a}{y+h}{\partDeriv{f}{y}{}(x,y)}{}{x} + \integrate{a}{y+h}{\frac{\LittleO{h\to 0}{h}}{h}}{}{x} \to \integrate{a}{y}{\partDeriv{f}{y}{}(x,y)}{}{x}\as h\to +0 \]
+            式 (2) については積分の中間値の定理から適当な $\zeta\in[y,y+h]$ が存在して $\integrate{y}{y+h}{f(x,y+h)}{}{x} = hf(\zeta,y+h)$ である。
+            よって次式が成り立つ。
+            \[ (2) = f(\zeta,y+h) \to f(y,y)\as h\to +0 \]
+        \end{proof}
+    \section{系：\texorpdfstring{$\partDerivLong{\integrate{y}{a}{f(x,y)}{}{x}}{y}{} = \integrate{y}{a}{\partDeriv{f}{y}{}(x,y)}{}{x} - f(y,y)$}{(∂/∂y)∫\_y\string^af(x,y)dx = ∫\_y\string^a(∂f/∂y)dx - f(y,y)}}
+        \ref{2変数関数が積分区間の端点を引数にもつ場合の積分の偏微分} と同様にして導ける。
     \section{
         畳み込みの微分\texorpdfstring{\\}{}
-        \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{}{s}$}{}
+        \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}$}{}
     }
         \begin{proof}
             \newcommand{\dx}{{\Delta x}}
@@ -42,7 +60,7 @@
             積分の平均値の定理より$^\exists\theta\in(x,x+\dx)\st\integrate{x}{x+\dx}{f(s)g(x+\dx-s)}{}{s} = \dx f(\theta)g(x+\dx-\theta)$であるから
             \begin{align*}
                 \lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx} &= \lim_{\dx\to 0}\left[f(\theta)g(x+\dx-\theta) + \integrate{0}{x}{f(s)\frac{g(x-s+\dx)-g(x-s)}{\dx}}{}{s}\right] \\
-                &= f(x)g(0) + \integrate{s=0}{x}{f(s)\left.\deriv{g(x)}{x}{}\right|_{x=x-s}}{}{s}
+                &= f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}
             \end{align*}
         \end{proof}
     \section{
