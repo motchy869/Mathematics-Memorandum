@@ -35,19 +35,27 @@
                 \[s = \frac{a+b+c}{2}\]
             \end{proof}
     \section{諸定理}
-        \subsection{\texorpdfstring{$\lim_{\|\bm{x}\|\to\infty}\|\bm{x}-\bm{a}\| - \|\bm{x}\| = -\frac{\bm{x}}{\|\bm{x}\|}\cdot\bm{a}$}{近接する2点と遠方の点との距離の差の極限}}
+        \subsection{\texorpdfstring{$\lim_{\norm{\bm{x}}\to\infty}\norm{\bm{x}-\bm{a}} - \norm{\bm{x}} = -\frac{\bm{x}}{\norm{\bm{x}}}\cdot\bm{a}$}{近接する2点と遠方の点との距離の差の極限}}
             \begin{shadebox}
                 $\bm{a},\bm{x}\in\realNumbers^3$とするとき次式が成り立つ。
-                \[ \lim_{\|\bm{x}\|\to\infty}\|\bm{x}-\bm{a}\| - \|\bm{x}\| = -\frac{\bm{x}}{\|\bm{x}\|}\cdot\bm{a} \]
+                \[ \lim_{\norm{\bm{x}}\to\infty}\norm{\bm{x}-\bm{a}} - \norm{\bm{x}} = -\frac{\bm{x}}{\norm{\bm{x}}}\cdot\bm{a} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $\bm{a}=\bm{0}$のときは明らかに成り立つ。
                 以下では$\bm{a}\neq 0$とする。
-                また、$\|\bm{x}\|$を十分大きくとり、$\|\bm{x}\|>\|\bm{a}\|/2$とする。
-                $f(\bm{x}) := \|\bm{x}-\bm{a}\| - \|\bm{x}\|$とすると次式が成り立つ。
-                \[ \bigl(f(\bm{x}) + \|\bm{x}\|\bigr)^2 = \|\bm{x}-\bm{a}\|^2 \quad \therefore f(\bm{x})\bigl(f(\bm{x}) + 2\|\bm{x}\|\bigr) = \|\bm{a}\|^2 - 2\bm{x}\cdot\bm{a} \]
-                $f(\bm{x})$が最小となるのは$\bm{a}$が、原点と$\bm{x}$を結ぶ線分の上にあるときで、その値は$-\|\bm{a}\|$である。
-                $\|\bm{x}\|>\|\bm{a}\|/2$と仮定しているから次式を得る。
-                \[ f(\bm{x}) = \frac{\|\bm{a}\|^2 - 2\bm{x}\cdot\bm{a}}{f(\bm{x}) + 2\|\bm{x}\|} < \frac{\|\bm{a}\|^2 - 2\bm{x}\cdot\bm{a}}{2\|\bm{x}\| - \|\bm{a}\|} \to -\frac{\bm{x}}{\|\bm{x}\|}\cdot\bm{a} \quad \text{as} \quad \|\bm{x}\|\to\infty\]
+                % ↓ 没 @2025-01-12
+                % また、$\norm{\bm{x}}$を十分大きくとり、$\norm{\bm{x}}>\norm{\bm{a}}/2$とする。
+                % $f(\bm{x}) := \norm{\bm{x}-\bm{a}} - \norm{\bm{x}}$とすると次式が成り立つ。
+                % \[ \bigl(f(\bm{x}) + \norm{\bm{x}}\bigr)^2 = \norm{\bm{x}-\bm{a}}^2 \quad \therefore f(\bm{x})\bigl(f(\bm{x}) + 2\norm{\bm{x}}\bigr) = \norm{\bm{a}}^2 - 2\bm{x}\cdot\bm{a} \]
+                % $f(\bm{x})$が最小となるのは、原点と$\bm{x}$を結ぶ線分の上に$\bm{a}$があるときで、その値は$-\norm{\bm{a}}$である。
+                % $\norm{\bm{x}}>\norm{\bm{a}}/2$と仮定しているから次式を得る。
+                % \[ f(\bm{x}) = \frac{\norm{\bm{a}}^2 - 2\bm{x}\cdot\bm{a}}{f(\bm{x}) + 2\norm{\bm{x}}} < \frac{\norm{\bm{a}}^2 - 2\bm{x}\cdot\bm{a}}{2\norm{\bm{x}} - \norm{\bm{a}}} \to -\frac{\bm{x}}{\norm{\bm{x}}}\cdot\bm{a} \quad \text{as} \quad \norm{\bm{x}}\to\infty\]
+                % ↓ new @2025-01-12
+                \begin{align*}
+                    % \norm{\bm{x}-\bm{a}} - \norm{\bm{x}} &= \frac{(\norm{\bm{x}-\bm{a}} - \norm{\bm{x}})(\norm{\bm{x}-\bm{a}} + \norm{\bm{x}})}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}} = \frac{\norm{\bm{x}-\bm{a}}^2 - \norm{\bm{x}}^2}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}} \\
+                    % &= \frac{\norm{\bm{a}}^2 - 2\bm{x}\cdot\bm{a}}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}}
+                    \norm{\bm{x}-\bm{a}} - \norm{\bm{x}} &= \frac{(\norm{\bm{x}-\bm{a}} - \norm{\bm{x}})(\norm{\bm{x}-\bm{a}} + \norm{\bm{x}})}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}} = \frac{\norm{\bm{x}-\bm{a}}^2 - \norm{\bm{x}}^2}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}} \\
+                    &= \frac{\norm{\bm{a}}^2 - 2\bm{x}\cdot\bm{a}}{\norm{\bm{x}-\bm{a}} + \norm{\bm{x}}} = \frac{\norm{\bm{a}}^2/\norm{\bm{x}} - 2\bm{x}\cdot\bm{a}/\norm{\bm{x}}}{1+\frac{\norm{\bm{x}-\bm{a}}}{\norm{\bm{x}}}} \to -\frac{\bm{x}}{\norm{\bm{x}}}\cdot\bm{a} \as \norm{\bm{x}}\to\infty
+                \end{align*}
             \end{proof}
