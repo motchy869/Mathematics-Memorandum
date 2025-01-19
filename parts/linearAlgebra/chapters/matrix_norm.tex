@@ -13,11 +13,11 @@
                 \quad\par
                 上述の3式が等しいことを示す。
                 第1,2,3式の与える値を$c_1,c_2,c_3$とし、3つの式に対応する集合を3つ定義する。
-                \[S_1 \coloneqq \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 \coloneqq \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 \coloneqq \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
+                \[S_1 \coloneq \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}\right\},\quad S_2 \coloneq \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 \coloneq \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
                 まず
                 \[S_2 = \left\{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\norm{\vx}_2=1\right\}\subseteq S_1\]
                 より$c_1\geq c_2$である。
-                \par$c_1$を与えるベクトル$\vx_1$に対して$\vx_1' \coloneqq \vx_1/\norm{\vx_1}_2$とすれば$\norm{\vx_1'}_2=1$であり、$\norm{A\vx_1'}_2=\frac{\norm{A\vx_1}_2}{\norm{\vx_1}_2}$であるからつまり$c_1\in S_2$である($S_1$の最大要素が$S_2$に属する)。
+                \par$c_1$を与えるベクトル$\vx_1$に対して$\vx_1' \coloneq \vx_1/\norm{\vx_1}_2$とすれば$\norm{\vx_1'}_2=1$であり、$\norm{A\vx_1'}_2=\frac{\norm{A\vx_1}_2}{\norm{\vx_1}_2}$であるからつまり$c_1\in S_2$である($S_1$の最大要素が$S_2$に属する)。
                 よって$c_1\leq c_2$。これと$c_1\geq c_2$より$c_1=c_2$。
                 \par
                 $c\in S_3$は任意の$\vx\neq0$に対して$\frac{\norm{A\vx}_2}{\norm{\vx}_2}\leq c$を満たすから$c_1\leq c$。よって$c_1\leq c_3$。
@@ -40,7 +40,7 @@
             \begin{proof}
                 \quad\par
                 $A$の絶対値最大固有値を$\lambda_{max}$, その任意の固有ベクトルを$\vx$とすると
-                \[\rho(A) \coloneqq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
+                \[\rho(A) \coloneq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
             \end{proof}
         \subsection{Hermite行列の絶対値最大固有値の絶対値は2-演算子ノルムと一致する}
             \begin{shadebox}
@@ -65,12 +65,12 @@
                 $\sum_{i=1}^{\sigma}{n_i} = n$であり、$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$とすると
                 $\bigcup_{i=1}^{\sigma}\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$は$\complexNumbers^n$の正規直交基底である。
                 \par
-                $\norm{A}$の定義は$\norm{A} \coloneqq \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
+                $\norm{A}$の定義は$\norm{A} \coloneq \max\{\norm{A\vx}:\norm{\vx}=1\}$であった。
                 任意の$\vx\in\complexNumbers^n,\quad\norm{\vx}=1$は適当な複素数$\bigcup_{i=1}^{\sigma}\{c_{1,i},c_{2,i},\dotsc,c_{n_i,i}\},\quad\sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{|c_{k,i}|^2}}=1$を用いて
                 $\vx = \sum_{i=1}^{\sigma}{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}$と表せるから、
                 \[A\vx = \sum_{i=1}^{\sigma}\lambda_i{\sum_{k=1}^{n_i}{c_{k,i}\vx_{k,i}}}\]
                 よって
-                \[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i \coloneqq \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
+                \[\norm{A\vx}^2 = \inprod{A\vx}{A\vx} = \sum_{i=1}^{\sigma}{{\lambda_i}^2\sum_{k=1}^{n_i}{|c_{k,i}|^2}} = \sum_{i=1}^{\sigma}{c_i{\lambda_i}^2}\quad\left(c_i \coloneq \sum_{k=1}^{n_i}{|c_{k,i}|^2},\quad\sum_{i=1}^{\sigma}{c_i}=1\right)\]
                 これは$c_1=1,\quad c_2=\dotsb=c_\sigma=0$のときに最大となる。よって
                 \[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
             \end{proof}
@@ -92,7 +92,7 @@
                 を示せば良い。\\
                 \[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inprod{\vx}{A^\top A\vx} = \inprod{A^\top A\vx}{\vx}\]
                 であり、$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から、固有値は全て実数であり、固有空間の基底に正規直交基を選べる。\\
-                $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i \coloneqq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
+                $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし、$n_i \coloneq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
                 $\mbox{\boldmath $b$}_{i1},\mbox{\boldmath $b$}_{i2},\dots,\mbox{\boldmath $b$}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると、
                 ノルムが1であるような任意のベクトル$\vx \in \realNumbers^n$は適当な実数$c_{ij}$を用いて
                 \[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]

@@ -13,8 +13,8 @@
             \quad\par
             (分解可能性)\\
             \begin{align*}
-                \fe(x) &\coloneqq \frac{1}{2}\left(f(x)+f(-x)\right)\\
-                \fo(x) &\coloneqq \frac{1}{2}\left(f(x)-f(-x)\right)
+                \fe(x) &\coloneq \frac{1}{2}\left(f(x)+f(-x)\right)\\
+                \fo(x) &\coloneq \frac{1}{2}\left(f(x)-f(-x)\right)
             \end{align*}
             とすれば確かに$f(x)=\fe(x)+\fo(x)$であり$\fe(x),\fo(x)$はそれぞれ連続な偶,奇関数になっている。\\
             \newline
@@ -87,7 +87,7 @@
                 \norm{\bm{x}+\bm{y}}_p^p = \sum_{i=1}^n{|x_i+y_i|^p} = \sum_{i=1}^n{|x_i+y_i||x_i+y_i|^{p-1}} \leq \sum_{i=1}^n{|x_i||x_i+y_i|^{p-1}}+\sum_{i=1}^n{|y_i||x_i+y_i|^{p-1}}
             \end{equation}
             右辺第1項はH\"olderの不等式より上から
-            \[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]\coloneqq|x_i+y_i|^{p-1}\]
+            \[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]\coloneq|x_i+y_i|^{p-1}\]
             で抑えられる。さらに
             \[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}} = \norm{\bm{x}}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\bm{x}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}\]
             同様に式(1)の右辺第2項も上から$\norm{\bm{y}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}$で抑えられるので

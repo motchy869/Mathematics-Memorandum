@@ -7,8 +7,8 @@
         \newcommand{\Go}{G_\textrm{o}}
         $f(t)$の余弦変換$C(\omega)$,正弦変換$S(\omega)$は次のように定義される。
         \begin{align*}
-            C(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\cos{\omega t}}{}{t}\\
-            S(\omega) &\coloneqq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\sin{\omega t}}{}{t}
+            C(\omega) &\coloneq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\cos{\omega t}}{}{t}\\
+            S(\omega) &\coloneq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\sin{\omega t}}{}{t}
         \end{align*}
         $C,S$はそれぞれ\textcolor{red}{$\omega$の偶関数,奇関数}になっていることに注意。そして$t\geq0$において
         \begin{equation}
@@ -20,9 +20,9 @@
         \begin{proof}
             \quad\par
             $f(t)$の$t\geq0$の部分を取り出して$t<0$の部分に拡張することを考える。関数$\ge(t),\go(t)$を次のように定義する。
-            \[\ge(t) \coloneqq f(|t|)\;\;(-\infty<t<\infty)\]
+            \[\ge(t) \coloneq f(|t|)\;\;(-\infty<t<\infty)\]
             \begin{align}
-                \go(t) \coloneqq
+                \go(t) \coloneq
                 \begin{cases}
                     f(t) & (t>=0) \\
                     -f(-t) & (t<0)
@@ -60,7 +60,7 @@
             \begin{shadebox}
                 $n_1,n_2\in\integers$ とする。次式が成り立つ。
                 \[ \integrate{-\infty}{\infty}{\nsinc(x-n_1) \nsinc(x-n_2)}{}{x} = \delta_{n1,n2} \]
-                ここに $\nsinc(x) \coloneqq \sin(\pi x)/(\pi x)$ である。
+                ここに $\nsinc(x) \coloneq \sin(\pi x)/(\pi x)$ である。
             \end{shadebox}
             \begin{proof}
                 \quad\par

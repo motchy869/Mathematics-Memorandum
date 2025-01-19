@@ -9,9 +9,9 @@
             \[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
             よって
             \begin{align*}
-                h_r &\coloneqq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\sinth\cosph}{\sinth\sinph}{\costh}} = 1\\
-                \hth &\coloneqq \norm{\partDeriv{\vr}{\theta}{}} = \norm{\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth}} = r\\
-                \hph &\coloneqq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\sinth\sinph}{r\sinth\cosph}{0}} = r\sinth
+                h_r &\coloneq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\sinth\cosph}{\sinth\sinph}{\costh}} = 1\\
+                \hth &\coloneq \norm{\partDeriv{\vr}{\theta}{}} = \norm{\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth}} = r\\
+                \hph &\coloneq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\sinth\sinph}{r\sinth\cosph}{0}} = r\sinth
             \end{align*}
         \end{proof}
     \section{単位ベクトルに関する3次元Euclid空間との関係}
@@ -34,9 +34,9 @@
             \[\vr = \dthv{r\sinth\cosph}{r\sinth\sinph}{r\costh}\]
             よって
             \begin{align}
-                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \vix\sinth\cosph + \viy\sinth\sinph + \viz\costh \\
-                \ith &\coloneqq \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \vix\costh\cosph + \viy\costh\sinph - \viz\sinth \\
-                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\vix\sinph + \viy\cosph
+                \ir &\coloneq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\sinth\cosph}{\sinth\sinph}{\costh} = \vix\sinth\cosph + \viy\sinth\sinph + \viz\costh \\
+                \ith &\coloneq \frac{1}{\hth}\partDeriv{\vr}{\theta}{} = \frac{1}{r}\dthv{r\costh\cosph}{r\costh\sinph}{-r\sinth} = \vix\costh\cosph + \viy\costh\sinph - \viz\sinth \\
+                \iph &\coloneq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r\sinth}\dthv{-r\sinth\sinph}{r\sinth\cosph}{0} = -\vix\sinph + \viy\cosph
             \end{align}
             これを逆に解いてみる。\\
             $(1)\times\costh-(2)\times\sinth$より$\viz = \ir\costh - \ith\sinth$\\

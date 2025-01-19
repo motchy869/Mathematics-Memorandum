@@ -3,7 +3,7 @@
         \subsection{制約なしの場合}
             \begin{shadebox}
                 $A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
-                $f(\bm{x}) \coloneqq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
+                $f(\bm{x}) \coloneq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
                 \[ \HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b} \]
                 特に$A$が列フルランクであれば$\HerConj{A}A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
                 \[ \mathring{\bm{x}} = -(\HerConj{A}A)^{-1}\HerConj{A}\bm{b} \]
@@ -22,7 +22,7 @@
         \subsection{線形制約付きの場合}
             \begin{shadebox}
                 $f$の定義は前小節のものとする。
-                $m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneqq \bm{c}_i^\top\bm{x}+d_i$とする。
+                $m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneq \bm{c}_i^\top\bm{x}+d_i$とする。
                 ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
             \end{shadebox}
             \begin{proof}

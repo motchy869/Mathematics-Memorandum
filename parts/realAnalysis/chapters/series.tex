@@ -1,7 +1,7 @@
 \chapter{級数}
     \section{\texorpdfstring{$S_l = \sum_{k=0}^\infty k^l r^k$}{A\_l = Σ\_\{k=0\}\string^∞ k\string^l r\string^k}を逐次的に求める}
         \begin{shadebox}
-            $S_l \coloneqq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
+            $S_l \coloneq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
             \[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
         \end{shadebox}
         \begin{proof}
@@ -17,7 +17,7 @@
     \section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
         \begin{shadebox}
             数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
-            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneqq \sum_{j=1}^i a_j \right) \]
+            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneq \sum_{j=1}^i a_j \right) \]
         \end{shadebox}
         \begin{proof}
                 \quad\\
@@ -46,7 +46,7 @@
             \end{minipage}\\
             \newline
             (エレガントな証明)\\
-            \quad $A_i \coloneqq \sum_{j=1}^i a_j,\;A_0 \coloneqq 0$と定義すると
+            \quad $A_i \coloneq \sum_{j=1}^i a_j,\;A_0 \coloneq 0$と定義すると
             \begin{align*}
                 \sum_{i=1}^n a_ib_i &= \sum_{i=1}^n (A_i-A_{i-1})b_i = \sum_{i=1}^n A_ib_i - \sum_{i=2}^n A_{i-1}b_i = \sum_{i=1}^n A_ib_i - \sum_{i=1}^n A_{i}b_{i+1} \\
                 &= A_nb_n + \sum_{i=1}^n A_i(b_i-b_{i+1}) = A_nb_n - \sum_{i=1}^n A_i(b_{i+1} - b_i)

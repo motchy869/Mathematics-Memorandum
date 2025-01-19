@@ -1,6 +1,6 @@
 \chapter{置換}
     \section{置換の符号の定理}
-        \subsection{\texorpdfstring{$\sigma'(i) \coloneqq \sigma(n+1-i)$としたときの$\sgn\parens*{\sigma'}$}{σ'(i) := σ(n+1-i)としたときのsgn(σ')}}
+        \subsection{\texorpdfstring{$\sigma'(i) \coloneq \sigma(n+1-i)$としたときの$\sgn\parens*{\sigma'}$}{σ'(i) := σ(n+1-i)としたときのsgn(σ')}}
             \label{置換の引数を逆順にしたときの符号}
             \begin{shadebox}
                 $\sigma$を$S=\{1,\dotsc,n\}$上の置換とする。
@@ -29,7 +29,7 @@
                 逆順にする置換は、$1,2,\dotsc,n$を左右の端同士で交換する処理を外側から内側に向かって進める方針で考えれば定理の主張が成り立つことがわかる。
             \end{proof}
             Mathematicaを用いた数値例による検証は\verb|theorem_sign_of_permutation.nb|を参照
-        \subsection{\texorpdfstring{$\sigma'(i) \coloneqq n+1-\sigma(i)$としたときの$\sgn\parens*{\sigma'}$}{σ'(i) := n+1-σ(i)おしたときのsgn(σ')}}
+        \subsection{\texorpdfstring{$\sigma'(i) \coloneq n+1-\sigma(i)$としたときの$\sgn\parens*{\sigma'}$}{σ'(i) := n+1-σ(i)おしたときのsgn(σ')}}
             \label{出力を逆順にしたときの置換の符号}
             \begin{shadebox}
                 $\sigma$を$S=\{1,\dotsc,n\}$上の置換とする。
@@ -42,8 +42,8 @@
             \begin{proof}
                 \quad\par
                 $\sigma$を互換の積で表したものを$\sigma=b_k b_{k-1}\dotsm b_1 b_0$とする。
-                但し$b_0 \coloneqq \epsilon$(単位置換)とする。
-                $\sigma_0 \coloneqq b_0,\;\sigma_l \coloneqq b_l\sigma_{l-1}\;(l=1,2,\dotsc,k)$とする。
+                但し$b_0 \coloneq \epsilon$(単位置換)とする。
+                $\sigma_0 \coloneq b_0,\;\sigma_l \coloneq b_l\sigma_{l-1}\;(l=1,2,\dotsc,k)$とする。
                 \par
                 $\sigma'_0$は逆順にする置換である。
                 $1,2,\dotsc,n$を左右の端同士で交換する処理を外側から内側に向かって進める方針で考えれば$\sigma'_0$の符号は定理の主張の$s$に等しいことが解る。

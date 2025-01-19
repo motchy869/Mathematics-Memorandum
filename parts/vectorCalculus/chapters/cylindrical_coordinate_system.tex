@@ -9,9 +9,9 @@
             \[\vr = \dthv{r\cosph}{r\sinph}{z}\]
             よって
             \begin{align*}
-                h_r &\coloneqq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
-                \hph &\coloneqq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
-                h_z &\coloneqq \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
+                h_r &\coloneq \norm{\partDeriv{\vr}{r}{}} = \norm{\dthv{\cosph}{\sinph}{0}} = 1\\
+                \hph &\coloneq \norm{\partDeriv{\vr}{\varphi}{}} = \norm{\dthv{-r\cosph}{r\sinph}{0}} = r\\
+                h_z &\coloneq \norm{\partDeriv{\vr}{z}{}} = \norm{\dthv{0}{0}{1}} = 1
             \end{align*}
         \end{proof}
     \section{単位ベクトルに関する3次元Euclid空間との関係}
@@ -31,8 +31,8 @@
             \[\vr = \dthv{r\cosph}{r\sinph}{z}\]
             よって
             \begin{align}
-                \ir &\coloneqq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \vix\cosph+\viy\sinph \\
-                \iph &\coloneqq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\vix\sinph+\viy\cosph
+                \ir &\coloneq \frac{1}{h_r}\partDeriv{\vr}{r}{} = \dthv{\cosph}{\sinph}{0} = \vix\cosph+\viy\sinph \\
+                \iph &\coloneq \frac{1}{\hph}\partDeriv{\vr}{\varphi}{} = \frac{1}{r}\dthv{-r\sinph}{r\cosph}{0} = -\vix\sinph+\viy\cosph
             \end{align}
             これを逆に解いてみる。\\
             $(1)\times\cosph-(2)\times\sinph$より$\vix = \ir\cosph - \iph\sinph$\\
@@ -52,7 +52,7 @@
             \def \phr {\partDeriv{\phi}{r}{}}
             \def \php {\partDeriv{\phi}{\varphi}{}}
             \def \phz {\partDeriv{\phi}{z}{}}
-            $d\phi \coloneqq \phr dr + \php d\varphi + \phz dz$であるから
+            $d\phi \coloneq \phr dr + \php d\varphi + \phz dz$であるから
             \begin{align*}
                 \partDeriv{\phi}{x}{} &= \phr\partDeriv{r}{x}{} + \php\partDeriv{\varphi}{x}{} + \phz\partDeriv{z}{x}{}\\
                 &= \phr\ppx{\sqrt{x^2+y^2}} + \php\ppx{\varphi}

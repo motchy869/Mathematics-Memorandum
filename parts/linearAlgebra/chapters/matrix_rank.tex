@@ -89,8 +89,8 @@
             なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n$は一次独立である。
             よって
             \begin{align*}
-                T &\coloneqq [\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n]\\
-                P &\coloneqq [\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n]
+                T &\coloneq [\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n]\\
+                P &\coloneq [\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n]
             \end{align*}
             とすれば
             \[AT = P\quad(A = PT^{-1})\]
@@ -138,8 +138,8 @@
             $\Ker{A}$の基底を$\{\bm{x}_{r+1},\bm{x}_{r+2},\dotsc,\bm{x}_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
             これを含む$\field^n$の基底を$\{\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_r,\bm{x}_{r+1},\dotsc,\bm{x}_n\}$とすると
             \[\mathrm{span}[A\bm{x}_1,A\bm{x}_2,\dotsc,A\bm{x}_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
-            である。$\bm{y}_i\coloneqq A\bm{x}_i\quad(i=1,2,\dotsc,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\bm{y}_{r+1},\dotsc,\bm{y}_m\}$とすると
-            $T_x\coloneqq[\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_n],\quad T_y\coloneqq[\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m]$は正則であり、
+            である。$\bm{y}_i\coloneq A\bm{x}_i\quad(i=1,2,\dotsc,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\bm{y}_{r+1},\dotsc,\bm{y}_m\}$とすると
+            $T_x\coloneq[\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_n],\quad T_y\coloneq[\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m]$は正則であり、
             \begin{align*}
                 AT_x &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\\
                 &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m][\bm{e}_1,\bm{e}_2,\dotsc,\bm{e}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
@@ -169,7 +169,7 @@
                 {T_{y,A}}^{-1}AT_{x,A} &= {T_{y,B}}^{-1}BT_{x,B}\\
                 \therefore\;AT_{x,A}{T_{x,B}}^{-1} &= T_{y,A}{T_{y,B}}^{-1}B
             \end{align*}
-            上式で$T_1\coloneqq T_{x,A}{T_{x,B}}^{-1},\quad T_2\coloneqq T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
+            上式で$T_1\coloneq T_{x,A}{T_{x,B}}^{-1},\quad T_2\coloneq T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
             \\
             (十分)
             \par

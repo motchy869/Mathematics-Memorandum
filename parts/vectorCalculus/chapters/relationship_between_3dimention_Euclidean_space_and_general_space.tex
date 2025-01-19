@@ -5,7 +5,7 @@
         $\bm{u}\in\realNumbers^3,\;\bm{r} = T(\bm{u})$とする。
         例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり、$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,\;(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
         次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数(Lam\'{e} coefficient)と呼ぶ。
-        \[ h_i \coloneqq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
+        \[ h_i \coloneq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
         $h_i$は$T$のJacobi行列$J$の第$i$列のノルムであり、逆写像定理から$J$は可逆なので$h_i \neq 0$である。
         \par
         次式で定める単位ベクトルを「$u_i$方向単位ベクトル」と呼ぶ。
@@ -51,7 +51,7 @@
         \begin{shadebox}
             既出の記号の定義は引き継ぐ。
             $\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^1$級であるとする。
-            $\tilde{\phi}(\bm{u}) \coloneqq \phi(T(\bm{u}))$とする。
+            $\tilde{\phi}(\bm{u}) \coloneq \phi(T(\bm{u}))$とする。
             $\phi$の勾配$\nabla_\bm{r}\phi(\bm{r})$は$\bm{u}$を用いて次式で表せる。
             \[ \nabla_\bm{r}\phi(\bm{r}) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\phi}{u_i}{} = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
         \end{shadebox}
@@ -60,7 +60,7 @@
                 \bm{j}_i = \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}\right]^\top \\
                 \therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\frac{1}{h_j}\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2} = JH^{-1}
             \end{gather*}
-            ここに$\quad H \coloneqq \diag{h_1,h_2,h_3}$であり、$J$は$T$のJacobi行列である。
+            ここに$\quad H \coloneq \diag{h_1,h_2,h_3}$であり、$J$は$T$のJacobi行列である。
             以上より次式が成り立つ。
             \[ [\bm{i}_1,\bm{i}_2,\bm{i}_3] = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1} \]
             $\partDeriv{\phi}{r_i}{}$を評価すると次式を得る。
@@ -184,7 +184,7 @@
             既出の記号の定義は引き継ぐ。
             さらに$T$は$\textrm{C}^2$級であるとし、$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
             $\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^2$級であるとする。
-            $\tilde{\phi}(\bm{u}) \coloneqq \phi(T(\bm{u}))$とする。
+            $\tilde{\phi}(\bm{u}) \coloneq \phi(T(\bm{u}))$とする。
             $\nabla^2_\bm{r}\phi(\bm{r})$は$\bm{u}$を用いて次式で表せる。
             \[ \nabla^2_\bm{r}\phi(\bm{r}) = \frac{1}{h_1 h_2 h_3}\left[ \partDerivLong{\left(\frac{h_2 h_3}{h_1}\partDeriv{\tilde{\phi}(\bm{u})}{u_1}{}\right)}{u_1}{} + \partDerivLong{\left(\frac{h_3 h_1}{h_2}\partDeriv{\tilde{\phi}(\bm{u})}{u_2}{}\right)}{u_2}{} + \partDerivLong{\left(\frac{h_1 h_2}{h_3}\partDeriv{\tilde{\phi}(\bm{u})}{u_3}{}\right)}{u_3}{} \right] \]
         \end{shadebox}

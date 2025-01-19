@@ -20,7 +20,7 @@
         いくつか記号の約束を決めておく。
         \begin{itemize}
             \item 閉直方体$E$上の有界関数$f$と、$E$の分割$\Delta$に対して過剰和と不足和を
-            \[ S(f,\Delta) \coloneqq \sum_{r\in\Delta} \sup_{\bm{x}\in r}f(\bm{x})|r|,\quad s(f,\Delta) \coloneqq \sum_{r\in\Delta} \inf_{\bm{x}\in r}f(\bm{x})|r| \]
+            \[ S(f,\Delta) \coloneq \sum_{r\in\Delta} \sup_{\bm{x}\in r}f(\bm{x})|r|,\quad s(f,\Delta) \coloneq \sum_{r\in\Delta} \inf_{\bm{x}\in r}f(\bm{x})|r| \]
             と定義する。
             \item 有界集合$A$のJordan外測度,内測度,測度をそれぞれ$\mJo{A}, \mJi{A}, \mJordan{A}$と書く。
         \end{itemize}
@@ -171,7 +171,7 @@
             Lebesgue可測集合$A_1,A_2,\dotsc\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
             \begin{proof}
                 \quad\par
-                $B_n \coloneqq \bigsqcup_{i=1}^n A_i,\;B \coloneqq \bigsqcup_{i=1}^\infty A_i$とする。
+                $B_n \coloneq \bigsqcup_{i=1}^n A_i,\;B \coloneq \bigsqcup_{i=1}^\infty A_i$とする。
                 任意の集合$S\in\realNumbers^n$に対して
                 \[ \mLebO{S\cap B} + \mLebO{S\cap B^\complement} = \mLebO{S} \]
                 となることを示す。$\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
@@ -225,9 +225,9 @@
                     \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
                     \textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
                     &= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
-                    &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneqq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
+                    &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
                 \end{align*}
-                $U\coloneqq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
+                $U\coloneq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
                 まず$x\notin U\Rightarrow c(x)=0$は明らか。
                 各$x\in U$に対して、$x$に依存して決まる次のような自然数$m(x)$が存在する。
                 \begin{center}

@@ -138,23 +138,23 @@
             \end{proof}
         \subsection{巡回行列の固有値}
             \begin{shadebox}
-                $N\in\naturalNumbers,\;a_0,a_1,\dots,a_{N-1}\in\complexNumbers,\;\bm{a}\coloneqq[a_0,\dots,a_{N-1}]^\top$とする。
+                $N\in\naturalNumbers,\;a_0,a_1,\dots,a_{N-1}\in\complexNumbers,\;\bm{a}\coloneq[a_0,\dots,a_{N-1}]^\top$とする。
                 $\bm{a}$の要素を$m\in\{0,1,\dots,N-1\}$だけ巡回シフトしたベクトル$\bm{a}_m$を次式で定義する。
                 \[
-                    \bm{a}_m \coloneqq
+                    \bm{a}_m \coloneq
                     \begin{cases}
                         \bm{a} & (m=0) \\
                         [a_{N-m},\dots,a_{N-1},a_0,a_1,\dots,a_{N-1-m}]^\top & (m=1,2,\dots,N-1)
                     \end{cases}
                 \]
                 $A\in\complexNumbers^{N\times N}$を次式で定義する。
-                \[ A \coloneqq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
+                \[ A \coloneq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
                 このとき$A$は次のように対角化可能である。
                 \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
                 ここに$W$は$N\times N$ DFT基底行列であり、第$(n,k)$要素は次式で定義される。
-                \[ W_{n,k} \coloneqq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
+                \[ W_{n,k} \coloneq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
                 $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり、次式で定義される。
-                \[ \DFT{\bm{a}} \coloneqq \HerConj{W}\bm{a} \]
+                \[ \DFT{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
                 \[ \sum_{n=0}^{N-1}\overline{W_{k,n}}a_n \]
             \end{shadebox}
@@ -181,7 +181,7 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $2^n$次のHadamard行列を$H_n$と書く。$H_0 \coloneqq [1]$と定義する。
+                $2^n$次のHadamard行列を$H_n$と書く。$H_0 \coloneq [1]$と定義する。
                 まず、$H_1$の固有値と固有ベクトルの組が$(\pm\sqrt{2},[1\pm\sqrt{2},1]^\top)$(複合同順)であることは容易に導ける。
                 よって$n=1$のとき定理の主張が成り立つ。
                 \par
@@ -359,7 +359,7 @@
         %\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
         %	\begin{shadebox}
         %		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし、その代数的重複度を$n_i,n_j$とする。
-        %		一般固有空間を$F_i\coloneqq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneqq\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
+        %		一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
         %	\end{shadebox}
         \subsection{一般固有空間への直和分解}
             \label{一般固有空間への分解}
@@ -370,9 +370,9 @@
             \begin{proof}
                 \quad\par
                 Cayley-Hamiltonの定理と\cite{システム線形代数}補題2.2より最初の式\;$\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)}$\;が従う。
-                次に${\nu_i}' \coloneqq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
+                次に${\nu_i}' \coloneq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
                 各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より、
-                $F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneqq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneqq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば、
+                $F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば、
                 次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\dotsc,p)$が存在する。
                 \[A = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\]
                 \par
@@ -542,8 +542,8 @@
                 $J(\lambda, n)$を次のように対角成分とその一つ上の斜めラインに分ける。
                 \[
                     J(\lambda, n)=\Gamma+U,\quad
-                    \Gamma\coloneqq\lambda I_{n\times n},\quad
-                    U\coloneqq
+                    \Gamma\coloneq\lambda I_{n\times n},\quad
+                    U\coloneq
                     \begin{bmatrix}
                         0		& 1	& 0			& \cdots	& 0\\
                                 & 0	& 1			& \ddots	& \vdots\\

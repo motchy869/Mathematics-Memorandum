@@ -3,7 +3,7 @@
         \subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
         \begin{proof}
             \quad\par
-            $g(\bm{x}) \coloneqq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
+            $g(\bm{x}) \coloneq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
             $g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
             \[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
             であるが、maxの性質から
@@ -25,7 +25,7 @@
                 $n=1$の時は明らか。
                 $n=2$のときは凸関数の定義より成り立つ。
                 $n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
-                $w'_i\coloneqq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから、仮定より
+                $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから、仮定より
                 \begin{align*}
                     f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
                     \therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
@@ -71,7 +71,7 @@
                 \quad\par
                 式 (1) は次式と等価である。
                 \[ \sum_{i=1}^n w_i/x_i \geq \frac{1}{\prod_{i=1}^n {x_i}^{w_i}} \]
-                ここで $\tilde{x}_i \coloneqq x_i$ とすると上式は次式と等価である。
+                ここで $\tilde{x}_i \coloneq x_i$ とすると上式は次式と等価である。
                 \[ \sum_{i=1}^n w_i\tilde{x}_i \geq \prod_{i=1}^n {\tilde{x}_i}^{w_i} \]
                 上式の成立は \ref{重み付き相加,相乗平均の関係とYoungの不等式} より明らかである。
             \end{proof}
@@ -94,7 +94,7 @@
                 \par
                 $1\Rightarrow 2$を示す。
                 $x\in I,x\neq x_1$とする。
-                $g(x) \coloneqq f(x) - \bigl(f(x_1) - f^{(1)}(x_1)(x-x_1)\bigr)$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
+                $g(x) \coloneq f(x) - \bigl(f(x_1) - f^{(1)}(x_1)(x-x_1)\bigr)$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
                 さらに$g^{(2)}(x) = f^{(2)}(x) > 0$である。
                 よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり、2が成り立つ。
                 \par
@@ -119,7 +119,7 @@
                     \therefore \frac{f(x_2)-f(x_1)}{x_2-x_1} &\geq f^{(1)}(x_1) \quad \text{(真に大きいとまでは言えないことに注意)} \\
                     f(x_2) &\geq f(x_1) + f^{(1)}(x_1)(x_2-x_1)
                 \end{align*}
-                よって$x_4 \coloneqq (x_1 + x_2)/2$とすると$f(x_4) \geq f(x_1) + f^{(1)}(x_1)(x_4-x_1)$となる。
+                よって$x_4 \coloneq (x_1 + x_2)/2$とすると$f(x_4) \geq f(x_1) + f^{(1)}(x_1)(x_4-x_1)$となる。
                 式(1)で$\lambda=1/2$とすると次式を得る。
                 \begin{align*}
                     \frac{f(x_2)-f(x_1)}{x_2-x_1} &> \frac{f(x_4) - f(x_1)}{(x_2-x_1)/2} \\

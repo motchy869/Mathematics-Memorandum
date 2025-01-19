@@ -11,7 +11,7 @@
                 \begin{align*}
                     \derivLong{\norm{\bm{x}}_p}{p}{} < 0 &\iff \derivLong{\log \norm{\bm{x}}_p}{p}{} < 0 \iff -\frac{1}{p^2}\log \sum_{i=1}^r |x_i|^p + \frac{1}{p}\times\frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < 0 \\
                     &\iff \frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < \frac{1}{p}\log \sum_{i=1}^r |x_i|^p \\
-                    &\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M \coloneqq \sum_{i=1}^r |x_i|^p,\; w_i \coloneqq |x_i|^p/M \right) \\
+                    &\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M \coloneq \sum_{i=1}^r |x_i|^p,\; w_i \coloneq |x_i|^p/M \right) \\
                     &\iff \sum_{i=1}^r w_i\log M w_i < \log M \iff \sum_{i=1}^r w_i(\log M + \log w_i) < \log M \\
                     &\iff \sum_{i=1}^r w_i\log w_i < 0 \quad \left( \because\;\sum_{i=1}^r w_i = 1 \right) \quad = \text{true} \quad (\because\; 0<w_i<1)
                 \end{align*}
@@ -70,7 +70,7 @@
         % 		\quad\par
         % 		全要素が正の場合について証明すれば十分である。
         % 		Lagrangeの未定乗数法を使う。
-        % 		目的関数を$f(\bm{x})\coloneqq\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x})\coloneqq\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda)\coloneqq f(\bm{x})+\lambda g(\bm{x})$とする。
+        % 		目的関数を$f(\bm{x})\coloneq\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x})\coloneq\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda)\coloneq f(\bm{x})+\lambda g(\bm{x})$とする。
         % 		最適解を$\HerConj{\bm{x}}$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\HerConj{\bm{x}}=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
         % 		よって$\HerConj{\bm{x}}$は全要素が等しい。これと$\norm{\HerConj{\bm{x}}}=1,\HerConj{\bm{x}}\geq\bm{0}$より$\HerConj{\bm{x}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\HerConj{\bm{x}})=\sqrt{n}$
         % 	\end{proof}
@@ -78,14 +78,14 @@
             \label{th:単位球面上の点の座標の絶対値の総和の最大値}
             \begin{proof}
                 \quad\par
-                $x_k = r_k \NapierE^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneqq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneqq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+                $x_k = r_k \NapierE^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
                 \par
                 数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\dotsc,m-1$について(*)が成り立つと仮定する。
                 $r_1,\dotsc,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
                 \par
                 そこで$r_1,\dotsc,r_n$が全て正であるとする。
                 Lagrangeの未定乗数法を使う。
-                Lagrange関数を$L(\bm{r},\lambda)\coloneqq f(\bm{r})+\lambda g(\bm{r})$とする。
+                Lagrange関数を$L(\bm{r},\lambda)\coloneq f(\bm{r})+\lambda g(\bm{r})$とする。
                 $\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから、今関心のある領域に特異点は存在しない。
                 $r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\dotsc,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
                 よってLagrangeの未定乗数法で極値を見つければそれは極大値であり、また最大値でもある。
