@@ -14,8 +14,8 @@
         \begin{equation}
             f(t) \sim \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega} \nonumber
         \end{equation}
-        が成り立つ。注意すべきは、この逆変換は$t<0$に関しては何も教えてくれないということだ。変換時に$t<0$における情報を捨ててしまっているのだから当然である。
-        以下、上の関係を示す。
+        が成り立つ。注意すべきは，この逆変換は$t<0$に関しては何も教えてくれないということだ。変換時に$t<0$における情報を捨ててしまっているのだから当然である。
+        以下，上の関係を示す。
         \newline\par
         \begin{proof}
             \quad\par
@@ -53,7 +53,7 @@
             $t\geq0$では$f,\ge,\go$は等しいから
             \[f(t) \sim \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\]
         \end{proof}
-        繰り返しになるが上式は$t\geq0$でしか成り立たない。$t<0$のことはわからないのである。クレイジーな変換だと思うかもしれないが、ちゃんと利点もある。実験データや音声,映像データは普通、記録開始を時刻0として扱う。この場合は$t<0$に関しては知る必要がない(どうでもいい)のだ。そういう状況下では複素数が登場する本家のフーリエ変換よりもsin,cosどっちか好きな方だけ使えば済むような正弦,余弦変換が役に立つことがある。
+        繰り返しになるが上式は$t\geq0$でしか成り立たない。$t<0$のことはわからないのである。クレイジーな変換だと思うかもしれないが，ちゃんと利点もある。実験データや音声,映像データは普通，記録開始を時刻0として扱う。この場合は$t<0$に関しては知る必要がない(どうでもいい)のだ。そういう状況下では複素数が登場する本家のフーリエ変換よりもsin,cosどっちか好きな方だけ使えば済むような正弦,余弦変換が役に立つことがある。
     }
     \section{応用}
         \subsection{正規化 sinc 関数の正規直交性}
@@ -64,9 +64,9 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                被積分関数を引数に関して平行移動しても積分結果は保たれるので、次式が成り立つことを示せば十分である。
+                被積分関数を引数に関して平行移動しても積分結果は保たれるので，次式が成り立つことを示せば十分である。
                 \[ \integrate{-\infty}{\infty}{\nsinc(x)\nsinc(x-n)}{}{x} = \delta_{1,n} \quad (n\in\integers) \]
-                証明には、積の Fourier 変換が Fourier 変換の畳み込みと一致する性質、および矩形関数の Fourier 変換を用いる。
+                証明には，積の Fourier 変換が Fourier 変換の畳み込みと一致する性質，および矩形関数の Fourier 変換を用いる。
                 \begin{align*}
                     &\phantom{=} \integrate{-\infty}{\infty}{\nsinc(x)\nsinc(x-n)}{}{x} = \integrate{-\infty}{\infty}{\sinc(\pi x)\sinc(\pi(n-x))}{}{x} \\
                     &= \integrate{-\infty}{\infty}{\psi(x)\psi(n-x)}{}{x} = (\psi*\psi)(n) \tag{1}

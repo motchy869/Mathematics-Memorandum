@@ -1,7 +1,7 @@
 \chapter{複素積分}
     \section{\texorpdfstring{$\integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a}$}{Gauss積分で積分変数にオフセットがある場合}}
         \begin{shadebox}
-            $a>0,\;b\in\complexNumbers$ とするとき、次式が成り立つ。
+            $a>0,\;b\in\complexNumbers$ とするとき，次式が成り立つ。
             \[ \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a} \]
         \end{shadebox}
         \begin{proof}
@@ -22,7 +22,7 @@
     \section{無限に大きい半円周上での\texorpdfstring{$\NapierE^{iz}/z$}{e\string^(iz)/z}の積分}
         \label{無限に大きい半円周上でのe^(iz)/zの積分}
         \begin{shadebox}
-            $R>0$とし、パラメータ表示された曲線$C:\;z = R\NapierE^{i\theta};\;\theta :0\to\pi$を考える。
+            $R>0$とし，パラメータ表示された曲線$C:\;z = R\NapierE^{i\theta};\;\theta :0\to\pi$を考える。
             このとき次式が成り立つ。
             \[ \abs{\integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z}} < \frac{\pi}{R}\left(1-\NapierE^{-R}\right) \]
         \end{shadebox}
@@ -45,5 +45,5 @@
                 \[\integrate{0}{2\pi}{\Log(1-a\NapierE^{i\theta})}{}{\theta} = \integrate{C}{}{\frac{\Log(1-az)}{iz}}{}{z}\quad (C:\text{原点中心の左回り単位円})\]
                 被積分関数の$C$内部の特異点は$z=0$である。原点の近傍(具体的には$|z|<1/|a|$の範囲)においては
                 \[\frac{\Log(1-az)}{iz} = \frac{-1}{iz}\sum_{n=1}^\infty\frac{(az)^n}{n}=\frac{-1}{i}\sum_{n=1}^\infty\frac{a^nz^{n-1}}{n} = \frac{-1}{i}\sum_{n=0}^\infty\frac{a^{n+1}}{n+1}z^n\]
-                であり、特異点$z=0$は除去可能であることから従う。
+                であり，特異点$z=0$は除去可能であることから従う。
             \end{solution}

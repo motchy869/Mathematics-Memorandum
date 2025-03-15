@@ -7,7 +7,7 @@
             \[\Gamma(p)\Gamma(q) = \left(\int_{0}^{\infty}{x^{p-1}\NapierE^{-x} dx}\right)\left(\int_{0}^{\infty}{y^{q-1}\NapierE^{-y} dy}\right) = \int_{x=0}^{\infty}{\int_{y=0}^{\infty}{x^{p-1}y^{q-1}\NapierE^{-x-y} dy} dx}\]
             積分経路を変更する。線分$(0,z)\to(z,0)$に沿った積分を$z:0 \to \infty$まで足し合わせる。上式の$y$は$z-x$に変わり
             \[\int_{z=0}^{\infty}{\left(\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1}\NapierE^{-x+x-z} dx}\right) dz} = \int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1} dx}\right] dz}\]
-            (詳しく言えば、$x=u,y=v-u$なる変数変換を行ったのと等しい。ヤコビアンは1となる。)
+            (詳しく言えば，$x=u,y=v-u$なる変数変換を行ったのと等しい。ヤコビアンは1となる。)
             \\$x=uz$なる変数変換を行って
             \begin{align*}
                 &\quad\int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{u=0}^{1}{z^{p-1}u^{p-1}z^{q-1}(1-u)^{q-1} zdu}\right] dz} = \int_{z=0}^{\infty}{\NapierE^{-z}z^{p+q-1}\left[\int_{u=0}^{1}{u^{p-1}(1-u)^{q-1} du}\right] dz}\\
@@ -40,7 +40,7 @@
                     \bm{1}_n^\top
                 \end{bmatrix}
             \]
-            なる変数変換を行うと、$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,\;|P|=1$なので
+            なる変数変換を行うと，$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,\;|P|=1$なので
             \begin{align*}
                 \prod_{i=1}^n \Gamma(\alpha_i) &= \integrate{y_n=0}{\infty}{\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} \NapierE^{-y_n}|P|^{-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n} \\
                 &= \integrate{y_n=0}{\infty}{\NapierE^{-y_n}\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n}

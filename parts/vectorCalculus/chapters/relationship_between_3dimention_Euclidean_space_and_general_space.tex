@@ -3,19 +3,19 @@
         $T:\realNumbers^3\to\realNumbers^3$は可逆であり$\mathrm{C}^1$級であるとする。
         $T$のJacobi行列の列は互いに直交するものとする。
         $\bm{u}\in\realNumbers^3,\;\bm{r} = T(\bm{u})$とする。
-        例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり、$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,\;(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
+        例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり，$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,\;(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
         次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数(Lam\'{e} coefficient)と呼ぶ。
         \[ h_i \coloneq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
-        $h_i$は$T$のJacobi行列$J$の第$i$列のノルムであり、逆写像定理から$J$は可逆なので$h_i \neq 0$である。
+        $h_i$は$T$のJacobi行列$J$の第$i$列のノルムであり，逆写像定理から$J$は可逆なので$h_i \neq 0$である。
         \par
         次式で定める単位ベクトルを「$u_i$方向単位ベクトル」と呼ぶ。
         \[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} \]
-        $T$のJacobi行列の列が互いに直交するため、$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
+        $T$のJacobi行列の列が互いに直交するため，$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
     \section{表記の慣習上の注意}
         $\realNumbers^n$という記号は複数の文脈で使われる。
-        ある時は単に$\realNumbers$の直積集合を表す記号として、またある時は$n$次元Euclid空間を表す記号として使われる。
-        例えば球座標系の$(r,\theta,\varphi)$が属する構造は3次元Euclid空間ではなく単に$\realNumbers$の3つの直積集合であり、その$T$による像$(x,y,z)$もまた$\realNumbers$の3つの直積集合上の量である。
-        そして$(x,y,z)$と3次元Euclid空間上のベクトル$\bm{i}_x x + \bm{i}_y y + \bm{i}_z z$は一対一で対応するから、しばしばこれらを同一視する。
+        ある時は単に$\realNumbers$の直積集合を表す記号として，またある時は$n$次元Euclid空間を表す記号として使われる。
+        例えば球座標系の$(r,\theta,\varphi)$が属する構造は3次元Euclid空間ではなく単に$\realNumbers$の3つの直積集合であり，その$T$による像$(x,y,z)$もまた$\realNumbers$の3つの直積集合上の量である。
+        そして$(x,y,z)$と3次元Euclid空間上のベクトル$\bm{i}_x x + \bm{i}_y y + \bm{i}_z z$は一対一で対応するから，しばしばこれらを同一視する。
     \section{単位ベクトルの変換}
         \label{単位ベクトルの変換}
         \begin{shadebox}
@@ -24,7 +24,7 @@
             \[ \bm{i}_i = \sum_{j=1}^3 \frac{1}{h_j}\frac{\partial r_i}{\partial u_j}\bm{j}_j \quad (i=1,2,3) \]
             つまり行列を用いて次のように表せる。
             \[ [\bm{i}_1, \bm{i}_2, \bm{i}_3] = [\bm{j}_1, \bm{j}_2, \bm{j}_3]JH^{-1} \]
-            ここに$J$は$T$のJacobi行列であり、$H := \diag{h_1,h_2,h_3}$である。
+            ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
         \end{shadebox}
         \begin{proof}
             \quad\par
@@ -36,9 +36,9 @@
         \label{ベクトルの成分の変換}
         \begin{shadebox}
             既出の記号の定義は引き継ぐ。
-            3次元Euclid空間上のベクトル$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき、$A_1,A_2,A_3$と$\tilde{A}_1,\tilde{A}_2,\tilde{A}_3$の間には次の関係式が成り立つ。
+            3次元Euclid空間上のベクトル$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，$A_1,A_2,A_3$と$\tilde{A}_1,\tilde{A}_2,\tilde{A}_3$の間には次の関係式が成り立つ。
             \[ [A_1,A_2,A_3]^\top = JH^{-1}[\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \]
-            ここに$J$は$T$のJacobi行列であり、$H := \diag{h_1,h_2,h_3}$である。
+            ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
         \end{shadebox}
         \begin{proof}
             \begin{align*}
@@ -60,7 +60,7 @@
                 \bm{j}_i = \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}\right]^\top \\
                 \therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\frac{1}{h_j}\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2} = JH^{-1}
             \end{gather*}
-            ここに$\quad H \coloneq \diag{h_1,h_2,h_3}$であり、$J$は$T$のJacobi行列である。
+            ここに$\quad H \coloneq \diag{h_1,h_2,h_3}$であり，$J$は$T$のJacobi行列である。
             以上より次式が成り立つ。
             \[ [\bm{i}_1,\bm{i}_2,\bm{i}_3] = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1} \]
             $\partDeriv{\phi}{r_i}{}$を評価すると次式を得る。
@@ -72,18 +72,18 @@
                 \end{split}
             \end{gather*}
             最後の等号は$\bm{u} = T^{-1}(\bm{r})$と逆関数定理による。
-            以上より、次式が成り立つ。
+            以上より，次式が成り立つ。
             \[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1}\left(J^{-1}\right)^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
-            $J^{-1}\left(J^{-1}\right)^\top = J^{-1}\left(J^\top\right)^{-1} = \left(J^\top J\right)^{-1}$であり、$T$に関する仮定から$J$の列は互いに直交し、計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
-            よって$\left(J^\top J\right)^{-1} = H^{-2}$であり、次式が成り立つ。
+            $J^{-1}\left(J^{-1}\right)^\top = J^{-1}\left(J^\top\right)^{-1} = \left(J^\top J\right)^{-1}$であり，$T$に関する仮定から$J$の列は互いに直交し，計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
+            よって$\left(J^\top J\right)^{-1} = H^{-2}$であり，次式が成り立つ。
             \[ \nabla_\bm{r}\phi(\bm{r}) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\tilde{\phi}(\bm{u}) = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
         \end{proof}
     \section{発散}
         \label{発散}
         \begin{shadebox}
             既出の記号の定義は引き継ぐ。
-            さらに$T$は$\textrm{C}^2$級であるとし、$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
-            3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき、次式が成り立つ。
+            さらに$T$は$\textrm{C}^2$級であるとし，$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
+            3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，次式が成り立つ。
             \[ \nabla_\bm{r}\cdot\bm{A}(\bm{r}) = \frac{1}{h_1 h_2 h_3}\left[ \partDeriv{h_2 h_3 \tilde{A}_1(\bm{u})}{u_1}{} + \partDeriv{h_3 h_1 \tilde{A}_2(\bm{u})}{u_2}{} + \partDeriv{h_1 h_2 \tilde{A}_3(\bm{u})}{u_3}{} \right] \]
         \end{shadebox}
         \begin{proof}
@@ -93,7 +93,7 @@
             まず$\partDeriv{u_j}{r_i}{}$を評価する。
             $J$を$T$のJacobi行列とすると次式が成り立つ。
             \[ \partDeriv{u_j}{r_i}{} = J^{-1}[j,i] = \bigl(H^{-2}J^\top\bigr)[j,i] = \frac{1}{h_j^2}J[i,j] = \frac{1}{h_j^2}\partDeriv{r_i}{u_j}{} \]
-            式(1)の$\tilde{A}_k(\bm{u})$に関する項に着目すると、以下のように計算される。
+            式(1)の$\tilde{A}_k(\bm{u})$に関する項に着目すると，以下のように計算される。
             但し以下の式で$\delta_{i,j}$はクロネッカーのデルタを表す。
             \begin{align*}
                 \phantom{=} &\sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\partDeriv{r_i}{u_j}{} \\
@@ -118,9 +118,9 @@
     \section{回転}
         \begin{shadebox}
             既出の記号の定義は引き継ぐ。
-            さらに$T$は$\textrm{C}^2$級であるとし、次式が成り立つとする(例: 円柱座標系, 球座標系)。
+            さらに$T$は$\textrm{C}^2$級であるとし，次式が成り立つとする(例: 円柱座標系, 球座標系)。
             \[ \partDerivIIHetero{\bm{r}}{u_j}{u_i}\cdot\partDeriv{\bm{r}}{u_k}{} = 0 \quad \bigl(\{i,j,k\} = \{1,2,3\}\bigr) \tag{1} \]
-            3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき、次式が成り立つ。
+            3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，次式が成り立つ。
             \begin{align*}
                 \phantom{=} &\nabla_\bm{r}\times\bm{A}(\bm{r}) \\
                 = &\frac{\bm{j}_1}{h_2 h_3}\left[ \partDeriv{h_3\tilde{A}_3}{u_2}{} - \partDeriv{h_2\tilde{A}_2}{u_3}{} \right] + \frac{\bm{j}_2}{h_3 h_1}\left[ \partDeriv{h_1\tilde{A}_1}{u_3}{} - \partDeriv{h_3\tilde{A}_3}{u_1}{} \right] + \frac{\bm{j}_3}{h_1 h_2}\left[ \partDeriv{h_2\tilde{A}_2}{u_1}{} - \partDeriv{h_1\tilde{A}_1}{u_2}{} \right]　\\
@@ -134,9 +134,9 @@
                 = &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\bm{r})}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \\
                 &(\because \text{\ref{勾配}, \ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
             \end{align*}
-            以下では表記の簡便さのため、$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
+            以下では表記の簡便さのため，$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
             上式の第$m\in\{1,2,3\}$成分を評価する。
-            第$m$成分に寄与するのは$(j,l)=\bigl([m+1],[m+2]\bigr),\bigl([m+2],[m+1]\bigr)$のときであり、計算すると次式を得る。
+            第$m$成分に寄与するのは$(j,l)=\bigl([m+1],[m+2]\bigr),\bigl([m+2],[m+1]\bigr)$のときであり，計算すると次式を得る。
             \begin{align*}
                 \phantom{=} &\sum_{i=1}^3 \left[ \frac{1}{h_{[m+1]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}\right)\frac{1}{h_{[m+2]}}\partDeriv{r_i}{u_{[m+2]}}{} \right. \\
                 &\left. - \frac{1}{h_{[m+2]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}\right)\frac{1}{h_{[m+1]}}\partDeriv{r_i}{u_{[m+1]}}{} \right] \\
@@ -150,13 +150,13 @@
                 = &\left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 + \sum_{k\in\{[m+1],[m+2]\}} \frac{\tilde{A}_k}{h_k}\partDerivIIHetero{\bm{r}}{u_{[m+1]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+2]}}{}
             \end{align*}
             最後の等号成立には式(1)を用いた。
-            式(2)の[ ]内第2項も同様に評価すると、式(2)の$1/(h_{[m+1]}h_{[m+2]})$の右側の部分は次式になる。
+            式(2)の[ ]内第2項も同様に評価すると，式(2)の$1/(h_{[m+1]}h_{[m+2]})$の右側の部分は次式になる。
             \begin{align*}
                 \phantom{=} &\left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 - \left(\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}\right)h_{[m+1]}^2 \\
                 \phantom{=}	& + \sum_{k\in\{[m+1],[m+2]\}}\frac{\tilde{A}_k}{h_k}\left(\partDerivIIHetero{\bm{r}}{u_{[m+1]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+2]}}{} - \partDerivIIHetero{\bm{r}}{u_{[m+2]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+1]}}{}\right) \tag{3}
             \end{align*}
             この式の第3項の()内を評価する。
-            $T$は$\mathrm{C}^2$級であると仮定しているから、微分順序の入れ替えが可能であることに留意する。
+            $T$は$\mathrm{C}^2$級であると仮定しているから，微分順序の入れ替えが可能であることに留意する。
             $k=[m+1]$のときは次式になる。
             \begin{align*}
                 \phantom{=} &\partDeriv{\bm{r}}{u_{[m+1]}}{2}\cdot\partDeriv{\bm{r}}{u_{[m+2]}}{} - \partDerivIIHetero{\bm{r}}{u_{[m+2]}}{u_{[m+1]}}\cdot\partDeriv{\bm{r}}{u_{[m+1]}}{} \\
@@ -182,7 +182,7 @@
     \section{Laplacian}
         \begin{shadebox}
             既出の記号の定義は引き継ぐ。
-            さらに$T$は$\textrm{C}^2$級であるとし、$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
+            さらに$T$は$\textrm{C}^2$級であるとし，$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
             $\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^2$級であるとする。
             $\tilde{\phi}(\bm{u}) \coloneq \phi(T(\bm{u}))$とする。
             $\nabla^2_\bm{r}\phi(\bm{r})$は$\bm{u}$を用いて次式で表せる。

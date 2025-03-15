@@ -2,8 +2,8 @@
     \section{解析的な複素引数実数値関数は定数関数である}
         \label{解析的な複素引数実数値関数は定数関数である}
         \begin{shadebox}
-            $G\subseteq\complexNumbers$を開領域とし、$f:G\to\realNumbers$は$G$上で解析的であるとする。
-            このとき、$f$は定数関数である。
+            $G\subseteq\complexNumbers$を開領域とし，$f:G\to\realNumbers$は$G$上で解析的であるとする。
+            このとき，$f$は定数関数である。
         \end{shadebox}
         \noindent
         (証明1)
@@ -18,23 +18,23 @@
             \quad\par
             $x_0\in G$を任意にとる。
             絶対値が十分小さい$\Rh,\Ih$を$x_0+\Rh, x_0+i\Ih \in G$となるように任意にとる。
-            $f$が$x_0$に於いて解析的であるから$f'(x_0)$が存在し、次式が成り立つ。
+            $f$が$x_0$に於いて解析的であるから$f'(x_0)$が存在し，次式が成り立つ。
             \begin{align*}
                 \frac{f(x_0+\Rh) - f(x_0)}{\Rh} &= f'(x_0) + \frac{o(|\Rh|)}{\Rh} \tag{1}\\
                 \frac{f(x_0+i\Ih) - f(x_0)}{i\Ih} &= f'(x_0) + \frac{o(|\Ih|)}{i\Ih} \tag{2}
             \end{align*}
-            式(1),(2)の左辺はそれぞれ実数, 純虚数であるので、$\Rh\to 0,\Ih\to 0$の極限を考えると、$f'(x_0) = 0$でなくてはならない
+            式(1),(2)の左辺はそれぞれ実数, 純虚数であるので，$\Rh\to 0,\Ih\to 0$の極限を考えると，$f'(x_0) = 0$でなくてはならない
             (背理法で容易に示せる)。
-            $x_0$は$G$内の任意の点であったから、$f$は$G$上で定数関数である。
+            $x_0$は$G$内の任意の点であったから，$f$は$G$上で定数関数である。
         \end{proof}
     \section{1次増分}
         \newcommand{\RG}{\prescript{\text{R}}{}{G}}
         \newcommand{\Rf}{\prescript{\text{R}}{}{f}}
         \begin{shadebox}
-            $G\subseteq\complexNumbers$を開領域とし、$\RG\coloneq\setComprehension{(x,y)\in\realNumbers^2}{x+iy\in G}$とする。
-            $\Rf:\RG\to\realNumbers$は$\RG$上で$\mathrm{C}^1$級であるとし、$f:z\in G\mapsto\Rf\parens{\Re{z},\Im{z}}\in\realNumbers$とする。
-            $z\in G$を任意にとり、絶対値が十分小さい$h\in G$を$z+h\in G$となるように任意にとる。
-            $f(z+h)-f(z)$の$h$に関する1次の項は、Cauchy-Riemannの関係式から導かれる微分係数を形式的に計算して得られる$f$の形式的な微分係数$f'(z)$と$h$の積の実部$\Re{f'(z)h}$である。
+            $G\subseteq\complexNumbers$を開領域とし，$\RG\coloneq\setComprehension{(x,y)\in\realNumbers^2}{x+iy\in G}$とする。
+            $\Rf:\RG\to\realNumbers$は$\RG$上で$\mathrm{C}^1$級であるとし，$f:z\in G\mapsto\Rf\parens{\Re{z},\Im{z}}\in\realNumbers$とする。
+            $z\in G$を任意にとり，絶対値が十分小さい$h\in G$を$z+h\in G$となるように任意にとる。
+            $f(z+h)-f(z)$の$h$に関する1次の項は，Cauchy-Riemannの関係式から導かれる微分係数を形式的に計算して得られる$f$の形式的な微分係数$f'(z)$と$h$の積の実部$\Re{f'(z)h}$である。
         \end{shadebox}
         \begin{proof}
             \quad\par
@@ -46,8 +46,8 @@
                 &= \frac{1}{2}\underbrace{\left[\partDeriv{\Rf}{x}{}(x,y) - i\partDeriv{\Rf}{y}{}(x,y)\right]}_{\text{(1)}}h + \frac{1}{2}\underbrace{\left[\partDeriv{\Rf}{x}{}(x,y) + i\partDeriv{\Rf}{y}{}(x,y)\right]}_{\text{(2)}}\overline{h} + o(|h|)
             \end{align*}
             式(1)は複素引数実数値関数に対して複素微分係数の実関数表示を形式的に適用して計算したものと一致する。
-            今、これを形式的に$f'(z)$と書くことにする。
-            なお、\ref{解析的な複素引数実数値関数は定数関数である}で述べている通り、複素引数実数値関数で解析的なものは常に定数関数であるため、形式的に導入した$f'(z)$は本来の複素微分の意味とは似て非なるものである。
+            今，これを形式的に$f'(z)$と書くことにする。
+            なお，\ref{解析的な複素引数実数値関数は定数関数である}で述べている通り，複素引数実数値関数で解析的なものは常に定数関数であるため，形式的に導入した$f'(z)$は本来の複素微分の意味とは似て非なるものである。
             \[ f(z+h) - f(z) = \frac{1}{2}f'(z)h + \frac{1}{2}\overline{f'(z)h} + o(|h|) = \Re{f'(z)h} + o(|h|)\]
         \end{proof}
     \let\Rh\undefined
@@ -59,7 +59,7 @@
             \subsubsection{\texorpdfstring{$\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,\;X_i \in \complexNumbers^{m\times n})$}{行列X1,X2,...,XNの線形結合×ベクトル+定数のノルム}は\texorpdfstring{$X_1,\dotsc,X_N$}{X1,X2,...,XN}に関して凸である。}
                 \begin{proof}
                     \quad\par
-                    $T_X \coloneq (X_1,\dotsc,X_N),\;T_Y \coloneq (Y_1,\dotsc,Y_N),\;\lambda \in [0,1]$とし、$f(T_X) \coloneq \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
+                    $T_X \coloneq (X_1,\dotsc,X_N),\;T_Y \coloneq (Y_1,\dotsc,Y_N),\;\lambda \in [0,1]$とし，$f(T_X) \coloneq \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
                     \begin{align*}
                         f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
                         &= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\

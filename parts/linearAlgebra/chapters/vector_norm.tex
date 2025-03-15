@@ -41,7 +41,7 @@
                 よって
                 \[\inprod{\vx}{\vy}^2-\norm{\vx}^2\norm{\vy}^2=0\]
                 ところでこれは$s$に関する二次方程式$\norm{s\vx+\vy}^2=0$の判別式の値が$0$であることを意味する。
-                よって重解が存在し、それを$-k$とおくと
+                よって重解が存在し，それを$-k$とおくと
                 \begin{equation}
                     \vy = k\vx
                 \end{equation}
@@ -52,7 +52,7 @@
             \end{proof}
         \subsection{和のノルムとノルムの和が等しい時(2)}
             \begin{shadebox}
-                $\bm{x}_1,\dotsc,\bm{x}_m\in\field^n$に対して$\norm{\sum_{i=1}^{m}{\bm{x}_i}}=\sum_{i=1}^{m}{\norm{\bm{x}_i}}$であるとき、任意の$k,l\in\{1,2,\dotsc,m\}$に対して$\norm{\bm{x}_k+\bm{x}_l}=\norm{\bm{x}_k}+\norm{\bm{x}_l}$
+                $\bm{x}_1,\dotsc,\bm{x}_m\in\field^n$に対して$\norm{\sum_{i=1}^{m}{\bm{x}_i}}=\sum_{i=1}^{m}{\norm{\bm{x}_i}}$であるとき，任意の$k,l\in\{1,2,\dotsc,m\}$に対して$\norm{\bm{x}_k+\bm{x}_l}=\norm{\bm{x}_k}+\norm{\bm{x}_l}$
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -70,31 +70,31 @@
         % 		\quad\par
         % 		全要素が正の場合について証明すれば十分である。
         % 		Lagrangeの未定乗数法を使う。
-        % 		目的関数を$f(\bm{x})\coloneq\sum_{i=1}^n{x_i}$、制約条件を$g(\bm{x})\coloneq\norm{\bm{x}}_2^2-1=0$とし、Lagrange関数を$L(\bm{x},\lambda)\coloneq f(\bm{x})+\lambda g(\bm{x})$とする。
+        % 		目的関数を$f(\bm{x})\coloneq\sum_{i=1}^n{x_i}$，制約条件を$g(\bm{x})\coloneq\norm{\bm{x}}_2^2-1=0$とし，Lagrange関数を$L(\bm{x},\lambda)\coloneq f(\bm{x})+\lambda g(\bm{x})$とする。
         % 		最適解を$\HerConj{\bm{x}}$とすると$\nabla_{\bm{x}}L(\bm{x},\lambda)=\bm{0}$より$\bm{1}_n+2\lambda\HerConj{\bm{x}}=\bm{0}\;\therefore\;\bm{x}=-\frac{1}{2\lambda}\bm{1}_n$。
-        % 		よって$\HerConj{\bm{x}}$は全要素が等しい。これと$\norm{\HerConj{\bm{x}}}=1,\HerConj{\bm{x}}\geq\bm{0}$より$\HerConj{\bm{x}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\HerConj{\bm{x}})=\sqrt{n}$
+        % 		よって$\HerConj{\bm{x}}$は全要素が等しい。これと$\norm{\HerConj{\bm{x}}}=1,\HerConj{\bm{x}}\geq\bm{0}$より$\HerConj{\bm{x}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり，$f(\HerConj{\bm{x}})=\sqrt{n}$
         % 	\end{proof}
         \subsection{\texorpdfstring{$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1\;\Rightarrow\;\sum_{i=1}^n{|x_i|}\leq\sqrt{n}$}{x∈C\string^n, ||x||\_2=1, ⇒ |x\_1|+...+|x\_n| ≦ √n}}
             \label{th:単位球面上の点の座標の絶対値の総和の最大値}
             \begin{proof}
                 \quad\par
-                $x_k = r_k \NapierE^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから、制約条件$g(\bm{r}) \coloneq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+                $x_k = r_k \NapierE^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから，制約条件$g(\bm{r}) \coloneq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
                 \par
-                数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし、$n=1,\dotsc,m-1$について(*)が成り立つと仮定する。
-                $r_1,\dotsc,r_n$の少なくとも1つが0のとき、すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
+                数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし，$n=1,\dotsc,m-1$について(*)が成り立つと仮定する。
+                $r_1,\dotsc,r_n$の少なくとも1つが0のとき，すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。
                 \par
                 そこで$r_1,\dotsc,r_n$が全て正であるとする。
                 Lagrangeの未定乗数法を使う。
                 Lagrange関数を$L(\bm{r},\lambda)\coloneq f(\bm{r})+\lambda g(\bm{r})$とする。
-                $\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから、今関心のある領域に特異点は存在しない。
-                $r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから、$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり、これは$r_1,\dotsc,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
-                よってLagrangeの未定乗数法で極値を見つければそれは極大値であり、また最大値でもある。
+                $\nabla_\bm{r}g(\bm{r}) = 2\bm{r} > \bm{0}_n$であるから，今関心のある領域に特異点は存在しない。
+                $r_n = \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$と表されるから，$f(\bm{r}) = \sum_{k=1}^{n-1} r_k + \sqrt{1 - \sum_{k=1}^{n-1} {r_k}^2}$であり，これは$r_1,\dotsc,r_{n-1}$の関数として上に凸な関数である(Hessianを計算すれば対角成分が全て負の対角行列になる)。
+                よってLagrangeの未定乗数法で極値を見つければそれは極大値であり，また最大値でもある。
                 極値を与える点を$\overset{\circ}{\bm{r}}$とすると$\nabla_{\bm{r}}L(\overset{\circ}{\bm{r}},\lambda)=\bm{0}$より$\bm{1}_n + 2\lambda\overset{\circ}{\bm{r}}=\bm{0}\;\therefore\;\overset{\circ}{\bm{r}}=-\frac{1}{2\lambda}\bm{1}_n$。
                 よって$\overset{\circ}{\bm{r}}$は全要素が等しい。
-                これと制約条件より$\overset{\circ}{\bm{r}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり、$f(\overset{\circ}{\bm{r}}) = \sqrt{n}$
+                これと制約条件より$\overset{\circ}{\bm{r}} = \frac{1}{\sqrt{n}}\bm{1}_n$であり，$f(\overset{\circ}{\bm{r}}) = \sqrt{n}$
             \end{proof}
     \section{応用}
         \subsection{超平面と点の距離公式の直感的説明}
             超平面$\bm{w}^\top\bm{x}+b=0$と点$\bm{y}$の距離公式$|\bm{w}^\top\bm{y}+b|/\norm{\bm{w}}$について直感的な説明を考えてみる。
-            $-\bm{w}^\top\bm{p} = b$なる$\bm{p}$を考えると$\bm{w}^\top\bm{x}+b=0 \iff \bm{w}^\top(\bm{x}-\bm{p})=0$であり、$\bm{p}$は超平面上の点で、$\bm{w}$は法線ベクトルである。
-            よって$|\bm{w}^\top\bm{y}+b| = |\bm{w}^\top(\bm{y}-\bm{p})|$は$\bm{y}$から超平面に降ろした垂線の長さの$\norm{\bm{w}}$倍を表しており、これを$\norm{\bm{w}}$で割れば公式を得る。
+            $-\bm{w}^\top\bm{p} = b$なる$\bm{p}$を考えると$\bm{w}^\top\bm{x}+b=0 \iff \bm{w}^\top(\bm{x}-\bm{p})=0$であり，$\bm{p}$は超平面上の点で，$\bm{w}$は法線ベクトルである。
+            よって$|\bm{w}^\top\bm{y}+b| = |\bm{w}^\top(\bm{y}-\bm{p})|$は$\bm{y}$から超平面に降ろした垂線の長さの$\norm{\bm{w}}$倍を表しており，これを$\norm{\bm{w}}$で割れば公式を得る。

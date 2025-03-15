@@ -10,20 +10,20 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                \ref{複素引数凸関数の例}より$f$は凸であるので、$\mathring{\bm{x}}$が$f$を最小化する必要十分条件は次式である。
+                \ref{複素引数凸関数の例}より$f$は凸であるので，$\mathring{\bm{x}}$が$f$を最小化する必要十分条件は次式である。
                 \[ f(\mathring{\bm{x}} + \mathrm{d}\bm{x}) - f(\mathring{\bm{x}}) = o(\|\mathrm{d}\bm{x}\|) \; (\mathrm{d}\bm{x} \to \bm{0}) \]
                 これは$f(\mathring{\bm{x}} + \mathrm{d}\bm{x})$の$\mathrm{d}\bm{x}$に関する1次の項が0であることと同値である。
                 この1次の項を$g(\mathrm{d}\bm{x})$とすると
                 \begin{align*}
                     g(\mathrm{d}\bm{x}) &= \HerConj{(A\mathrm{d}\bm{x})}(A\mathring{\bm{x}} + \bm{b}) + \HerConj{(A\mathring{\bm{x}} + \bm{b})}(A\mathrm{d}\bm{x}) = 2\Re{(\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A)\mathrm{d}\bm{x}}
                 \end{align*}
-                であるから、$\mathring{\bm{x}}$に関する条件は$\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A = O$、すなわち$\HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b}$である。
+                であるから，$\mathring{\bm{x}}$に関する条件は$\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A = O$，すなわち$\HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b}$である。
             \end{proof}
         \subsection{線形制約付きの場合}
             \begin{shadebox}
                 $f$の定義は前小節のものとする。
                 $m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneq \bm{c}_i^\top\bm{x}+d_i$とする。
-                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき、$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
+                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき，$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
             \end{shadebox}
             \begin{proof}
                 \quad\par

@@ -1,7 +1,7 @@
 \chapter{漏れ確率行列}
     \section{定義}
         \begin{shadebox}
-            正方行列$A\in\realNumbers^{n\times n}$が次の条件を満たすとき、$A$を$o(r)$の漏れ確率行列と呼ぶことにする。
+            正方行列$A\in\realNumbers^{n\times n}$が次の条件を満たすとき，$A$を$o(r)$の漏れ確率行列と呼ぶことにする。
             \begin{itemize}
                 \item 各要素が0以上1未満
                 \item 各行ベクトルの1ノルムが$r<1$以下である。
@@ -10,11 +10,11 @@
     \section{漏れ確率行列のべき乗は\texorpdfstring{$O$}{O}に収束する}
         \begin{proof}
             \quad\par
-            $A$を$o(r)$の漏れ確率行列とし、$C=A^2$とすると$c_{ij} = \sum_{k=1}^{n}{a_{ik}a_{kj}}$であるから$C$の第i行ベクトルの1ノルムは
-            $\sum_{j=1}^{n}{c_{ij}} = \sum_{j=1}^{n}{\sum_{k=1}^{n}{a_{ik}a_{kj}}} = \sum_{k=1}^{n}{a_{ik}\sum_{j=1}^{n}{a_{kj}}} \leq r\sum_{k=1}^{n}{a_{ik}} \leq r^2$となるので、$C$が非負行列であったことに注意して、各要素$c_{ij}$は必ず0以上$r^2$以下である。
-            これを繰り返すと$A^n$の各要素は0以上$r^n$以下であることがわかるので、$\lim_{n\rightarrow\infty}{A^n}=O$
+            $A$を$o(r)$の漏れ確率行列とし，$C=A^2$とすると$c_{ij} = \sum_{k=1}^{n}{a_{ik}a_{kj}}$であるから$C$の第i行ベクトルの1ノルムは
+            $\sum_{j=1}^{n}{c_{ij}} = \sum_{j=1}^{n}{\sum_{k=1}^{n}{a_{ik}a_{kj}}} = \sum_{k=1}^{n}{a_{ik}\sum_{j=1}^{n}{a_{kj}}} \leq r\sum_{k=1}^{n}{a_{ik}} \leq r^2$となるので，$C$が非負行列であったことに注意して，各要素$c_{ij}$は必ず0以上$r^2$以下である。
+            これを繰り返すと$A^n$の各要素は0以上$r^n$以下であることがわかるので，$\lim_{n\rightarrow\infty}{A^n}=O$
         \end{proof}
-    \section{\texorpdfstring{$o(r)$}{o(r)}の漏れ確率行列\texorpdfstring{$A$}{A}のノイマン級数は収束し、各要素の和は\texorpdfstring{$\frac{1}{1-r}$}{1/(1-r)}以下である。}
+    \section{\texorpdfstring{$o(r)$}{o(r)}の漏れ確率行列\texorpdfstring{$A$}{A}のノイマン級数は収束し，各要素の和は\texorpdfstring{$\frac{1}{1-r}$}{1/(1-r)}以下である。}
         \begin{proof}
             \quad\par
             直前の定理より$A$のノイマン級数$I+A+A^2+\dotsb$の各要素は0以上$1+r+r^2+\dotsb=\frac{1}{1-r}$以下である。

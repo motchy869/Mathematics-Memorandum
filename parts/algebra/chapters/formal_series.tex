@@ -1,14 +1,14 @@
 \chapter{形式的冪級数}
     \section{規約}
         \begin{itemize}
-            \item 体$F$上の、$x$を不定元とする形式的冪級数全体の集合を$F[[x]]$と表記する。
-            \item 体$F$上の、$x$を不定元とする形式的Laurent級数全体の集合を$F((x))$と表記する。
+            \item 体$F$上の，$x$を不定元とする形式的冪級数全体の集合を$F[[x]]$と表記する。
+            \item 体$F$上の，$x$を不定元とする形式的Laurent級数全体の集合を$F((x))$と表記する。
         \end{itemize}
     \section{原始多項式}
         \subsection{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a0 x0 + a1 x1 + ...}が原始多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\{n-1\} x0 + a\{n-2\} x1 + ...}も原始多項式である}
             \begin{shadebox}
                 $p$を素数とする。
-                $n$次多項式$f_1(x) \coloneq \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば、係数の順番を逆にした多項式$f_2(x) \coloneq \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
+                $n$次多項式$f_1(x) \coloneq \sum_{i=0}^n a_ix^i \in \GaloisField{p}[x]$が原始多項式であれば，係数の順番を逆にした多項式$f_2(x) \coloneq \sum_{i=0}^n a_{n-i}x^i$もまた原始多項式である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -43,21 +43,21 @@
             \label{原始多項式の逆数の係数列は周期的}
             \begin{shadebox}
                 $p$を素数とする。
-                $n$次の原始多項式$f(x) \in \GaloisField{p}[[x]]$の逆数$f(x)^{-1}$の係数列は周期的であり、その周期は$p^n-1$である。
+                $n$次の原始多項式$f(x) \in \GaloisField{p}[[x]]$の逆数$f(x)^{-1}$の係数列は周期的であり，その周期は$p^n-1$である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 まず係数列が周期的であることを示す。
-                $f(x)$が原始多項式だから、適当な$p^n-1-n$次多項式$g(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                $f(x)$が原始多項式だから，適当な$p^n-1-n$次多項式$g(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
                 \begin{align*}
                     x^{p^n-1} - 1 &= g(x)f(x) \\
                     \therefore f(x)^{-1} &= -g(x)\left(1 - x^{p^n-1}\right)^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
                 \end{align*}
-                $\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり、その周期は高々$p^n-1$である。
-                「高々」と言ったのは、$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
+                $\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり，その周期は高々$p^n-1$である。
+                「高々」と言ったのは，$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
                 この周期が真に$p^n-1$であることを背理法で示す。
                 \par
-                仮に周期が$p^n-2$次以下であるとする、
+                仮に周期が$p^n-2$次以下であるとする，
                 つまりある$l\in\{1,2,\dotsc,p^n-2\}$と適当な$l-1$次以下の多項式$h(x) \in \GaloisField{p}[[x]]$が存在して
                 \[ f(x)^{-1} = -h(x) \sum_{i=0}^\infty x^{il} \]
                 が成り立つと仮定すると次式を得る。
@@ -74,7 +74,7 @@
                 $f_1(x)^{-1} =: a_0 + a_1x + \dotsb$とする。
                 このとき次式が成り立つ。
                 \[ f_2(x)^{-1} = -\sum_{j=0}^{p^n-1-n} a_{p^n-1-n-j}x^j \sum_{i=0}^\infty x^{i(p^n-1)} \]
-                視覚的に言えば、$f_2(x)^{-1}$の係数列は周期的であり、$f_1(x)^{-1}$の係数列に現れるパターンを逆転させ、符号を逆にしたものになる。
+                視覚的に言えば，$f_2(x)^{-1}$の係数列は周期的であり，$f_1(x)^{-1}$の係数列に現れるパターンを逆転させ，符号を逆にしたものになる。
             \end{shadebox}
             \subsubsection{例}
                 \newcommand{\redtext}[1]{\textcolor{red}{#1}}
@@ -97,7 +97,7 @@
             \subsubsection{証明}
                 \begin{proof}
                     \quad\par
-                    \ref{原始多項式の逆数の係数列は周期的}より$f_1(x)^{-1}$の係数列は周期$p^n-1$であるから、適当な$p^n-1$次未満の多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
+                    \ref{原始多項式の逆数の係数列は周期的}より$f_1(x)^{-1}$の係数列は周期$p^n-1$であるから，適当な$p^n-1$次未満の多項式$g_1(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
                     \[ f_1(x)^{-1} = g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
                     この式をLaurent多項式に拡張して変形してゆく。
                     \begin{align*}
@@ -105,7 +105,7 @@
                         \therefore x^{p^n-1} - 1 &= -g_1(x)f_1(x) = -g_1(x) x^n f_2(x^{-1})
                     \end{align*}
                     ここに$f_2(x)$は$f_1(x)$の係数の順番を逆転させたものである。
-                    初めに$\deg g_1(x) < p^n-1$としていたが、上式より$\deg g_1(x) = p^n-1-n$が確定する。
+                    初めに$\deg g_1(x) < p^n-1$としていたが，上式より$\deg g_1(x) = p^n-1-n$が確定する。
                     上式の$x$を$x^{-1}$で置き換えると次式を得る。
                     \[ x^{-(p^n-1)} - 1 = -g_1(x^{-1}) x^{-n} f_2(x) \]
                     両辺に$x^{p^n-1}$を掛けると

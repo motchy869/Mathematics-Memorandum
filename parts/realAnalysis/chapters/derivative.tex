@@ -2,14 +2,14 @@
     \section{\texorpdfstring{$f(a)<0<f(b) \Rightarrow \;\exists x \in (a,b) \st f(x)=0, f'(x)\geq 0$}{f(a)<0<f(b) ⇔ ∃x∈(a,b) s.t. f(x)=0, f'(x)≦0}}
         \begin{shadebox}
             区間$[a,b]\;(a<b)$で定義された連続関数$f$が開区間$(a,b)$で微分可能であるとする。
-            $f(a)<0<f(b)$であるとき、ある$x\in(a,b)$が存在して$f(x)=0, f'(x)\geq 0$を満たす。
+            $f(a)<0<f(b)$であるとき，ある$x\in(a,b)$が存在して$f(x)=0, f'(x)\geq 0$を満たす。
         \end{shadebox}
     \begin{proof}
         \quad\par
         $f(x)=0$となる$x\in(a,b)$の存在は中間値の定理が保証している。
         そのような点のうち最小のものを$x_0$とするとこれが定理の主張を満たすことを背理法で示す。
-        もしも$f'(x_0)<0$であれば、微分係数の定義より、十分小さい$\delta>0$が存在して$a<x_0-\delta, f(x_0-\delta)>0$なので
-        中間値の定理より、ある$y\in(a,x_0-\delta)$が存在して$f(y=0)$となる。
+        もしも$f'(x_0)<0$であれば，微分係数の定義より，十分小さい$\delta>0$が存在して$a<x_0-\delta, f(x_0-\delta)>0$なので
+        中間値の定理より，ある$y\in(a,x_0-\delta)$が存在して$f(y=0)$となる。
         これは$x_0$が$f(x=0)$を満たす最小の点であったことに矛盾する。
     \end{proof}
     \section{\texorpdfstring{$\lim_{x\to\infty}{f(x)}=0$}{lim\_\{x→∞\}f(x)=0}であっても\texorpdfstring{$\displaystyle \lim_{x\to0}{f'(x)} = 0$}{lim\_\{x→∞\}f'(x)=0}とは限らない}

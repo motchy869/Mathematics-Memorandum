@@ -6,7 +6,7 @@
             $g(\bm{x}) \coloneq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
             $g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
             \[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
-            であるが、maxの性質から
+            であるが，maxの性質から
             \[ \max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} \geq f_1(\bm{x}_1), f_2(\bm{x}_1) \text{かつ} \max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \geq f_1(\bm{x}_2), f_2(\bm{x}_2) \]
             であるので
             \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_1(\bm{x}_1) + \theta f_1(\bm{x}_2) \geq f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
@@ -17,7 +17,7 @@
         \end{proof}
         \subsection{Jensenの不等式}
             \begin{shadebox}
-                $f(x)$を凸関数とし、$w_i\geq 0(i=1,\dotsc,n),\;\sum_{i=1}^n w_i=1$とするとき、次式が成り立つ。
+                $f(x)$を凸関数とし，$w_i\geq 0(i=1,\dotsc,n),\;\sum_{i=1}^n w_i=1$とするとき，次式が成り立つ。
                 \[ f\left(\sum_{i=1}^n w_i x_i\right) \leq \sum_{i=1}^n w_i f(x_i) \]
             \end{shadebox}
             \begin{proof}
@@ -25,7 +25,7 @@
                 $n=1$の時は明らか。
                 $n=2$のときは凸関数の定義より成り立つ。
                 $n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
-                $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから、仮定より
+                $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから，仮定より
                 \begin{align*}
                     f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
                     \therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
@@ -38,7 +38,7 @@
         \subsection{重み付き相加,相乗平均の関係とYoungの不等式}
             \label{重み付き相加,相乗平均の関係とYoungの不等式}
             \begin{shadebox}
-                $w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+                $w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
                 \[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
                 この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
             \end{shadebox}
@@ -48,22 +48,22 @@
                 以下では全ての$i$について$x_i>0$とする。
                 対数関数の凹性を利用する。Jensenの不等式より
                 \[ \log\sum_{i=1}^n w_i x_i \geq \sum_{i=1}^n w_i\log x_i \quad \therefore\; \log\sum_{i=1}^n w_i x_i \geq \log\prod_{i=1}^n x_i^{w_i} \quad \therefore\; \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
-                最初の式より、等号成立条件は$x_1=\dotsb=x_n$である。
+                最初の式より，等号成立条件は$x_1=\dotsb=x_n$である。
             \end{proof}
-            この不等式には変形版があり、\textbf{Youngの不等式}と呼ばれている。
-            一時的に上の定理の条件を少し強めて$w_1,\dotsc,w_n\textcolor{red}{>}0$とし、$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
+            この不等式には変形版があり，\textbf{Youngの不等式}と呼ばれている。
+            一時的に上の定理の条件を少し強めて$w_1,\dotsc,w_n\textcolor{red}{>}0$とし，$y_i=x_i^{w_i}$とすると$x_i=y_i^{1/w_i}$となる。
             これらを重み付き相加,相乗平均の関係に代入して
             \[ \sum_{i=1}^n w_i y^{1/w_i} \geq \prod_{i=1}^n y_i \]
             を得る。$p_i=1/w_i$とすると次式を得る。
             \[ \sum_{i=1}^n \frac{{y_i}^{p_i}}{p_i} \geq \prod_{i=1}^n y_i \]
-            改めて定理の形で述べると、次のようになる。\\
+            改めて定理の形で述べると，次のようになる。\\
             \begin{shadebox}
-                $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき、次式が成り立つ。
+                $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
                 \[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
             \end{shadebox}
         \subsection{重み付き幾何平均と重み付き調和平均の関係}
             \begin{shadebox}
-                $n\in\naturalNumbers,\;x_i,w_i>0\;(i=1,\dots,n),\;\sum_{i=1}^n w_i = 1$ とするとき、$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
+                $n\in\naturalNumbers,\;x_i,w_i>0\;(i=1,\dots,n),\;\sum_{i=1}^n w_i = 1$ とするとき，$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
                 つまり次式が成り立つ。
                 \[ \prod_{i=1}^n {x_i}^{w_i} \geq \frac{1}{\sum_{i=1}^n w_i/x_i} \tag{1} \]
             \end{shadebox}
@@ -77,7 +77,7 @@
             \end{proof}
         \subsection{2階導関数と凸性の関係}
             \begin{shadebox}
-                $a\in\realNumbers$とし、$I$は$a$の開近傍であるとする。
+                $a\in\realNumbers$とし，$I$は$a$の開近傍であるとする。
                 $f:I\to\realNumbers$は$I$上で$\mathrm{C}^2$級であるとする。
                 次の3つの事項
                 \begin{enumerate}
@@ -96,7 +96,7 @@
                 $x\in I,x\neq x_1$とする。
                 $g(x) \coloneq f(x) - \bigl(f(x_1) - f^{(1)}(x_1)(x-x_1)\bigr)$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
                 さらに$g^{(2)}(x) = f^{(2)}(x) > 0$である。
-                よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり、2が成り立つ。
+                よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり，2が成り立つ。
                 \par
                 $2\Rightarrow 3$を示す。
                 $x_1,x_2\in I,\;x_1\neq x_2,\;0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
@@ -110,7 +110,7 @@
                 \end{align*}
                 \par
                 $3\Rightarrow 2$を示す。
-                $x_1<x_2$の場合について示すが、逆の場合も同様にして示せる。
+                $x_1<x_2$の場合について示すが，逆の場合も同様にして示せる。
                 $0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
                 \begin{align*}
                     \frac{f(x_2)-f(x_1)}{x_2-x_1} &= \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{x_3-x_1} = \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{\lambda(x_2-x_1)} \\
@@ -140,7 +140,7 @@
                 $f^*$のLegendre変換$f^{**}$を求めるためにまず${f^*}^{(1)}$の値域を調べる。
                 \[ \fStarD(q)\;(q \in I_2) = \fd^{-1}(q) + q\frac{1}{f^{(2)}(q)} - \fd\left(\fd^{-1}(q)\right)\frac{1}{f^{(2)}(q)} = \fd^{-1}(q) \]
                 より$\fStarD$の値域は$I$である。
-                さらに、$\fd^{-1}$は狭義単調増加なので上式より$\fStarD$の逆関数が存在して$\fStarD^{-1} = \fd$である。
+                さらに，$\fd^{-1}$は狭義単調増加なので上式より$\fStarD$の逆関数が存在して$\fStarD^{-1} = \fd$である。
                 $\fStarD^{-1}$の定義域は$I$である。
                 以上より$f^{**}$は次のようになる。
                 \begin{align*}
@@ -155,4 +155,4 @@
     \section{諸注意}
         \subsection{非負の凸関数同士の積は凸関数とは限らない}
             反例として$x^2$と$(x+1)^2$の積がある。
-            両者は単体では下に凸であるが、両者の積は$x=-1/2$で上に凸である。
+            両者は単体では下に凸であるが，両者の積は$x=-1/2$で上に凸である。

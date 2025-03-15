@@ -8,7 +8,7 @@
         \end{proof}
     \section{Hermite行列\texorpdfstring{$A,B$}{A,B}に対して\texorpdfstring{$\tr{AB} \in \realNumbers$}{tr(AB)∈R}}
         \begin{shadebox}
-            $A,B\in\complexNumbers^{n\times n}$がエルミート行列であるとき、$\tr{AB}$は実数である。
+            $A,B\in\complexNumbers^{n\times n}$がエルミート行列であるとき，$\tr{AB}$は実数である。
         \end{shadebox}
         \begin{proof}
             \[ \overline{\tr{AB}} = \tr{\overline{AB}} = \tr{\overline{\HerConj{A}\HerConj{B}}} = \tr{A^\top B^\top} = \tr{(BA)^\top} = \tr{BA} = \tr{AB} \]
@@ -23,5 +23,5 @@
                 &= \lambda(1-\lambda)\tr{(X-Y)^\top A(X-Y)} \\
                 &= \lambda(1-\lambda)\sum_{i=1}^n (X[:,i]-Y[:,i])^\top A (X[:,i]-Y[:,i])
             \end{align*}
-            $A$は正定なので上式の$\Sigma$の中身は正であるから、上式は$\lambda=0,1$でない限り正である。
+            $A$は正定なので上式の$\Sigma$の中身は正であるから，上式は$\lambda=0,1$でない限り正である。
         \end{proof}

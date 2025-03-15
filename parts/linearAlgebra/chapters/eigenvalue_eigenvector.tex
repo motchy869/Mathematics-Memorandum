@@ -2,7 +2,7 @@
     \section{諸定理}
         \subsection{逆行列の特性多項式: \texorpdfstring{$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$}{φA\string^(-1)(λ) = |A|\string^(-1)\string^n φA(1/λ)}}
             \begin{shadebox}
-                $A$を正則な$n$次正方行列とし、特性多項式を$\phi_A(\lambda)$とすると、$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$。
+                $A$を正則な$n$次正方行列とし，特性多項式を$\phi_A(\lambda)$とすると，$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$。
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -39,15 +39,15 @@
                     \end{bmatrix}
                     = O_{n\times p}
                 \]
-                となるが、$\lambda_i\;(i=1,\dotsc,p)$が相異なることより、上式の等号の左隣のヴァンデルモンド行列は正則だから
+                となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣のヴァンデルモンド行列は正則だから
                 \[ [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p] = O_{n\times p} \]
                 となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
             \end{proof}
         \subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
             \begin{proof}
                 \quad\par
-                まず、$an$が固有値であり、全ての要素が等しい$n$次元ベクトルが固有値$an$に対応する固有ベクトルであることは、実際に計算してみることで容易に確かめられる。
-                非零固有値がこれ以外に存在しないことを示す。$\lambda\neq 0,an$とし、$\lambda I-A$の第$j$列ベクトルを$\bm{b}_j$とすると、
+                まず，$an$が固有値であり，全ての要素が等しい$n$次元ベクトルが固有値$an$に対応する固有ベクトルであることは，実際に計算してみることで容易に確かめられる。
+                非零固有値がこれ以外に存在しないことを示す。$\lambda\neq 0,an$とし，$\lambda I-A$の第$j$列ベクトルを$\bm{b}_j$とすると，
                 \[
                     b_j(i) =
                     \begin{cases}
@@ -55,14 +55,14 @@
                         \lambda-a & (i=k)
                     \end{cases}
                 \]
-                $\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば、$\left|\lambda I-A\right|\neq 0$が示せて、$\lambda$が固有値でないことが示せる。
-                $c_1,\dotsc,c_n$を定数とし、$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと、第$i$成分に着目して
+                $\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば，$\left|\lambda I-A\right|\neq 0$が示せて，$\lambda$が固有値でないことが示せる。
+                $c_1,\dotsc,c_n$を定数とし，$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと，第$i$成分に着目して
                 \[0 = c_i(\lambda-a) - a\sum_{j\neq i}^{n}{c_j} = c_i\lambda - a\sum_{j=1}^{n}{c_j}\]
-                これと$\lambda\neq 0$より$c_1=\dotsb=c_n$である。この値を$c$とおくと$c\lambda = anc$となり、$\lambda\neq an$より$c=0$である。
+                これと$\lambda\neq 0$より$c_1=\dotsb=c_n$である。この値を$c$とおくと$c\lambda = anc$となり，$\lambda\neq an$より$c=0$である。
             \end{proof}
         \subsection{転置行列の固有値,固有ベクトル}
             \begin{shadebox}
-                $A\in\field^{n\times n}$について$A^\top$の固有値は$A$と等しく、各固有値$\lambda_i$に対する固有空間の次元も$A$の固有値$\lambda_i$に対するそれと等しい。
+                $A\in\field^{n\times n}$について$A^\top$の固有値は$A$と等しく，各固有値$\lambda_i$に対する固有空間の次元も$A$の固有値$\lambda_i$に対するそれと等しい。
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -78,14 +78,14 @@
             \end{proof}
         \subsection{逆行列の固有値,固有ベクトル}
             \begin{shadebox}
-                正則な行列$A\in\field^{n\times n}$の逆行列の固有値は$A$の固有値の逆数であり、$A$と共通の固有ベクトルをもつ。
+                正則な行列$A\in\field^{n\times n}$の逆行列の固有値は$A$の固有値の逆数であり，$A$と共通の固有ベクトルをもつ。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $A^{-1}$もまた正則だから0固有値は持たない。
-                $A^{-1}$の固有値の一つを$\lambda'\neq0$とし、それに対する固有ベクトルを$\bm{y}\neq\bm{0}$とおくと
-                $A^{-1}\bm{y} = \lambda'\bm{y}$であり、両辺に左から$A$を掛けて$\bm{y} = \lambda'A\bm{y}\quad\therefore\;A\bm{y} = \frac{1}{\lambda'}\bm{y}$となる。
-                よって$A^{-1}$の固有値$\lambda'$は$A$の固有値$1/\lambda'$の逆数であり、固有ベクトルは共通である。
+                $A^{-1}$の固有値の一つを$\lambda'\neq0$とし，それに対する固有ベクトルを$\bm{y}\neq\bm{0}$とおくと
+                $A^{-1}\bm{y} = \lambda'\bm{y}$であり，両辺に左から$A$を掛けて$\bm{y} = \lambda'A\bm{y}\quad\therefore\;A\bm{y} = \frac{1}{\lambda'}\bm{y}$となる。
+                よって$A^{-1}$の固有値$\lambda'$は$A$の固有値$1/\lambda'$の逆数であり，固有ベクトルは共通である。
             \end{proof}
         \subsection{ユニタリ行列の全ての固有値の絶対値は1である}
             \begin{proof}
@@ -105,11 +105,11 @@
                     0 & 0 & 0 & 1 & 0
                 \end{bmatrix}
                 \]
-                を$f(\lambda)$の\textbf{コンパニオン行列}という。$\det{A}=(-1)^n a_0$であり、$\det{(\lambda I-A)} = f_n(\lambda)$である。
+                を$f(\lambda)$の\textbf{コンパニオン行列}という。$\det{A}=(-1)^n a_0$であり，$\det{(\lambda I-A)} = f_n(\lambda)$である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $\det{A}=(-1)^n a_0$については、第1行をバブルソートの要領で$n-1$回の置換により最下行に移動させて下三角行列を作ることで証明できる。
+                $\det{A}=(-1)^n a_0$については，第1行をバブルソートの要領で$n-1$回の置換により最下行に移動させて下三角行列を作ることで証明できる。
                 \par
                 次に$\det{(\lambda I-A)} = f(\lambda)$を示す。
                 $n=1$のとき成り立つ。$n-1$まで成り立つと仮定する。
@@ -151,9 +151,9 @@
                 \[ A \coloneq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
                 このとき$A$は次のように対角化可能である。
                 \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
-                ここに$W$は$N\times N$ DFT基底行列であり、第$(n,k)$要素は次式で定義される。
+                ここに$W$は$N\times N$ DFT基底行列であり，第$(n,k)$要素は次式で定義される。
                 \[ W_{n,k} \coloneq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
-                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり、次式で定義される。
+                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり，次式で定義される。
                 \[ \DFT{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
                 \[ \sum_{n=0}^{N-1}\overline{W_{k,n}}a_n \]
@@ -172,7 +172,7 @@
                     &= \sqrt{N}[\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,0],\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,1],\dots,\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,N-1]] \\
                     &= \sqrt{N}\diag{\DFT{\bm{a}}}\HerConj{W}
                 \end{align*}
-                両辺に左から$W$を掛け、$W$のユニタリ性$W\HerConj{W} = I$を用いて次式を得る。
+                両辺に左から$W$を掛け，$W$のユニタリ性$W\HerConj{W} = I$を用いて次式を得る。
                 \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
             \end{proof}
         \subsection{Hadamard行列の固有値}
@@ -182,11 +182,11 @@
             \begin{proof}
                 \quad\par
                 $2^n$次のHadamard行列を$H_n$と書く。$H_0 \coloneq [1]$と定義する。
-                まず、$H_1$の固有値と固有ベクトルの組が$(\pm\sqrt{2},[1\pm\sqrt{2},1]^\top)$(複合同順)であることは容易に導ける。
+                まず，$H_1$の固有値と固有ベクトルの組が$(\pm\sqrt{2},[1\pm\sqrt{2},1]^\top)$(複合同順)であることは容易に導ける。
                 よって$n=1$のとき定理の主張が成り立つ。
                 \par
                 $n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
-                $H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$とし、固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\dotsc,\bm{v}_m^{2^{m-1}}$とする。
+                $H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$とし，固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\dotsc,\bm{v}_m^{2^{m-1}}$とする。
                 このとき次のことが成り立つ。\\
                 $i=1,\dotsc,2^{m-1}$に対して
                 \begin{equation}
@@ -236,11 +236,11 @@
                     \end{bmatrix}
                 \end{align*}
                 他も同様に確かめられる。
-                これら$2^{m+1}$個の固有ベクトルが一次独立であることを示せば、$n$が1増える毎に$H_n$の固有ベクトルの個数が倍になるから、定理の証明が済む。
-                相異なる固有値に対応する固有ベクトルは一次独立(\ref{相異なる固有値に対応する固有ベクトルは一次独立})だから、(1)で言及した固有ベクトルの一次結合と(2)で言及した固有ベクトルの一次結合は一次独立である。
-                あとは、(1)の固有ベクトル達、および(2)の固有ベクトル達がそれぞれ一次独立であることを示せばよい。
+                これら$2^{m+1}$個の固有ベクトルが一次独立であることを示せば，$n$が1増える毎に$H_n$の固有ベクトルの個数が倍になるから，定理の証明が済む。
+                相異なる固有値に対応する固有ベクトルは一次独立(\ref{相異なる固有値に対応する固有ベクトルは一次独立})だから，(1)で言及した固有ベクトルの一次結合と(2)で言及した固有ベクトルの一次結合は一次独立である。
+                あとは，(1)の固有ベクトル達，および(2)の固有ベクトル達がそれぞれ一次独立であることを示せばよい。
                 (1)の固有ベクトル達が一次独立であることを示す。(2)についても同様に示せる。
-                (1)の列ベクトル達の上半分(或いは下半分)は$H_m$の固有ベクトルであるから、相異なる固有値に対応する固有ベクトルが一次独立であることを再び用いて
+                (1)の列ベクトル達の上半分(或いは下半分)は$H_m$の固有ベクトルであるから，相異なる固有値に対応する固有ベクトルが一次独立であることを再び用いて
                 $
                     \begin{bmatrix}
                         \bm{u}_m^i \\
@@ -257,7 +257,7 @@
                     \;(i=1,\dotsc,2^{m-1})
                 $
                 の一次結合は一次独立である。
-                また、$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$は$H_m$の固有ベクトルだから
+                また，$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$は$H_m$の固有ベクトルだから
                 $
                     \begin{bmatrix}
                         \bm{u}_m^i \\
@@ -280,7 +280,7 @@
                 \[\field^n = \bigoplus_{i=1}^p{\Ker{(A-\lambda I)^{\mu_i}}}\]
                 $\psi(\lambda)$より低次のいかなる多項式によっても消去できない$\vx\in\field^n$を構成しよう。
                 \[\Ker{(A-\lambda_i I)^{\mu_i}}/\Ker{(A-\lambda_i I)^{\mu_i-1}}\supset\{\bm{0}\}\]
-                である(さもなくば$\psi(\lambda)$が最小多項式であったことに矛盾する!)から、ここからひとつベクトル$\vx_i$をとると自然数$k_i$につき
+                である(さもなくば$\psi(\lambda)$が最小多項式であったことに矛盾する!)から，ここからひとつベクトル$\vx_i$をとると自然数$k_i$につき
                 \[
                     (A-\lambda I)^{k_i}\vx_i
                     \begin{cases}
@@ -288,14 +288,14 @@
                         \neq\bm{0} & (\mathrm{otherwise})
                     \end{cases}
                 \]
-                もっと簡単に言うと、$\vx_i$を消去するには$(A-\lambda_i I)$の$\mu_i$次以上の積が必須である。
+                もっと簡単に言うと，$\vx_i$を消去するには$(A-\lambda_i I)$の$\mu_i$次以上の積が必須である。
                 そこで
                 \[x = \sum_{i=1}^{p}{\vx_i}\]
-                とすれば$\vx$は$\psi(\lambda)$で消去でき、かつ$\vx$の任意の消去多項式は必ず$\psi(\lambda)$で割り切れなくてはならないから$\vx$の最小消去多項式は$\psi(\lambda)$である。
+                とすれば$\vx$は$\psi(\lambda)$で消去でき，かつ$\vx$の任意の消去多項式は必ず$\psi(\lambda)$で割り切れなくてはならないから$\vx$の最小消去多項式は$\psi(\lambda)$である。
             \end{proof}
     \section{スペクトル写像定理}
         \begin{shadebox}
-            $A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\dotsc,\lambda_n$とし、$f(s)$を$s$の多項式とする。
+            $A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\dotsc,\lambda_n$とし，$f(s)$を$s$の多項式とする。
             このとき行列多項式$f(A)$の固有値は重複を含めて$f(\lambda_1),\dotsc,f(\lambda_n)$となる。
         \end{shadebox}
         \begin{proof}
@@ -303,13 +303,13 @@
             $A$は正方行列であるから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$により次のように上三角化できる。
             \[A = PUP^\top\]
             但し$U$は第$i$対角成分が$\lambda_i$である上三角行列である($P$はユニタリだから$A^n = PU^nP^\top$となることに注意せよ)。
-            $f(s)$の次数を$m$とし、$k$次の係数を$c_k$とする($f(s) = \sum_{k=0}^{m}c_{k}s^k$)。
+            $f(s)$の次数を$m$とし，$k$次の係数を$c_k$とする($f(s) = \sum_{k=0}^{m}c_{k}s^k$)。
             $f(A)$の固有多項式は
             \begin{align*}
                 \left|\lambda I - f(A)\right| &= \left|\lambda I - \sum_{k=0}^{m}c_{k}A^k\right| = \left|\lambda I - \sum_{k=0}^{m}c_{k}PU^kP^\top\right| = \left|P\left(\lambda I - \sum_{k=0}^{m}c_{k}U^k\right)P^\top\right| \\
                 &= \left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right|
             \end{align*}
-            定理\ref{上(下)三角行列のべき乗}より$U^k$は上三角行列であり、その第$i$対角成分は${\lambda_i}^k$であるから、上の$|\cdot|$の中身は上三角行列であり、その第$i$対角成分は$\lambda - \sum_{k=0}^{m}c_{k}{\lambda_i}^k = \lambda - f(\lambda_i)$である。
+            定理\ref{上(下)三角行列のべき乗}より$U^k$は上三角行列であり，その第$i$対角成分は${\lambda_i}^k$であるから，上の$|\cdot|$の中身は上三角行列であり，その第$i$対角成分は$\lambda - \sum_{k=0}^{m}c_{k}{\lambda_i}^k = \lambda - f(\lambda_i)$である。
             よって上の式は
             \[\left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right| = \prod_{i=1}^{n}{(\lambda - f(\lambda_i))}\]
             であるから$f(A)$の固有値が$f(\lambda_1),\dotsc,f(\lambda_n)$であることがわかる。
@@ -318,11 +318,11 @@
         \subsection{正規行列\texorpdfstring{$\iff$}{⇔}ユニタリ行列で対角化可能}
             \begin{shadebox}
                 $n$を自然数とする。
-                $A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は、ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda \HerConj{Q}$となることである。
+                $A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は，ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda \HerConj{Q}$となることである。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                十分性は容易に示せるので省略し、必要性のみ示す。
+                十分性は容易に示せるので省略し，必要性のみ示す。
                 $A$を正規行列とする。
                 $A$のSchur分解を$A = SU\HerConj{S}$とする。
                 ここに$S,U \in \complexNumbers^{n \times n}$はそれぞれ適当なユニタリ行列, 上三角行列である。
@@ -332,11 +332,11 @@
                     \therefore\;\HerConj{U}U - U\HerConj{U} &= \HerConj{S}OS = O \\
                     \therefore\;\HerConj{U}U &= U\HerConj{U}
                 \end{align*}
-                これより、まず$\HerConj{U}U$と$U\HerConj{U}$の第1,1成分が等しいから
+                これより，まず$\HerConj{U}U$と$U\HerConj{U}$の第1,1成分が等しいから
                 \[ (\HerConj{U}U)_{1,1} = (U\HerConj{U})_{1,1} \]
                 \[ \therefore |u_{1,1}|^2 = |u_{1,1}|^2 + |u_{1,2}|^2 + \dotsb + |u_{1,n}|^2 \]
                 \[ u_{1,2} = u_{1,3} = \dotsb = u_{1,n} = 0 \]
-                次に、$\HerConj{U}U$と$U\HerConj{U}$の第2,2成分が等しいから
+                次に，$\HerConj{U}U$と$U\HerConj{U}$の第2,2成分が等しいから
                 \[ |u_{1,2}|^2 + |u_{2,2}|^2 = |u_{2,2}|^2 + |u_{2,3}|^2 + \dotsb + |u_{2,n}|^2 \]
                 これと先程の結果$|u_{1,2}| = 0$より
                 \[ u_{2,3} = u_{2,4} = \dotsb = u_{2,n} = 0 \]
@@ -345,39 +345,39 @@
     \section{一般固有空間}
         \subsection{一般固有空間の階数の頭打ち}
             \begin{shadebox}
-                行列$A$とその固有値$\lambda$の$k$階一般固有空間$F_{A,k}(\lambda)$に対して、もしある自然数$l$が存在して$F_{A,l}(\lambda)=F_{A,l+1}(\lambda)$が成り立てば、任意の$m\geq l+2$に対して$F_{A,m}(\lambda)=F_{A,l}(\lambda)$。
+                行列$A$とその固有値$\lambda$の$k$階一般固有空間$F_{A,k}(\lambda)$に対して，もしある自然数$l$が存在して$F_{A,l}(\lambda)=F_{A,l+1}(\lambda)$が成り立てば，任意の$m\geq l+2$に対して$F_{A,m}(\lambda)=F_{A,l}(\lambda)$。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $m=l+1$に対して示す。それ以上の$m$に対しても帰納的に示せる。
-                結論を否定すると、ある$\bm{v}\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\bm{v}=\bm{0}\land(A-\lambda I)^{l+1}\bm{v}\neq\bm{0}$。
+                結論を否定すると，ある$\bm{v}\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\bm{v}=\bm{0}\land(A-\lambda I)^{l+1}\bm{v}\neq\bm{0}$。
                 すなわち$(A-\lambda I)^{l+1}\left[(A-\lambda I)\bm{v}\right]=\bm{0}\land(A-\lambda I)^l\left[(A-\lambda I)\bm{v}\right]\neq\bm{0}$。
                 よって$(A-\lambda I)\bm{v} \in F_{A,l+1}(\lambda)$。
                 これと仮定$F_{A,l+1}(\lambda) = F_{A,l}(\lambda)$より$(A-\lambda I)\bm{v} \in F_{A,l}(\lambda)$。
-                よって$(A-\lambda I)^{l+1}\bm{v}=\bm{0}$となり、矛盾する。
+                よって$(A-\lambda I)^{l+1}\bm{v}=\bm{0}$となり，矛盾する。
             \end{proof}
         %\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
         %	\begin{shadebox}
-        %		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし、その代数的重複度を$n_i,n_j$とする。
-        %		一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと、$F_i\cap F_j=\{\bm{0}_n\}$
+        %		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし，その代数的重複度を$n_i,n_j$とする。
+        %		一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと，$F_i\cap F_j=\{\bm{0}_n\}$
         %	\end{shadebox}
         \subsection{一般固有空間への直和分解}
             \label{一般固有空間への分解}
             \begin{shadebox}
-                $A\in\field^{n\times n}$の固有多項式が相異なる固有値$\lambda_1,\dotsc,\lambda_p$に対して$\varphi_A(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\nu_i}}$となるとき、次が成り立つ。
+                $A\in\field^{n\times n}$の固有多項式が相異なる固有値$\lambda_1,\dotsc,\lambda_p$に対して$\varphi_A(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\nu_i}}$となるとき，次が成り立つ。
                 \[\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)},\quad \dim{F_A(\lambda_i)} = \nu_i\]
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 Cayley-Hamiltonの定理と\cite{システム線形代数}補題2.2より最初の式\;$\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)}$\;が従う。
                 次に${\nu_i}' \coloneq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
-                各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より、
-                $F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし、$\Phi_i \coloneq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば、
+                各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より，
+                $F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし，$\Phi_i \coloneq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば，
                 次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\dotsc,p)$が存在する。
                 \[A = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\]
                 \par
                 ここで下準備として$A_i$が唯一の固有値$\lambda_i$を持つことを示しておく。
-                まず固有値$\lambda_i$を持つことを示す。$\bm{x}\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り、$F_A(\lambda_i)$の基底で次のように展開する。
+                まず固有値$\lambda_i$を持つことを示す。$\bm{x}\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り，$F_A(\lambda_i)$の基底で次のように展開する。
                 \[\bm{x} = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
                 これを上式に右から掛けて
                 \begin{align}
@@ -397,16 +397,16 @@
                 \end{align}
                 ここで$[d_1,\dotsc,d_{\nu_i}']^\top = A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$とおくと
                 \[A\bm{x} = (1) = \sum_{j=1}^{{\nu_i}'}{d_j\bm{\phi}_{ij}}\]
-                であるが、そもそも$A\bm{x} = \lambda_i\bm{x} = \sum_{j=1}^{{\nu_i}'}{\lambda_ic_j\bm{\phi}_{ij}}$であったから$d_j = \lambda_jc_j$となり、
-                $A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top = \lambda_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$となるから、$A_i$は固有値$\lambda_i$を持つことになる。
+                であるが，そもそも$A\bm{x} = \lambda_i\bm{x} = \sum_{j=1}^{{\nu_i}'}{\lambda_ic_j\bm{\phi}_{ij}}$であったから$d_j = \lambda_jc_j$となり，
+                $A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top = \lambda_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$となるから，$A_i$は固有値$\lambda_i$を持つことになる。
                 \par
                 次に$A_i$の固有値が$\lambda_i$のみであることを背理法で示す。
-                $A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し、$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
+                $A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し，$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
                 ベクトル$\bm{x}\in\field^n$を
                 \[\Phi^{-1}\bm{x} = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top\]
                 すなわち
                 \[\bm{x} = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
-                で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので、まず次式が成り立つ。
+                で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので，まず次式が成り立つ。
                 \begin{equation}
                     (A-\lambda_iI_n)^{\nu_i}\bm{x} = \bm{0}_n
                 \end{equation}
@@ -440,12 +440,12 @@
                 \end{align*}
                 であるから
                 \[(A-\lambda_iI_n)^{\nu_i}\bm{x} = (\lambda'-\lambda_i)^{\nu_i}\bm{x} \neq \bm{0}_n\]
-                となるが、これは式(2)に矛盾する。故に背理法の仮定が誤っており、$A_i$は固有値$\lambda'$を持たない。
+                となるが，これは式(2)に矛盾する。故に背理法の仮定が誤っており，$A_i$は固有値$\lambda'$を持たない。
                 \par
                 以上より$A_i$は唯一の固有値$\lambda_i$を持つことがわかる。
                 よって
                 \[\varphi_A(\lambda) = |\lambda I_n - A| = \prod_{i=1}^{p}{|\lambda I_{{\nu_i}'} - A_i|} = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{{\nu_i}'}}\]
-                となり、定理の仮定の$\varphi_A(\lambda)$と比較して${\nu_i}'=\nu_i$が得られる。
+                となり，定理の仮定の$\varphi_A(\lambda)$と比較して${\nu_i}'=\nu_i$が得られる。
             \end{proof}
         この定理から直ちに次が成り立つ。
         \subsection{代数的重複度\texorpdfstring{$\geq$}{≧}幾何学的重複度}
@@ -453,7 +453,7 @@
                 任意の$A\in\field^{n\times n}$の固有値$\lambda$の代数的重複度$\nu_i$は幾何学的重複度$\mu_i$以上である。
             \end{shadebox}
             \begin{proof}
-                直前の定理より$\nu_i = \dim{F_A(\lambda)}$であることと、$F_A(\lambda) \supseteq E_A(\lambda)$であることより従う。
+                直前の定理より$\nu_i = \dim{F_A(\lambda)}$であることと，$F_A(\lambda) \supseteq E_A(\lambda)$であることより従う。
             \end{proof}
         \subsection{\texorpdfstring{$AB=O$}{AB=O}でも\texorpdfstring{$\realNumbers^n = \Ker{A} + \Ker{B}$}{R\string^n = Ker(A) + Ker(B)}とは限らない}
             \begin{proof}
@@ -510,7 +510,7 @@
                         ,\quad
                         \bm{b} = [0\cdots0\;1]^\top \in \complexNumbers^n
                     \]
-                    と表すと、これの逆行列は次のように表される(\cite{入門線形代数} 問題2.4.8)。
+                    と表すと，これの逆行列は次のように表される(\cite{入門線形代数} 問題2.4.8)。
                     \[
                         J(\lambda,n+1)^{-1} =
                         \begin{bmatrix}
@@ -553,8 +553,8 @@
                     \end{bmatrix}
                 \]
                 \par
-                $\Gamma$と$U$は可換であり($\Gamma$が単位行列の定数倍であることから明らか)、$\Gamma$に$U$を左或いは右から掛けると$\Gamma$の各行が上に一段シフトする(或いは各列が右に1段シフトするとも言える)。
-                溢れた行或いは列は消え去り、補充されない。溢れた分だけ反対側から空行或いは空列が注入される。
+                $\Gamma$と$U$は可換であり($\Gamma$が単位行列の定数倍であることから明らか)，$\Gamma$に$U$を左或いは右から掛けると$\Gamma$の各行が上に一段シフトする(或いは各列が右に1段シフトするとも言える)。
+                溢れた行或いは列は消え去り，補充されない。溢れた分だけ反対側から空行或いは空列が注入される。
                 よって$\left[J(\lambda, n)t\right]^p,\quad p\in\mathbb{N}+\{0\}$の対角成分より下側の成分は$0$であることがわかる。
                 \par
                 \begin{equation}
@@ -562,7 +562,7 @@
                 \end{equation}
                 $(\Gamma+U)^p$の$(i,j)$成分を$a_{i,j}(p)$とする。先述の通り$a_{i,j}(p)=0,\;i>j$である。
                 \par
-                以下$i\leq j$とする。式(1)の$U^k\Gamma^{p-k}$において$(i,j)$要素が非零となるのは$k=j-i$のときに限る(当然、同時に$p\geq j-i$でなくてはならない)。
+                以下$i\leq j$とする。式(1)の$U^k\Gamma^{p-k}$において$(i,j)$要素が非零となるのは$k=j-i$のときに限る(当然，同時に$p\geq j-i$でなくてはならない)。
                 各$p$に対する$a_{i,j}(p)$を表にすると次のようになる。
                 \begin{table}[H]
                     \centering
@@ -591,7 +591,7 @@
             $n$次正行列$A$について次が成り立つ
             \begin{enumerate}
                 \item $\rho(A)>0$
-                \item $\rho(A)$は$A$の単純固有値の一つと等しく、$\rho(A)$は他のどの固有値の絶対値よりも真に大きい
+                \item $\rho(A)$は$A$の単純固有値の一つと等しく，$\rho(A)$は他のどの固有値の絶対値よりも真に大きい
                 \item $\rho(A)$と等しい固有値に対応する正の固有ベクトルが存在する
             \end{enumerate}
         \end{shadebox}
@@ -599,17 +599,17 @@
         \begin{proof}
             \quad\par
             1.と3.および2.の「$\rho(A)$は$A$の単純固有値の1つと等しく」は\cite{システム線形代数}のPerron-Frobeniusの定理の証明と同じ方法で証明できる。
-            2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」を、\cite{システム線形代数} 170頁 定理6.11 のPerron-Frobeniusの定理の証明を利用して示す。
+            2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」を，\cite{システム線形代数} 170頁 定理6.11 のPerron-Frobeniusの定理の証明を利用して示す。
             その証明の中に
             \begin{equation}
                 \lambda_ix_i = \sum_{j=1}^{n}{a_{ij}x_j}
             \end{equation}
             \[|\lambda||x_i| = \left|\sum_{j=1}^{n}{a_{ij}x_j}\right| \leq \sum_{j=1}^{n}{a_{ij}|x_j|}\]
-            という式があるが、$|\lambda|\leq\hat{\lambda}$は既に示されているので、上式に於いて等号が成り立てば$\lambda=\hat{\lambda}$であることを示せばよい。
+            という式があるが，$|\lambda|\leq\hat{\lambda}$は既に示されているので，上式に於いて等号が成り立てば$\lambda=\hat{\lambda}$であることを示せばよい。
             \par
             $A$は正行列だから$a_{ij}>0$である。$\bm{x}$は固有ベクトルであるから$x_j$の少なくともどれか一つは非零である。
             よって等号が成り立つとき$x_j$は全て同じ向きである。
-            言い換えれば、ある非零な複素数$z$と$b_1,\dotsc,b_n\geq0$が存在して
+            言い換えれば，ある非零な複素数$z$と$b_1,\dotsc,b_n\geq0$が存在して
             \[
                 \bm{x} = z
                 \begin{bmatrix}

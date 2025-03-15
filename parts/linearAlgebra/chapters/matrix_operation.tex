@@ -23,7 +23,7 @@
     \section{上(下)三角行列のべき乗}
         \label{上(下)三角行列のべき乗}
         \begin{shadebox}
-            上三角行列$A$の$n$乗もまた上三角行列であり、特に第$i$対角成分は${a_{ii}}^n$である。
+            上三角行列$A$の$n$乗もまた上三角行列であり，特に第$i$対角成分は${a_{ii}}^n$である。
             下三角行列についても上と同様の定理が成り立つ。
         \end{shadebox}
         \begin{proof}
@@ -33,7 +33,7 @@
             \[A^2[i][j] = \sum_{k=1}^{n}{a_{ik}a_{kj}} = \sum_{i\leq k,k\leq j}{a_{ik}a_{kj}}\quad(\because\;a_{ij}=0\mathrm{ when }i>j)\]
             であるから次の2つの式が成り立つ。
             \[A^2[i][i] = \sum_{i\leq k,k\leq i}{a_{ik}a_{ki}} = {a_{ii}}^2,\quad A^2[i][j](i>j) = 0\]
-            次に、$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
+            次に，$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
             \begin{align*}
                 A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\left(b_{kj} = A^n[k][j]\right) \\
                 &= \sum_{i\leq k, k\leq j}^{n}{a_{ik}b_{kj}}\quad(\because\;\mathrm{帰納法の仮定より }b_{ij}=0\mathrm{ when }i>j)
@@ -46,7 +46,7 @@
         \end{proof}
     \section{列ベクトルと行ベクトルの積の和}
         \begin{shadebox}
-            列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき、
+            列ベクトル$\bm{a}_i\in\field^{m\times1}$と行ベクトル$\bm{b}_i\in\field^{1\times n}$の積を$C_i\in\field^{m\times n}$とするとき，
             \[
             \sum_{i\in{i_1,i_2,\dotsc,i_l}}{C_i} = [\bm{a}_{i_1},\bm{a}_{i_2},\dotsc,\bm{a}_{i_l}]
             \begin{bmatrix}
@@ -63,10 +63,10 @@
     \section{巡回行列の可換則}
         \begin{proof}
             \quad\par
-            $A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると、適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
+            $A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると，適当な定数$c_0,\dotsc,c_{n-1},\;d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},\;b_{ij} = d_{(i-j)\%n}$と表せる。
             まず
             \[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
-            であり、添字に剰余を用いていることと総和の範囲に注意して、
+            であり，添字に剰余を用いていることと総和の範囲に注意して，
             \begin{align*}
                 (BA)[i][j] &= \sum_{k=0}^{n-1} b_{ik}a_{kj} = \sum_{k=0}^{n-1} d_{(i-k)\%n}c_{(k-j)\%n} = \sum_{k=0}^{n-1} d_{(i-(k+i+j))\%n}c_{((k+i+j)-j)\%n} \\
                 &= \sum_{k=0}^{n-1} d_{(-k-j)\%n}c_{(k+i)\%n} = \sum_{k=0}^{n-1} d_{(-(-k)-j)\%n}c_{((-k)+i)\%n} \\
@@ -104,10 +104,10 @@
             \end{proof}
             （補足）
             \par
-            $\complexNumbers^{m\times n}$ と $\complexNumbers^{m+n}$ の間に一対一の対応が存在すること、および $\bm{a}\in\complexNumbers^m,\;\bm{b}\in\complexNumbers^n$ に対して $\bm{a}\bm{b}^\top$ の階数が高々 1 であることからも直ちに判る。
+            $\complexNumbers^{m\times n}$ と $\complexNumbers^{m+n}$ の間に一対一の対応が存在すること，および $\bm{a}\in\complexNumbers^m,\;\bm{b}\in\complexNumbers^n$ に対して $\bm{a}\bm{b}^\top$ の階数が高々 1 であることからも直ちに判る。
         \subsection{混合積: \texorpdfstring{$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$}{(A⊗B)(C⊗D) = (AC)⊗(BD)}}
             \begin{shadebox}
-                行列$A,B,C,D$を、積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
+                行列$A,B,C,D$を，積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -137,8 +137,8 @@
             \label{Kronecker 積の固有値，固有ベクトル}
             \begin{shadebox}
                 $A,B$ をそれぞれ $m_A\times m_A, m_B\times m_B$ の正方行列とする。
-                $A$ の固有値を重複を含めて $\lambda_{A,1},\dots,\lambda_{A,m_A}$ 、 $B$ の固有値を重複を含めて $\lambda_{B,1},\dots,\lambda_{B,m_B}$ とする。
-                $\lambda_{A,i}$ に属する $A$ の固有ベクトルを $\bm{v}_{A,i}$ 、$\lambda_{B,i}$ に属する $B$ の固有ベクトルを $\bm{v}_{B,i}$ とする。
+                $A$ の固有値を重複を含めて $\lambda_{A,1},\dots,\lambda_{A,m_A}$ ， $B$ の固有値を重複を含めて $\lambda_{B,1},\dots,\lambda_{B,m_B}$ とする。
+                $\lambda_{A,i}$ に属する $A$ の固有ベクトルを $\bm{v}_{A,i}$ ，$\lambda_{B,i}$ に属する $B$ の固有ベクトルを $\bm{v}_{B,i}$ とする。
                 $A\otimes B$ の固有値は重複を含めて $\lambda_{A,i}\lambda_{B,j}\;(i\in\range{1}{m_A},\;j\in\range{1}{m_B})$ である。
                 $\bm{v}_{A,i}\otimes\bm{v}_{A,j}$ は $A\otimes B$ の固有値 $\lambda_{A,i}\lambda_{B,j}$ に属する固有ベクトルである。
             \end{shadebox}
@@ -146,14 +146,14 @@
                 \quad\par
                 $A,B$ の Schur 分解をそれぞれ $A = S_A U_A \HerConj{S_A},\; B = S_B U_B \HerConj{S_B}$ とする。
                 混合積の性質から $A\otimes B = (S_A\otimes S_B)(U_A\otimes U_B)(\HerConj{S_A}\otimes\HerConj{S_B})$ である。
-                $S_A\otimes S_B$ は正則であり $(S_A\otimes S_B)^{-1} = \HerConj{S_A}\otimes\HerConj{S_B}$ であるから、$U_A\otimes U_B$ の固有値と $A\otimes B$ のそれは等しい。
-                $U_A\otimes U_B$ の特性多項式を考えれば、$A\otimes B$ の固有値は $\lambda_{A,i}\lambda_{B,j}$ であることが容易に判る。
+                $S_A\otimes S_B$ は正則であり $(S_A\otimes S_B)^{-1} = \HerConj{S_A}\otimes\HerConj{S_B}$ であるから，$U_A\otimes U_B$ の固有値と $A\otimes B$ のそれは等しい。
+                $U_A\otimes U_B$ の特性多項式を考えれば，$A\otimes B$ の固有値は $\lambda_{A,i}\lambda_{B,j}$ であることが容易に判る。
                 \par
                 混合積の性質から $(A\otimes B)(\bm{v}_{A,i}\otimes\bm{v}_{B,j}) = (A\bm{v}_{A,i})\otimes(B\bm{v}_{B,j}) = \lambda_{A,i}\bm{v}_{A,i}\otimes\lambda_{B,j}\bm{v}_{B,j} = \lambda_{A,i}\lambda_{B,j}(\bm{v}_{A,i}\otimes\bm{v}_{B,j})$ であるから固有ベクトルについても定理の主張が成り立つ。
             \end{proof}
         \subsection{行列式}
             \begin{shadebox}
-                $A,B$ をそれぞれ$m_A\times m_A, m_B\times m_B$の正方行列とするとき、次式が成り立つ。
+                $A,B$ をそれぞれ$m_A\times m_A, m_B\times m_B$の正方行列とするとき，次式が成り立つ。
                 \[ \det\parens{A\otimes B} = \det\parens{A}^{m_B}\det\parens{B}^{m_A} \]
             \end{shadebox}
             \begin{proof}

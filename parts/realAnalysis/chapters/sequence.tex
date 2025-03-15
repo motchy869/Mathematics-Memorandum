@@ -1,12 +1,12 @@
 \chapter{数列}
     % \section{実数を要素とする有界集合の上限と下限の存在(考察)}
-    % 	$A\in\realNumbers$を上に有界な集合とし、$A$の上限$\sup A$の存在を確かめる。
+    % 	$A\in\realNumbers$を上に有界な集合とし，$A$の上限$\sup A$の存在を確かめる。
     % 	同様にして下に有界な集合に対する下限の存在も確かめられる。
     % 	まず$a_0 \in A$を任意に選ぶ。
-    % 	$A$は上に有界だから、次のような$a_1$が存在する。
+    % 	$A$は上に有界だから，次のような$a_1$が存在する。
     % 	\[ a_0 < b_0,\; \forall a \in A,\; a<b_0 \]
     % 	数列$\{a_i\},\{b_i\}$を次の手順で生成する:
-    % 	$(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$、そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
+    % 	$(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
     % 	$c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
     \section{単調性}
         \subsection{\texorpdfstring{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
@@ -39,7 +39,7 @@
                 \quad\par
                 \[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\]
                 であるから
-                $\epsilon>0$を任意にとると、十分大きい$n\in\mathbb{N}$に対して
+                $\epsilon>0$を任意にとると，十分大きい$n\in\mathbb{N}$に対して
                 \[\left(1+\frac{1-\epsilon}{n}\right)^n \leq \left(1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\right)^n \leq \left(1+\frac{1+\epsilon}{n}\right)^n\]
                 両辺で$n\rightarrow\infty$として従う。
             \end{proof}
@@ -48,7 +48,7 @@
                 \quad\par
                 $o(1/n)$の部分を$f(n)$とおく。
                 \[ \left(1+\frac{1}{n}+f(n)\right)^n = (1+1/n)^n + \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i \]
-                $\lim_{n\to\infty}(1+1/n)^n = e$の証明より、上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
+                $\lim_{n\to\infty}(1+1/n)^n = e$の証明より，上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
                 \begin{align*}
                     \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i &\leq 3\sum_{i=1}^n \combi{n}{i}f(n)^i = 3\sum_{i=1}^n \frac{1}{i!}\frac{n(n-1)\dotsm(n-i+1)}{n^i}n^if(n)^i \\
                     &\leq 3\sum_{i=1}^n \frac{1}{i!}(nf(n))^i \leq 3nf(n)\sum_{i=1}^n \frac{1}{i!}(nf(n))^{i-1}
@@ -59,14 +59,14 @@
     \section{漸化式}
         \subsection{Fibonacci数列}
             \subsubsection{つがいの増殖からの漸化式の導出}
-                第$n$世代のつがいの数を$a_n$とし、そのうち成熟しているものを$m_n$、未成熟のものを$y_n$とすると、$a_{n+1} - a_n = m_n$であり、同時に$m_n = m_{n-1} + y_{n-1}$なので結局$a_{n+1} = a_n + a_{n-1}$となる。
+                第$n$世代のつがいの数を$a_n$とし，そのうち成熟しているものを$m_n$，未成熟のものを$y_n$とすると，$a_{n+1} - a_n = m_n$であり，同時に$m_n = m_{n-1} + y_{n-1}$なので結局$a_{n+1} = a_n + a_{n-1}$となる。
         \subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),\;(r\neq1 ,\;p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),\;(A:\text{ 定数},\;q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
             \begin{proof}
                 \quad\par
                 $p(n) = b_dn^d + \dotsb + b_1n + b_0n$とする。
                 $a_n = Ar^n + q(n)\;\left(q(n) = c_dn^d + \dotsb + c_1n + c_0\right)$とおいて漸化式に代入すると次式を得る。
                 \[ Ar^{n+1} + q(n+1) = Ar^{n+1} + rq(n) + p(n) \quad \therefore\; q(n+1) = rq(n) + p(n) \]
-                両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$、左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり、$r\neq 1$なので$d$次の係数から順に見てゆき、$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
+                両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$，左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり，$r\neq 1$なので$d$次の係数から順に見てゆき，$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
                 最後に初期条件$a_0$(或いは$a_1,a_2,\dotsc,$\;値が分かっている項なら何でも良い)の値から$A$を決定できる。
             \end{proof}
         % \begin{comment}
