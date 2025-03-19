@@ -96,6 +96,8 @@
 % no upper case in header
 \fancyhead{\nouppercase{\rightmark}}
 \fancyhead{\nouppercase{\leftmark}}
+% Use arabic numbers for footnotes even in minipage (including shadebox).
+\renewcommand*\thempfootnote{\arabic{mpfootnote}}
 
 % longtable settings
 \setcounter{LTchunksize}{200}
