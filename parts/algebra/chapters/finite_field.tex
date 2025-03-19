@@ -41,6 +41,42 @@
             唯一であることは背理法で示せる。
             仮に異なる$b_1,b_2 \in S$が存在して$ab_1 = ab_2 = 1$であるとすると$a(b_1 - b_2) = 0$であるが，一方で$a, b_1 - b_2 \neq 0$だから$a(b_1 - b_2) \neq 0$であり，矛盾している。
     \section{原始多項式}
+        \subsection{定義}
+            \cite{prim_poly_Wikipedia} に述べられているが，$\GaloisField{p}$ 上の $m\in\naturalNumbers$ 次の既約多項式 $p(x)$ が原始多項式であることは，$x^n-1\;(n\in\naturalNumbers)$ が $p(x)$ で割り切れる最小の $n$ が $p^m-1$ であることと同値である。
+        \subsection{原始多項式と生成元}
+            \begin{shadebox}
+                次の命題は真である。\\
+                $\GaloisField{p}$ 上の $m\in\naturalNumbers$ 次の既約多項式 $p(x)$ が原始多項式である $\iff\quad p(x)$ を既約多項式に選んで構成された $\GaloisField{p^m}$ に於いて $x$ が生成元である
+            \end{shadebox}
+            \begin{proof}
+                \quad\par\noindent
+                ($\Rightarrow$)
+                \par
+                集合 $S_0\coloneq\{x,x^2,x^3,\dots,x^{p^m-2}\}$ の元が 0, 1 いずれとも合同でなく，かつ互いに異なることを示す。
+                $S_0$ の元が 1 でないことは原始多項式の定義 (<<原始多項式>>) から明らかである。
+                \par
+                $S_0$ の元が 0 でないことは背理法で示せる。
+                仮にある $k\in\{1,2,\dots,p^m-2\}$ について $x^k\equiv 0$ なら $x^l\equiv 0\;(l\in\naturalNumbers,\;l\geq k)$ であるから $x^{p^m-1}\equiv 1$ に矛盾する。
+                \par
+                $S_0$ の元が互いに異なることも背理法で示せる。
+                仮に $a,b\in\naturalNumbers,\;p^m-2\geq b>a\geq1$ が存在して $x^b\equiv x^a$ であるとすると $x^a(x^{b-a}-1)\equiv 0$ である。
+                原始多項式の定義から $x^{b-a}-1\not\equiv 0$ なので $x^a\equiv 0$ であるが，これは先程示した「$S_0$ の元が 0 でない」に矛盾する。
+                \par
+                以上より $\{0,1\}\cup S_0$ の要素は互いに異なり，要素数は $p^m-1$ であるから $x$ は $\GaloisField{p^m}$ の生成元である。
+                \par\noindent
+                ($\Leftarrow$)
+                \par
+                前提から集合 $S\coloneq\{0,1,x,x^2,x^3,\dots,x^{p^m-2}\}$ の要素は互いに異なる（☆1）。
+                \par
+                まず $x^{p^m-1}\not\equiv 0$ を背理法で示す。
+                仮に $x^{p^m-1}\equiv 0$ とすると $x^{p^m-2}x\equiv 0$ であり、☆1 から $x^{p^m-2}\not\equiv 0$ なので $x\equiv 0$ となり☆1 に矛盾する。
+                \par
+                次に $x^{p^m-1}\not\in S\setminus\{0,1\}$ を背理法で示す。
+                仮にある $a\in\{1,2,\dots,p^m-2\}$ が存在して $x^{p^m-1}\equiv x^a$ であるとすると、 $x^a(x^{p^m-1-a}-1)\equiv 0$ であるが☆1 から $x^{p^m-1-a}-1\not\equiv 0$ なので $x^a\equiv 0$ となり☆1 に矛盾する。
+                \par
+                $x$ が $\GaloisField{p^m}$ の生成元であるから $x^{p^m-1}$ は必ず $S$ の要素のいずれかと合同である。
+                このことと、以上に示したことから $x^{p^m-1}\equiv 1$ である。
+            \end{proof}
         \subsection{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a0 x0 + a1 x1 + ...}が原始多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\{n-1\} x0 + a\{n-2\} x1 + ...}も原始多項式である}
             \begin{shadebox}
                 $p$を素数とする。
