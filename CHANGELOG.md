@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - incomplete proof in 8.1.2.1 lim_{||x||→∞} ||x-a|| - ||x|| = -<x,a>/||x||
 - Changed:
   - Distinguish '、' and '，' in Japanese text.
+- Added:
+  - diagonalization of companion matrix
 
 ## [v0.20.1] - 2025-01-06
 

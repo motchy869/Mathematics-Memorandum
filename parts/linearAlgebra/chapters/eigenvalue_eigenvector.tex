@@ -39,7 +39,7 @@
                     \end{bmatrix}
                     = O_{n\times p}
                 \]
-                となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣のヴァンデルモンド行列は正則だから
+                となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣の Vandermonde 行列は正則だから
                 \[ [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p] = O_{n\times p} \]
                 となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
             \end{proof}
@@ -92,50 +92,93 @@
                 \quad\par
                 ユニタリ行列$P$とその任意の固有値$\lambda$およびそれに対応する固有ベクトル$\bm{x} \neq \bm{0}$について$P\bm{x} = \lambda\bm{x}$の両辺のノルムをとると$\|\bm{x}\|_2 = \|P\bm{x}\|_2 = |\lambda|\|\bm{x}\|_2$であるからわかる。
             \end{proof}
-        \subsection{コンパニオン行列}
-            \begin{shadebox}
-                $\lambda$に関する多項式$f_n(\lambda)=\lambda^n+a_{n-1}\lambda^{n-1}+\dotsb+a_0$に対して次の行列
+        \subsection{随伴行列}
+            \subsubsection{定義}
+                \label{随伴行列の定義}
+                $n\in\naturalNumbers$ とし， $x$ を不定元とする。
+                多項式 $f_n(x)\coloneq x^n+a_{n-1}x^{n-1}+\dotsb+a_0$ に対して次の行列
                 \[
-                A =
-                \begin{bmatrix}
-                    -a_{n-1} & -a_{n-2} & -a_{n-3} & \cdots & -a_0 \\
-                    1 & 0 & 0 & \cdots & 0 \\
-                    0 & 1 & 0 & \cdots & 0 \\
-                    \vdots & & \ddots & \ddots \\
-                    0 & 0 & 0 & 1 & 0
-                \end{bmatrix}
+                    A =
+                    \begin{bmatrix}
+                        -a_{n-1} & -a_{n-2} & -a_{n-3} & \cdots & -a_0 \\
+                        1 & 0 & 0 & \cdots & 0 \\
+                        0 & 1 & 0 & \cdots & 0 \\
+                        \vdots & & \ddots & \ddots \\
+                        0 & 0 & 0 & 1 & 0
+                    \end{bmatrix}
                 \]
-                を$f(\lambda)$の\textbf{コンパニオン行列}という。$\det{A}=(-1)^n a_0$であり，$\det{(\lambda I-A)} = f_n(\lambda)$である。
-            \end{shadebox}
-            \begin{proof}
-                \quad\par
-                $\det{A}=(-1)^n a_0$については，第1行をバブルソートの要領で$n-1$回の置換により最下行に移動させて下三角行列を作ることで証明できる。
-                \par
-                次に$\det{(\lambda I-A)} = f(\lambda)$を示す。
-                $n=1$のとき成り立つ。$n-1$まで成り立つと仮定する。
-                第1列に関して余因子展開すると
-                \begin{align*}
-                    \det{(\lambda I-A)} &= \det
-                    \begin{bmatrix}
-                        \lambda+a_{n-1} & a_{n-2} & a_{n-3} & \cdots & a_0 \\
-                        -1 & \lambda & 0 & \cdots & 0 \\
-                        0 & -1 & \lambda & \cdots & 0 \\
-                        \vdots & & \ddots & \ddots \\
-                        0 & \cdots & 0 & -1 & \lambda
-                    \end{bmatrix} \\
-                    &= (\lambda+a_{n-1})\lambda^{n-1} + \det
-                    \begin{bmatrix}
-                        a_{n-2} & a_{n-3} & a_{n-4} & \cdots & a_0 \\
-                        -1 & \lambda & 0 & \cdots & 0 \\
-                        0 & -1 & \lambda & \cdots & 0 \\
-                        \vdots & & \ddots & \ddots \\
-                        0 & \cdots & 0 & -1 & \lambda
-                    \end{bmatrix} \\
-                    &= \lambda^{n} + a_{n-1}\lambda^{n-1} + \left.f_{n-1}(\lambda)\right|_{a_{n-2}\to a_{n-2}-\lambda} \\
-                    &= \lambda^{n} + a_{n-1}\lambda^{n-1} + \lambda^{n-1} + (a_{n-2}-\lambda)\lambda^{n-2} + a_{n-3}\lambda^{n-3} + \dotsb + a_1\lambda + a_0 \\
-                    &= \lambda^{n} + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \dotsb + a_1\lambda + a_0 = f_n(\lambda)
-                \end{align*}
-            \end{proof}
+                を $f$ の\textbf{随伴行列}という。
+            \subsubsection{行列式と固有多項式}
+                \label{随伴行列の行列式と固有多項式}
+                \begin{shadebox}
+                    \ref{随伴行列の定義} の定義を引き継ぐ。
+                    $\lambda\in\complexNumbers$ とする。
+                    $\det{A}=(-1)^n a_0$ であり，$\det{(\lambda I-A)} = f_n(\lambda)$ である。
+                    よって $A$ の固有値は $f_n$ の根である。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    $\det{A}=(-1)^n a_0$については，第1行をバブルソートの要領で$n-1$回の置換により最下行に移動させて下三角行列を作ることで証明できる。
+                    \par
+                    次に$\det{(\lambda I-A)} = f(\lambda)$を示す。
+                    $n=1$のとき成り立つ。$n-1$まで成り立つと仮定する。
+                    第1列に関して余因子展開すると
+                    \begin{align*}
+                        \det{(\lambda I-A)} &= \det
+                        \begin{bmatrix}
+                            \lambda+a_{n-1} & a_{n-2} & a_{n-3} & \cdots & a_0 \\
+                            -1 & \lambda & 0 & \cdots & 0 \\
+                            0 & -1 & \lambda & \cdots & 0 \\
+                            \vdots & & \ddots & \ddots \\
+                            0 & \cdots & 0 & -1 & \lambda
+                        \end{bmatrix} \\
+                        &= (\lambda+a_{n-1})\lambda^{n-1} + \det
+                        \begin{bmatrix}
+                            a_{n-2} & a_{n-3} & a_{n-4} & \cdots & a_0 \\
+                            -1 & \lambda & 0 & \cdots & 0 \\
+                            0 & -1 & \lambda & \cdots & 0 \\
+                            \vdots & & \ddots & \ddots \\
+                            0 & \cdots & 0 & -1 & \lambda
+                        \end{bmatrix} \\
+                        &= \lambda^{n} + a_{n-1}\lambda^{n-1} + \left.f_{n-1}(\lambda)\right|_{a_{n-2}\to a_{n-2}-\lambda} \\
+                        &= \lambda^{n} + a_{n-1}\lambda^{n-1} + \lambda^{n-1} + (a_{n-2}-\lambda)\lambda^{n-2} + a_{n-3}\lambda^{n-3} + \dotsb + a_1\lambda + a_0 \\
+                        &= \lambda^{n} + a_{n-1}\lambda^{n-1} + a_{n-2}\lambda^{n-2} + \dotsb + a_1\lambda + a_0 = f_n(\lambda)
+                    \end{align*}
+                \end{proof}
+            \subsubsection{固有ベクトル}
+                \label{随伴行列の固有ベクトル}
+                \begin{shadebox}
+                    \ref{随伴行列の定義} の定義を引き継ぐ。
+                    $\lambda$ は $A$ の固有値であるとする\footnote{$\lambda=0$ も含む。何故ならば $\bm{v}\neq\bm{0}$ が必ず成り立つから。}。
+                    $\bm{v}\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$ は $A$ の固有ベクトルである。
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    \ref{随伴行列の行列式と固有多項式} より $-a_{n-1}\lambda^{n-1}- a_{n-2}\lambda^{n-2} - \dots - a_1\lambda - a_0 = \lambda^n$ であるから，次式が成り立つ。
+                    \[ A\bm{v} = [\lambda^n,\lambda^{n-1},\dots,\lambda^2,\lambda] = \lambda\bm{v} \]
+                \end{proof}
+            \subsubsection{対角化}
+                \begin{shadebox}
+                    \ref{随伴行列の定義} の定義を引き継ぐ。
+                    $A$ の固有値が全て異なるとし，それらを $\lambda_i\;(i=0,1,\dots,n)$ とする。
+                    $\lambda_i$ に対応する固有ベクトルを $\bm{v}_i$ とする。
+                    $A$ は $\lambda_i\;(i=0,1,\dots,n)$ に関する Vandermonde 行列 $V$ を用いて次のように対角化できる。
+                    \[
+                        A = V\Lambda V^{-1}\quad\text{where}\quad\Lambda\coloneq\diag{\lambda_0,\lambda_1,\dots,\lambda_n},\quad V\coloneq\begin{bmatrix}
+                            \lambda_0^{n-1} & \lambda_1^{n-1} & \cdots & \lambda_n^{n-1} \\
+                            \lambda_0^{n-2} & \lambda_1^{n-2} & \cdots & \lambda_n^{n-2} \\
+                            \vdots \\
+                            \lambda_0 & \lambda_1 & \cdots & \lambda_n \\
+                            1 & 1 & \cdots & 1
+                        \end{bmatrix}
+                    \]
+                \end{shadebox}
+                \begin{proof}
+                    \quad\par
+                    $\lambda_i\;(i=0,1,\dots,n)$ が全て異なるから $V$ は正則である。
+                    \ref{随伴行列の固有ベクトル} より $AV = V\Lambda$ が成り立つ。
+                    この式の両辺に $V^{-1}$ を右から掛けて $A = V\Lambda V^{-1}$ を得る。
+                \end{proof}
         \subsection{巡回行列の固有値}
             \begin{shadebox}
                 $N\in\naturalNumbers,\;a_0,a_1,\dots,a_{N-1}\in\complexNumbers,\;\bm{a}\coloneq[a_0,\dots,a_{N-1}]^\top$とする。
