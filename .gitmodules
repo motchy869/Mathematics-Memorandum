@@ -1,3 +1,6 @@
 [submodule "cmds/MtyLaTeXCmds"]
 	path = cmds/MtyLaTeXCmds
 	url = https://github.com/motchy869/MtyLaTeXCmds.git
+[submodule "src/cmds/MtyLaTeXCmds"]
+	path = src/cmds/MtyLaTeXCmds
+	url = https://github.com/motchy869/MtyLaTeXCmds.git
