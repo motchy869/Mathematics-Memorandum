@@ -1,7 +1,7 @@
 \chapter{級数}
     \section{\texorpdfstring{$S_l = \sum_{k=0}^\infty k^l r^k$}{A\_l = Σ\_\{k=0\}\string^∞ k\string^l r\string^k}を逐次的に求める}
         \begin{shadebox}
-            $S_l \coloneqq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
+            $S_l \coloneq \sum_{k=0}^\infty k^l r^k$とすると次式が成り立つ。
             \[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
         \end{shadebox}
         \begin{proof}
@@ -17,11 +17,11 @@
     \section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
         \begin{shadebox}
             数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
-            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneqq \sum_{j=1}^i a_j \right) \]
+            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneq \sum_{j=1}^i a_j \right) \]
         \end{shadebox}
         \begin{proof}
-                \quad\\
-                (泥臭い証明)\\
+            \quad\\
+            (泥臭い証明)\\
             \begin{minipage}{0.45\hsize}
                 \begin{table}[H]
                     \centering
@@ -39,14 +39,14 @@
                 \end{table}
             \end{minipage}
             \begin{minipage}{0.45\hsize}
-                右辺の各$a_j\;(j=1,\dotsc,n)$について、その係数が正味$b_i$だけであることを示せば良い。
+                右辺の各$a_j\;(j=1,\dotsc,n)$について，その係数が正味$b_i$だけであることを示せば良い。
                 $(\text{右辺}) = A_nb_n - \sum_{i=1}^{n-1}\sum_{j=1}^ia_j(b_{i+1}-b_i)$
-                であるから、右辺に現れる$a_j$の係数として、まず第1項目より$b_n$がある。
-                第2項目の寄与は左の表のようになり、殆ど相殺して$b_j$のみが残る。
+                であるから，右辺に現れる$a_j$の係数として，まず第1項目より$b_n$がある。
+                第2項目の寄与は左の表のようになり，殆ど相殺して$b_j$のみが残る。
             \end{minipage}\\
             \newline
             (エレガントな証明)\\
-            \quad $A_i \coloneqq \sum_{j=1}^i a_j,\;A_0 \coloneqq 0$と定義すると
+            \quad $A_i \coloneq \sum_{j=1}^i a_j,\;A_0 \coloneq 0$と定義すると
             \begin{align*}
                 \sum_{i=1}^n a_ib_i &= \sum_{i=1}^n (A_i-A_{i-1})b_i = \sum_{i=1}^n A_ib_i - \sum_{i=2}^n A_{i-1}b_i = \sum_{i=1}^n A_ib_i - \sum_{i=1}^n A_{i}b_{i+1} \\
                 &= A_nb_n + \sum_{i=1}^n A_i(b_i-b_{i+1}) = A_nb_n - \sum_{i=1}^n A_i(b_{i+1} - b_i)
@@ -56,8 +56,8 @@
         \label{subsec:Chebyshevの和の不等式}
         \begin{shadebox}
             \begin{enumerate}
-                \item 単調増加あるいは単調減少な数列$\{a_n\},\{b_n\}$について、$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \leq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
-                \item 単調増加列$\{a_n\}$と単調減少列$\{b_n\}$について、$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \geq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
+                \item 単調増加あるいは単調減少な数列$\{a_n\},\{b_n\}$について，$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \leq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
+                \item 単調増加列$\{a_n\}$と単調減少列$\{b_n\}$について，$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \geq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
             \end{enumerate}
         \end{shadebox}
         \begin{proof}
@@ -66,7 +66,7 @@
             \par
             1. を示す。2. は同様にして示せる。
             $S := \sum_{i=1}^n \sum_{j=1}^n (a_i-a_j)(b_i-b_j)$とする。
-            $\{a_n\},\{b_n\}$の単調性の仮定から、$(a_i-a_j)$と$(b_i-b_j)$の符号は等しく、$S\geq 0$である。
+            $\{a_n\},\{b_n\}$の単調性の仮定から，$(a_i-a_j)$と$(b_i-b_j)$の符号は等しく，$S\geq 0$である。
             よって次式が成り立つ。
             \begin{gather*}
                 0 \leq S = \sum_{i=1}^n \sum_{j=1}^n (a_i b_i - a_i b_j - a_j b_i + a_j b_j) = 2n\sum_{i=1}^n a_i b_i - 2\left(\sum_{i=1}^n a_i\right)\left(\sum_{j=1}^n b_j\right) \\
@@ -75,20 +75,20 @@
         \end{proof}
     \section{等比級数と0収束列の畳み込み: {\normalsize \texorpdfstring{$|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}{|r|<1, lim\_\{n→∞\}a\_n=0 ⇒ lim\_\{t→∞\} Σ\_\{τ=0\}\string^t r\string^(t-τ) a\_τ} = 0}}
         \begin{shadebox}
-            $|r|<1$とし, 数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき、次が成り立つ。
+            $|r|<1$とし, 数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき，次が成り立つ。
             \[\lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0\]
         \end{shadebox}
         \begin{proof}
             \quad\par
             $\lim_{n\to\infty}a_n=0$より$^\exists C\geq 0\st|a_n|\leq C\mathrm{ for }^\forall n\in\{1,2,\dotsc\}$。
-            また、$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
+            また，$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
             そこで$t\geq T$とすると
             \begin{align*}
                 \left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| &\leq \left|\sum_{\tau=0}^{T-1}{r^{t-\tau}a_\tau}\right| + \left|\sum_{\tau=T}^t{r^{t-\tau}a_\tau}\right| \leq \sum_{\tau=0}^{T-1}|r|^{t-\tau}|a_\tau| + \sum_{\tau=T}^{t}|r|^{t-\tau}|a_\tau| \\
                 &\leq C|r|^{t-T+1}\frac{1-|r|^{T-1}}{1-|r|} + \varepsilon\frac{1-|r|^{t-T}}{1-|r|} \leq C\frac{|r|^{t-T+1}}{1-|r|} + \varepsilon\frac{1}{1-|r|}
             \end{align*}
             $|r|<1$であるから$^\exists T_2\geq T\st t\geq T_2\Rightarrow C|r|^{t-T+1} \leq \varepsilon$。
-            そこで$t\geq T_2$と取り直すと、上の式より
+            そこで$t\geq T_2$と取り直すと，上の式より
             \[\left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| \leq \frac{2\varepsilon}{1-|r|}\]
         \end{proof}
     \section{\texorpdfstring{$\sum_{k=1}^n \cos kx = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n cos(kx) = -1/2 + (sin(n+1/2)x)/(2sin(x/2))}}

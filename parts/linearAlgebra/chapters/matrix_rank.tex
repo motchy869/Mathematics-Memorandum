@@ -32,7 +32,7 @@
                     0 & 1 \\
                     1 & 0
                 \end{bmatrix}
-                \text{ のとき、}
+                \text{ のとき，}
                 AB =
                 \begin{bmatrix}
                     0 & 1 \\
@@ -51,8 +51,8 @@
         \end{shadebox}
         \begin{proof}
             \quad\par
-            まず、$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
-            $A$がフルランクのとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき、$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
+            まず，$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
+            $A$がフルランクのとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
         \end{proof}
     \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
         次元定理を用いる証明
@@ -72,7 +72,7 @@
         特異値分解を用いる証明
         \begin{proof}
             \quad\par
-            $A$の特異値分解を$U\Sigma \HerConj{V}$とすると、$\rank{A\HerConj{A}} = \rank{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank{U\Sigma^2 \HerConj{U}} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
+            $A$の特異値分解を$U\Sigma \HerConj{V}$とすると，$\rank{A\HerConj{A}} = \rank{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank{U\Sigma^2 \HerConj{U}} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
             同様にして$\rank{\HerConj{A}A} = \rank{A}$も示せる。
         \end{proof}
     \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$\HerConj{A} A$}{A\string^*A}は正則}
@@ -86,15 +86,15 @@
             これを正規直交化したものを$\{\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n\}$とする。
             $\bm{p}_i\in\mathrm{span}[\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_n]$であるから
             \[\bm{t}_i\in\field^n,\quad A\bm{t}_i=\bm{p}_i\]
-            なる$\bm{t}_i$は唯一に定まり、$\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n$は一次独立である。
+            なる$\bm{t}_i$は唯一に定まり，$\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n$は一次独立である。
             よって
             \begin{align*}
-                T &\coloneqq [\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n]\\
-                P &\coloneqq [\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n]
+                T &\coloneq [\bm{t}_1,\bm{t}_2,\dotsc,\bm{t}_n]\\
+                P &\coloneq [\bm{p}_1,\bm{p}_2,\dotsc,\bm{p}_n]
             \end{align*}
             とすれば
             \[AT = P\quad(A = PT^{-1})\]
-            であり、$T$は正則である。さらに$\HerConj{P} P = I_{n\times n}$であるから
+            であり，$T$は正則である。さらに$\HerConj{P} P = I_{n\times n}$であるから
             \[\rank{\HerConj{A} A} = \rank{\HerConj{\left(T^{-1}\right)} \HerConj{P} PT^{-1}} = \rank{\HerConj{\left(T^{-1}\right)} I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
         \end{proof}
         \begin{proof}
@@ -110,12 +110,12 @@
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $B=A^\top$とおき、$B$に対して直前の定理を適用する。
+            $B=A^\top$とおき，$B$に対して直前の定理を適用する。
         \end{proof}
-    \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$r$}{r}であるなら、ある正則行列\texorpdfstring{$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$}{Tx∈\string^(n×n), Ty∈\string^(m×m)}が存在して...}
+    \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$r$}{r}であるなら，ある正則行列\texorpdfstring{$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$}{Tx∈\string^(n×n), Ty∈\string^(m×m)}が存在して...}
         \label{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}
         \begin{shadebox}
-            $A\in\field^{m\times n}$の階数が$r$であるなら、適当な正則行列$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$が存在して
+            $A\in\field^{m\times n}$の階数が$r$であるなら，適当な正則行列$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$が存在して
             % \[
             %     AT_x = T_y
             %     \begin{array}{r cc l l}
@@ -138,8 +138,8 @@
             $\Ker{A}$の基底を$\{\bm{x}_{r+1},\bm{x}_{r+2},\dotsc,\bm{x}_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
             これを含む$\field^n$の基底を$\{\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_r,\bm{x}_{r+1},\dotsc,\bm{x}_n\}$とすると
             \[\mathrm{span}[A\bm{x}_1,A\bm{x}_2,\dotsc,A\bm{x}_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
-            である。$\bm{y}_i\coloneqq A\bm{x}_i\quad(i=1,2,\dotsc,r)$とし、これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\bm{y}_{r+1},\dotsc,\bm{y}_m\}$とすると
-            $T_x\coloneqq[\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_n],\quad T_y\coloneqq[\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m]$は正則であり、
+            である。$\bm{y}_i\coloneq A\bm{x}_i\quad(i=1,2,\dotsc,r)$とし，これらを含む$\field^m$の基底を$\{\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\bm{y}_{r+1},\dotsc,\bm{y}_m\}$とすると
+            $T_x\coloneq[\bm{x}_1,\bm{x}_2,\dotsc,\bm{x}_n],\quad T_y\coloneq[\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m]$は正則であり，
             \begin{align*}
                 AT_x &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\\
                 &= [\bm{y}_1,\bm{y}_2,\dotsc,\bm{y}_m][\bm{e}_1,\bm{e}_2,\dotsc,\bm{e}_r,\underbrace{\bm{0},\dotsc,\bm{0}}_{n-r\mathrm{個}}]\quad(\bm{e}_i\text{は}\field^m\text{の標準基底ベクトル})\\
@@ -158,18 +158,18 @@
         \end{proof}
     \section{同じ型の行列の階数が等しいための必要十分条件}
         \begin{shadebox}
-            $A,B\in\field^{m\times n}$について$\rank{A}=\rank{B}$であるための必要十分条件は、適当な正則行列が存在して$AT_1=T_2B$となることである。
+            $A,B\in\field^{m\times n}$について$\rank{A}=\rank{B}$であるための必要十分条件は，適当な正則行列が存在して$AT_1=T_2B$となることである。
         \end{shadebox}
         \begin{proof}
             \quad\\
             (必要)
             \par
-            定理\ref{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}より、$A,B$それぞれに対して適当な正則行列$T_{x,A},T_{x,B}\in\field^{n\times n},\quad T_{y,B},T_{y,A}\in\field^{m\times m}$が存在して
+            定理\ref{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}より，$A,B$それぞれに対して適当な正則行列$T_{x,A},T_{x,B}\in\field^{n\times n},\quad T_{y,B},T_{y,A}\in\field^{m\times m}$が存在して
             \begin{align*}
                 {T_{y,A}}^{-1}AT_{x,A} &= {T_{y,B}}^{-1}BT_{x,B}\\
                 \therefore\;AT_{x,A}{T_{x,B}}^{-1} &= T_{y,A}{T_{y,B}}^{-1}B
             \end{align*}
-            上式で$T_1\coloneqq T_{x,A}{T_{x,B}}^{-1},\quad T_2\coloneqq T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
+            上式で$T_1\coloneq T_{x,A}{T_{x,B}}^{-1},\quad T_2\coloneq T_{y,A}{T_{y,B}}^{-1}$とすれば良い。
             \\
             (十分)
             \par
@@ -179,29 +179,29 @@
     \section{優対角正方行列は正則}
         \begin{proof}
             \quad\par
-            $A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし、$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
+            $A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし，$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
             $A\bm{x}$の第1成分の絶対値について
             \begin{align*}
                 |a_{11}x_1 + \dotsb + a_{1n}x_n| &\geq ||a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n|| \geq |a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n| \\
                 & \geq |a_{11}||x_1| - \dotsb - |a_{1n}||x_n|
             \end{align*}
-            が成り立つが、ここで仮に$|x_1| > |x_2|,\dotsc,|x_n|$とすると、$A$の優対角性から
+            が成り立つが，ここで仮に$|x_1| > |x_2|,\dotsc,|x_n|$とすると，$A$の優対角性から
             \begin{align*}
                 |a_{11}||x_1| - \dotsb - |a_{1n}||x_n| &> |a_{11}||x_1| - |a_{12}||x_1| - \dotsb - |a_{1n}||x_1| \\
                 &= (|a_{11}| - |a_{12}| - \dotsb - |a_{1n}|)|x_1| > 0 \tag{1}
             \end{align*}
-            となり、$A\bm{x}=\bm{0}_n$に矛盾する。
+            となり，$A\bm{x}=\bm{0}_n$に矛盾する。
             故に$|x_1| \leq \max\{|x_1|,|x_2|,\dotsc,|x_n|\}$である。
             同様にして$A\bm{x}$の第$2,3,\dotsc,n$成分の絶対値を考えることで$|x_i| \leq \max\{|x_j|\}\;(i,j\in\{1,\dotsc,n\})$が示される。
             これは$|x_1|=\dotsb=|x_n|=c,\;(c$は適当な非負数)に他ならない。
-            仮に$c>0$であるとすると式(1)より$|A\bm{x}\text{の第1成分}| > 0$となり、$A\bm{x}=0$に矛盾する。
-            故に$c=0$、つまり$\bm{x}=\bm{0}_n$である。
+            仮に$c>0$であるとすると式(1)より$|A\bm{x}\text{の第1成分}| > 0$となり，$A\bm{x}=0$に矛盾する。
+            故に$c=0$，つまり$\bm{x}=\bm{0}_n$である。
             よって$A\bm{x}=\bm{0}_n \Rightarrow \bm{x}=\bm{0}_n$が成り立つから$A$は正則である。
         \end{proof}
     \section{最大ランク分解}
         \begin{shadebox}
             $m\times n$行列$A$の階数を$r$とする。
-            $A$の一次独立な列ベクトルを左から順に集めてできる列フルランクな$m\times r$行列を$B$とし、$A$の簡約化の零行ベクトルを除去した行フルランクな$r\times n$行列を$F$とすると$A = BF$。
+            $A$の一次独立な列ベクトルを左から順に集めてできる列フルランクな$m\times r$行列を$B$とし，$A$の簡約化の零行ベクトルを除去した行フルランクな$r\times n$行列を$F$とすると$A = BF$。
         \end{shadebox}
         \begin{proof}
             \quad\par

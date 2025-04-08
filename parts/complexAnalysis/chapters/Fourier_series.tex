@@ -1,16 +1,16 @@
 \chapter{Fourier 級数}
     \section{定義と背景の整理}
-        $T>0$ 周期関数 $f:\realNumbers\to\realNumbers$ に対して、次式を $f$ の Fourier 級数と呼ぶ。
+        $T>0$ 周期関数 $f:\realNumbers\to\realNumbers$ に対して，次式を $f$ の Fourier 級数と呼ぶ。
         \[ a_0/2 + \sum_{d=1}^\infty \bracks*{a_d\cos\parens*{d\frac{t}{T}2\pi} + b_d\cos\parens*{d\frac{t}{T}2\pi}} \]
         ここに $a_0,\;a_d,\;b_d\;(d=1,2,3,\dots)$ は次式で与えられる。
         \[ a_0 = \frac{1}{T/2}\integrate{-T/2}{T/2}{f(t)}{}{t},\quad a_d = \frac{1}{T/2}\integrate{-T/2}{T/2}{f(t)\cos\parens*{d\frac{t}{T}2\pi}}{}{t},\quad b_d = \frac{1}{T/2}\integrate{-T/2}{T/2}{f(t)\sin\parens*{d\frac{t}{T}2\pi}}{}{t} \]
         \subsection{無限次元ベクトル空間との関係}
             区間 $[-T/2,T/2]$ 上の Riemann 可積分な実数値関数全体の成すベクトル空間 $V$ 上の内積 $\inprod{\cdot}{\cdot}:V\times V\to\realNumbers$ を次式で定義する。
-            \[ \inprod{f}{g} \coloneqq \frac{1}{T/2}\integrate{-T/2}{T/2}{f(t)g(t)}{}{t} \]
-            この定義の下、次のベクトルの集合は $V$ の正規直行基底であることが知られている。
+            \[ \inprod{f}{g} \coloneq \frac{1}{T/2}\integrate{-T/2}{T/2}{f(t)g(t)}{}{t} \]
+            この定義の下，次のベクトルの集合は $V$ の正規直行基底であることが知られている。
             （正規直交系であることは内積の計算で容易に確かめられる。 $V$ を張ることは数学の書籍に見出せる。）
             \[ \braces*{1/\sqrt{2},\;\cos\parens*{d\frac{t}{T}2\pi},\;\sin\parens*{d\frac{t}{T}2\pi}\;(d=1,2,3,\dots)} \]
-            前述の Fourier 級数の定義では $\cos,\;\sin$ の項は基底を Fourier 係数で重み付けたものであるが、定数項だけは基底の $1/\sqrt{2}$ 倍に係数が掛かっており首尾一貫しない。
+            前述の Fourier 級数の定義では $\cos,\;\sin$ の項は基底を Fourier 係数で重み付けたものであるが，定数項だけは基底の $1/\sqrt{2}$ 倍に係数が掛かっており首尾一貫しない。
             ここを拘って係数と基底の積として表現すると $\inprod{f}{1/\sqrt{2}}/\sqrt{2} = \inprod{f}{1}/2 = a_0/2$ となるから $1/2$ が一般に使われているのだと思われる。
     \section{連続関数のFourier 級数の高周波成分は0に収束する}
         \label{連続関数のFourier 級数の高周波成分は0に収束する}
@@ -23,10 +23,10 @@
             \[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = 0 \]
             を示す。ここで
             \[ \integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = \integrate{0}{\pi}{(f(x)-f(-x))\sin kx}{}{x} \]
-            であり、$f(x)-f(-x)$は$[0,\pi]$で連続なので結局のところ区間$[0,\pi]$の任意の連続関数$f$に対して
+            であり，$f(x)-f(-x)$は$[0,\pi]$で連続なので結局のところ区間$[0,\pi]$の任意の連続関数$f$に対して
             \[ \lim_{k\to\infty}\integrate{0}{\pi}{f(x)\sin kx}{}{x} = 0 \]
             が成り立つことを示せば良い。
-            $f$は閉区間で連続だから有界であり、特に一様連続なので、任意の$\varepsilon>0$に対してある$\delta>0$が存在して
+            $f$は閉区間で連続だから有界であり，特に一様連続なので，任意の$\varepsilon>0$に対してある$\delta>0$が存在して
             $\forall (x,y\in[0,\pi],|x-y|\leq\delta),|f(x)-f(y)|<\varepsilon$が成り立つ。
             $k \geq 2,\;\pi/k < \delta$となるように$k$を十分大きくとる。
             \begin{align*}
@@ -75,14 +75,14 @@
         \subsection{\texorpdfstring{$\integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} = \pi/2$}{sin(x)/xの0から∞までの積分はπ/2}}
         \begin{proof}
             \quad\par
-            複素積分を使った導出がよく知られているが、実解析の範囲で導出してみる。
-            この積分が収束することは、$(\sin x)/x$が$[0,\pi/2]$で連続であることから$[0,\pi/2]$で積分可能であること、および$\sin x = (-\cos x)'$を用いて部分積分することで$[\pi/2,\infty)$で積分が絶対収束することから示せる。
-            よって、
+            複素積分を使った導出がよく知られているが，実解析の範囲で導出してみる。
+            この積分が収束することは，$(\sin x)/x$が$[0,\pi/2]$で連続であることから$[0,\pi/2]$で積分可能であること，および$\sin x = (-\cos x)'$を用いて部分積分することで$[\pi/2,\infty)$で積分が絶対収束することから示せる。
+            よって，
             \begin{align*}
                 \integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} &= \lim_{n\to\infty}\integrate{0}{n\pi}{\frac{\sin x}{x}}{}{x} = \lim_{n\to\infty}\integrate{0}{\pi}{\frac{\sin nt}{t}}{}{t} \quad (t=x/n\text{とおいた}) \\
                 &= \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin nt}{t}}{}{t} = \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t}
             \end{align*}
             $\frac{1}{t} - \frac{1}{2\tan(t/2)}$は$[-\pi,\pi]$で連続だから\ref{連続関数のFourier 級数の高周波成分は0に収束する}より
             \[ \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t} = 0 \]
-            であること、および\ref{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}より証明が済む。
+            であること，および\ref{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}より証明が済む。
         \end{proof}

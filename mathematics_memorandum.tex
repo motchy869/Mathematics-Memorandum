@@ -6,11 +6,11 @@
 
 % ---------- document information ----------
 % document version number
-\def\docVerMajor{0}
-\def\docVerMinor{20}
-\def\docVerPatch{1}
-\def\docVerWip{} % \def\docVerWip{-wip}
-\def\docVer{\docVerMajor.\docVerMinor.\docVerPatch\docVerWip}
+\newcommand{\docVerMajor}{0}
+\newcommand{\docVerMinor}{21}
+\newcommand{\docVerPatch}{0}
+\newcommand{\docVerWip}{} % \newcommand{\docVerWip}{-wip}
+\newcommand{\docVer}{\docVerMajor.\docVerMinor.\docVerPatch\docVerWip}
 
 \title{数学備忘録}
 \author{motchy}
@@ -80,12 +80,12 @@
 \newcommand\currLevelTitle{NOT YET SET}
 \makeatletter
 \let\oldPart\part
-\newcommand{\countedPart}[1]{\oldPart{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % Set the the part name to the title storage at the beginning of each part because there is possibly no chapter in the part.
-\newcommand{\uncountedPart}[1]{\oldPart*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % *-ed version is necessary. See: [https://tex.stackexchange.com/questions/639072/bibliography-title-prints-strange-asterisk-after-i-renewcommand-ed-the-ch]
+\newcommand*{\countedPart}[1]{\oldPart{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % Set the the part name to the title storage at the beginning of each part because there is possibly no chapter in the part.
+\newcommand*{\uncountedPart}[1]{\oldPart*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thepart}} % *-ed version is necessary. See: [https://tex.stackexchange.com/questions/639072/bibliography-title-prints-strange-asterisk-after-i-renewcommand-ed-the-ch]
 \renewcommand{\part}{\@ifstar\uncountedPart\countedPart}
 \let\oldChapter\chapter
-\newcommand{\countedChapter}[1]{\oldChapter{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
-\newcommand{\uncountedChapter}[1]{\oldChapter*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+\newcommand*{\countedChapter}[1]{\oldChapter{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
+\newcommand*{\uncountedChapter}[1]{\oldChapter*{#1}\edef\currLevelTitle{#1}\edef\currLevelNo{\thechapter}}
 \renewcommand{\chapter}{\@ifstar\uncountedChapter\countedChapter}
 \makeatother
 
@@ -93,9 +93,8 @@
 \counterwithin{equation}{section}
 \counterwithin{figure}{section}
 
-% no upper case in header
-\fancyhead{\nouppercase{\rightmark}}
-\fancyhead{\nouppercase{\leftmark}}
+% Use arabic numbers for footnotes even in minipage (including shadebox).
+\renewcommand*\thempfootnote{\arabic{mpfootnote}}
 
 % longtable settings
 \setcounter{LTchunksize}{200}
@@ -119,6 +118,8 @@
 
 % ---------- style settings ----------
 % header and footer settings
+\fancyhead{\nouppercase{\rightmark}} % No upper case in header. This MUST be place before \pagestyle.
+\fancyhead{\nouppercase{\leftmark}}
 \fancypagestyle{plain}{
 	\cfoot{\thepage}
 	\rfoot{}
@@ -147,6 +148,10 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
 \renewcommand{\cftchapdotsep}{\cftdotsep}
 
+% Starts paragraph contents on a new line.
+\let\oldparagraph\paragraph
+\renewcommand*{\paragraph}[1]{\oldparagraph{#1}\mbox{}\\}
+
 % theorem styles
 \theoremstyle{definition} % non-italic font for definition
 \newtheorem*{commentary}{解説}
@@ -156,11 +161,12 @@
 
 % table settings
 \renewcommand\theadfont{} % don't change the font
+\newcommand*{\tblHead}[1]{\multicolumn{1}{c}{#1}} % Use this for table headers with centered text.
 
 % % bytefield hack % not used for now
 % % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
 % % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
-% \newcommand{\colorbitbox}[3]{%
+% \newcommand*{\colorbitbox}[3]{%
 % 	\rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
 % 	\bitbox{#2}{#3}%
 % }
@@ -187,6 +193,7 @@
 	\maketitle
 	{\scriptsize \tableofcontents}
 	\input{parts/preface.tex}
+	\input{parts/misc_provisions.tex}
 	\input{parts/discrete-mathematics/discrete-mathematics}
 	\input{parts/algebra/algebra}
 	\input{parts/realAnalysis/realAnalysis}
@@ -197,7 +204,7 @@
 	\input{parts/graphTheory/graphTheory}
 	\input{parts/misc/misc}
 	\begin{thebibliography}{99}
-		\bibitem{現代線形代数入門} 池辺八洲彦、池辺淑子、浅井信吉、宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
+		\bibitem{現代線形代数入門} 池辺八洲彦，池辺淑子，浅井信吉，宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
 		\bibitem{システム線形代数} 谷野哲三 (2013) 『システム線形代数』 朝倉書店.
 		\bibitem{新微分方程式対話} 笠原晧司 (1995) 『新微分方程式対話』 日本評論社
 		\bibitem{入門線形代数} 三宅敏恒 著 (1991) 『入門線形代数』 培風館
@@ -205,6 +212,7 @@
 		\bibitem{離散数学}Seymour Lipschitz 著, 成嶋 弘 監訳 (2010) 『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
 		\bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey 共著 ``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
 		\bibitem{信号処理備忘録} motchy (2022) 『信号処理備忘録 v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
-		\bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学 \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
+		\bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学\\ \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
+		\bibitem{prim_poly_Wikipedia} 『原始多項式』 Wikipedia \url{https://ja.wikipedia.org/wiki/原始多項式}
 	\end{thebibliography}
 \end{document}

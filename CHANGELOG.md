@@ -5,12 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [v0.20.1] - 2025-01-06
+## [0.21.0] - 2025-04-08
+
+- Fixed:
+  - incomplete proof in 8.1.2.1 lim_{||x||→∞} ||x-a|| - ||x|| = -<x,a>/||x||
+- Changed:
+  - Distinguish '、' and '，' in Japanese text.
+- Added:
+  - primitive polynomial and generator
+  - diagonalization of companion matrix
+
+## [0.20.1] - 2025-01-06
 
 - Fixed
   - a typo in section 4.24.3
 
-## [v0.20.0] - 2025-01-06
+## [0.20.0] - 2025-01-06
 
 - Fixed
   - minor abuse of notations
@@ -18,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - preface
   - partial differential of integral whose integrand has the end-point of the integral range as one of its arguments
 
-## [v0.19.0] - 2024-12-29
+## [0.19.0] - 2024-12-29
 
 - Fixed:
   - minor typos

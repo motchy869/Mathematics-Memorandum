@@ -3,22 +3,22 @@
         \begin{shadebox}
             $m,n\in\naturalNumbers$とする。
             $f: \realNumbers^n \to \realNumbers$を狭義凸関数とする。
-            $\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\dotsc,m)$とし、$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
-            $\bm{\lambda} \in \realNumbers^m$とし、Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) \coloneqq f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
-            $\bm{x}_0, \bm{\lambda}_0$を$F$の停留点、すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\dotsc,m)$なる拘束条件の下、$\bm{x}_0$で最小値をとる。
+            $\bm{c}_i \in \realNumbers^n, b_i \in \realNumbers\;(i=1,\dotsc,m)$とし，$g_i: \bm{x} \in \realNumbers^n \mapsto \bm{c}_i^\top\bm{x} + b \in \realNumbers$とする。
+            $\bm{\lambda} \in \realNumbers^m$とし，Lagrange関数$F$を$F(\bm{x},\bm{\lambda}) \coloneq f(\bm{x}) + \sum_{i=1}^m \lambda_i g_i(\bm{x})$とする。
+            $\bm{x}_0, \bm{\lambda}_0$を$F$の停留点，すなわち$\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\bm{x}) = 0\;(i=1,\dotsc,m)$なる拘束条件の下，$\bm{x}_0$で最小値をとる。
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $\bm{h} \in \realNumbers^n \neq \bm{0}$とし、$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\dotsc,m)$を満たすとする。
+            $\bm{h} \in \realNumbers^n \neq \bm{0}$とし，$g_i(\bm{x} + \bm{h}) = 0\;(i=1,\dotsc,m)$を満たすとする。
             このとき$f(\bm{x}_0 + \bm{h}) > f(\bm{x}_0)$であることを示す。
             \[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \nabla f(\bm{x}_0)^\top\bm{h} + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
-            ここに、$H(f,\bm{x}_0)$は$f$のHesse行列の$\bm{x}_0$に於ける値である。
+            ここに，$H(f,\bm{x}_0)$は$f$のHesse行列の$\bm{x}_0$に於ける値である。
             $\nabla_\bm{x}F(\bm{x}_0, \bm{\lambda}_0) = \bm{0}$より$\nabla f(\bm{x}_0) = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)$である。
             $g_i(\bm{x} + \bm{h}) = 0\;(i=1,\dotsc,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
             \[ \nabla f(\bm{x}_0)^\top\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\bm{x}_0)\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \bm{c}_i^\top\bm{h} = \bm{0} \]
             である。よって
             \[ f(\bm{x}_0 + \bm{h}) = f(\bm{x}_0) + \bm{h}^\top H(f,\bm{x}_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
-            $f$は狭義凸であるので$H(f,\bm{x}_0)$は正定であり、$O(\|\bm{h}\|_2^2)$であるから、十分小さい$\bm{h}$に対して上式の右辺は$f(\bm{x}_0)$を厳密に上回る。
+            $f$は狭義凸であるので$H(f,\bm{x}_0)$は正定であり，$O(\|\bm{h}\|_2^2)$であるから，十分小さい$\bm{h}$に対して上式の右辺は$f(\bm{x}_0)$を厳密に上回る。
         \end{proof}
     \section{変分法}
         \subsection{大域的最小点の十分条件}
@@ -27,30 +27,30 @@
                 $a,b\in\realNumbers,\;a<b$とする。
                 $\Omega_1,\Omega_1'\subseteq\realNumbers$は空でない開凸領域であるとする。
                 $v_a,v_b\in\Omega_1$とする。
-                $[a,b]$から$\Omega_1$への$\mathrm{C}^1$級の写像であって、$f(a)=b_a,\;f(b)=v_b$を満たし、導関数の値域が$\Omega_1'$に含まれるもの全体の集合を$\mathcal{F}_1$とする。
+                $[a,b]$から$\Omega_1$への$\mathrm{C}^1$級の写像であって，$f(a)=b_a,\;f(b)=v_b$を満たし，導関数の値域が$\Omega_1'$に含まれるもの全体の集合を$\mathcal{F}_1$とする。
                 写像$g:\Omega_1\times\Omega_1'\to\realNumbers$は$\mathrm{C}^2$級かつ狭義凸であるとする。
                 汎関数$I$を次式で定義する。
                 \[I: f\in\mathcal{F}_1 \mapsto \integrate{a}{b}{g(f(x),f'(x))}{}{x}\]
-                このとき、積分の線形性と$g$の狭義凸性から$I$は狭義凸である。
+                このとき，積分の線形性と$g$の狭義凸性から$I$は狭義凸である。
                 さらに次が成り立つ。
                 \[ f_0 = \argmin_{f\in\mathcal{F}}I(f) \iff g^{(1,0)}(f_0(x),f_0'(x)) = \partDerivLong{g^{(0,1)(f_0(x),f_0'(x))}}{x}{} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $\Rightarrow$については$f_0$が変分法のEuler方程式を満たすことが必要条件であるため、直ちに従う。
+                $\Rightarrow$については$f_0$が変分法のEuler方程式を満たすことが必要条件であるため，直ちに従う。
                 \par
-                以下、$\Leftarrow$を示す。
-                $I$の狭義凸性から、$I$の極小点が存在すれば、それは最小点である。
+                以下，$\Leftarrow$を示す。
+                $I$の狭義凸性から，$I$の極小点が存在すれば，それは最小点である。
                 よって$f_0$が極小点であることを示せば十分である。
-                今、$\eta:[a,b]\to\Omega_1$が$\Omega_1$上で$\mathrm{C}^1$級かつ$\eta(a)=\eta(b)=0$であるとする。
-                さらに$\norm{\eta}_2 := \sqrt{\integrate{a}{b}{[\eta(x)^2+\eta'(x)^2]}{}{x}}$は十分小さく、$f_0+\eta\in\mathcal{F}_1$であるとする。
+                今，$\eta:[a,b]\to\Omega_1$が$\Omega_1$上で$\mathrm{C}^1$級かつ$\eta(a)=\eta(b)=0$であるとする。
+                さらに$\norm{\eta}_2 := \sqrt{\integrate{a}{b}{[\eta(x)^2+\eta'(x)^2]}{}{x}}$は十分小さく，$f_0+\eta\in\mathcal{F}_1$であるとする。
                 $\norm{\eta}_2>0$である任意の$\eta$について$I(f_0+\eta) > I(f_0)$であることを示す。
                 \begin{align*}
                     I(f_0+\eta) &= \integrate{a}{b}{g(f_0(x)+\eta(x),f_0'(x)+\eta'(x))}{}{x} \\
                     &= \integrate{a}{b}{g(f_0(x),f_0'(x))}{}{x} + \underbrace{\integrate{a}{b}{(\nabla g)(f_0(x),f_0'(x))^\top[\eta(x),\eta'(x)]^\top}{}{x}}_{(1)} \\
                     &\phantom{=} + \underbrace{\frac{1}{2}\integrate{a}{b}{[\eta(x),\eta'(x)]H(g)(\eta(x),\eta'(x))[\eta(x),\eta'(x)]^\top}{}{x}}_{(2)} + o(\norm{\eta}_2^2)
                 \end{align*}
-                ここに$H(g):\Omega_1\times\Omega_1'\to\realNumbers^2$は$g$のHesse行列から構成され、次式で定義される。
+                ここに$H(g):\Omega_1\times\Omega_1'\to\realNumbers^2$は$g$のHesse行列から構成され，次式で定義される。
                 \[
                     H(g)(x_1,x_2) :=
                     \begin{bmatrix}
@@ -59,17 +59,17 @@
                     \end{bmatrix}
                 \]
                 $f_0$がEuler方程式を満たすことから$(1)=0$である(Euler方程式の導出と同じ要領で示せる)。
-                $g$の狭義凸性より$H(g)(\eta(x),\eta'(x))$は正定であり、これと$\norm{\eta}_2>0$より$(2)>0$である。
-                よって、$\norm{\eta}_2^2$が十分に小さいとき$I(f_0+\eta) > I(f_0)$が成り立つ。
+                $g$の狭義凸性より$H(g)(\eta(x),\eta'(x))$は正定であり，これと$\norm{\eta}_2>0$より$(2)>0$である。
+                よって，$\norm{\eta}_2^2$が十分に小さいとき$I(f_0+\eta) > I(f_0)$が成り立つ。
             \end{proof}
     \section{例題}
         \subsection{非負かつ総和1の下での2乗和の最小化}
             \label{非負かつ総和1の下での2乗和の最小化}
             \begin{shadebox}
-                $N\in\naturalNumbers$とし、$x_1,x_2,\dots,x_N \geq 0,\;\sum_{i=1}^N x_i = 1$であるとする。
+                $N\in\naturalNumbers$とし，$x_1,x_2,\dots,x_N \geq 0,\;\sum_{i=1}^N x_i = 1$であるとする。
                 $\sum_{i=1}^N x_i^2$が最小となる必要十分条件は$x_1 = x_2 = \dots = x_N = 1/N$である。
             \end{shadebox}
-            数理最適化の分野では、この問題は線形制約付き凸最適化問題に分類され、解法はLagrangeの未定乗数法が定石であるが、ここでは敢えて初等的な証明を与えてみる。
+            数理最適化の分野では，この問題は線形制約付き凸最適化問題に分類され，解法はLagrangeの未定乗数法が定石であるが，ここでは敢えて初等的な証明を与えてみる。
             \begin{proof}
                 \quad\par
                 次式が成り立つ。
@@ -80,22 +80,22 @@
                     &= \sum_{i=1}^N x_i^2 + \frac{2}{N}\left(1 - \sum_{i=1}^N x_i\right) = \sum_{i=1}^N x_i^2 \quad \left(\because \sum_{i=1}^N x_i = 1\right)
                 \end{align*}
                 \par
-                式(1)より$\sum_{i=1}^N x_i^2$が最小となるのは$x_1 = x_2 = \dots = x_N = 1/N$のとき、かつその時に限る。
+                式(1)より$\sum_{i=1}^N x_i^2$が最小となるのは$x_1 = x_2 = \dots = x_N = 1/N$のとき，かつその時に限る。
                 最小値は$1/N$である。
             \end{proof}
         \subsection{正かつ総和1の下での逆数和の最小化}
             \begin{shadebox}
-                $N\in\naturalNumbers$とし、$x_1,x_2,\dots,x_N > 0,\;\sum_{i=1}^N x_i = 1$であるとする。
+                $N\in\naturalNumbers$とし，$x_1,x_2,\dots,x_N > 0,\;\sum_{i=1}^N x_i = 1$であるとする。
                 $\sum_{i=1}^N 1/x_i$が最小となる必要十分条件は$x_1 = x_2 = \dots = x_N = 1/N$である。
             \end{shadebox}
-            この問題も\ref{非負かつ総和1の下での2乗和の最小化}と同じくLagrangeの未定乗数法が定石であるが、ここでは敢えて初等的な証明を与えてみる。
+            この問題も\ref{非負かつ総和1の下での2乗和の最小化}と同じくLagrangeの未定乗数法が定石であるが，ここでは敢えて初等的な証明を与えてみる。
             \begin{proof}
                 \quad\par
                 関数$f:x\in\setComprehension{t\in\realNumbers}{t>0} \mapsto 1/x$ は 狭義下に凸である。
-                $w_i\geq 0\;(i=1,2,\dots,N),\;\sum_{i=1}^N w_i = 1$とすると、Jensenの不等式より次式が成り立つ。
+                $w_i\geq 0\;(i=1,2,\dots,N),\;\sum_{i=1}^N w_i = 1$とすると，Jensenの不等式より次式が成り立つ。
                 \[ \sum_{i=1}^N w_i f(x_i) \geq f\left(\sum_{i=1}^N w_i x_i\right) \]
                 等号成立の必要十分条件は$x_1 = x_2 = \dots = x_N$である。
                 上式で$w_i = 1/N\;(i=1,\dots,N)$とすると次式を得る。
                 \[ \frac{1}{N} \sum_{i=1}^N f(x_i) \geq \frac{1}{\frac{1}{N} \sum_{i=1}^N x_i} = N \quad \left(\because \sum_{i=1}^N w_i = 1\right) \quad \therefore \sum_{i=1}^N 1/x_i \geq N^2 \]
-                先述の等号成立条件を考えると、$x_i = 1/N\;(i=1,2,\dots,N)$が唯一の最小点である。
+                先述の等号成立条件を考えると，$x_i = 1/N\;(i=1,2,\dots,N)$が唯一の最小点である。
             \end{proof}

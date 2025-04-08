@@ -2,13 +2,13 @@
     \section{規約}
         \begin{itemize}
             \item 以降の説明に於いて多項式中に特別の断りなく現れる$x$は不定元を意味する。
-            \item 体$F$上の、$x$を不定元とする多項式全体の集合を$F[x]$と表記する。
-            \item 体$F$上の、$x$を不定元とするLaurent多項式全体の集合を$F[x,x^{-1}]$と表記する。
+            \item 体$F$上の，$x$を不定元とする多項式全体の集合を$F[x]$と表記する。
+            \item 体$F$上の，$x$を不定元とするLaurent多項式全体の集合を$F[x,x^{-1}]$と表記する。
         \end{itemize}
     \section{係数が次数に関して対称な奇数次の多項式\texorpdfstring{$f(x)$}{f(x)}を\texorpdfstring{$(x+1)$}{x+1}で除したものも係数が次数に関して対称になる}
         \begin{proof}
             \quad\par
-            $n\in\naturalNumbers$を奇数とし、$f(x) = \sum_{i=0}^n a_ix^i,\;a_i = a_{n-i}$とする。
+            $n\in\naturalNumbers$を奇数とし，$f(x) = \sum_{i=0}^n a_ix^i,\;a_i = a_{n-i}$とする。
             $f(x)$は$(x+1)$で割り切れる。
             $g(x) = f(x)/(x+1) = \sum_{i=0}^{n-1} b_ix^i$としたときに$b_i = b_{n-1-i}$となることを示す。
             \begin{align*}
@@ -22,12 +22,12 @@
     \section{\texorpdfstring{$\sum_{i=0}^n a_ix^i$}{a\string_0 + a\string_1 x + a\string_2 x\string^2 + ... + a\string_n x\string^n}が既約多項式ならば\texorpdfstring{$\sum_{i=0}^n a_{n-i}x^i$}{a\string_n + a\string_(n-1)x + a\string_(n-2)x\string^2 + ... a\string_0 x\string^n}も既約多項式である}
         \label{既約多項式の係数の順番反転}
         \begin{shadebox}
-            体$F$上の$n$次多項式$f_1(x) \coloneqq \sum_{i=0}^n a_ix^i$が$F$上で既約であれば、係数の順番を逆にした多項式$f_2(x) \coloneqq \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
+            体$F$上の$n$次多項式$f_1(x) \coloneq \sum_{i=0}^n a_ix^i$が$F$上で既約であれば，係数の順番を逆にした多項式$f_2(x) \coloneq \sum_{i=0}^n a_{n-i}x^i$もまた既約である。
         \end{shadebox}
         \begin{proof}
             \quad\par
             背理法で示す。
-            $f_2(x)$が既約でないと仮定すると、適当な多項式$g_{2,1}(x),g_{2,2}(x) \in F[x],\;d_{2,1} + d_{2,2} \coloneqq \deg(g_{2,1}(x)) + \deg(g_{2,1}(x)) = n$が存在して次式が成り立つ。
+            $f_2(x)$が既約でないと仮定すると，適当な多項式$g_{2,1}(x),g_{2,2}(x) \in F[x],\;d_{2,1} + d_{2,2} \coloneq \deg(g_{2,1}(x)) + \deg(g_{2,1}(x)) = n$が存在して次式が成り立つ。
             \[ f_2(x) = g_{2,1}(x)g_{2,2}(x) \]
             上式をLaurent多項式に拡張して両辺の$x$を$x^{-1}$で置き換えると
             \[ f_2(x^{-1}) = g_{2,1}(x^{-1})g_{2,2}(x^{-1}) \]
@@ -39,7 +39,7 @@
     \section{既約多項式\texorpdfstring{$\iff$}{⇔}最小多項式}
         \begin{shadebox}
             $P$を体$F$上の多項式とする。
-            $P$が$F$上で既約であることと、$P$がその任意の根の最小多項式であることは同値である。
+            $P$が$F$上で既約であることと，$P$がその任意の根の最小多項式であることは同値である。
         \end{shadebox}
         \begin{proof}
             \quad\newline\noindent
@@ -48,20 +48,20 @@
             背理法で示す。
             $\alpha$を$P$の任意の根とする。
             仮に$P$より低次の$F$上の多項式$P_2$が存在して$P_2(\alpha)=0$であるとする。
-            $P$を$P_2$で割った商を$Q_2$, 余りを$P_3$とすると、$0 = P(\alpha) = Q_2(\alpha)P_2(\alpha) + P_3(\alpha)$より$P_3(\alpha) = 0$である。
+            $P$を$P_2$で割った商を$Q_2$, 余りを$P_3$とすると，$0 = P(\alpha) = Q_2(\alpha)P_2(\alpha) + P_3(\alpha)$より$P_3(\alpha) = 0$である。
             同じ要領で$P_i$を$P_{i+1}$で割った商を$Q_{i+1}$, 余りを$P_{i+2}$とすると$0 = P(\alpha) = P_2(\alpha) = P_3(\alpha) = \dotsb$となる。
-            $P_i$の次数は$i$の増加と共に真に減少するため、次のいずれかが成り立つ。
+            $P_i$の次数は$i$の増加と共に真に減少するため，次のいずれかが成り立つ。
             \begin{enumerate}
                 \item ある$i$で$P_{i+1} \mid P_i$
                 \item ある$i$で$\deg(P_i)=0$となる
             \end{enumerate}
-            Euclidの互除法により、1.の場合は$\gcd(P,P_2) = \gcd(P_2,P_3) = \dotsb = \gcd(P_i,P_{i+1}) = P_{i+1}$となり、$P$が規約であるという前提に矛盾する。
-            2.の場合も先述の通り$P_i(\alpha)=0$であり、$\deg(P_i)=0$に注意して$P_i=0$であるので$P_{i-1} \mid P_{i-2}$であり、1.と同様に矛盾が生じる。
+            Euclidの互除法により，1.の場合は$\gcd(P,P_2) = \gcd(P_2,P_3) = \dotsb = \gcd(P_i,P_{i+1}) = P_{i+1}$となり，$P$が規約であるという前提に矛盾する。
+            2.の場合も先述の通り$P_i(\alpha)=0$であり，$\deg(P_i)=0$に注意して$P_i=0$であるので$P_{i-1} \mid P_{i-2}$であり，1.と同様に矛盾が生じる。
             \newline\newline
             ($\Leftarrow$)
             \par
             背理法で示す。
             $\alpha$を$P$の任意の根とする。
             仮に$P$が既約でないとすると$F$上の$P$より低次な2つの多項式$P_2,P_3$を用いて$P=P_2P_3$と表せる。
-            $\alpha$は$P$の根であるから$0 = P(\alpha) = P_2(\alpha)P_3(\alpha)$より$P_2(\alpha) = 0$または$P_3(\alpha) = 0$であるが、これは$P$が$\alpha$の最小多項式であることに矛盾する。
+            $\alpha$は$P$の根であるから$0 = P(\alpha) = P_2(\alpha)P_3(\alpha)$より$P_2(\alpha) = 0$または$P_3(\alpha) = 0$であるが，これは$P$が$\alpha$の最小多項式であることに矛盾する。
         \end{proof}

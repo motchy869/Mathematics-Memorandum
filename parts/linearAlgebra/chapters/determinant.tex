@@ -32,10 +32,10 @@
     %         \quad\par
     %         第$n$行に関して余因子展開すると
     %         \[\det{A} = \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\det{C_i}}\]
-    %         但し$C_i$とは、$[A',\bm{b}]$の第$i$列を除去した小行列である。
+    %         但し$C_i$とは，$[A',\bm{b}]$の第$i$列を除去した小行列である。
     %         $C_i$を第$n$列に関して余因子展開すると
     %         \[\det{C_i} = \sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}\]
-    %         但し$A'_{ji}$とは、$C_i$の第$n$列と第$j$行を除去したもの、すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
+    %         但し$A'_{ji}$とは，$C_i$の第$n$列と第$j$行を除去したもの，すなわち$A'$の第$j$行と第$i$列を除去した小行列である。
     %         よって
     %         \begin{align*}
     %             \det{A} &= \sum_{i=1}^{n}{(-1)^{n+1+i}b_i\sum_{j=1}^{n}{(-1)^{n+j}b_j\det{A'_{ji}}}} = -\sum_{i=1}^{n}{b_i\sum_{j=1}^{n}{b_j(-1)^{i+j}\det{A'_{ji}}}} \\
@@ -47,7 +47,7 @@
         \label{I-ABの行列式}
         \begin{proof}
             \[
-                M \coloneqq \begin{bmatrix}
+                M \coloneq \begin{bmatrix}
                     I_n & A \\
                     B & I_m
                 \end{bmatrix}
@@ -92,14 +92,14 @@
     \section{逆対角転置行列の行列式は元の行列のそれと等しい}
         \begin{proof}
             \quad\par
-            $A$を$n$次対角行列とし、その逆対角転置を$A'$とする。
+            $A$を$n$次対角行列とし，その逆対角転置を$A'$とする。
             $S_n$を$n$次の置換全体の集合とする。
             \begin{align*}
                 |A'| &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{i=1}^n A'[i,\sigma(i)] = \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{i=1}^n A[n-\sigma(i)+1, n-i+1] \\
                 &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{j=1}^n A[j, n- \sigma^{-1}(n-j+1)+1] \\
                 &= \sum_{\sigma\in S_n} \sgn\parens*{\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \quad (\tilde\sigma: j \mapsto n+1-\sigma^{-1}(n-j+1))
             \end{align*}
-            ここで逆置換の符号が元の置換の符号と等しいこと、および\ref{置換の引数を逆順にしたときの符号}, \ref{出力を逆順にしたときの置換の符号}より$\sgn\parens*{\tilde\sigma} = s^2\sgn\parens*{\sigma} = \sgn\parens*{\sigma}$であるから
+            ここで逆置換の符号が元の置換の符号と等しいこと，および\ref{置換の引数を逆順にしたときの符号}, \ref{出力を逆順にしたときの置換の符号}より$\sgn\parens*{\tilde\sigma} = s^2\sgn\parens*{\sigma} = \sgn\parens*{\sigma}$であるから
             \[ |A'| = \sum_{\sigma\in S_n} \sgn\parens*{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] \]
             $\sigma$と$\tilde\sigma$は一対一で対応するので$\sigma$が$S_n$全体を動くとき$\tilde\sigma$もそうだから上式の$\sum_{\sigma\in S_n}$を$\sum_{\tilde\sigma\in S_n}$で置き換えて
             \[ |A'| = \sum_{\tilde\sigma\in S_n} \sgn\parens*{\tilde\sigma} \prod_{j=1}^n A[j, \tilde\sigma(j)] = |A| \]

@@ -1,7 +1,7 @@
 \chapter{複素積分}
     \section{\texorpdfstring{$\integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a}$}{Gauss積分で積分変数にオフセットがある場合}}
         \begin{shadebox}
-            $a>0,\;b\in\complexNumbers$ とするとき、次式が成り立つ。
+            $a>0,\;b\in\complexNumbers$ とするとき，次式が成り立つ。
             \[ \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a} \]
         \end{shadebox}
         \begin{proof}
@@ -10,10 +10,10 @@
             求めたい積分値を $I$ とする。
             $b_\mathrm{R} = \Re{b},\;b_\mathrm{I} = \Im{b}$ として変数変換 $x+b_\mathrm{R} = u$ を施すと次式が成り立つ。
             \[ I = \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \integrate{-\infty}{\infty}{\exp(-a(u+b_\mathrm{I}i)^2)}{}{u} \]
-            $R>0,\quad f(z) \coloneqq \exp(-az^2)\;(z\in\complexNumbers)$ とし以下で説明する長方形の積分路を考える。
+            $R>0,\quad f(z) \coloneq \exp(-az^2)\;(z\in\complexNumbers)$ とし以下で説明する長方形の積分路を考える。
             \begin{gather*}
-                C_1 \coloneqq [-R+b_\mathrm{I}i,R+b_\mathrm{I}i],\quad C_2 \coloneqq [R+b_\mathrm{I}i,R],\quad C_3 \coloneqq [R,-R] \\
-                \quad C_4 \coloneqq [-R,-R+b_\mathrm{I}i],\quad C \coloneqq C_1+C_2+C_3+C_4
+                C_1 \coloneq [-R+b_\mathrm{I}i,R+b_\mathrm{I}i],\quad C_2 \coloneq [R+b_\mathrm{I}i,R],\quad C_3 \coloneq [R,-R] \\
+                \quad C_4 \coloneq [-R,-R+b_\mathrm{I}i],\quad C \coloneq C_1+C_2+C_3+C_4
             \end{gather*}
             $f(z)$ は $-C$ の内部で正則なので $\integrate{C}{}{f(z)}{}{z} = -\integrate{-C}{}{f(z)}{}{z} = 0$ である。
             $R\to\infty$ の極限で $C_2,C_4$ 上の積分は0に収束するので次式が成り立つ。
@@ -22,7 +22,7 @@
     \section{無限に大きい半円周上での\texorpdfstring{$\NapierE^{iz}/z$}{e\string^(iz)/z}の積分}
         \label{無限に大きい半円周上でのe^(iz)/zの積分}
         \begin{shadebox}
-            $R>0$とし、パラメータ表示された曲線$C:\;z = R\NapierE^{i\theta};\;\theta :0\to\pi$を考える。
+            $R>0$とし，パラメータ表示された曲線$C:\;z = R\NapierE^{i\theta};\;\theta :0\to\pi$を考える。
             このとき次式が成り立つ。
             \[ \abs{\integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z}} < \frac{\pi}{R}\left(1-\NapierE^{-R}\right) \]
         \end{shadebox}
@@ -45,5 +45,5 @@
                 \[\integrate{0}{2\pi}{\Log(1-a\NapierE^{i\theta})}{}{\theta} = \integrate{C}{}{\frac{\Log(1-az)}{iz}}{}{z}\quad (C:\text{原点中心の左回り単位円})\]
                 被積分関数の$C$内部の特異点は$z=0$である。原点の近傍(具体的には$|z|<1/|a|$の範囲)においては
                 \[\frac{\Log(1-az)}{iz} = \frac{-1}{iz}\sum_{n=1}^\infty\frac{(az)^n}{n}=\frac{-1}{i}\sum_{n=1}^\infty\frac{a^nz^{n-1}}{n} = \frac{-1}{i}\sum_{n=0}^\infty\frac{a^{n+1}}{n+1}z^n\]
-                であり、特異点$z=0$は除去可能であることから従う。
+                であり，特異点$z=0$は除去可能であることから従う。
             \end{solution}

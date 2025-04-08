@@ -3,14 +3,14 @@
         \subsection{\texorpdfstring{$J_{G\circ F}=J_GJ_F$}{J\_\{G∘F\}}}
             \label{subsec:合成関数のJacobi行列}
             \begin{shadebox}
-                $F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると、$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
+                $F:\realNumbers^l\to\realNumbers^m,\;\bm{x}\mapsto\bm{y}(\bm{x})$と$G:\realNumbers^m\to\realNumbers^n,\;\bm{y}\mapsto\bm{z}(\bm{y})$のJacobi行列を$J_F,J_G$とすると，$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
             \end{shadebox}
             \begin{proof}
                 \[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\bm{x}) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\bm{y})\left(\partDeriv{y_k}{x_j}{}\right)(\bm{x}) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
             \end{proof}
         \subsection{\texorpdfstring{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}{J\_\{f\string^⊤g\} = g\string^⊤ J\_f + f\string^⊤ J\_g}}
         \begin{shadebox}
-            $\bm{f},\bm{g}:\realNumbers^m\to\realNumbers^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると、$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
+            $\bm{f},\bm{g}:\realNumbers^m\to\realNumbers^n$のJacobi行列を$J_\bm{f},J_\bm{g}$とすると，$J_{\bm{f}^\top \bm{g}}=\bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$である。
         \end{shadebox}
         \begin{proof}
             \begin{align*}
@@ -28,7 +28,7 @@
             \end{proof}
         \subsection{\texorpdfstring{$\nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top$}{∇\_\{xy\}f = (∇\_\{yx\} f)\string^⊤}}
             \begin{shadebox}
-                $\bm{x}\in\realNumbers^{n_1}, \bm{y}\in\realNumbers^{n_2}$とし、$f:(\bm{x},\bm{y})\in\realNumbers^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realNumbers$とするとき、次が成り立つ。
+                $\bm{x}\in\realNumbers^{n_1}, \bm{y}\in\realNumbers^{n_2}$とし，$f:(\bm{x},\bm{y})\in\realNumbers^{n_1+n_2}\mapsto f(\bm{x},\bm{y})\in\realNumbers$とするとき，次が成り立つ。
                 \[ \nabla_{\bm{x}\bm{y}} f = (\nabla_{\bm{y}\bm{x}} f)^\top \]
             \end{shadebox}
             \begin{proof}
@@ -36,17 +36,17 @@
             \end{proof}
         \subsection{勾配ベクトルが等値面の接平面と直交することの証明}
             \begin{shadebox}
-                $n$変数関数$f(\bm{x}),\;(\bm{x}\coloneqq[x_1,\dotsc,x_n]^\top)$の点$\bm{a}\coloneqq[a_1,\dotsc,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき、等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
+                $n$変数関数$f(\bm{x}),\;(\bm{x}\coloneq[x_1,\dotsc,x_n]^\top)$の点$\bm{a}\coloneq[a_1,\dotsc,a_n]^\top$における勾配$\nabla f(\bm{a})$が$\bm{0}$でないとき，等値面$f(\bm{x})=f(\bm{a})$上の点$\bm{a}$における接平面と$\nabla f(\bm{a})$直交する。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $\nabla f(\bm{a})\neq\bm{0}$だから$f_{x_1}(\bm{a}),\dotsc,f_{x_n}(\bm{a})$のうち少なくとも1つは0でない。
                 一般性を失わずに$f_{x_n}(\bm{a})\neq 0$であるとする(変数の添字をそのように付け替えれば良い)。
-                このとき陰関数定理より点$\bm{a}'\coloneqq[a_1,\dotsc,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\dotsc,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
+                このとき陰関数定理より点$\bm{a}'\coloneq[a_1,\dotsc,a_{n-1}]^\top$の近傍で$f(\bm{x})=f(\bm{a})$の陰関数$x_n=\varphi(\bm{x}'),\;(\bm{x}'=[x_1,\dotsc,x_{n-1}]^\top)$のうち$\varphi(\bm{a}')=a_n$を満たすものが唯一存在する。
                 $n-1$次元超曲面$x_n = \varphi(\bm{x}')$上の点$\bm{a}'$における接平面の方程式は
                 \[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\bm{x}') \]
-                であるから、点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
-                \[ W \coloneqq \Span{\setComprehension*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
+                であるから，点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\bm{x}',\psi(\bm{x}')]^\top$の相対位置ベクトルは線形空間
+                \[ W \coloneq \Span{\setComprehension*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
                 のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
             \end{proof}
         \subsection{\texorpdfstring{$\nabla A\bm{x} = A^\top$}{∇Ax = A\string^⊤}}
@@ -107,19 +107,19 @@
             \quad\par
             $n=1$のときは1変数関数の逆関数定理より従う。$n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
             \par
-            $F = [f_1,\dotsc,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneqq [x_1,\dotsc,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
+            $F = [f_1,\dotsc,f_{m+1}]^\top,\;\bm{u}=F(\bm{a}),\;\xhat \coloneq [x_1,\dotsc,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
             \par
             $J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
-            一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると、陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
+            一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると，陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},\;h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
             この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
             \par
-            $\fhat_i(\xhat) \coloneqq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneqq [\fhat_i(\xhat),\dotsc,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり、
-            帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$、さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
+            $\fhat_i(\xhat) \coloneq f_i([\xhat,h(\xhat)]^\top),\;\Fhat(\xhat) \coloneq [\fhat_i(\xhat),\dotsc,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり，
+            帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$，さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
             すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
             \par
             \[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
-            \[ \text{where}\quad \bm{p}_j \coloneqq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m+1),\;\lambda_j \coloneqq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m) \]
-            行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが、$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから、結局次のようになる。
+            \[ \text{where}\quad \bm{p}_j \coloneq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m+1),\;\lambda_j \coloneq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m) \]
+            行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが，$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから，結局次のようになる。
             \begin{align*}
                 |J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\dotsc,\bm{p}_m\right| \\
                 &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}\right|
@@ -141,6 +141,6 @@
             \begin{proof}
                 \quad\par
                 \[\bm{x}^\top A\bm{x} = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A\bm{x}\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \left(\bm{x}^\top A\bm{x}\right)^\top\right) = \frac{1}{2}\left(\bm{x}^\top A\bm{x} + \bm{x}^\top A^\top\bm{x}\right) = \bm{x}^\top\frac{A+A^\top}{2}\bm{x}\]
-                であるので$B \coloneqq \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
+                であるので$B \coloneq \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
                 \[\bm{x}^\top A\bm{x} = \bm{x}^\top B\bm{x}\]
             \end{proof}

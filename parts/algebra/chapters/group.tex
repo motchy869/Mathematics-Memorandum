@@ -1,14 +1,14 @@
 \chapter{群}
     \section{剰余類}
         \subsection{定義}
-            $G$を群とし、$H$をその任意の部分群とする。
+            $G$を群とし，$H$をその任意の部分群とする。
             $g\in G$を任意にとる。
             \par
             「$G$に於ける$H$の左剰余類 (the left coset of $H$ in $G$)」とは次の集合族のことを言う。
             \[ \setComprehension*{gH}{g \in G} = \setComprehension*{\setComprehension*{gh}{h \in H}}{g \in G} \]
-            また、「$G$に於ける$H$の右剰余類」とは次の集合族のことを言う。
+            また，「$G$に於ける$H$の右剰余類」とは次の集合族のことを言う。
             \[ \setComprehension*{Hg}{g \in G} = \setComprehension*{\setComprehension*{hg}{h \in H}}{g \in G} \]
-            特に、$gH\;(g \in G)$を「$G$に於ける$g$に関する$H$の左剰余類 (the left coset of $H$ in $G$ with respect to $g$)」と呼び、$Hg\;(g \in G)$を「$G$に於ける$g$に関する$H$の右剰余類」と呼ぶ。
+            特に，$gH\;(g \in G)$を「$G$に於ける$g$に関する$H$の左剰余類 (the left coset of $H$ in $G$ with respect to $g$)」と呼び，$Hg\;(g \in G)$を「$G$に於ける$g$に関する$H$の右剰余類」と呼ぶ。
         \subsection{群\texorpdfstring{$G$}{G}の部分群\texorpdfstring{$H$}{H}の全ての剰余類は互いに素である}
             \begin{proof}
                 \quad\par
@@ -20,9 +20,9 @@
                 同様に$R' \supseteq R$も示せるから$R=R'$となる。
             \end{proof}
         \subsection{2つの元が同じ剰余類に属する必要十分条件}
-            $G$を群とし、$H$をその部分群とする。
+            $G$を群とし，$H$をその部分群とする。
             $s_1,s_2\in G$が$H$の同じ左剰余類に属する必要十分条件は$s_1^{-1}s_2\in H$である。
-            また、同じ右剰余類に属する必要十分条件は$s_1s_2^{-1}\in H$である。
+            また，同じ右剰余類に属する必要十分条件は$s_1s_2^{-1}\in H$である。
             \begin{proof}
                 \quad\par
                 左剰余類について示す。
@@ -34,13 +34,13 @@
                 ($\Leftarrow$)
                 \par
                 仮定より$\exists h \in H \st s_1^{-1}s_2 = h$。
-                直前に示した定理より$H$の剰余類は$G$を分割するから、$\exists g\in G,\;h_1\in H \st s_1 = gh_1 (\in gH)$。
+                直前に示した定理より$H$の剰余類は$G$を分割するから，$\exists g\in G,\;h_1\in H \st s_1 = gh_1 (\in gH)$。
                 よって$s_2 = s_1h = gh_1h \in gH\;(\because\; h_1h \in H)$
             \end{proof}
         \section{\texorpdfstring{$\mathbb{Z}_p$}{Zp} (\texorpdfstring{$p: $}{p: }素数)に乗法群としての位数\texorpdfstring{$r$}{r}の元があれば\texorpdfstring{$p-1$}{p-1}は\texorpdfstring{$r$}{r}の倍数}
             \begin{proof}
                 \quad\par
                 論題の元を$a$とする。
-                $r$は$a^r \equiv_p 1$となる最小の自然数であるから、$k\in\naturalNumbers$に対して$a^k \equiv_p 1$となるのは$k$が$r$の倍数であるとき、かつそのときに限る。
-                Fermatの小定理から$a^{p-1} \equiv_p 1$であるので、$p-1$は$r$の倍数である。
+                $r$は$a^r \equiv_p 1$となる最小の自然数であるから，$k\in\naturalNumbers$に対して$a^k \equiv_p 1$となるのは$k$が$r$の倍数であるとき，かつそのときに限る。
+                Fermatの小定理から$a^{p-1} \equiv_p 1$であるので，$p-1$は$r$の倍数である。
             \end{proof}

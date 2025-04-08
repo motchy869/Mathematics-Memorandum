@@ -1,30 +1,30 @@
 \chapter{重積分}
     \section{平均値の定理}
         \begin{shadebox}
-            $\Omega\in\realNumbers^n$を体積確定の有界閉領域、$f:\Omega\to\realNumbers$を連続関数とすると、$^\exists\bm{x}'\st\integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} = f(\bm{x}')|\Omega|$
+            $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\bm{x}'\st\integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} = f(\bm{x}')|\Omega|$
         \end{shadebox}
         \begin{proof}
             \quad\par
             $\Omega$内での$f$の最小値と最大値を各々$m(\Omega),M(\Omega)$とすると
             \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} \leq M(\Omega)\]
-            であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\bm{x}'\st I(\Omega) = f(\bm{x}')$であり、定理が従う。
+            であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\bm{x}'\st I(\Omega) = f(\bm{x}')$であり，定理が従う。
         \end{proof}
     \section{\texorpdfstring{$C^1$}{C\string^1}級の変換による面積0の集合の像の面積もまた0}
         \begin{shadebox}
             閉超直方体$R\subset\realNumbers^n$を含む開集合$D$上で定義された$C^1$級の\textcolor{red}{変換}$F:D\to\realNumbers^n$を考える。
-            集合$C\subset\realNumbers^n$の面積が0であるとき、$F(C)\subset\realNumbers^n$の面積もまた0である。
+            集合$C\subset\realNumbers^n$の面積が0であるとき，$F(C)\subset\realNumbers^n$の面積もまた0である。
         \end{shadebox}
         \begin{proof}
             \quad\par
             $F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
             $R = [a_1,b_1]\times\dotsb\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
-            第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし、各小超直方体を$R_{i_1,\dotsc,i_n} \coloneqq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
+            第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし，各小超直方体を$R_{i_1,\dotsc,i_n} \coloneq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
             $R$の対角線の長さを$L = \sqrt{\sum_{d=1}^n (b_d-a_d)^2}$としておく。
-            $C$は面積確定で面積が0であるから、任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し、$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
+            $C$は面積確定で面積が0であるから，任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し，$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
             \[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset} |R_{i_1,\dotsc,i_m}| = \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
-            各$R_{i_1,\dotsc,i_n}$の対角線の長さは$L/m$であり、$F$がLipschitz連続だから各$R_{i_1,\dotsc,i_n}$について、その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
+            各$R_{i_1,\dotsc,i_n}$の対角線の長さは$L/m$であり，$F$がLipschitz連続だから各$R_{i_1,\dotsc,i_n}$について，その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
             つまり各$F(R_{i_1,\dotsc,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\dotsc,i_n}$で覆うことができる。
-            よって$F(C)$は$\setComprehension*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて、その面積は
+            よって$F(C)$は$\setComprehension*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて，その面積は
             \[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
         \end{proof}
     \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\;\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
@@ -37,12 +37,12 @@
                 \abs{(f*g)(x+h) - (f*g)(x)} &= \abs{\integrate{-\infty}{\infty}{\left[f(x-y+h) - f(x-y)\right]g(y)}{}{y}} \\
                 &\leq \integrate{-\infty}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y}
             \end{align*}
-            $f$の有界性と$g$の絶対可積分性より、ある$a$が存在して
+            $f$の有界性と$g$の絶対可積分性より，ある$a$が存在して
             \[ \integrate{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y},\;\integrate{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
             となる。$f$は$\realNumbers$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
             よって$h$を十分小さくすれば
-            \[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L \coloneqq \integrate{-\infty}{\infty}{|g(y)|}{}{y} \right) \]
-            となり、
+            \[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L \coloneq \integrate{-\infty}{\infty}{|g(y)|}{}{y} \right) \]
+            となり，
             \[ \integrate{-a}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
             以上より
             \[ \abs{(f*g)(x+h) - (f*g)(x)} < \varepsilon \]
@@ -50,13 +50,13 @@
             \noindent
             (絶対可積分であること):
             \par
-            $a>0$として$I(a) \coloneqq \integrate{-a}{a}{|(f*g)(x)|}{}{x}$とすると$I(a)$は$a$に関して単調増加であり、次式が成り立つ。
+            $a>0$として$I(a) \coloneq \integrate{-a}{a}{|(f*g)(x)|}{}{x}$とすると$I(a)$は$a$に関して単調増加であり，次式が成り立つ。
             \[ I(a) = \integrate{-a}{a}{\abs{\integrate{-\infty}{\infty}{f(x-y)g(y)}{}{y}}}{}{x} \leq \integrate{-a}{a}{\integrate{-\infty}{\infty}{|f(x-y)||g(y)|}{}{y}}{}{x} = \integrate{-\infty}{\infty}{\integrate{-a}{a}{|f(x-y)||g(y)|}{}{x}}{}{y} \]
             右端の等号は$f$の有界性と$g$の絶対可積分性より$\integrate{-\infty}{\infty}{|f(x-y)||g(y)|}{}{y}$が$x$の値に関係なく収束することによる。
             これより
             \begin{align*}
-                I(a) &\leq \integrate{-\infty}{\infty}{\abs{g(y)}\integrate{-a}{a}{\abs{f(x-y)}}{}{x}}{}{y} \leq \integrate{-\infty}{\infty}{\abs{g(y)}M_1}{}{y} \quad \left( M_1 \coloneqq \integrate{-\infty}{\infty}{\abs{f(x-y)}}{}{x} \right) \\
-                &\leq M_1M_2 \quad \left( M_2 \coloneqq \integrate{-\infty}{\infty}{\abs{g(y)}}{}{y} \right)
+                I(a) &\leq \integrate{-\infty}{\infty}{\abs{g(y)}\integrate{-a}{a}{\abs{f(x-y)}}{}{x}}{}{y} \leq \integrate{-\infty}{\infty}{\abs{g(y)}M_1}{}{y} \quad \left( M_1 \coloneq \integrate{-\infty}{\infty}{\abs{f(x-y)}}{}{x} \right) \\
+                &\leq M_1M_2 \quad \left( M_2 \coloneq \integrate{-\infty}{\infty}{\abs{g(y)}}{}{y} \right)
             \end{align*}
             よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integrate{-\infty}{\infty}{(f*g)(x)}{}{x}$は絶対収束する。
         \end{proof}
