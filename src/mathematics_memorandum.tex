@@ -83,9 +83,10 @@
 \renewcommand{\chapter}{\@ifstar\uncountedChapter\countedChapter}
 \makeatother
 
-% Reset equation and figure numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
+% Resets equation, figure and table numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
 \counterwithin{equation}{section}
 \counterwithin{figure}{section}
+\counterwithin{table}{section}
 
 % longtable settings
 \setcounter{LTchunksize}{200}
