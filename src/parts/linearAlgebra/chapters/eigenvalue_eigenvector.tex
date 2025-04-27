@@ -206,7 +206,7 @@
                 \cite{信号処理備忘録}で述べられているDFTの性質を用いる。
                 $\bm{e}_m\in\realNumbers^N$を第$m$要素が1でそれ以外は0のベクトルとする。
                 $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
-                \[ \bm{a}_m = \cycConv{\bm{a}}{\bm{e}_m} \]
+                \[ \bm{a}_m = \bm{a}\circledast\bm{e}_m \]
                 巡回畳み込みのDFTの性質より次式が成り立つ。
                 \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
                 これより次式が成り立つ。
