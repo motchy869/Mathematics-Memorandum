@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - a typo in equation in `行フルランクな行列の擬逆行列を用いた線形方程式の解がノルム最小であること'
 - Changed:
   - Separated source and output directories.
+- Added:
+  - convexity of uniform norm
 
 ## [0.21.0] - 2025-04-08
 
