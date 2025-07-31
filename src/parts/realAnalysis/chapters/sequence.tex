@@ -1,13 +1,13 @@
 \chapter{数列}
     % \section{実数を要素とする有界集合の上限と下限の存在(考察)}
-    % 	$A\in\realNumbers$を上に有界な集合とし，$A$の上限$\sup A$の存在を確かめる。
-    % 	同様にして下に有界な集合に対する下限の存在も確かめられる。
-    % 	まず$a_0 \in A$を任意に選ぶ。
-    % 	$A$は上に有界だから，次のような$a_1$が存在する。
-    % 	\[ a_0 < b_0,\; \forall a \in A,\; a<b_0 \]
-    % 	数列$\{a_i\},\{b_i\}$を次の手順で生成する:
-    % 	$(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
-    % 	$c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
+    %     $A\in\realNumbers$を上に有界な集合とし，$A$の上限$\sup A$の存在を確かめる。
+    %     同様にして下に有界な集合に対する下限の存在も確かめられる。
+    %     まず$a_0 \in A$を任意に選ぶ。
+    %     $A$は上に有界だから，次のような$a_1$が存在する。
+    %     \[ a_0 < b_0,\; \forall a \in A,\; a<b_0 \]
+    %     数列$\{a_i\},\{b_i\}$を次の手順で生成する:
+    %     $(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
+    %     $c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
     \section{単調性}
         \subsection{\texorpdfstring{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
             \label{(1-t/n)^nは単調増加}
@@ -23,16 +23,16 @@
                 \end{align*}
             \end{proof}
         % \subsection{$\left(1-\frac{1}{n}\right)^n$は単調増加}
-        % 	\label{(1-1/n)^nは単調増加}
-        % 	\begin{proof}
-        % 		\quad\par
-        % 		$a_n \coloneq \left(1-\frac{1}{n}\right)^n$とする。
-        % 		$a_0 < a_1$は明らか。以下$n\geq 2$とする。
-        % 		\begin{align*}
-        % 			a_{n+1}/a_n &= \frac{\left(\frac{n}{n+1}\right)^{n+1}}{\left(\frac{n-1}{n}\right)^n} = \left(\frac{n^2}{n^2-1}\right)^n\times\frac{n}{n+1} = \left(1+\frac{1}{n^2-1}\right)^n\times\frac{n}{n+1} \\
-        % 			&= \frac{n}{n+1}\sum_{k=0}^n \binom{n}{k} \left(\frac{1}{n^2-1}\right)^k \geq \frac{n}{n+1}\times\left(1+\frac{n}{n^2-1}\right) = \frac{n^3+n^2-n}{n^3+n^2-n-1} > 1
-        % 		\end{align*}
-        % 	\end{proof}
+        %     \label{(1-1/n)^nは単調増加}
+        %     \begin{proof}
+        %         \quad\par
+        %         $a_n \coloneq \left(1-\frac{1}{n}\right)^n$とする。
+        %         $a_0 < a_1$は明らか。以下$n\geq 2$とする。
+        %         \begin{align*}
+        %             a_{n+1}/a_n &= \frac{\left(\frac{n}{n+1}\right)^{n+1}}{\left(\frac{n-1}{n}\right)^n} = \left(\frac{n^2}{n^2-1}\right)^n\times\frac{n}{n+1} = \left(1+\frac{1}{n^2-1}\right)^n\times\frac{n}{n+1} \\
+        %             &= \frac{n}{n+1}\sum_{k=0}^n \binom{n}{k} \left(\frac{1}{n^2-1}\right)^k \geq \frac{n}{n+1}\times\left(1+\frac{n}{n^2-1}\right) = \frac{n^3+n^2-n}{n^3+n^2-n-1} > 1
+        %         \end{align*}
+        %     \end{proof}
     \section{極限}
         \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = e\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
             \begin{proof}

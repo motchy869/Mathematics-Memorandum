@@ -71,10 +71,10 @@
                 \[ \nabla \norm{A\bm{x}+\bm{b}}_2^2 = (\nabla(A\bm{x}+\bm{b}))\left.(\nabla\bm{y}^\top\bm{y})\right|_{\bm{y}=A\bm{x}+\bm{b}} = A^\top 2(A\bm{x}+\bm{b}) = 2A^\top(A\bm{x}+\bm{b}) \]
                 % \begin{comment}
                 % \begin{align*}
-                % 	\partDerivLong{\norm{A\bm{x}+\bm{b}}_2^2}{x_i}{} &= \partDerivLong{\left(\norm{A\bm{x}}_2^2 + 2\inprod{A\bm{x}}{\bm{b}} + \norm{\bm{b}}_2^2}{x_i}{}\right) = \partDerivLong{\left(\sum_{j=1}^n (A\bm{x})[j]^2 + 2\sum_{j=1}^n (A\bm{x})[j]b_j\right)}{x_i}{} \\
-                % 	&= \partDerivLong{\left[\sum_{j=1}^n\left(\sum_{k=1}^n a_{jk}x_k\right)^2 + 2\sum_{j=1}^n \left(\sum_{k=1}^n a_{jk}x_k\right)b_j\right]}{x_i}{} \\
-                % 	&= \sum_{j=1}^n 2\left(\sum_{k=1}^n a_{jk}x_k\right)a_{ji} + 2\sum_{j=1}^n a_{ji}b_j = 2\sum_{j=1}^n a_{ji}\left(\sum_{k=1}^n a_{jk}x_k + b_j\right) \\
-                % 	&= 2\sum_{j=1}^n a_{ji}\left((A\bm{x})[j] + b_j\right) = 2\left(A^\top(A\bm{x}+\bm{b})\right)[i]
+                %     \partDerivLong{\norm{A\bm{x}+\bm{b}}_2^2}{x_i}{} &= \partDerivLong{\left(\norm{A\bm{x}}_2^2 + 2\inprod{A\bm{x}}{\bm{b}} + \norm{\bm{b}}_2^2}{x_i}{}\right) = \partDerivLong{\left(\sum_{j=1}^n (A\bm{x})[j]^2 + 2\sum_{j=1}^n (A\bm{x})[j]b_j\right)}{x_i}{} \\
+                %     &= \partDerivLong{\left[\sum_{j=1}^n\left(\sum_{k=1}^n a_{jk}x_k\right)^2 + 2\sum_{j=1}^n \left(\sum_{k=1}^n a_{jk}x_k\right)b_j\right]}{x_i}{} \\
+                %     &= \sum_{j=1}^n 2\left(\sum_{k=1}^n a_{jk}x_k\right)a_{ji} + 2\sum_{j=1}^n a_{ji}b_j = 2\sum_{j=1}^n a_{ji}\left(\sum_{k=1}^n a_{jk}x_k + b_j\right) \\
+                %     &= 2\sum_{j=1}^n a_{ji}\left((A\bm{x})[j] + b_j\right) = 2\left(A^\top(A\bm{x}+\bm{b})\right)[i]
                 % \end{align*}
                 % \end{comment}
             \end{proof}

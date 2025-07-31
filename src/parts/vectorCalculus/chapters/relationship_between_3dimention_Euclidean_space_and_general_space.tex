@@ -153,7 +153,7 @@
             式(2)の[ ]内第2項も同様に評価すると，式(2)の$1/(h_{[m+1]}h_{[m+2]})$の右側の部分は次式になる。
             \begin{align*}
                 \phantom{=} &\left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 - \left(\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}\right)h_{[m+1]}^2 \\
-                \phantom{=}	& + \sum_{k\in\{[m+1],[m+2]\}}\frac{\tilde{A}_k}{h_k}\left(\partDerivIIHetero{\bm{r}}{u_{[m+1]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+2]}}{} - \partDerivIIHetero{\bm{r}}{u_{[m+2]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+1]}}{}\right) \tag{3}
+                \phantom{=}    & + \sum_{k\in\{[m+1],[m+2]\}}\frac{\tilde{A}_k}{h_k}\left(\partDerivIIHetero{\bm{r}}{u_{[m+1]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+2]}}{} - \partDerivIIHetero{\bm{r}}{u_{[m+2]}}{u_k}\cdot\partDeriv{\bm{r}}{u_{[m+1]}}{}\right) \tag{3}
             \end{align*}
             この式の第3項の()内を評価する。
             $T$は$\mathrm{C}^2$級であると仮定しているから，微分順序の入れ替えが可能であることに留意する。

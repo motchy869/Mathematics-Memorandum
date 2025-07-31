@@ -400,10 +400,10 @@
                 よって$(A-\lambda I)^{l+1}\bm{v}=\bm{0}$となり，矛盾する。
             \end{proof}
         %\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
-        %	\begin{shadebox}
-        %		$\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし，その代数的重複度を$n_i,n_j$とする。
-        %		一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと，$F_i\cap F_j=\{\bm{0}_n\}$
-        %	\end{shadebox}
+        %    \begin{shadebox}
+        %        $\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし，その代数的重複度を$n_i,n_j$とする。
+        %        一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},\;F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと，$F_i\cap F_j=\{\bm{0}_n\}$
+        %    \end{shadebox}
         \subsection{一般固有空間への直和分解}
             \label{一般固有空間への分解}
             \begin{shadebox}
@@ -513,11 +513,11 @@
         \subsection{Jordanブロックの逆行列}
             \newcommand{\JBn}{%
                 \begin{bmatrix}%
-                    \lambda & 1			& 0			& \cdots	& 0\\%
-                    0		& \lambda	& 1			& 			&\vdots\\%
-                    \vdots	& \ddots	& \ddots	& \ddots	& 0\\%
-                            &			& 0			& \lambda	& 1\\%
-                    0		& \cdots	&			& 0			& \lambda%
+                    \lambda & 1            & 0            & \cdots    & 0\\%
+                    0        & \lambda    & 1            &             &\vdots\\%
+                    \vdots    & \ddots    & \ddots    & \ddots    & 0\\%
+                            &            & 0            & \lambda    & 1\\%
+                    0        & \cdots    &            & 0            & \lambda%
                 \end{bmatrix}%
             }
             \begin{shadebox}
@@ -573,10 +573,10 @@
                 \[
                     \NapierE^{J(\lambda, n)t} =
                     \begin{bmatrix}
-                        \NapierE^{\lambda t}	& t\NapierE^{\lambda t}	& \cdots	& \frac{t^{n-1}}{(n-1)!}\NapierE^{\lambda t}\\
-                        0				& \NapierE^{\lambda t}		& \ddots	& \vdots\\
-                        \vdots			& \ddots			& \ddots	& t\NapierE^{\lambda t}\\
-                        0				& \cdots			& 0			& \NapierE^{\lambda t}
+                        \NapierE^{\lambda t}    & t\NapierE^{\lambda t}    & \cdots    & \frac{t^{n-1}}{(n-1)!}\NapierE^{\lambda t}\\
+                        0                & \NapierE^{\lambda t}        & \ddots    & \vdots\\
+                        \vdots            & \ddots            & \ddots    & t\NapierE^{\lambda t}\\
+                        0                & \cdots            & 0            & \NapierE^{\lambda t}
                     \end{bmatrix}
                 \]
             \end{shadebox}
@@ -588,11 +588,11 @@
                     \Gamma\coloneq\lambda I_{n\times n},\quad
                     U\coloneq
                     \begin{bmatrix}
-                        0		& 1	& 0			& \cdots	& 0\\
-                                & 0	& 1			& \ddots	& \vdots\\
-                        \vdots	&	& \ddots	& \ddots	& 0\\
-                                & 	& 			& 0			& 1\\
-                        0		& 	& \cdots	& 			& 0
+                        0        & 1    & 0            & \cdots    & 0\\
+                                & 0    & 1            & \ddots    & \vdots\\
+                        \vdots    &    & \ddots    & \ddots    & 0\\
+                                &     &             & 0            & 1\\
+                        0        &     & \cdots    &             & 0
                     \end{bmatrix}
                 \]
                 \par
@@ -611,15 +611,15 @@
                     \centering
                     \caption{$p$と$a_{i,j}(p)$}
                     \begin{tabular}{cc}
-                        $p$			& $a_{i,j}(p)$ \\\hline\hline
-                        $0$			& $0$\\
-                        $1$			& $0$\\
-                        $\vdots$	& $\vdots$\\
-                        $j-i$		& $\combi{p}{j-i}$\\
-                        $j-i+1$		& $\lambda\combi{p}{j-i}$\\
-                        $j-i+2$		& $\lambda^2\combi{p}{j-i}$\\
-                        $\vdots$	& $\vdots$\\
-                        $p$			& $\lambda^{p-(j-i)}\combi{p}{j-i}$\\\hline
+                        $p$            & $a_{i,j}(p)$ \\\hline\hline
+                        $0$            & $0$\\
+                        $1$            & $0$\\
+                        $\vdots$    & $\vdots$\\
+                        $j-i$        & $\combi{p}{j-i}$\\
+                        $j-i+1$        & $\lambda\combi{p}{j-i}$\\
+                        $j-i+2$        & $\lambda^2\combi{p}{j-i}$\\
+                        $\vdots$    & $\vdots$\\
+                        $p$            & $\lambda^{p-(j-i)}\combi{p}{j-i}$\\\hline
                     \end{tabular}
                 \end{table}
                 よって$\NapierE^{J(\lambda, n)t}$の$(i,j)$成分は
