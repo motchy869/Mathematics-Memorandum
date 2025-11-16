@@ -1,7 +1,7 @@
 ﻿% ---------- document information ----------
 % document version number
 \newcommand{\docVerMajor}{0}
-\newcommand{\docVerMinor}{21}
+\newcommand{\docVerMinor}{22}
 \newcommand{\docVerPatch}{0}
 \newcommand{\docVerWip}{} % \newcommand{\docVerWip}{-wip}
 \newcommand{\docVer}{\docVerMajor.\docVerMinor.\docVerPatch\docVerWip}
@@ -22,12 +22,12 @@
 \usepackage{arydshln}
 \usepackage{ascmac}
 \usepackage{bbm}
-%\usepackage{bytefield} % currently not used
-\usepackage{cases}
+% \usepackage{bytefield} % currently not used
 \usepackage{chngcntr} % for counterwithin command
 \usepackage[usenames]{color}
 \usepackage{currfile}
 % \usepackage{datatool} % currently not used
+\usepackage{empheq}
 \usepackage{fancyhdr}
 \usepackage[T1]{fontenc}
 \usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
@@ -36,25 +36,27 @@
 \usepackage{cleveref} % must be included AFTER hyperref
 \usepackage{ifthen}
 \usepackage{listingsutf8, jvlisting}
-\usepackage{longtable}
+% \usepackage{ltablex} % [tabularx 環境と longtable 環境を同時に使いたい](https://mrikc.hatenablog.com/entry/2015/09/04/020128)
+% \keepXColumns % needed to use X column type in ltablex environment
 \usepackage{luacode}
 \usepackage{makecell} % [How to add a forced line break inside a table cell](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
 \usepackage{pdflscape}
 \usepackage[group-separator={,}]{siunitx}
+\usepackage{tablefootnote}
+\usepackage{tocloft} % to remove paragraph indentation in table of contents
 
 % for \arrayrulecolor command
 % To know the colors defined, see: [All you need to know about colors in LaTeX](https://latex-tutorial.com/color-latex/)
 \usepackage[table,x11names]{xcolor}
 
-\usepackage{tocloft} % to remove paragraph indentation in table of contents
 \usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
 \usepackage{xurl}
 
 % ---------- structure settings ----------
 \makeatletter
 \hypersetup{
-	pdftitle={\@title},
-	pdfauthor={\@author}
+    pdftitle={\@title},
+    pdfauthor={\@author}
 }
 \makeatother
 
@@ -83,15 +85,10 @@
 \renewcommand{\chapter}{\@ifstar\uncountedChapter\countedChapter}
 \makeatother
 
-% Reset equation and figure numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
+% Resets equation, figure and table numbers at the beginning of each section. The number is displayed as "part.chapter.section.section-internal serial number".
 \counterwithin{equation}{section}
 \counterwithin{figure}{section}
-
-% Use arabic numbers for footnotes even in minipage (including shadebox).
-\renewcommand*\thempfootnote{\arabic{mpfootnote}}
-
-% longtable settings
-\setcounter{LTchunksize}{200}
+\counterwithin{table}{section}
 
 % cleveref settings
 % see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
@@ -111,24 +108,27 @@
 % --------------------
 
 % ---------- style settings ----------
+% Uses Arabic numbers for footnotes even in minipage (including shadebox).
+\renewcommand*\thempfootnote{\arabic{mpfootnote}}
+
 % header and footer settings
-\fancyhead{\nouppercase{\rightmark}} % No upper case in header. This MUST be place before \pagestyle.
+\fancyhead{\nouppercase{\rightmark}} % No upper case in header. This MUST be placed before \pagestyle.
 \fancyhead{\nouppercase{\leftmark}}
 \fancypagestyle{plain}{
-	\cfoot{\thepage}
-	\rfoot{}
+    \cfoot{\thepage}
+    \rfoot{}
 }
 \pagestyle{fancy}
-	\lhead{
-		\ifthenelse{\equal{\currLevelTitle}{NOT YET SET}}
-		{}
-		{\currLevelNo.\;\currLevelTitle}
-	}
-	\chead{}
-	\rhead{}
-	\lfoot{}
-	\cfoot{\thepage}
-	\rfoot{}
+    \lhead{
+        \ifthenelse{\equal{\currLevelTitle}{NOT YET SET}}
+        {}
+        {\currLevelNo.\;\currLevelTitle}
+    }
+    \chead{}
+    \rhead{}
+    \lfoot{}
+    \cfoot{\thepage}
+    \rfoot{}
 
 % Avoid overlap of number and text in table of contents
 \setlength{\cftchapnumwidth}{4em}
@@ -161,52 +161,53 @@
 % % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
 % % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
 % \newcommand*{\colorbitbox}[3]{%
-% 	\rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
-% 	\bitbox{#2}{#3}%
+%     \rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
+%     \bitbox{#2}{#3}%
 % }
 
-% listings settings
 \lstset{
-	basicstyle=\ttfamily,
-	identifierstyle=\small,
-	commentstyle=\smallitshape,
-	keywordstyle=\small\bfseries,
-	ndkeywordstyle=\small,
-	stringstyle=\small\ttfamily,
-	frame=lines,
-	breaklines=true,
-	columns=[l]{fullflexible},
-	numbers=left,
-	stepnumber=1,
+    basicstyle=\ttfamily,
+    identifierstyle=\small,
+    commentstyle=\smallitshape,
+    keywordstyle=\small\bfseries,
+    ndkeywordstyle=\small,
+    stringstyle=\small\ttfamily,
+    frame=lines,
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    stepnumber=1,
+    numbersep=1em,
+    lineskip=-0.5ex
 }
 % --------------------
 
 \input{cmds/MtyLaTeXCmds/MtyLaTeXCmds}
 
 \begin{document}
-	\maketitle
-	{\scriptsize \tableofcontents}
-	\input{parts/preface.tex}
-	\input{parts/misc_provisions.tex}
-	\input{parts/discrete-mathematics/discrete-mathematics}
-	\input{parts/algebra/algebra}
-	\input{parts/realAnalysis/realAnalysis}
-	\input{parts/complexAnalysis/complexAnalysis}
-	\input{parts/linearAlgebra/linearAlgebra}
-	\input{parts/vectorCalculus/vectorCalculus}
-	\input{parts/geometry/geometry}
-	\input{parts/graphTheory/graphTheory}
-	\input{parts/misc/misc}
-	\begin{thebibliography}{99}
-		\bibitem{現代線形代数入門} 池辺八洲彦，池辺淑子，浅井信吉，宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
-		\bibitem{システム線形代数} 谷野哲三 (2013) 『システム線形代数』 朝倉書店.
-		\bibitem{新微分方程式対話} 笠原晧司 (1995) 『新微分方程式対話』 日本評論社
-		\bibitem{入門線形代数} 三宅敏恒 著 (1991) 『入門線形代数』 培風館
-		\bibitem{マルチエージェントシステムの制御} 東 俊一, 永原 正章 編著, 石井秀明, 林 直樹, 桜間 一徳, 畑中 健志 共著 (2015) 『マルチエージェントシステムの制御』 コロナ社
-		\bibitem{離散数学}Seymour Lipschitz 著, 成嶋 弘 監訳 (2010) 『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
-		\bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey 共著 ``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
-		\bibitem{信号処理備忘録} motchy (2022) 『信号処理備忘録 v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
-		\bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学\\ \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
-		\bibitem{prim_poly_Wikipedia} 『原始多項式』 Wikipedia \url{https://ja.wikipedia.org/wiki/原始多項式}
-	\end{thebibliography}
+    \maketitle
+    {\scriptsize \tableofcontents}
+    \input{parts/preface.tex}
+    \input{parts/misc_provisions.tex}
+    \input{parts/discrete-mathematics/discrete-mathematics}
+    \input{parts/algebra/algebra}
+    \input{parts/realAnalysis/realAnalysis}
+    \input{parts/complexAnalysis/complexAnalysis}
+    \input{parts/linearAlgebra/linearAlgebra}
+    \input{parts/vectorCalculus/vectorCalculus}
+    \input{parts/geometry/geometry}
+    \input{parts/graphTheory/graphTheory}
+    \input{parts/misc/misc}
+    \begin{thebibliography}{99}
+        \bibitem{現代線形代数入門} 池辺八洲彦，池辺淑子，浅井信吉，宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
+        \bibitem{システム線形代数} 谷野哲三 (2013) 『システム線形代数』 朝倉書店.
+        \bibitem{新微分方程式対話} 笠原晧司 (1995) 『新微分方程式対話』 日本評論社
+        \bibitem{入門線形代数} 三宅敏恒 著 (1991) 『入門線形代数』 培風館
+        \bibitem{マルチエージェントシステムの制御} 東 俊一, 永原 正章 編著, 石井秀明, 林 直樹, 桜間 一徳, 畑中 健志 共著 (2015) 『マルチエージェントシステムの制御』 コロナ社
+        \bibitem{離散数学}Seymour Lipschitz 著, 成嶋 弘 監訳 (2010) 『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
+        \bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey 共著 ``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
+        \bibitem{信号処理備忘録} motchy (2022) 『信号処理備忘録 v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
+        \bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学\\ \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
+        \bibitem{prim_poly_Wikipedia} 『原始多項式』 Wikipedia \url{https://ja.wikipedia.org/wiki/原始多項式}
+    \end{thebibliography}
 \end{document}

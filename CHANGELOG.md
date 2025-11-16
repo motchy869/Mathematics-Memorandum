@@ -5,10 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.22.0] - 2025-11-16
 
+- Fixed:
+  - a typo in equation in `行フルランクな行列の擬逆行列を用いた線形方程式の解がノルム最小であること'
 - Changed:
   - Separated source and output directories.
+- Added:
+  - convexity of uniform norm
 
 ## [0.21.0] - 2025-04-08
 
