@@ -102,12 +102,13 @@
                 となるから，$\mbox{\boldmath $b$}_{ij}$の正規直交性に注意して
                 \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
                 条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}(A^\top A)$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
-                \begin{numcases}
-                    {}
-                    g\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) = \sum_{ij}{{c_{ij}}^2} - 1 & \nonumber \\
-                    f\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}} & \nonumber \\
-                    F\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r},\lambda\right) = f-\lambda g & \nonumber
-                \end{numcases}
+                \begin{equation*}
+                    \begin{cases}
+                        g\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) &= \sum_{ij}{{c_{ij}}^2} - 1 \\
+                        f\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r}\right) &= \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}} \\
+                        F\left(c_{11},c_{12},\dots,c_{1n_1},\dots,c_{r1},c_{r2},\dots,c_{rn_r},\lambda\right) &= f-\lambda g
+                    \end{cases}
+                \end{equation*}
                 とする。\\
                 $F_{c_{ij}} = 0$とおくと$2\lambda_i c_{ij} - 2\lambda c_{ij} = 0$となるから$\lambda = \lambda_i$ or $c_{ij} = 0$。$\lambda$が$\lambda_1,\lambda_2,\dots,\lambda_r$のいずれとも一致しなければ$c_{ij}$が全ての$ij$で0になり条件(i)を満たさない。
                 従って$\lambda$は$\lambda_1,\lambda_2,\dots,\lambda_r$のいずれか一つと一致しなければならない。\\
