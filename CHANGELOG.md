@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added:
   - definition of negative period for real-variable complex-valued functions
+  - tensor notation
 
 ## [0.22.0] - 2025-11-16
 
