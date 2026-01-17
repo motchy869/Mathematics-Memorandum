@@ -1,6 +1,6 @@
 \chapter{ベクトルのノルム}
     \section{諸定理}
-        \subsection{\texorpdfstring{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realNumbers^n,\;p\geq 1,\;a\geq 0)$}{||x||\_\{p+a\} ≦ ||x||\_p (x∈R\string^n, p≧1, a≧0)}}
+        \subsection{\texorpdfstring{$\norm{\bm{x}}_{p+a} \leq \norm{\bm{x}}_p\;(\bm{x}\in\realNumbers^n,p\geq 1,a\geq 0)$}{||x||\_\{p+a\} ≦ ||x||\_p (x∈R\string^n, p≧1, a≧0)}}
             \begin{proof}
                 \quad\par
                 $a=0$のときは明らか。$a>0$のときを考える。
@@ -11,17 +11,17 @@
                 \begin{align*}
                     \derivLong{\norm{\bm{x}}_p}{p}{} < 0 &\iff \derivLong{\log \norm{\bm{x}}_p}{p}{} < 0 \iff -\frac{1}{p^2}\log \sum_{i=1}^r |x_i|^p + \frac{1}{p}\times\frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < 0 \\
                     &\iff \frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < \frac{1}{p}\log \sum_{i=1}^r |x_i|^p \\
-                    &\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M \coloneq \sum_{i=1}^r |x_i|^p,\; w_i \coloneq |x_i|^p/M \right) \\
+                    &\iff \sum_{i=1}^r w_i\log |x_i|^p < \log M \quad \left( M \coloneq \sum_{i=1}^r |x_i|^p, w_i \coloneq |x_i|^p/M \right) \\
                     &\iff \sum_{i=1}^r w_i\log M w_i < \log M \iff \sum_{i=1}^r w_i(\log M + \log w_i) < \log M \\
                     &\iff \sum_{i=1}^r w_i\log w_i < 0 \quad \left( \because\;\sum_{i=1}^r w_i = 1 \right) \quad = \text{true} \quad (\because\; 0<w_i<1)
                 \end{align*}
             \end{proof}
-        \subsection{\texorpdfstring{$1\leq p\leq q,\;\bm{x}\in\complexNumbers^n$}{1≦p≦q, x∈C\string^n}のとき\texorpdfstring{$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}{||x||\_p ≦ n\string^(1/p-1/q)||x||\_q}}
+        \subsection{\texorpdfstring{$1\leq p\leq q,\bm{x}\in\complexNumbers^n$}{1≦p≦q, x∈C\string^n}のとき\texorpdfstring{$\norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q$}{||x||\_p ≦ n\string^(1/p-1/q)||x||\_q}}
             \begin{proof}
                 \quad\par
                 $\bm{a},\bm{b}\in\complexNumbers^n$とする。$r=q/p, s=q/(q-p)$とすると$1\leq r,s$および$1/r+1/s=1$を満たすのでH\"olderの不等式より次式が成り立つ。
                 \[ \sum_{i=1}^n|a_ib_i| \leq \left(\sum_{i=1}^n|a_i|^r\right)^\frac{1}{r}\left(\sum_{i=1}^n|b_i|^s\right)^\frac{1}{s} \]
-                $|a_i| = |x_i|^p,\;b_i=1$とすると次式を得る。
+                $|a_i| = |x_i|^p,b_i=1$とすると次式を得る。
                 \[ \sum_{i=1}^n|x_i|^p \leq \left(\sum_{i=1}^n|x_i|^q\right)^\frac{p}{q}n^{1-p/q} \]
                 両辺の$p$乗根をとって次式を得る。
                 \[ \norm{\bm{x}}_p \leq n^{1/p-1/q}\norm{\bm{x}}_q \]
@@ -78,7 +78,7 @@
             \label{th:単位球面上の点の座標の絶対値の総和の最大値}
             \begin{proof}
                 \quad\par
-                $x_k = r_k \NapierE^{i\theta_k},\; (r_k \geq 0, \theta_k \in \realNumbers,\;k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\;\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから，制約条件$g(\bm{r}) \coloneq \sum_{k=1}^n {r_k}^2 - 1 = 0,\;\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
+                $x_k = r_k \NapierE^{i\theta_k}, (r_k \geq 0, \theta_k \in \realNumbers,k=1,\dotsc,n)$とすると$\norm{\bm{x}}_2=1 \iff \sum_{k=1}^n {r_k}^2 = 1,\sum_{k=1}^n{|x_k|} = \sum_{k=1}^n r_k$であるから，制約条件$g(\bm{r}) \coloneq \sum_{k=1}^n {r_k}^2 - 1 = 0,\bm{r} \geq \bm{0}_n$の下で関数$f(\bm{r}) \coloneq \sum_{k=1}^n r_k$の最大値が$\sqrt{n}$以下であること(*)を示せばよい。
                 \par
                 数学的帰納法で示す。$n=1$のときは明らかに(*)が成り立つ。以下$n=m\geq2$とし，$n=1,\dotsc,m-1$について(*)が成り立つと仮定する。
                 $r_1,\dotsc,r_n$の少なくとも1つが0のとき，すなわち制約集合の境界上では変数の個数が$n-1$以下の場合に帰着するから帰納法の仮定より成り立つ。

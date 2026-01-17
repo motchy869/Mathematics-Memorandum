@@ -15,31 +15,31 @@
             このとき $\fea(x) - \feb(x) = \fob(x) - \foa(x)$ が成り立つ。
             左辺は偶関数，右辺は奇関数なので，両辺は恒等的に 0 でなければならない（偶対称かつ奇対称な関数が恒等的に 0 であることは容易に示せる）。
         \end{proof}
-    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
+    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
         \begin{shadebox}
             集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
-            \[ \sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \]
+            \[ \sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \]
         \end{shadebox}
         \begin{proof}
             \quad\par
             $\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_1$とすると$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_1)+g(\bm{x}_1) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x})$。
             また，$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_2$とすると$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_2)+g(\bm{x}_2) \geq \inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x})$
         \end{proof}
-    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}),\; \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x})$}{sup\_\{x∈X\} -f(x) = -inf\_\{x∈X\}f(x), inf\_\{x∈X\} -f(x) = -sup\_\{x∈X\}f(x)}}
+    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}), \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x})$}{sup\_\{x∈X\} -f(x) = -inf\_\{x∈X\}f(x), inf\_\{x∈X\} -f(x) = -sup\_\{x∈X\}f(x)}}
         \begin{shadebox}
             集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
-            \[ \sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}),\; \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x}) \]
+            \[ \sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}), \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x}) \]
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $^\forall\bm{y}\in X,\;\inf_{\bm{x}\in X}f(\bm{x}) \leq f(\bm{y})$なので$^\forall\bm{y}\in X,\;-\inf_{\bm{x}\in X}f(\bm{x}) \geq -f(\bm{y})$。
+            $^\forall\bm{y}\in X,\inf_{\bm{x}\in X}f(\bm{x}) \leq f(\bm{y})$なので$^\forall\bm{y}\in X,-\inf_{\bm{x}\in X}f(\bm{x}) \geq -f(\bm{y})$。
             任意の$\varepsilon>0$に対して$\inf_{\bm{x}\in X}f(\bm{x}) + \varepsilon$は$f$の下界ではないから，適当な$\bm{x}_1\in X$が存在して$f(\bm{x}_1) < \inf_{\bm{x}\in X}f(\bm{x}) + \varepsilon \quad \therefore\; -f(\bm{x}_1) > -\inf_{\bm{x}\in X}f(\bm{x}) - \varepsilon$
             。すなわち$-\inf_{\bm{x}\in X}f(\bm{x}) - \varepsilon$は$-f$の上界ではない。
             よって上限の定義より$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x})$。2つ目の主張の証明も同様。
         \end{proof}
     \section{H\"older(ヘルダー)の不等式}
         \begin{shadebox}
-            $p,q>1,\;\frac{1}{p}+\frac{1}{q}=1$のとき
+            $p,q>1,\frac{1}{p}+\frac{1}{q}=1$のとき
             \[\sum_{i=1}^n|x_iy_i|\leq\norm{\bm{x}}_p\norm{\bm{y}}_q\]
         \end{shadebox}
         \begin{proof}

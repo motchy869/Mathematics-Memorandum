@@ -4,9 +4,9 @@
     %     同様にして下に有界な集合に対する下限の存在も確かめられる。
     %     まず$a_0 \in A$を任意に選ぶ。
     %     $A$は上に有界だから，次のような$a_1$が存在する。
-    %     \[ a_0 < b_0,\; \forall a \in A,\; a<b_0 \]
+    %     \[ a_0 < b_0, \forall a \in A, a<b_0 \]
     %     数列$\{a_i\},\{b_i\}$を次の手順で生成する:
-    %     $(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i,\; b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2,\; b_{i+1} = b_i$とする。
+    %     $(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i, b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2, b_{i+1} = b_i$とする。
     %     $c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
     \section{単調性}
         \subsection{\texorpdfstring{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
@@ -60,7 +60,7 @@
         \subsection{Fibonacci数列}
             \subsubsection{つがいの増殖からの漸化式の導出}
                 第$n$世代のつがいの数を$a_n$とし，そのうち成熟しているものを$m_n$，未成熟のものを$y_n$とすると，$a_{n+1} - a_n = m_n$であり，同時に$m_n = m_{n-1} + y_{n-1}$なので結局$a_{n+1} = a_n + a_{n-1}$となる。
-        \subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),\;(r\neq1 ,\;p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),\;(A:\text{ 定数},\;q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
+        \subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),(r\neq1 ,p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),(A:\text{ 定数},q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
             \begin{proof}
                 \quad\par
                 $p(n) = b_dn^d + \dotsb + b_1n + b_0n$とする。
@@ -72,7 +72,7 @@
         % \begin{comment}
         %     \subsection{連立線形項間漸化式の添字の有効範囲}
         %         \begin{shadebox}
-        %             $N\in\naturalNumbers,\; a\neq b$とする。数列${x_i}$に関する漸化式
+        %             $N\in\naturalNumbers, a\neq b$とする。数列${x_i}$に関する漸化式
         %             \[
         %                 \begin{cases}
         %                     x_{i+1} + a x_i = c_i \\

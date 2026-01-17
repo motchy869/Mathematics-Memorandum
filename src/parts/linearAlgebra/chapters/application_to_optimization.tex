@@ -2,7 +2,7 @@
     \section{\texorpdfstring{$\norm{A\bm{x} + \bm{b}}_2^2$}{||Ax+b||\_2}の最小化条件}
         \subsection{制約なしの場合}
             \begin{shadebox}
-                $A\in\complexNumbers^{m\times n},\;\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
+                $A\in\complexNumbers^{m\times n},\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
                 $f(\bm{x}) \coloneq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
                 \[ \HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b} \]
                 特に$A$が列フルランクであれば$\HerConj{A}A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
@@ -22,12 +22,12 @@
         \subsection{線形制約付きの場合}
             \begin{shadebox}
                 $f$の定義は前小節のものとする。
-                $m\in\naturalNumbers,\;\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,\;g_i(\bm{x}) \coloneq \bm{c}_i^\top\bm{x}+d_i$とする。
-                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m),\; \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき，$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
+                $m\in\naturalNumbers,\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,g_i(\bm{x}) \coloneq \bm{c}_i^\top\bm{x}+d_i$とする。
+                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m), \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき，$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $\bm{h} \in \complexNumbers^n,\;g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
+                $\bm{h} \in \complexNumbers^n,g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
                 $g_i(\mathring{\bm{x}} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
                 \begin{align*}
                     f(\mathring{\bm{x}} + \bm{h}) &= f(\mathring{\bm{x}}) + 2\Re{\HerConj{(A\mathring{\bm{x}}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\bm{x}}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\

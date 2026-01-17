@@ -31,7 +31,7 @@
         \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
             \begin{proof}
                 \quad\par
-                $\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して，$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると，$||\bm{x}'|| = 1,\;||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
+                $\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して，$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると，$||\bm{x}'|| = 1,||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
             \end{proof}
         \subsection{スペクトル半径の上界}
             \begin{shadebox}
@@ -52,7 +52,7 @@
                 \quad\par
                 $A$はHermite行列だから固有値は全て実数で，適当なユニタリ行列$U$で対角化できる。
                 $A$の対角化を$A = UDU^\mathrm{H}$とする。
-                ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},\;|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
+                ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
                 $A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で，$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
                 よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
             \end{proof}
@@ -100,7 +100,7 @@
                 よって
                 \[A^\top A\vx = A^\top A\sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}A^\top A\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\lambda_i\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
                 となるから，$\mbox{\boldmath $b$}_{ij}$の正規直交性に注意して
-                \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
+                \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
                 条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}(A^\top A)$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
                 \begin{equation*}
                     \begin{cases}

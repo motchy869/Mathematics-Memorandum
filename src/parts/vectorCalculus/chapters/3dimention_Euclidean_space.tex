@@ -77,7 +77,7 @@
             \label{ベクトルのスカラー関数倍の発散}
             \begin{shadebox}
                 $\bm{r}\in\realNumbers$とする。
-                $f: \realNumbers^3\to\complexNumbers,\;A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
+                $f: \realNumbers^3\to\complexNumbers,A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
                 このとき次式が成り立つ。
                 \[ \nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r}) \]
             \end{shadebox}
@@ -91,7 +91,7 @@
             \label{ベクトルのスカラー関数倍の回転}
             \begin{shadebox}
                 $\bm{r}\in\realNumbers$とする。
-                $f: \realNumbers^3\to\complexNumbers,\;A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
+                $f: \realNumbers^3\to\complexNumbers,A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
                 このとき次式が成り立つ。
                 \[ \nabla_\bm{r}\times f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\times \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\times\bm{A}(\bm{r}) \]
             \end{shadebox}
@@ -207,13 +207,13 @@
                     $f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて，その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
                     このとき$\realNumbers^3$上での$f$の積分は存在する。
                     すなわち次式が成り立つ。
-                    \[ R>0,\; V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+                    \[ R>0, V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
                     $R>0$は十分大きいものとし，$I(R)$を次式で定義する。
                     \[ I(R) \coloneq \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
-                    球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
+                    球座標変換$\bm{r} = r[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$を用いて次式を得る。
                     \[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
                     $0<R_0<R$なる$R_0$をとり，$I(R) = I(R_0) + I_2(R)$と分解する。
                     ここに$I_2(R) \coloneq I(R) - I(R_0)$である。
@@ -272,7 +272,7 @@
     \section{諸定理}
         \subsection{球殻定理}
             \begin{shadebox}
-                $R>0,\;V \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
+                $R>0,V \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
                 ベクトル場$\bm{A}(\bm{r})$を次式で定義する。
                 \[ \bm{A}(\bm{r}) \coloneq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
                 このとき次が成り立つ。
@@ -288,7 +288,7 @@
                 \quad\par
                 必要なら系全体を回転させ，一般性を失わず$\bm{r} = [0,0,r]^\top\;(r>0)$とする。
                 球座標変換を用いて積分を実行する。
-                $\bm{r}' \coloneq r'[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$とすると
+                $\bm{r}' \coloneq r'[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$とすると
                 \begin{align*}
                     \bm{A}(\bm{r}) &= \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{\frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3}r'^2(\sin\theta)}{}{\phi}}{}{\theta}}{}{r'} \\
                     &= 2\pi\bm{i}_3\integrate{0}{R}{\integrate{0}{\pi}{\frac{r-r'\cos\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}}r'^2(\sin\theta)}{}{\theta}}{}{r'}
@@ -298,7 +298,7 @@
                 $f(r) \coloneq -(r^2+r'^2-2rr'\cos\theta)^{-1/2}r'^2\sin\theta$とすると次式が成り立つ。
                 \[ \deriv{f}{r}{}(r) = \frac{(r-r'\cos\theta)r'^2\sin\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}} \]
                 上式右辺の$(r',\theta)=(0,0)$近傍での振る舞いを考える。
-                $r'=r+\Delta r\;(\Delta r\neq 0)$とすると，$\sin\theta = O(\theta),\;\cos\theta = 1+O(\theta^2)$なので分母・分子ともに$r^3 O(\theta^3)$となる。
+                $r'=r+\Delta r\;(\Delta r\neq 0)$とすると，$\sin\theta = O(\theta),\cos\theta = 1+O(\theta^2)$なので分母・分子ともに$r^3 O(\theta^3)$となる。
                 よって積分領域に於いて$f$は$r$の$\mathrm{C}^1$級関数であるから積分と微分の順序交換が可能であり，次式が成り立つ。
                 \begin{align*}
                     \bm{A}(\bm{r}) &= 2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\integrate{0}{\pi}{f(r)}{}{\theta}}{}{r'}}{r}{} \\

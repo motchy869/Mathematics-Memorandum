@@ -1,6 +1,6 @@
 \chapter{算術}
     \section{諸定理}
-        \subsection{\texorpdfstring{$a,b,c,d\in\naturalNumbers,\;ab=cd,\;\gcd(a,c)=\gcd(b,d)=1 \Rightarrow a=d,b=c$}{a,b,c,dは自然数, ab=cd, gcd(a,c)=gcd(b,d)=1 ⇔ a=d,b=c}}
+        \subsection{\texorpdfstring{$a,b,c,d\in\naturalNumbers,ab=cd,\gcd(a,c)=\gcd(b,d)=1 \Rightarrow a=d,b=c$}{a,b,c,dは自然数, ab=cd, gcd(a,c)=gcd(b,d)=1 ⇔ a=d,b=c}}
             \label{互いに素な2組の数と積の関係}
             \begin{proof}
                 \quad\newline
@@ -28,7 +28,7 @@
         この手法では次の規則で非負整数列$\{r_i\}$, および整数列$\{q_i\}, \{s_i\}, \{t_i\}$を定める。
         \[ r_0 = a, s_0 = 1, t_0 = 0,\quad r_1 = b, s_1 = 0, t_1 = 1 \]
         \begin{align*}
-            r_{i+1} &= r_{i-1} - q_ir_i,\;0 \leq r_{i+1} < |r_i| \\
+            r_{i+1} &= r_{i-1} - q_ir_i,0 \leq r_{i+1} < |r_i| \\
             s_{i+1} &= s_{i-1} - q_is_i \\
             t_{i+1} &= t_{i-1} - q_it_i
         \end{align*}
@@ -41,8 +41,8 @@
         \begin{enumerate}
             \item $\gcd(a,b) = r_k = as_k + bt_k$
             \item $s_i,t_i\;(i=0,\dotsc,k+1)$および$s_i,s_{i+1}$および$t_i,t_{i+1}\;(i=0,\dotsc,k)$は互いに素である
-            \item $|s_{k+1}| = |b|/\gcd(a,b),\;|t_{k+1}| = |a|/\gcd(a,b)$
-            \item $a,b>0,\;\gcd(a,b) < \min(a,b)$ならば$|s_i| < b/\gcd(a,b),\;|t_i| < a/\gcd(a,b)\;(i=0,\dotsc,k)$
+            \item $|s_{k+1}| = |b|/\gcd(a,b),|t_{k+1}| = |a|/\gcd(a,b)$
+            \item $a,b>0,\gcd(a,b) < \min(a,b)$ならば$|s_i| < b/\gcd(a,b),|t_i| < a/\gcd(a,b)\;(i=0,\dotsc,k)$
         \end{enumerate}
         項目4は，計算機でEEAを実行する際に，$a$,$b$を表現できるだけの桁数がある数値型を使えば桁溢れしないことを保証する。
         \begin{proof}
@@ -52,7 +52,7 @@
             \par
             普通のEuclidの互除法を既に知っているものとする。
             $r_k = \gcd(a,b)$は明らか。
-            $r_0 = a = as_0 + bt_0,\;r_1 = b = as_1 + bt_1$であり，$r_2 = r_0 - q_1r_1 = as_0 + bt_0 - q_1(as_1 + bt_1) = a(s_0 - q_1s_1) + b(t_0 - q_1t_1) = as_2 + bt_2$が成り立つ。これを続けると$r_i = as_i + bt_i\;(i=0,\dotsc,k+1)$が得られる。
+            $r_0 = a = as_0 + bt_0,r_1 = b = as_1 + bt_1$であり，$r_2 = r_0 - q_1r_1 = as_0 + bt_0 - q_1(as_1 + bt_1) = a(s_0 - q_1s_1) + b(t_0 - q_1t_1) = as_2 + bt_2$が成り立つ。これを続けると$r_i = as_i + bt_i\;(i=0,\dotsc,k+1)$が得られる。
             \par
             項目1の証明はこれで済んだが，$\{s_i\},\{t_i\}$の漸化式がどうやって考案されたのか想像してみる。
             等式$r_i = as_i + bt_i$が$i=0,1,\dotsc$について成り立って欲しいのだから，$as_{i-1} + bt_{i-1} = r_{i-1} = r_{i+1} + q_ir_i = as_{i+1} + bt_{i+1} + q_i(as_i + bt_i) = a(s_{i+1} + q_is_i) + b(t_{i+1} + q_it_i)$とおいて最左辺と最右辺の$a,b$の係数を比較すれば漸化式を得られる。
@@ -88,13 +88,13 @@
             \newline
             (項目4)
             \par
-            まず$s_0,s_2,s_4,\dotsc>0,\;s_3,s_5,s_7,\dotsc<0$を示す。
-            $s_0$は定義より正である。さらに$s_2 = s_0 - q_1s_1 = 1,\;s_3 = s_1 - q_2s_2 = -q_2$を直接確かめられる。
-            これより始めて帰納的に，$l\geq 2$に対して$s_{2l} = s_{2l-2} - q_{2l-1}s_{2l-1} > 0,\;s_{2l-1} = s_{2l-3} - q_{2l-2}s_{2l-2} < 0$が成り立つ。
+            まず$s_0,s_2,s_4,\dotsc>0,s_3,s_5,s_7,\dotsc<0$を示す。
+            $s_0$は定義より正である。さらに$s_2 = s_0 - q_1s_1 = 1,s_3 = s_1 - q_2s_2 = -q_2$を直接確かめられる。
+            これより始めて帰納的に，$l\geq 2$に対して$s_{2l} = s_{2l-2} - q_{2l-1}s_{2l-1} > 0,s_{2l-1} = s_{2l-3} - q_{2l-2}s_{2l-2} < 0$が成り立つ。
             \par
             次に数列$\{|s_i|\}\;(i=1,2,\dotsc)$が単調増加であること，特に$|s_2|\leq|s_3|$を除いて他は全て狭義単調増加であることを示す。
-            まず$0 = |s_1| < 1 = |s_2|,\;|s_3| = |-q_2| \geq 1 = |s_2|,\;|s_4| = |s_2 - q_3s_3| = |1 + q_2q_3| > |q_2| = |s_3|$を直接確かめられる。
-            これより始めて帰納的に，$l\geq 2$に対して$|s_{2l+1}| - |s_{2l}| = -s_{2l+1} - s_{2l} = (q_{2l}-1)s_{2l} - s_{2l-1} > 0,\;|s_{2l+2}| - |s_{2l+1}| = (1-q_{2l+1})s_{2l+1} + s_{2l} > 0$が成り立つから$|s_{2l+1}| > |s_{2l}|\;(l=2,3,\dotsc)$である。
+            まず$0 = |s_1| < 1 = |s_2|,|s_3| = |-q_2| \geq 1 = |s_2|,|s_4| = |s_2 - q_3s_3| = |1 + q_2q_3| > |q_2| = |s_3|$を直接確かめられる。
+            これより始めて帰納的に，$l\geq 2$に対して$|s_{2l+1}| - |s_{2l}| = -s_{2l+1} - s_{2l} = (q_{2l}-1)s_{2l} - s_{2l-1} > 0,|s_{2l+2}| - |s_{2l+1}| = (1-q_{2l+1})s_{2l+1} + s_{2l} > 0$が成り立つから$|s_{2l+1}| > |s_{2l}|\;(l=2,3,\dotsc)$である。
             同様にして$|t_0| < |t_1| \leq |t_2| < |t_3| < \dotsb$が成り立つ。
             これと項目3より定理の主張が成り立つ。
         \end{proof}

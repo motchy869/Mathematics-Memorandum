@@ -18,7 +18,7 @@
             \quad\par
             $F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
             $R = [a_1,b_1]\times\dotsb\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
-            第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,\;d=1,\dotsc,n)$とし，各小超直方体を$R_{i_1,\dotsc,i_n} \coloneq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
+            第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,d=1,\dotsc,n)$とし，各小超直方体を$R_{i_1,\dotsc,i_n} \coloneq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
             $R$の対角線の長さを$L = \sqrt{\sum_{d=1}^n (b_d-a_d)^2}$としておく。
             $C$は面積確定で面積が0であるから，任意の$\varepsilon>0$に対してある$M(\varepsilon)\in\naturalNumbers$が存在し，$m\geq M(\varepsilon)$なる任意の分割に対して次式を満たす。
             \[ \frac{|R|}{(2KL)^n}\varepsilon > \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset} |R_{i_1,\dotsc,i_m}| = \sum_{R_{i_1,\dotsc,i_n}\cap C\neq \emptyset}\frac{|R|}{m^n} \]
@@ -27,18 +27,18 @@
             よって$F(C)$は$\setComprehension*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて，その面積は
             \[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
         \end{proof}
-    \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\;\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
+    \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
         \begin{proof}
             \quad\\
             (連続であること):
             \par
-            $\varepsilon>0,\;x\in\realNumbers,\;h\in(-1,1)$を任意にとる。
+            $\varepsilon>0,x\in\realNumbers,h\in(-1,1)$を任意にとる。
             \begin{align*}
                 \abs{(f*g)(x+h) - (f*g)(x)} &= \abs{\integrate{-\infty}{\infty}{\left[f(x-y+h) - f(x-y)\right]g(y)}{}{y}} \\
                 &\leq \integrate{-\infty}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y}
             \end{align*}
             $f$の有界性と$g$の絶対可積分性より，ある$a$が存在して
-            \[ \integrate{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y},\;\integrate{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
+            \[ \integrate{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y},\integrate{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
             となる。$f$は$\realNumbers$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
             よって$h$を十分小さくすれば
             \[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L \coloneq \integrate{-\infty}{\infty}{|g(y)|}{}{y} \right) \]

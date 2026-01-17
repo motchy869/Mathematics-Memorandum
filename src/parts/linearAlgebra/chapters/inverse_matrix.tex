@@ -40,7 +40,7 @@
         \[
             A^{-1}A' =
             \begin{bmatrix}
-                A^{-1}\bm{a}_1, \dotsc, A^{-1}\bm{a}_{c-1},\; A^{-1}\bm{a}'_c,\; A^{-1}\bm{a}_{c-1}, \dotsc, A^{-1}\bm{a}_n
+                A^{-1}\bm{a}_1, \dotsc, A^{-1}\bm{a}_{c-1}, A^{-1}\bm{a}'_c, A^{-1}\bm{a}_{c-1}, \dotsc, A^{-1}\bm{a}_n
             \end{bmatrix}
             =
             \begin{bmatrix}
@@ -162,7 +162,7 @@
     \section{Sherman-Morrisonの公式の特別な場合\texorpdfstring{: $(I+\bm{u}\HerConj{\bm{v}})^{-1} = (I-\bm{u}\HerConj{\bm{v}}/(1+\HerConj{\bm{v}}\bm{u}))$}{}}
         \label{Sherman-Morrisonの公式の特別な場合}
         \begin{shadebox}
-            $\bm{u},\bm{v} \in \complexNumbers^m,\; 1+\HerConj{\bm{v}}\bm{u} \neq 0$とするとき次式が成り立つ。
+            $\bm{u},\bm{v} \in \complexNumbers^m, 1+\HerConj{\bm{v}}\bm{u} \neq 0$とするとき次式が成り立つ。
             \[ (I+\bm{u}\HerConj{\bm{v}})^{-1} = I - \frac{1}{1+\HerConj{\bm{v}}\bm{u}}\bm{u}\HerConj{\bm{v}} \]
         \end{shadebox}
         \begin{proof}
@@ -218,7 +218,7 @@
         \label{Woodburyの公式の特別な場合}
         \begin{shadebox}
             $I_n, I_k$をそれぞれ$n,k$次の単位行列とする。
-            $U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし，$I_k+VU$が可逆であるとする。
+            $U\in\complexNumbers^{m\times k}, V\in\complexNumbers^{k\times m}$とし，$I_k+VU$が可逆であるとする。
             このとき次式が成り立つ。
             \[ (I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V \]
         \end{shadebox}
@@ -235,7 +235,7 @@
     \section{Woodburyの公式\texorpdfstring{: $(A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1}$}{}}
         \begin{shadebox}
             $I_n$を$n$次の単位行列とする。
-            $A\in\complexNumbers^{n\times n},\; C\in\complexNumbers^{k\times k},\; U\in\complexNumbers^{m\times k},\; V\in\complexNumbers^{k\times m}$とし，$A,\;C,\;I_k + CVA^{-1}U$が可逆であるとする(結果として$C^{-1} + VA^{-1}U$も可逆になる)。
+            $A\in\complexNumbers^{n\times n}, C\in\complexNumbers^{k\times k}, U\in\complexNumbers^{m\times k}, V\in\complexNumbers^{k\times m}$とし，$A,C,I_k + CVA^{-1}U$が可逆であるとする(結果として$C^{-1} + VA^{-1}U$も可逆になる)。
             このとき次式が成り立つ。
             \[ (A+UCV)^{-1} = \left[I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V\right]A^{-1} \]
         \end{shadebox}

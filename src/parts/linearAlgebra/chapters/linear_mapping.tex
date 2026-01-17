@@ -22,10 +22,10 @@
             これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
         \subsection{一般のベクトルを要素とする行列同士の積}
             ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して，
-            これらを要素とする行列$A\coloneq[\bm{a}_{ij}]_{l\times m},\;B\coloneq[\bm{b}_{ij}]_{m\times n}$の積$C$を
-            $C\coloneq[c_{ij}]_{m\times n},\;c_{ij} \coloneq \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
+            これらを要素とする行列$A\coloneq[\bm{a}_{ij}]_{l\times m},B\coloneq[\bm{b}_{ij}]_{m\times n}$の積$C$を
+            $C\coloneq[c_{ij}]_{m\times n},c_{ij} \coloneq \sum_{k=1}^l \inprod{\bm{a}_{ik}}{\bm{b}_{kj}}$で定義する。
             これは$\bm{a}_{ij},\bm{b}_{ij}$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
-    \section{\texorpdfstring{$\dim(V)=\dim(W),\;f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき，\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
+    \section{\texorpdfstring{$\dim(V)=\dim(W),f:V\to W$}{dim(V)=dim(W), f:V→W}であるとき，\texorpdfstring{$f$}{f}が単射であることと全射であることは同値。}
         \begin{shadebox}
             $f$を$V\rightarrow W$への線形写像とする。$\dim(V)=\dim(W)$であるとき，$f$が単射であることと全射であることは同値。
         \end{shadebox}
@@ -37,7 +37,7 @@
             \par
             $W$の任意のベクトルは$W$の基底の一次結合で表されるから，全射性を言うためには$V$の中から適当な$n$個のベクトルを選んで$f$で送ったものの集合で$W$の基底を構成できることを示せば十分である。
             $V$の基底を$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$として$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が$W$の基底を成すことを示す。
-            \[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;\;c_1,c_2,\dots c_n\in\field\]
+            \[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;c_1,c_2,\dots c_n\in\field\]
             とおくと$f$の線形性から
             \[f(c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n) = 0\]
             $f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
@@ -70,7 +70,7 @@
         \begin{proof}
             \quad\par
             $n=\dim{V}=\dim{W}$とし，$\{\bm{v}_1,\dotsc,\bm{v}_n\}$を$V$の基底，$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
-            写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),\;^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
+            写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
             さらに単射であることが次のようにして確かめられる。
             \par
             $\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
@@ -126,7 +126,7 @@
         \end{proof}
     \subsection{正規直交基底間での座標変換は直交変換}
         \begin{shadebox}
-            $n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\;\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して，$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
+            $n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して，$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
             すなわち座標変換行列$P \coloneq [\inprod{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
         \end{shadebox}
         \begin{proof}

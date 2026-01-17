@@ -1,7 +1,7 @@
 \chapter{発想, 技巧}
     \section{構成}
         \subsection{冪等行列の構成例}
-            $N\in\naturalNumbers,\;n\leq N,\;\bm{v}_1,\dots,\bm{v}_n\in\complexNumbers^N$ とし，$\bm{v}_1,\dots,\bm{v}_n$ は互いに直交し，ノルムが1であるとする。
+            $N\in\naturalNumbers,n\leq N,\bm{v}_1,\dots,\bm{v}_n\in\complexNumbers^N$ とし，$\bm{v}_1,\dots,\bm{v}_n$ は互いに直交し，ノルムが1であるとする。
             このとき $A \coloneq \sum_{i=1}^n \bm{v}_i\HerConj{\bm{v}_i}$ は $A^n = I\;(n=1,2,3,\dots)$ を満たす。
     \section{演算}
         \subsection{積和の階数を拡張する}
@@ -9,5 +9,5 @@
             \begin{enumerate}
                 \item スカラー同士の積: $x,y\in\field$に対して$xy$
                 \item 内積(スカラー同士の積の和): $\bm{x},\bm{y} \in \field^l$に対して$\bm{x}^\top\bm{y} = \sum_{i=1}^l x_i y_i$
-                \item トレース(内積同士の和): $X = [\bm{x}_1,\dotsc,\bm{x}_n]^\top,\;Y = [\bm{y}_1,\dotsc,\bm{y}_n]^\top\;(\bm{x}_1,\bm{x}_2,\dotsc,\bm{y}_n \in \field^l)$に対して$\tr{X^\top Y} = \sum_{i=1}^l \bm{x}_i^\top\bm{y}_i$
+                \item トレース(内積同士の和): $X = [\bm{x}_1,\dotsc,\bm{x}_n]^\top,Y = [\bm{y}_1,\dotsc,\bm{y}_n]^\top\;(\bm{x}_1,\bm{x}_2,\dotsc,\bm{y}_n \in \field^l)$に対して$\tr{X^\top Y} = \sum_{i=1}^l \bm{x}_i^\top\bm{y}_i$
             \end{enumerate}

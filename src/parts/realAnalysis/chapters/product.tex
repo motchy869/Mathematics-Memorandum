@@ -1,9 +1,9 @@
 \chapter{乗積}
-    \section{\texorpdfstring{$a_i\geq 0\;(i=1,2,\dotsc),\;\sum_{i=1}^\infty (1-a_i) = \infty \Rightarrow \prod_{i=1}^\infty a_i = 0$}{a\_i≦0 (i=1,2,...), Σ\_\{i=1\}\string^∞ (1-a\_i) = ∞ ⇒ Π\_\{i=1\}\string^∞ a\_i = 0}}
+    \section{\texorpdfstring{$a_i\geq 0\;(i=1,2,\dotsc),\sum_{i=1}^\infty (1-a_i) = \infty \Rightarrow \prod_{i=1}^\infty a_i = 0$}{a\_i≦0 (i=1,2,...), Σ\_\{i=1\}\string^∞ (1-a\_i) = ∞ ⇒ Π\_\{i=1\}\string^∞ a\_i = 0}}
         \begin{proof}
             \quad\par
             $a_i=0$となる$i\in\naturalNumbers$が存在する場合は命題の主張は明らかに成り立つので，以下では$a_i\in(0,1]$とする。
-            $b_i=-\log a_i$とすると$a_i=\NapierE^{-b_i}$であり，$\forall x\in\realNumbers,\;1-\NapierE^{-x}\leq x$より$1-a_i=1-\NapierE^{-b_i}\leq b_i$なので次式が成り立つ。
+            $b_i=-\log a_i$とすると$a_i=\NapierE^{-b_i}$であり，$\forall x\in\realNumbers,1-\NapierE^{-x}\leq x$より$1-a_i=1-\NapierE^{-b_i}\leq b_i$なので次式が成り立つ。
             \[ \infty = \sum_{i=1}^\infty (1-a_i) \leq \sum_{i=1}^\infty b_i \]
             よって
             \[ \prod_{i=1}^\infty a_i = \prod_{i=1}^\infty \NapierE^{-b_i} = \exp\left(-\sum_{i=1}^\infty b_i\right) = 0 \]
