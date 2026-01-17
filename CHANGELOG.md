@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Added:
+  - decomposition into Hermitian and anti-Hermitian functions
   - definition of negative period for real-variable complex-valued functions
   - tensor notation
 

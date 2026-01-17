@@ -1,0 +1,26 @@
+\chapter{複素関数}
+    \section{Hermite 対称関数と反 Hermite 対称関数への分解}
+        \begin{shadebox}
+            1変数関数 $f$ は Hermite 対称関数と反 Hermite 対称関数に 1 通りに分解できる
+        \end{shadebox}
+        {
+            \providecommand{\fs}{}\renewcommand{\fs}{f_\mathrm{s}}
+            \providecommand{\fa}{}\renewcommand{\fa}{f_\mathrm{a}}
+            \providecommand{\fsI}{}\renewcommand{\fsI}{f_\mathrm{s,I}}
+            \providecommand{\faI}{}\renewcommand{\faI}{f_\mathrm{a,I}}
+            \providecommand{\fsII}{}\renewcommand{\fsII}{f_\mathrm{s,II}}
+            \providecommand{\faII}{}\renewcommand{\faII}{f_\mathrm{a,II}}
+            \begin{proof}
+                \quad\par
+                (分解可能性)
+                \par
+                $\fs(x) \coloneq (f(x)+\conj{f(-x)})/2,\fa(x) \coloneq (f(x)-\conj{f(-x)})/2$ とすれば確かに $f(x)=\fs(x)+\fa(x)$ であり $\fs,\fs$ はそれぞれ Hermite 対称，反 Hermite 対称である。
+                \newline
+                (一意性)
+                \par
+                次に，分解が 1 通りであることを示す。
+                Hermite 対称関数 $\fsI,\fsII$，反 Hermite 対称関数 $\faI,\faII$ が存在して $f(x) = \fsI(x) + \faI(x) = \fsII(x) + \faII(x)$ と表せるとする。
+                このとき $\fsI(x) - \fsII(x) = \faII(x) - \faI(x)$ が成り立つ。
+                左辺は Hermite 対称，右辺は反 Hermite 対称なので，両辺は恒等的に 0 でなければならない（Hermite 対称かつ反 Hermite 対称な関数が恒等的に 0 であることは容易に示せる）。
+            \end{proof}
+        }
