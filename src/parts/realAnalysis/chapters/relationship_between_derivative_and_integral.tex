@@ -49,17 +49,15 @@
         \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}$}{}
     }
         \begin{proof}
-            \newcommand{\dx}{{\Delta x}}
-            \renewcommand{\d}[1]{{\mathrm{d}#1}}
             \quad\par
-            $I(x) \coloneq \integrate{0}{x}{f(s)g(x-s)}{}{s}$とおき，微分の定義に従い$\lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx}$を計算する。
+            $I(x) \coloneq \integrate{0}{x}{f(s)g(x-s)}{}{s}$とおき，微分の定義に従い$\lim_{\dltx\to 0}\frac{I(x+\dltx)-I(x)}{\dltx}$を計算する。
             \begin{align*}
-                I(x+\dx)-I(x) &= \left(\int_{0}^{x}+\int_{x}^{x+\dx}\right)f(s)g(x+\dx-s)\d{s} - \integrate{s=0}{x}{f(s)g(x-s)}{}{s} \\
-                &= \integrate{0}{x}{f(s)\left(g(x-s+\dx)-g(x-s)\right)}{}{s} + \integrate{x}{x+\dx}{f(s)g(x+\dx-s)}{}{s}
+                I(x+\dltx)-I(x) &= \left(\int_{0}^{x}+\int_{x}^{x+\dltx}\right)f(s)g(x+\dltx-s)\itgElem{s} - \integrate{s=0}{x}{f(s)g(x-s)}{}{s} \\
+                &= \integrate{0}{x}{f(s)\left(g(x-s+\dltx)-g(x-s)\right)}{}{s} + \integrate{x}{x+\dltx}{f(s)g(x+\dltx-s)}{}{s}
             \end{align*}
-            積分の平均値の定理より$^\exists\theta\in(x,x+\dx)\st\integrate{x}{x+\dx}{f(s)g(x+\dx-s)}{}{s} = \dx f(\theta)g(x+\dx-\theta)$であるから
+            積分の平均値の定理より$^\exists\theta\in(x,x+\dltx)\st\integrate{x}{x+\dltx}{f(s)g(x+\dltx-s)}{}{s} = \dltx f(\theta)g(x+\dltx-\theta)$であるから
             \begin{align*}
-                \lim_{\dx\to 0}\frac{I(x+\dx)-I(x)}{\dx} &= \lim_{\dx\to 0}\left[f(\theta)g(x+\dx-\theta) + \integrate{0}{x}{f(s)\frac{g(x-s+\dx)-g(x-s)}{\dx}}{}{s}\right] \\
+                \lim_{\dltx\to 0}\frac{I(x+\dltx)-I(x)}{\dltx} &= \lim_{\dltx\to 0}\left[f(\theta)g(x+\dltx-\theta) + \integrate{0}{x}{f(s)\frac{g(x-s+\dltx)-g(x-s)}{\dltx}}{}{s}\right] \\
                 &= f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}
             \end{align*}
         \end{proof}
@@ -83,52 +81,50 @@
         \end{shadebox}
         \begin{proof}
             \quad\par
-            \newcommand{\domega}{{\Delta\omega}}
-            \renewcommand{\d}[1]{{\mathrm{d}#1}}
             微分の定義に従い$\lim_{\domega \to 0}\frac{F(\omega+\domega)-F(\omega)}{\domega}$を計算する。
             \begin{align*}
                 F(\omega+\domega) &= \integrate{x_1=0}{\omega}{\dotsi\integrate{x_n=0}{\omega-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{}{x_n}\dotsi}{}{x_1} \\
                 &= \left(\int_{x_1=0}^\omega+\int_{x_1=\omega}^{\omega+\domega}\right)f_1(x_1)\textcolor{red}{\left(\int_{x_2=0}^{\omega-x_1}+\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}\right)f_2(x_2)\dotsi}\\
-                & \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\dotsi\d{x_2}}\d{x_1}
+                & \textcolor{red}{\left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\itgElem{x_n}\dotsi\itgElem{x_2}}\itgElem{x_1}
             \end{align*}
             であり，括弧の中身を全部展開すれば$F(\omega)$を含む$2^n$個の項が出る。
             $\frac{F(\omega+\domega)-F(\omega)}{\domega}$を考えるときは$F(\omega)$は相殺するから放っておけば良い。
             $F(\omega)$を除いた$2^n-1$項を$\domega$で除して$\domega \to 0$としたとき，ある1項を除いて他は0になり，残った項が$\integrate{\overline{\Omega}^+}{}{f(\bm{x})}{}{\bm{x}}$になることを以下で示していく。
-            \[g_1(\omega,x_1) \coloneq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\dotsi\d{x_2}}\]
+            \[g_1(\omega,x_1) \coloneq \textcolor{red}{\int_{x_2=0}^{\omega-x_1+\domega}f_2(x_2)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\itgElem{x_n}\dotsi\itgElem{x_2}}\]
             とおけば
             \begin{align*}
-                F(\omega+\domega) = \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{11}(\omega,\domega)} + \underbrace{\int_{x_1=\omega}^{\omega+\domega}f_1(x_1)g_1(\omega,x_1)\d{x_1}}_{=:h_{12}(\omega,\domega)}
+                F(\omega+\domega) = \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)g_1(\omega,x_1)\itgElem{x_1}}_{=:h_{11}(\omega,\domega)} + \underbrace{\int_{x_1=\omega}^{\omega+\domega}f_1(x_1)g_1(\omega,x_1)\itgElem{x_1}}_{=:h_{12}(\omega,\domega)}
             \end{align*}
             となる。$\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega}=0$を示す。
             積分の平均値の定理から$^\exists\theta_1 \in (\omega,\omega+\domega)\st h_{12}(\omega,\domega)=\domega f_1(\theta_1)g_1(\omega,\theta_1)$であるので
             \[\lim_{\domega\to 0}\frac{h_{12}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}f_1(\theta_1)g_1(\omega,\theta_1) = f_1(\omega)\lim_{\domega\to 0}g_1(\omega,\theta_1) = 0\]
             結局$h_{11}(\omega,\domega)$だけ考えれば良い。
-            \[g_2(\omega,x_1,x_2) \coloneq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}\dotsi\d{x_3}\]
+            \[g_2(\omega,x_1,x_2) \coloneq \int_{x_3=0}^{\omega-x_1-x_2+\domega}f_3(x_3)\dotsi\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\itgElem{x_n}\dotsi\itgElem{x_3}\]
             とおけば
             \begin{align*}
-                h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{21}(\omega,\domega)} \\
-                &+ \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2}\d{x_1}}_{=:h_{22}(\omega,\domega)}
+                h_{11}(\omega,\domega) &= \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=0}^{\omega-x_1}f_2(x_2)g_2(\omega,x_1,x_2)\itgElem{x_2}\itgElem{x_1}}_{=:h_{21}(\omega,\domega)} \\
+                &+ \underbrace{\int_{x_1=0}^\omega f_1(x_1)\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}f_2(x_2)g_2(\omega,x_1,x_2)\itgElem{x_2}\itgElem{x_1}}_{=:h_{22}(\omega,\domega)}
             \end{align*}
             となる。$\lim_{\domega\to 0}\frac{h_{22}(\omega,\domega)}{\domega} = 0$を示す。
             \par
-            積分の平均値の定理から$^\exists\theta_2\in(\omega-x_1,\omega-x_1+\domega)\st\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}f_2(x_2)g_2(\omega,x_1,x_2)\d{x_2} = \domega f_2(\theta_2)g_2(\omega,x_1,\theta_2)$であるので
-            \[\lim_{\domega\to 0}\frac{h_{22}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}\int_{x_1=0}^\omega f_1(x_1)f_2(\theta_2)g_2(\omega,x_1,\theta_2)\d{x_1}\]
-            これと$\lim_{\domega\to 0}g_2(\omega,x_1,\theta_2)=0$であり，かつ$\int_{x_1=0}^\omega f_1(x_1)f_2(\theta_2)\d{x_1}$が有界であることから
+            積分の平均値の定理から$^\exists\theta_2\in(\omega-x_1,\omega-x_1+\domega)\st\int_{x_2=\omega-x_1}^{\omega-x_1+\domega}f_2(x_2)g_2(\omega,x_1,x_2)\itgElem{x_2} = \domega f_2(\theta_2)g_2(\omega,x_1,\theta_2)$であるので
+            \[\lim_{\domega\to 0}\frac{h_{22}(\omega,\domega)}{\domega} = \lim_{\domega\to 0}\int_{x_1=0}^\omega f_1(x_1)f_2(\theta_2)g_2(\omega,x_1,\theta_2)\itgElem{x_1}\]
+            これと$\lim_{\domega\to 0}g_2(\omega,x_1,\theta_2)=0$であり，かつ$\int_{x_1=0}^\omega f_1(x_1)f_2(\theta_2)\itgElem{x_1}$が有界であることから
             \[\lim_{\domega\to 0}\frac{h_{22}(\omega,\domega)}{\domega} = 0\]
             となるので，結局$h_{21}(\omega,\domega)$だけを考えれば良い。
             同様の議論を繰り返すと，結局$h_{ij}(\omega,\domega)\quad((i,j)\in\{1,\dotsc,n-1\}\times\{1,2\})$に対して$\lim_{\domega\to 0}\frac{h_{i2}(\omega,\domega)}{\domega}=0$であり，残る項は
             \begin{align*}
                 &\quad h_{n-1,1}(\omega,\domega) \\
                 &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1}) \\
-                & \left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\d{x_n}\d{x_{n-1}}\dotsi\d{x_1} \\
-                &= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}}\d{x_{n-1}}\dotsi\d{x_1}}_{=:h_{n2}(\omega,\domega)}
+                & \left(\int_{x_n=0}^{\omega-x_1-\dotsb-x_{n-1}}+\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}\right)f_n(x_n)\itgElem{x_n}\itgElem{x_{n-1}}\dotsi\itgElem{x_1} \\
+                &= F(\omega) + \underbrace{\int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\itgElem{x_n}}\itgElem{x_{n-1}}\dotsi\itgElem{x_1}}_{=:h_{n2}(\omega,\domega)}
             \end{align*}
             だけである。
             \par
-            積分の平均値の定理から$^\exists\theta_n\in(\omega-x_1-\dotsb-x_{n-1},\omega-x_1-\dotsb-x_{n-1}+\domega)\st\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\d{x_n}} = \domega f_n(\theta_n)$であるので
+            積分の平均値の定理から$^\exists\theta_n\in(\omega-x_1-\dotsb-x_{n-1},\omega-x_1-\dotsb-x_{n-1}+\domega)\st\textcolor{red}{\int_{x_n=\omega-x_1-\dotsb-x_{n-1}}^{\omega-x_1-\dotsb-x_{n-1}+\domega}f_n(x_n)\itgElem{x_n}} = \domega f_n(\theta_n)$であるので
             \begin{align*}
-                \lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\d{x_{n-1}}\dotsi\d{x_1} \\
-                &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\dotsb-x_{n-1})\d{x_{n-1}}\dotsi\d{x_1} \\
+                \lim_{\domega\to 0}\frac{h_{n2}(\omega,\domega)}{\domega} &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\theta_n)\itgElem{x_{n-1}}\dotsi\itgElem{x_1} \\
+                &= \int_{x_1=0}^{\omega}f_1(x_1)\dotsi\int_{x_{n-1}=0}^{\omega-x_1-\dotsb-x_{n-2}}f_{n-1}(x_{n-1})f_n(\omega-x_1-\dotsb-x_{n-1})\itgElem{x_{n-1}}\dotsi\itgElem{x_1} \\
                 &= \integrate{\overline{\Omega}^+}{}{f(\bm{x})}{}{\bm{x}}
             \end{align*}
             以上より

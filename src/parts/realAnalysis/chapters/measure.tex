@@ -1,7 +1,4 @@
 \chapter{測度}
-    \newcommand*{\mJi}[1]{\protect\underline{m}_\textrm{J}\left(#1\right)}
-    \newcommand*{\mJo}[1]{\protect\overline{m}_\textrm{J}\left(#1\right)}
-    \newcommand*{\mJordan}[1]{m_\textrm{J}\left(#1\right)}    %本当は \mJ を使いたいが，Debian だとバグる。"already defined"というくせに，ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
     \section{\texorpdfstring{$\sigma$}{σ}--加法族}
         \subsection{2つの\texorpdfstring{$\sigma$}{σ}--加法族の和集合は\texorpdfstring{$\sigma$}{σ}--加法族になるとは限らない}
             例えば$S=\{1,2,3\},\;X=\{\emptyset,\{1\},\{2,3\},S\},\;Y=\{\emptyset,\{1,2\},\{3\},S\}$とすると$X,Y$は$S$上の$\sigma$--加法族であり，$X\cup Y=\{\emptyset,\{1\},\{3\},\{2,3\},\{1,2\},S\}$である。$\{1\},\{3\}\subset X\cup Y$だが$\{1\}\cup\{3\} = \{1,3\} \notin X\cup Y$なので$X\cup Y$は$\sigma$--加法族ではない。
@@ -61,8 +58,6 @@
                 \[ \mJi{A^\complement\cap E} = |E| - \mJo{(A^\complement\cap E)^\complement\cap E} = |E| - \mJo{A} = |E| - \mJi{A} = \mJo{A^\complement\cap E} \]
             \end{proof}
     \section{Lebesgue測度}
-        \newcommand*{\mLebO}[1]{\protect\overline{m}_\textrm{L}\left(#1\right)}
-        \newcommand*{\mLeb}[1]{m_\textrm{L}\left(#1\right)}
         いくつか記号の約束を決めておく。
         \begin{itemize}
             \item 有界集合$A$のLebesgue外測度,測度を$\mLebO{A}, \mLeb{A}$と書く。
@@ -200,47 +195,44 @@
             Jordan外側度では有限の分割に対して指示関数の$\sup$をとってから，分割数$\to\infty$とすることしか許されていないのに対し，Lebesgue外測度では個々の小直方体の体積の評価と，小直方体の増産を同時に実行することを許されている。
             この点がJordan測度とLebesgue測度の違いを生んでいると思う。
     \section{包除原理}
-        {
-            \newcommand{\numset}{{\{1,\dotsc,n\}}}
-            \begin{shadebox}
-                測度空間$(S,\mathcal{M},\mu)$を考える。
-                任意の$A_1,\dotsc,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
-                \begin{align*}
-                    \mu(A_1\cup\dotsb\cup A_n) &= \mu(A_1)+\dotsb +\mu(A_n) \\
-                    &- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \dotsb - \mu(A_{n-1}\cap A_n) \\
-                    &+ \mu(A_1\cap A_2\cap A_3) + \mu(A_1\cap A_2\cap A_4) + \dotsb + \mu(A_{n-2}\cap A_{n-1}\cap A_n) \\
-                    &- \dotsb +(-1)^{n-1}\mu(A_1\cap\dotsb\cap A_n)
-                \end{align*}
-                すなわち
-                \begin{equation}
-                    \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n (-1)^{k-1}\sum_{I\in\combi{\numset}{k}} \func{\mu}{\bigcap_{i\in I}A_i}
-                \end{equation}
-                もっと短く書けば
-                \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
-            \end{shadebox}
-            \begin{proof}
-                \quad\par
-                式(1)を証明する。
-                \begin{align*}
-                    \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
-                    \textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
-                    &= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
-                    &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
-                \end{align*}
-                $U\coloneq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
-                まず$x\notin U\Rightarrow c(x)=0$は明らか。
-                各$x\in U$に対して，$x$に依存して決まる次のような自然数$m(x)$が存在する。
-                \begin{center}
-                    「$x$は$m(x)$個の集合$A_{i_1},\dotsc,A_{i_{m(x)}}$に共通して属し，他の$n-m(x)$個の集合には属さない。」
-                \end{center}
-                従って，$c(x)$の$\sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
-                \[ c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}} (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x} \]
-                上式の$\ind{\bigcap_{i\in I}A_i}{x}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから，$c(x)$はさらに次のように書き直される。
-                \begin{align*}
-                    c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
-                    &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
-                    &= -\left((1-1)^{m(x)} - 1\right) = 1
-                \end{align*}
-                よって確かに$c(x)=\ind{U}{x}$である。
-            \end{proof}
-        }
+        \begin{shadebox}
+            測度空間$(S,\mathcal{M},\mu)$を考える。
+            任意の$A_1,\dotsc,A_n\in\mathcal{M}$に対して次の等式が成り立つ。
+            \begin{align*}
+                \mu(A_1\cup\dotsb\cup A_n) &= \mu(A_1)+\dotsb +\mu(A_n) \\
+                &- \mu(A_1\cap A_2) - \mu(A_1\cap A_3) - \dotsb - \mu(A_{n-1}\cap A_n) \\
+                &+ \mu(A_1\cap A_2\cap A_3) + \mu(A_1\cap A_2\cap A_4) + \dotsb + \mu(A_{n-2}\cap A_{n-1}\cap A_n) \\
+                &- \dotsb +(-1)^{n-1}\mu(A_1\cap\dotsb\cap A_n)
+            \end{align*}
+            すなわち
+            \begin{equation}
+                \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n (-1)^{k-1}\sum_{I\in\combi{\numset}{k}} \func{\mu}{\bigcap_{i\in I}A_i}
+            \end{equation}
+            もっと短く書けば
+            \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            式(1)を証明する。
+            \begin{align*}
+                \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
+                \textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
+                &= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
+                &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
+            \end{align*}
+            $U\coloneq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
+            まず$x\notin U\Rightarrow c(x)=0$は明らか。
+            各$x\in U$に対して，$x$に依存して決まる次のような自然数$m(x)$が存在する。
+            \begin{center}
+                「$x$は$m(x)$個の集合$A_{i_1},\dotsc,A_{i_{m(x)}}$に共通して属し，他の$n-m(x)$個の集合には属さない。」
+            \end{center}
+            従って，$c(x)$の$\sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
+            \[ c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}} (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x} \]
+            上式の$\ind{\bigcap_{i\in I}A_i}{x}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから，$c(x)$はさらに次のように書き直される。
+            \begin{align*}
+                c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
+                &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
+                &= -\left((1-1)^{m(x)} - 1\right) = 1
+            \end{align*}
+            よって確かに$c(x)=\ind{U}{x}$である。
+        \end{proof}

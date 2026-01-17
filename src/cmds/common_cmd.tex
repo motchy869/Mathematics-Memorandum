@@ -1,0 +1,83 @@
+% utilities
+\newcommand*{\redtext}[1]{\textcolor{red}{#1}}
+\newcommand*{\numset}{{\{1,\dotsc,n\}}}
+\newcommand*{\dthv}[3]{\begin{bmatrix}#1\\#2\\#3\end{bmatrix}} % 3 次元ベクトル
+
+% operators
+\newcommand*{\itgElem}[1]{{\mathrm{d}#1}}
+\newcommand*{\mJi}[1]{\protect\underline{m}_\textrm{J}\left(#1\right)}
+\newcommand*{\mJo}[1]{\protect\overline{m}_\textrm{J}\left(#1\right)}
+\newcommand*{\mJordan}[1]{m_\textrm{J}\left(#1\right)} % 本当は \mJ を使いたいが，Debian だとバグる。"already defined" というくせに，ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
+\newcommand*{\mLebO}[1]{\protect\overline{m}_\textrm{L}\left(#1\right)}
+\newcommand*{\mLeb}[1]{m_\textrm{L}\left(#1\right)}
+
+% symbols
+% sorted in alphabetical order
+\newcommand*{\ahat}{\hat{\bm{a}}}
+\newcommand*{\cosph}{\cos{\varphi}}
+\newcommand*{\costh}{\cos{\theta}}
+\newcommand*{\domega}{{\Delta\omega}}
+\newcommand*{\dvc}{\textrm{d}\bm{c}}
+\newcommand*{\dx}{\textrm{d}x}
+\newcommand*{\dltx}{{\Delta x}}
+\newcommand*{\dy}{\textrm{d}y}
+\newcommand*{\dz}{\textrm{d}z}
+\newcommand*{\dS}{\textrm{d}\bm{S}}
+\newcommand*{\fa}{f_\mathrm{a}}
+\newcommand*{\faI}{f_\mathrm{a,I}}
+\newcommand*{\faII}{f_\mathrm{a,II}}
+\newcommand*{\fd}{{f^{(1)}}}
+\newcommand*{\fe}{f_\mathrm{e}}
+\newcommand*{\fea}{f_\mathrm{ea}}
+\newcommand*{\feb}{f_\mathrm{eb}}
+\newcommand*{\fhat}{\hat{f}}
+\newcommand*{\fo}{f_\mathrm{o}}
+\newcommand*{\foa}{f_\mathrm{oa}}
+\newcommand*{\fob}{f_\mathrm{ob}}
+\newcommand*{\fs}{f_\mathrm{s}}
+\newcommand*{\fsI}{f_\mathrm{s,I}}
+\newcommand*{\fsII}{f_\mathrm{s,II}}
+\newcommand*{\fStarD}{{{f^*}^{(1)}}}
+\newcommand*{\gEvn}{g_\textrm{e}}
+\newcommand*{\gOdd}{g_\textrm{o}}
+\newcommand*{\hth}{h_{\theta}}
+\newcommand*{\hph}{h_{\varphi}}
+\newcommand*{\iph}{\bm{i}_\varphi}
+\newcommand*{\ir}{\bm{i}_r}
+\newcommand*{\ith}{\bm{i}_{\theta}}
+\newcommand*{\nb}{n_\textrm{b}}
+\newcommand*{\nl}{n_\textrm{l}}
+\newcommand*{\np}{n_\textrm{p}}
+\newcommand*{\php}{\partDeriv{\phi}{\varphi}{}}
+\newcommand*{\phr}{\partDeriv{\phi}{r}{}}
+\newcommand*{\phz}{\partDeriv{\phi}{z}{}}
+\newcommand*{\ppx}{\partDeriv{}{x}{}}
+\newcommand*{\ppy}{\partDeriv{}{y}{}}
+\newcommand*{\ppz}{\partDeriv{}{z}{}}
+\newcommand*{\ppr}{\partDeriv{}{r}{}}
+\newcommand*{\ppth}{\partDeriv{}{\theta}{}}
+\newcommand*{\ppph}{\partDeriv{}{\varphi}{}}
+\newcommand*{\sinph}{\sin{\varphi}}
+\newcommand*{\sinth}{\sin{\theta}}
+\newcommand*{\uhat}{\hat{\bm{u}}}
+\newcommand*{\vBO}{\bm{B}_\text{O}(\vomega)}
+\newcommand*{\vBP}{\bm{B}_\text{P}(\vomega)}
+\newcommand*{\vk}{\bm{k}}
+\newcommand*{\vomega}{\bm{\omega}}
+\newcommand*{\vr}{\bm{r}}
+\newcommand*{\vv}{\bm{v}}
+\newcommand*{\vx}{\bm{x}}
+\newcommand*{\vy}{\bm{y}}
+\newcommand*{\vA}{\bm{A}}
+\newcommand*{\vADL}{\vA_\text{DL}}
+\newcommand*{\vARL}{\vA_\text{RL}}
+\newcommand*{\vB}{\bm{B}}
+\newcommand*{\xhat}{\hat{\bm{x}}}
+
+\newcommand*{\Fhat}{\hat{F}}
+\newcommand*{\Ge}{G_\textrm{e}}
+\newcommand*{\Go}{G_\textrm{o}}
+\newcommand*{\Ih}{\prescript{\text{I}}{}{h}}
+\newcommand*{\Rf}{\prescript{\text{R}}{}{f}}
+\newcommand*{\Rh}{\prescript{\text{R}}{}{h}}
+\newcommand*{\RG}{\prescript{\text{R}}{}{G}}

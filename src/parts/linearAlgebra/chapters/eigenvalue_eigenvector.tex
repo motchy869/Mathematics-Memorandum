@@ -509,17 +509,17 @@
                     \end{bmatrix}
                 $
             \end{proof}
-    \section{Jordan標準形}
+    \section{Jordan標準形}{
+        \newcommand{\JBn}{%
+            \begin{bmatrix}%
+                \lambda & 1          & 0          & \cdots      & 0\\%
+                0       & \lambda    & 1          &             & \vdots\\%
+                \vdots  & \ddots     & \ddots     & \ddots      & 0\\%
+                        &            & 0          & \lambda     & 1\\%
+                0       & \cdots     &            & 0           & \lambda%
+            \end{bmatrix}%
+        }
         \subsection{Jordanブロックの逆行列}
-            \newcommand{\JBn}{%
-                \begin{bmatrix}%
-                    \lambda & 1            & 0            & \cdots    & 0\\%
-                    0        & \lambda    & 1            &             &\vdots\\%
-                    \vdots    & \ddots    & \ddots    & \ddots    & 0\\%
-                            &            & 0            & \lambda    & 1\\%
-                    0        & \cdots    &            & 0            & \lambda%
-                \end{bmatrix}%
-            }
             \begin{shadebox}
                 $n$次のJordanブロック
                 \[J(\lambda, n) = \JBn\]
@@ -629,6 +629,7 @@
                     &= \frac{t^{j-i}}{(j-i)!}\sum_{l=0}^{\infty}{\frac{(t\lambda)^l}{l!}} = \frac{t^{j-i}}{(j-i)!}\NapierE^{\lambda t}
                 \end{align*}
             \end{proof}
+    }
     \section{Perronの定理}
         \begin{shadebox}
             $n$次正行列$A$について次が成り立つ

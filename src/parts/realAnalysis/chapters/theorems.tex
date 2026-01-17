@@ -3,26 +3,18 @@
         \begin{shadebox}
             連続な1変数関数 $f$ は連続な偶関数と奇関数に 1 通りに分解できる
         \end{shadebox}
-        {
-            \newcommand{\fe}{f_\mathrm{e}}
-            \newcommand{\fo}{f_\mathrm{o}}
-            \newcommand{\fea}{f_\mathrm{ea}}
-            \newcommand{\foa}{f_\mathrm{oa}}
-            \newcommand{\feb}{f_\mathrm{eb}}
-            \newcommand{\fob}{f_\mathrm{ob}}
-            \begin{proof}
-                \quad\par
-                (分解可能性)\\
-                $\fe(x) \coloneq (f(x)+f(-x))/2,\fo(x) \coloneq (f(x)-f(-x))/2$ とすれば確かに $f(x)=\fe(x)+\fo(x)$ であり $\fe,\fo$ はそれぞれ連続な偶関数，奇関数になっている。\\
-                \newline
-                (一意性)
-                \par
-                次に，分解が 1 通りであることを示す。
-                偶関数 $\fea,\feb$ と奇関数 $\foa,\fob$ が存在して $f(x) = \fea(x) + \foa(x) = \feb(x) + \fob(x)$ と表せるとする。
-                このとき $\fea(x) - \feb(x) = \fob(x) - \foa(x)$ が成り立つ。
-                左辺は偶関数，右辺は奇関数なので，両辺は恒等的に 0 でなければならない（偶対称かつ奇対称な関数が恒等的に 0 であることは容易に示せる）。
-            \end{proof}
-        }
+        \begin{proof}
+            \quad\par
+            (分解可能性)\\
+            $\fe(x) \coloneq (f(x)+f(-x))/2,\fo(x) \coloneq (f(x)-f(-x))/2$ とすれば確かに $f(x)=\fe(x)+\fo(x)$ であり $\fe,\fo$ はそれぞれ連続な偶関数，奇関数になっている。\\
+            \newline
+            (一意性)
+            \par
+            次に，分解が 1 通りであることを示す。
+            偶関数 $\fea,\feb$ と奇関数 $\foa,\fob$ が存在して $f(x) = \fea(x) + \foa(x) = \feb(x) + \fob(x)$ と表せるとする。
+            このとき $\fea(x) - \feb(x) = \fob(x) - \foa(x)$ が成り立つ。
+            左辺は偶関数，右辺は奇関数なので，両辺は恒等的に 0 でなければならない（偶対称かつ奇対称な関数が恒等的に 0 であることは容易に示せる）。
+        \end{proof}
     \section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
         \begin{shadebox}
             集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
