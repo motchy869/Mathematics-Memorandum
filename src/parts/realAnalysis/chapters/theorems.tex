@@ -1,7 +1,7 @@
 \chapter{諸定理}
     \section{偶関数と奇関数への分解}
         \begin{shadebox}
-            連続な1変数関数$f(x)$は連続な偶関数,奇関数に一通りに分解できる
+            連続な1変数関数 $f$ は連続な偶関数と奇関数に 1 通りに分解できる
         \end{shadebox}
         \def\fe{f_\mathrm{e}}
         \def\fo{f_\mathrm{o}}
@@ -12,32 +12,14 @@
         \begin{proof}
             \quad\par
             (分解可能性)\\
-            \begin{align*}
-                \fe(x) &\coloneq \frac{1}{2}\left(f(x)+f(-x)\right)\\
-                \fo(x) &\coloneq \frac{1}{2}\left(f(x)-f(-x)\right)
-            \end{align*}
-            とすれば確かに$f(x)=\fe(x)+\fo(x)$であり$\fe(x),\fo(x)$はそれぞれ連続な偶,奇関数になっている。\\
+            $\fe(x) \coloneq (f(x)+f(-x))/2,\fo(x) \coloneq (f(x)-f(-x))/2$ とすれば確かに $f(x)=\fe(x)+\fo(x)$ であり $\fe,\fo$ はそれぞれ連続な偶関数，奇関数になっている。\\
             \newline
             (一意性)
             \par
-            次に，分解が一通りであることを示す。$f(x)$の分解が次のように2通りあったとする。
-            \begin{align}
-                \begin{cases}
-                f(x) = \fea(x) + \foa(x) & \\
-                f(x) = \feb(x) + \fob(x) &
-                \end{cases}
-            \end{align}
-            任意の$l>0$に対して
-            \begin{align*}
-                0 &= \integrate{-l}{l}{\left(f(x)-f(x)\right)}{}{x} = \integrate{-l}{l}{\left(\fea(x) + \foa(x) - \feb(x) + \fob(x)\right)}{}{x} \\
-                &= 2\integrate{0}{l}{\left(\fea(x)-\feb(x)\right)}{}{x}
-            \end{align*}
-            であるから両辺を$l$で微分すると
-            \[0 = \fea(l) - \feb(l)\]
-            これで$x>0$において$\fea,\feb$が等しいことが示されたが，そもそも両者は偶関数であったから$x<0$においても等しくならざるを得ない。
-            残るは$x=0$であるが，$\foa,\fob$は連続な奇関数なので$\foa(0)=\fob(0)=0$。
-            これと式(1)より$ \fea(0) = \feb(0) = f(0)$となり，結局$\fea$と$\feb$は常に等しい。
-            これと式(1)から奇関数成分$\foa,\fob$も等しいことがわかる。
+            次に，分解が 1 通りであることを示す。
+            偶関数 $\fea,\feb$ と奇関数 $\foa,\fob$ が存在して $f(x) = \fea(x) + \foa(x) = \feb(x) + \fob(x)$ と表せるとする。
+            このとき $\fea(x) - \feb(x) = \fob(x) - \foa(x)$ が成り立つ。
+            左辺は偶関数，右辺は奇関数なので，両辺は恒等的に 0 でなければならない。
         \end{proof}
     \section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\;\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
         \begin{shadebox}
