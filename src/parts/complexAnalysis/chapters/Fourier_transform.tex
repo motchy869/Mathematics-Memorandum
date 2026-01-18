@@ -1,10 +1,5 @@
 \chapter{Fourier変換}
     \section{余弦,正弦変換}
-    {%スコープ。\ge上書き回避
-        \renewcommand{\ge}{g_\textrm{e}}
-        \newcommand{\go}{g_\textrm{o}}
-        \newcommand{\Ge}{G_\textrm{e}}
-        \newcommand{\Go}{G_\textrm{o}}
         $f(t)$の余弦変換$C(\omega)$,正弦変換$S(\omega)$は次のように定義される。
         \begin{align*}
             C(\omega) &\coloneq \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(x)\cos{\omega t}}{}{t}\\
@@ -19,42 +14,41 @@
         \newline\par
         \begin{proof}
             \quad\par
-            $f(t)$の$t\geq0$の部分を取り出して$t<0$の部分に拡張することを考える。関数$\ge(t),\go(t)$を次のように定義する。
-            \[\ge(t) \coloneq f(|t|)\;\;(-\infty<t<\infty)\]
+            $f(t)$の$t\geq0$の部分を取り出して$t<0$の部分に拡張することを考える。関数$\gEvn(t),\gOdd(t)$を次のように定義する。
+            \[\gEvn(t) \coloneq f(|t|)\;\;(-\infty<t<\infty)\]
             \begin{align}
-                \go(t) \coloneq
+                \gOdd(t) \coloneq
                 \begin{cases}
                     f(t) & (t>=0) \\
                     -f(-t) & (t<0)
                 \end{cases}
                 \nonumber
             \end{align}
-            $\ge,\go$はそれぞれ$f$を偶関数,奇関数として拡張したものである。両者のフーリエ変換を$\Ge(\omega),\Go(\omega)$とすると
+            $\gEvn,\gOdd$はそれぞれ$f$を偶関数,奇関数として拡張したものである。両者のフーリエ変換を$\Ge(\omega),\Go(\omega)$とすると
             \begin{align*}
-                \Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)\NapierE^{-i\omega t}}{}{t} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)(\cos{\omega t}-i\sin{\omega t})}{}{t}\\
-                &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\ge(t)\cos{\omega t}}{}{t}\;\;\;(\because \ge(t)\sin{\omega t}\text{は奇関数なので対称積分の結果は0})\\
-                &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{\ge(t)\cos{\omega t}}{}{t} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(t)\cos{\omega t}}{}{t} = C(\omega)
+                \Ge(\omega) &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\gEvn(t)\NapierE^{-i\omega t}}{}{t} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\gEvn(t)(\cos{\omega t}-i\sin{\omega t})}{}{t}\\
+                &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\gEvn(t)\cos{\omega t}}{}{t}\;\;\;(\because \gEvn(t)\sin{\omega t}\text{は奇関数なので対称積分の結果は0})\\
+                &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{\gEvn(t)\cos{\omega t}}{}{t} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{f(t)\cos{\omega t}}{}{t} = C(\omega)
             \end{align*}
             となり余弦変換と一致する。同様にして
             \[\Go(\omega) = -iS(\omega)\]
             となることも確かめられる。
             \newline\par
-            次に逆フーリエ変換で$\ge,\go$を復元してみる。
+            次に逆フーリエ変換で$\gEvn,\gOdd$を復元してみる。
             \begin{align*}
-                \ge(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Ge(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+                \gEvn(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Ge(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
                 &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}\;\;(\because C(\omega)\sin{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
                 &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega}
             \end{align*}
             \begin{align*}
-                \go(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Go(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
+                \gOdd(t) &\sim \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{\Go(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)\NapierE^{i\omega t}}{}{\omega} = \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{-iS(\omega)(\cos{\omega t}+i\sin{\omega t})}{}{\omega}\\
                 &= \frac{1}{\sqrt{2\pi}}\integrate{-\infty}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\;\;(\because S(\omega)\cos{\omega t}\text{ は奇関数なので対称積分の結果は0})\\
                 &= \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}
             \end{align*}
-            $t\geq0$では$f,\ge,\go$は等しいから
+            $t\geq0$では$f,\gEvn,\gOdd$は等しいから
             \[f(t) \sim \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{C(\omega)\cos{\omega t}}{}{\omega} = \sqrt{\frac{2}{\pi}}\integrate{0}{\infty}{S(\omega)\sin{\omega t}}{}{\omega}\]
         \end{proof}
         繰り返しになるが上式は$t\geq0$でしか成り立たない。$t<0$のことはわからないのである。クレイジーな変換だと思うかもしれないが，ちゃんと利点もある。実験データや音声,映像データは普通，記録開始を時刻0として扱う。この場合は$t<0$に関しては知る必要がない(どうでもいい)のだ。そういう状況下では複素数が登場する本家のフーリエ変換よりもsin,cosどっちか好きな方だけ使えば済むような正弦,余弦変換が役に立つことがある。
-    }
     \section{応用}
         \subsection{正規化 sinc 関数の正規直交性}
             \begin{shadebox}

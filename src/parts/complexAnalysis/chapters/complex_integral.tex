@@ -1,14 +1,14 @@
 \chapter{複素積分}
     \section{\texorpdfstring{$\integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a}$}{Gauss積分で積分変数にオフセットがある場合}}
         \begin{shadebox}
-            $a>0,\;b\in\complexNumbers$ とするとき，次式が成り立つ。
+            $a>0,b\in\complexNumbers$ とするとき，次式が成り立つ。
             \[ \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a} \]
         \end{shadebox}
         \begin{proof}
             \quad\par
             複素積分を用いて導出する。
             求めたい積分値を $I$ とする。
-            $b_\mathrm{R} = \Re{b},\;b_\mathrm{I} = \Im{b}$ として変数変換 $x+b_\mathrm{R} = u$ を施すと次式が成り立つ。
+            $b_\mathrm{R} = \Re{b},b_\mathrm{I} = \Im{b}$ として変数変換 $x+b_\mathrm{R} = u$ を施すと次式が成り立つ。
             \[ I = \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \integrate{-\infty}{\infty}{\exp(-a(u+b_\mathrm{I}i)^2)}{}{u} \]
             $R>0,\quad f(z) \coloneq \exp(-az^2)\;(z\in\complexNumbers)$ とし以下で説明する長方形の積分路を考える。
             \begin{gather*}
@@ -38,7 +38,7 @@
             \[ 2\integrate{0}{\pi/2}{\NapierE^{-R\sin\theta}}{}{\theta} < 2\integrate{0}{\pi/2}{\NapierE^{-2R\theta/\pi}}{}{\theta} = \frac{\pi}{R}\left(1-\NapierE^{-R}\right) \]
         \end{proof}
     \section{例題}
-        \subsection{\texorpdfstring{$\integrate{0}{2\pi}{\Log(1-a\exp(i\theta))}{}{\theta}=0\quad (C\text{: 原点中心の単位円},\;a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
+        \subsection{\texorpdfstring{$\integrate{0}{2\pi}{\Log(1-a\exp(i\theta))}{}{\theta}=0\quad (C\text{: 原点中心の単位円},a\in\realNumbers)$}{Log(1-a exp(iΘ))の単位円周上での積分は0}}
             \begin{solution}
                 \quad\par
                 $a=0$のときは明らかに成り立つ。$a\neq0$のときは$z=\NapierE^{i\theta}$とすると

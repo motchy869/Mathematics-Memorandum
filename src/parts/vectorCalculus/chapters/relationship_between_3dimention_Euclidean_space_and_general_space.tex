@@ -2,8 +2,8 @@
     \section{座標変換}
         $T:\realNumbers^3\to\realNumbers^3$は可逆であり$\mathrm{C}^1$級であるとする。
         $T$のJacobi行列の列は互いに直交するものとする。
-        $\bm{u}\in\realNumbers^3,\;\bm{r} = T(\bm{u})$とする。
-        例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり，$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,\;(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
+        $\bm{u}\in\realNumbers^3,\bm{r} = T(\bm{u})$とする。
+        例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり，$\bm{r} = \bm{i}_x x + \bm{i}_y y + \bm{i}_z z,(x,y,z) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
         次式で定める量を$\bm{u}$に対する$\bm{r}$の計量係数(Lam\'{e} coefficient)と呼ぶ。
         \[ h_i \coloneq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
         $h_i$は$T$のJacobi行列$J$の第$i$列のノルムであり，逆写像定理から$J$は可逆なので$h_i \neq 0$である。

@@ -8,7 +8,7 @@
                 0 & 1 \\
                 0 & 0 \\
                 0 & 0
-            \end{bmatrix},\;
+            \end{bmatrix},
             B = \begin{bmatrix}
                 0 & 0 & 1 & 0 \\
                 0 & 0 & 0 & 1
@@ -21,12 +21,12 @@
                 \begin{bmatrix}
                     1 & 0 \\
                     0 & 0
-                \end{bmatrix},\;
+                \end{bmatrix},
                 B =
                 \begin{bmatrix}
                     0 & 1 \\
                     0 & 0
-                \end{bmatrix},\;
+                \end{bmatrix},
                 T =
                 \begin{bmatrix}
                     0 & 1 \\
@@ -37,7 +37,7 @@
                 \begin{bmatrix}
                     0 & 1 \\
                     0 & 0
-                \end{bmatrix},\;
+                \end{bmatrix},
                 ATB =
                 \begin{bmatrix}
                     0 & 0 \\
@@ -54,7 +54,7 @@
             まず，$\bm{x}^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
             $A$がフルランクのとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\bm{x}=\bm{0}_{m\times1}$でなくてはならない。逆に$\bm{x}^\top A=\bm{0}_{1\times n}\Rightarrow\bm{x}=\bm{0}_{m\times1}$であるとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
         \end{proof}
-    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\;\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
+    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
         次元定理を用いる証明
         \begin{proof}
             \quad\par
@@ -179,7 +179,7 @@
     \section{優対角正方行列は正則}
         \begin{proof}
             \quad\par
-            $A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし，$A\bm{x}=\bm{0}_n,\;\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
+            $A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし，$A\bm{x}=\bm{0}_n,\bm{x}=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
             $A\bm{x}$の第1成分の絶対値について
             \begin{align*}
                 |a_{11}x_1 + \dotsb + a_{1n}x_n| &\geq ||a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n|| \geq |a_{11}x_1| - |a_{12}x_2 + \dotsb + a_{1n}x_n| \\
@@ -193,7 +193,7 @@
             となり，$A\bm{x}=\bm{0}_n$に矛盾する。
             故に$|x_1| \leq \max\{|x_1|,|x_2|,\dotsc,|x_n|\}$である。
             同様にして$A\bm{x}$の第$2,3,\dotsc,n$成分の絶対値を考えることで$|x_i| \leq \max\{|x_j|\}\;(i,j\in\{1,\dotsc,n\})$が示される。
-            これは$|x_1|=\dotsb=|x_n|=c,\;(c$は適当な非負数)に他ならない。
+            これは$|x_1|=\dotsb=|x_n|=c,(c$は適当な非負数)に他ならない。
             仮に$c>0$であるとすると式(1)より$|A\bm{x}\text{の第1成分}| > 0$となり，$A\bm{x}=0$に矛盾する。
             故に$c=0$，つまり$\bm{x}=\bm{0}_n$である。
             よって$A\bm{x}=\bm{0}_n \Rightarrow \bm{x}=\bm{0}_n$が成り立つから$A$は正則である。

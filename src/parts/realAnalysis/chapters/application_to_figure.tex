@@ -1,10 +1,10 @@
 \chapter{図形への応用}
     \section{ある超平面から距離\texorpdfstring{$d$}{d}だけ離れた超平面の方程式}
-        $n\in\naturalNumbers,\;\bm{w}\in\realNumbers^n\neq\bm{0},\;c\in\realNumbers$とする。
+        $n\in\naturalNumbers,\bm{w}\in\realNumbers^n\neq\bm{0},c\in\realNumbers$とする。
         写像$f:\bm{x}\in\realNumbers^n\mapsto \bm{w}^\top\bm{x} + c \in \realNumbers$が定める$\realNumbers^n$上の超平面$f(\bm{x})=0$
         から距離$d>0$だけ離れた2枚の超平面を求める方法を述べる。
         \par
-        新しい写像$g = f/\norm{\bm{w}}_2$を考えると，$\nabla g = \bm{w}/\norm{w}_2,\;\norm{\nabla g}_2 = 1$であるので，超平面$g(\bm{x})=0$(これは超平面$f(\bm{x})=0$と一致)からそれと直角な方向，すなわち$\pm\nabla g$に距離$d$だけ進んだ位置では$g$の値が$\pm d$だけ変化する。
+        新しい写像$g = f/\norm{\bm{w}}_2$を考えると，$\nabla g = \bm{w}/\norm{w}_2,\norm{\nabla g}_2 = 1$であるので，超平面$g(\bm{x})=0$(これは超平面$f(\bm{x})=0$と一致)からそれと直角な方向，すなわち$\pm\nabla g$に距離$d$だけ進んだ位置では$g$の値が$\pm d$だけ変化する。
         逆に$g$の値が$\pm d$である位置は超平面$g(\bm{x})=0$から$\pm\nabla g$に距離$d$だけ離れた位置である。
         よって求めたい2平面の方程式は次式で表される。
         \[ g(\bm{x}) \pm d = 0 \iff f(\bm{x}) \pm d\norm{w}_2 = 0 \]

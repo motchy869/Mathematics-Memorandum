@@ -77,7 +77,7 @@
             \label{ベクトルのスカラー関数倍の発散}
             \begin{shadebox}
                 $\bm{r}\in\realNumbers$とする。
-                $f: \realNumbers^3\to\complexNumbers,\;A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
+                $f: \realNumbers^3\to\complexNumbers,A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
                 このとき次式が成り立つ。
                 \[ \nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r}) \]
             \end{shadebox}
@@ -91,7 +91,7 @@
             \label{ベクトルのスカラー関数倍の回転}
             \begin{shadebox}
                 $\bm{r}\in\realNumbers$とする。
-                $f: \realNumbers^3\to\complexNumbers,\;A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
+                $f: \realNumbers^3\to\complexNumbers,A(\bm{r}): \realNumbers^3\to\realNumbers^3$はともに$\mathrm{C}^1$級とする。
                 このとき次式が成り立つ。
                 \[ \nabla_\bm{r}\times f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\times \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\times\bm{A}(\bm{r}) \]
             \end{shadebox}
@@ -207,13 +207,13 @@
                     $f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて，その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
                     このとき$\realNumbers^3$上での$f$の積分は存在する。
                     すなわち次式が成り立つ。
-                    \[ R>0,\; V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\;\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+                    \[ R>0, V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
                     $R>0$は十分大きいものとし，$I(R)$を次式で定義する。
                     \[ I(R) \coloneq \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
-                    球座標変換$\bm{r} = r[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$を用いて次式を得る。
+                    球座標変換$\bm{r} = r[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$を用いて次式を得る。
                     \[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
                     $0<R_0<R$なる$R_0$をとり，$I(R) = I(R_0) + I_2(R)$と分解する。
                     ここに$I_2(R) \coloneq I(R) - I(R_0)$である。
@@ -252,14 +252,10 @@
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\times\vB(\vomega)}{3}{\vomega} \\
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \tag{2}
                 \end{align*}
-                \newcommand{\vBP}{\bm{B}_\text{P}(\vomega)}
-                \newcommand{\vBO}{\bm{B}_\text{O}(\vomega)}
                 上式中の $\vB(\omega)$ を $\vomega$ 方向の成分 $\vBP$ とそれに垂直な成分 $\vBO \coloneq \vB(\omega) - \vBP$ に分解する(`P': `parallel', `O': `orthogonal')。
                 $\vBP$ を具体的に書くと次式である。
                 \[ \vBP = \parens*{\frac{\vomega}{\norm{\vomega}_2}\cdot\vB(\omega)}\frac{\vomega}{\norm{\vomega}_2} = \parens*{\frac{\vomega}{\norm{\vomega}_2^2}\cdot\vB(\vomega)}\vomega \]
                 これを用いて $\vA$ を分解する。
-                \newcommand{\vARL}{\vA_\text{RL}}
-                \newcommand{\vADL}{\vA_\text{DL}}
                 \begin{align*}
                     \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(B)}} \tag{3}\\
                     &= \vARL(\vr) + \vADL(\vr) \quad \text{where} \quad \vARL(\vr) \coloneq \text{(A)}, \quad \vADL(\vr) \coloneq \text{(B)}
@@ -276,7 +272,7 @@
     \section{諸定理}
         \subsection{球殻定理}
             \begin{shadebox}
-                $R>0,\;V \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
+                $R>0,V \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2\leq R}$とする。
                 ベクトル場$\bm{A}(\bm{r})$を次式で定義する。
                 \[ \bm{A}(\bm{r}) \coloneq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
                 このとき次が成り立つ。
@@ -292,7 +288,7 @@
                 \quad\par
                 必要なら系全体を回転させ，一般性を失わず$\bm{r} = [0,0,r]^\top\;(r>0)$とする。
                 球座標変換を用いて積分を実行する。
-                $\bm{r}' \coloneq r'[\sin\theta\cos\phi,\;\sin\theta\sin\phi,\;\cos\theta]^\top$とすると
+                $\bm{r}' \coloneq r'[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$とすると
                 \begin{align*}
                     \bm{A}(\bm{r}) &= \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{\frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3}r'^2(\sin\theta)}{}{\phi}}{}{\theta}}{}{r'} \\
                     &= 2\pi\bm{i}_3\integrate{0}{R}{\integrate{0}{\pi}{\frac{r-r'\cos\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}}r'^2(\sin\theta)}{}{\theta}}{}{r'}
@@ -302,7 +298,7 @@
                 $f(r) \coloneq -(r^2+r'^2-2rr'\cos\theta)^{-1/2}r'^2\sin\theta$とすると次式が成り立つ。
                 \[ \deriv{f}{r}{}(r) = \frac{(r-r'\cos\theta)r'^2\sin\theta}{(r^2+r'^2-2rr'\cos\theta)^{3/2}} \]
                 上式右辺の$(r',\theta)=(0,0)$近傍での振る舞いを考える。
-                $r'=r+\Delta r\;(\Delta r\neq 0)$とすると，$\sin\theta = O(\theta),\;\cos\theta = 1+O(\theta^2)$なので分母・分子ともに$r^3 O(\theta^3)$となる。
+                $r'=r+\Delta r\;(\Delta r\neq 0)$とすると，$\sin\theta = O(\theta),\cos\theta = 1+O(\theta^2)$なので分母・分子ともに$r^3 O(\theta^3)$となる。
                 よって積分領域に於いて$f$は$r$の$\mathrm{C}^1$級関数であるから積分と微分の順序交換が可能であり，次式が成り立つ。
                 \begin{align*}
                     \bm{A}(\bm{r}) &= 2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\integrate{0}{\pi}{f(r)}{}{\theta}}{}{r'}}{r}{} \\
@@ -389,7 +385,7 @@
         \begin{shadebox}
             $c$を空間上の任意の$C^1$級の閉曲線，$S$を，$c$を周$\partial S$とする任意の$C^2$級の曲面, $A$を$C^1$級のベクトル場とするとき
             \[
-                \oint_c{A\cdot\dc} = \iint_S{\nabla\times A}\cdot\dS
+                \oint_c{A\cdot\dvc} = \iint_S{\nabla\times A}\cdot\dS
             \]
         \end{shadebox}
         \begin{proof}
@@ -420,7 +416,7 @@
             迂闊に計算すると罠にはまる。
             特に危ない所では敢えて引数を明示する。
             \begin{align*}
-                \oint_c{A\cdot\dc} &= \oint_{\partial S}{\left(\vix A_x+\viy A_y+\viz A_z\right)\cdot\left(\vix \dx+\viy \dy+\viz \dz\right)} \\
+                \oint_c{A\cdot\dvc} &= \oint_{\partial S}{\left(\vix A_x+\viy A_y+\viz A_z\right)\cdot\left(\vix \dx+\viy \dy+\viz \dz\right)} \\
                 &= \oint_{\partial S}{\left(A_x\dx+A_y\dy\right)} + \oint_{\partial S}{A_z\dz} \\
                 &= \underbrace{\oint_{\partial \textcolor{red}{\Omega}}{\left(A_x(x,y,S(x,y))\dx+A_y(x,y,S(x,y))\dy\right)}}_{\ctext{A}} + \underbrace{\oint_{\partial S}{A_z\dz}}_{\ctext{B}}
             \end{align*}
@@ -459,7 +455,7 @@
             \end{align*}
             以上より
             \begin{align*}
-                \oint_c{A\cdot\dc} &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy}
+                \oint_c{A\cdot\dvc} &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy}
             \end{align*}
             \par
             これが定理の右辺と等しいことを示せば良い。
@@ -472,6 +468,6 @@
             \begin{align*}
                 \iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\left[\vix\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)+\viy\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)+\viz\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\cdot\dS} \\
                 &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy} \\
-                &= \oint_c{A\cdot\dc}
+                &= \oint_c{A\cdot\dvc}
             \end{align*}
         \end{proof}

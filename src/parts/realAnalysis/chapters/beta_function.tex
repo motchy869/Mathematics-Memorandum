@@ -40,7 +40,7 @@
                     \bm{1}_n^\top
                 \end{bmatrix}
             \]
-            なる変数変換を行うと，$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,\;|P|=1$なので
+            なる変数変換を行うと，$x_n = y_n - \sum_{i=1}^{n-1}x_i = y_n - \sum_{i=1}^{n-1}y_i,|P|=1$なので
             \begin{align*}
                 \prod_{i=1}^n \Gamma(\alpha_i) &= \integrate{y_n=0}{\infty}{\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1} \NapierE^{-y_n}|P|^{-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n} \\
                 &= \integrate{y_n=0}{\infty}{\NapierE^{-y_n}\integrate{y_1=0}{y_n}{\dotsi\integrate{y_{n-1}=0}{y_n-\sum_{i=1}^{n-2}y_i}{\prod_{i=1}^{n-1}y_i^{\alpha_i-1}\left(y_n-\sum_{i=1}^{n-1} y_i \right)^{\alpha_n-1}}{}{y_{n-1}}\dotsi}{}{y_1}}{}{y_n}

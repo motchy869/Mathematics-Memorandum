@@ -8,8 +8,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $f_1,f_2:S\to\realNumbers$ は有界であるとし，$x\in S,\;t\in[0,1]$ とする。
-                一様ノルムの定義の定義から $\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\;\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$ が成り立つので次式が成り立つ。
+                $f_1,f_2:S\to\realNumbers$ は有界であるとし，$x\in S,t\in[0,1]$ とする。
+                一様ノルムの定義の定義から $\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$ が成り立つので次式が成り立つ。
                 \[ (1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)} = \abs{(1-t)f_1(x) + tf_2(x)} \]
                 任意の $x\in S$ について上式が成り立つので $(1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq\norm{(1-t)f_1 + tf_2}_{\infty,S}$ が成り立つ。
             \end{proof}
@@ -30,7 +30,7 @@
         \end{proof}
         \subsection{Jensenの不等式}
             \begin{shadebox}
-                $f(x)$を凸関数とし，$w_i\geq 0(i=1,\dotsc,n),\;\sum_{i=1}^n w_i=1$とするとき，次式が成り立つ。
+                $f(x)$を凸関数とし，$w_i\geq 0(i=1,\dotsc,n),\sum_{i=1}^n w_i=1$とするとき，次式が成り立つ。
                 \[ f\left(\sum_{i=1}^n w_i x_i\right) \leq \sum_{i=1}^n w_i f(x_i) \]
             \end{shadebox}
             \begin{proof}
@@ -38,7 +38,7 @@
                 $n=1$の時は明らか。
                 $n=2$のときは凸関数の定義より成り立つ。
                 $n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
-                $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,\;w'_1+\dotsb+w'_{n_0}=1$だから，仮定より
+                $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,w'_1+\dotsb+w'_{n_0}=1$だから，仮定より
                 \begin{align*}
                     f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
                     \therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
@@ -51,7 +51,7 @@
         \subsection{重み付き相加,相乗平均の関係とYoungの不等式}
             \label{重み付き相加,相乗平均の関係とYoungの不等式}
             \begin{shadebox}
-                $w_1,\dotsc,w_n\geq 0,\;w_1+\dotsb+w_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
+                $w_1,\dotsc,w_n\geq 0,w_1+\dotsb+w_n=1,x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
                 \[ \sum_{i=1}^n w_i x_i \geq \prod_{i=1}^n x_i^{w_i} \]
                 この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
             \end{shadebox}
@@ -71,12 +71,12 @@
             \[ \sum_{i=1}^n \frac{{y_i}^{p_i}}{p_i} \geq \prod_{i=1}^n y_i \]
             改めて定理の形で述べると，次のようになる。\\
             \begin{shadebox}
-                $p_1,\dotsc,p_n>1,\;1/p_1+\dotsb+1/p_n=1,\;x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
+                $p_1,\dotsc,p_n>1,1/p_1+\dotsb+1/p_n=1,x_1,\dotsc,x_n\geq 0$とするとき，次式が成り立つ。
                 \[ \sum_{i=1}^n \frac{{x_i}^{p_i}}{p_i} \geq \prod_{i=1}^n x_i \]
             \end{shadebox}
         \subsection{重み付き幾何平均と重み付き調和平均の関係}
             \begin{shadebox}
-                $n\in\naturalNumbers,\;x_i,w_i>0\;(i=1,\dots,n),\;\sum_{i=1}^n w_i = 1$ とするとき，$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
+                $n\in\naturalNumbers,x_i,w_i>0\;(i=1,\dots,n),\sum_{i=1}^n w_i = 1$ とするとき，$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
                 つまり次式が成り立つ。
                 \[ \prod_{i=1}^n {x_i}^{w_i} \geq \frac{1}{\sum_{i=1}^n w_i/x_i} \tag{1} \]
             \end{shadebox}
@@ -95,10 +95,10 @@
                 次の3つの事項
                 \begin{enumerate}
                     \item $\forall x\in I, f^{(2)}(x) > 0$
-                    \item $\forall (x_1,x_2\in I,x_1\neq x_2),\;f(x_2) > f(x_1) + f^{(1)}(x_1)(x_2-x_1)$
+                    \item $\forall (x_1,x_2\in I,x_1\neq x_2),f(x_2) > f(x_1) + f^{(1)}(x_1)(x_2-x_1)$
                     \item $f$は$I$上で狭義に下に凸である。
                 \end{enumerate}
-                に対して$1\Rightarrow 2,\;2\iff 3$である。
+                に対して$1\Rightarrow 2,2\iff 3$である。
                 さらに$1\Leftarrow 2$は偽である。
             \end{shadebox}
             \begin{proof}
@@ -112,7 +112,7 @@
                 よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり，2が成り立つ。
                 \par
                 $2\Rightarrow 3$を示す。
-                $x_1,x_2\in I,\;x_1\neq x_2,\;0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
+                $x_1,x_2\in I,x_1\neq x_2,0<\lambda<1,x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
                 \[ f(x_1) > f(x_3) + f^{(1)}(x_3)(x_1-x_3),\quad f(x_2) > f(x_3) + f^{(1)}(x_3)(x_2-x_3) \]
                 よって次式が成り立つ。
                 \begin{align*}
@@ -124,7 +124,7 @@
                 \par
                 $3\Rightarrow 2$を示す。
                 $x_1<x_2$の場合について示すが，逆の場合も同様にして示せる。
-                $0<\lambda<1,\;x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
+                $0<\lambda<1,x_3 = (1-\lambda)x_1 + \lambda x_2$とすると次式が成り立つ。
                 \begin{align*}
                     \frac{f(x_2)-f(x_1)}{x_2-x_1} &= \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{x_3-x_1} = \frac{(1-\lambda)f(x_1) + \lambda f(x_2) - f(x_1)}{\lambda(x_2-x_1)} \\
                     &> \frac{f(x_3) - f(x_1)}{\lambda(x_2-x_1)} = \frac{f(x_1 + \lambda(x_2-x_1)) - f(x_1)}{\lambda(x_2-x_1)} \tag{1} \\
@@ -142,8 +142,6 @@
             \end{proof}
     \section{Legendre変換}
         \subsection{十分滑らかな狭義凸関数に対してLegendre変換を2回施すと元の関数に戻る}
-            \newcommand{\fd}{{f^{(1)}}}
-            \newcommand{\fStarD}{{{f^*}^{(1)}}}
             \begin{proof}
                 \quad\par
                 $f$を開区間$I$で定義された$C^2$級の狭義凸関数とする。

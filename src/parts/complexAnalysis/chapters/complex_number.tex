@@ -6,9 +6,9 @@
         \par
         任意の2つの複素数$(a_1,b_1),(a_2,b_2)\in\complexNumbers$に対して演算「和(+)」,「実数倍(スカラー倍)」及び「積($\times$)」を次のように\textcolor{red}{定義}する。
         \begin{align*}
-            \textrm{和} &: (a_1,b_1)+(a_2,b_2) = (a_1+a_2,\;b_1+b_2)\\
-            \textrm{実数倍}\;(a\in\mathbb{R}) &: a(a_1,b_1) = (aa_1,\;ab_1)\\
-            \textrm{積} &: (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,\;a_1b_2+b_2a_1)
+            \textrm{和} &: (a_1,b_1)+(a_2,b_2) = (a_1+a_2,b_1+b_2)\\
+            \textrm{実数倍}\;(a\in\mathbb{R}) &: a(a_1,b_1) = (aa_1,ab_1)\\
+            \textrm{積} &: (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,a_1b_2+b_2a_1)
         \end{align*}
         \par
         特に，実部が0である複素数$(0,b)$を「\textcolor{red}{純虚数}」と名付ける。
@@ -22,13 +22,13 @@
             (a_1+ib_1)(a_2+ib_2) &= \left[(a_1,0)+i(b_1,0)\right]\times\left[(a_2,0)+i(b_2,0)\right] \\
             &= \left[(a_1,0)+(0,1)\times(b_1,0)\right]\times\left[(a_2,0)+(0,1)\times(b_2,0)\right] \\
             &= \left[(a_1,0)+(0,b_1)\right]\times\left[(a_2,0)+(0,b_2)\right] \\
-            &= (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,\;a_1b_2+b_2a_1) \\
+            &= (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,a_1b_2+b_2a_1) \\
             &= (a_1a_2-b_1b_2)+i(a_1b_2+b_2a_1)
         \end{align*}
         また，例えば，
         \[i^2 = -1\]
         なぜならば
-        \[i^2 = (0,1)\times(0,1) = (0\times0-1\times1,\;0\times1+1\times0) = (-1,0) = -1\]
+        \[i^2 = (0,1)\times(0,1) = (0\times0-1\times1,0\times1+1\times0) = (-1,0) = -1\]
         \underline{$i^2 = -1$が虚数単位の定義なのではなく，そうなるように先回りして巧妙に複素数を構築しただけ}であることに注意して欲しい。
         \subsection{注意}
             実数$a$と複素数$(a,0)$は\textcolor{red}{等しくない}。
@@ -58,13 +58,13 @@
             しかし数学的に「ちゃんとした」理論を作るためには，既存の枠組みのままでは不可能だと分かり次第，思い切ってルールを拡張し，所望の性質が得られるように理屈を先回りして演算を機械的に定義するような break through が必要なこともある。
             その際に，既存の理論に矛盾しないように構築しなければならないのは言うまでもない。
     \section{諸公式}
-        \subsection{\texorpdfstring{$x>0,\;z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^\Re{z}$}{x\string^zの絶対値はx\string^Re(z)}}
+        \subsection{\texorpdfstring{$x>0,z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^\Re{z}$}{x\string^zの絶対値はx\string^Re(z)}}
             \begin{proof}
                 \quad\par
                 $z = a + bi\;(a,b\in\realNumbers)$とする。
                 \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |\NapierE^{bi\log{x}}| = x^\Re{z} \]
             \end{proof}
-        \subsection{\texorpdfstring{$^\forall n\nmid k,\;\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
+        \subsection{\texorpdfstring{$^\forall n\nmid k,\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
             \label{fml:花びら定理}
             \begin{proof}
                 \begin{align*}
@@ -81,7 +81,7 @@
                     \quad\par
                     最高次の係数を常に1として一般性を失わないので方程式は
                     \[x^n + \sum_{k=n-1}^{0}{c_ix^k} = 0,\quad c_k \in \realNumbers\]
-                    と書ける。$s=\alpha+i\beta,\;\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
+                    と書ける。$s=\alpha+i\beta,\;\alpha,\beta\in\realNumbers$がこれの解であるから当然
                     \[s^n + \sum_{k=n-1}^{0}{c_ks^k} = 0\]
                     両辺の複素共役をとると
                     \begin{align*}

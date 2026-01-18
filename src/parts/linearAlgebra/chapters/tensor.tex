@@ -1,0 +1,24 @@
+\chapter{テンソル}
+    \section{テンソル記法}
+        \subsection{例}
+            $A,B$ を行列，$\bm{x},\bm{y}$ をベクトルとする。
+            \begin{enumerate}
+                \item $(A\bm{x})_i = A_{i,j}x_j$
+                \item $(AB)_{i,j} = A_{i,k}B_{k,j}$
+                \item $(AB\bm{x})_i = (AB)_{i,k}x_k = A_{i,j}B_{j,k}x_k$
+                \item $(\bm{x}\times\bm{y})_i = \varepsilon_{i,j,k}x_j y_k$
+            \end{enumerate}
+        \subsection{Levi-Civita 記号の性質：\texorpdfstring{$\sum_{a,i,j,k,l}\varepsilon_{a,i,j}\varepsilon_{a,k,l} = \sum_{i,j}(\delta_{i,k}\delta_{j,l} - \delta_{i,l}\delta_{j,k})$}{2 個のεの積と，δの積和}}
+            \begin{shadebox}
+                \begin{equation}
+                    \sum_{a,i,j,k,l}\varepsilon_{a,i,j}\varepsilon_{a,k,l} = \sum_{i,j}(\delta_{i,k}\delta_{j,l} - \delta_{i,l}\delta_{j,k})
+                \end{equation}
+            \end{shadebox}
+            導出は直接比較で得られる。ここでは考え方を示す。
+            \par
+            左辺のうち非零となる項に於いては，$i,j$ の組に対して $a$ が唯一に決まる。
+            そして 1 つの $a$ に対して $i,j$ の組が 2 つ存在する。
+            +1 で寄与する項は $(k,l)=(i,j)$ であり，-1 で寄与する項は $(k,l)=(j,i)$ である。
+            この時点で右辺が思い付く。
+            これが $i=j$ のときに 0 となればよい。
+            実際にそうであることは容易に確認できる。
