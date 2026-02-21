@@ -8,3 +8,22 @@
             両辺に$2^m\times 5$を掛けて$2^m = 5\sum_{i=1}^m a_i 2^{m-i} = 5\sum_{i=0}^{m-1}a_{m-i}2^i$となる。
             左辺は5で割り切れないが右辺は割り切れるので矛盾している。
         \end{proof}
+    \section{B ビット符号付き整数 N 個の和の格納に必要十分なビット幅}
+        \begin{shadebox}
+            $B,N$ を自然数とする。
+            $B$ ビット符号付き整数 $N$ 個の和の格納に必要十分なビット幅は $\ceil{\log_2 N} + B$ である。
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            $B$ ビット符号付き整数 $N$ 個の和を $x$ とする。
+            $-N\times 2^{B-1}\leq x\leq N(2^{B-1}-1)$ が成り立つ。
+            \par
+            $B_2\coloneq\ceil{\log_2 N} + B$ とする。
+            $x$ を表現するためのビット幅として $B_2-1$ では不足し，$B_2$ で十分であること，つまり次の性質を示せばよい。
+            \begin{enumerate}
+                \item $-2^{B_2-1} \leq -N\times 2^{B-1} < -2^{B_2-2}$
+                \item $N(2^{B-1}-1) \leq 2^{B_2-1}-1$\footnote{$2^{B_2-2}-1 < N(2^{B-1}-1)$ は成り立たない。例えば $B=1,N=4$ のとき。}
+            \end{enumerate}
+            性質 1 は $\ceil{\log_2 N}-1<\log_2 N \leq\ceil{\log_2 N}$ より容易に示せる。
+            そこから性質 2 が直ちに示される。
+        \end{proof}
