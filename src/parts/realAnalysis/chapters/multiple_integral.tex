@@ -61,10 +61,12 @@
             よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integrate{-\infty}{\infty}{(f*g)(x)}{}{x}$は絶対収束する。
         \end{proof}
     \section{諸公式}
-        \subsection{円座標表示された領域の面積\texorpdfstring{$\integrate{0}{2\pi}{r_x(\theta){r_y}'(\theta)}{}{\theta}$}{}}
-            領域 $S$ の境界が円座標表示 $x = r_x(\theta), y = r_y(\theta)$ で表されるとき、$S$ の面積は $\integrate{0}{2\pi}{r_x(\theta){r_y}'(\theta)}{}{\theta}$ である。
+        \subsection{円座標表示された領域の面積\texorpdfstring{$\integrate{0}{2\pi}{r_x(\theta){r_y}'(\theta)}{}{\theta} = -\integrate{0}{2\pi}{r_y(\theta){r_x}'(\theta)}{}{\theta}$}{}}
+            \label{円座標表示された領域の面積}
+            領域 $S$ の境界が円座標表示 $x = r_x(\theta), y = r_y(\theta)$ で表されるとき、$S$ の面積は $\integrate{0}{2\pi}{r_x(\theta){r_y}'(\theta)}{}{\theta} = -\integrate{0}{2\pi}{r_y(\theta){r_x}'(\theta)}{}{\theta}$ である。
             証明は割愛する。
-            $\theta$ の増加に伴って，第 1 象限から第 4 象限にかけて順番に，横長の長方形を $y$ 軸方向に積み重ねてゆく様子を想像すれば納得できる。
+            左辺については，$\theta$ の増加に伴って，第 1 象限から第 4 象限にかけて順番に，横長の長方形を $y$ 軸方向に積み重ねてゆく様子を想像すれば納得できる。
+            同様に，右辺についても長方形を積み重ねる向きを変えて理解できる。
         \subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \dotsi \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
             \begin{proof}
                 \begin{align*}
