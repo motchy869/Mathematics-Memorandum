@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added:
   - necessary and sufficient number of bits to represent a sum of N signed integers with B bits
+  - the area of a region expressed in circular coordinates
 
 ## [0.23.0] - 2026-01-18
 
