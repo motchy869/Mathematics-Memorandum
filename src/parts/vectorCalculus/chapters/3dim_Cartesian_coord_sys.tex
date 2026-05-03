@@ -1,0 +1,84 @@
+\chapter{3 次元直角座標系}
+    \section{直角座標系に於ける Vector Laplacian\texorpdfstring{: $\nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3$}{}}
+        \begin{shadebox}
+            直角座標系に於ける Vector Laplacian (\ref{VectorLaplacian}) は次式である。
+            \[ \nabla^2 A = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                \nabla(\nabla\cdot A) &= \bm{i}_1 \partDerivLong{(\nabla\cdot A)}{r_1}{} + \bm{i}_2 \partDerivLong{(\nabla\cdot A)}{r_2}{} + \bm{i}_3 \partDerivLong{(\nabla\cdot A)}{r_3}{} \\
+                &= \phantom{+} \bm{i}_1\left(\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_3}{r_1}{r_3}\right) \\
+                &\phantom{=} + \bm{i}_2\left(\partDerivIIHeteroLong{A_1}{r_2}{r_1} + \partDerivLong{A_2}{r_2}{2} + \partDerivIIHeteroLong{A_3}{r_2}{r_3}\right) \\
+                &\phantom{=} + \bm{i}_3\left(\partDerivIIHeteroLong{A_1}{r_3}{r_1} + \partDerivIIHeteroLong{A_2}{r_3}{r_2} + \partDerivLong{A_3}{r_3}{2}\right)
+            \end{align*}
+            \begin{align*}
+                \nabla\times(\nabla\times A) &= \nabla\times\left[\bm{i}_1\left(\partDeriv{A_3}{r_2}{} - \partDeriv{A_2}{r_3}{}\right) + \bm{i}_2\left(\partDeriv{A_1}{r_3}{} - \partDeriv{A_3}{r_1}{}\right) + \bm{i}_3\left(\partDeriv{A_2}{r_1}{} - \partDeriv{A_1}{r_2}{}\right)\right] \\
+                &=\phantom{+} \bm{i}_1\left(-\partDerivLong{A_1}{r_2}{2} - \partDerivLong{A_1}{r_3}{2} + \partDerivIIHeteroLong{A_2}{r_2}{r_1} + \partDerivIIHeteroLong{A_3}{r_3}{r_2}\right) \\
+                &\phantom{=} + \bm{i}_2\left(-\partDerivLong{A_2}{r_3}{2} - \partDerivLong{A_2}{r_1}{2} + \partDerivIIHeteroLong{A_3}{r_3}{r_2} + \partDerivIIHeteroLong{A_1}{r_1}{r_2}\right) \\
+                &\phantom{=} + \bm{i}_3\left(-\partDerivLong{A_3}{r_1}{2} - \partDerivLong{A_3}{r_2}{2} + \partDerivIIHeteroLong{A_1}{r_1}{r_3} + \partDerivIIHeteroLong{A_2}{r_2}{r_3}\right)
+            \end{align*}
+            $A_1,A_2,A_3$が$\mathrm{C}^2$級であるから偏微分の順序が交換可能であるので，
+            \[ \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
+        \end{proof}
+    \section{直角座標系に於けるベクトルLaplacianの発散\texorpdfstring{: $\nabla\cdot(\nabla^2\bm{A}) = \Delta(\nabla\cdot\bm{A})$}{}}
+        \label{直角座標系に於けるベクトルLaplacianの発散}
+        \begin{shadebox}
+            $\bm{r}\in\EuclideanSpace^3$とする。
+            $A: \EuclideanSpace^3\to\EuclideanSpace^3$は$\mathrm{C}^3$級とする。
+            次式が成り立つ。
+            \[ \nabla\cdot(\nabla^2\bm{A}) = \Delta(\nabla\cdot\bm{A}) \]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            \begin{align*}
+                \nabla\cdot\nabla^2\bm{A} &= \nabla\cdot\left(\bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3\right) = \partDerivLong{\Delta A_1}{r_1}{} + \partDerivLong{\Delta A_2}{r_2}{} + \partDerivLong{\Delta A_3}{r_3}{} \\
+                &= \Delta\left(\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}\right) = \Delta(\nabla\cdot\bm{A})
+            \end{align*}
+        \end{proof}
+    \section{直角座標系に於ける定数ベクトルとの外積の回転\texorpdfstring{: $\nabla_\bm{r}\times\bigl(\bm{C}\times\bm{A}(\bm{r})\bigr) = (\nabla\cdot\bm{A}(\bm{r}))\bm{C} - J_\bm{A}\bm{C}$}{}}
+        \label{直角座標系に於ける定数ベクトルとの外積の回転}
+        \begin{shadebox}
+            $\bm{r},\bm{C}\in\EuclideanSpace^3$とする。
+            $A:\EuclideanSpace^3\to\EuclideanSpace^3$は$\mathrm{C}^1$級とする。
+            このとき次式が成り立つ。
+            \[ \nabla_\bm{r}\times\bigl(\bm{C}\times\bm{A}(\bm{r})\bigr) = (\nabla\cdot\bm{A}(\bm{r}))\bm{C} - J_\bm{A}\bm{C} \]
+            ここに$J_\bm{A}$は$A$のJacobi行列である。
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                &\phantom{=} \nabla_\bm{r}\times\bigl(\bm{C}\times\bm{A}(\bm{r})\bigr) \\
+                &= \bm{i}_1\left[C_1\partDerivLong{A_2}{r_2}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} + C_1\partDerivLong{A_3}{r_3}{}\right] \\
+                &\phantom{=} + \bm{i}_2\left[C_2\partDerivLong{A_3}{r_3}{} - C_3\partDerivLong{A_2}{r_3}{} - C_1\partDerivLong{A_2}{r_1}{} + C_2\partDerivLong{A_1}{r_1}{}\right] \\
+                &\phantom{=} + \bm{i}_3\left[C_3\partDerivLong{A_1}{r_1}{} - C_1\partDerivLong{A_3}{r_1}{} - C_2\partDerivLong{A_3}{r_2}{} + C_3\partDerivLong{A_2}{r_2}{}\right]
+            \end{align*}
+            $\bm{i}_1$の係数を変形して次式を得る。
+            \[ C_1\left(\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}\right) - C_1\partDerivLong{A_1}{r_1}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} = C_1\nabla\cdot\bm{A} - \bm{C}\cdot\nabla A_1 \]
+            $\bm{i}_2, \bm{i}_3$についても同様にして，結局次式を得る。
+            \[ \nabla_\bm{r}\times\bigl(\bm{C}\times\bm{A}(\bm{r})\bigr) = (\nabla\cdot\bm{A})\bm{C} - (\bm{C}\cdot\nabla A_1)\bm{i}_1 - (\bm{C}\cdot\nabla A_2)\bm{i}_2 - (\bm{C}\cdot\nabla A_3)\bm{i}_3 = (\nabla\cdot\bm{A}(\bm{r}))\bm{C} - J_\bm{A}\bm{C} \]
+        \end{proof}
+    \section{直角座標系に於ける定数ベクトルと勾配の内積の勾配\texorpdfstring{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = H(f)\bm{v}$}{∇<∇f,v> = H(f)v}}
+        \begin{shadebox}
+            $\bm{v}$を定数ベクトルとするとき次式が成り立つ。$H(f)$は$f$の Hesse 行列である。
+            \[\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = H(f)\bm{v}\]
+        \end{shadebox}
+        \begin{proof}
+            \quad\par
+            \[\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}{}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
+            であるから
+            \[
+                \nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left[
+                    \begin{array}{c}
+                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_1}{}\\
+                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_2}{}\\
+                        \vdots\\
+                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_n}{}
+                    \end{array}
+                \right] = \left[
+                    \begin{array}{c}
+                        \left[\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\dotsc,\partDerivIIHetero{f}{x_1}{x_n}\right]\bm{v}\\
+                        \vdots\\
+                        \left[\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\dotsc,\partDeriv{f}{x_n}{2}\right]\bm{v}
+                    \end{array}
+                \right] = H(f)\bm{v}
+            \]
+        \end{proof}

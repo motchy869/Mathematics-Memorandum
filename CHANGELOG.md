@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improved:
   - the area of a region expressed in circular coordinates
+  - Restructured Vector Analysis.
 - Added:
   - relationship between N-dimensional Euclidean space and coordinate systems
 
