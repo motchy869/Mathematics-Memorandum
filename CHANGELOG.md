@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed:
   - typos in Helmholtz theorem proof
 - Improved:
+  - Refined preface.
   - the area of a region expressed in circular coordinates
   - Restructured Vector Analysis.
   - Refined statements in 'metric coefficient and unit vector'.
