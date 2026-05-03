@@ -153,39 +153,41 @@
         \subsection{試み2}
             これはFourier変換を用いる発想であり，\cite{qm3_chap5_j} 11.2 節の内容を筆者が理解してまとめたものである。
             \subsubsection{Helmholtzの定理: 任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場は回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
+            \newcommand*{\vBO}{\bm{B}_\text{O}(\vk)}
+            \newcommand*{\vBP}{\bm{B}_\text{P}(\vk)}
             \begin{proof}
                 \quad\par
                 ベクトル場 $\vA:\realNumbers^3\to\complexNumbers^3$ は $\mathrm{C}^1$ 級であるとする。
                 $\vA$ のFourier変換を $\vB:\realNumbers^3\to\complexNumbers^3$ とする（次式）。
                 \begin{gather*}
                     \vB(\vk) = \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vr\in\realNumbers^3}{}{\vA(\vr)\exp\parens*{-i\vk\cdot\vr}}{3}{\vr} \\
-                    \vA(\vr) = \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}
+                    \vA(\vr) = \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vB(\vk)\exp\parens*{i\vk\cdot\vr}}{3}{\vk}
                 \end{gather*}
                 これを用いて $\vA$ の発散と回転を計算すると次式を得る。
                 \begin{align*}
-                    \parens*{\nabla\cdot\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\nabla\cdot\parens*{\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\cdot\vB(\vomega)}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\cdot\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \tag{1} \\
-                    \parens*{\nabla\times\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\nabla\times\parens*{\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\times\vB(\vomega)}{3}{\vomega} \\
-                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vB(\vomega)\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} \tag{2}
+                    \parens*{\nabla\cdot\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\nabla\cdot\parens*{\vB(\vk)\exp\parens*{i\vk\cdot\vr}}}{3}{\vk} \\
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\cdot\vB(\vk)}{3}{\vk} \\
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\cdot\vB(\vk)\exp\parens*{i\vk\cdot\vr}}{3}{\vk} \tag{1} \\
+                    \parens*{\nabla\times\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\nabla\times\parens*{\vB(\vk)\exp\parens*{i\vk\cdot\vr}}}{3}{\vk} \\
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\times\vB(\vk)}{3}{\vk} \\
+                    &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\times\vB(\vk)\exp\parens*{i\vk\cdot\vr}}{3}{\vk} \tag{2}
                 \end{align*}
-                上式中の $\vB(\omega)$ を $\vomega$ 方向の成分 $\vBP$ とそれに垂直な成分 $\vBO \coloneq \vB(\omega) - \vBP$ に分解する(`P': `parallel', `O': `orthogonal')。
+                上式中の $\vB(\vk)$ を $\vk$ 方向の成分 $\vBP$ とそれに垂直な成分 $\vBO \coloneq \vB(\vk) - \vBP$ に分解する(`P': `parallel', `O': `orthogonal')。
                 $\vBP$ を具体的に書くと次式である。
-                \[ \vBP = \parens*{\frac{\vomega}{\norm{\vomega}_2}\cdot\vB(\omega)}\frac{\vomega}{\norm{\vomega}_2} = \parens*{\frac{\vomega}{\norm{\vomega}_2^2}\cdot\vB(\vomega)}\vomega \]
+                \[ \vBP = \parens*{\frac{\vk}{\norm{\vk}_2}\cdot\vB(\vk)}\frac{\vk}{\norm{\vk}_2} = \parens*{\frac{\vk}{\norm{\vk}_2^2}\cdot\vB(\vk)}\vk \]
                 これを用いて $\vA$ を分解する。
                 \begin{align*}
-                    \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega}}_{\text{(B)}} \tag{3}\\
+                    \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vk}}_{\text{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vk}}_{\text{(B)}} \tag{3}\\
                     &= \vARL(\vr) + \vADL(\vr) \quad \text{where} \quad \vARL(\vr) \coloneq \text{(A)}, \quad \vADL(\vr) \coloneq \text{(B)}
                 \end{align*}
                 `RL', `DL' はそれぞれ `rotation-less', `divergence-less' の意味であるが，その理由は直後に明らかになる。
                 \par
                 式(1),(2)の計算と全く同様にして次式を得る。
                 \begin{align*}
-                    \nabla\cdot\vADL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\cdot\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} = 0 \\
-                    \nabla\times\vARL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vomega\in\realNumbers^3}{}{i\vomega\times\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vomega} = \bm{0}
+                    \nabla\cdot\vADL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\cdot\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vk} = 0 \\
+                    \nabla\times\vARL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\times\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vk} = \bm{0}
                 \end{align*}
-                これと式(3)より $(\nabla\cdot\vARL)(\vomega) = \parens*{\nabla\cdot\vA}(\vr),\quad (\nabla\times\vADL)(\vomega) = \parens*{\nabla\times\vA}(\vr)$ も成り立つ。
+                これと式(3)より $(\nabla\cdot\vARL)(\vk) = \parens*{\nabla\cdot\vA}(\vr),\quad (\nabla\times\vADL)(\vk) = \parens*{\nabla\times\vA}(\vr)$ も成り立つ。
             \end{proof}
     \section{諸定理}
         \subsection{球殻定理}
