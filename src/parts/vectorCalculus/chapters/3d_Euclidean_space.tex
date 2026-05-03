@@ -13,11 +13,17 @@
             例えば球座標系では $\bm{u} = (r,\theta,\varphi)$ であり，$\bm{r} = \bm{i}_1 r_1 + \bm{i}_2 r_2 + \bm{i}_3 r_3,(r_1,r_2,r_3) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$ である。
             次式で定める量を座標系 $S_T$ の計量係数(Lam\'{e} coefficient)と呼ぶ。
             \[ h_i \coloneq \norm{\partDeriv{\bm{r}}{u_i}{}}_2 \quad (i=1,2,3) \]
-            $h_i$ は $T$ の Jacobi 行列 $J$ の第 $i$ 列のノルムであり，逆写像定理から $J$ は可逆なので $h_i \neq 0$ である。
+            $h_i$ は $T$ の Jacobi 行列 $J$ の第 $i$ 列のノルムであり，逆写像定理から $J$ は可逆なので $h_i > 0$ である。
             \par
             次式で定める単位ベクトルを $S_T$ の $u_i$ 方向単位ベクトルと呼ぶ。
             \[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\bm{r}}{u_i}{}\in\EuclideanSpace^3 \]
             $T$ のJacobi行列の列が互いに直交するため，$\bm{j}_1,\bm{j}_2,\bm{j}_3$ は互いに直交する。
+            $H\coloneq\diag{h_1,h_2,h_3}$ とすると $J^\top J = H^2$ であり，$J^{-1} = H^{-2}J^\top$ である。
+            つまり次式が成り立つ。
+            \begin{equation}
+                \partDeriv{u_i}{r_j}{} = J^{-1}[i,j] = \parens*{H^{-2}J^\top}[i,j] = \frac{1}{h_j^2}J[j,i] = \frac{1}{h_i^2}\partDeriv{r_j}{u_i}{}
+                \label{直交座標系の Jacobi 行列と逆行列の要素の関係}
+            \end{equation}
         \subsection{単位ベクトルの変換}
             \label{単位ベクトルの変換}
             \begin{shadebox}
@@ -44,11 +50,12 @@
             \end{shadebox}
             \begin{proof}
                 \begin{align*}
-                    \phantom{=} &[\bm{i}_1,\bm{i}_2,\bm{i}_3][A_1,A_2,A_3] = \bm{A}(\bm{r}) = \bm{j}_1 \tilde{A}_1 + \bm{j}_2 \tilde{A}_2 + \bm{j}_3 \tilde{A}_3 = [\bm{j}_1,\bm{j}_2,\bm{j}_3][\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \\
+                    \phantom{=} &[\bm{i}_1,\bm{i}_2,\bm{i}_3][A_1,A_2,A_3]^\top = \bm{A}(\bm{r}) = \bm{j}_1 \tilde{A}_1 + \bm{j}_2 \tilde{A}_2 + \bm{j}_3 \tilde{A}_3 = [\bm{j}_1,\bm{j}_2,\bm{j}_3][\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \\
                     = &[\bm{i}_1,\bm{i}_2,\bm{i}_3]JH^{-1}[\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top
                 \end{align*}
             \end{proof}
         \subsection{勾配}
+            \label{勾配}
             \begin{shadebox}
                 既出の記号の定義を引き継ぐ。
                 $\bm{u}\in\realNumbers^3,\bm{r}=T(\bm{u})\in\EuclideanSpace^3$ とする。
@@ -86,10 +93,50 @@
                 \ref{単位ベクトルの変換} と合成関数の微分の連鎖律から次式が成り立つ。
                 \begin{align*}
                     \nabla_\bm{r}\phi(\bm{r}) &= \sum_{i=1}^3 \bm{i}_i\partDeriv{\tilde{\phi}(\bm{u}(\bm{r}))}{r_i}{} = \sum_{i=1}^3\parens*{\sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\partDeriv{r_i}{u_j}{}}\parens*{\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\partDeriv{u_k}{r_i}{}} \\
-                    &= \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\sum_{i=1}^3 \partDeriv{u_k}{r_i}{}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\parens*{T^{-1}T}_{k,j} \\
+                    &= \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\sum_{i=1}^3 \partDeriv{u_k}{r_i}{}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\parens*{J^{-1}J}_{k,j} \\
                     &= \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\delta_{k,j} = \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\partDeriv{\tilde{\phi}}{u_j}{}
                 \end{align*}
             \end{proof}
+    \subsection{発散}
+        \label{発散}
+        \begin{shadebox}
+            既出の記号の定義を引き継ぐ。
+            $\bm{u}\in\realNumbers^3,\bm{r}=T(\bm{u})\in\EuclideanSpace^3$ とする。
+            さらに $T$ は $\textrm{C}^2$ 級であるとし，$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$ が成り立つとする(例: 円柱座標系, 球座標系)。
+            3 次元 Euclid 空間上の $\mathrm{C}^1$ 級のベクトル場 $\bm{A}(\bm{r}) = \bm{i}_1 A_1(\bm{r}) + \bm{i}_2 A_2(\bm{r}) + \bm{i}_3 A_3(\bm{r})$ を $u_1,u_2,u_3$ 直交座標系で表したものを $\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$ とするとき，次式が成り立つ。
+            \[ \nabla_\bm{r}\cdot\bm{A}(\bm{r}) = \frac{1}{h_1 h_2 h_3}\left[ \partDeriv{h_2 h_3 \tilde{A}_1(\bm{u})}{u_1}{} + \partDeriv{h_3 h_1 \tilde{A}_2(\bm{u})}{u_2}{} + \partDeriv{h_1 h_2 \tilde{A}_3(\bm{u})}{u_3}{} \right] = \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3 \tilde{A}_i(\bm{u})}{h_i}}{u_i}{} \]
+        \end{shadebox}
+        \begin{proof}
+            \begin{align*}
+                \nabla_\bm{r}\cdot\bm{A}(\bm{r}) &= \sum_{i=1}^3 \partDeriv{A_i(\bm{r})}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \partDeriv{A_i(\bm{r})}{u_j}{}\partDeriv{u_j}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\partDeriv{u_j}{r_i}{} \\
+                &= \sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{}\quad(\because\ref{直交座標系の Jacobi 行列と逆行列の要素の関係}) \tag{1}
+            \end{align*}
+            \par
+            式(1)の$\tilde{A}_k(\bm{u})$に関する項に着目すると，以下のように計算される。
+            但し以下の式で$\delta_{i,j}$はKroneckerのデルタを表す。
+            \begin{align*}
+                \phantom{=} &\sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\partDeriv{r_i}{u_j}{} \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{r_i}{u_j}{u_k}\partDeriv{r_i}{u_j}{} \right] \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \right] \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})h_k^2\delta_{k,j} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}h_k^2\delta_{k,j} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \right] \\
+                = &\frac{1}{h_k^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_k}{}\right)\tilde{A}_k(\bm{u})h_k^2 + h_k\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} \right] + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} \\
+                = &\frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \underbrace{\frac{1}{h_j^2}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{}}_{(2)} \quad \left(\because \text{仮定より}\partDerivLong{\frac{1}{h_k}}{u_j}{} = 0\right) \tag{3}
+            \end{align*}
+            式(2)を評価する。
+            $j=k$のとき次式より0である。
+            \[ \partDeriv{\bm{r}}{u_k}{2}\cdot\partDeriv{\bm{r}}{u_k}{} = \frac{1}{2}\partDerivLong{\left(\partDeriv{\bm{r}}{u_k}{}\cdot\partDeriv{\bm{r}}{u_k}{}\right)}{u_k}{} = \frac{1}{2}\partDeriv{h_k^2}{u_k}{} = 0 \]
+            $j\neq k$のとき次式を得る。
+            \begin{align*}
+                \phantom{=} &\frac{1}{h_j^2}\partDerivIIHetero{\bm{r}}{u_j}{u_k}\cdot\partDeriv{\bm{r}}{u_j}{} = \frac{1}{h_j^2}\partDerivIIHetero{\bm{r}}{u_k}{u_j}\cdot\partDeriv{\bm{r}}{u_j}{} \\
+                &= \frac{1}{h_j^2}\times\frac{1}{2} \partDerivLong{\left(\partDeriv{\bm{r}}{u_j}{}\cdot\partDeriv{\bm{r}}{u_j}{}\right)}{u_k}{} = \frac{1}{h_j^2}\times\frac{1}{2}\partDeriv{h_j^2}{u_k}{} = \frac{1}{h_j}\partDeriv{h_j}{u_k}{}
+            \end{align*}
+            これらを式(3)に適用して次式を得る。
+            % 但し以下で$[i+j]$は$i+j$を3で割った余りを表す。
+            \begin{align*}
+                (3) &= \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\left[ \frac{1}{h_{(k-1)\%3+1}}\partDeriv{h_{(k-1)\%3+1}}{u_k}{} + \frac{1}{h_{(k-1)\%3+2}}\partDeriv{h_{(k-1)\%3+2}}{u_k}{} \right] \\
+                &= \frac{1}{h_1 h_2 h_3}\partDerivLong{\frac{h_1 h_2 h_3\tilde{A}_k(\bm{u})}{h_k}}{u_k}{}
+            \end{align*}
+        \end{proof}
     \section{諸公式}
         \subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
             \begin{proof}
@@ -364,7 +411,7 @@
                     \[\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i}\]
                     と表せることになる。
                     \par
-                    次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はクロネッカーのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
+                    次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はKroneckerのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
                     $\bm{v}_1,\dotsc,\bm{v}_m\;(m\leq n)$は一次独立であったから次の行列
                     \[
                         A = \left[
