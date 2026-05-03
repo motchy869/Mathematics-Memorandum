@@ -1,13 +1,14 @@
 \chapter{空間と座標系の関係}
+    \label{空間と座標系の関係}
     空間と座標系の関係は次の通りである。必ずしも包含関係ではないことに留意すべし。
     $N$ は自然数である。
     \begin{enumerate}
         \item $\realNumbers^N\coloneq N$ 次元実ベクトル空間
         \item $\mathbb{E}^N（N \text{次元 Euclid 空間}）\coloneq\realNumbers^N$ に標準内積が付加されたもの。例えば物理学では，ここが物理現象の舞台。
         \item 座標系：$\EuclideanSpace^N$ と $\realNumbers^N$ 間の（特異点を除いて）可逆な写像
-        \item Euclid 空間上の，座標が陽に現れない関係式が，ある座標系上で成り立つなら，他の座標系上でも成り立つ。
-        \item スカラー場：まず $\EuclideanSpace^N$ から $\realNumbers$ への写像として定義される。しかし実際の計算に於いては，座標系を定めて $\realNumbers^3\to\EuclideanSpace^3\to\realNumbers$ の合成写像が使われるのが普通である。
-        \item ベクトル場：まず $\EuclideanSpace^N$ から $\EuclideanSpace^N$ への写像として定義される。スカラー場と同様の留意事項あり。
-        \item 勾配，発散は $\EuclideanSpace^N$ 上で定義される。座標系がそれを $\realNumbers^N$ に写す。
-        \item 外積，回転は $\EuclideanSpace^3$ 上で定義される。座標系がそれを $\realNumbers^3$ に写す。
+        \item Euclid 空間上の，座標が陽に現れない関係式が成り立つことと，ある座標系上でその関係式が成り立つことは同値である。\label{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}
+        \item スカラー場：まず $\EuclideanSpace^N$ から $\realNumbers$ への写像として定義される。実際の計算に於いては，適当な座標系を定めて $\realNumbers^N\to\EuclideanSpace^N\to\realNumbers$ の合成写像が使われる場面が多い。
+        \item ベクトル場：まず $\EuclideanSpace^N$ から $\EuclideanSpace^N$ への写像として定義される。留意事項はスカラー場と同様。
+        \item 勾配，発散は $\EuclideanSpace^N$ 上で定義される。実際の計算に於いては，適当な座標系によって $\realNumbers^N$ 上で表現される場面が多い。
+        \item 外積，回転は $\EuclideanSpace^3$ 上で定義される。留意事項は勾配，発散と同様。
     \end{enumerate}
