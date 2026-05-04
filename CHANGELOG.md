@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Refined statements in 'metric coefficient and unit vector'.
 - Added:
   - relationship between N-dimensional Euclidean space and coordinate systems
+  - existence of vector potential for divergence-free vector field
 
 ## [0.24.0] - 2026-04-25
 
