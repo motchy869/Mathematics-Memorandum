@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added:
   - relationship between N-dimensional Euclidean space and coordinate systems
   - existence of vector potential for divergence-free vector field
+  - property: the curl of a vector field is not always orthogonal to the vector field itself.
 
 ## [0.24.0] - 2026-04-25
 
