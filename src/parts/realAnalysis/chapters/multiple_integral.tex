@@ -1,12 +1,12 @@
 \chapter{重積分}
     \section{平均値の定理}
         \begin{shadebox}
-            $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\bm{x}'\st\integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} = f(\bm{x}')|\Omega|$
+            $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\bm{x}'\st\integrate{\Omega}{}{f(\bm{x})}{n}{x} = f(\bm{x}')|\Omega|$
         \end{shadebox}
         \begin{proof}
             \quad\par
             $\Omega$内での$f$の最小値と最大値を各々$m(\Omega),M(\Omega)$とすると
-            \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\bm{x})}{}{\bm{x}} \leq M(\Omega)\]
+            \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)\]
             であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\bm{x}'\st I(\Omega) = f(\bm{x}')$であり，定理が従う。
         \end{proof}
     \section{\texorpdfstring{$C^1$}{C\string^1}級の変換による面積0の集合の像の面積もまた0}
