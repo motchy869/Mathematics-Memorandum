@@ -262,23 +262,23 @@
                 %     &= \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}
                 % \end{align*}
             \end{proof}
-        \subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r}$}{発散はベクトル場の法線面積分の体積の商の極限である}}
+        \subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2 r$}{発散はベクトル場の法線面積分の体積の商の極限である}}
             \begin{shadebox}
                 $\bm{r}_0\in\EuclideanSpace^3$とし，$\Omega\subset\EuclideanSpace^3$上のベクトル場$A$が$\bm{r}_0$の近傍で$C^1$級であるとする。
                 $\bm{r}_0$を含む微小な領域を$V$とし，$\partial V$を$V$の境界，$|V|$を$V$の体積とする。
                 但し$\partial V$は$C^1$級であるとする。
                 このとき次式が成り立つ。
-                \[ (\nabla\cdot A)(\bm{r}_0) = \frac{1}{|V|}\lim_{|V|\to 0}\int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r} \]
+                \[ (\nabla\cdot A)(\bm{r}_0) = \frac{1}{|V|}\lim_{|V|\to 0}\int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2 r \]
                 ここに$\bm{n}(\bm{r})$は$\bm{r}\in\partial V$に於ける外向きの法線ベクトルである。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 発散定理より次式が成り立つ。
-                \[ \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2\bm{r} = \int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3\bm{r} \]
+                \[ \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2 r = \int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3 r \]
                 $\varepsilon>0$を任意に小さくとる。
                 $A$が$\bm{r}_0$の近傍で$C^1$級であるという仮定から，$V$を充分小さくとれば，$|(\nabla\cdot A)(\bm{r}) - (\nabla\cdot A)(\bm{r}_0)| < \varepsilon$である。
                 よって次式が成り立つ。
-                \[ \left| \frac{1}{|V|}\int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3\bm{r} - (\nabla\cdot A)(\bm{r}_0) \right| < \varepsilon \]
+                \[ \left| \frac{1}{|V|}\int_V (\nabla\cdot A)(\bm{r})\mathrm{d}^3 r - (\nabla\cdot A)(\bm{r}_0) \right| < \varepsilon \]
                 $|V|\to 0$とすれば定理の主張が成り立つ。
             \end{proof}
         \subsection{ベクトルのスカラー関数倍の発散\texorpdfstring{: $\nabla_\bm{r}\cdot f(\bm{r})\bm{A}(\bm{r}) = \bigl(\nabla_\bm{r}f(\bm{r})\bigr)\cdot \bm{A}(\bm{r}) + f(\bm{r})\nabla_\bm{r}\cdot\bm{A}(\bm{r})$}{}}
@@ -367,12 +367,12 @@
                     $f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて，その絶対値がある$\alpha>0$に対して$o(\norm{\bm{r}}_2^{-3-\alpha})$であるとする。
                     このとき$\realNumbers^3$上での$f$の積分は存在する。
                     すなわち次式が成り立つ。
-                    \[ R>0, V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r}} < \infty \]
+                    \[ R>0, V(R) \coloneq \setComprehension{\bm{r}\in\realNumbers^3}{\norm{\bm{r}}_2 \leq R} ,\lim_{R\to\infty} \abs{\int_{V(R)} f(\bm{r}) \mathrm{d}^3 r} < \infty \]
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
                     $R>0$は十分大きいものとし，$I(R)$を次式で定義する。
-                    \[ I(R) \coloneq \int_{V(R)} f(\bm{r}) \mathrm{d}^3\bm{r} \]
+                    \[ I(R) \coloneq \int_{V(R)} f(\bm{r}) \mathrm{d}^3 r \]
                     球座標変換$\bm{r} = r[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$を用いて次式を得る。
                     \[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\bm{r})r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
                     $0<R_0<R$なる$R_0$をとり，$I(R) = I(R_0) + I_2(R)$と分解する。
@@ -437,7 +437,7 @@
             \begin{shadebox}
                 $R>0,V \coloneq \setComprehension{\bm{r}\in\EuclideanSpace^3}{\norm{\bm{r}}_2\leq R}$とする。
                 ベクトル場$\bm{A}(\bm{r})$を次式で定義する。
-                \[ \bm{A}(\bm{r}) \coloneq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3\bm{r}' \]
+                \[ \bm{A}(\bm{r}) \coloneq \int_V \frac{\bm{r}-\bm{r}'}{\norm{\bm{r}-\bm{r}'}_2^3} \mathrm{d}^3 r' \]
                 このとき次が成り立つ。
                 \[
                     \bm{A}(\bm{r}) = \frac{4}{3}\pi
