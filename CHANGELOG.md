@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Restructured Vector Analysis.
   - Refined statements in 'metric coefficient and unit vector'.
 - Added:
+  - weighted Cauchy-Schwarz inequality
   - relationship between N-dimensional Euclidean space and coordinate systems
   - existence of vector potential for divergence-free vector field
   - property: the curl of a vector field is not always orthogonal to the vector field itself.

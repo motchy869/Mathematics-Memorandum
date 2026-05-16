@@ -1,0 +1,13 @@
+\chapter{基本的な不等式}
+    \section{重み付き Cauchy-Schwarz の不等式}
+        \label{discrete_weighted_Cauchy_Schwarz_inequality}
+        \begin{shadebox}
+            $N\in\naturalNumbers$ とする。
+            $I$ を $N$ 項組の添え字集合，$a_i,b_i\in\realNumbers,\;w_i\in\nonNegRealNumbers\;(i\in I)$ とする。
+            このとき，次式が成り立つ。
+            \[ \parens*{\sum_{i\in I} w_i a_i b_i}^2 \leq \parens*{\sum_{i\in I} w_i a_i^2} \parens*{\sum_{i\in I} w_i b_i^2} \]
+        \end{shadebox}
+        \begin{proof}
+            まず，$w_i=1\;(\forall i\in I)$ の場合について，良く知られた 2 次式の判別式を使う証明法を用いる。
+            次に，$a_i,b_i$ を $\sqrt{w_i}a_i,\sqrt{w_i}b_i$ に置き換えればよい。
+        \end{proof}

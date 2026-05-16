@@ -9,6 +9,14 @@
             \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)\]
             であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\bm{x}'\st I(\Omega) = f(\bm{x}')$であり，定理が従う。
         \end{proof}
+    \section{重み付き Cauchy-Schwarz の不等式}
+        \begin{shadebox}
+            $n\in\naturalNumbers, D$ は $\realNumbers^n$ の閉領域であるとする。
+            $f,g:D\to\realNumbers,w:D\to\nonNegRealNumbers$ は連続であるとする。
+            このとき，次式が成り立つ。
+            \[ \parens*{\integrate{D}{}{w(\bm{x})f(\bm{x})g(\bm{x})}{n}{x}}^2 \leq \parens*{\integrate{D}{}{w(\bm{x})f(\bm{x})^2}{n}{x}} \parens*{\integrate{D}{}{w(\bm{x})g(\bm{x})^2}{n}{x}} \]
+        \end{shadebox}
+        Riemann 積分に於いて，Riemann 和に対して \ref{discrete_weighted_Cauchy_Schwarz_inequality} を適用して証明できる。
     \section{\texorpdfstring{$C^1$}{C\string^1}級の変換による面積0の集合の像の面積もまた0}
         \begin{shadebox}
             閉超直方体$R\subset\realNumbers^n$を含む開集合$D$上で定義された$C^1$級の\textcolor{red}{変換}$F:D\to\realNumbers^n$を考える。
