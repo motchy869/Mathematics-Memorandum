@@ -235,7 +235,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0] - 2021-07-03
 
 - Fixed wrong letters: Replaced `\mu` with `\theta` in explanation of the posterior distribution of the expectation value of normal distribution.
-- Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwartz' inequality.
+- Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwarz' inequality.
 - Added an n-dimensional volume of V: {x_1, ..., x_n >= 0 and x_1+...x_n <= 1}.
 - Added a theorem: tr(AB) is real number when A and B is Hermitian matrices.
 - Added mixed-product property of Kronecker product.
