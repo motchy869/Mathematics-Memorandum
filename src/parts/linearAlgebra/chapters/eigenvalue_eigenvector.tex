@@ -184,11 +184,7 @@
                 $N\in\naturalNumbers,a_0,a_1,\dots,a_{N-1}\in\complexNumbers,\bm{a}\coloneq[a_0,\dots,a_{N-1}]^\top$とする。
                 $\bm{a}$の要素を$m\in\{0,1,\dots,N-1\}$だけ巡回シフトしたベクトル$\bm{a}_m$を次式で定義する。
                 \[
-                    \bm{a}_m \coloneq
-                    \begin{cases}
-                        \bm{a} & (m=0) \\
-                        [a_{N-m},\dots,a_{N-1},a_0,a_1,\dots,a_{N-1-m}]^\top & (m=1,2,\dots,N-1)
-                    \end{cases}
+                    \vecEntry{\bm{a}_m}{i}\coloneq\vecEntry{\bm{a}}{(i-m)\%N}
                 \]
                 $A\in\complexNumbers^{N\times N}$を次式で定義する。
                 \[ A \coloneq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
