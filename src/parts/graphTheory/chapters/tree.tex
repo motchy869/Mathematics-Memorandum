@@ -59,3 +59,15 @@
                 \end{figure}
                 $T_1$から$a_1$を除去して$a_2$を加えると新しい木ができる。
             \end{proof}
+        \subsection{完全 2 分木に於いて，内部節点数=葉節点数-1}
+            \begin{proof}
+                \quad\par
+                記号を次のように定義する。
+                \[ N_\text{nd}：\text{節点数},\quad N_\text{int}：\text{内部節点数},\quad N_\text{leaf}：\text{葉節点数},\quad N_\text{ed}：\text{辺数} \]
+                一般の木に対して $N_\text{ed} = N_\text{nd} - 1$ が成り立つ。
+                完全 2 分木に於いては全ての内部節点が 2 本の辺を持つから $N_\text{ed} = 2N_\text{int}$ が成り立つ。
+                以上のことから次式が成り立つ。
+                \[ 2N_\text{int} = N_\text{ed} = N_\text{nd} - 1 = N_\text{int} + N_\text{leaf} - 1\quad\therefore N_\text{int} = N_\text{leaf} - 1 \]
+            \end{proof}
+            \noindent
+            この性質の利用例：論理回路による加算器ツリーに於いて，加算対象の数の個数に対して必要な加算器の個数を求める
