@@ -14,7 +14,7 @@
         \end{proof}
         $l=2$まで具体的に求めた結果:
         \[ S_0 = 1/(1-r),\quad S_1 = r/(1-r)^2,\quad S_2 = r(r+1)/(1-r)^3 \]
-    \section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
+    \section{Abelの総和公式: \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
         \begin{shadebox}
             数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
             \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \parens*{ A_i \coloneq \sum_{j=1}^i a_j } \]
@@ -27,7 +27,7 @@
                     \centering
                     \caption{第2項目の寄与}
                     \begin{tabular}{cc}
-                        $i$            & $a_j$の係数 \\\hline\hline
+                        $i$            & $a_j$の係数\\\hline\hline
                         $1$            & $0$\\
                         $\vdots$    & $\vdots$\\
                         $j-1$        & $0$\\
@@ -64,7 +64,7 @@
             \quad\par
             以下の証明は\url{https://en.wikipedia.org/wiki/Chebyshev%27s_sum_inequality}によるものである。
             \par
-            1. を示す。2. は同様にして示せる。
+            1.を示す。2.は同様にして示せる。
             $S := \sum_{i=1}^n \sum_{j=1}^n (a_i-a_j)(b_i-b_j)$とする。
             $\{a_n\},\{b_n\}$の単調性の仮定から，$(a_i-a_j)$と$(b_i-b_j)$の符号は等しく，$S\geq 0$である。
             よって次式が成り立つ。
@@ -75,7 +75,7 @@
         \end{proof}
     \section{等比級数と0収束列の畳み込み: {\normalsize \texorpdfstring{$|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}{|r|<1, lim\_\{n→∞\}a\_n=0 ⇒ lim\_\{t→∞\} Σ\_\{τ=0\}\string^t r\string^(t-τ) a\_τ} = 0}}
         \begin{shadebox}
-            $|r|<1$とし, 数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき，次が成り立つ。
+            $|r|<1$とし,数列$\{a_n\}$が$\lim_{n\to\infty}a_n=0$を満たすとき，次が成り立つ。
             \[\lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0\]
         \end{shadebox}
         \begin{proof}

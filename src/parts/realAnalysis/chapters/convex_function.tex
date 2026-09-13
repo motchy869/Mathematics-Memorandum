@@ -2,16 +2,16 @@
     \section{諸定理}
         \subsection{一様ノルムの凸性}
             \begin{shadebox}
-                $n\in\naturalNumbers$ とし，$S$ を $\realNumbers^n$ の部分集合とする。
-                $f:S\to\realNumbers$ は有界であるとする。
-                このとき一様ノルム $\norm{\cdot}_{\infty,S}: f\in S\mapsto\sup_{x\in S}\abs{f(x)}$ は凸である。
+                $n\in\naturalNumbers$とし，$S$を$\realNumbers^n$の部分集合とする。
+                $f:S\to\realNumbers$は有界であるとする。
+                このとき一様ノルム$\norm{\cdot}_{\infty,S}: f\in S\mapsto\sup_{x\in S}\abs{f(x)}$は凸である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $f_1,f_2:S\to\realNumbers$ は有界であるとし，$x\in S,t\in[0,1]$ とする。
-                一様ノルムの定義の定義から $\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$ が成り立つので次式が成り立つ。
+                $f_1,f_2:S\to\realNumbers$は有界であるとし，$x\in S,t\in[0,1]$とする。
+                一様ノルムの定義の定義から$\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$が成り立つので次式が成り立つ。
                 \[ (1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)} = \abs{(1-t)f_1(x) + tf_2(x)} \]
-                任意の $x\in S$ について上式が成り立つので $(1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq\norm{(1-t)f_1 + tf_2}_{\infty,S}$ が成り立つ。
+                任意の$x\in S$について上式が成り立つので$(1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq\norm{(1-t)f_1 + tf_2}_{\infty,S}$が成り立つ。
             \end{proof}
         \subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
         \begin{proof}
@@ -76,17 +76,17 @@
             \end{shadebox}
         \subsection{重み付き幾何平均と重み付き調和平均の関係}
             \begin{shadebox}
-                $n\in\naturalNumbers,x_i,w_i>0\;(i=1,\dots,n),\sum_{i=1}^n w_i = 1$ とするとき，$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
+                $n\in\naturalNumbers,x_i,w_i>0\;(i=1,\dots,n),\sum_{i=1}^n w_i = 1$とするとき，$x_1,\dots,x_n$の重み付き幾何平均は重み付き調和平均を下回ることはない。
                 つまり次式が成り立つ。
                 \[ \prod_{i=1}^n {x_i}^{w_i} \geq \frac{1}{\sum_{i=1}^n w_i/x_i} \tag{1} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                式 (1) は次式と等価である。
+                式(1)は次式と等価である。
                 \[ \sum_{i=1}^n w_i/x_i \geq \frac{1}{\prod_{i=1}^n {x_i}^{w_i}} \]
-                ここで $\tilde{x}_i \coloneq x_i$ とすると上式は次式と等価である。
+                ここで$\tilde{x}_i \coloneq x_i$とすると上式は次式と等価である。
                 \[ \sum_{i=1}^n w_i\tilde{x}_i \geq \prod_{i=1}^n {\tilde{x}_i}^{w_i} \]
-                上式の成立は \ref{重み付き相加,相乗平均の関係とYoungの不等式} より明らかである。
+                上式の成立は\ref{重み付き相加,相乗平均の関係とYoungの不等式}より明らかである。
             \end{proof}
         \subsection{2階導関数と凸性の関係}
             \begin{shadebox}

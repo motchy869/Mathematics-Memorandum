@@ -4,14 +4,14 @@
             \quad\par
             $\Img{A}\supseteq\Img{AA^\top}$は明らか。
             その逆を示す。
-            $A\in\complexNumbers^{m\times n},r=\rank{A}$ とする。
-            適当な列置換行列 $P$ により$\tilde{A} \coloneq AP$ とし，$\tilde{A}$ の第 $1,2,\dots,r$ 列ベクトルが生成する部分空間が $\Img{A}$ と等しくなるようにする。
-            $\tilde{A}$ の第 $i$ 列を $\tilde{a}_i$ とする。
+            $A\in\complexNumbers^{m\times n},r=\rank{A}$とする。
+            適当な列置換行列$P$により$\tilde{A} \coloneq AP$とし，$\tilde{A}$の第$1,2,\dots,r$列ベクトルが生成する部分空間が$\Img{A}$と等しくなるようにする。
+            $\tilde{A}$の第$i$列を$\tilde{a}_i$とする。
             \par
             $\vv\in\Img{A}$とする。
-            第 $r+1$ 要素以降が0である適当な $\tilde{\vy}$ が存在して $\vv=\tilde{A}\tilde{y}$ となる。
-            $\vv = AA^\top\vx$ を満たす $\vx$ の存在を示す。
+            第$r+1$要素以降が0である適当な$\tilde{\vy}$が存在して$\vv=\tilde{A}\tilde{y}$となる。
+            $\vv = AA^\top\vx$を満たす$\vx$の存在を示す。
             \[ \vv = AA^\top\vx \iff \tilde{A}\tilde{y} = APP^\top A^\top\vx = \tilde{A}\tilde{A}^\top\vx \]
-            であるから $\tilde{y} = \tilde{A}^\top\vx$ を満たす $\vx$ が存在することを示せばよい。
-            $\rank{\tilde{A}^\top} = r$ であることと $\tilde{\vy}$ の第 $r+1$ 要素以降が0であることから $\vx$ が存在する。
+            であるから$\tilde{y} = \tilde{A}^\top\vx$を満たす$\vx$が存在することを示せばよい。
+            $\rank{\tilde{A}^\top} = r$であることと$\tilde{\vy}$の第$r+1$要素以降が0であることから$\vx$が存在する。
         \end{proof}

@@ -39,7 +39,7 @@
                     \end{bmatrix}
                     = O_{n\times p}
                 \]
-                となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣の Vandermonde 行列は正則だから
+                となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣のVandermonde行列は正則だから
                 \[ [c_1\vv_1,\dotsc,c_p\vv_p] = O_{n\times p} \]
                 となる。$\vv_1,\dotsc,\vv_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
             \end{proof}
@@ -95,8 +95,8 @@
         \subsection{随伴行列}
             \subsubsection{定義}
                 \label{随伴行列の定義}
-                $n\in\naturalNumbers$ とし， $x$ を不定元とする。
-                多項式 $f_n(x)\coloneq x^n+a_{n-1}x^{n-1}+\dotsb+a_0$ に対して次の行列
+                $n\in\naturalNumbers$とし，$x$を不定元とする。
+                多項式$f_n(x)\coloneq x^n+a_{n-1}x^{n-1}+\dotsb+a_0$に対して次の行列
                 \[
                     A =
                     \begin{bmatrix}
@@ -107,14 +107,14 @@
                         0 & 0 & 0 & 1 & 0
                     \end{bmatrix}
                 \]
-                を $f$ の\textbf{随伴行列}という。
+                を$f$の\textbf{随伴行列}という。
             \subsubsection{行列式と固有多項式}
                 \label{随伴行列の行列式と固有多項式}
                 \begin{shadebox}
-                    \ref{随伴行列の定義} の定義を引き継ぐ。
-                    $\lambda\in\complexNumbers$ とする。
-                    $\det{A}=(-1)^n a_0$ であり，$\det{(\lambda I-A)} = f_n(\lambda)$ である。
-                    よって $A$ の固有値は $f_n$ の根である。
+                    \ref{随伴行列の定義}の定義を引き継ぐ。
+                    $\lambda\in\complexNumbers$とする。
+                    $\det{A}=(-1)^n a_0$であり，$\det{(\lambda I-A)} = f_n(\lambda)$である。
+                    よって$A$の固有値は$f_n$の根である。
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
@@ -148,21 +148,21 @@
             \subsubsection{固有ベクトル}
                 \label{随伴行列の固有ベクトル}
                 \begin{shadebox}
-                    \ref{随伴行列の定義} の定義を引き継ぐ。
-                    $\lambda$ は $A$ の固有値であるとする\footnote{$\lambda=0$ も含む。何故ならば $\vv\neq\bm{0}$ が必ず成り立つから。}。
-                    $\vv\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$ は $A$ の固有ベクトルである。
+                    \ref{随伴行列の定義}の定義を引き継ぐ。
+                    $\lambda$は$A$の固有値であるとする\footnote{$\lambda=0$も含む。何故ならば$\vv\neq\bm{0}$が必ず成り立つから。}。
+                    $\vv\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$は$A$の固有ベクトルである。
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
-                    \ref{随伴行列の行列式と固有多項式} より $-a_{n-1}\lambda^{n-1}- a_{n-2}\lambda^{n-2} - \dots - a_1\lambda - a_0 = \lambda^n$ であるから，次式が成り立つ。
+                    \ref{随伴行列の行列式と固有多項式}より$-a_{n-1}\lambda^{n-1}- a_{n-2}\lambda^{n-2} - \dots - a_1\lambda - a_0 = \lambda^n$であるから，次式が成り立つ。
                     \[ A\vv = [\lambda^n,\lambda^{n-1},\dots,\lambda^2,\lambda] = \lambda\vv \]
                 \end{proof}
             \subsubsection{対角化}
                 \begin{shadebox}
-                    \ref{随伴行列の定義} の定義を引き継ぐ。
-                    $A$ の固有値が全て異なるとし，それらを $\lambda_i\;(i=0,1,\dots,n)$ とする。
-                    $\lambda_i$ に対応する固有ベクトルを $\vv_i$ とする。
-                    $A$ は $\lambda_i\;(i=0,1,\dots,n)$ に関する Vandermonde 行列 $V$ を用いて次のように対角化できる。
+                    \ref{随伴行列の定義}の定義を引き継ぐ。
+                    $A$の固有値が全て異なるとし，それらを$\lambda_i\;(i=0,1,\dots,n)$とする。
+                    $\lambda_i$に対応する固有ベクトルを$\vv_i$とする。
+                    $A$は$\lambda_i\;(i=0,1,\dots,n)$に関するVandermonde行列$V$を用いて次のように対角化できる。
                     \[
                         A = V\Lambda V^{-1}\quad\text{where}\quad\Lambda\coloneq\diag{\lambda_0,\lambda_1,\dots,\lambda_n},\quad V\coloneq\begin{bmatrix}
                             \lambda_0^{n-1} & \lambda_1^{n-1} & \cdots & \lambda_n^{n-1} \\
@@ -175,9 +175,9 @@
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
-                    $\lambda_i\;(i=0,1,\dots,n)$ が全て異なるから $V$ は正則である。
-                    \ref{随伴行列の固有ベクトル} より $AV = V\Lambda$ が成り立つ。
-                    この式の両辺に $V^{-1}$ を右から掛けて $A = V\Lambda V^{-1}$ を得る。
+                    $\lambda_i\;(i=0,1,\dots,n)$が全て異なるから$V$は正則である。
+                    \ref{随伴行列の固有ベクトル}より$AV = V\Lambda$が成り立つ。
+                    この式の両辺に$V^{-1}$を右から掛けて$A = V\Lambda V^{-1}$を得る。
                 \end{proof}
         \subsection{巡回行列の固有値}
             \begin{shadebox}
@@ -192,7 +192,7 @@
                 \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
                 ここに$W$は$N\times N$ DFT基底行列であり，第$(n,k)$要素は次式で定義される。
                 \[ W_{n,k} \coloneq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
-                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり，次式で定義される。
+                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散Fourier変換)であり，次式で定義される。
                 \[ \DFT{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
                 \[ \sum_{n=0}^{N-1}\conj{W_{k,n}}a_n \]
@@ -334,7 +334,7 @@
             \end{proof}
     \section{スペクトル写像定理}
         \begin{shadebox}
-            $A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\dotsc,\lambda_n$とし，$f$を多項式とし， $s$ を不定元とする。
+            $A\in\field^{n\times n}$の固有値を重複も含めて$\lambda_1,\dotsc,\lambda_n$とし，$f$を多項式とし，$s$を不定元とする。
             このとき行列多項式$f(A)$の固有値は重複を含めて$f(\lambda_1),\dotsc,f(\lambda_n)$となる。
         \end{shadebox}
         \begin{proof}
@@ -364,7 +364,7 @@
                 十分性は容易に示せるので省略し，必要性のみ示す。
                 $A$を正規行列とする。
                 $A$のSchur分解を$A = SU\HerConj{S}$とする。
-                ここに$S,U \in \complexNumbers^{n \times n}$はそれぞれ適当なユニタリ行列, 上三角行列である。
+                ここに$S,U \in \complexNumbers^{n \times n}$はそれぞれ適当なユニタリ行列,上三角行列である。
                 $A$が正規だから
                 \begin{align*}
                     O = \HerConj{A}A - A\HerConj{A} &= S\HerConj{U}U\HerConj{S} - SU\HerConj{U}\HerConj{S} = S(\HerConj{U}U - U\HerConj{U})\HerConj{S} \\
@@ -549,7 +549,7 @@
                         ,\quad
                         \bm{b} = [0\cdots0\;1]^\top \in \complexNumbers^n
                     \]
-                    と表すと，これの逆行列は次のように表される(\cite{入門線形代数} 問題2.4.8)。
+                    と表すと，これの逆行列は次のように表される(\cite{入門線形代数}問題2.4.8)。
                     \[
                         J(\lambda,n+1)^{-1} =
                         \begin{bmatrix}
@@ -635,11 +635,11 @@
                 \item $\rho(A)$と等しい固有値に対応する正の固有ベクトルが存在する
             \end{enumerate}
         \end{shadebox}
-        Perron-Frobeniusの定理の主張との違いは 2. の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」である。
+        Perron-Frobeniusの定理の主張との違いは2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」である。
         \begin{proof}
             \quad\par
             1.と3.および2.の「$\rho(A)$は$A$の単純固有値の1つと等しく」は\cite{システム線形代数}のPerron-Frobeniusの定理の証明と同じ方法で証明できる。
-            2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」を，\cite{システム線形代数} 170頁 定理6.11 のPerron-Frobeniusの定理の証明を利用して示す。
+            2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」を，\cite{システム線形代数} 170頁 定理6.11のPerron-Frobeniusの定理の証明を利用して示す。
             その証明の中に
             \begin{equation}
                 \lambda_ix_i = \sum_{j=1}^{n}{a_{ij}x_j}

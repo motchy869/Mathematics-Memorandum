@@ -23,9 +23,9 @@
                 以上より$a=d$。これより$b=c$が得られる。
             \end{proof}
     \section{Extended Euclidean Algorithm}
-        Extended Euclidean Algorithm (EEA, 拡張されたユークリッドの互除法)とは，$a,b\in\integers$に対して
+        Extended Euclidean Algorithm (EEA,拡張されたユークリッドの互除法)とは，$a,b\in\integers$に対して
         $as + bt = \gcd(a,b)$となるような$s,t\in\integers$を求める手法である。
-        この手法では次の規則で非負整数列$\{r_i\}$, および整数列$\{q_i\}, \{s_i\}, \{t_i\}$を定める。
+        この手法では次の規則で非負整数列$\{r_i\}$,および整数列$\{q_i\}, \{s_i\}, \{t_i\}$を定める。
         \[ r_0 = a, s_0 = 1, t_0 = 0,\quad r_1 = b, s_1 = 0, t_1 = 1 \]
         \begin{align*}
             r_{i+1} &= r_{i-1} - q_ir_i,0 \leq r_{i+1} < |r_i| \\

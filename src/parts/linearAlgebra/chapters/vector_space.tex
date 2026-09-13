@@ -59,14 +59,14 @@
         \subsection{ベクトル空間\texorpdfstring{$V$}{V}の部分空間\texorpdfstring{$V_1,V_2$}{V1, V2}について，「\texorpdfstring{$V_1\cup V_2$}{V1∪V2}がベクトル空間である」\texorpdfstring{$\iff$}{⇔}「\texorpdfstring{$V_1\subseteq V_2$}{V1⊆V2}または\texorpdfstring{$V_1 \supseteq V_2$}{V1⊇V2}」}
             \begin{proof}
                 \quad\par
-                ($\Leftarrow$) 容易。
+                ($\Leftarrow$)容易。
                 \par
-                ($\Rightarrow$) 背理法で示す。
+                ($\Rightarrow$)背理法で示す。
                 $\exists \vv_1\in V_1\setminus V_2, \;\vv_2\in V_2\setminus V_1$と仮定する。
                 $V_1\cup V_2$がベクトル空間であるから$\vv_1 + \vv_2 \in V_1\cup V_2$である。
                 $\vv_1 + \vv_2 \in V_1$であるとすると
                 \[ \vv_2 = \underbrace{(\vv_1 + \vv_2)}_{\in V_1} - \vv_1 \]
-                となり，左辺$\notin V_1$ であるが，右辺$\in V_1$となり矛盾する。
+                となり，左辺$\notin V_1$であるが，右辺$\in V_1$となり矛盾する。
                 同様に$\vv_1 + \vv_2 \in V_2$であるとしても矛盾が生じる。
                 従って$V_1\cup V_2$がベクトル空間であることに矛盾する。
             \end{proof}
@@ -93,7 +93,7 @@
                 \end{equation*}
                 よって$\vx\in V_i$
             \end{proof}
-        \subsection{一次独立なベクトル\texorpdfstring{$\vv_1,\dotsc,\vv_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\vv\in V$}{v∈V}を加えたものが一次独立 \texorpdfstring{$\iff\;\vv$}{⇔ v}が\texorpdfstring{$\vv_1,\dotsc,\vv_k$}{v1,...,vk}の一次結合で表せない}
+        \subsection{一次独立なベクトル\texorpdfstring{$\vv_1,\dotsc,\vv_k\in V$}{v1,...,vk ∈ V}に\texorpdfstring{$\vv\in V$}{v∈V}を加えたものが一次独立\texorpdfstring{$\iff\;\vv$}{⇔ v}が\texorpdfstring{$\vv_1,\dotsc,\vv_k$}{v1,...,vk}の一次結合で表せない}
             \label{subsec:一次独立なベクトルの，独立集合族としての性質}
             \begin{shadebox}
                 $V$を線形ベクトル空間とし，$\vv_1,\dotsc,\vv_k\in V$が一次独立であるとする。この時，別のベクトル$\vv\in V$を付け加えたものが一次独立であることは，$\vv$が$\vv_1,\dotsc,\vv_k$の一次結合で表せないことと同値である。
@@ -117,17 +117,17 @@
             \end{proof}
         \subsection{\texorpdfstring{$\vv_1,\dots,\vv_N$}{v1,...,vN}が一次独立ならば任意の1つ\texorpdfstring{$\vv_n$}{vi}を除く全てに直交し，かつ\texorpdfstring{$\vv_n$}{vi}には直交しないベクトルが存在する。}
             \begin{shadebox}
-                $N\in\naturalNumbers,n\in\braces{1,2,\dots,N}$ とする。
-                $V$ を線形空間とし，$d \coloneq \dim{V} \geq N$ とする。
-                $\vv_1,\dots,\vv_N \in V$ は一次独立であるとする。
-                このとき $\braces{\vv_1,\dots,\vv_N}\setminus\braces{\vv_n}$ の全てに直交し，かつ $\vv_n$ に直交しない $V$ のベクトルが存在する。
+                $N\in\naturalNumbers,n\in\braces{1,2,\dots,N}$とする。
+                $V$を線形空間とし，$d \coloneq \dim{V} \geq N$とする。
+                $\vv_1,\dots,\vv_N \in V$は一次独立であるとする。
+                このとき$\braces{\vv_1,\dots,\vv_N}\setminus\braces{\vv_n}$の全てに直交し，かつ$\vv_n$に直交しない$V$のベクトルが存在する。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                必要ならば番号を振りなおすことで，一般性を失わずに $n=N$ とできる。
-                $V$ の正規直交基底を用いた $\vv_i\;(i=1,\dots,N)$ の座標ベクトルを $\bm{a}_i\in F^d$ とし($F$ は $V$ の係数体)，$N\times d$ 行列 $A$ は第 $i$ 行が $\bm{a}_i^\top$ であるとする。
-                $A$ は行フルランクであり $A\vx = [\underbrace{0,\dots,0}_{(N-1)\text{個}},1]^\top$ は解をもつ。
-                この解を座標とする $V$ のベクトルは $\vv_1,\dots,\vv_{N-1}$ に直交し，$\vv_N$ とは直交しない。
+                必要ならば番号を振りなおすことで，一般性を失わずに$n=N$とできる。
+                $V$の正規直交基底を用いた$\vv_i\;(i=1,\dots,N)$の座標ベクトルを$\bm{a}_i\in F^d$とし($F$は$V$の係数体)，$N\times d$行列$A$は第$i$行が$\bm{a}_i^\top$であるとする。
+                $A$は行フルランクであり$A\vx = [\underbrace{0,\dots,0}_{(N-1)\text{個}},1]^\top$は解をもつ。
+                この解を座標とする$V$のベクトルは$\vv_1,\dots,\vv_{N-1}$に直交し，$\vv_N$とは直交しない。
             \end{proof}
     \section{諸注意}
         \subsection{

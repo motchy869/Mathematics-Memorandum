@@ -30,7 +30,7 @@
                 \par
                 以上の操作を白い点がなくなるまで繰り返した暁には，黒い点と辺から成る木が出来上がっている。
             \end{proof}
-        \subsection{\texorpdfstring{$\mathcal{I}$}{I} : グラフ\texorpdfstring{$G$}{G}の非閉路部分グラフ全体の集合。\texorpdfstring{$I_1,I_2\in \mathcal{I},|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}{I1,I2∈I, |I1|<|I2|とすると，あるa∈I2が存在してI1∪{a}∈I}}
+        \subsection{\texorpdfstring{$\mathcal{I}$}{I} :グラフ\texorpdfstring{$G$}{G}の非閉路部分グラフ全体の集合。\texorpdfstring{$I_1,I_2\in \mathcal{I},|I_1|<|I_2| \Rightarrow \; ^\exists a \in I_2 \st I_1 \cup \{a\} \in \mathcal{I}$}{I1,I2∈I, |I1|<|I2|とすると，あるa∈I2が存在してI1∪{a}∈I}}
             \begin{proof}
                 \quad\par
                 背理法で示す。
@@ -44,7 +44,7 @@
                 \end{figure}
                 このとき$|I_1| = |I_2| + 1$となる。よって仮定が正しくない。
             \end{proof}
-        \subsection{\texorpdfstring{$\mathcal{T}$}{T} : グラフ\texorpdfstring{$G$}{G}の全域木の集合。\texorpdfstring{$T_1,T_2\in\mathcal{T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 \st (T_1\setminus {a_1}) \cup {a_2} \in \mathcal{T}$}{T1,T2∈T, T1≠T2とする。for ∀ a1∈T1＼T2, ∃a2∈T2 s.t. (T1＼\{a1\})∪\{a2\}∈T}}
+        \subsection{\texorpdfstring{$\mathcal{T}$}{T} :グラフ\texorpdfstring{$G$}{G}の全域木の集合。\texorpdfstring{$T_1,T_2\in\mathcal{T}, T_1\neq T_2$。$^\forall a_1\in T_1\setminus T_2, ^\exists a_2\in T_2 \st (T_1\setminus {a_1}) \cup {a_2} \in \mathcal{T}$}{T1,T2∈T, T1≠T2とする。for ∀ a1∈T1＼T2, ∃a2∈T2 s.t. (T1＼\{a1\})∪\{a2\}∈T}}
             \begin{proof}
                 \quad\par
                 全域木の性質より，$T_2$に$a_1$を加えると$T_2$に閉路$C$がただ１つできる。
@@ -59,13 +59,13 @@
                 \end{figure}
                 $T_1$から$a_1$を除去して$a_2$を加えると新しい木ができる。
             \end{proof}
-        \subsection{完全 2 分木に於いて，内部節点数=葉節点数-1}
+        \subsection{完全2分木に於いて，内部節点数=葉節点数-1}
             \begin{proof}
                 \quad\par
                 記号を次のように定義する。
                 \[ N_\mathrm{nd}：\text{節点数},\quad N_\mathrm{int}：\text{内部節点数},\quad N_\mathrm{leaf}：\text{葉節点数},\quad N_\mathrm{ed}：\text{辺数} \]
-                一般の木に対して $N_\mathrm{ed} = N_\mathrm{nd} - 1$ が成り立つ。
-                完全 2 分木に於いては全ての内部節点が 2 本の辺を持つから $N_\mathrm{ed} = 2N_\mathrm{int}$ が成り立つ。
+                一般の木に対して$N_\mathrm{ed} = N_\mathrm{nd} - 1$が成り立つ。
+                完全2分木に於いては全ての内部節点が2本の辺を持つから$N_\mathrm{ed} = 2N_\mathrm{int}$が成り立つ。
                 以上のことから次式が成り立つ。
                 \[ 2N_\mathrm{int} = N_\mathrm{ed} = N_\mathrm{nd} - 1 = N_\mathrm{int} + N_\mathrm{leaf} - 1\quad\therefore N_\mathrm{int} = N_\mathrm{leaf} - 1 \]
             \end{proof}

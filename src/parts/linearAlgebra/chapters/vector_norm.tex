@@ -7,7 +7,7 @@
                 $x_1,\dotsc,x_n$のうち非零要素が1つ以下のときは明らか。
                 非零要素が2つ以上のときを考える。
                 一般性を失わずに$|x_1|,\dotsc,|x_r|>0\;(2\leq r\leq n)$とする。
-                $\derivLong{\norm{\vx}_p}{p}{} < 0$ を示せば良い。
+                $\derivLong{\norm{\vx}_p}{p}{} < 0$を示せば良い。
                 \begin{align*}
                     \derivLong{\norm{\vx}_p}{p}{} < 0 &\iff \derivLong{\log \norm{\vx}_p}{p}{} < 0 \iff -\frac{1}{p^2}\log \sum_{i=1}^r |x_i|^p + \frac{1}{p}\times\frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < 0 \\
                     &\iff \frac{\sum_{i=1}^r |x_i|^p\log |x_i|}{\sum_{i=1}^r |x_i|^p} < \frac{1}{p}\log \sum_{i=1}^r |x_i|^p \\

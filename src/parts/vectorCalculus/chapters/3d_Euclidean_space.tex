@@ -1,24 +1,24 @@
 \chapter{3次元Euclid空間}
     \section{約束}
         \begin{enumerate}
-            \item $\varepsilon_{ijk}$ は Levi-Civita 記号である
+            \item $\varepsilon_{ijk}$はLevi-Civita記号である
         \end{enumerate}
-    \section{3 次元 Euclid 空間と直交座標系の関係}
+    \section{3次元Euclid空間と直交座標系の関係}
         \subsection{計量係数と単位ベクトル}
             \label{計量係数と単位ベクトル}
-            $T:\realNumbers^3\to\EuclideanSpace^3$ は可逆であり $\mathrm{C}^1$ 級であるとする。
-            $T$ が定める座標系を $S_T$ とする。
-            $T$ のJacobi行列の列は互いに直交するものとする。
-            $\bm{u}\in\realNumbers^3,\vr = T(\bm{u})$ とする。
-            例えば球座標系では $\bm{u} = (r,\theta,\varphi)$ であり，$\vr = \bm{i}_1 r_1 + \bm{i}_2 r_2 + \bm{i}_3 r_3,(r_1,r_2,r_3) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$ である。
-            次式で定める量を座標系 $S_T$ の計量係数(Lam\'{e} coefficient)と呼ぶ。
+            $T:\realNumbers^3\to\EuclideanSpace^3$は可逆であり$\mathrm{C}^1$級であるとする。
+            $T$が定める座標系を$S_T$とする。
+            $T$のJacobi行列の列は互いに直交するものとする。
+            $\bm{u}\in\realNumbers^3,\vr = T(\bm{u})$とする。
+            例えば球座標系では$\bm{u} = (r,\theta,\varphi)$であり，$\vr = \bm{i}_1 r_1 + \bm{i}_2 r_2 + \bm{i}_3 r_3,(r_1,r_2,r_3) = (r\sin\theta\cos\varphi,r\sin\theta\sin\varphi,r\cos\theta)$である。
+            次式で定める量を座標系$S_T$の計量係数(Lam\'{e} coefficient)と呼ぶ。
             \[ h_i \coloneq \norm{\partDeriv{\vr}{u_i}{}}_2 \quad (i=1,2,3) \]
-            $h_i$ は $T$ の Jacobi 行列 $J$ の第 $i$ 列のノルムであり，逆写像定理から $J$ は可逆なので $h_i > 0$ である。
+            $h_i$は$T$のJacobi行列$J$の第$i$列のノルムであり，逆写像定理から$J$は可逆なので$h_i > 0$である。
             \par
-            次式で定める単位ベクトルを $S_T$ の $u_i$ 方向単位ベクトルと呼ぶ。
+            次式で定める単位ベクトルを$S_T$の$u_i$方向単位ベクトルと呼ぶ。
             \[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\vr}{u_i}{}\in\EuclideanSpace^3 \]
-            $T$ のJacobi行列の列が互いに直交するため，$\bm{j}_1,\bm{j}_2,\bm{j}_3$ は互いに直交する。
-            $H\coloneq\diag{h_1,h_2,h_3}$ とすると $J^\top J = H^2$ であり，$J^{-1} = H^{-2}J^\top$ である。
+            $T$のJacobi行列の列が互いに直交するため，$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
+            $H\coloneq\diag{h_1,h_2,h_3}$とすると$J^\top J = H^2$であり，$J^{-1} = H^{-2}J^\top$である。
             つまり次式が成り立つ。
             \begin{equation}
                 \partDeriv{u_i}{r_j}{} = J^{-1}[i,j] = \parens*{H^{-2}J^\top}[i,j] = \frac{1}{h_j^2}J[j,i] = \frac{1}{h_i^2}\partDeriv{r_j}{u_i}{}
@@ -28,15 +28,15 @@
             \label{単位ベクトルの変換}
             \begin{shadebox}
                 既出の記号の定義を引き継ぐ。
-                3 次元 Euclid 空間の標準単位ベクトル $\bm{i}_1,\bm{i}_2,\bm{i}_3$ は直交座標系の単位ベクトル $\bm{j}_1,\bm{j}_2,\bm{j}_3$ を用いて次のように表せる。
+                3次元Euclid空間の標準単位ベクトル$\bm{i}_1,\bm{i}_2,\bm{i}_3$は直交座標系の単位ベクトル$\bm{j}_1,\bm{j}_2,\bm{j}_3$を用いて次のように表せる。
                 \[ \bm{i}_i = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \quad (i=1,2,3) \]
                 つまり行列を用いて次のように表せる。
                 \[ [\bm{i}_1, \bm{i}_2, \bm{i}_3] = [\bm{j}_1, \bm{j}_2, \bm{j}_3]JH^{-1} \]
-                ここに $J$ は $T$ のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$ である。
+                ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $\bm{j}_1,\bm{j}_2,\bm{j}_3$ は正規直交基底であるから次式が成り立つ。
+                $\bm{j}_1,\bm{j}_2,\bm{j}_3$は正規直交基底であるから次式が成り立つ。
                 \[ \bm{i}_i = \sum_{j=1}^3 (\bm{i}_i\cdot\bm{j}_j)\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\partDeriv{\vr}{u_j}{}}\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\sum_{k=1}^3\partDeriv{r_k}{u_j}{}\bm{i}_k}\bm{j}_j \\
                 = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \]
             \end{proof}
@@ -58,10 +58,10 @@
             \label{勾配}
             \begin{shadebox}
                 既出の記号の定義を引き継ぐ。
-                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
-                $\phi:\EuclideanSpace^3\to\complexNumbers$は$\EuclideanSpace^3$上で$\mathrm{C}^1$ 級であるとする。
-                $\tilde{\phi}(\bm{u}) \coloneq \phi(\vr)$ とする。
-                $\phi$ の勾配 $\nabla_\vr\phi(\vr)$ は $\bm{u}$ を用いて次式で表せる。
+                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$とする。
+                $\phi:\EuclideanSpace^3\to\complexNumbers$は$\EuclideanSpace^3$上で$\mathrm{C}^1$級であるとする。
+                $\tilde{\phi}(\bm{u}) \coloneq \phi(\vr)$とする。
+                $\phi$の勾配$\nabla_\vr\phi(\vr)$は$\bm{u}$を用いて次式で表せる。
                 % \[ \nabla_\vr\phi(\vr) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\tilde{\phi}}{u_i}{} = \bracks*{\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
                 \[ \nabla_\vr\phi(\vr) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\tilde{\phi}}{u_i}{} \]
             \end{shadebox}
@@ -90,7 +90,7 @@
                 % \[ \nabla_\vr\phi(\vr) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\tilde{\phi}(\bm{u}) = \bracks*{\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
                 % (2026-05-04) 洗練
                 \quad\par
-                \ref{単位ベクトルの変換} と合成関数の微分の連鎖律から次式が成り立つ。
+                \ref{単位ベクトルの変換}と合成関数の微分の連鎖律から次式が成り立つ。
                 \begin{align*}
                     \nabla_\vr\phi(\vr) &= \sum_{i=1}^3 \bm{i}_i\partDeriv{\tilde{\phi}(\bm{u}(\vr))}{r_i}{} = \sum_{i=1}^3\parens*{\sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\partDeriv{r_i}{u_j}{}}\parens*{\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\partDeriv{u_k}{r_i}{}} \\
                     &= \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\sum_{i=1}^3 \partDeriv{u_k}{r_i}{}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \bm{j}_j\frac{1}{h_j}\sum_{k=1}^3 \partDeriv{\tilde{\phi}}{u_k}{}\parens*{J^{-1}J}_{k,j} \\
@@ -101,9 +101,9 @@
         \label{発散}
         \begin{shadebox}
             既出の記号の定義を引き継ぐ。
-            $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
-            さらに $T$ は $\mathrm{C}^2$ 級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$ が成り立つとする(例: 円柱座標系, 球座標系)。
-            3 次元 Euclid 空間上の $\mathrm{C}^1$ 級のベクトル場 $\vA(\vr) = \bm{i}_1 A_1(\vr) + \bm{i}_2 A_2(\vr) + \bm{i}_3 A_3(\vr)$ を $u_1,u_2,u_3$ 直交座標系で表したものを $\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$ とするとき，次式が成り立つ。
+            $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$とする。
+            さらに$T$は$\mathrm{C}^2$級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$が成り立つとする(例:円柱座標系,球座標系)。
+            3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\vA(\vr) = \bm{i}_1 A_1(\vr) + \bm{i}_2 A_2(\vr) + \bm{i}_3 A_3(\vr)$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，次式が成り立つ。
             \[ \nabla_\vr\cdot\vA(\vr) = \frac{1}{h_1 h_2 h_3}\bracks*{ \partDeriv{h_2 h_3 \tilde{A}_1(\bm{u})}{u_1}{} + \partDeriv{h_3 h_1 \tilde{A}_2(\bm{u})}{u_2}{} + \partDeriv{h_1 h_2 \tilde{A}_3(\bm{u})}{u_3}{} } = \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3 \tilde{A}_i(\bm{u})}{h_i}}{u_i}{} \]
         \end{shadebox}
         \begin{proof}
@@ -203,8 +203,8 @@
     \section{Laplacian}
         \begin{shadebox}
             既出の記号の定義を引き継ぐ。
-            $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
-            さらに$T$は$\mathrm{C}^2$級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
+            $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$とする。
+            さらに$T$は$\mathrm{C}^2$級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$が成り立つとする(例:円柱座標系,球座標系)。
             $\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^2$級であるとする。
             $\tilde{\phi}(\bm{u}) \coloneq \phi(T(\bm{u}))$とする。
             $\nabla^2_\vr\phi(\vr)$は$\bm{u}$を用いて次式で表せる。
@@ -217,7 +217,7 @@
         \subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inProd{A}{C}B - \inProd{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
             \begin{proof}
                 \quad\par
-                直交座標系をとり，単位ベクトルを $\bm{j}_1,\bm{j}_2,\bm{j}_3$ とする。
+                直交座標系をとり，単位ベクトルを$\bm{j}_1,\bm{j}_2,\bm{j}_3$とする。
                 $A,B,C$を次のようにおく。
                 \begin{align*}
                     A &= \bm{j}_1 A_1 + \bm{j}_2 A_2 + \bm{j}_3 A_3 \\
@@ -290,8 +290,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件} より，直交座標系上で成立を示せば十分である。
-                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$ とする。
+                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
+                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$とする。
                 \begin{align*}
                     \nabla_\vr\cdot f(\vr)\vA(\vr) &= \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3}{h_i}\tilde{f} \tilde{A}_i}{u_i}{} = \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3\parens*{\partDeriv{\tilde{f}}{u_i}{}\frac{h_1 h_2 h_3}{h_i} \tilde{A}_i + \tilde{f}\partDerivLong{\frac{h_1 h_2 h_3}{h_i} \tilde{A}_i}{u_i}{}} \\
                     &= \sum_{i=1}^3 \frac{1}{h_i}\partDeriv{\tilde{f}}{u_i}{}\tilde{A}_i + \tilde{f}\frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3}{h_i}\tilde{A}_i}{u_i}{} = (\nabla f)\cdot\vA + f\nabla\cdot\vA
@@ -307,8 +307,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件} より，直交座標系上で成立を示せば十分である。
-                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$ とする。
+                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
+                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$とする。
                 \begin{align*}
                     \nabla_\vr\times f(\vr)\vA(\vr) &= \sum_{i=1}^3 \bm{j}_i\varepsilon_{ijk}\frac{1}{h_j h_k}\partDerivLong{h_k \tilde{f} \tilde{A}_k}{u_j}{} = \sum_{i=1}^3 \bm{j}_i\varepsilon_{ijk}\frac{1}{h_j h_k}\parens*{\partDeriv{\tilde{f}}{u_j}{}h_k \tilde{A}_k + \tilde{f}\partDeriv{h_k \tilde{A}_k}{u_j}{}} \\
                     &= \sum_{i=1}^3 \bm{j}_i\varepsilon_{ijk}\frac{1}{h_j}\partDeriv{\tilde{f}}{u_j}{} \tilde{A}_k + \tilde{f}\sum_{i=1}^3 \bm{j}_i\varepsilon_{ijk}\partDeriv{h_k \tilde{A}_k}{u_j}{} = (\nabla f)\times\vA + f\nabla\times\vA
@@ -322,8 +322,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件} より，直交座標系上で成立を示せば十分である。
-                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})$ とする。
+                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
+                $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})$とする。
                 \begin{align*}
                     \nabla_\vr\norm{\vr+\bm{a}}^n &= \sum_{i=1}^3 \bm{j}_i \frac{1}{h_i}\partDerivLong{\parens*{\norm{\vr+\bm{a}}^2}^{n/2}}{u_i}{} = \sum_{i=1}^3 \bm{j}_i \frac{1}{h_i}\frac{n}{2}\parens*{\norm{\vr+\bm{a}}^2}^{n/2-1} 2(r_i+a_i)\partDeriv{r_i}{u_i}{} \\
                     &= n\norm{\vr+\bm{a}}^{n-2} \sum_{i=1}^3 \bm{j}_i \frac{1}{h_i}(r_i+a_i)h_i = n\norm{\vr+\bm{a}}^{n-2}(\vr+\bm{a})
@@ -332,23 +332,23 @@
     \section{Vector Laplacian}
         \label{VectorLaplacian}
         \begin{definition}
-            $\vA:\vr\in\EuclideanSpace^3 \mapsto \vA(\vr) \in \EuclideanSpace^3$($\vA$の各成分は$\mathrm{C}^2$級)の Vector Laplacian $\nabla^2 \vA$は次式で定義される。
+            $\vA:\vr\in\EuclideanSpace^3 \mapsto \vA(\vr) \in \EuclideanSpace^3$($\vA$の各成分は$\mathrm{C}^2$級)のVector Laplacian $\nabla^2 \vA$は次式で定義される。
             \[ \nabla^2 \vA \coloneq \nabla(\nabla\cdot \vA) - \nabla\times(\nabla\times \vA) \]
         \end{definition}
     \section{無発散ベクトル場のベクトル・ポテンシャルの存在}
         \begin{shadebox}
-            $\vA:\EuclideanSpace^3\to\EuclideanSpace^3$ の発散が 0 であるとき，適当な $\bm{P}:\EuclideanSpace^3\to\EuclideanSpace^3$ が存在して $\nabla\times\bm{P} = \vA$ となる。
+            $\vA:\EuclideanSpace^3\to\EuclideanSpace^3$の発散が0であるとき，適当な$\bm{P}:\EuclideanSpace^3\to\EuclideanSpace^3$が存在して$\nabla\times\bm{P} = \vA$となる。
         \end{shadebox}
         \begin{proof}
             \quad\par
-            \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件} より，直角座標系上で成立を示せば十分である。
-            次式で構成された $\bm{P}$ が $\nabla\times\bm{P} = \vA$ を満たすことを示す。
+            \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直角座標系上で成立を示せば十分である。
+            次式で構成された$\bm{P}$が$\nabla\times\bm{P} = \vA$を満たすことを示す。
             \begin{align*}
                 P_1(\vr) &= \frac{1}{3}\parens*{\integrate{0}{r_3}{A_2(r_1,r_2,\tilde{r_3})}{}{\tilde{r_3}} - \integrate{0}{r_2}{A_3(r_1,\tilde{r_2},r_3)}{}{\tilde{r_2}}} \\
                 P_2(\vr) &= \frac{1}{3}\parens*{\integrate{0}{r_1}{A_3(\tilde{r_1},r_2,r_3)}{}{\tilde{r_1}} - \integrate{0}{r_3}{A_1(r_1,r_2,\tilde{r_3})}{}{\tilde{r_3}}} \\
                 P_3(\vr) &= \frac{1}{3}\parens*{\integrate{0}{r_2}{A_1(r_1,\tilde{r_2},r_3)}{}{\tilde{r_2}} - \integrate{0}{r_1}{A_2(\tilde{r_1},r_2,r_3)}{}{\tilde{r_1}}}
             \end{align*}
-            $\nabla\times\bm{P}$ の第 1 成分は次式である。
+            $\nabla\times\bm{P}$の第1成分は次式である。
             \begin{align*}
                 (\nabla\times\bm{P})_1(\vr) &= \frac{1}{3}\parens*{A_1(\vr) - \integrate{0}{r_1}{\partDeriv{A_2}{r_2}{}(\tilde{r_1},r_2,r_3)}{}{\tilde{r_1}}} - \frac{1}{3}\parens*{\integrate{0}{r_1}{\partDeriv{A_3}{r_3}{}(\tilde{r_1},r_2,r_3)}{}{\tilde{r_1}} - A_1(\vr)} \\
                 &= \frac{2}{3}A_1(\vr) - \frac{1}{3}\integrate{0}{r_1}{\parens*{\partDeriv{A_2}{r_2}{}(\tilde{r_1},r_2,r_3) + \partDeriv{A_3}{r_3}{}(\tilde{r_1},r_2,r_3)}}{}{\tilde{r_1}} \\
@@ -360,7 +360,7 @@
     \section{Helmholtzの定理}
         \subsection{試み1：不完全}
             証明が不完全であるが，一定の成果を得たので書き残しておく。
-            \subsubsection{補題: 全空間に渡る積分が存在するための十分条件}
+            \subsubsection{補題:全空間に渡る積分が存在するための十分条件}
                 \label{全空間に渡る積分が存在するための十分条件}
                 \begin{shadebox}
                     $\vr\in\realNumbers^3$とする。
@@ -382,31 +382,31 @@
                         &= 4\pi\integrate{R_0}{R}{o(r^{-1-\alpha})}{}{r} < \infty \text{ as } R\to\infty
                     \end{align*}
                 \end{proof}
-            \subsubsection{補題: 与えられた発散を有し，回転が\texorpdfstring{$\bm{0}$}{0}であるベクトル場の構成}
+            \subsubsection{補題:与えられた発散を有し，回転が\texorpdfstring{$\bm{0}$}{0}であるベクトル場の構成}
                 \label{与えられた発散を有し，回転が無いベクトル場の構成}
                 Diracのデルタ関数を使わずに証明したいが，未達成。今後の課題。
-            \subsubsection{補題: 与えられた回転を有し，発散が0であるベクトル場の構成}
+            \subsubsection{補題:与えられた回転を有し，発散が0であるベクトル場の構成}
                 \label{与えられた回転を有し，発散が無いベクトル場の構成}
                 Diracのデルタ関数を使わずに証明したいが，未達成。今後の課題。
-            \subsubsection{Helmholtzの定理: 任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場であって，\ref{全空間に渡る積分が存在するための十分条件}の意味で十分遠方で0に収束するものは回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
+            \subsubsection{Helmholtzの定理:任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場であって，\ref{全空間に渡る積分が存在するための十分条件}の意味で十分遠方で0に収束するものは回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
                 任意に与えられた，発散および回転が十分遠方で0に収束するような$\mathrm{C}^1$級のベクトル場$A$が与えられたとき，補題\ref{与えられた発散を有し，回転が無いベクトル場の構成}により$A$と同じ発散を持ち，かつ回転が$\bm{0}$であるようなベクトル場$B$を構成できる。
                 このとき$A - B$は発散が0であるので，補題\ref{与えられた回転を有し，発散が無いベクトル場の構成}により，回転がこれに一致するようなベクトル場$C$を構成できる。
                 これらを用いて$A = B + C$と分解すればよい。
         \subsection{試み2：完成度高}
-            これはFourier変換を用いる発想であり，\cite{qm3_chap5_j} 11.2 節の内容を筆者が理解してまとめたものである。
-            \subsubsection{Helmholtzの定理: 任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場は回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
+            これはFourier変換を用いる発想であり，\cite{qm3_chap5_j} 11.2節の内容を筆者が理解してまとめたものである。
+            \subsubsection{Helmholtzの定理:任意の\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級のベクトル場は回転が\texorpdfstring{$\bm{0}$}{0}である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場と発散が0である\texorpdfstring{$\mathrm{C}^1$}{C\string^1}級の場に分解できる}
             \newcommand*{\vBO}{\vB_\mathrm{O}(\vk)}
             \newcommand*{\vBP}{\vB_\mathrm{P}(\vk)}
             \begin{proof}
                 \quad\par
-                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件} より，直角座標系上で成立を示せば十分である。
-                ベクトル場 $\vA:\realNumbers^3\to\complexNumbers^3$ は $\mathrm{C}^1$ 級であるとする。
-                $\vA$ のFourier変換を $\vB:\realNumbers^3\to\complexNumbers^3$ とする（次式）。
+                \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直角座標系上で成立を示せば十分である。
+                ベクトル場$\vA:\realNumbers^3\to\complexNumbers^3$は$\mathrm{C}^1$級であるとする。
+                $\vA$のFourier変換を$\vB:\realNumbers^3\to\complexNumbers^3$とする（次式）。
                 \begin{gather*}
                     \vB(\vk) = \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vr\in\realNumbers^3}{}{\vA(\vr)\exp\parens*{-i\vk\cdot\vr}}{3}{\vr} \\
                     \vA(\vr) = \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vB(\vk)\exp\parens*{i\vk\cdot\vr}}{3}{\vk}
                 \end{gather*}
-                これを用いて $\vA$ の発散と回転を計算すると次式を得る。
+                これを用いて$\vA$の発散と回転を計算すると次式を得る。
                 \begin{align*}
                     \parens*{\nabla\cdot\vA}(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\nabla\cdot\parens*{\vB(\vk)\exp\parens*{i\vk\cdot\vr}}}{3}{\vk} \\
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\cdot\vB(\vk)}{3}{\vk} \\
@@ -415,22 +415,22 @@
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\parens*{\nabla\exp\parens*{i\vk\cdot\vr}}\times\vB(\vk)}{3}{\vk} \\
                     &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\times\vB(\vk)\exp\parens*{i\vk\cdot\vr}}{3}{\vk} \tag{2}
                 \end{align*}
-                上式中の $\vB(\vk)$ を $\vk$ 方向の成分 $\vBP$ とそれに垂直な成分 $\vBO \coloneq \vB(\vk) - \vBP$ に分解する(`P': `parallel', `O': `orthogonal')。
-                $\vBP$ を具体的に書くと次式である。
+                上式中の$\vB(\vk)$を$\vk$方向の成分$\vBP$とそれに垂直な成分$\vBO \coloneq \vB(\vk) - \vBP$に分解する(`P': `parallel', `O': `orthogonal')。
+                $\vBP$を具体的に書くと次式である。
                 \[ \vBP = \parens*{\frac{\vk}{\norm{\vk}_2}\cdot\vB(\vk)}\frac{\vk}{\norm{\vk}_2} = \parens*{\frac{\vk}{\norm{\vk}_2^2}\cdot\vB(\vk)}\vk \]
-                これを用いて $\vA$ を分解する。
+                これを用いて$\vA$を分解する。
                 \begin{align*}
                     \vA(\vr) &= \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vk}}_{\mathrm{(A)}} + \underbrace{\frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vk}}_{\mathrm{(B)}} \tag{3}\\
                     &= \vARL(\vr) + \vADL(\vr) \quad \text{where} \quad \vARL(\vr) \coloneq \text{(A)}, \quad \vADL(\vr) \coloneq \text{(B)}
                 \end{align*}
-                `RL', `DL' はそれぞれ `rotation-less', `divergence-less' の意味であるが，その理由は直後に明らかになる。
+                `RL', `DL'はそれぞれ`rotation-less', `divergence-less'の意味であるが，その理由は直後に明らかになる。
                 \par
                 式(1),(2)の計算と全く同様にして次式を得る。
                 \begin{align*}
                     \nabla\cdot\vADL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\cdot\vBO\exp\parens*{i\vk\cdot\vr}}{3}{\vk} = 0 \\
                     \nabla\times\vARL(\vr) &= \frac{1}{\sqrt{(2\pi)^3}}\integrate{\vk\in\realNumbers^3}{}{i\vk\times\vBP\exp\parens*{i\vk\cdot\vr}}{3}{\vk} = \bm{0}
                 \end{align*}
-                これと式(3)より $(\nabla\cdot\vARL)(\vk) = \parens*{\nabla\cdot\vA}(\vr),\quad (\nabla\times\vADL)(\vk) = \parens*{\nabla\times\vA}(\vr)$ も成り立つ。
+                これと式(3)より$(\nabla\cdot\vARL)(\vk) = \parens*{\nabla\cdot\vA}(\vr),\quad (\nabla\times\vADL)(\vk) = \parens*{\nabla\times\vA}(\vr)$も成り立つ。
             \end{proof}
     \section{諸定理}
         \subsection{球殻定理}
