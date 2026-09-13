@@ -19,9 +19,9 @@
         \[(a_1+ib_1)(a_2+ib_2) = (a_1a_2-b_1b_2)+i(a_1b_2+b_2a_1)\]
         なぜならば，
         \begin{align*}
-            (a_1+ib_1)(a_2+ib_2) &= \left[(a_1,0)+i(b_1,0)\right]\times\left[(a_2,0)+i(b_2,0)\right] \\
-            &= \left[(a_1,0)+(0,1)\times(b_1,0)\right]\times\left[(a_2,0)+(0,1)\times(b_2,0)\right] \\
-            &= \left[(a_1,0)+(0,b_1)\right]\times\left[(a_2,0)+(0,b_2)\right] \\
+            (a_1+ib_1)(a_2+ib_2) &= \bracks*{(a_1,0)+i(b_1,0)}\times\bracks*{(a_2,0)+i(b_2,0)} \\
+            &= \bracks*{(a_1,0)+(0,1)\times(b_1,0)}\times\bracks*{(a_2,0)+(0,1)\times(b_2,0)} \\
+            &= \bracks*{(a_1,0)+(0,b_1)}\times\bracks*{(a_2,0)+(0,b_2)} \\
             &= (a_1,b_1)\times(a_2,b_2) = (a_1a_2-b_1b_2,a_1b_2+b_2a_1) \\
             &= (a_1a_2-b_1b_2)+i(a_1b_2+b_2a_1)
         \end{align*}
@@ -64,11 +64,11 @@
                 $z = a + bi\;(a,b\in\realNumbers)$とする。
                 \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |\NapierE^{bi\log{x}}| = x^\Re{z} \]
             \end{proof}
-        \subsection{\texorpdfstring{$^\forall n\nmid k,\sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
+        \subsection{\texorpdfstring{$^\forall n\nmid k,\sum_{l=1}^n{\exp\parens*{i\frac{k}{n}2\pi l}} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
             \label{fml:花びら定理}
             \begin{proof}
                 \begin{align*}
-                    \sum_{l=1}^n{\exp\left(i\frac{k}{n}2\pi l\right)} &= \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\exp\left(i\frac{k}{n}2\pi\right)^n\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} = \frac{\exp\left(i\frac{k}{n}2\pi\right)\left(1-\NapierE^{ik2\pi}\right)}{1-\exp\left(i\frac{k}{n}2\pi\right)} =0
+                    \sum_{l=1}^n{\exp\parens*{i\frac{k}{n}2\pi l}} &= \frac{\exp\parens*{i\frac{k}{n}2\pi}\parens*{1-\exp\parens*{i\frac{k}{n}2\pi}^n}}{1-\exp\parens*{i\frac{k}{n}2\pi}} = \frac{\exp\parens*{i\frac{k}{n}2\pi}\parens*{1-\NapierE^{ik2\pi}}}{1-\exp\parens*{i\frac{k}{n}2\pi}} =0
                 \end{align*}
             \end{proof}
     \section{代数方程式}

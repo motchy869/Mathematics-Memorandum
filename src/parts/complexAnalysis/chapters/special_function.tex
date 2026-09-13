@@ -8,18 +8,18 @@
                 $G_n(z) \coloneq \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t}$とする。
                 \par
                 Gamma関数$\integrate{0}{\infty}{t^{z-1}\NapierE^{-t}}{}{t}$は収束するから，十分大きい$T_1(\varepsilon)>0$を取れば
-                \[ \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}\NapierE^{-t}\right|}{}{t} < \varepsilon/3 \]
+                \[ \abs{\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t}} \leq \integrate{T_1(\varepsilon)}{\infty}{\abs{t^{z-1}\NapierE^{-t}}}{}{t} < \varepsilon/3 \]
                 \par
                 \ref{(1-t/n)^nは単調増加}より$(1-t/n)^n$は$n$について単調増加であり，かつ$\lim_{n\to\infty}(1-t/n)^n = \NapierE^{-t}$なので，$n \geq T_1(\varepsilon)$ならば
                 \begin{align*}
-                    &\left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \leq \integrate{T_1(\varepsilon)}{n}{\left|t^{z-1}(1-t/n)^n\right|}{}{t} \\
-                    &= \integrate{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\left|t^{z-1}\NapierE^{-t}\right|}{}{t} < \varepsilon/3
+                    &\abs{\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}} \leq \integrate{T_1(\varepsilon)}{n}{\abs{t^{z-1}(1-t/n)^n}}{}{t} \\
+                    &= \integrate{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\abs{t^{z-1}\NapierE^{-t}}}{}{t} < \varepsilon/3
                 \end{align*}
                 また，十分大きい自然数$N_1(\varepsilon,T_1(\varepsilon))$をとると，$n \geq N_1(\varepsilon,T_1(\varepsilon))$ならば次式が成り立つ。
-                \[ \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t}\right| < \varepsilon/3 \]
+                \[ \abs{\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t}} < \varepsilon/3 \]
                 以上より，$n \geq \max\{T_1(\varepsilon), N_1(\varepsilon,T_1(\varepsilon))\}$ならば次式が成り立つ。
                 \begin{align*}
-                    \left|\Gamma(z) - G_n(z)\right| &= \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t} + \integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t} - \integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| \\
-                    &\leq \left|\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t}\right| + \left|\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t}\right| + \left|\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}\right| < \varepsilon
+                    \abs{\Gamma(z) - G_n(z)} &= \abs{\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t} + \integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t} - \integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}} \\
+                    &\leq \abs{\integrate{T_1(\varepsilon)}{\infty}{t^{z-1}\NapierE^{-t}}{}{t}} + \abs{\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t}} + \abs{\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}} < \varepsilon
                 \end{align*}
             \end{proof}

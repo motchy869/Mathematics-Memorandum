@@ -7,15 +7,15 @@
         \begin{proof}
             \begin{align*}
                 \nabla(\nabla\cdot A) &= \bm{i}_1 \partDerivLong{(\nabla\cdot A)}{r_1}{} + \bm{i}_2 \partDerivLong{(\nabla\cdot A)}{r_2}{} + \bm{i}_3 \partDerivLong{(\nabla\cdot A)}{r_3}{} \\
-                &= \phantom{+} \bm{i}_1\left(\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_3}{r_1}{r_3}\right) \\
-                &\phantom{=} + \bm{i}_2\left(\partDerivIIHeteroLong{A_1}{r_2}{r_1} + \partDerivLong{A_2}{r_2}{2} + \partDerivIIHeteroLong{A_3}{r_2}{r_3}\right) \\
-                &\phantom{=} + \bm{i}_3\left(\partDerivIIHeteroLong{A_1}{r_3}{r_1} + \partDerivIIHeteroLong{A_2}{r_3}{r_2} + \partDerivLong{A_3}{r_3}{2}\right)
+                &= \phantom{+} \bm{i}_1\parens*{\partDerivLong{A_1}{r_1}{2} + \partDerivIIHeteroLong{A_2}{r_1}{r_2} + \partDerivIIHeteroLong{A_3}{r_1}{r_3}} \\
+                &\phantom{=} + \bm{i}_2\parens*{\partDerivIIHeteroLong{A_1}{r_2}{r_1} + \partDerivLong{A_2}{r_2}{2} + \partDerivIIHeteroLong{A_3}{r_2}{r_3}} \\
+                &\phantom{=} + \bm{i}_3\parens*{\partDerivIIHeteroLong{A_1}{r_3}{r_1} + \partDerivIIHeteroLong{A_2}{r_3}{r_2} + \partDerivLong{A_3}{r_3}{2}}
             \end{align*}
             \begin{align*}
-                \nabla\times(\nabla\times A) &= \nabla\times\left[\bm{i}_1\left(\partDeriv{A_3}{r_2}{} - \partDeriv{A_2}{r_3}{}\right) + \bm{i}_2\left(\partDeriv{A_1}{r_3}{} - \partDeriv{A_3}{r_1}{}\right) + \bm{i}_3\left(\partDeriv{A_2}{r_1}{} - \partDeriv{A_1}{r_2}{}\right)\right] \\
-                &=\phantom{+} \bm{i}_1\left(-\partDerivLong{A_1}{r_2}{2} - \partDerivLong{A_1}{r_3}{2} + \partDerivIIHeteroLong{A_2}{r_2}{r_1} + \partDerivIIHeteroLong{A_3}{r_3}{r_2}\right) \\
-                &\phantom{=} + \bm{i}_2\left(-\partDerivLong{A_2}{r_3}{2} - \partDerivLong{A_2}{r_1}{2} + \partDerivIIHeteroLong{A_3}{r_3}{r_2} + \partDerivIIHeteroLong{A_1}{r_1}{r_2}\right) \\
-                &\phantom{=} + \bm{i}_3\left(-\partDerivLong{A_3}{r_1}{2} - \partDerivLong{A_3}{r_2}{2} + \partDerivIIHeteroLong{A_1}{r_1}{r_3} + \partDerivIIHeteroLong{A_2}{r_2}{r_3}\right)
+                \nabla\times(\nabla\times A) &= \nabla\times\bracks*{\bm{i}_1\parens*{\partDeriv{A_3}{r_2}{} - \partDeriv{A_2}{r_3}{}} + \bm{i}_2\parens*{\partDeriv{A_1}{r_3}{} - \partDeriv{A_3}{r_1}{}} + \bm{i}_3\parens*{\partDeriv{A_2}{r_1}{} - \partDeriv{A_1}{r_2}{}}} \\
+                &=\phantom{+} \bm{i}_1\parens*{-\partDerivLong{A_1}{r_2}{2} - \partDerivLong{A_1}{r_3}{2} + \partDerivIIHeteroLong{A_2}{r_2}{r_1} + \partDerivIIHeteroLong{A_3}{r_3}{r_2}} \\
+                &\phantom{=} + \bm{i}_2\parens*{-\partDerivLong{A_2}{r_3}{2} - \partDerivLong{A_2}{r_1}{2} + \partDerivIIHeteroLong{A_3}{r_3}{r_2} + \partDerivIIHeteroLong{A_1}{r_1}{r_2}} \\
+                &\phantom{=} + \bm{i}_3\parens*{-\partDerivLong{A_3}{r_1}{2} - \partDerivLong{A_3}{r_2}{2} + \partDerivIIHeteroLong{A_1}{r_1}{r_3} + \partDerivIIHeteroLong{A_2}{r_2}{r_3}}
             \end{align*}
             $A_1,A_2,A_3$が$\mathrm{C}^2$級であるから偏微分の順序が交換可能であるので，
             \[ \nabla(\nabla\cdot A) - \nabla\times(\nabla\times A) = \bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3 \]
@@ -31,54 +31,54 @@
         \begin{proof}
             \quad\par
             \begin{align*}
-                \nabla\cdot\nabla^2\vA &= \nabla\cdot\left(\bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3\right) = \partDerivLong{\Delta A_1}{r_1}{} + \partDerivLong{\Delta A_2}{r_2}{} + \partDerivLong{\Delta A_3}{r_3}{} \\
-                &= \Delta\left(\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}\right) = \Delta(\nabla\cdot\vA)
+                \nabla\cdot\nabla^2\vA &= \nabla\cdot\parens*{\bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3} = \partDerivLong{\Delta A_1}{r_1}{} + \partDerivLong{\Delta A_2}{r_2}{} + \partDerivLong{\Delta A_3}{r_3}{} \\
+                &= \Delta\parens*{\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}} = \Delta(\nabla\cdot\vA)
             \end{align*}
         \end{proof}
-    \section{直角座標系に於ける定数ベクトルとの外積の回転\texorpdfstring{: $\nabla_\vr\times\bigl(\bm{C}\times\vA(\vr)\bigr) = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C}$}{}}
+    \section{直角座標系に於ける定数ベクトルとの外積の回転\texorpdfstring{: $\nabla_\vr\times\parens*{\bm{C}\times\vA(\vr)} = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C}$}{}}
         \label{直角座標系に於ける定数ベクトルとの外積の回転}
         \begin{shadebox}
             $\vr,\bm{C}\in\EuclideanSpace^3$とする。
             $A:\EuclideanSpace^3\to\EuclideanSpace^3$は$\mathrm{C}^1$級とする。
             このとき次式が成り立つ。
-            \[ \nabla_\vr\times\bigl(\bm{C}\times\vA(\vr)\bigr) = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C} \]
+            \[ \nabla_\vr\times\parens*{\bm{C}\times\vA(\vr)} = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C} \]
             ここに$J_\vA$は$A$のJacobi行列である。
         \end{shadebox}
         \begin{proof}
             \begin{align*}
-                &\phantom{=} \nabla_\vr\times\bigl(\bm{C}\times\vA(\vr)\bigr) \\
-                &= \bm{i}_1\left[C_1\partDerivLong{A_2}{r_2}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} + C_1\partDerivLong{A_3}{r_3}{}\right] \\
-                &\phantom{=} + \bm{i}_2\left[C_2\partDerivLong{A_3}{r_3}{} - C_3\partDerivLong{A_2}{r_3}{} - C_1\partDerivLong{A_2}{r_1}{} + C_2\partDerivLong{A_1}{r_1}{}\right] \\
-                &\phantom{=} + \bm{i}_3\left[C_3\partDerivLong{A_1}{r_1}{} - C_1\partDerivLong{A_3}{r_1}{} - C_2\partDerivLong{A_3}{r_2}{} + C_3\partDerivLong{A_2}{r_2}{}\right]
+                &\phantom{=} \nabla_\vr\times\parens*{\bm{C}\times\vA(\vr)} \\
+                &= \bm{i}_1\bracks*{C_1\partDerivLong{A_2}{r_2}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} + C_1\partDerivLong{A_3}{r_3}{}} \\
+                &\phantom{=} + \bm{i}_2\bracks*{C_2\partDerivLong{A_3}{r_3}{} - C_3\partDerivLong{A_2}{r_3}{} - C_1\partDerivLong{A_2}{r_1}{} + C_2\partDerivLong{A_1}{r_1}{}} \\
+                &\phantom{=} + \bm{i}_3\bracks*{C_3\partDerivLong{A_1}{r_1}{} - C_1\partDerivLong{A_3}{r_1}{} - C_2\partDerivLong{A_3}{r_2}{} + C_3\partDerivLong{A_2}{r_2}{}}
             \end{align*}
             $\bm{i}_1$の係数を変形して次式を得る。
-            \[ C_1\left(\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}\right) - C_1\partDerivLong{A_1}{r_1}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} = C_1\nabla\cdot\vA - \bm{C}\cdot\nabla A_1 \]
+            \[ C_1\parens*{\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}} - C_1\partDerivLong{A_1}{r_1}{} - C_2\partDerivLong{A_1}{r_2}{} - C_3\partDerivLong{A_1}{r_3}{} = C_1\nabla\cdot\vA - \bm{C}\cdot\nabla A_1 \]
             $\bm{i}_2, \bm{i}_3$についても同様にして，結局次式を得る。
-            \[ \nabla_\vr\times\bigl(\bm{C}\times\vA(\vr)\bigr) = (\nabla\cdot\vA)\bm{C} - (\bm{C}\cdot\nabla A_1)\bm{i}_1 - (\bm{C}\cdot\nabla A_2)\bm{i}_2 - (\bm{C}\cdot\nabla A_3)\bm{i}_3 = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C} \]
+            \[ \nabla_\vr\times\parens*{\bm{C}\times\vA(\vr)} = (\nabla\cdot\vA)\bm{C} - (\bm{C}\cdot\nabla A_1)\bm{i}_1 - (\bm{C}\cdot\nabla A_2)\bm{i}_2 - (\bm{C}\cdot\nabla A_3)\bm{i}_3 = (\nabla\cdot\vA(\vr))\bm{C} - J_\vA\bm{C} \]
         \end{proof}
-    \section{直角座標系に於ける定数ベクトルと勾配の内積の勾配\texorpdfstring{$\nabla\left(\inProd{\nabla f}{\vv}\right) = H(f)\vv$}{∇<∇f,v> = H(f)v}}
+    \section{直角座標系に於ける定数ベクトルと勾配の内積の勾配\texorpdfstring{$\nabla\parens*{\inProd{\nabla f}{\vv}} = H(f)\vv$}{∇<∇f,v> = H(f)v}}
         \begin{shadebox}
             $\vv$を定数ベクトルとするとき次式が成り立つ。$H(f)$は$f$の Hesse 行列である。
-            \[\nabla\left(\inProd{\nabla f}{\vv}\right) = H(f)\vv\]
+            \[\nabla\parens*{\inProd{\nabla f}{\vv}} = H(f)\vv\]
         \end{shadebox}
         \begin{proof}
             \quad\par
             \[\partDerivLong{\inProd{\nabla f}{\vv}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}{}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
             であるから
             \[
-                \nabla\left(\inProd{\nabla f}{\vv}\right) = \left[
+                \nabla\parens*{\inProd{\nabla f}{\vv}} = \bracks*{
                     \begin{array}{c}
                         \partDerivLong{\inProd{\nabla f}{\vv}}{x_1}{}\\
                         \partDerivLong{\inProd{\nabla f}{\vv}}{x_2}{}\\
                         \vdots\\
                         \partDerivLong{\inProd{\nabla f}{\vv}}{x_n}{}
                     \end{array}
-                \right] = \left[
+                } = \bracks*{
                     \begin{array}{c}
-                        \left[\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\dotsc,\partDerivIIHetero{f}{x_1}{x_n}\right]\vv\\
+                        \bracks*{\partDeriv{f}{x_1}{2}, \partDerivIIHetero{f}{x_1}{x_2},\dotsc,\partDerivIIHetero{f}{x_1}{x_n}}\vv\\
                         \vdots\\
-                        \left[\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\dotsc,\partDeriv{f}{x_n}{2}\right]\vv
+                        \bracks*{\partDerivIIHetero{f}{x_n}{x_1}, \partDerivIIHetero{f}{x_n}{x_2},\dotsc,\partDeriv{f}{x_n}{2}}\vv
                     \end{array}
-                \right] = H(f)\vv
+                } = H(f)\vv
             \]
         \end{proof}

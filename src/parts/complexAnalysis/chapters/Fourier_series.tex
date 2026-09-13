@@ -30,13 +30,13 @@
             $\forall (x,y\in[0,\pi],|x-y|\leq\delta),|f(x)-f(y)|<\varepsilon$が成り立つ。
             $k \geq 2,\pi/k < \delta$となるように$k$を十分大きくとる。
             \begin{align*}
-                \integrate{0}{\pi}{f(x)\sin kx}{}{x} &= \sum_{l=0}^{\floor{k/2}-1}\left(\integrate{2l\pi/k}{(2l+1)\pi/k}{f(x) \sin kx}{}{x} + \integrate{(2l+1)\pi/k}{(2l+2)\pi/k}{f(x) \sin kx}{}{x}\right) \\
+                \integrate{0}{\pi}{f(x)\sin kx}{}{x} &= \sum_{l=0}^{\floor{k/2}-1}\parens*{\integrate{2l\pi/k}{(2l+1)\pi/k}{f(x) \sin kx}{}{x} + \integrate{(2l+1)\pi/k}{(2l+2)\pi/k}{f(x) \sin kx}{}{x}} \\
                 &\quad + \integrate{2\floor{k/2}\pi/k}{\pi}{f(x)\sin kx}{}{x}
             \end{align*}
             最後の項は$k\to\infty$のとき$0$に収束する。
             最初の2項は$y=kx$と変数変換して
             \begin{align*}
-                &\quad \sum_{l=0}^{\floor{k/2}-1}\frac{1}{k}\left(\integrate{2l\pi}{(2l+1)\pi}{f(y/k) \sin y}{}{y} + \integrate{(2l+1)\pi}{(2l+2)\pi}{f(y/k) \sin y}{}{y}\right) \\
+                &\quad \sum_{l=0}^{\floor{k/2}-1}\frac{1}{k}\parens*{\integrate{2l\pi}{(2l+1)\pi}{f(y/k) \sin y}{}{y} + \integrate{(2l+1)\pi}{(2l+2)\pi}{f(y/k) \sin y}{}{y}} \\
                 &= \frac{1}{k} \sum_{l=0}^{\floor{k/2}-1} \integrate{2l\pi}{(2l+1)\pi}{(f(y/k) - f(y/k+\pi/k)) \sin y}{}{y}
             \end{align*}
             となる。これの絶対値は
@@ -80,9 +80,9 @@
             よって，
             \begin{align*}
                 \integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} &= \lim_{n\to\infty}\integrate{0}{n\pi}{\frac{\sin x}{x}}{}{x} = \lim_{n\to\infty}\integrate{0}{\pi}{\frac{\sin nt}{t}}{}{t} \quad (t=x/n\text{とおいた}) \\
-                &= \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin nt}{t}}{}{t} = \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t}
+                &= \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\frac{\sin nt}{t}}{}{t} = \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\parens*{\frac{1}{t} - \frac{1}{2\tan(t/2)} + \frac{1}{2\tan(t/2)}}\sin nt}{}{t}
             \end{align*}
             $\frac{1}{t} - \frac{1}{2\tan(t/2)}$は$[-\pi,\pi]$で連続だから\ref{連続関数のFourier 級数の高周波成分は0に収束する}より
-            \[ \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\left(\frac{1}{t} - \frac{1}{2\tan(t/2)}\right)\sin nt}{}{t} = 0 \]
+            \[ \lim_{n\to\infty}\frac{1}{2}\integrate{-\pi}{\pi}{\parens*{\frac{1}{t} - \frac{1}{2\tan(t/2)}}\sin nt}{}{t} = 0 \]
             であること，および\ref{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}より証明が済む。
         \end{proof}

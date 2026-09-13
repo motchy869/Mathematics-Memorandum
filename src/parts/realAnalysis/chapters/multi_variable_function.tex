@@ -6,7 +6,7 @@
                 $F:\realNumbers^l\to\realNumbers^m,\vx\mapsto\vy(\vx)$と$G:\realNumbers^m\to\realNumbers^n,\vy\mapsto\bm{z}(\vy)$のJacobi行列を$J_F,J_G$とすると，$F,G$の合成写像$G\circ F$のJacobi行列は$J_{G\circ F}=J_GJ_F$である。
             \end{shadebox}
             \begin{proof}
-                \[ J_{G\circ F}[i][j] = \left(\partDeriv{z_i}{x_j}{}\right)(\vx) = \sum_{k=1}^n \left(\partDeriv{z_i}{y_k}{}\right)(\vy)\left(\partDeriv{y_k}{x_j}{}\right)(\vx) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
+                \[ J_{G\circ F}[i][j] = \parens*{\partDeriv{z_i}{x_j}{}}(\vx) = \sum_{k=1}^n \parens*{\partDeriv{z_i}{y_k}{}}(\vy)\parens*{\partDeriv{y_k}{x_j}{}}(\vx) = \matEntry{J_G}{i}{:}\matEntry{J_F}{:}{j} \]
             \end{proof}
         \subsection{\texorpdfstring{$J_{\bm{f}^\top\bm{g}} = \bm{g}^\top J_\bm{f} + \bm{f}^\top J_\bm{g}$}{J\_\{f\string^⊤g\} = g\string^⊤ J\_f + f\string^⊤ J\_g}}
         \begin{shadebox}
@@ -14,8 +14,8 @@
         \end{shadebox}
         \begin{proof}
             \begin{align*}
-                J_{\bm{f}^\top \bm{g}}[1,j] &= \partDerivLong{\sum_{k=1}^n f_k(\vx)g_k(\vx)}{x_j}{} = \sum_{k=1}^n \partDerivLong{f_k(\vx)g_k(\vx)}{x_j}{} = \sum_{k=1}^n \left(\partDeriv{f_k(\vx)}{x_j}{}g_k(\vx) + f_k(\vx)\partDeriv{g_k(\vx)}{x_j}{}\right) \\
-                &= \sum_{k=1}^n \left(J_\bm{f}[k,j]g_k(\vx) + f_k(\vx)J_\bm{g}[k,j]\right) = (\bm{g}^\top J_\bm{f})[1,j] + (\bm{f}^\top J_\bm{g})[1,j]
+                J_{\bm{f}^\top \bm{g}}[1,j] &= \partDerivLong{\sum_{k=1}^n f_k(\vx)g_k(\vx)}{x_j}{} = \sum_{k=1}^n \partDerivLong{f_k(\vx)g_k(\vx)}{x_j}{} = \sum_{k=1}^n \parens*{\partDeriv{f_k(\vx)}{x_j}{}g_k(\vx) + f_k(\vx)\partDeriv{g_k(\vx)}{x_j}{}} \\
+                &= \sum_{k=1}^n \parens*{J_\bm{f}[k,j]g_k(\vx) + f_k(\vx)J_\bm{g}[k,j]} = (\bm{g}^\top J_\bm{f})[1,j] + (\bm{f}^\top J_\bm{g})[1,j]
             \end{align*}
         \end{proof}
     \section{勾配とHessian}
@@ -32,7 +32,7 @@
                 \[ \nabla_{\vx\vy} f = (\nabla_{\vy\vx} f)^\top \]
             \end{shadebox}
             \begin{proof}
-                \[ \nabla_{\vx\vy} f = \nabla_\vx\nabla_\vy f = \nabla_\vx\left[\partDeriv{f}{y_1}{}, \dotsc, \partDeriv{f}{y_{n_2}}{}\right]^\top = \left[ \partDerivIIHetero{f}{x_i}{y_j} \right]_{n_1\times n_2} = \left[ \partDerivIIHetero{f}{y_i}{x_j} \right]_{n_2\times n_1}^\top = (\nabla_{\vy\vx} f)^\top \]
+                \[ \nabla_{\vx\vy} f = \nabla_\vx\nabla_\vy f = \nabla_\vx\bracks*{\partDeriv{f}{y_1}{}, \dotsc, \partDeriv{f}{y_{n_2}}{}}^\top = \bracks*{ \partDerivIIHetero{f}{x_i}{y_j} }_{n_1\times n_2} = \bracks*{ \partDerivIIHetero{f}{y_i}{x_j} }_{n_2\times n_1}^\top = (\nabla_{\vy\vx} f)^\top \]
             \end{proof}
         \subsection{勾配ベクトルが等値面の接平面と直交することの証明}
             \begin{shadebox}
@@ -46,8 +46,8 @@
                 $n-1$次元超曲面$x_n = \varphi(\vx')$上の点$\bm{a}'$における接平面の方程式は
                 \[ x_n = a_n + \sum_{i=1}^{n-1}\varphi_{x_i}(\bm{a}')(x_i-a_i) = a_n - \sum_{i=1}^{n-1}\frac{f_{x_i}(\bm{a})}{f_{x_n}(\bm{a})}(x_i-a_i) =: \psi(\vx') \]
                 であるから，点$[\bm{a}',\varphi(\bm{a}')=a_n]^\top$に対する接平面上の任意の点$[\vx',\psi(\vx')]^\top$の相対位置ベクトルは線形空間
-                \[ W \coloneq \Span{\setComprehension*{\left[0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}\right]^\top}{i=1,\dotsc,n-1}} \]
-                のベクトルである。$\nabla f(\bm{a}) = \left[f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')\right]^\top$は$W$の任意のベクトルと直交する。
+                \[ W \coloneq \Span{\setComprehension*{\bracks*{0,\dotsc,0,\underset{i\text{番目}}{1},0,\dotsc,0,-\frac{f_{x_i}(\bm{a}')}{f_{x_n}(\bm{a}')}}^\top}{i=1,\dotsc,n-1}} \]
+                のベクトルである。$\nabla f(\bm{a}) = \bracks*{f_{x_1}(\bm{a}'),\dotsc,f_{x_n}(\bm{a}')}^\top$は$W$の任意のベクトルと直交する。
             \end{proof}
         \subsection{\texorpdfstring{$\nabla A\vx = A^\top$}{∇Ax = A\string^⊤}}
             \begin{proof}
@@ -60,9 +60,9 @@
         \subsection{\texorpdfstring{$\nabla \vx^\top A\vx = (A+A^\top)\vx$}{∇ x\string⊤ Ax}}
             \begin{proof}
                 \quad\par
-                \[\nabla \vx^\top A\vx = \nabla\sum_{i=1}^{n}{\sum_{j=1}^{n}{a_{ij}x_ix_j}} = \nabla\left(\sum_{i=1}^{n}{a_{ii}{x_i}^2} + \sum_{i\neq j}^{n}{a_{ij}x_ix_j}\right)\]
+                \[\nabla \vx^\top A\vx = \nabla\sum_{i=1}^{n}{\sum_{j=1}^{n}{a_{ij}x_ix_j}} = \nabla\parens*{\sum_{i=1}^{n}{a_{ii}{x_i}^2} + \sum_{i\neq j}^{n}{a_{ij}x_ix_j}}\]
                 よって第$i$要素は
-                \[\left(\nabla \vx^\top A\vx\right)[i] = 2a_{ii}x_i + \sum_{j\neq i}^{n}{(a_{ij}+a_{ji})x_j} = \sum_{j=1}^{n}{(a_{ij}+a_{ji})x_j} = \left((A+A^\top)\vx\right)[i]\]
+                \[\parens*{\nabla \vx^\top A\vx}[i] = 2a_{ii}x_i + \sum_{j\neq i}^{n}{(a_{ij}+a_{ji})x_j} = \sum_{j=1}^{n}{(a_{ij}+a_{ji})x_j} = \parens*{(A+A^\top)\vx}[i]\]
             \end{proof}
         \subsection{\texorpdfstring{$\nabla\norm{A\vx+\bm{b}}_2^2 = 2A^\top(A\vx+\bm{b})$}{∇||Ax+b||\_2\string^2 = 2A\string^⊤(Ax+b)}}
             \begin{proof}
@@ -71,10 +71,10 @@
                 \[ \nabla \norm{A\vx+\bm{b}}_2^2 = (\nabla(A\vx+\bm{b}))\left.(\nabla\vy^\top\vy)\right|_{\vy=A\vx+\bm{b}} = A^\top 2(A\vx+\bm{b}) = 2A^\top(A\vx+\bm{b}) \]
                 % \begin{comment}
                 % \begin{align*}
-                %     \partDerivLong{\norm{A\vx+\bm{b}}_2^2}{x_i}{} &= \partDerivLong{\left(\norm{A\vx}_2^2 + 2\inProd{A\vx}{\bm{b}} + \norm{\bm{b}}_2^2}{x_i}{}\right) = \partDerivLong{\left(\sum_{j=1}^n (A\vx)[j]^2 + 2\sum_{j=1}^n (A\vx)[j]b_j\right)}{x_i}{} \\
-                %     &= \partDerivLong{\left[\sum_{j=1}^n\left(\sum_{k=1}^n a_{jk}x_k\right)^2 + 2\sum_{j=1}^n \left(\sum_{k=1}^n a_{jk}x_k\right)b_j\right]}{x_i}{} \\
-                %     &= \sum_{j=1}^n 2\left(\sum_{k=1}^n a_{jk}x_k\right)a_{ji} + 2\sum_{j=1}^n a_{ji}b_j = 2\sum_{j=1}^n a_{ji}\left(\sum_{k=1}^n a_{jk}x_k + b_j\right) \\
-                %     &= 2\sum_{j=1}^n a_{ji}\left((A\vx)[j] + b_j\right) = 2\left(A^\top(A\vx+\bm{b})\right)[i]
+                %     \partDerivLong{\norm{A\vx+\bm{b}}_2^2}{x_i}{} &= \partDerivLong{\parens*{\norm{A\vx}_2^2 + 2\inProd{A\vx}{\bm{b}} + \norm{\bm{b}}_2^2}{x_i}{}} = \partDerivLong{\parens*{\sum_{j=1}^n (A\vx)[j]^2 + 2\sum_{j=1}^n (A\vx)[j]b_j}}{x_i}{} \\
+                %     &= \partDerivLong{\bracks*{\sum_{j=1}^n\parens*{\sum_{k=1}^n a_{jk}x_k}^2 + 2\sum_{j=1}^n \parens*{\sum_{k=1}^n a_{jk}x_k}b_j}}{x_i}{} \\
+                %     &= \sum_{j=1}^n 2\parens*{\sum_{k=1}^n a_{jk}x_k}a_{ji} + 2\sum_{j=1}^n a_{ji}b_j = 2\sum_{j=1}^n a_{ji}\parens*{\sum_{k=1}^n a_{jk}x_k + b_j} \\
+                %     &= 2\sum_{j=1}^n a_{ji}\parens*{(A\vx)[j] + b_j} = 2\parens*{A^\top(A\vx+\bm{b})}[i]
                 % \end{align*}
                 % \end{comment}
             \end{proof}
@@ -82,7 +82,7 @@
             \begin{proof}
                 \quad\par
                 合成関数の微分法より
-                \[ \nabla (A\vx+\bm{b})^\top B(A\vx+\bm{b}) = \nabla(A\vx + \bm{b})\left(\left.\nabla(\vy^\top B\vy)\right|_{\vy=A\vx+\bm{b}}\right) = A^\top(B+B^\top)(A\vx+\bm{b}) \]
+                \[ \nabla (A\vx+\bm{b})^\top B(A\vx+\bm{b}) = \nabla(A\vx + \bm{b})\parens*{\left.\nabla(\vy^\top B\vy)\right|_{\vy=A\vx+\bm{b}}} = A^\top(B+B^\top)(A\vx+\bm{b}) \]
             \end{proof}
         \subsection{\texorpdfstring{$\nabla^2 \vx^\top A\vx = A+A^\top$}{∇\string^2 x\string^⊤ Ax = A+A\string^⊤}}
             \begin{proof}
@@ -105,29 +105,29 @@
             $F = [f_1,\dotsc,f_{m+1}]^\top,\bm{u}=F(\bm{a}),\xhat \coloneq [x_1,\dotsc,x_m]^\top(\bm{a},\bm{u}\text{についても同様に定義})$とする。
             \par
             $J_F(\bm{a})\in\realNumbers^{(m+1)\times(m+1)}$は正則なので$m+1$行目の成分の少なくとも1つはは0でない。
-            一般性を失わず第$m+1,m+1$成分$\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})$が0でないとすると，陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
+            一般性を失わず第$m+1,m+1$成分$\parens*{\partDeriv{f_{m+1}}{x_{m+1}}{}}(\bm{a})$が0でないとすると，陰関数定理より関数$h\in C^1(\realNumbers^m\to\realNumbers$)で$f_{m+1}([\xhat^\top,h(\xhat)]^\top) = u_{m+1},h(\ahat) = a_{m+1}$を満たすものが$\ahat$の近傍で唯一存在する。
             この$h$は当然$F([\ahat^\top,h(\ahat)]^\top) = \bm{u}$を満たす。
             \par
             $\fhat_i(\xhat) \coloneq f_i([\xhat,h(\xhat)]^\top),\Fhat(\xhat) \coloneq [\fhat_i(\xhat),\dotsc,\fhat_m(\xhat)]^\top$とすると$\Fhat(\ahat) = \uhat$であり，
             帰納法の仮定より$J_{\Fhat}(\ahat)$が正則であれば$\uhat(=\Fhat(\ahat))$の近傍で$\Fhat$の逆写像$\Fhat^{-1}\in C^1(\realNumbers^m\to\realNumbers^m)$が存在して$\uhat$に対応する$\ahat$，さらには$a_{m+1}=h(\ahat)$も唯一に定まる。
             すなわち$F^{-1}$が存在する。そこで$|J_{\Fhat}(\ahat)|\neq 0$を示す。列に着目すると
             \par
-            \[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat) + \left(\partDeriv{\Fhat}{x_{m+1}}{}\right)(h(\ahat))\left(\partDeriv{h}{x_j}{}\right)(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
-            \[ \text{where}\quad \bm{p}_j \coloneq \left(\partDeriv{\Fhat}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m+1),\lambda_j \coloneq \left(\partDeriv{h}{x_j}{}\right)(\ahat)\;(j=1,\dotsc,m) \]
+            \[ \matEntry{J_{\Fhat}(\ahat)}{:}{j} = \parens*{\partDeriv{\Fhat}{x_j}{}}(\ahat) + \parens*{\partDeriv{\Fhat}{x_{m+1}}{}}(h(\ahat))\parens*{\partDeriv{h}{x_j}{}}(\ahat) = \bm{p}_j + \lambda_j\bm{p}_{m+1} \]
+            \[ \text{where}\quad \bm{p}_j \coloneq \parens*{\partDeriv{\Fhat}{x_j}{}}(\ahat)\;(j=1,\dotsc,m+1),\lambda_j \coloneq \parens*{\partDeriv{h}{x_j}{}}(\ahat)\;(j=1,\dotsc,m) \]
             行列式の多重線形性を用いて$|J_{\Fhat}(\ahat)|$を計算するが，$\bm{p}_{m+1}$に比例する列を2本以上選んでできる行列はそれらの列が一次従属となり行列式は0だから，結局次のようになる。
             \begin{align*}
-                |J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\dotsc,\bm{p}_m\right| \\
-                &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\left|\bm{p}_1,\dotsc,\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}\right|
+                |J_{\Fhat}(\ahat)| &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m \lambda_i\abs{\bm{p}_1,\dotsc,\bm{p}_{i-1},\underset{i\text{列目}}{\underline{\bm{p}_{\textcolor{red}{m+1}}}},\bm{p}_{i+1},\dotsc,\bm{p}_m} \\
+                &= |\matPart{J_F(\bm{a})}{1}{m}{1}{m}| + \sum_{i=1}^m (-1)^{m-i}\lambda_i\abs{\bm{p}_1,\dotsc,\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_m,\bm{p}_{\textcolor{red}{m+1}}}
             \end{align*}
             ここで
-            \[ \lambda_i = -\frac{\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})} \]
+            \[ \lambda_i = -\frac{\parens*{\partDeriv{f_{m+1}}{x_i}{}}(\bm{a})}{\parens*{\partDeriv{f_{m+1}}{x_{m+1}}{}}(\bm{a})} \]
             であることと$(-1)^{m-i} = (-1)^{m+i}$に注意して
             \begin{align*}
-                J_{\Fhat}(\ahat)| &= \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}\left[\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})|\matPart{J_F(\bm{a})}{1}{m}{1}{m}|\right. \\
-                &+ \left. \sum_{i=1}^m (-1)^{m+i}\left(\partDeriv{f_{m+1}}{x_i}{}\right)(\bm{a})\left|\bm{p}_1,\dotsc\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}\right|\right]
+                J_{\Fhat}(\ahat)| &= \frac{1}{\parens*{\partDeriv{f_{m+1}}{x_{m+1}}{}}(\bm{a})}\left[\parens*{\partDeriv{f_{m+1}}{x_{m+1}}{}}(\bm{a})|\matPart{J_F(\bm{a})}{1}{m}{1}{m}|\right. \\
+                &+ \left. \sum_{i=1}^m (-1)^{m+i}\parens*{\partDeriv{f_{m+1}}{x_i}{}}(\bm{a})\abs{\bm{p}_1,\dotsc\bm{p}_{i-1},\bm{p}_{i+1},\dotsc,\bm{p}_{m+1}}\right]
             \end{align*}
             上式の$[\;]$内は$|J_F(\bm{a})|$の第$m$行に関する余因子展開と等しいので
-            \[ |J_{\Fhat}(\ahat)| = \frac{1}{\left(\partDeriv{f_{m+1}}{x_{m+1}}{}\right)(\bm{a})}|J_F(\bm{a})| \neq 0 \]
+            \[ |J_{\Fhat}(\ahat)| = \frac{1}{\parens*{\partDeriv{f_{m+1}}{x_{m+1}}{}}(\bm{a})}|J_F(\bm{a})| \neq 0 \]
             以上より$F$の逆関数が存在して$C^1$級であることが示された。
             そして$F^{-1}\circ F$は恒等写像だから$I_n = J_{F^{-1}\circ F}(\bm{a}) = J_{F^{-1}}(\bm{a})J_F(\bm{a})$より$J_{F^{-1}}(\bm{a}) = J_F(\bm{a})^{-1}$となる。
         \end{proof}
@@ -135,7 +135,7 @@
         \subsection{\texorpdfstring{$^\forall A\in\realNumbers^{n\times n},\vx\in\realNumbers^n,^\exists$}{∀A∈R\string^(n×n), x∈R\string^n, ∃}対称行列\texorpdfstring{$B\in\realNumbers^{n\times n} \text{ s.t. } \vx^\top A\vx = \vx^\top B\vx$}{B∈R\string^(n×n) s.t. x\string^⊤Ax}}
             \begin{proof}
                 \quad\par
-                \[\vx^\top A\vx = \frac{1}{2}\left(\vx^\top A\vx + \vx^\top A\vx\right) = \frac{1}{2}\left(\vx^\top A\vx + \left(\vx^\top A\vx\right)^\top\right) = \frac{1}{2}\left(\vx^\top A\vx + \vx^\top A^\top\vx\right) = \vx^\top\frac{A+A^\top}{2}\vx\]
+                \[\vx^\top A\vx = \frac{1}{2}\parens*{\vx^\top A\vx + \vx^\top A\vx} = \frac{1}{2}\parens*{\vx^\top A\vx + \parens*{\vx^\top A\vx}^\top} = \frac{1}{2}\parens*{\vx^\top A\vx + \vx^\top A^\top\vx} = \vx^\top\frac{A+A^\top}{2}\vx\]
                 であるので$B \coloneq \frac{A+A^\top}{2}$とすれば$B$は対称行列であり
                 \[\vx^\top A\vx = \vx^\top B\vx\]
             \end{proof}

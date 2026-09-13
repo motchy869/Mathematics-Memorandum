@@ -8,7 +8,7 @@
             \quad\par
             $rS_l = \sum_{k=0}^\infty k^l r^{k+1} = \sum_{k=1}^\infty (k-1)^l r^k$より
             \begin{align*}
-                (1-r)S_l &= \sum_{k=1}^\infty \left[ k^l-(k-1)^l \right]r^k = \sum_{k=1}^{\infty}\sum_{m=0}^{l-1}\combi{l}{m}k^m(-1)^{l-m+1}r^k = \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}\sum_{k=1}^{\infty}k^m r^k \\
+                (1-r)S_l &= \sum_{k=1}^\infty \bracks*{ k^l-(k-1)^l }r^k = \sum_{k=1}^{\infty}\sum_{m=0}^{l-1}\combi{l}{m}k^m(-1)^{l-m+1}r^k = \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}\sum_{k=1}^{\infty}k^m r^k \\
                 &= \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}(S_m - 0^m)
             \end{align*}
         \end{proof}
@@ -17,7 +17,7 @@
     \section{Abelの総和公式 : \texorpdfstring{$\sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i)$}{Σ\_\{i=1\}\string^n a\_i b\_i = A\_n b\_n - Σ\_\{i=1\}\string^(n-1) A\_i(b\_(i+1) - b\_i)}}
         \begin{shadebox}
             数列$\{a_k\},\{b_k\}$に対して次が成り立つ。
-            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \left( A_i \coloneq \sum_{j=1}^i a_j \right) \]
+            \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \parens*{ A_i \coloneq \sum_{j=1}^i a_j } \]
         \end{shadebox}
         \begin{proof}
             \quad\\
@@ -56,8 +56,8 @@
         \label{subsec:Chebyshevの和の不等式}
         \begin{shadebox}
             \begin{enumerate}
-                \item 単調増加あるいは単調減少な数列$\{a_n\},\{b_n\}$について，$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \leq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
-                \item 単調増加列$\{a_n\}$と単調減少列$\{b_n\}$について，$\left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \geq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
+                \item 単調増加あるいは単調減少な数列$\{a_n\},\{b_n\}$について，$\parens*{\frac{1}{n}\sum_{i=1}^n a_i}\parens*{\frac{1}{n}\sum_{i=1}^n b_i} \leq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
+                \item 単調増加列$\{a_n\}$と単調減少列$\{b_n\}$について，$\parens*{\frac{1}{n}\sum_{i=1}^n a_i}\parens*{\frac{1}{n}\sum_{i=1}^n b_i} \geq \frac{1}{n}\sum_{i=1}^n a_ib_i$が成り立つ。
             \end{enumerate}
         \end{shadebox}
         \begin{proof}
@@ -69,8 +69,8 @@
             $\{a_n\},\{b_n\}$の単調性の仮定から，$(a_i-a_j)$と$(b_i-b_j)$の符号は等しく，$S\geq 0$である。
             よって次式が成り立つ。
             \begin{gather*}
-                0 \leq S = \sum_{i=1}^n \sum_{j=1}^n (a_i b_i - a_i b_j - a_j b_i + a_j b_j) = 2n\sum_{i=1}^n a_i b_i - 2\left(\sum_{i=1}^n a_i\right)\left(\sum_{j=1}^n b_j\right) \\
-                \therefore \left(\frac{1}{n}\sum_{i=1}^n a_i\right)\left(\frac{1}{n}\sum_{i=1}^n b_i\right) \leq \frac{1}{n}\sum_{i=1}^n a_ib_i
+                0 \leq S = \sum_{i=1}^n \sum_{j=1}^n (a_i b_i - a_i b_j - a_j b_i + a_j b_j) = 2n\sum_{i=1}^n a_i b_i - 2\parens*{\sum_{i=1}^n a_i}\parens*{\sum_{j=1}^n b_j} \\
+                \therefore \parens*{\frac{1}{n}\sum_{i=1}^n a_i}\parens*{\frac{1}{n}\sum_{i=1}^n b_i} \leq \frac{1}{n}\sum_{i=1}^n a_ib_i
             \end{gather*}
         \end{proof}
     \section{等比級数と0収束列の畳み込み: {\normalsize \texorpdfstring{$|r|<1,\lim_{n\to\infty}a_n=0 \Rightarrow \lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0$}{|r|<1, lim\_\{n→∞\}a\_n=0 ⇒ lim\_\{t→∞\} Σ\_\{τ=0\}\string^t r\string^(t-τ) a\_τ} = 0}}
@@ -84,18 +84,18 @@
             また，$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
             そこで$t\geq T$とすると
             \begin{align*}
-                \left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| &\leq \left|\sum_{\tau=0}^{T-1}{r^{t-\tau}a_\tau}\right| + \left|\sum_{\tau=T}^t{r^{t-\tau}a_\tau}\right| \leq \sum_{\tau=0}^{T-1}|r|^{t-\tau}|a_\tau| + \sum_{\tau=T}^{t}|r|^{t-\tau}|a_\tau| \\
+                \abs{\sum_{\tau=0}^t{r^{t-\tau}a_\tau}} &\leq \abs{\sum_{\tau=0}^{T-1}{r^{t-\tau}a_\tau}} + \abs{\sum_{\tau=T}^t{r^{t-\tau}a_\tau}} \leq \sum_{\tau=0}^{T-1}|r|^{t-\tau}|a_\tau| + \sum_{\tau=T}^{t}|r|^{t-\tau}|a_\tau| \\
                 &\leq C|r|^{t-T+1}\frac{1-|r|^{T-1}}{1-|r|} + \varepsilon\frac{1-|r|^{t-T}}{1-|r|} \leq C\frac{|r|^{t-T+1}}{1-|r|} + \varepsilon\frac{1}{1-|r|}
             \end{align*}
             $|r|<1$であるから$^\exists T_2\geq T\st t\geq T_2\Rightarrow C|r|^{t-T+1} \leq \varepsilon$。
             そこで$t\geq T_2$と取り直すと，上の式より
-            \[\left|\sum_{\tau=0}^t{r^{t-\tau}a_\tau}\right| \leq \frac{2\varepsilon}{1-|r|}\]
+            \[\abs{\sum_{\tau=0}^t{r^{t-\tau}a_\tau}} \leq \frac{2\varepsilon}{1-|r|}\]
         \end{proof}
     \section{\texorpdfstring{$\sum_{k=1}^n \cos kx = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin(x/2)} \quad (x\neq 0)$}{Σ\_\{k=1\}\string^n cos(kx) = -1/2 + (sin(n+1/2)x)/(2sin(x/2))}}
         \begin{proof}
             \begin{align*}
                 (\sin x) \sum_{k=1}^n \cos kx &= \frac{1}{2}\sum_{k=1}^n (\sin(1+k)x+\sin(1-k)x) \\
-                &= \frac{1}{2}\left(\sum_{l=2}^{n-1} (\sin lx + \sin(-lx)) + \sin 0x + \sin(-x) + \sin nx + \sin(n+1)x\right) \\
+                &= \frac{1}{2}\parens*{\sum_{l=2}^{n-1} (\sin lx + \sin(-lx)) + \sin 0x + \sin(-x) + \sin nx + \sin(n+1)x} \\
                 \therefore\; \sum_{k=1}^n \cos kx &= -\frac{1}{2} + \frac{1}{2\sin x}(\sin nx + \sin(n+1)x) \\
                 &= -\frac{1}{2} + \frac{1}{4\sin\frac{x}{2}\cos\frac{x}{2}}2\sin\frac{(2n+1)x}{2}\cos\frac{-x}{2} = -\frac{1}{2} + \frac{\sin(n+1/2)x}{2\sin\frac{x}{2}}
             \end{align*}
@@ -104,11 +104,11 @@
         \begin{proof}
             \begin{align*}
                 (\sin x) \sum_{k=1}^n \sin kx &= \frac{1}{2}\sum_{k=1}^n (\cos(1-k)x-\cos(1+k)x) \\
-                &= \frac{1}{2}\left(\sum_{l=2}^{n-1}(\cos lx - \cos(-lx)) + \cos 0x + \cos x - \cos nx - \cos (n+1)x \right) \\
-                &= \frac{1}{2}\left(1 + \cos x - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}\right) \\
-                \therefore\; \sum_{k=1}^n \sin kx &= \frac{1}{2\sin x}\left(2\cos^2\frac{x}{2} - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}\right) \\
-                &= \frac{1}{2\sin\frac{x}{2}\cos\frac{x}{2}}\left(\cos^2\frac{x}{2} - \cos\frac{(2n+1)x}{2}\cos\frac{x}{2}\right) \\
-                &= \frac{1}{2\sin\frac{x}{2}}\left(\cos\frac{x}{2} - \cos\frac{(2n+1)x}{2}\right) \\
+                &= \frac{1}{2}\parens*{\sum_{l=2}^{n-1}(\cos lx - \cos(-lx)) + \cos 0x + \cos x - \cos nx - \cos (n+1)x } \\
+                &= \frac{1}{2}\parens*{1 + \cos x - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}} \\
+                \therefore\; \sum_{k=1}^n \sin kx &= \frac{1}{2\sin x}\parens*{2\cos^2\frac{x}{2} - 2\cos\frac{(2n+1)x}{2}\cos\frac{-x}{2}} \\
+                &= \frac{1}{2\sin\frac{x}{2}\cos\frac{x}{2}}\parens*{\cos^2\frac{x}{2} - \cos\frac{(2n+1)x}{2}\cos\frac{x}{2}} \\
+                &= \frac{1}{2\sin\frac{x}{2}}\parens*{\cos\frac{x}{2} - \cos\frac{(2n+1)x}{2}} \\
                 &= \frac{1}{2\sin\frac{x}{2}}(-2)\sin\frac{(n+1)x}{2}\sin\frac{-nx}{2} \\
                 &= \frac{\sin\frac{nx}{2}\sin\frac{(n+1)x}{2}}{2\sin(x/2)}
             \end{align*}

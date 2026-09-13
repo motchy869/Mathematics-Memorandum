@@ -56,7 +56,7 @@
     % \section{Laplacian}
     %     \begin{shadebox}
     %         球座標系に於けるLaplace演算子は次式である。
-    %         \[ \Delta = \frac{1}{r^2}\frac{\partial}{\partial r}r^2\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial\theta^2} + \frac{\cos\theta}{r^2\sin\theta}\frac{\partial}{\partial\theta} + \frac{1}{r^2\sin^2\theta}\frac{\partial^2}{\partial\varphi^2} \]
+    %         \[ \Delta = \frac{1}{r^2}\partDerivLong{}{r}{}r^2\partDerivLong{}{r}{} + \frac{1}{r^2}\partDerivLong{}{\theta}{2} + \frac{\cos\theta}{r^2\sin\theta}\partDerivLong{}{\theta}{} + \frac{1}{r^2\sin^2\theta}\partDerivLong{}{\varphi}{2} \]
     %     \end{shadebox}
     %     \begin{proof}
     %         \quad\par
@@ -65,26 +65,26 @@
     %         $\hat{\phi}(\bm{u}) := \phi(f(\bm{u}))$とする。
     %         $\vr := [x,y,z]^\top\in\realNumbers^3$とする。
     %         \begin{align*}
-    %             \Delta_\vr\phi(\vr) &= \frac{\partial^2 \phi}{\partial x^2} + \frac{\partial^2 \phi}{\partial y^2} + \frac{\partial^2 \phi}{\partial z^2} \\
+    %             \Delta_\vr\phi(\vr) &= \partDeriv{\phi}{x}{2} + \partDeriv{\phi}{y}{2} + \partDeriv{\phi}{z}{2} \\
     %             \begin{split}
-    %                 &= \frac{\partial }{\partial x}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial x} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial x} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial x}\right) + \frac{\partial }{\partial y}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial y} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial y} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial y}\right) \\
-    %                 &\phantom{=} + \frac{\partial }{\partial z}\left(\frac{\partial \hat{\phi}}{\partial r}\frac{\partial r}{\partial z} + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial \theta}{\partial z} + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial \varphi}{\partial z}\right)
+    %                 &= \partDerivLong{}{x}{}\parens*{\partDeriv{\hat{\phi}}{r}{}\partDeriv{r}{x}{} + \partDeriv{\hat{\phi}}{\theta}{}\partDeriv{\theta}{x}{} + \partDeriv{\hat{\phi}}{\varphi}{}\partDeriv{\varphi}{x}{}} + \partDerivLong{}{y}{}\parens*{\partDeriv{\hat{\phi}}{r}{}\partDeriv{r}{y}{} + \partDeriv{\hat{\phi}}{\theta}{}\partDeriv{\theta}{y}{} + \partDeriv{\hat{\phi}}{\varphi}{}\partDeriv{\varphi}{y}{}} \\
+    %                 &\phantom{=} + \partDerivLong{}{z}{}\parens*{\partDeriv{\hat{\phi}}{r}{}\partDeriv{r}{z}{} + \partDeriv{\hat{\phi}}{\theta}{}\partDeriv{\theta}{z}{} + \partDeriv{\hat{\phi}}{\varphi}{}\partDeriv{\varphi}{z}{}}
     %             \end{split} \tag{1}
     %         \end{align*}
     %         右辺第1項を展開すると次式を得る。
     %         \begin{align*}
-    %             &\phantom{=} \frac{\partial^2\phi}{\partial r^2}\left(\frac{\partial r}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial r}\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2\phi}{\partial \theta^2}\left(\frac{\partial \theta}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial \theta}\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2\phi}{\partial \varphi^2}\left(\frac{\partial \varphi}{\partial x}\right)^2 + \frac{\partial \hat{\phi}}{\partial \varphi}\frac{\partial^2 \varphi}{\partial x^2} \\
-    %             &\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \theta \partial r}\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + 2\frac{\partial^2 \hat{\phi}}{\partial \varphi \partial \theta}\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + 2\frac{\partial^2 \hat{\phi}}{\partial r \partial \varphi}\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x}
+    %             &\phantom{=} \partDeriv{\phi}{r}{2}\parens*{\partDeriv{r}{x}{}}^2 + \partDeriv{\hat{\phi}}{r}{}\partDeriv{r}{x}{2} + \partDeriv{\phi}{\theta}{2}\parens*{\partDeriv{\theta}{x}{}}^2 + \partDeriv{\hat{\phi}}{\theta}{}\partDeriv{\theta}{x}{2} + \partDeriv{\phi}{\varphi}{2}\parens*{\partDeriv{\varphi}{x}{}}^2 + \partDeriv{\hat{\phi}}{\varphi}{}\partDeriv{\varphi}{x}{2} \\
+    %             &\phantom{=} + 2\partDerivIIHetero{\hat{\phi}}{\theta}{r}\partDeriv{\theta}{x}{}\partDeriv{r}{x}{} + 2\partDerivIIHetero{\hat{\phi}}{\varphi}{\theta}\partDeriv{\varphi}{x}{}\partDeriv{\theta}{x}{} + 2\partDerivIIHetero{\hat{\phi}}{r}{\varphi}\partDeriv{r}{x}{}\partDeriv{\varphi}{x}{}
     %         \end{align*}
     %         式(1)の右辺第2,3項はそれぞれ上式の$x$を$y,z$で置き換えたものになる。
     %         以上より式(1)は次式になる。
     %         \begin{align*}
-    %             (1) &= \frac{\partial^2 \hat{\phi}}{\partial r^2}\left[\left(\frac{\partial r}{\partial x}\right)^2 + \left(\frac{\partial r}{\partial y}\right)^2 + \left(\frac{\partial r}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial r}\left(\frac{\partial^2 r}{\partial x^2} + \frac{\partial^2 r}{\partial y^2} + \frac{\partial^2 r}{\partial z^2}\right) \tag{2} \\
-    %             &\phantom{=} + \frac{\partial^2 \hat{\phi}}{\partial \theta^2}\left[\left(\frac{\partial \theta}{\partial x}\right)^2 + \left(\frac{\partial \theta}{\partial y}\right)^2 + \left(\frac{\partial \theta}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial \theta}\left(\frac{\partial^2 \theta}{\partial x^2} + \frac{\partial^2 \theta}{\partial y^2} + \frac{\partial^2 \theta}{\partial z^2}\right) \tag{3} \\
-    %             &\phantom{=} + \frac{\partial^2 \hat{\phi}}{\partial \varphi^2}\left[\left(\frac{\partial \varphi}{\partial x}\right)^2 + \left(\frac{\partial \varphi}{\partial y}\right)^2 + \left(\frac{\partial \varphi}{\partial z}\right)^2\right] + \frac{\partial \hat{\phi}}{\partial \varphi}\left(\frac{\partial^2 \varphi}{\partial x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2 \varphi}{\partial z^2}\right) \tag{4} \\
-    %             &\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \theta \partial r}\left(\frac{\partial \theta}{\partial x}\frac{\partial r}{\partial x} + \frac{\partial \theta}{\partial y}\frac{\partial r}{\partial y} + \frac{\partial \theta}{\partial z}\frac{\partial r}{\partial z}\right) \tag{5} \\
-    %             &\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial \varphi \partial \theta}\left(\frac{\partial \varphi}{\partial x}\frac{\partial \theta}{\partial x} + \frac{\partial \varphi}{\partial y}\frac{\partial \theta}{\partial y} + \frac{\partial \varphi}{\partial z}\frac{\partial \theta}{\partial z}\right) \tag{6} \\
-    %             &\phantom{=} + 2\frac{\partial^2 \hat{\phi}}{\partial r \partial \varphi}\left(\frac{\partial r}{\partial x}\frac{\partial \varphi}{\partial x} + \frac{\partial r}{\partial y}\frac{\partial \varphi}{\partial y} + \frac{\partial r}{\partial z}\frac{\partial \varphi}{\partial z}\right) \tag{7}
+    %             (1) &= \partDeriv{\hat{\phi}}{r}{2}\bracks*{\parens*{\partDeriv{r}{x}{}}^2 + \parens*{\partDeriv{r}{y}{}}^2 + \parens*{\partDeriv{r}{z}{}}^2} + \partDeriv{\hat{\phi}}{r}{}\parens*{\partDeriv{r}{x}{2} + \partDeriv{r}{y}{2} + \partDeriv{r}{z}{2}} \tag{2} \\
+    %             &\phantom{=} + \partDeriv{\hat{\phi}}{\theta}{2}\bracks*{\parens*{\partDeriv{\theta}{x}{}}^2 + \parens*{\partDeriv{\theta}{y}{}}^2 + \parens*{\partDeriv{\theta}{z}{}}^2} + \partDeriv{\hat{\phi}}{\theta}{}\parens*{\partDeriv{\theta}{x}{2} + \partDeriv{\theta}{y}{2} + \partDeriv{\theta}{z}{2}} \tag{3} \\
+    %             &\phantom{=} + \partDeriv{\hat{\phi}}{\varphi}{2}\bracks*{\parens*{\partDeriv{\varphi}{x}{}}^2 + \parens*{\partDeriv{\varphi}{y}{}}^2 + \parens*{\partDeriv{\varphi}{z}{}}^2} + \partDeriv{\hat{\phi}}{\varphi}{}\parens*{\partDeriv{\varphi}{x}{2} + \partDeriv{\varphi}{y}{2} + \partDeriv{\varphi}{z}{2}} \tag{4} \\
+    %             &\phantom{=} + 2\partDerivIIHetero{\hat{\phi}}{\theta}{r}\parens*{\partDeriv{\theta}{x}{}\partDeriv{r}{x}{} + \partDeriv{\theta}{y}{}\partDeriv{r}{y}{} + \partDeriv{\theta}{z}{}\partDeriv{r}{z}{}} \tag{5} \\
+    %             &\phantom{=} + 2\partDerivIIHetero{\hat{\phi}}{\varphi}{\theta}\parens*{\partDeriv{\varphi}{x}{}\partDeriv{\theta}{x}{} + \partDeriv{\varphi}{y}{}\partDeriv{\theta}{y}{} + \partDeriv{\varphi}{z}{}\partDeriv{\theta}{z}{}} \tag{6} \\
+    %             &\phantom{=} + 2\partDerivIIHetero{\hat{\phi}}{r}{\varphi}\parens*{\partDeriv{r}{x}{}\partDeriv{\varphi}{x}{} + \partDeriv{r}{y}{}\partDeriv{\varphi}{y}{} + \partDeriv{r}{z}{}\partDeriv{\varphi}{z}{}} \tag{7}
     %         \end{align*}
     %         まず式(5),(6),(7)が0であることを示す。
     %         $J$を$f$のJacobi行列とすると，式(5)の括弧の内側は$J^{-1}$の1行目と2行目の内積である。
@@ -96,19 +96,19 @@
     %         $r = \sqrt{x^2+y^2+z^2},\theta = \acos\parens*{z/r} = \acos\parens*{z/\sqrt{x^2+y^2+z^2}},\phi = \atanEx{x}{y}$
     %         であるから次式が成り立つ。
     %         \begin{gather*}
-    %             \frac{\partial r}{\partial x} = \sin\theta\cos\varphi, \quad \frac{\partial r}{\partial y} = \sin\theta\sin\varphi, \quad \frac{\partial r}{\partial z} = \cos\theta \\
-    %             \frac{\partial \theta}{\partial x} = \frac{1}{r}\cos\theta\cos\varphi, \quad \frac{\partial \theta}{\partial y} = \frac{1}{r}\cos\theta\sin\varphi, \quad \frac{\partial \theta}{\partial z} = -\frac{1}{r}\sin\theta \\
-    %             \frac{\partial \varphi}{\partial x} = -\frac{\sin\varphi}{r\sin\theta}, \quad \frac{\partial \varphi}{\partial y} = \frac{\cos\varphi}{r\sin\theta}, \quad \frac{\partial \varphi}{\partial z} = 0 \\
-    %             \frac{\partial^2 r}{\partial x^2} = \frac{1}{r}\left(\cos^2\theta\cos^2\varphi + \sin^2\varphi\right), \quad \frac{\partial^2 r}{\partial y^2} = \frac{1}{r}\left(\cos^2\theta\sin^2\varphi + \cos^2\varphi\right), \quad \frac{\partial^2 r}{\partial z^2} = \frac{1}{r}\sin^2\theta \\
-    %             \frac{\partial^2 \theta}{\partial x^2} = \frac{1}{r^2\sin\theta}\left(-2\sin^2\theta\cos\theta\cos^2\varphi + \cos\theta\sin^2\varphi\right) \\
-    %             \frac{\partial^2 \theta}{\partial y^2} = \frac{1}{r^2\sin\theta}\left(-2\sin^2\theta\cos\theta\sin^2\varphi + \cos\theta\cos^2\varphi\right) \\
-    %             \frac{\partial^2 \theta}{\partial z^2} = \frac{2}{r^2}\sin\theta\cos\theta \\
-    %             \frac{\partial^2 \varphi}{\partial x^2} = \frac{2\sin\varphi\cos\varphi}{r^2\sin^2\theta}, \quad \frac{\partial^2 \varphi}{\partial y^2} = -\frac{2\sin\varphi\cos\varphi}{r^2\sin^2\theta}
+    %             \partDeriv{r}{x}{} = \sin\theta\cos\varphi, \quad \partDeriv{r}{y}{} = \sin\theta\sin\varphi, \quad \partDeriv{r}{z}{} = \cos\theta \\
+    %             \partDeriv{\theta}{x}{} = \frac{1}{r}\cos\theta\cos\varphi, \quad \partDeriv{\theta}{y}{} = \frac{1}{r}\cos\theta\sin\varphi, \quad \partDeriv{\theta}{z}{} = -\frac{1}{r}\sin\theta \\
+    %             \partDeriv{\varphi}{x}{} = -\frac{\sin\varphi}{r\sin\theta}, \quad \partDeriv{\varphi}{y}{} = \frac{\cos\varphi}{r\sin\theta}, \quad \partDeriv{\varphi}{z}{} = 0 \\
+    %             \partDeriv{r}{x}{2} = \frac{1}{r}\parens*{\cos^2\theta\cos^2\varphi + \sin^2\varphi}, \quad \partDeriv{r}{y}{2} = \frac{1}{r}\parens*{\cos^2\theta\sin^2\varphi + \cos^2\varphi}, \quad \partDeriv{r}{z}{2} = \frac{1}{r}\sin^2\theta \\
+    %             \partDeriv{\theta}{x}{2} = \frac{1}{r^2\sin\theta}\parens*{-2\sin^2\theta\cos\theta\cos^2\varphi + \cos\theta\sin^2\varphi} \\
+    %             \partDeriv{\theta}{y}{2} = \frac{1}{r^2\sin\theta}\parens*{-2\sin^2\theta\cos\theta\sin^2\varphi + \cos\theta\cos^2\varphi} \\
+    %             \partDeriv{\theta}{z}{2} = \frac{2}{r^2}\sin\theta\cos\theta \\
+    %             \partDeriv{\varphi}{x}{2} = \frac{2\sin\varphi\cos\varphi}{r^2\sin^2\theta}, \quad \partDeriv{\varphi}{y}{2} = -\frac{2\sin\varphi\cos\varphi}{r^2\sin^2\theta}
     %         \end{gather*}
     %         これらを用いて
     %         \begin{align*}
-    %             (2) &= \frac{\partial^2 \hat{\phi}}{\partial r^2} + \frac{2}{r}\frac{\partial \hat{\phi}}{\partial r} = \frac{1}{r^2}\frac{\partial}{\partial r}r^2\frac{\partial \hat{\phi}}{\partial r} \\
-    %             (3) &= \frac{1}{r^2}\frac{\partial^2 \hat{\phi}}{\partial \theta^2} + \frac{\cos\theta}{r^2\sin\theta}\frac{\partial \hat{\phi}}{\partial \theta} \\
-    %             (4) &= \frac{1}{r^2\sin^2\theta}\frac{\partial^2 \hat{\phi}}{\partial \varphi^2}
+    %             (2) &= \partDeriv{\hat{\phi}}{r}{2} + \frac{2}{r}\partDeriv{\hat{\phi}}{r}{} = \frac{1}{r^2}\partDerivLong{}{r}{}r^2\partDeriv{\hat{\phi}}{r}{} \\
+    %             (3) &= \frac{1}{r^2}\partDeriv{\hat{\phi}}{\theta}{2} + \frac{\cos\theta}{r^2\sin\theta}\partDeriv{\hat{\phi}}{\theta}{} \\
+    %             (4) &= \frac{1}{r^2\sin^2\theta}\partDeriv{\hat{\phi}}{\varphi}{2}
     %         \end{align*}
     %     \end{proof}

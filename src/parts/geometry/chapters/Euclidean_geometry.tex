@@ -10,20 +10,20 @@
             \begin{proof}
                 余弦定理を用いて
                 \[\cos{C} = \frac{a^2+b^2-c^2}{2ab}\]
-                \[\therefore \; \sin{C} = \sqrt{1-\cos^2{C}} = \frac{\sqrt{4a^2b^2-{\left(a^2+b^2-c^2\right)}^2}}{2ab}\]
+                \[\therefore \; \sin{C} = \sqrt{1-\cos^2{C}} = \frac{\sqrt{4a^2b^2-{\parens*{a^2+b^2-c^2}}^2}}{2ab}\]
                 \begin{align*}
                     S &=& \frac{1}{2}ab\sin{C}\\
-                    &=& \frac{1}{2}\sqrt{4a^2b^2-{\left(a^2+b^2-c^2\right)}^2}
+                    &=& \frac{1}{2}\sqrt{4a^2b^2-{\parens*{a^2+b^2-c^2}}^2}
                 \end{align*}
                 ここで
                 \begin{align*}
-                    &\;& 4a^2b^2-{\left(a^2+b^2-c^2\right)}^2\\
-                    &=& -\left(a^4+b^4+c^4-2a^2b^2-2b^2c^2-2c^2a^2\right)\\
-                    &=& -\left[a^4 - 2(b^2+c^2)a^2 + b^4+c^4 -2b^2c^2\right]\\
-                    &=& -\left[a^4 - 2(b^2+c^2)a^2 + (b^2+c^2)^2 -4b^2c^2\right]\\
-                    &=& -\left\{\left[a^2-(b^2+c^2)^2\right]^2-(2bc)^2\right\}\\
-                    &=& -\left[a^2-(b^2+c^2)+2bc\right]\left[a^2-(b^2+c^2)-2bc\right]\\
-                    &=& -\left[a^2-(b-c)^2\right]\left[a^2-(b+c)^2\right]\\
+                    &\;& 4a^2b^2-{\parens*{a^2+b^2-c^2}}^2\\
+                    &=& -\parens*{a^4+b^4+c^4-2a^2b^2-2b^2c^2-2c^2a^2}\\
+                    &=& -\bracks*{a^4 - 2(b^2+c^2)a^2 + b^4+c^4 -2b^2c^2}\\
+                    &=& -\bracks*{a^4 - 2(b^2+c^2)a^2 + (b^2+c^2)^2 -4b^2c^2}\\
+                    &=& -\braces*{\bracks*{a^2-(b^2+c^2)^2}^2-(2bc)^2}\\
+                    &=& -\bracks*{a^2-(b^2+c^2)+2bc}\bracks*{a^2-(b^2+c^2)-2bc}\\
+                    &=& -\bracks*{a^2-(b-c)^2}\bracks*{a^2-(b+c)^2}\\
                     &=& (a+b+c)(-a+b+c)(a-b+c)(a+b-c)
                 \end{align*}
                 よって
@@ -47,7 +47,7 @@
                 % ↓ 没 @2025-01-12
                 % また，$\norm{\vx}$を十分大きくとり，$\norm{\vx}>\norm{\bm{a}}/2$とする。
                 % $f(\vx) := \norm{\vx-\bm{a}} - \norm{\vx}$とすると次式が成り立つ。
-                % \[ \bigl(f(\vx) + \norm{\vx}\bigr)^2 = \norm{\vx-\bm{a}}^2 \quad \therefore f(\vx)\bigl(f(\vx) + 2\norm{\vx}\bigr) = \norm{\bm{a}}^2 - 2\vx\cdot\bm{a} \]
+                % \[ \parens*{f(\vx) + \norm{\vx}}^2 = \norm{\vx-\bm{a}}^2 \quad \therefore f(\vx)\parens*{f(\vx) + 2\norm{\vx}} = \norm{\bm{a}}^2 - 2\vx\cdot\bm{a} \]
                 % $f(\vx)$が最小となるのは，原点と$\vx$を結ぶ線分の上に$\bm{a}$があるときで，その値は$-\norm{\bm{a}}$である。
                 % $\norm{\vx}>\norm{\bm{a}}/2$と仮定しているから次式を得る。
                 % \[ f(\vx) = \frac{\norm{\bm{a}}^2 - 2\vx\cdot\bm{a}}{f(\vx) + 2\norm{\vx}} < \frac{\norm{\bm{a}}^2 - 2\vx\cdot\bm{a}}{2\norm{\vx} - \norm{\bm{a}}} \to -\frac{\vx}{\norm{\vx}}\cdot\bm{a} \quad \text{as} \quad \norm{\vx}\to\infty\]

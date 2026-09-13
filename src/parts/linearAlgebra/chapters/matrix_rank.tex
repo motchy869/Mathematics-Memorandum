@@ -95,7 +95,7 @@
             とすれば
             \[AT = P\quad(A = PT^{-1})\]
             であり，$T$は正則である。さらに$\HerConj{P} P = I_{n\times n}$であるから
-            \[\rank{\HerConj{A} A} = \rank{\HerConj{\left(T^{-1}\right)} \HerConj{P} PT^{-1}} = \rank{\HerConj{\left(T^{-1}\right)} I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
+            \[\rank{\HerConj{A} A} = \rank{\HerConj{\parens*{T^{-1}}} \HerConj{P} PT^{-1}} = \rank{\HerConj{\parens*{T^{-1}}} I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
         \end{proof}
         \begin{proof}
             (より簡単な証明)
@@ -207,19 +207,19 @@
             \quad\par
             簡約化に用いる行変形行列を$R$とすると
             \[
-                RA = \left[
+                RA = \bracks*{
                 \begin{array}{c}
                     F \\ \hdashline
                     O
                 \end{array}
-                \right]
+                }
                 =
-                \left[
+                \bracks*{
                 \begin{array}{c}
                     I_r \\ \hdashline
                     O
                 \end{array}
-                \right]
+                }
                 F = RBF
             \]
             $R$は正則だから$A = BF$。

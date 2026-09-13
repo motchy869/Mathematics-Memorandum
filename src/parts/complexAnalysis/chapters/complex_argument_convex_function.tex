@@ -7,15 +7,15 @@
                 $T_X \coloneq (X_1,\dotsc,X_N),T_Y \coloneq (Y_1,\dotsc,Y_N),\lambda \in [0,1]$とし，$f(T_X) \coloneq \norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2$とする。
                 \begin{align*}
                     f((1-\lambda)T_X + \lambda T_Y) &= \norm{\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}}_2^2 \\
-                    &= \norm{(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}_2^2 \\
+                    &= \norm{(1-\lambda)\parens*{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}} + \lambda\parens*{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}}_2^2 \\
                     &= (1-\lambda)^2\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2 + \lambda^2\norm{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}_2^2 \\
-                    &\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
+                    &\phantom{=} + 2\lambda(1-\lambda)\Re{\parens*{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}^\mathrm{H}\parens*{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}}
                 \end{align*}
                 よって
                 \begin{align*}
                     &\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
-                    &= \lambda(1-\lambda)\left[\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2 + \norm{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
-                    &= \lambda(1-\lambda)\norm{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}_2^2 \geq 0
+                    &= \lambda(1-\lambda)\bracks*{\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2 + \norm{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}_2^2 - 2\Re{\parens*{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}^\mathrm{H}\parens*{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}}} \\
+                    &= \lambda(1-\lambda)\norm{\parens*{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}} - \parens*{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}}_2^2 \geq 0
                 \end{align*}
             \end{proof}
         \subsection{\texorpdfstring{$\norm{A\vx+\bm{b}}_2^2$}{||Ax+b||\string^2}が狭義凸\texorpdfstring{$\iff \HerConj{A}A\succ O$}{⇔ A*Aが正定}}
@@ -33,7 +33,7 @@
                 これより
                 \begin{align*}
                     &\phantom{=} (1-\lambda)f(\vx) + \lambda f(\vy) - f((1-\lambda)\vx + \lambda\vy) \\
-                    &= \lambda(1-\lambda)\left[f(\vx) + f(\vy) - 2\Re{\HerConj{(A\vx+\bm{b})}(A\vy+\bm{b})}\right] \\
+                    &= \lambda(1-\lambda)\bracks*{f(\vx) + f(\vy) - 2\Re{\HerConj{(A\vx+\bm{b})}(A\vy+\bm{b})}} \\
                     &= \lambda(1-\lambda)\norm{(A\vx+\bm{b}) - (A\vy+\bm{b})}_2^2 = \lambda(1-\lambda)\norm{A(\vx-\vy)}_2^2 \\
                     &= \lambda(1-\lambda)\HerConj{(\vx-\vy)}\HerConj{A}A(\vx-\vy)
                 \end{align*}

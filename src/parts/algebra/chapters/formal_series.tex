@@ -17,7 +17,7 @@
                 $f(x)$が原始多項式だから，適当な$p^n-1-n$次多項式$g(x) \in \GaloisField{p}[[x]]$が存在して次式が成り立つ。
                 \begin{align*}
                     x^{p^n-1} - 1 &= g(x)f(x) \\
-                    \therefore f(x)^{-1} &= -g(x)\left(1 - x^{p^n-1}\right)^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
+                    \therefore f(x)^{-1} &= -g(x)\parens*{1 - x^{p^n-1}}^{-1} = -g(x) \sum_{i=0}^\infty x^{i(p^n-1)}
                 \end{align*}
                 $\deg{g(x)} < p^n - 1$だから右辺の係数列は周期的であり，その周期は高々$p^n-1$である。
                 「高々」と言ったのは，$g(x)$の係数列のパターンに依ってはより短い周期になり得るからである。
@@ -66,7 +66,7 @@
                     \[ f_1(x)^{-1} = g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
                     この式をLaurent多項式に拡張して変形してゆく。
                     \begin{align*}
-                        f_1(x)^{-1} &= g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} = -g_1(x) \left(x^{p^n-1} - 1\right)^{-1} \\
+                        f_1(x)^{-1} &= g_1(x) \sum_{i=0}^\infty x^{i(p^n-1)} = -g_1(x) \parens*{x^{p^n-1} - 1}^{-1} \\
                         \therefore x^{p^n-1} - 1 &= -g_1(x)f_1(x) = -g_1(x) x^n f_2(x^{-1})
                     \end{align*}
                     ここに$f_2(x)$は$f_1(x)$の係数の順番を逆転させたものである。
@@ -77,5 +77,5 @@
                     \[ 1 - x^{p^n-1} = -x^{p^n-1-n}g_1(x^{-1}) f_2(x) =: -g_2(x)f_2(x) \]
                     ここに$g_2(x)$は$g_1(x)$の係数の順番を逆転させたものである。
                     これより次式を得る。
-                    \[ f_2(x)^{-1} = -g_2(x) \left(1 - x^{p^n-1}\right)^{-1} = -g_2(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
+                    \[ f_2(x)^{-1} = -g_2(x) \parens*{1 - x^{p^n-1}}^{-1} = -g_2(x) \sum_{i=0}^\infty x^{i(p^n-1)} \]
                 \end{proof}

@@ -33,7 +33,7 @@
             各$R_{i_1,\dotsc,i_n}$の対角線の長さは$L/m$であり，$F$がLipschitz連続だから各$R_{i_1,\dotsc,i_n}$について，その中の任意の1点の$F$による像(点)の半径$KL/m$以内に他の全ての点の像が含まれる。
             つまり各$F(R_{i_1,\dotsc,i_n})$は1辺の長さが$2KL/m$の$n$次元超立方体$R'_{i_1,\dotsc,i_n}$で覆うことができる。
             よって$F(C)$は$\setComprehension*{R'_{i_1,\dotsc,i_n}}{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset}$で覆うことができて，その面積は
-            \[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \left(2KL/m\right)^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
+            \[ \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} |R'_{i_1,\dotsc,i_n}| \leq \sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \parens*{2KL/m}^n \leq \frac{(2KL)^n}{|R|}\sum_{R_{i_1,\dotsc,i_n}\cap C\neq\emptyset} \frac{|R|}{m^n} < \varepsilon\]
         \end{proof}
     \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
         \begin{proof}
@@ -42,16 +42,16 @@
             \par
             $\varepsilon>0,x\in\realNumbers,h\in(-1,1)$を任意にとる。
             \begin{align*}
-                \abs{(f*g)(x+h) - (f*g)(x)} &= \abs{\integrate{-\infty}{\infty}{\left[f(x-y+h) - f(x-y)\right]g(y)}{}{y}} \\
-                &\leq \integrate{-\infty}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y}
+                \abs{(f*g)(x+h) - (f*g)(x)} &= \abs{\integrate{-\infty}{\infty}{\bracks*{f(x-y+h) - f(x-y)}g(y)}{}{y}} \\
+                &\leq \integrate{-\infty}{\infty}{\abs{\bracks*{f(x-y+h) - f(x-y)}g(y)}}{}{y}
             \end{align*}
             $f$の有界性と$g$の絶対可積分性より，ある$a$が存在して
-            \[ \integrate{-\infty}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y},\integrate{a}{\infty}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
+            \[ \integrate{-\infty}{a}{\abs{\bracks*{f(x-y+h) - f(x-y)}g(y)}}{}{y},\integrate{a}{\infty}{\abs{\bracks*{f(x-y+h) - f(x-y)}g(y)}}{}{y} < \varepsilon/3 \]
             となる。$f$は$\realNumbers$上で連続だから特に$[x-a-1,x+a+1]$上で一様連続である。
             よって$h$を十分小さくすれば
-            \[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \left(L \coloneq \integrate{-\infty}{\infty}{|g(y)|}{}{y} \right) \]
+            \[ |f(x-y+h) - f(x-y)| < \frac{\varepsilon}{3L} \quad \parens*{L \coloneq \integrate{-\infty}{\infty}{|g(y)|}{}{y} } \]
             となり，
-            \[ \integrate{-a}{a}{\abs{\left[f(x-y+h) - f(x-y)\right]g(y)}}{}{y} < \varepsilon/3 \]
+            \[ \integrate{-a}{a}{\abs{\bracks*{f(x-y+h) - f(x-y)}g(y)}}{}{y} < \varepsilon/3 \]
             以上より
             \[ \abs{(f*g)(x+h) - (f*g)(x)} < \varepsilon \]
             \par
@@ -63,8 +63,8 @@
             右端の等号は$f$の有界性と$g$の絶対可積分性より$\integrate{-\infty}{\infty}{|f(x-y)||g(y)|}{}{y}$が$x$の値に関係なく収束することによる。
             これより
             \begin{align*}
-                I(a) &\leq \integrate{-\infty}{\infty}{\abs{g(y)}\integrate{-a}{a}{\abs{f(x-y)}}{}{x}}{}{y} \leq \integrate{-\infty}{\infty}{\abs{g(y)}M_1}{}{y} \quad \left( M_1 \coloneq \integrate{-\infty}{\infty}{\abs{f(x-y)}}{}{x} \right) \\
-                &\leq M_1M_2 \quad \left( M_2 \coloneq \integrate{-\infty}{\infty}{\abs{g(y)}}{}{y} \right)
+                I(a) &\leq \integrate{-\infty}{\infty}{\abs{g(y)}\integrate{-a}{a}{\abs{f(x-y)}}{}{x}}{}{y} \leq \integrate{-\infty}{\infty}{\abs{g(y)}M_1}{}{y} \quad \parens*{ M_1 \coloneq \integrate{-\infty}{\infty}{\abs{f(x-y)}}{}{x} } \\
+                &\leq M_1M_2 \quad \parens*{ M_2 \coloneq \integrate{-\infty}{\infty}{\abs{g(y)}}{}{y} }
             \end{align*}
             よって$I(a)$は単調増加かつ上に有界なので収束する。つまり$\integrate{-\infty}{\infty}{(f*g)(x)}{}{x}$は絶対収束する。
         \end{proof}

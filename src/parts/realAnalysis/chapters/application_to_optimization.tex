@@ -77,7 +77,7 @@
                 なぜならば
                 \begin{align*}
                     &\phantom{=} \sum_{i=1}^N (x_i - 1/N)^2 + 1/N = \sum_{i=1}^N x_i^2 - \frac{2}{N}\sum_{i=1}^N x_i + \frac{2}{N} \\
-                    &= \sum_{i=1}^N x_i^2 + \frac{2}{N}\left(1 - \sum_{i=1}^N x_i\right) = \sum_{i=1}^N x_i^2 \quad \left(\because \sum_{i=1}^N x_i = 1\right)
+                    &= \sum_{i=1}^N x_i^2 + \frac{2}{N}\parens*{1 - \sum_{i=1}^N x_i} = \sum_{i=1}^N x_i^2 \quad \parens*{\because \sum_{i=1}^N x_i = 1}
                 \end{align*}
                 \par
                 式(1)より$\sum_{i=1}^N x_i^2$が最小となるのは$x_1 = x_2 = \dots = x_N = 1/N$のとき，かつその時に限る。
@@ -93,9 +93,9 @@
                 \quad\par
                 関数$f:x\in\setComprehension{t\in\realNumbers}{t>0} \mapsto 1/x$ は 狭義下に凸である。
                 $w_i\geq 0\;(i=1,2,\dots,N),\sum_{i=1}^N w_i = 1$とすると，Jensenの不等式より次式が成り立つ。
-                \[ \sum_{i=1}^N w_i f(x_i) \geq f\left(\sum_{i=1}^N w_i x_i\right) \]
+                \[ \sum_{i=1}^N w_i f(x_i) \geq f\parens*{\sum_{i=1}^N w_i x_i} \]
                 等号成立の必要十分条件は$x_1 = x_2 = \dots = x_N$である。
                 上式で$w_i = 1/N\;(i=1,\dots,N)$とすると次式を得る。
-                \[ \frac{1}{N} \sum_{i=1}^N f(x_i) \geq \frac{1}{\frac{1}{N} \sum_{i=1}^N x_i} = N \quad \left(\because \sum_{i=1}^N w_i = 1\right) \quad \therefore \sum_{i=1}^N 1/x_i \geq N^2 \]
+                \[ \frac{1}{N} \sum_{i=1}^N f(x_i) \geq \frac{1}{\frac{1}{N} \sum_{i=1}^N x_i} = N \quad \parens*{\because \sum_{i=1}^N w_i = 1} \quad \therefore \sum_{i=1}^N 1/x_i \geq N^2 \]
                 先述の等号成立条件を考えると，$x_i = 1/N\;(i=1,2,\dots,N)$が唯一の最小点である。
             \end{proof}

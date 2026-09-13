@@ -5,11 +5,11 @@
 
 % operators
 \newcommand*{\itgElem}[1]{{\mathrm{d}#1}}
-\newcommand*{\mJi}[1]{\protect\underline{m}_\mathrm{J}\left(#1\right)}
-\newcommand*{\mJo}[1]{\protect\overline{m}_\mathrm{J}\left(#1\right)}
-\newcommand*{\mJordan}[1]{m_\mathrm{J}\left(#1\right)} % 本当は \mJ を使いたいが，Debian だとバグる。"already defined" というくせに，ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
-\newcommand*{\mLebO}[1]{\protect\overline{m}_\mathrm{L}\left(#1\right)}
-\newcommand*{\mLeb}[1]{m_\mathrm{L}\left(#1\right)}
+\newcommand*{\mJi}[1]{\protect\underline{m}_\mathrm{J}\parens*{#1}}
+\newcommand*{\mJo}[1]{\protect\overline{m}_\mathrm{J}\parens*{#1}}
+\newcommand*{\mJordan}[1]{m_\mathrm{J}\parens*{#1}} % 本当は \mJ を使いたいが，Debian だとバグる。"already defined" というくせに，ここで定義するのをやめて \mJ と打ってみると今度は "Undefined" だという。
+\newcommand*{\mLebO}[1]{\protect\overline{m}_\mathrm{L}\parens*{#1}}
+\newcommand*{\mLeb}[1]{m_\mathrm{L}\parens*{#1}}
 
 % symbols
 % sorted in alphabetical order

@@ -35,7 +35,7 @@
                     \abs{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\abs{\bigcap_{i\in I}A_i}}
                 \end{equation}
                 もっと短く書けば
-                \[\abs{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}}{(-1)^{|I|-1}\abs{\bigcap_{i\in I}A_i}}\]
+                \[\abs{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\braces*{\emptyset}}{(-1)^{|I|-1}\abs{\bigcap_{i\in I}A_i}}\]
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -43,24 +43,24 @@
                 $U\coloneq\bigcup_{i=1}^n A_i$とする。
                 補題\ref{補題: 要素数のカウント。親集合の各要素について子集合に含まれるかどうか調べる。}より
                 \begin{align*}
-                    \textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\left(\bigcup_{i=1}^n A_i\right)\cap\{x\}}} = \sum_{x\in U}1 \\
-                    \textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}} \\
-                    &= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
-                    &= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
-                    &= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) \coloneq \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}
+                    \textrm{(1)の左辺} &= \sum_{x\in U}{\abs{\parens*{\bigcup_{i=1}^n A_i}\cap\{x\}}} = \sum_{x\in U}1 \\
+                    \textrm{(1)の右辺} &= \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}}{\sum_{x\in U}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}} \\
+                    &= \sum_{k=1}^n{(-1)^{k-1}\sum_{x\in U}{\sum_{I\in\combi{\numset}{k}}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+                    &= \sum_{x\in U}{\sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}}} \quad(\textrm{和の順序交換}) \\
+                    &= \sum_{x\in U}{c(x)} \quad\textrm{where}\quad c(x) \coloneq \sum_{k=1}^n{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}}
                 \end{align*}
                 任意の$x\in U$に対して$c(x)=1$であることを示す。
                 各$x$に対して，$x$に依存して決まる次のような自然数$m(x)$が存在する。
                 \begin{center}
                     「$x$は$m(x)$個の集合$A_{i_1},\dotsc,A_{i_{m(x)}}$に共通して属し，他の$n-m(x)$個の集合には属さない。」
                 \end{center}
-                従って，$c(x)$の$\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
-                \[c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}}{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}}}\]
-                上式の$\abs{\left(\bigcap_{i\in I}A_i\right)\cap\{x\}}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから，$c(x)$はさらに次のように書き直される。
+                従って，$c(x)$の$\sum_{I\in\combi{\numset}{k}}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}$は$k>m(x)+1$に対して$0$であるから$c(x)$は次のように書き直される。
+                \[c(x) = \sum_{k=1}^{\textcolor{red}{m(x)}}{(-1)^{k-1}\sum_{I\in\combi{\numset}{k}}{\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}}}\]
+                上式の$\abs{\parens*{\bigcap_{i\in I}A_i}\cap\{x\}}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから，$c(x)$はさらに次のように書き直される。
                 \begin{align*}
                     c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
-                    &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
-                    &= -\left((1-1)^{m(x)} - 1\right) = 1
+                    &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\parens*{\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1} \\
+                    &= -\parens*{(1-1)^{m(x)} - 1} = 1
                 \end{align*}
             \end{proof}
             \subsection{あの等式をどうやって思いついたか}
@@ -123,7 +123,7 @@
                     \item 4つの集合に属しており，4つ以上の集合に属していない要素のカウンタは$4-\combi{4}{2}+\combi{4}{3}-\combi{4}{4}=1$
                     \item 5つの集合に属しており，4つ以上の集合に属していない要素のカウンタは$5-\combi{5}{2}+\combi{5}{3}-\combi{5}{4}+\combi{5}{5}=1$
                     \item $\cdots$
-                    \item $n$個の集合に属している要素のカウンタは$n + \sum_{i=2}^n{(-1)^{i-1}\combi{n}{i}} = -\sum_{i=1}^n{(-1)^i\combi{n}{i}} = -\left(\sum_{i=0}^n{(-1)^i\combi{n}{i}} - 1\right) = -\left((1-1)^n - 1\right) = 1$
+                    \item $n$個の集合に属している要素のカウンタは$n + \sum_{i=2}^n{(-1)^{i-1}\combi{n}{i}} = -\sum_{i=1}^n{(-1)^i\combi{n}{i}} = -\parens*{\sum_{i=0}^n{(-1)^i\combi{n}{i}} - 1} = -\parens*{(1-1)^n - 1} = 1$
                 \end{itemize}
                 全ての要素を過不足無くカウントできていることがわかる。
     \section{配列の飛び飛びマーキング}

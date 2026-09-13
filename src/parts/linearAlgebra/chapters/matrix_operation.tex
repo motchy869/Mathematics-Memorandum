@@ -6,18 +6,18 @@
         \begin{proof}
             \quad\par
             まず下準備。
-            \[A \coloneq \left[a_{ij}\right]_{l\times m},\quad B \coloneq \left[b_{ij}\right]_{m\times n},\quad C \coloneq \left[c_{ij}\right]_{n\times o}\]
-            \[M_{AB} \coloneq \left[m_{{AB}_{ij}}\right]_{l\times n} = AB,\quad M_{BC} \coloneq [m_{{BC}_{ij}}]_{m\times o} = BC\]
-            \[N_1 \coloneq \left[n_{1_{ij}}\right]_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneq \left[n_{2_{ij}}\right]_{l\times o} = A(BC) = AM_{BC}\]
+            \[A \coloneq \bracks*{a_{ij}}_{l\times m},\quad B \coloneq \bracks*{b_{ij}}_{m\times n},\quad C \coloneq \bracks*{c_{ij}}_{n\times o}\]
+            \[M_{AB} \coloneq \bracks*{m_{{AB}_{ij}}}_{l\times n} = AB,\quad M_{BC} \coloneq [m_{{BC}_{ij}}]_{m\times o} = BC\]
+            \[N_1 \coloneq \bracks*{n_{1_{ij}}}_{l\times o} = (AB)C = M_{AB}C,\quad N_2 \coloneq \bracks*{n_{2_{ij}}}_{l\times o} = A(BC) = AM_{BC}\]
             とする。
             $N_1 = N_2$すなわち$n_{1_{ij}} = n_{2_{ij}}$を示せば良い。\\
             まず
             \[m_{{AB}_{ij}} = \sum_{k=1}^{m}{a_{ik}b_{kj}},\quad m_{{BC}_{ij}} = \sum_{k=1}^{n}{b_{ik}c_{kj}}\]
             である。これを用いて
-            \[n_{1_{ij}} = \sum_{k=1}^{\textcolor{red}{n}}{m_{{AB}_{ik}}c_{kj}} = \sum_{k=1}^{n}{\left(\sum_{l=1}^{m}{a_{il}b_{lk}}\right)c_{kj}} = \sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}}\]
-            \[n_{2_{ij}} = \sum_{k=1}^{\textcolor{red}{m}}{a_{ik}m_{{BC}_{kj}}} = \sum_{k=1}^{m}{a_{ik}\left(\sum_{l=1}^{n}{b_{kl}c_{lj}}\right)} = \sum_{\textcolor{red}{l}=1}^{n}{\sum_{\textcolor{red}{k}=1}^{m}{\left(a_{ik}b_{kl}c_{lj}\right)}}\]
+            \[n_{1_{ij}} = \sum_{k=1}^{\textcolor{red}{n}}{m_{{AB}_{ik}}c_{kj}} = \sum_{k=1}^{n}{\parens*{\sum_{l=1}^{m}{a_{il}b_{lk}}}c_{kj}} = \sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\parens*{a_{il}b_{lk}c_{kj}}}}\]
+            \[n_{2_{ij}} = \sum_{k=1}^{\textcolor{red}{m}}{a_{ik}m_{{BC}_{kj}}} = \sum_{k=1}^{m}{a_{ik}\parens*{\sum_{l=1}^{n}{b_{kl}c_{lj}}}} = \sum_{\textcolor{red}{l}=1}^{n}{\sum_{\textcolor{red}{k}=1}^{m}{\parens*{a_{ik}b_{kl}c_{lj}}}}\]
             上式の$k$と$l$を交換(純粋に紙の上で文字として書き換える)しても何ら問題はない。そうすると上式は
-            \[\sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\left(a_{il}b_{lk}c_{kj}\right)}} = n_{1_{ij}}\]
+            \[\sum_{\textcolor{red}{k}=1}^{n}{\sum_{\textcolor{red}{l}=1}^{m}{\parens*{a_{il}b_{lk}c_{kj}}}} = n_{1_{ij}}\]
             となり結局$n_{1_{ij}}$と一致する。
         \end{proof}
     \section{上(下)三角行列のべき乗}
@@ -35,7 +35,7 @@
             \[A^2[i][i] = \sum_{i\leq k,k\leq i}{a_{ik}a_{ki}} = {a_{ii}}^2,\quad A^2[i][j](i>j) = 0\]
             次に，$n$まで成り立つと仮定して$n+1$のとき成り立つことを示す。
             \begin{align*}
-                A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\left(b_{kj} = A^n[k][j]\right) \\
+                A^{n+1} &= AA^n = \sum_{k=1}^{n}{a_{ik}b_{kj}}\quad\parens*{b_{kj} = A^n[k][j]} \\
                 &= \sum_{i\leq k, k\leq j}^{n}{a_{ik}b_{kj}}\quad(\because\;\mathrm{帰納法の仮定より }b_{ij}=0\mathrm{ when }i>j)
             \end{align*}
             であるから帰納法の仮定より次の2つの式が成り立つ。

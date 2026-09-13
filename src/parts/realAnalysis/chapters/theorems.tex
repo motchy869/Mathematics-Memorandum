@@ -65,7 +65,7 @@
             右辺第1項はH\"olderの不等式より上から
             \[\norm{\vx}_p\norm{\vv}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\vv[i]\coloneq|x_i+y_i|^{p-1}\]
             で抑えられる。さらに
-            \[\norm{\vx}_p\norm{\vv}_{\frac{p}{p-1}} = \norm{\vx}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\vx}_p\norm{\vx+\vy}_p^{p-1}\]
+            \[\norm{\vx}_p\norm{\vv}_{\frac{p}{p-1}} = \norm{\vx}_p\bracks*{\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}}^{\frac{p-1}{p}} = \norm{\vx}_p\norm{\vx+\vy}_p^{p-1}\]
             同様に式(1)の右辺第2項も上から$\norm{\vy}_p\norm{\vx+\vy}_p^{p-1}$で抑えられるので
             \[\norm{\vx+\vy}_p^p \leq \norm{\vx}_p\norm{\vx+\vy}_p^{p-1} + \norm{\vy}_p\norm{\vx+\vy}_p^{p-1}\]
             両辺を$\norm{\vx+\vy}_p^{p-1}$で割ることでMinkowskiの不等式を得る。

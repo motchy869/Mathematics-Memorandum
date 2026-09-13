@@ -209,7 +209,7 @@
                 \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{k=1}^n (-1)^{k-1}\sum_{I\in\combi{\numset}{k}} \func{\mu}{\bigcap_{i\in I}A_i}
             \end{equation}
             もっと短く書けば
-            \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\left\{\emptyset\right\}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
+            \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\braces*{\emptyset}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
         \end{shadebox}
         \begin{proof}
             \quad\par
@@ -217,7 +217,7 @@
             \begin{align*}
                 \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\
                 \textrm{(1)の右辺} &= \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \LebInteg{S}{\ind{\bigcap_{i\in I}A_i}{x}}{\mu}{x} \\
-                &= \LebInteg{S}{\left[\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}\right]}{\mu}{x} \\
+                &= \LebInteg{S}{\bracks*{\sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}}}{\mu}{x} \\
                 &= \LebInteg{S}{c(x)}{\mu}{x} \quad\text{where}\quad c(x) \coloneq \sum_{k=1}^n (-1)^{k-1} \sum_{I\in\combi{\numset}{k}} \ind{\bigcap_{i\in I}A_i}{x}
             \end{align*}
             $U\coloneq\bigcup_{i=1}^n A_i$とすると$c(x)=\ind{U}{x}$となることを示せばよい。
@@ -231,8 +231,8 @@
             上式の$\ind{\bigcap_{i\in I}A_i}{x}$が$1$になるのは上述の$m(x)$個の集合から$k$個の集合を選んできた時だけであるから，$c(x)$はさらに次のように書き直される。
             \begin{align*}
                 c(x) &= \sum_{k=1}^{m(x)}{(-1)^{k-1}\sum_{I\in\combi{\{\textcolor{red}{i_1,\dotsc,i_{m(x)}}\}}{k}}{1}} = \sum_{k=1}^{m(x)}{(-1)^{k-1}\combi{m(x)}{k}} \\
-                &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\left(\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1\right) \\
-                &= -\left((1-1)^{m(x)} - 1\right) = 1
+                &= -\sum_{k=1}^{m(x)}{(-1)^k\combi{m(x)}{k}} = -\parens*{\sum_{k=\textcolor{red}{0}}^{m(x)}{(-1)^k\combi{m(x)}{k}} - 1} \\
+                &= -\parens*{(1-1)^{m(x)} - 1} = 1
             \end{align*}
             よって確かに$c(x)=\ind{U}{x}$である。
         \end{proof}

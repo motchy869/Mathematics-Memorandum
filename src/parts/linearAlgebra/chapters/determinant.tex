@@ -4,23 +4,23 @@
     %         右下要素が$0$である行列
     %         \[
     %             A =
-    %             \left[
+    %             \bracks*{
     %                 \begin{array}{ccc|c}
     %                     \multicolumn{3}{c|}{}    & b_1 \\
     %                     \multicolumn{3}{c|}{A'}    & \vdots \\
     %                     \multicolumn{3}{c|}{}    & b_n \\ \hline
     %                     b_1 & \cdots & b_n        & 0
     %                 \end{array}
-    %             \right]
+    %             }
     %             =
-    %             \left[
+    %             \bracks*{
     %                 \begin{array}{ccc|c}
     %                     \multicolumn{3}{c|}{} \\
     %                     \multicolumn{3}{c|}{A'}    & \bm{b} \\
     %                     \multicolumn{3}{c|}{} \\ \hline
     %                     \quad & \bm{b}^\top & \quad & 0
     %                 \end{array}
-    %             \right]
+    %             }
     %         \]
     %         の行列式は
     %         \[\det{A} = -\bm{b}^\top\tilde{A'}\bm{b} = -\det{(A')}\bm{b}^\top {A'}^{-1}\bm{b}\]
@@ -55,12 +55,12 @@
             とすると
             \[
                 \det{M} = \det{
-                    \left(M
+                    \parens*{M
                     \begin{bmatrix}
                         I_n & -A \\
                         O & I_m
                     \end{bmatrix}
-                    \right)
+                    }
                 } = \det{
                     \begin{bmatrix}
                         I_n & O \\
@@ -71,12 +71,12 @@
             一方で
             \[
                 \det{M} = \det{
-                    \left(M
+                    \parens*{M
                     \begin{bmatrix}
                         I_n & O \\
                         -B & I_m
                     \end{bmatrix}
-                    \right)
+                    }
                 } = \det{
                     \begin{bmatrix}
                         I_n-AB & A \\
@@ -85,9 +85,9 @@
                 } = |I_n-AB|
             \]
         \end{proof}
-    \section{系: \texorpdfstring{$\left|I_n-\vv\vv^\top\right| = 1-\norm{\vv}_2^2$}{|In-vv\string^| = 1 - ||v||\string^2}}
+    \section{系: \texorpdfstring{$\abs{I_n-\vv\vv^\top} = 1-\norm{\vv}_2^2$}{|In-vv\string^| = 1 - ||v||\string^2}}
         \begin{shadebox}
-            $\vv \in \complexNumbers^n$に対して$\left|I_n-\vv\vv^\top\right| = 1-\norm{\vv}_2^2$
+            $\vv \in \complexNumbers^n$に対して$\abs{I_n-\vv\vv^\top} = 1-\norm{\vv}_2^2$
         \end{shadebox}
     \section{逆対角転置行列の行列式は元の行列のそれと等しい}
         \begin{proof}

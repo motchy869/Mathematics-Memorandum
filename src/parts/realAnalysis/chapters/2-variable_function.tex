@@ -25,13 +25,13 @@
             であり連続だから$C^1$級である。
             \par
             領域2における連続性を示す。領域2上の点$(a,b)\;(a=0,b>0)$に対して
-            \[d = \left|\atanEx{a}{b}-\atanEx{a+h}{b+k}\ \right| = \left|\frac{\pi}{2}-\atanEx{b+k}{h}\right|\]
+            \[d = \abs{\atanEx{a}{b}-\atanEx{a+h}{b+k}\ } = \abs{\frac{\pi}{2}-\atanEx{b+k}{h}}\]
             とおくと，$k$を十分小さく取れば$b+k>0$なので
             \[
                 d=
                 \begin{cases}
                     \frac{\pi}{2}-\atan\parens*{\frac{b+k}{h}}\rightarrow0 & \text{as }h\rightarrow+0,k\rightarrow0 \\
-                    \frac{\pi}{2}-\left(\atan\parens*{\frac{b+k}{h}}+\pi\right) & \text{as }h\rightarrow-0,k\rightarrow0 \\
+                    \frac{\pi}{2}-\parens*{\atan\parens*{\frac{b+k}{h}}+\pi} & \text{as }h\rightarrow-0,k\rightarrow0 \\
                 \end{cases}
             \]
             であり，領域2における連続性が示せた。領域4における連続性も同様に示せる。

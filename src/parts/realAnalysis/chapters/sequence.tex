@@ -9,45 +9,45 @@
     %     $(a_i+b_i)/2$が$A$の上界であれば$a_{i+1} = a_i, b_{i+1} = (a_i+b_i)/2$，そうでなければ$a_{i+1} = (a_i+b_i)/2, b_{i+1} = b_i$とする。
     %     $c_i = (a_i+b_i)/2$とすると数列$\{c_i\}$はCauchy列となるので収束する。
     \section{単調性}
-        \subsection{\texorpdfstring{$\left(1-\frac{t}{n}\right)^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
+        \subsection{\texorpdfstring{$\parens*{1-\frac{t}{n}}^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
             \label{(1-t/n)^nは単調増加}
             \begin{proof}
                 \quad\par
-                $a_n \coloneq \left(1-\frac{t}{n}\right)^n$とする。
+                $a_n \coloneq \parens*{1-\frac{t}{n}}^n$とする。
                 $t=0,n$の場合は単調増加性は明らか。以下$0<t<n$とする。
                 \begin{align*}
-                    a_{n+1}/a_n &= \frac{(n+1-t)^{n+1}}{(n+1)^{n+1}}\times\frac{n^n}{(n-t)^n} = \left(\frac{(n+1-t)n}{(n+1)(n-t)}\right)^n\times\frac{n+1-t}{n+1} \\
-                    &= \left(1 + \frac{t}{(n+1)(n-t)}\right)^n\times\frac{n+1-t}{n+1} = \sum_{k=0}^n \binom{n}{k}\left(\frac{t}{(n+1)(n-t)}\right)^k \times \frac{n+1-t}{n+1} \\
-                    &\geq \left(1 + \frac{nt}{(n+1)(n-t)}\right) \times \frac{n+1-t}{n+1} = \frac{(n^2+n-t)(n+1-t)}{(n+1)^2(n-t)} \\
+                    a_{n+1}/a_n &= \frac{(n+1-t)^{n+1}}{(n+1)^{n+1}}\times\frac{n^n}{(n-t)^n} = \parens*{\frac{(n+1-t)n}{(n+1)(n-t)}}^n\times\frac{n+1-t}{n+1} \\
+                    &= \parens*{1 + \frac{t}{(n+1)(n-t)}}^n\times\frac{n+1-t}{n+1} = \sum_{k=0}^n \combi{n}{k}\parens*{\frac{t}{(n+1)(n-t)}}^k \times \frac{n+1-t}{n+1} \\
+                    &\geq \parens*{1 + \frac{nt}{(n+1)(n-t)}} \times \frac{n+1-t}{n+1} = \frac{(n^2+n-t)(n+1-t)}{(n+1)^2(n-t)} \\
                     &= \frac{(n+1)^2(n-t) + t^2}{(n+1)^2(n-t)} > 1
                 \end{align*}
             \end{proof}
-        % \subsection{$\left(1-\frac{1}{n}\right)^n$は単調増加}
+        % \subsection{$\parens*{1-\frac{1}{n}}^n$は単調増加}
         %     \label{(1-1/n)^nは単調増加}
         %     \begin{proof}
         %         \quad\par
-        %         $a_n \coloneq \left(1-\frac{1}{n}\right)^n$とする。
+        %         $a_n \coloneq \parens*{1-\frac{1}{n}}^n$とする。
         %         $a_0 < a_1$は明らか。以下$n\geq 2$とする。
         %         \begin{align*}
-        %             a_{n+1}/a_n &= \frac{\left(\frac{n}{n+1}\right)^{n+1}}{\left(\frac{n-1}{n}\right)^n} = \left(\frac{n^2}{n^2-1}\right)^n\times\frac{n}{n+1} = \left(1+\frac{1}{n^2-1}\right)^n\times\frac{n}{n+1} \\
-        %             &= \frac{n}{n+1}\sum_{k=0}^n \binom{n}{k} \left(\frac{1}{n^2-1}\right)^k \geq \frac{n}{n+1}\times\left(1+\frac{n}{n^2-1}\right) = \frac{n^3+n^2-n}{n^3+n^2-n-1} > 1
+        %             a_{n+1}/a_n &= \frac{\parens*{\frac{n}{n+1}}^{n+1}}{\parens*{\frac{n-1}{n}}^n} = \parens*{\frac{n^2}{n^2-1}}^n\times\frac{n}{n+1} = \parens*{1+\frac{1}{n^2-1}}^n\times\frac{n}{n+1} \\
+        %             &= \frac{n}{n+1}\sum_{k=0}^n \combi{n}{k} \parens*{\frac{1}{n^2-1}}^k \geq \frac{n}{n+1}\times\parens*{1+\frac{n}{n^2-1}} = \frac{n^3+n^2-n}{n^3+n^2-n-1} > 1
         %         \end{align*}
         %     \end{proof}
     \section{極限}
-        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = \NapierE\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
+        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\parens*{1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}}^n = \NapierE\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
             \begin{proof}
                 \quad\par
-                \[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\]
+                \[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\parens*{1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}}\]
                 であるから
-                $\epsilon>0$を任意にとると，十分大きい$n\in\mathbb{N}$に対して
-                \[\left(1+\frac{1-\epsilon}{n}\right)^n \leq \left(1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\right)^n \leq \left(1+\frac{1+\epsilon}{n}\right)^n\]
+                $\epsilon>0$を任意にとると，十分大きい$n\in\naturalNumbers$に対して
+                \[\parens*{1+\frac{1-\epsilon}{n}}^n \leq \parens*{1+\frac{1}{n}\parens*{1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}}}^n \leq \parens*{1+\frac{1+\epsilon}{n}}^n\]
                 両辺で$n\rightarrow\infty$として従う。
             \end{proof}
-        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+o(1/n)\right)^n = \NapierE$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
+        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\parens*{1+1/n+o(1/n)}^n = \NapierE$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
             \begin{proof}
                 \quad\par
                 $o(1/n)$の部分を$f(n)$とおく。
-                \[ \left(1+\frac{1}{n}+f(n)\right)^n = (1+1/n)^n + \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i \]
+                \[ \parens*{1+\frac{1}{n}+f(n)}^n = (1+1/n)^n + \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i \]
                 $\lim_{n\to\infty}(1+1/n)^n = \NapierE$の証明より，上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
                 \begin{align*}
                     \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i &\leq 3\sum_{i=1}^n \combi{n}{i}f(n)^i = 3\sum_{i=1}^n \frac{1}{i!}\frac{n(n-1)\dotsm(n-i+1)}{n^i}n^if(n)^i \\
@@ -64,9 +64,9 @@
             \begin{proof}
                 \quad\par
                 $p(n) = b_dn^d + \dotsb + b_1n + b_0n$とする。
-                $a_n = Ar^n + q(n)\;\left(q(n) = c_dn^d + \dotsb + c_1n + c_0\right)$とおいて漸化式に代入すると次式を得る。
+                $a_n = Ar^n + q(n)\;\parens*{q(n) = c_dn^d + \dotsb + c_1n + c_0}$とおいて漸化式に代入すると次式を得る。
                 \[ Ar^{n+1} + q(n+1) = Ar^{n+1} + rq(n) + p(n) \quad \therefore\; q(n+1) = rq(n) + p(n) \]
-                両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$，左辺では$\sum_{i=k}^d\binom{i}{k}c_i$であり，$r\neq 1$なので$d$次の係数から順に見てゆき，$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
+                両辺の$k$次の項の係数を比較すると右辺では$rc_k + b_k$，左辺では$\sum_{i=k}^d\combi{i}{k}c_i$であり，$r\neq 1$なので$d$次の係数から順に見てゆき，$c_d,c_{d-1},\dotsc,c_1,c_0$の順に決定できる。
                 最後に初期条件$a_0$(或いは$a_1,a_2,\dotsc,$\;値が分かっている項なら何でも良い)の値から$A$を決定できる。
             \end{proof}
         % \begin{comment}

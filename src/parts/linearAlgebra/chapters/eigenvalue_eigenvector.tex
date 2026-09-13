@@ -55,7 +55,7 @@
                         \lambda-a & (i=k)
                     \end{cases}
                 \]
-                $\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば，$\left|\lambda I-A\right|\neq 0$が示せて，$\lambda$が固有値でないことが示せる。
+                $\{\bm{b}_1,\dotsc,\bm{b}_n\}$が一次独立であることを示せば，$\abs{\lambda I-A}\neq 0$が示せて，$\lambda$が固有値でないことが示せる。
                 $c_1,\dotsc,c_n$を定数とし，$\sum_{j=1}^{n}{c_j\bm{b}_j}=\bm{0}$とおくと，第$i$成分に着目して
                 \[0 = c_i(\lambda-a) - a\sum_{j\neq i}^{n}{c_j} = c_i\lambda - a\sum_{j=1}^{n}{c_j}\]
                 これと$\lambda\neq 0$より$c_1=\dotsb=c_n$である。この値を$c$とおくと$c\lambda = anc$となり，$\lambda\neq an$より$c=0$である。
@@ -195,7 +195,7 @@
                 $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散 Fourier 変換)であり，次式で定義される。
                 \[ \DFT{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
-                \[ \sum_{n=0}^{N-1}\overline{W_{k,n}}a_n \]
+                \[ \sum_{n=0}^{N-1}\conj{W_{k,n}}a_n \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -345,12 +345,12 @@
             $f(s)$の次数を$m$とし，$k$次の係数を$c_k$とする($f(s) = \sum_{k=0}^{m}c_{k}s^k$)。
             $f(A)$の固有多項式は
             \begin{align*}
-                \left|\lambda I - f(A)\right| &= \left|\lambda I - \sum_{k=0}^{m}c_{k}A^k\right| = \left|\lambda I - \sum_{k=0}^{m}c_{k}PU^kP^\top\right| = \left|P\left(\lambda I - \sum_{k=0}^{m}c_{k}U^k\right)P^\top\right| \\
-                &= \left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right|
+                \abs{\lambda I - f(A)} &= \abs{\lambda I - \sum_{k=0}^{m}c_{k}A^k} = \abs{\lambda I - \sum_{k=0}^{m}c_{k}PU^kP^\top} = \abs{P\parens*{\lambda I - \sum_{k=0}^{m}c_{k}U^k}P^\top} \\
+                &= \abs{\lambda I - \sum_{k=0}^{m}c_{k}U^k}
             \end{align*}
             定理\ref{上(下)三角行列のべき乗}より$U^k$は上三角行列であり，その第$i$対角成分は${\lambda_i}^k$であるから，上の$|\cdot|$の中身は上三角行列であり，その第$i$対角成分は$\lambda - \sum_{k=0}^{m}c_{k}{\lambda_i}^k = \lambda - f(\lambda_i)$である。
             よって上の式は
-            \[\left|\lambda I - \sum_{k=0}^{m}c_{k}U^k\right| = \prod_{i=1}^{n}{(\lambda - f(\lambda_i))}\]
+            \[\abs{\lambda I - \sum_{k=0}^{m}c_{k}U^k} = \prod_{i=1}^{n}{(\lambda - f(\lambda_i))}\]
             であるから$f(A)$の固有値が$f(\lambda_1),\dotsc,f(\lambda_n)$であることがわかる。
         \end{proof}
     \section{対角化}
@@ -390,7 +390,7 @@
                 \quad\par
                 $m=l+1$に対して示す。それ以上の$m$に対しても帰納的に示せる。
                 結論を否定すると，ある$\vv\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\vv=\bm{0}\land(A-\lambda I)^{l+1}\vv\neq\bm{0}$。
-                すなわち$(A-\lambda I)^{l+1}\left[(A-\lambda I)\vv\right]=\bm{0}\land(A-\lambda I)^l\left[(A-\lambda I)\vv\right]\neq\bm{0}$。
+                すなわち$(A-\lambda I)^{l+1}\bracks*{(A-\lambda I)\vv}=\bm{0}\land(A-\lambda I)^l\bracks*{(A-\lambda I)\vv}\neq\bm{0}$。
                 よって$(A-\lambda I)\vv \in F_{A,l+1}(\lambda)$。
                 これと仮定$F_{A,l+1}(\lambda) = F_{A,l}(\lambda)$より$(A-\lambda I)\vv \in F_{A,l}(\lambda)$。
                 よって$(A-\lambda I)^{l+1}\vv=\bm{0}$となり，矛盾する。
@@ -422,7 +422,7 @@
                 \begin{align}
                     A\vx &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
                     &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
-                    &= \Phi\left[
+                    &= \Phi\bracks*{
                             \begin{array}{c}
                                 \bm{0}_{{\nu_1}'}\\
                                 \vdots\\
@@ -432,7 +432,7 @@
                                 \vdots\\
                                 \bm{0}_{{\nu_p}'}\\
                             \end{array}
-                        \right]\quad (\mathrm{※}\bm{0}_\nu\mathrm{は}\nu\mathrm{次元の0ベクトル})
+                        }\quad (\mathrm{※}\bm{0}_\nu\mathrm{は}\nu\mathrm{次元の0ベクトル})
                 \end{align}
                 ここで$[d_1,\dotsc,d_{\nu_i}']^\top = A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$とおくと
                 \[A\vx = (1) = \sum_{j=1}^{{\nu_i}'}{d_j\bm{\phi}_{ij}}\]
@@ -453,7 +453,7 @@
                 \begin{align*}
                     (A-\lambda_iI_n)\vx &= A\vx - \lambda_i\vx = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\vx - \lambda_i\vx\\
                     &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx\\
-                    &= \Phi\left[
+                    &= \Phi\bracks*{
                         \begin{array}{c}
                             \bm{0}_{{\nu_1}'}\\
                             \vdots\\
@@ -463,7 +463,7 @@
                             \vdots\\
                             \bm{0}_{{\nu_p}'}\\
                         \end{array}
-                    \right] - \lambda_i\vx = \Phi\left[
+                    } - \lambda_i\vx = \Phi\bracks*{
                         \begin{array}{c}
                             \bm{0}_{{\nu_1}'}\\
                             \vdots\\
@@ -473,7 +473,7 @@
                             \vdots\\
                             \bm{0}_{{\nu_p}'}\\
                         \end{array}
-                    \right] - \lambda_i\vx\\
+                    } - \lambda_i\vx\\
                     &= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx = \lambda'\vx-\lambda_i\vx\\
                     &= (\lambda'-\lambda_i)\vx
                 \end{align*}
@@ -521,7 +521,7 @@
                 \[J(\lambda, n) = \JBn\]
                 に対して
                 \[
-                    J(\lambda,n)^{-1} = \left[\indII{i\leq j}\frac{(-1)^{j-i}}{\lambda^{j-i+1}}\right]_{n\times n} =
+                    J(\lambda,n)^{-1} = \bracks*{\indII{i\leq j}\frac{(-1)^{j-i}}{\lambda^{j-i+1}}}_{n\times n} =
                     \begin{bmatrix}
                         \frac{1}{\lambda} & \frac{-1}{\lambda^2} & \frac{1}{\lambda^3} & \cdots & \frac{(-1)^{n-1}}{\lambda^n} \\
                         0 & \frac{1}{\lambda} & \frac{-1}{\lambda^2} & \cdots & \frac{(-1)^{n-2}}{\lambda^{n-1}} \\
@@ -534,7 +534,7 @@
                 \begin{proof}
                     \quad\newline
                     (M演算(\cite{現代線形代数入門} lesson10)を使う方法):
-                    \[ J(\lambda,n)^{-1} = M(\lambda)^{-1} = M(1/\lambda) = \left[\indII{i\leq j}\frac{1}{(i-j)!}\derivLong{\frac{1}{\lambda}}{\lambda}{i-j}\right]_{n\times n} = \left[\indII{i\leq j}\frac{(-1)^{j-i}}{\lambda^{j-i+1}}\right]_{n\times n} \]
+                    \[ J(\lambda,n)^{-1} = M(\lambda)^{-1} = M(1/\lambda) = \bracks*{\indII{i\leq j}\frac{1}{(i-j)!}\derivLong{\frac{1}{\lambda}}{\lambda}{i-j}}_{n\times n} = \bracks*{\indII{i\leq j}\frac{(-1)^{j-i}}{\lambda^{j-i+1}}}_{n\times n} \]
                     \newline
                     (M演算を使わない方法):
                     \par
@@ -557,7 +557,7 @@
                             \bm{0}_n^\top & 1/\lambda
                         \end{bmatrix}
                         ,\quad
-                        \vv = \frac{-1}{\lambda}J(\lambda,n)^{-1}\bm{b} = \left[\frac{-1}{\lambda}J(\lambda,n)^{-1}[i][n]\right]_{n\times 1} = \left[\frac{(-1)^{(n+1)-i}}{\lambda^{(n+1)-i+1}}\right]_{n\times 1}
+                        \vv = \frac{-1}{\lambda}J(\lambda,n)^{-1}\bm{b} = \bracks*{\frac{-1}{\lambda}J(\lambda,n)^{-1}[i][n]}_{n\times 1} = \bracks*{\frac{(-1)^{(n+1)-i}}{\lambda^{(n+1)-i+1}}}_{n\times 1}
                     \]
                     よって$n+1$次のときも定理が成り立つ。
                 \end{proof}
@@ -594,10 +594,10 @@
                 \par
                 $\Gamma$と$U$は可換であり($\Gamma$が単位行列の定数倍であることから明らか)，$\Gamma$に$U$を左或いは右から掛けると$\Gamma$の各行が上に一段シフトする(或いは各列が右に1段シフトするとも言える)。
                 溢れた行或いは列は消え去り，補充されない。溢れた分だけ反対側から空行或いは空列が注入される。
-                よって$\left[J(\lambda, n)t\right]^p,\quad p\in\mathbb{N}+\{0\}$の対角成分より下側の成分は$0$であることがわかる。
+                よって$\bracks*{J(\lambda, n)t}^p,\quad p\in\naturalNumbers+\{0\}$の対角成分より下側の成分は$0$であることがわかる。
                 \par
                 \begin{equation}
-                    \left[J(\lambda, n)t\right]^p = t^p(\Gamma+U)^p = t^p\sum_{k=0}^{p}{\combi{p}{k}U^k\Gamma^{p-k}} \tag{1}
+                    \bracks*{J(\lambda, n)t}^p = t^p(\Gamma+U)^p = t^p\sum_{k=0}^{p}{\combi{p}{k}U^k\Gamma^{p-k}} \tag{1}
                 \end{equation}
                 $(\Gamma+U)^p$の$(i,j)$成分を$a_{i,j}(p)$とする。先述の通り$a_{i,j}(p)=0,i>j$である。
                 \par
@@ -621,7 +621,7 @@
                 よって$\NapierE^{J(\lambda, n)t}$の$(i,j)$成分は
                 \begin{align*}
                     \sum_{p=0}^{\infty}{\frac{1}{p!}t^p a_{i,j}(p)} &= \sum_{p=j-i}^{\infty}{\frac{1}{p!}t^p\lambda^{p-(j-i)}\combi{p}{j-i}}\\
-                    &= \sum_{l=0}^{\infty}{\frac{1}{\left(l+(j-i)\right)!}t^{l+(j-i)}\lambda^l\frac{\left(l+(j-i)\right)!}{(j-i)!l!}}\quad(l=p-(j-i)\mathrm{とおいた})\\
+                    &= \sum_{l=0}^{\infty}{\frac{1}{\parens*{l+(j-i)}!}t^{l+(j-i)}\lambda^l\frac{\parens*{l+(j-i)}!}{(j-i)!l!}}\quad(l=p-(j-i)\mathrm{とおいた})\\
                     &= \frac{t^{j-i}}{(j-i)!}\sum_{l=0}^{\infty}{\frac{(t\lambda)^l}{l!}} = \frac{t^{j-i}}{(j-i)!}\NapierE^{\lambda t}
                 \end{align*}
             \end{proof}
@@ -644,7 +644,7 @@
             \begin{equation}
                 \lambda_ix_i = \sum_{j=1}^{n}{a_{ij}x_j}
             \end{equation}
-            \[|\lambda||x_i| = \left|\sum_{j=1}^{n}{a_{ij}x_j}\right| \leq \sum_{j=1}^{n}{a_{ij}|x_j|}\]
+            \[|\lambda||x_i| = \abs{\sum_{j=1}^{n}{a_{ij}x_j}} \leq \sum_{j=1}^{n}{a_{ij}|x_j|}\]
             という式があるが，$|\lambda|\leq\hat{\lambda}$は既に示されているので，上式に於いて等号が成り立てば$\lambda=\hat{\lambda}$であることを示せばよい。
             \par
             $A$は正行列だから$a_{ij}>0$である。$\vx$は固有ベクトルであるから$x_j$の少なくともどれか一つは非零である。

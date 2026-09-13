@@ -17,7 +17,7 @@
                 \end{bmatrix},
                 \qquad
                 [\vv_1,\dotsc,\vv_n]B \coloneq
-                \left[\sum_{i=1}^n b_{i1}\vv_i, \dotsc, \sum_{i=1}^n b_{im}\vv_i \right]
+                \bracks*{\sum_{i=1}^n b_{i1}\vv_i, \dotsc, \sum_{i=1}^n b_{im}\vv_i }
             \]
             これは$\vv_1,\dotsc,\vv_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
         \subsection{一般のベクトルを要素とする行列同士の積}
@@ -84,7 +84,7 @@
             以上の設定の下で，次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
             \[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
             $A_i$は次式で得られる。
-            \[A_i = \left({\Phi_i}^\top\Phi_i\right)^{-1}{\Phi_i}^\top A\Phi_i\]
+            \[A_i = \parens*{{\Phi_i}^\top\Phi_i}^{-1}{\Phi_i}^\top A\Phi_i\]
             特に$W_i$の基底を正規直交基底にしておけば，より簡単に次式で得られる。
             \[A_i = {\Phi_i}^\top A\Phi_i\]
         \end{shadebox}
@@ -100,18 +100,18 @@
             とおく。まず$A_1$を求めてみる。定理\ref{逆行列にその構成縦ベクトルを掛ける}からヒントを得て両辺に$[\bm{w}_1,\bm{w}_2]$を右から掛けて
             \begin{align*}
                 A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}
-                \left[
+                \bracks*{
                     \begin{array}{c}
                         I_2\\
                         O_2
                     \end{array}
-                \right] = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]
-                \left[
+                } = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]
+                \bracks*{
                     \begin{array}{c}
                         A_1\\
                         O_2
                     \end{array}
-                \right]\\
+                }\\
                 &= [\bm{w}_1,\bm{w}_2]A_1
             \end{align*}
             $[\bm{w}_1,\bm{w}_2]$は列フルランクであるから定理\ref{列フルランク行列を掛けあわせて正則行列を作る}より$[\bm{w}_1,\bm{w}_2]^\top[\bm{w}_1,\bm{w}_2]$は逆行列を持つ。

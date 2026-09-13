@@ -29,7 +29,7 @@
             \begin{shadebox}
                 既出の記号の定義を引き継ぐ。
                 3 次元 Euclid 空間の標準単位ベクトル $\bm{i}_1,\bm{i}_2,\bm{i}_3$ は直交座標系の単位ベクトル $\bm{j}_1,\bm{j}_2,\bm{j}_3$ を用いて次のように表せる。
-                \[ \bm{i}_i = \sum_{j=1}^3 \frac{1}{h_j}\frac{\partial r_i}{\partial u_j}\bm{j}_j \quad (i=1,2,3) \]
+                \[ \bm{i}_i = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \quad (i=1,2,3) \]
                 つまり行列を用いて次のように表せる。
                 \[ [\bm{i}_1, \bm{i}_2, \bm{i}_3] = [\bm{j}_1, \bm{j}_2, \bm{j}_3]JH^{-1} \]
                 ここに $J$ は $T$ のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$ である。
@@ -37,8 +37,8 @@
             \begin{proof}
                 \quad\par
                 $\bm{j}_1,\bm{j}_2,\bm{j}_3$ は正規直交基底であるから次式が成り立つ。
-                \[ \bm{i}_i = \sum_{j=1}^3 (\bm{i}_i\cdot\bm{j}_j)\bm{j}_j = \sum_{j=1}^3 \left(\bm{i}_i\cdot\frac{1}{h_j}\frac{\partial \vr}{\partial u_j}\right)\bm{j}_j = \sum_{j=1}^3 \left(\bm{i}_i\cdot\frac{1}{h_j}\sum_{k=1}^3\frac{\partial r_k}{\partial u_j}\bm{i}_k\right)\bm{j}_j \\
-                = \sum_{j=1}^3 \frac{1}{h_j}\frac{\partial r_i}{\partial u_j}\bm{j}_j \]
+                \[ \bm{i}_i = \sum_{j=1}^3 (\bm{i}_i\cdot\bm{j}_j)\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\partDeriv{\vr}{u_j}{}}\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\sum_{k=1}^3\partDeriv{r_k}{u_j}{}\bm{i}_k}\bm{j}_j \\
+                = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \]
             \end{proof}
         \subsection{ベクトルの成分の変換}
             \label{ベクトルの成分の変換}
@@ -62,14 +62,14 @@
                 $\phi:\EuclideanSpace^3\to\complexNumbers$は$\EuclideanSpace^3$上で$\mathrm{C}^1$ 級であるとする。
                 $\tilde{\phi}(\bm{u}) \coloneq \phi(\vr)$ とする。
                 $\phi$ の勾配 $\nabla_\vr\phi(\vr)$ は $\bm{u}$ を用いて次式で表せる。
-                % \[ \nabla_\vr\phi(\vr) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\tilde{\phi}}{u_i}{} = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
+                % \[ \nabla_\vr\phi(\vr) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\tilde{\phi}}{u_i}{} = \bracks*{\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
                 \[ \nabla_\vr\phi(\vr) = \sum_{i=1}^3\frac{\bm{j}_i}{h_i}\partDeriv{\tilde{\phi}}{u_i}{} \]
             \end{shadebox}
             \begin{proof}
                 % 線形代数を過用した証明。長くて読みにくい。
                 % \begin{gather*}
-                %     \bm{j}_i = \frac{1}{h_i}\partDeriv{\vr}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}\right]^\top \\
-                %     \therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\left[\frac{1}{h_j}\partDeriv{r_i}{u_j}{}\right]_{(i,j)\in\{1,2,3\}^2} = [\bm{i}_1,\bm{i}_2,\bm{i}_3]JH^{-1}
+                %     \bm{j}_i = \frac{1}{h_i}\partDeriv{\vr}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\bracks*{\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}}^\top \\
+                %     \therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\bracks*{\frac{1}{h_j}\partDeriv{r_i}{u_j}{}}_{(i,j)\in\{1,2,3\}^2} = [\bm{i}_1,\bm{i}_2,\bm{i}_3]JH^{-1}
                 % \end{gather*}
                 % ここに$\quad H \coloneq \diag{h_1,h_2,h_3}$であり，$J$は$T$のJacobi行列である。
                 % 以上より次式が成り立つ。
@@ -78,16 +78,16 @@
                 % \begin{gather*}
                 %     \partDeriv{\phi}{r_i}{} = \sum_{j=1}^3\partDeriv{\tilde{\phi}}{u_j}{}\partDeriv{u_j}{r_i}{} \\
                 %     \begin{split}
-                %         \therefore \quad \nabla_\vr\phi(\vr) &= \left[\partDeriv{\phi}{r_1}{}, \partDeriv{\phi}{r_2}{}, \partDeriv{\phi}{r_3}{}\right]^\top = \left[\partDeriv{u_j}{r_i}{}\right]_{(i,j)\in\{1,2,3\}^2}\left[\partDeriv{\tilde{\phi}}{u_1}{},\partDeriv{\tilde{\phi}}{u_2}{},\partDeriv{\tilde{\phi}}{u_3}{}\right]^\top \\
-                %         &= \left(J^{-1}\right)^\top\nabla_\bm{u}\tilde{\phi}(\bm{u})
+                %         \therefore \quad \nabla_\vr\phi(\vr) &= \bracks*{\partDeriv{\phi}{r_1}{}, \partDeriv{\phi}{r_2}{}, \partDeriv{\phi}{r_3}{}}^\top = \bracks*{\partDeriv{u_j}{r_i}{}}_{(i,j)\in\{1,2,3\}^2}\bracks*{\partDeriv{\tilde{\phi}}{u_1}{},\partDeriv{\tilde{\phi}}{u_2}{},\partDeriv{\tilde{\phi}}{u_3}{}}^\top \\
+                %         &= \parens*{J^{-1}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u})
                 %     \end{split}
                 % \end{gather*}
                 % 最後の等号は$\bm{u} = T^{-1}(\vr)$と逆関数定理による。
                 % 以上より，次式が成り立つ。
-                % \[ \nabla_\vr\phi(\vr) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1}\left(J^{-1}\right)^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
-                % $J^{-1}\left(J^{-1}\right)^\top = J^{-1}\left(J^\top\right)^{-1} = \left(J^\top J\right)^{-1}$であり，$T$に関する仮定から$J$の列は互いに直交し，計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
-                % よって$\left(J^\top J\right)^{-1} = H^{-2}$であり，次式が成り立つ。
-                % \[ \nabla_\vr\phi(\vr) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\tilde{\phi}(\bm{u}) = \left[\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}\right]^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
+                % \[ \nabla_\vr\phi(\vr) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1}\parens*{J^{-1}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
+                % $J^{-1}\parens*{J^{-1}}^\top = J^{-1}\parens*{J^\top}^{-1} = \parens*{J^\top J}^{-1}$であり，$T$に関する仮定から$J$の列は互いに直交し，計量係数の定義から$J^\top J$の第$i$対角成分は$h_i^2$である。
+                % よって$\parens*{J^\top J}^{-1} = H^{-2}$であり，次式が成り立つ。
+                % \[ \nabla_\vr\phi(\vr) = [\bm{j}_1,\bm{j}_2,\bm{j}_3]H^{-1}\nabla_\bm{u}\tilde{\phi}(\bm{u}) = \bracks*{\frac{\bm{j}_1}{h_1}, \frac{\bm{j}_2}{h_2}, \frac{\bm{j}_3}{h_3}}^\top\nabla_\bm{u}\tilde{\phi}(\bm{u}) \]
                 % (2026-05-04) 洗練
                 \quad\par
                 \ref{単位ベクトルの変換} と合成関数の微分の連鎖律から次式が成り立つ。
@@ -102,38 +102,38 @@
         \begin{shadebox}
             既出の記号の定義を引き継ぐ。
             $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
-            さらに $T$ は $\mathrm{C}^2$ 級であるとし，$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$ が成り立つとする(例: 円柱座標系, 球座標系)。
+            さらに $T$ は $\mathrm{C}^2$ 級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$ が成り立つとする(例: 円柱座標系, 球座標系)。
             3 次元 Euclid 空間上の $\mathrm{C}^1$ 級のベクトル場 $\vA(\vr) = \bm{i}_1 A_1(\vr) + \bm{i}_2 A_2(\vr) + \bm{i}_3 A_3(\vr)$ を $u_1,u_2,u_3$ 直交座標系で表したものを $\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$ とするとき，次式が成り立つ。
-            \[ \nabla_\vr\cdot\vA(\vr) = \frac{1}{h_1 h_2 h_3}\left[ \partDeriv{h_2 h_3 \tilde{A}_1(\bm{u})}{u_1}{} + \partDeriv{h_3 h_1 \tilde{A}_2(\bm{u})}{u_2}{} + \partDeriv{h_1 h_2 \tilde{A}_3(\bm{u})}{u_3}{} \right] = \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3 \tilde{A}_i(\bm{u})}{h_i}}{u_i}{} \]
+            \[ \nabla_\vr\cdot\vA(\vr) = \frac{1}{h_1 h_2 h_3}\bracks*{ \partDeriv{h_2 h_3 \tilde{A}_1(\bm{u})}{u_1}{} + \partDeriv{h_3 h_1 \tilde{A}_2(\bm{u})}{u_2}{} + \partDeriv{h_1 h_2 \tilde{A}_3(\bm{u})}{u_3}{} } = \frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3 \tilde{A}_i(\bm{u})}{h_i}}{u_i}{} \]
         \end{shadebox}
         \begin{proof}
             \begin{align*}
-                \nabla_\vr\cdot\vA(\vr) &= \sum_{i=1}^3 \partDeriv{A_i(\vr)}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \partDeriv{A_i(\vr)}{u_j}{}\partDeriv{u_j}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\partDeriv{u_j}{r_i}{} \\
-                &= \sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{}\quad(\because\ref{直交座標系の Jacobi 行列と逆行列の要素の関係}) \tag{1}
+                \nabla_\vr\cdot\vA(\vr) &= \sum_{i=1}^3 \partDeriv{A_i(\vr)}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \partDeriv{A_i(\vr)}{u_j}{}\partDeriv{u_j}{r_i}{} = \sum_{i=1}^3 \sum_{j=1}^3 \parens*{\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}}\partDeriv{u_j}{r_i}{} \\
+                &= \sum_{i=1}^3 \sum_{j=1}^3 \parens*{\partDerivLong{\sum_{k=1}^3\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}}\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{}\quad(\because\ref{直交座標系の Jacobi 行列と逆行列の要素の関係}) \tag{1}
             \end{align*}
             \par
             式(1)の$\tilde{A}_k(\bm{u})$に関する項に着目すると，以下のように計算される。
             但し以下の式で$\delta_{i,j}$はKroneckerのデルタを表す。
             \begin{align*}
-                \phantom{=} &\sum_{i=1}^3 \sum_{j=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \left(\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}\right)\partDeriv{r_i}{u_j}{} \\
-                = &\sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{r_i}{u_j}{u_k}\partDeriv{r_i}{u_j}{} \right] \\
-                = &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} \right] \\
-                = &\sum_{j=1}^3 \frac{1}{h_j^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_j}{}\right)\tilde{A}_k(\bm{u})h_k^2\delta_{k,j} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}h_k^2\delta_{k,j} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} \right] \\
-                = &\frac{1}{h_k^2} \left[ \left(\partDerivLong{\frac{1}{h_k}}{u_k}{}\right)\tilde{A}_k(\bm{u})h_k^2 + h_k\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} \right] + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} \\
-                = &\frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \underbrace{\frac{1}{h_j^2}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{}}_{(2)} \quad \left(\because \text{仮定より}\partDerivLong{\frac{1}{h_k}}{u_j}{} = 0\right) \tag{3}
+                \phantom{=} &\sum_{i=1}^3 \sum_{j=1}^3 \parens*{\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}}\frac{1}{h_j^2}\partDeriv{r_i}{u_j}{} = \sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \parens*{\partDerivLong{\frac{1}{h_k}\partDeriv{r_i}{u_k}{}\tilde{A}_k(\bm{u})}{u_j}{}}\partDeriv{r_i}{u_j}{} \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \sum_{i=1}^3 \bracks*{ \parens*{\partDerivLong{\frac{1}{h_k}}{u_j}{}}\tilde{A}_k(\bm{u})\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{r_i}{u_j}{u_k}\partDeriv{r_i}{u_j}{} } \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \bracks*{ \parens*{\partDerivLong{\frac{1}{h_k}}{u_j}{}}\tilde{A}_k(\bm{u})\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_j}{} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_j}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} } \\
+                = &\sum_{j=1}^3 \frac{1}{h_j^2} \bracks*{ \parens*{\partDerivLong{\frac{1}{h_k}}{u_j}{}}\tilde{A}_k(\bm{u})h_k^2\delta_{k,j} + \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_j}{}h_k^2\delta_{k,j} + \frac{\tilde{A}_k(\bm{u})}{h_k}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} } \\
+                = &\frac{1}{h_k^2} \bracks*{ \parens*{\partDerivLong{\frac{1}{h_k}}{u_k}{}}\tilde{A}_k(\bm{u})h_k^2 + h_k\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} } + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \frac{1}{h_j^2} \partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} \\
+                = &\frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k} \sum_{j=1}^3 \underbrace{\frac{1}{h_j^2}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{}}_{(2)} \quad \parens*{\because \text{仮定より}\partDerivLong{\frac{1}{h_k}}{u_j}{} = 0} \tag{3}
             \end{align*}
             式(2)を評価する。
             $j=k$のとき次式より0である。
-            \[ \partDeriv{\vr}{u_k}{2}\cdot\partDeriv{\vr}{u_k}{} = \frac{1}{2}\partDerivLong{\left(\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_k}{}\right)}{u_k}{} = \frac{1}{2}\partDeriv{h_k^2}{u_k}{} = 0 \]
+            \[ \partDeriv{\vr}{u_k}{2}\cdot\partDeriv{\vr}{u_k}{} = \frac{1}{2}\partDerivLong{\parens*{\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_k}{}}}{u_k}{} = \frac{1}{2}\partDeriv{h_k^2}{u_k}{} = 0 \]
             $j\neq k$のとき次式を得る。
             \begin{align*}
                 \phantom{=} &\frac{1}{h_j^2}\partDerivIIHetero{\vr}{u_j}{u_k}\cdot\partDeriv{\vr}{u_j}{} = \frac{1}{h_j^2}\partDerivIIHetero{\vr}{u_k}{u_j}\cdot\partDeriv{\vr}{u_j}{} \\
-                &= \frac{1}{h_j^2}\times\frac{1}{2} \partDerivLong{\left(\partDeriv{\vr}{u_j}{}\cdot\partDeriv{\vr}{u_j}{}\right)}{u_k}{} = \frac{1}{h_j^2}\times\frac{1}{2}\partDeriv{h_j^2}{u_k}{} = \frac{1}{h_j}\partDeriv{h_j}{u_k}{}
+                &= \frac{1}{h_j^2}\times\frac{1}{2} \partDerivLong{\parens*{\partDeriv{\vr}{u_j}{}\cdot\partDeriv{\vr}{u_j}{}}}{u_k}{} = \frac{1}{h_j^2}\times\frac{1}{2}\partDeriv{h_j^2}{u_k}{} = \frac{1}{h_j}\partDeriv{h_j}{u_k}{}
             \end{align*}
             これらを式(3)に適用して次式を得る。
             % 但し以下で$[i+j]$は$i+j$を3で割った余りを表す。
             \begin{align*}
-                (3) &= \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\left[ \frac{1}{h_{(k-1)\%3+1}}\partDeriv{h_{(k-1)\%3+1}}{u_k}{} + \frac{1}{h_{(k-1)\%3+2}}\partDeriv{h_{(k-1)\%3+2}}{u_k}{} \right] \\
+                (3) &= \frac{1}{h_k}\partDeriv{\tilde{A}_k(\bm{u})}{u_k}{} + \frac{\tilde{A}_k(\bm{u})}{h_k}\bracks*{ \frac{1}{h_{(k-1)\%3+1}}\partDeriv{h_{(k-1)\%3+1}}{u_k}{} + \frac{1}{h_{(k-1)\%3+2}}\partDeriv{h_{(k-1)\%3+2}}{u_k}{} } \\
                 &= \frac{1}{h_1 h_2 h_3}\partDerivLong{\frac{h_1 h_2 h_3\tilde{A}_k(\bm{u})}{h_k}}{u_k}{}
             \end{align*}
         \end{proof}
@@ -142,59 +142,59 @@
     %         既出の記号の定義を引き継ぐ。
     %         $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
     %         さらに$T$は$\mathrm{C}^2$級であるとし，次式が成り立つとする(例: 円柱座標系, 球座標系)。
-    %         \[ \partDerivIIHetero{\vr}{u_j}{u_i}\cdot\partDeriv{\vr}{u_k}{} = 0 \quad \bigl(\{i,j,k\} = \{1,2,3\}\bigr) \tag{1} \]
+    %         \[ \partDerivIIHetero{\vr}{u_j}{u_i}\cdot\partDeriv{\vr}{u_k}{} = 0 \quad \parens*{\{i,j,k\} = \{1,2,3\}} \tag{1} \]
     %         3次元Euclid空間上の$\mathrm{C}^1$級のベクトル場$\vA(\vr) = \bm{i}_1 A_1(\vr) + \bm{i}_2 A_2(\vr) + \bm{i}_3 A_3(\vr)$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，次式が成り立つ。
     %         \begin{align*}
-    %             \nabla_\vr\times\vA(\vr) &= \frac{\bm{j}_1}{h_2 h_3}\left[ \partDeriv{h_3\tilde{A}_3}{u_2}{} - \partDeriv{h_2\tilde{A}_2}{u_3}{} \right] + \frac{\bm{j}_2}{h_3 h_1}\left[ \partDeriv{h_1\tilde{A}_1}{u_3}{} - \partDeriv{h_3\tilde{A}_3}{u_1}{} \right] + \frac{\bm{j}_3}{h_1 h_2}\left[ \partDeriv{h_2\tilde{A}_2}{u_1}{} - \partDeriv{h_1\tilde{A}_1}{u_2}{} \right] \\
+    %             \nabla_\vr\times\vA(\vr) &= \frac{\bm{j}_1}{h_2 h_3}\bracks*{ \partDeriv{h_3\tilde{A}_3}{u_2}{} - \partDeriv{h_2\tilde{A}_2}{u_3}{} } + \frac{\bm{j}_2}{h_3 h_1}\bracks*{ \partDeriv{h_1\tilde{A}_1}{u_3}{} - \partDeriv{h_3\tilde{A}_3}{u_1}{} } + \frac{\bm{j}_3}{h_1 h_2}\bracks*{ \partDeriv{h_2\tilde{A}_2}{u_1}{} - \partDeriv{h_1\tilde{A}_1}{u_2}{} } \\
     %             &= \sum_{i=1}^3 \bm{j}_i \varepsilon_{ijk}\frac{1}{h_j h_k}\partDeriv{h_k \tilde{A}_k}{u_j}{}
     %         \end{align*}
     %     \end{shadebox}
     %     \begin{proof}
     %         \begin{align*}
     %             \phantom{=} &\nabla_\vr\times\vA(\vr) = \nabla_\vr \times \sum_{i=1}^3 A_i(\vr)\bm{i}_i = \sum_{i=1}^3 \nabla_\vr \times A_i(\vr)\bm{i}_i = \sum_{i=1}^3 (\nabla_\vr A_i(\vr))\times\bm{i}_i\quad (\because \text{\ref{ベクトルのスカラー関数倍の回転}}) \\
-    %             = &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\vr)}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}\right) \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \\
+    %             = &\sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\partDeriv{A_i(\vr)}{u_j}{}\times\bm{i}_i = \sum_{i=1}^3 \sum_{j=1}^3 \frac{\bm{j}_j}{h_j}\parens*{\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_j}{}} \times \sum_{l=1}^3 \frac{\bm{j}_l}{h_l}\partDeriv{r_i}{u_l}{} \\
     %             &(\because \text{\ref{勾配}, \ref{ベクトルの成分の変換}, \ref{単位ベクトルの変換}})
     %         \end{align*}
     %         以下では表記の簡便さのため，$\tilde{A}_k(\bm{u})$を単に$\tilde{A}_k$と書く。
     %         上式の第$m\in\{1,2,3\}$成分を評価する。
-    %         第$m$成分に寄与するのは$(j,l)=\bigl([m+1],[m+2]\bigr),\bigl([m+2],[m+1]\bigr)$のときであり，計算すると次式を得る。
+    %         第$m$成分に寄与するのは$(j,l)=\parens*{[m+1],[m+2]},\parens*{[m+2],[m+1]}$のときであり，計算すると次式を得る。
     %         \begin{align*}
-    %             \phantom{=} &\sum_{i=1}^3 \left[ \frac{1}{h_{[m+1]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}\right)\frac{1}{h_{[m+2]}}\partDeriv{r_i}{u_{[m+2]}}{} \right. \\
-    %             &\left. - \frac{1}{h_{[m+2]}}\left(\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}\right)\frac{1}{h_{[m+1]}}\partDeriv{r_i}{u_{[m+1]}}{} \right] \\
-    %             &= \frac{1}{h_{[m+1]}h_{[m+2]}}\sum_{k=1}^3\left[ \sum_{i=1}^3\left(\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}\right)\partDeriv{r_i}{u_{[m+2]}}{} - \sum_{i=1}^3\left(\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}\right)\partDeriv{r_i}{u_{[m+1]}}{} \right] \tag{2}
+    %             \phantom{=} &\sum_{i=1}^3 \left[ \frac{1}{h_{[m+1]}}\parens*{\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}}\frac{1}{h_{[m+2]}}\partDeriv{r_i}{u_{[m+2]}}{} \right. \\
+    %             &\left. - \frac{1}{h_{[m+2]}}\parens*{\partDerivLong{\sum_{k=1}^3 \frac{\tilde{A}_k(\bm{u})}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}}\frac{1}{h_{[m+1]}}\partDeriv{r_i}{u_{[m+1]}}{} \right] \\
+    %             &= \frac{1}{h_{[m+1]}h_{[m+2]}}\sum_{k=1}^3\bracks*{ \sum_{i=1}^3\parens*{\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}}\partDeriv{r_i}{u_{[m+2]}}{} - \sum_{i=1}^3\parens*{\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+2]}}{}}\partDeriv{r_i}{u_{[m+1]}}{} } \tag{2}
     %         \end{align*}
     %         この式の[ ]内第1項を評価すると次式を得る。
     %         \begin{align*}
-    %             \phantom{=} &\sum_{k=1}^3\sum_{i=1}^3\left(\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}\right)\partDeriv{r_i}{u_{[m+2]}}{} \\
-    %             = &\sum_{k=1}^3 \left[ \left(\partDerivLong{\frac{\tilde{A}_k}{h_k}}{u_{[m+1]}}{}\right)\sum_{i=1}^3\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_{[m+2]}}{} + \frac{\tilde{A}_k}{h_k}\sum_{i=1}^3\partDerivIIHetero{r_i}{u_{[m+1]}}{u_k}\partDeriv{r_i}{u_{[m+2]}}{} \right] \\
-    %             = &\sum_{k=1}^3 \left[ \left(\partDerivLong{\frac{\tilde{A}_k}{h_k}}{u_{[m+1]}}{}\right)\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{} + \frac{\tilde{A}_k}{h_k}\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{} \right] \\
-    %             = &\left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 + \sum_{k\in\{[m+1],[m+2]\}} \frac{\tilde{A}_k}{h_k}\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{}
+    %             \phantom{=} &\sum_{k=1}^3\sum_{i=1}^3\parens*{\partDerivLong{\frac{\tilde{A}_k}{h_k}\partDeriv{r_i}{u_k}{}}{u_{[m+1]}}{}}\partDeriv{r_i}{u_{[m+2]}}{} \\
+    %             = &\sum_{k=1}^3 \bracks*{ \parens*{\partDerivLong{\frac{\tilde{A}_k}{h_k}}{u_{[m+1]}}{}}\sum_{i=1}^3\partDeriv{r_i}{u_k}{}\partDeriv{r_i}{u_{[m+2]}}{} + \frac{\tilde{A}_k}{h_k}\sum_{i=1}^3\partDerivIIHetero{r_i}{u_{[m+1]}}{u_k}\partDeriv{r_i}{u_{[m+2]}}{} } \\
+    %             = &\sum_{k=1}^3 \bracks*{ \parens*{\partDerivLong{\frac{\tilde{A}_k}{h_k}}{u_{[m+1]}}{}}\partDeriv{\vr}{u_k}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{} + \frac{\tilde{A}_k}{h_k}\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{} } \\
+    %             = &\parens*{\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}}h_{[m+2]}^2 + \sum_{k\in\{[m+1],[m+2]\}} \frac{\tilde{A}_k}{h_k}\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{}
     %         \end{align*}
     %         最後の等号成立には式(1)を用いた。
     %         式(2)の[ ]内第2項も同様に評価すると，式(2)の$1/(h_{[m+1]}h_{[m+2]})$の右側の部分は次式になる。
     %         \begin{align*}
-    %             \phantom{=} &\left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 - \left(\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}\right)h_{[m+1]}^2 \\
-    %             \phantom{=}    & + \sum_{k\in\{[m+1],[m+2]\}}\frac{\tilde{A}_k}{h_k}\left(\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+1]}}{}\right) \tag{3}
+    %             \phantom{=} &\parens*{\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}}h_{[m+2]}^2 - \parens*{\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}}h_{[m+1]}^2 \\
+    %             \phantom{=}    & + \sum_{k\in\{[m+1],[m+2]\}}\frac{\tilde{A}_k}{h_k}\parens*{\partDerivIIHetero{\vr}{u_{[m+1]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_k}\cdot\partDeriv{\vr}{u_{[m+1]}}{}} \tag{3}
     %         \end{align*}
     %         この式の第3項の()内を評価する。
     %         $T$は$\mathrm{C}^2$級であると仮定しているから，微分順序の入れ替えが可能であることに留意する。
     %         $k=[m+1]$のときは次式になる。
     %         \begin{align*}
     %             \phantom{=} &\partDeriv{\vr}{u_{[m+1]}}{2}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}}\cdot\partDeriv{\vr}{u_{[m+1]}}{} \\
-    %             = &\partDerivLong{\left(\partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{}\right)}{u_{[m+1]}}{} - \partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}}\cdot\partDeriv{\vr}{u_{[m+1]}}{} \\
+    %             = &\partDerivLong{\parens*{\partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{}}}{u_{[m+1]}}{} - \partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}}\cdot\partDeriv{\vr}{u_{[m+1]}}{} \\
     %             = &-\partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}}{} - \partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}}\cdot\partDeriv{\vr}{u_{[m+1]}}{} \\
-    %             = &-\partDerivLong{\left(\partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDeriv{\vr}{u_{[m+1]}}{}\right)}{u_{[m+2]}}{} = -\partDeriv{h_{[m+1]}^2}{u_{[m+2]}}{}
+    %             = &-\partDerivLong{\parens*{\partDeriv{\vr}{u_{[m+1]}}{}\cdot\partDeriv{\vr}{u_{[m+1]}}{}}}{u_{[m+2]}}{} = -\partDeriv{h_{[m+1]}^2}{u_{[m+2]}}{}
     %         \end{align*}
     %         $k=[m+2]$のときは次式になる。
     %         \begin{align*}
     %             \phantom{=} &\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDeriv{\vr}{u_{[m+2]}}{2}\cdot\partDeriv{\vr}{u_{[m+1]}}{} \\
-    %             = &\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDerivLong{\left(\partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDeriv{\vr}{u_{[m+1]}}{}\right)}{u_{[m+2]}}{} + \partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}} \\
+    %             = &\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}\cdot\partDeriv{\vr}{u_{[m+2]}}{} - \partDerivLong{\parens*{\partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDeriv{\vr}{u_{[m+1]}}{}}}{u_{[m+2]}}{} + \partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+2]}}{u_{[m+1]}} \\
     %             = &\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}}\cdot\partDeriv{\vr}{u_{[m+2]}}{} + \partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDerivIIHetero{\vr}{u_{[m+1]}}{u_{[m+2]}} \\
-    %             = &\partDerivLong{\left(\partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{}\right)}{u_{[m+1]}}{} = \partDeriv{h_{[m+2]}^2}{u_{[m+1]}}{}
+    %             = &\partDerivLong{\parens*{\partDeriv{\vr}{u_{[m+2]}}{}\cdot\partDeriv{\vr}{u_{[m+2]}}{}}}{u_{[m+1]}}{} = \partDeriv{h_{[m+2]}^2}{u_{[m+1]}}{}
     %         \end{align*}
     %         これらの式を(3)に適用すると次式を得る。
     %         \begin{align*}
-    %             (3) &= \left(\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}\right)h_{[m+2]}^2 + \frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}\partDeriv{h_{[m+2]}^2}{u_{[m+1]}}{} - \left(\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}\right)h_{[m+1]}^2 - \frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}\partDeriv{h_{[m+1]}^2}{u_{[m+2]}}{} \\
+    %             (3) &= \parens*{\partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}}{u_{[m+1]}}{}}h_{[m+2]}^2 + \frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}\partDeriv{h_{[m+2]}^2}{u_{[m+1]}}{} - \parens*{\partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}}{u_{[m+2]}}{}}h_{[m+1]}^2 - \frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}\partDeriv{h_{[m+1]}^2}{u_{[m+2]}}{} \\
     %             &= \partDerivLong{\frac{\tilde{A}_{[m+2]}}{h_{[m+2]}}h_{[m+2]}^2}{u_{[m+1]}}{} - \partDerivLong{\frac{\tilde{A}_{[m+1]}}{h_{[m+1]}}h_{[m+1]}^2}{u_{[m+2]}}{} \\
     %             &= \partDeriv{h_{[m+2]}\tilde{A}_{[m+2]}}{u_{[m+1]}}{} - \partDeriv{h_{[m+1]}\tilde{A}_{[m+1]}}{u_{[m+2]}}{}
     %         \end{align*}
@@ -204,11 +204,11 @@
         \begin{shadebox}
             既出の記号の定義を引き継ぐ。
             $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})\in\EuclideanSpace^3$ とする。
-            さらに$T$は$\mathrm{C}^2$級であるとし，$\frac{\partial h_i}{\partial u_i} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
+            さらに$T$は$\mathrm{C}^2$級であるとし，$\partDeriv{h_i}{u_i}{} = 0\;(i=1,2,3)$が成り立つとする(例: 円柱座標系, 球座標系)。
             $\phi:\realNumbers^3\to\complexNumbers$は$\realNumbers^3$上で$\mathrm{C}^2$級であるとする。
             $\tilde{\phi}(\bm{u}) \coloneq \phi(T(\bm{u}))$とする。
             $\nabla^2_\vr\phi(\vr)$は$\bm{u}$を用いて次式で表せる。
-            \[ \nabla^2_\vr\phi(\vr) = \frac{1}{h_1 h_2 h_3}\left[ \partDerivLong{\left(\frac{h_2 h_3}{h_1}\partDeriv{\tilde{\phi}(\bm{u})}{u_1}{}\right)}{u_1}{} + \partDerivLong{\left(\frac{h_3 h_1}{h_2}\partDeriv{\tilde{\phi}(\bm{u})}{u_2}{}\right)}{u_2}{} + \partDerivLong{\left(\frac{h_1 h_2}{h_3}\partDeriv{\tilde{\phi}(\bm{u})}{u_3}{}\right)}{u_3}{} \right] \]
+            \[ \nabla^2_\vr\phi(\vr) = \frac{1}{h_1 h_2 h_3}\bracks*{ \partDerivLong{\parens*{\frac{h_2 h_3}{h_1}\partDeriv{\tilde{\phi}(\bm{u})}{u_1}{}}}{u_1}{} + \partDerivLong{\parens*{\frac{h_3 h_1}{h_2}\partDeriv{\tilde{\phi}(\bm{u})}{u_2}{}}}{u_2}{} + \partDerivLong{\parens*{\frac{h_1 h_2}{h_3}\partDeriv{\tilde{\phi}(\bm{u})}{u_3}{}}}{u_3}{} } \]
         \end{shadebox}
         \begin{proof}
             \ref{勾配},\ref{発散}を用いて容易に示せる。
@@ -226,19 +226,19 @@
                 \end{align*}
                 すると
                 \begin{align*}
-                    A\times(B\times C) &= (\bm{j}_1 A_1 + \bm{j}_2 A_2 + \bm{j}_3 A_3) \times \left[\bm{j}_1(B_2 C_3 - B_3 C_2) + \bm{j}_2(B_3 C_1 - B_1 C_3) + \bm{j}_3(B_1 C_2 - B_2 C_1)\right] \\
+                    A\times(B\times C) &= (\bm{j}_1 A_1 + \bm{j}_2 A_2 + \bm{j}_3 A_3) \times \bracks*{\bm{j}_1(B_2 C_3 - B_3 C_2) + \bm{j}_2(B_3 C_1 - B_1 C_3) + \bm{j}_3(B_1 C_2 - B_2 C_1)} \\
                     &= \phantom{+}\bm{j}_3 A_1(B_3 C_1 - B_1 C_3) - \bm{j}_2 A_1(B_1 C_2 - B_2 C_1) \\
                     &\phantom{=} -\bm{j}_3 A_2(B_2 C_3 - B_3 C_2) + \bm{j}_1 A_2(B_1 C_2 - B_2 C_1) \\
                     &\phantom{=} +\bm{j}_2 A_3(B_2 C_3 - B_3 C_2) - \bm{j}_1 A_3(B_3 C_1 - B_1 C_3) \\
-                    &= \phantom{+}\bm{j}_1 \left[(A_2 C_2 + A_3 C_3)B_1 - (A_2 B_2 + A_3 B_3)C_1\right] \\
-                    &\phantom{=} + \bm{j}_2 \left[(A_1 C_1 + A_3 C_3)B_2 - (A_1 B_1 + A_3 B_3)C_2\right] \\
-                    &\phantom{=} + \bm{j}_3 \left[(A_1 C_1 + A_2 C_2)B_3 - (A_1 B_1 + A_2 B_2)C_3\right] \\
-                    &= \phantom{+}\bm{j}_1 \left[(\inProd{A}{C} - A_1 C_1)B_1 - (\inProd{A}{B} - A_1 B_1)C_1\right] \\
-                    &\phantom{=} + \bm{j}_2 \left[(\inProd{A}{C} - A_2 C_2)B_2 - (\inProd{A}{B} - A_2 B_2)C_2\right] \\
-                    &\phantom{=} + \bm{j}_3 \left[(\inProd{A}{C} - A_3 C_3)B_3 - (\inProd{A}{B} - A_3 B_3)C_3\right] \\
-                    &= \phantom{+}\bm{j}_1 \left[\inProd{A}{C}B_1 - \inProd{A}{B}C_1\right] \\
-                    &\phantom{=} + \bm{j}_2 \left[\inProd{A}{C}B_2 - \inProd{A}{B}C_2\right] \\
-                    &\phantom{=} + \bm{j}_3 \left[\inProd{A}{C}B_3 - \inProd{A}{B}C_3\right] \\
+                    &= \phantom{+}\bm{j}_1 \bracks*{(A_2 C_2 + A_3 C_3)B_1 - (A_2 B_2 + A_3 B_3)C_1} \\
+                    &\phantom{=} + \bm{j}_2 \bracks*{(A_1 C_1 + A_3 C_3)B_2 - (A_1 B_1 + A_3 B_3)C_2} \\
+                    &\phantom{=} + \bm{j}_3 \bracks*{(A_1 C_1 + A_2 C_2)B_3 - (A_1 B_1 + A_2 B_2)C_3} \\
+                    &= \phantom{+}\bm{j}_1 \bracks*{(\inProd{A}{C} - A_1 C_1)B_1 - (\inProd{A}{B} - A_1 B_1)C_1} \\
+                    &\phantom{=} + \bm{j}_2 \bracks*{(\inProd{A}{C} - A_2 C_2)B_2 - (\inProd{A}{B} - A_2 B_2)C_2} \\
+                    &\phantom{=} + \bm{j}_3 \bracks*{(\inProd{A}{C} - A_3 C_3)B_3 - (\inProd{A}{B} - A_3 B_3)C_3} \\
+                    &= \phantom{+}\bm{j}_1 \bracks*{\inProd{A}{C}B_1 - \inProd{A}{B}C_1} \\
+                    &\phantom{=} + \bm{j}_2 \bracks*{\inProd{A}{C}B_2 - \inProd{A}{B}C_2} \\
+                    &\phantom{=} + \bm{j}_3 \bracks*{\inProd{A}{C}B_3 - \inProd{A}{B}C_3} \\
                     &= \inProd{A}{C}B - \inProd{A}{B}C
                 \end{align*}
             \end{proof}
@@ -262,26 +262,26 @@
                 %     &= \norm{\bm{a}}^2\inProd{\bm{b}}{\bm{c}} - \inProd{\bm{a}}{\bm{b}}\inProd{\bm{a}}{\bm{c}}
                 % \end{align*}
             \end{proof}
-        \subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\vr)\cdot\bm{n}(\vr)\mathrm{d}^2 r$}{発散はベクトル場の法線面積分の体積の商の極限である}}
+        \subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \integrate{\partial V}{}{A(\vr)\cdot\bm{n}(\vr)}{2}{r}$}{発散はベクトル場の法線面積分の体積の商の極限である}}
             \begin{shadebox}
                 $\vr_0\in\EuclideanSpace^3$とし，$\Omega\subset\EuclideanSpace^3$上のベクトル場$A$が$\vr_0$の近傍で$C^1$級であるとする。
                 $\vr_0$を含む微小な領域を$V$とし，$\partial V$を$V$の境界，$|V|$を$V$の体積とする。
                 但し$\partial V$は$C^1$級であるとする。
                 このとき次式が成り立つ。
-                \[ (\nabla\cdot A)(\vr_0) = \frac{1}{|V|}\lim_{|V|\to 0}\int_{\partial V} A(\vr)\cdot\bm{n}(\vr)\mathrm{d}^2 r \]
+                \[ (\nabla\cdot A)(\vr_0) = \frac{1}{|V|}\lim_{|V|\to 0}\integrate{\partial V}{}{A(\vr)\cdot\bm{n}(\vr)}{2}{r} \]
                 ここに$\bm{n}(\vr)$は$\vr\in\partial V$に於ける外向きの法線ベクトルである。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 発散定理より次式が成り立つ。
-                \[ \int_{\partial V} A(\vr)\cdot\bm{n}(\vr)\mathrm{d}^2 r = \int_V (\nabla\cdot A)(\vr)\mathrm{d}^3 r \]
+                \[ \integrate{\partial V}{}{A(\vr)\cdot\bm{n}(\vr)}{2}{r} = \integrate{V}{}{(\nabla\cdot A)(\vr)}{3}{r} \]
                 $\varepsilon>0$を任意に小さくとる。
                 $A$が$\vr_0$の近傍で$C^1$級であるという仮定から，$V$を充分小さくとれば，$|(\nabla\cdot A)(\vr) - (\nabla\cdot A)(\vr_0)| < \varepsilon$である。
                 よって次式が成り立つ。
-                \[ \left| \frac{1}{|V|}\int_V (\nabla\cdot A)(\vr)\mathrm{d}^3 r - (\nabla\cdot A)(\vr_0) \right| < \varepsilon \]
+                \[ \abs{ \frac{1}{|V|}\integrate{V}{}{(\nabla\cdot A)(\vr)}{3}{r} - (\nabla\cdot A)(\vr_0) } < \varepsilon \]
                 $|V|\to 0$とすれば定理の主張が成り立つ。
             \end{proof}
-        \subsection{ベクトルのスカラー関数倍の発散\texorpdfstring{: $\nabla_\vr\cdot f(\vr)\vA(\vr) = \bigl(\nabla_\vr f(\vr)\bigr)\cdot \vA(\vr) + f(\vr)\nabla_\vr\cdot\vA(\vr)$}{}}
+        \subsection{ベクトルのスカラー関数倍の発散\texorpdfstring{: $\nabla_\vr\cdot f(\vr)\vA(\vr) = \parens*{\nabla_\vr f(\vr)}\cdot \vA(\vr) + f(\vr)\nabla_\vr\cdot\vA(\vr)$}{}}
             \begin{shadebox}
                 $\vr\in\EuclideanSpace^3$とする。
                 $f:\EuclideanSpace^3\to\complexNumbers,A:\EuclideanSpace^3\to\EuclideanSpace^3$はともに$\mathrm{C}^1$級とする。
@@ -297,13 +297,13 @@
                     &= \sum_{i=1}^3 \frac{1}{h_i}\partDeriv{\tilde{f}}{u_i}{}\tilde{A}_i + \tilde{f}\frac{1}{h_1 h_2 h_3}\sum_{i=1}^3 \partDerivLong{\frac{h_1 h_2 h_3}{h_i}\tilde{A}_i}{u_i}{} = (\nabla f)\cdot\vA + f\nabla\cdot\vA
                 \end{align*}
             \end{proof}
-        \subsection{ベクトルのスカラー関数倍の回転\texorpdfstring{: $\nabla_\vr\times f(\vr)\vA(\vr) = \bigl(\nabla_\vr f(\vr)\bigr)\times \vA(\vr) + f(\vr)\nabla_\vr\times\vA(\vr)$}{}}
+        \subsection{ベクトルのスカラー関数倍の回転\texorpdfstring{: $\nabla_\vr\times f(\vr)\vA(\vr) = \parens*{\nabla_\vr f(\vr)}\times \vA(\vr) + f(\vr)\nabla_\vr\times\vA(\vr)$}{}}
             \label{ベクトルのスカラー関数倍の回転}
             \begin{shadebox}
                 $\vr\in\EuclideanSpace^3$とする。
                 $f:\EuclideanSpace^3\to\complexNumbers,A:\EuclideanSpace^3\to\EuclideanSpace^3$はともに$\mathrm{C}^1$級とする。
                 座標系の取り方に依らず次式が成り立つ。
-                \[ \nabla_\vr\times f(\vr)\vA(\vr) = \bigl(\nabla_\vr f(\vr)\bigr)\times \vA(\vr) + f(\vr)\nabla_\vr\times\vA(\vr) \]
+                \[ \nabla_\vr\times f(\vr)\vA(\vr) = \parens*{\nabla_\vr f(\vr)}\times \vA(\vr) + f(\vr)\nabla_\vr\times\vA(\vr) \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -367,12 +367,12 @@
                     $f:\realNumbers^3\to\complexNumbers$は十分遠方に於いて，その絶対値がある$\alpha>0$に対して$o(\norm{\vr}_2^{-3-\alpha})$であるとする。
                     このとき$\realNumbers^3$上での$f$の積分は存在する。
                     すなわち次式が成り立つ。
-                    \[ R>0, V(R) \coloneq \setComprehension{\vr\in\realNumbers^3}{\norm{\vr}_2 \leq R} ,\lim_{R\to\infty} \abs{\int_{V(R)} f(\vr) \mathrm{d}^3 r} < \infty \]
+                    \[ R>0, V(R) \coloneq \setComprehension{\vr\in\realNumbers^3}{\norm{\vr}_2 \leq R} ,\lim_{R\to\infty} \abs{\integrate{V(R)}{}{f(\vr)}{3}{r}} < \infty \]
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
                     $R>0$は十分大きいものとし，$I(R)$を次式で定義する。
-                    \[ I(R) \coloneq \int_{V(R)} f(\vr) \mathrm{d}^3 r \]
+                    \[ I(R) \coloneq \integrate{V(R)}{}{f(\vr)}{3}{r} \]
                     球座標変換$\vr = r[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$を用いて次式を得る。
                     \[ I(R) = \integrate{0}{R}{\integrate{0}{\pi}{\integrate{0}{2\pi}{f(\vr)r^2\sin\theta}{}{\phi}}{}{\theta}}{}{r} \]
                     $0<R_0<R$なる$R_0$をとり，$I(R) = I(R_0) + I_2(R)$と分解する。
@@ -437,7 +437,7 @@
             \begin{shadebox}
                 $R>0,V \coloneq \setComprehension{\vr\in\EuclideanSpace^3}{\norm{\vr}_2\leq R}$とする。
                 ベクトル場$\vA(\vr)$を次式で定義する。
-                \[ \vA(\vr) \coloneq \int_V \frac{\vr-\vr'}{\norm{\vr-\vr'}_2^3} \mathrm{d}^3 r' \]
+                \[ \vA(\vr) \coloneq \integrate{V}{}{\frac{\vr-\vr'}{\norm{\vr-\vr'}_2^3}}{3}{r'} \]
                 このとき次が成り立つ。
                 \[
                     \vA(\vr) = \frac{4}{3}\pi
@@ -470,7 +470,7 @@
                 $g(\theta) \coloneq \frac{r'}{r}\sqrt{r^2+r'^2-2rr'\cos\theta}$とすると次式が成り立つ。
                 \[ \deriv{g}{\theta}{}(\theta) = \frac{r'^2\sin\theta}{\sqrt{r^2+r'^2-2rr'\cos\theta}} \]
                 よって次式が成り立つ。
-                \[ \vA(\vr) = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\left[g(\theta)\right]_0^\pi}{}{r'}}{r}{} = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\frac{r'}{r}\bigl(|r+r'|-|r-r'|\bigr)}{}{r'}}{r}{} \]
+                \[ \vA(\vr) = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\bracks*{g(\theta)}_0^\pi}{}{r'}}{r}{} = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\frac{r'}{r}\parens*{|r+r'|-|r-r'|}}{}{r'}}{r}{} \]
                 $R<r$のときは次式が成り立つ。
                 \[ \vA(\vr) = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{\frac{2r'^2}{r}}{}{r'}}{r}{} = \frac{4\pi R^3}{3r^2}\bm{i}_3 = \frac{4\pi R^3}{3}\frac{\vr}{\norm{\vr}_2^3} \]
                 $R\geq r$のときは$r'$に関する積分領域を$[0,r]$と$[r,R]$に分けて考える。
@@ -482,7 +482,7 @@
         \subsection{非負領域の共通部分の非負領域}
             \begin{shadebox}
                 $\realNumbers^n$上で考える。$\vv_1,\dotsc,\vv_m\;(m\leq n)$は一次独立であるとし，$\vv$の非負領域を
-                \[P(\vv)\coloneq\left\{\bm{w}|\inProd{\vv}{\bm{w}}\geq0\right\})\]
+                \[P(\vv)\coloneq\braces*{\bm{w}|\inProd{\vv}{\bm{w}}\geq0})\]
                 で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\vv_i)}$の非負領域にある，すなわち
                 \[\inProd{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\vv_i)}\]
                 であるとき，$\bm{u}$は適当な定数$a_i\geq0(i=1,\dotsc,m)$によって
@@ -509,21 +509,21 @@
                     \[\bm{u} = \sum_{i=1}^{m}{c_i\vv_i}\]
                     と表せることになる。
                     \par
-                    次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\vv_i)}\right)\land\inProd{\vv_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はKroneckerのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
+                    次に$c_i$が全て非負であることを示す。%そのために$\parens*{\bm{d}_i\in\bigcap_{i=1}^{m}{P(\vv_i)}}\land\inProd{\vv_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はKroneckerのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
                     $\vv_1,\dotsc,\vv_m\;(m\leq n)$は一次独立であったから次の行列
                     \[
-                        A = \left[
+                        A = \bracks*{
                             \begin{array}{c}
                                 {\vv_1}^\mathrm{T}\\
                                 {\vv_2}^\mathrm{T}\\
                                 \vdots\\
                                 {\vv_m}^\mathrm{T}
                             \end{array}
-                        \right]
+                        }
                     \]
                     の階数は$m$である。従って次の方程式
                     \[
-                        A\vx = \left[
+                        A\vx = \bracks*{
                             \begin{array}{c}
                                 0\\
                                 \vdots\\
@@ -531,7 +531,7 @@
                                 \vdots\\
                                 0
                             \end{array}
-                        \right]
+                        }
                         \begin{array}{c}
                             \quad\\
                             \quad\\
@@ -579,14 +579,14 @@
             迂闊に計算すると罠にはまる。
             特に危ない所では敢えて引数を明示する。
             \begin{align*}
-                \oint_c{A\cdot\dvc} &= \oint_{\partial S}{\left(\vix A_x+\viy A_y+\viz A_z\right)\cdot\left(\vix \dx+\viy \dy+\viz \dz\right)} \\
-                &= \oint_{\partial S}{\left(A_x\dx+A_y\dy\right)} + \oint_{\partial S}{A_z\dz} \\
-                &= \underbrace{\oint_{\partial \textcolor{red}{\Omega}}{\left(A_x(x,y,S(x,y))\dx+A_y(x,y,S(x,y))\dy\right)}}_{\ctext{A}} + \underbrace{\oint_{\partial S}{A_z\dz}}_{\ctext{B}}
+                \oint_c{A\cdot\dvc} &= \oint_{\partial S}{\parens*{\vix A_x+\viy A_y+\viz A_z}\cdot\parens*{\vix \dx+\viy \dy+\viz \dz}} \\
+                &= \oint_{\partial S}{\parens*{A_x\dx+A_y\dy}} + \oint_{\partial S}{A_z\dz} \\
+                &= \underbrace{\oint_{\partial \textcolor{red}{\Omega}}{\parens*{A_x(x,y,S(x,y))\dx+A_y(x,y,S(x,y))\dy}}}_{\ctext{A}} + \underbrace{\oint_{\partial S}{A_z\dz}}_{\ctext{B}}
             \end{align*}
             \ctext{A}で積分経路が$\partial S$から$\partial\Omega$に変更されたことに注意。Greenの定理を使いたいから$xy$平面に落としたのだ。
             Greenの定理より
             \[
-                \ctext{A} = \iint_\Omega{\left[\underbrace{\partDerivLong{A_y(x,y,S(x,y))}{x}{}}_{\ctext{C}}-\underbrace{\partDerivLong{A_x(x,y,S(x,y))}{y}{}}_{\ctext{D}}\right]\dx\dy}
+                \ctext{A} = \iint_\Omega{\bracks*{\underbrace{\partDerivLong{A_y(x,y,S(x,y))}{x}{}}_{\ctext{C}}-\underbrace{\partDerivLong{A_x(x,y,S(x,y))}{y}{}}_{\ctext{D}}}\dx\dy}
             \]
             \ctext{C}が罠だ。引数を明示していないと$\left.\partDeriv{A_y}{x}{}\right|_{(x,y,z)=(x,y,S(x,y))}$と勘違いしてしまう。
             \newline
@@ -600,25 +600,25 @@
             \[\ctext{D} = \partDeriv{A_x}{y}{} + \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\]
             よって結局
             \begin{align*}
-                \ctext{A} &= \iint_\Omega{\left[\partDeriv{A_y}{x}{} + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{y}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\right]\dx\dy} \\
-                &= \iint_\Omega{\left[\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right) + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}\right]\dx\dy}
+                \ctext{A} &= \iint_\Omega{\bracks*{\partDeriv{A_y}{x}{} + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{y}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}}\dx\dy} \\
+                &= \iint_\Omega{\bracks*{\parens*{\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}} + \partDeriv{A_y}{z}{}\partDeriv{S}{x}{} - \partDeriv{A_x}{z}{}\partDeriv{S}{y}{}}\dx\dy}
             \end{align*}
             次に\ctext{B}を見る。$t$による偏微分を$\dot{}$で表すことにする。線積分の定義に従って
             \begin{align*}
-                \ctext{B} &= \integrate{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\left(\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}\right)}{}{t} \\
-                &= \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}\right)\dot{\phi(t)}}{}{t} + \integrate{0}{1}{\left(A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}\right)\dot{\psi(t)}}{}{t} \\
+                \ctext{B} &= \integrate{0}{1}{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\parens*{\partDeriv{S}{x}{}\dot{\phi(t)}+\partDeriv{S}{y}{}\dot{\psi(t)}}}{}{t} \\
+                &= \integrate{0}{1}{\parens*{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{x}{}}\dot{\phi(t)}}{}{t} + \integrate{0}{1}{\parens*{A_z(\phi(t),\psi(t),S(\phi(t),\psi(t))\partDeriv{S}{y}{}}\dot{\psi(t)}}{}{t} \\
                 &= \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx} + \oint_{\partial \Omega}{A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy} \\
-                &= \oint_{\partial \Omega}{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx + A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy\right)}
+                &= \oint_{\partial \Omega}{\parens*{A_z(x,y,S(x,y))\partDeriv{S}{x}{}\dx + A_z(x,y,S(x,y))\partDeriv{S}{y}{}\dy}}
             \end{align*}
             これにGreenの定理を適用して，連鎖律に注意して偏微分していく。
             \begin{align*}
-                \ctext{B} &= \iint_\Omega{\left[\partDerivLong{\left(A_z(x,y,S(x,y))\partDeriv{S}{y}{}\right)}{x}{} - \partDerivLong{\left(A_z(x,y,S(x,y))\partDeriv{S}{x}{}\right)}{y}{}\right]\dx\dy} \\
-                &= \iint_\Omega{\left(\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} + \partDeriv{A_z}{z}{}\partDeriv{S}{x}{}\partDeriv{S}{y}{} + A_z\partDerivIIHetero{S}{y}{x} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{} - \partDeriv{nA_z}{z}{}\partDeriv{S}{y}{}\partDeriv{S}{x}{} - A_z\partDerivIIHetero{S}{x}{y}\right)\dx\dy} \\
-                &= \iint_\Omega{\left(\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{}\right)\dx\dy}\quad\left(\because\;\text{$S$は$C^2$級と仮定したから$\partDerivIIHetero{S}{y}{x} = \partDerivIIHetero{S}{x}{y}$}\right)
+                \ctext{B} &= \iint_\Omega{\bracks*{\partDerivLong{\parens*{A_z(x,y,S(x,y))\partDeriv{S}{y}{}}}{x}{} - \partDerivLong{\parens*{A_z(x,y,S(x,y))\partDeriv{S}{x}{}}}{y}{}}\dx\dy} \\
+                &= \iint_\Omega{\parens*{\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} + \partDeriv{A_z}{z}{}\partDeriv{S}{x}{}\partDeriv{S}{y}{} + A_z\partDerivIIHetero{S}{y}{x} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{} - \partDeriv{nA_z}{z}{}\partDeriv{S}{y}{}\partDeriv{S}{x}{} - A_z\partDerivIIHetero{S}{x}{y}}\dx\dy} \\
+                &= \iint_\Omega{\parens*{\partDeriv{A_z}{x}{}\partDeriv{S}{y}{} - \partDeriv{A_z}{y}{}\partDeriv{S}{x}{}}\dx\dy}\quad\parens*{\because\;\text{$S$は$C^2$級と仮定したから$\partDerivIIHetero{S}{y}{x} = \partDerivIIHetero{S}{x}{y}$}}
             \end{align*}
             以上より
             \begin{align*}
-                \oint_c{A\cdot\dvc} &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy}
+                \oint_c{A\cdot\dvc} &= \iint_\Omega{\bracks*{-\parens*{\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}}\partDeriv{S}{x}{}-\parens*{\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}}\partDeriv{S}{y}{}+\parens*{\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}}}\dx\dy}
             \end{align*}
             \par
             これが定理の右辺と等しいことを示せば良い。
@@ -626,11 +626,11 @@
             所謂「面積ベクトル」である。
             \par
             厳密にはRiemann和を取る段階で定義され，$S$上の点$(x,y,S(x,y))$における接平面のうち，その射影が$xy$平面上の矩形$\dx\dy$に収まる部分(3次元上の平行四辺形)の面積をノルムに持ち，向きは接平面の上向き法線ベクトルと一致するようなベクトルである。
-            \[\dS = \left(\vix\dx+\viz\partDeriv{S}{x}{}\dx\right)\times\left(\viy\dy+\viz\partDeriv{S}{y}{}\dy\right) = \left(-\vix\partDeriv{S}{x}{} - \viy\partDeriv{S}{y}{} + \viz\right)\dx\dy\]
+            \[\dS = \parens*{\vix\dx+\viz\partDeriv{S}{x}{}\dx}\times\parens*{\viy\dy+\viz\partDeriv{S}{y}{}\dy} = \parens*{-\vix\partDeriv{S}{x}{} - \viy\partDeriv{S}{y}{} + \viz}\dx\dy\]
             よって定理の右辺は
             \begin{align*}
-                \iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\left[\vix\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)+\viy\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)+\viz\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\cdot\dS} \\
-                &= \iint_\Omega{\left[-\left(\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}\right)\partDeriv{S}{x}{}-\left(\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}\right)\partDeriv{S}{y}{}+\left(\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}\right)\right]\dx\dy} \\
+                \iint_S{\nabla\times A}\cdot\dS &= \iint_\Omega{\bracks*{\vix\parens*{\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}}+\viy\parens*{\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}}+\viz\parens*{\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}}}\cdot\dS} \\
+                &= \iint_\Omega{\bracks*{-\parens*{\partDeriv{A_z}{y}{}-\partDeriv{A_y}{z}{}}\partDeriv{S}{x}{}-\parens*{\partDeriv{A_x}{z}{}-\partDeriv{A_z}{x}{}}\partDeriv{S}{y}{}+\parens*{\partDeriv{A_y}{x}{}-\partDeriv{A_x}{y}{}}}\dx\dy} \\
                 &= \oint_c{A\cdot\dvc}
             \end{align*}
         \end{proof}

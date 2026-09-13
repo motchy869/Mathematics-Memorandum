@@ -34,12 +34,12 @@
             例えば
             $
                 A =
-                \left[
+                \bracks*{
                     \begin{array}{cc}
                         1 & -2\\
                         -2 & 1\\
                     \end{array}
-                \right]
+                }
             $
             とすると$x_1=x_2$なる$\vx$に対して$\vx^\top A\vx = -2{x_1}^2 < 0$
         \end{proof}
@@ -75,6 +75,6 @@
             \quad\par
             $A$はHermite対称で正定であるから，適当なユニタリ行列で対角化可能であり，固有値が全て正であることに注意すれば，$\sqrt{A},\sqrt{A^{-1}}$を定義できる。
             これを用いると次式を得る。
-            \[ (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) = \norm{\sqrt{A}\vx}_2^2 \norm{\sqrt{A^{-1}}\vy}_2^2 \geq \left|\inProd{\sqrt{A}\vx}{\sqrt{A^{-1}}\vy}\right|^2 = |\HerConj{\vx}\vy|^2 \]
+            \[ (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) = \norm{\sqrt{A}\vx}_2^2 \norm{\sqrt{A^{-1}}\vy}_2^2 \geq \abs{\inProd{\sqrt{A}\vx}{\sqrt{A^{-1}}\vy}}^2 = |\HerConj{\vx}\vy|^2 \]
             2つ目の不等号はCauchy-Schwarzの不等式より導かれる。
         \end{proof}
