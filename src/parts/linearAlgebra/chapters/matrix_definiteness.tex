@@ -1,8 +1,8 @@
 \chapter{定値性}
-    \section{正定Hermite対称行列の逆行列も正定}
+    \section{正定値Hermite対称行列の逆行列も正定}
         \begin{proof}
             \quad\par
-            $A\in\complexNumbers^{n\times n}$をHermite対称な正定行列とし，重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
+            $A\in\complexNumbers^{n\times n}$を正定値Hermite対称行列とし，重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
             $A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\dotsc,\lambda_n}\HerConj{P}$と表せるので
             $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
             よって$A^{-1}$は対称で固有値が全て正なので正定である。
@@ -22,7 +22,7 @@
             $\vx\in \complexNumbers^n$に対して
             \[ \vx^\top G\vx = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inProd{\vv_i}{\vv_j} = \sum_{i=1}^n\sum_{j=1}^n \inProd{x_i\vv_i}{x_j\vv_j} = \inProd{\sum_{i=1}^n x_i\vv_i}{\sum_{j=1}^n x_j\vv_j} = \norm{\sum_{i=1}^n x_i\vv_i}_2^2 \geq 0 \]
         \end{proof}
-    \section{正定値行列同士の積は正定値とは限らない}
+    \section{正定値行列同士の積は正定とは限らない}
         \begin{proof}
             \quad\par
             (例) : $75^\circ$左回転行列同士の積\\
