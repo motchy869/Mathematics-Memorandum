@@ -52,21 +52,21 @@
     \section{複素引数凸関数}
         \subsection{複素引数凸関数の例}
             \label{複素引数凸関数の例}
-            \subsubsection{\texorpdfstring{$\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,X_i \in \complexNumbers^{m\times n})$}{行列X1,X2,...,XNの線形結合×ベクトル+定数のノルム}は\texorpdfstring{$X_1,\dotsc,X_N$}{X1,X2,...,XN}に関して凸である。}
+            \subsubsection{\texorpdfstring{$\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2\;(\bm{a}_i, \bm{b} \in \complexNumbers^n,X_i \in \complexNumbers^{m\times n})$}{行列X1,X2,...,XNの線形結合×ベクトル+定数のノルム}は\texorpdfstring{$X_1,\dotsc,X_N$}{X1,X2,...,XN}に関して凸である。}
                 \begin{proof}
                     \quad\par
-                    $T_X \coloneq (X_1,\dotsc,X_N),T_Y \coloneq (Y_1,\dotsc,Y_N),\lambda \in [0,1]$とし，$f(T_X) \coloneq \|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\|_2^2$とする。
+                    $T_X \coloneq (X_1,\dotsc,X_N),T_Y \coloneq (Y_1,\dotsc,Y_N),\lambda \in [0,1]$とし，$f(T_X) \coloneq \norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2$とする。
                     \begin{align*}
-                        f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
-                        &= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\
-                        &= (1-\lambda)^2\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \lambda^2\left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 \\
+                        f((1-\lambda)T_X + \lambda T_Y) &= \norm{\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}}_2^2 \\
+                        &= \norm{(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}_2^2 \\
+                        &= (1-\lambda)^2\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2 + \lambda^2\norm{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}_2^2 \\
                         &\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
                     \end{align*}
                     よって
                     \begin{align*}
                         &\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
-                        &= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
-                        &= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
+                        &= \lambda(1-\lambda)\left[\norm{\sum_{i=1}^N X_i\bm{a}_i + \bm{b}}_2^2 + \norm{\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}}_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
+                        &= \lambda(1-\lambda)\norm{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}_2^2 \geq 0
                     \end{align*}
                 \end{proof}
             \subsubsection{\texorpdfstring{$\norm{A\vx+\bm{b}}_2^2$}{||Ax+b||\string^2}が狭義凸\texorpdfstring{$\iff \HerConj{A}A\succ O$}{⇔ A*Aが正定}}

@@ -28,7 +28,7 @@
                 以上より$c_1=c_2=c_3$
             \end{proof}
             以降，特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
-        \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
+        \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \norm{[A]_{i,j}}_2 \leq \norm{A}_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
             \begin{proof}
                 \quad\par
                 $\max_{||\vx||=1}||[A]_{i,j}\vx||$を最大にする$\vx$に対して，$\vx' = [\vx[1:j-1]^\top,0,\vx[j:n-1]]^\top$とすると，$||\vx'|| = 1,||A\vx'|| \geq ||[A]_{i,j}\vx||$
@@ -54,7 +54,7 @@
                 $A$の対角化を$A = UDU^\mathrm{H}$とする。
                 ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
                 $A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で，$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
-                よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
+                よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\norm{A^\mathrm{H}A}_2} = \sqrt{{\norm{A}_2}^2} = \norm{A}_2$
             \end{proof}
             \noindent
             (初等的な証明)
@@ -74,10 +74,10 @@
                 これは$c_1=1,\quad c_2=\dotsb=c_\sigma=0$のときに最大となる。よって
                 \[\norm{A} = \max\{\norm{A\vx}:\norm{\vx}=1\} = |\lambda_1| = \max |\lambda(A)|\]
             \end{proof}
-        \subsection{\texorpdfstring{$\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\mathrm{max}}(A^\top A)}\;(A\in\realNumbers^{n\times n})$}{max\_\{||x||=1\} ||Ax|| = sqrt(λ\_max(A\string^⊤ A)) (A∈R\string^(n×n))}}
+        \subsection{\texorpdfstring{$\max_{\norm{x}=1} \norm{A\vx} = \sqrt{\lambda_{\mathrm{max}}(A^\top A)}\;(A\in\realNumbers^{n\times n})$}{max\_\{||x||=1\} ||Ax|| = sqrt(λ\_max(A\string^⊤ A)) (A∈R\string^(n×n))}}
             \begin{shadebox}
                 実正方行列$A \in \realNumbers^{n\times n}$と実ベクトル$\vx \in \realNumbers^n$について
-                \[\max_{\|x\|=1} \|A\vx\| = \sqrt{\lambda_{\mathrm{max}}(A^\top A)}\]
+                \[\max_{\norm{x}=1} \norm{A\vx} = \sqrt{\lambda_{\mathrm{max}}(A^\top A)}\]
             \end{shadebox}
             \noindent
             (簡潔だが，高度な知識を前提とする証明)
@@ -88,9 +88,9 @@
             \noindent
             (初等的な証明)
             \begin{proof}
-                \[\max_{\|x\|=1} {\|A\vx\|}^2 = \lambda_{\mathrm{max}}(A^\top A)\]
+                \[\max_{\norm{x}=1} {\norm{A\vx}}^2 = \lambda_{\mathrm{max}}(A^\top A)\]
                 を示せば良い。\\
-                \[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inProd{\vx}{A^\top A\vx} = \inProd{A^\top A\vx}{\vx}\]
+                \[{\norm{A\vx}}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inProd{\vx}{A^\top A\vx} = \inProd{A^\top A\vx}{\vx}\]
                 であり，$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から，固有値は全て実数であり，固有空間の基底に正規直交基を選べる。\\
                 $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし，$n_i \coloneq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
                 $\bm{b}_{i1},\bm{b}_{i2},\dots,\bm{b}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると，
@@ -130,10 +130,10 @@
             \begin{proof}
                 $A$の特異値分解より明らか。
             \end{proof}
-        \subsection{\texorpdfstring{$A \in \complexNumbers^{m\times n}$}{A∈C\string^(m×n)}について\texorpdfstring{$\alpha = \max|A_{ij}|$}{α = max|A\_(i,j)|}とすると\texorpdfstring{$\alpha \leq \|A\|_2$}{α ≦ ||A||\_2}}
+        \subsection{\texorpdfstring{$A \in \complexNumbers^{m\times n}$}{A∈C\string^(m×n)}について\texorpdfstring{$\alpha = \max|A_{ij}|$}{α = max|A\_(i,j)|}とすると\texorpdfstring{$\alpha \leq \norm{A}_2$}{α ≦ ||A||\_2}}
             \begin{proof}
                 \quad\par
-                絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \|A\bm{e}_q\|_2 \leq \|A\|_2$
+                絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \norm{A\bm{e}_q}_2 \leq \norm{A}_2$
             \end{proof}
         \subsection{\texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の各列ベクトルのノルムが高々\texorpdfstring{$a$}{a}ならば\texorpdfstring{$\norm{A}_2\leq a\sqrt{n}$}{||A||\_2 ≦ a√n}}
             \label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}

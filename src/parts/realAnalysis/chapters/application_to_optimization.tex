@@ -11,14 +11,14 @@
             \quad\par
             $\bm{h} \in \realNumbers^n \neq \bm{0}$とし，$g_i(\vx + \bm{h}) = 0\;(i=1,\dotsc,m)$を満たすとする。
             このとき$f(\vx_0 + \bm{h}) > f(\vx_0)$であることを示す。
-            \[ f(\vx_0 + \bm{h}) = f(\vx_0) + \nabla f(\vx_0)^\top\bm{h} + \bm{h}^\top H(f,\vx_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
+            \[ f(\vx_0 + \bm{h}) = f(\vx_0) + \nabla f(\vx_0)^\top\bm{h} + \bm{h}^\top H(f,\vx_0)\bm{h} + o(\norm{\bm{h}}_2^3) \]
             ここに，$H(f,\vx_0)$は$f$のHesse行列の$\vx_0$に於ける値である。
             $\nabla_\vx F(\vx_0, \bm{\lambda}_0) = \bm{0}$より$\nabla f(\vx_0) = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\vx_0)$である。
             $g_i(\vx + \bm{h}) = 0\;(i=1,\dotsc,m)$より$\bm{c}_i^\top\bm{h} = \bm{0}$であるから
             \[ \nabla f(\vx_0)^\top\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \nabla g_i(\vx_0)\bm{h} = -\sum_{i=1}^m \bm{\lambda}_0[i] \bm{c}_i^\top\bm{h} = \bm{0} \]
             である。よって
-            \[ f(\vx_0 + \bm{h}) = f(\vx_0) + \bm{h}^\top H(f,\vx_0)\bm{h} + o(\|\bm{h}\|_2^3) \]
-            $f$は狭義凸であるので$H(f,\vx_0)$は正定であり，$O(\|\bm{h}\|_2^2)$であるから，十分小さい$\bm{h}$に対して上式の右辺は$f(\vx_0)$を厳密に上回る。
+            \[ f(\vx_0 + \bm{h}) = f(\vx_0) + \bm{h}^\top H(f,\vx_0)\bm{h} + o(\norm{\bm{h}}_2^3) \]
+            $f$は狭義凸であるので$H(f,\vx_0)$は正定であり，$O(\norm{\bm{h}}_2^2)$であるから，十分小さい$\bm{h}$に対して上式の右辺は$f(\vx_0)$を厳密に上回る。
         \end{proof}
     \section{変分法}
         \subsection{大域的最小点の十分条件}
