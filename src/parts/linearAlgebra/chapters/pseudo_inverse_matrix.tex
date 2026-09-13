@@ -1,17 +1,17 @@
 \chapter{擬逆行列}
-    \section{諸定理: \texorpdfstring{$(A^\text{H}A)^\dagger A^\text{H} = A^\dagger$}{(A\string^H A)\string^† A\string^H = A\string^†}など}
+    \section{諸定理: \texorpdfstring{$(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$}{(A\string^H A)\string^† A\string^H = A\string^†}など}
         以下のものは特異値分解を用いて示せる。
         \begin{enumerate}
-            \item $(A^\text{H}A)^\dagger A^\text{H} = A^\dagger$
-            \item $(A^\text{H}A)^\dagger A^\text{H} = A^\dagger$ \label{foo}
+            \item $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$
+            \item $(A^\mathrm{H}A)^\dagger A^\mathrm{H} = A^\dagger$ \label{foo}
         \end{enumerate}
         以下のものも上と同様に示せる。
-        $AA^\text{H},A^\text{H}A$が半正定値Hermite行列であることと，半正定値Hermite行列とその擬逆行列が可換であること(半正定値Hermite行列は固有値が全て非負であることと，特異値分解が直交行列による対角化と一致することから解る)を用いる。
+        $AA^\mathrm{H},A^\mathrm{H}A$が半正定値Hermite行列であることと，半正定値Hermite行列とその擬逆行列が可換であること(半正定値Hermite行列は固有値が全て非負であることと，特異値分解が直交行列による対角化と一致することから解る)を用いる。
         \begin{enumerate}
-            \item $(AA^\text{H})^\dagger A = {A^\text{H}}^\dagger (= {A^\dagger}^\text{H})$
-            \item $(AA^\text{H})(AA^\text{H})^\dagger A = (AA^\text{H})\dagger(AA^\text{H})A = A$
-            \item $(A^\text{H}A)(A^\text{H}A)^\dagger A^\text{H} = (A^\text{H}A)^\dagger(A^\text{H}A)A^\text{H} = A^\text{H}$
-            \item $A(A^\text{H}A)(A^\text{H}A)^\dagger = A(A^\text{H}A)^\dagger(A^\text{H}A) = A$
+            \item $(AA^\mathrm{H})^\dagger A = {A^\mathrm{H}}^\dagger (= {A^\dagger}^\mathrm{H})$
+            \item $(AA^\mathrm{H})(AA^\mathrm{H})^\dagger A = (AA^\mathrm{H})\dagger(AA^\mathrm{H})A = A$
+            \item $(A^\mathrm{H}A)(A^\mathrm{H}A)^\dagger A^\mathrm{H} = (A^\mathrm{H}A)^\dagger(A^\mathrm{H}A)A^\mathrm{H} = A^\mathrm{H}$
+            \item $A(A^\mathrm{H}A)(A^\mathrm{H}A)^\dagger = A(A^\mathrm{H}A)^\dagger(A^\mathrm{H}A) = A$
         \end{enumerate}
     \section{行フルランクな行列の擬逆行列を用いた線形方程式の解がノルム最小であること}
         \begin{shadebox}

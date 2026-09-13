@@ -9,12 +9,12 @@
                     f((1-\lambda)T_X + \lambda T_Y) &= \left\|\sum_{i=1}^N ((1-\lambda)X_i + \lambda Y_i)\bm{a}_i + \bm{b}\right\|_2^2 \\
                     &= \left\|(1-\lambda)\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) + \lambda\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \\
                     &= (1-\lambda)^2\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \lambda^2\left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 \\
-                    &\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\text{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
+                    &\phantom{=} + 2\lambda(1-\lambda)\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}
                 \end{align*}
                 よって
                 \begin{align*}
                     &\phantom{=} (1-\lambda)f(T_X) + \lambda f(T_Y) - f((1-\lambda)T_X + \lambda T_Y) \\
-                    &= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\text{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
+                    &= \lambda(1-\lambda)\left[\left\|\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right\|_2^2 + \left\|\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right\|_2^2 - 2\Re{\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right)^\mathrm{H}\left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)}\right] \\
                     &= \lambda(1-\lambda)\left\|\left(\sum_{i=1}^N X_i\bm{a}_i + \bm{b}\right) - \left(\sum_{i=1}^N Y_i\bm{a}_i + \bm{b}\right)\right\|_2^2 \geq 0
                 \end{align*}
             \end{proof}
