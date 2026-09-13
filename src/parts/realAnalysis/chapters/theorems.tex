@@ -15,58 +15,58 @@
             このとき $\fea(x) - \feb(x) = \fob(x) - \foa(x)$ が成り立つ。
             左辺は偶関数，右辺は奇関数なので，両辺は恒等的に 0 でなければならない（偶対称かつ奇対称な関数が恒等的に 0 であることは容易に示せる）。
         \end{proof}
-    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
+    \section{\texorpdfstring{$\sup_{\vx\in X}(f(\vx)+g(\vx)) \leq \sup_{\vx\in X}f(\vx) + \sup_{\vx\in X}g(\vx),\inf_{\vx\in X}f(\vx) + \inf_{\vx\in X}g(\vx) \leq \inf_{\vx\in X}(f(\vx)+g(\vx))$}{sup\_\{x∈X\} f(x)+g(x) ≦ sum\_\{x∈X\}f(x) + sup\_\{x∈X\}g(x), inf\_\{x∈X\}f(x) + inf\_\{x∈X\}g(x) ≦ inf\_\{x∈X\} f(x)+g(x)}}
         \begin{shadebox}
             集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
-            \[ \sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x}),\inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x}) \leq \inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) \]
+            \[ \sup_{\vx\in X}(f(\vx)+g(\vx)) \leq \sup_{\vx\in X}f(\vx) + \sup_{\vx\in X}g(\vx),\inf_{\vx\in X}f(\vx) + \inf_{\vx\in X}g(\vx) \leq \inf_{\vx\in X}(f(\vx)+g(\vx)) \]
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_1$とすると$\sup_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_1)+g(\bm{x}_1) \leq \sup_{\bm{x}\in X}f(\bm{x}) + \sup_{\bm{x}\in X}g(\bm{x})$。
-            また，$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x}))$を与える$\bm{x}\in X$の一つを$\bm{x}_2$とすると$\inf_{\bm{x}\in X}(f(\bm{x})+g(\bm{x})) = f(\bm{x}_2)+g(\bm{x}_2) \geq \inf_{\bm{x}\in X}f(\bm{x}) + \inf_{\bm{x}\in X}g(\bm{x})$
+            $\sup_{\vx\in X}(f(\vx)+g(\vx))$を与える$\vx\in X$の一つを$\vx_1$とすると$\sup_{\vx\in X}(f(\vx)+g(\vx)) = f(\vx_1)+g(\vx_1) \leq \sup_{\vx\in X}f(\vx) + \sup_{\vx\in X}g(\vx)$。
+            また，$\inf_{\vx\in X}(f(\vx)+g(\vx))$を与える$\vx\in X$の一つを$\vx_2$とすると$\inf_{\vx\in X}(f(\vx)+g(\vx)) = f(\vx_2)+g(\vx_2) \geq \inf_{\vx\in X}f(\vx) + \inf_{\vx\in X}g(\vx)$
         \end{proof}
-    \section{\texorpdfstring{$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}), \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x})$}{sup\_\{x∈X\} -f(x) = -inf\_\{x∈X\}f(x), inf\_\{x∈X\} -f(x) = -sup\_\{x∈X\}f(x)}}
+    \section{\texorpdfstring{$\sup_{\vx\in X}(-f(\vx)) = -\inf_{\vx\in X}f(\vx), \inf_{\vx\in X}(-f(\vx)) = -\sup_{\vx\in X}f(\vx)$}{sup\_\{x∈X\} -f(x) = -inf\_\{x∈X\}f(x), inf\_\{x∈X\} -f(x) = -sup\_\{x∈X\}f(x)}}
         \begin{shadebox}
             集合$X$上で定義された有界な関数$f,g$について次が成り立つ。
-            \[ \sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x}), \inf_{\bm{x}\in X}(-f(\bm{x})) = -\sup_{\bm{x}\in X}f(\bm{x}) \]
+            \[ \sup_{\vx\in X}(-f(\vx)) = -\inf_{\vx\in X}f(\vx), \inf_{\vx\in X}(-f(\vx)) = -\sup_{\vx\in X}f(\vx) \]
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $^\forall\bm{y}\in X,\inf_{\bm{x}\in X}f(\bm{x}) \leq f(\bm{y})$なので$^\forall\bm{y}\in X,-\inf_{\bm{x}\in X}f(\bm{x}) \geq -f(\bm{y})$。
-            任意の$\varepsilon>0$に対して$\inf_{\bm{x}\in X}f(\bm{x}) + \varepsilon$は$f$の下界ではないから，適当な$\bm{x}_1\in X$が存在して$f(\bm{x}_1) < \inf_{\bm{x}\in X}f(\bm{x}) + \varepsilon \quad \therefore\; -f(\bm{x}_1) > -\inf_{\bm{x}\in X}f(\bm{x}) - \varepsilon$
-            。すなわち$-\inf_{\bm{x}\in X}f(\bm{x}) - \varepsilon$は$-f$の上界ではない。
-            よって上限の定義より$\sup_{\bm{x}\in X}(-f(\bm{x})) = -\inf_{\bm{x}\in X}f(\bm{x})$。2つ目の主張の証明も同様。
+            $^\forall\vy\in X,\inf_{\vx\in X}f(\vx) \leq f(\vy)$なので$^\forall\vy\in X,-\inf_{\vx\in X}f(\vx) \geq -f(\vy)$。
+            任意の$\varepsilon>0$に対して$\inf_{\vx\in X}f(\vx) + \varepsilon$は$f$の下界ではないから，適当な$\vx_1\in X$が存在して$f(\vx_1) < \inf_{\vx\in X}f(\vx) + \varepsilon \quad \therefore\; -f(\vx_1) > -\inf_{\vx\in X}f(\vx) - \varepsilon$
+            。すなわち$-\inf_{\vx\in X}f(\vx) - \varepsilon$は$-f$の上界ではない。
+            よって上限の定義より$\sup_{\vx\in X}(-f(\vx)) = -\inf_{\vx\in X}f(\vx)$。2つ目の主張の証明も同様。
         \end{proof}
     \section{H\"older(ヘルダー)の不等式}
         \begin{shadebox}
             $p,q>1,\frac{1}{p}+\frac{1}{q}=1$のとき
-            \[\sum_{i=1}^n|x_iy_i|\leq\norm{\bm{x}}_p\norm{\bm{y}}_q\]
+            \[\sum_{i=1}^n|x_iy_i|\leq\norm{\vx}_p\norm{\vy}_q\]
         \end{shadebox}
         \begin{proof}
             \quad\par
-            $\bm{x},\bm{y}$の少なくとも1つが零ベクトルであるときは明らかに成り立つ。
+            $\vx,\vy$の少なくとも1つが零ベクトルであるときは明らかに成り立つ。
             以下では両者とも零ベクトルでないとする。
             Youngの不等式より$a,b\geq 0$に対して$ab \leq a^p/p + b^q/q$が成り立つ。
-            この式で$a=|x_i|/\norm{\bm{x}}_p,b=|y_i|/\norm{\bm{y}}_q$とすると
-            \[\frac{|x_iy_i|}{\norm{\bm{x}}_p\norm{\bm{y}}_q}\leq\frac{|x_i|^p/\norm{\bm{x}}_p^p}{p}+\frac{|y_i|^q/\norm{\bm{y}}_q^q}{q}\]
+            この式で$a=|x_i|/\norm{\vx}_p,b=|y_i|/\norm{\vy}_q$とすると
+            \[\frac{|x_iy_i|}{\norm{\vx}_p\norm{\vy}_q}\leq\frac{|x_i|^p/\norm{\vx}_p^p}{p}+\frac{|y_i|^q/\norm{\vy}_q^q}{q}\]
             これを$i=1,\dots,n$まで足し合わせると
-            \[\frac{1}{\norm{\bm{x}}_p\norm{\bm{y}}_q}\sum_{i=1}^n{|x_iy_i|} \leq \frac{\norm{\bm{x}}_p^p/\norm{\bm{x}}_p^p}{p}+\frac{\norm{\bm{y}}_q^q/\norm{\bm{y}}_q^q}{q} = 1/p+1/q = 1\]
-            \[\therefore\;\sum_{i=1}^n|x_iy_i|\leq\norm{\bm{x}}_p\norm{\bm{y}}_q\]
+            \[\frac{1}{\norm{\vx}_p\norm{\vy}_q}\sum_{i=1}^n{|x_iy_i|} \leq \frac{\norm{\vx}_p^p/\norm{\vx}_p^p}{p}+\frac{\norm{\vy}_q^q/\norm{\vy}_q^q}{q} = 1/p+1/q = 1\]
+            \[\therefore\;\sum_{i=1}^n|x_iy_i|\leq\norm{\vx}_p\norm{\vy}_q\]
         \end{proof}
     \section{Minkowskiの不等式(三角不等式の一般化)}
         \begin{shadebox}
             $1<p<\infty$のとき
-            \[\norm{\bm{x}+\bm{y}}_p \leq \norm{\bm{x}}_p+\norm{\bm{y}}_p\]
+            \[\norm{\vx+\vy}_p \leq \norm{\vx}_p+\norm{\vy}_p\]
         \end{shadebox}
         \begin{proof}
             \begin{equation}
-                \norm{\bm{x}+\bm{y}}_p^p = \sum_{i=1}^n{|x_i+y_i|^p} = \sum_{i=1}^n{|x_i+y_i||x_i+y_i|^{p-1}} \leq \sum_{i=1}^n{|x_i||x_i+y_i|^{p-1}}+\sum_{i=1}^n{|y_i||x_i+y_i|^{p-1}}
+                \norm{\vx+\vy}_p^p = \sum_{i=1}^n{|x_i+y_i|^p} = \sum_{i=1}^n{|x_i+y_i||x_i+y_i|^{p-1}} \leq \sum_{i=1}^n{|x_i||x_i+y_i|^{p-1}}+\sum_{i=1}^n{|y_i||x_i+y_i|^{p-1}}
             \end{equation}
             右辺第1項はH\"olderの不等式より上から
-            \[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\bm{v}[i]\coloneq|x_i+y_i|^{p-1}\]
+            \[\norm{\vx}_p\norm{\vv}_{\frac{p}{p-1}}\quad\mathrm{where}\quad\vv[i]\coloneq|x_i+y_i|^{p-1}\]
             で抑えられる。さらに
-            \[\norm{\bm{x}}_p\norm{\bm{v}}_{\frac{p}{p-1}} = \norm{\bm{x}}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\bm{x}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}\]
-            同様に式(1)の右辺第2項も上から$\norm{\bm{y}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}$で抑えられるので
-            \[\norm{\bm{x}+\bm{y}}_p^p \leq \norm{\bm{x}}_p\norm{\bm{x}+\bm{y}}_p^{p-1} + \norm{\bm{y}}_p\norm{\bm{x}+\bm{y}}_p^{p-1}\]
-            両辺を$\norm{\bm{x}+\bm{y}}_p^{p-1}$で割ることでMinkowskiの不等式を得る。
+            \[\norm{\vx}_p\norm{\vv}_{\frac{p}{p-1}} = \norm{\vx}_p\left[\sum_{i=1}^n{|x_i+y_i|^{(p-1)\frac{p}{p-1}}}\right]^{\frac{p-1}{p}} = \norm{\vx}_p\norm{\vx+\vy}_p^{p-1}\]
+            同様に式(1)の右辺第2項も上から$\norm{\vy}_p\norm{\vx+\vy}_p^{p-1}$で抑えられるので
+            \[\norm{\vx+\vy}_p^p \leq \norm{\vx}_p\norm{\vx+\vy}_p^{p-1} + \norm{\vy}_p\norm{\vx+\vy}_p^{p-1}\]
+            両辺を$\norm{\vx+\vy}_p^{p-1}$で割ることでMinkowskiの不等式を得る。
         \end{proof}

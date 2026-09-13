@@ -4,14 +4,14 @@
             \[B(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}\]
         \end{shadebox}
         \begin{proof}
-            \[\Gamma(p)\Gamma(q) = \left(\int_{0}^{\infty}{x^{p-1}\NapierE^{-x} dx}\right)\left(\int_{0}^{\infty}{y^{q-1}\NapierE^{-y} dy}\right) = \int_{x=0}^{\infty}{\int_{y=0}^{\infty}{x^{p-1}y^{q-1}\NapierE^{-x-y} dy} dx}\]
+            \[\Gamma(p)\Gamma(q) = \left(\int_{0}^{\infty}{x^{p-1}\NapierE^{-x} \dx}\right)\left(\int_{0}^{\infty}{y^{q-1}\NapierE^{-y} \dy}\right) = \int_{x=0}^{\infty}{\int_{y=0}^{\infty}{x^{p-1}y^{q-1}\NapierE^{-x-y} \dy} \dx}\]
             積分経路を変更する。線分$(0,z)\to(z,0)$に沿った積分を$z:0 \to \infty$まで足し合わせる。上式の$y$は$z-x$に変わり
-            \[\int_{z=0}^{\infty}{\left(\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1}\NapierE^{-x+x-z} dx}\right) dz} = \int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1} dx}\right] dz}\]
+            \[\int_{z=0}^{\infty}{\left(\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1}\NapierE^{-x+x-z} \dx}\right) \dz} = \int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{x=0}^{z}{x^{p-1}(z-x)^{q-1} \dx}\right] \dz}\]
             (詳しく言えば，$x=u,y=v-u$なる変数変換を行ったのと等しい。ヤコビアンは1となる。)
             \\$x=uz$なる変数変換を行って
             \begin{align*}
-                &\quad\int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{u=0}^{1}{z^{p-1}u^{p-1}z^{q-1}(1-u)^{q-1} zdu}\right] dz} = \int_{z=0}^{\infty}{\NapierE^{-z}z^{p+q-1}\left[\int_{u=0}^{1}{u^{p-1}(1-u)^{q-1} du}\right] dz}\\
-                &= \int_{0}^{\infty}{\NapierE^{-z}z^{p+q-1}B(p,q) dz} = B(p,q)\int_{0}^{\infty}{\NapierE^{-z}z^{p+q-1} dz} = B(p,q)\Gamma(p+q)
+                &\quad\int_{z=0}^{\infty}{\NapierE^{-z}\left[\int_{u=0}^{1}{z^{p-1}u^{p-1}z^{q-1}(1-u)^{q-1} z\mathrm{d}u}\right] \dz} = \int_{z=0}^{\infty}{\NapierE^{-z}z^{p+q-1}\left[\int_{u=0}^{1}{u^{p-1}(1-u)^{q-1} \mathrm{d}u}\right] \dz}\\
+                &= \int_{0}^{\infty}{\NapierE^{-z}z^{p+q-1}B(p,q) \dz} = B(p,q)\int_{0}^{\infty}{\NapierE^{-z}z^{p+q-1} \dz} = B(p,q)\Gamma(p+q)
             \end{align*}
         \end{proof}
     \section{多変量Beta関数}
@@ -30,7 +30,7 @@
             \[ \prod_{i=1}^n \Gamma(\alpha_i) = \prod_{i=1}^n \integrate{0}{\infty}{x_i^{\alpha_i-1}\NapierE^{-x_i}}{}{x_i} = \integrate{x_1=0}{\infty}{\dotsi\integrate{x_n=0}{\infty}{\prod_{i=1}^n x_i^{\alpha_i-1}\exp\left(-\sum_{i=1}^n x_i\right)}{}{x_n}\dotsi}{}{x_1} \]
             ここで
             \[
-                \bm{y} = P\bm{x},\quad
+                \vy = P\vx,\quad
                 P \coloneq
                 \begin{bmatrix}
                     \bm{e}_1^\top \\

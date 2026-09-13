@@ -138,9 +138,9 @@
             \begin{shadebox}
                 $A,B$ をそれぞれ $m_A\times m_A, m_B\times m_B$ の正方行列とする。
                 $A$ の固有値を重複を含めて $\lambda_{A,1},\dots,\lambda_{A,m_A}$ ， $B$ の固有値を重複を含めて $\lambda_{B,1},\dots,\lambda_{B,m_B}$ とする。
-                $\lambda_{A,i}$ に属する $A$ の固有ベクトルを $\bm{v}_{A,i}$ ，$\lambda_{B,i}$ に属する $B$ の固有ベクトルを $\bm{v}_{B,i}$ とする。
+                $\lambda_{A,i}$ に属する $A$ の固有ベクトルを $\vv_{A,i}$ ，$\lambda_{B,i}$ に属する $B$ の固有ベクトルを $\vv_{B,i}$ とする。
                 $A\otimes B$ の固有値は重複を含めて $\lambda_{A,i}\lambda_{B,j}\;(i\in\range{1}{m_A},j\in\range{1}{m_B})$ である。
-                $\bm{v}_{A,i}\otimes\bm{v}_{A,j}$ は $A\otimes B$ の固有値 $\lambda_{A,i}\lambda_{B,j}$ に属する固有ベクトルである。
+                $\vv_{A,i}\otimes\vv_{A,j}$ は $A\otimes B$ の固有値 $\lambda_{A,i}\lambda_{B,j}$ に属する固有ベクトルである。
             \end{shadebox}
             \begin{proof}
                 \quad\par
@@ -149,7 +149,7 @@
                 $S_A\otimes S_B$ は正則であり $(S_A\otimes S_B)^{-1} = \HerConj{S_A}\otimes\HerConj{S_B}$ であるから，$U_A\otimes U_B$ の固有値と $A\otimes B$ のそれは等しい。
                 $U_A\otimes U_B$ の特性多項式を考えれば，$A\otimes B$ の固有値は $\lambda_{A,i}\lambda_{B,j}$ であることが容易に判る。
                 \par
-                混合積の性質から $(A\otimes B)(\bm{v}_{A,i}\otimes\bm{v}_{B,j}) = (A\bm{v}_{A,i})\otimes(B\bm{v}_{B,j}) = \lambda_{A,i}\bm{v}_{A,i}\otimes\lambda_{B,j}\bm{v}_{B,j} = \lambda_{A,i}\lambda_{B,j}(\bm{v}_{A,i}\otimes\bm{v}_{B,j})$ であるから固有ベクトルについても定理の主張が成り立つ。
+                混合積の性質から $(A\otimes B)(\vv_{A,i}\otimes\vv_{B,j}) = (A\vv_{A,i})\otimes(B\vv_{B,j}) = \lambda_{A,i}\vv_{A,i}\otimes\lambda_{B,j}\vv_{B,j} = \lambda_{A,i}\lambda_{B,j}(\vv_{A,i}\otimes\vv_{B,j})$ であるから固有ベクトルについても定理の主張が成り立つ。
             \end{proof}
         \subsection{行列式}
             \begin{shadebox}
@@ -164,7 +164,7 @@
                 よって次式が成り立つ。
                 \[ \det\parens{A\otimes B} = \det(A\otimes I_{m_B})\det(I_{m_A}\otimes B) = \det(A\otimes I_{m_B})\det(B)^{m_A} \]
                 適当な置換行列 $S$ が存在して $A\otimes I_{m_B} = S^\top(I_{m_B}\otimes A)S$ が成り立つので次式が成り立つ。
-                \[ \det(A\otimes I_{m_B}) = det(S^\top)\det(I_{m_B}\otimes A)\det(S) = \det(A)^{m_B} \]
+                \[ \det(A\otimes I_{m_B}) = \det(S^\top)\det(I_{m_B}\otimes A)\det(S) = \det(A)^{m_B} \]
                 ただし $\det(S) = \pm 1$ であることを用いた。
             \end{proof}
             （別解）

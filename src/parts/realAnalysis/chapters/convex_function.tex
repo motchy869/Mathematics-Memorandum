@@ -16,17 +16,17 @@
         \subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
         \begin{proof}
             \quad\par
-            $g(\bm{x}) \coloneq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
-            $g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
-            \[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
+            $g(\vx) \coloneq \max\{f_1(\vx), f_2(\vx)\}$とする。
+            $g$の定義域内の任意の$\vx_1,\vx_2$と任意の$\theta\in[0,1]$に対して
+            \[ (1-\theta)g(\vx_1) + \theta g(\vx_2) = (1-\theta)\max\{f_1(\vx_1), f_2(\vx_1)\} + \theta\max\{f_1(\vx_2), f_2(\vx_2)\} \]
             であるが，maxの性質から
-            \[ \max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} \geq f_1(\bm{x}_1), f_2(\bm{x}_1) \text{かつ} \max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \geq f_1(\bm{x}_2), f_2(\bm{x}_2) \]
+            \[ \max\{f_1(\vx_1), f_2(\vx_1)\} \geq f_1(\vx_1), f_2(\vx_1) \text{かつ} \max\{f_1(\vx_2), f_2(\vx_2)\} \geq f_1(\vx_2), f_2(\vx_2) \]
             であるので
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_1(\bm{x}_1) + \theta f_1(\bm{x}_2) \geq f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq (1-\theta)f_1(\vx_1) + \theta f_1(\vx_2) \geq f_1[(1-\theta)\vx_1 + \theta\vx_2]\]
             かつ
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_2(\bm{x}_1) + \theta f_2(\bm{x}_2) \geq f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq (1-\theta)f_2(\vx_1) + \theta f_2(\vx_2) \geq f_2[(1-\theta)\vx_1 + \theta\vx_2]\]
             である。このことから
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq \max\{f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2], f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\} = g[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq \max\{f_1[(1-\theta)\vx_1 + \theta\vx_2], f_2[(1-\theta)\vx_1 + \theta\vx_2]\} = g[(1-\theta)\vx_1 + \theta\vx_2]\]
         \end{proof}
         \subsection{Jensenの不等式}
             \begin{shadebox}

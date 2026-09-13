@@ -31,7 +31,7 @@
         \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \|[A]_{i,j}\|_2 \leq \|A\|_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
             \begin{proof}
                 \quad\par
-                $\max_{||\bm{x}||=1}||[A]_{i,j}\bm{x}||$を最大にする$\bm{x}$に対して，$\bm{x}' = [\bm{x}[1:j-1]^\top,0,\bm{x}[j:n-1]]^\top$とすると，$||\bm{x}'|| = 1,||A\bm{x}'|| \geq ||[A]_{i,j}\bm{x}||$
+                $\max_{||\vx||=1}||[A]_{i,j}\vx||$を最大にする$\vx$に対して，$\vx' = [\vx[1:j-1]^\top,0,\vx[j:n-1]]^\top$とすると，$||\vx'|| = 1,||A\vx'|| \geq ||[A]_{i,j}\vx||$
             \end{proof}
         \subsection{スペクトル半径の上界}
             \begin{shadebox}
@@ -39,8 +39,8 @@
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $A$の絶対値最大固有値を$\lambda_{max}$, その任意の固有ベクトルを$\vx$とすると
-                \[\rho(A) \coloneq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
+                $A$の絶対値最大固有値を$\lambda_{\text{max}}$, その任意の固有ベクトルを$\vx$とすると
+                \[\rho(A) \coloneq |\lambda_\text{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
             \end{proof}
         \subsection{Hermite行列の絶対値最大固有値の絶対値は2-演算子ノルムと一致する}
             \begin{shadebox}
@@ -51,10 +51,10 @@
             \begin{proof}
                 \quad\par
                 $A$はHermite行列だから固有値は全て実数で，適当なユニタリ行列$U$で対角化できる。
-                $A$の対角化を$A = UDU^\mathrm{H}$とする。
+                $A$の対角化を$A = UDU^\text{H}$とする。
                 ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
-                $A^\mathrm{H}A = UD^\mathrm{H}DU^\mathrm{H}$は半正定Hermiteであり固有値は全て非負で，$UD^\mathrm{H}DU^\mathrm{H}$自身が$A^\mathrm{H}A$の特異値分解である。
-                よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\mathrm{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
+                $A^\text{H}A = UD^\text{H}DU^\text{H}$は半正定Hermiteであり固有値は全て非負で，$UD^\text{H}DU^\text{H}$自身が$A^\text{H}A$の特異値分解である。
+                よって$\max |\lambda(A)| = |\lambda_1| = \sqrt{\|A^\text{H}A\|_2} = \sqrt{{\|A\|_2}^2} = \|A\|_2$
             \end{proof}
             \noindent
             (初等的な証明)
@@ -93,14 +93,14 @@
                 \[{\|A\vx\|}^2 = (A\vx)^T(A\vx) = {\vx}^\top (A^\top A\vx) = \inProd{\vx}{A^\top A\vx} = \inProd{A^\top A\vx}{\vx}\]
                 であり，$A^\top A$は実対称行列である($\because (A^\top A)^\top = A^\top(A^\top)^\top = A^\top A$)から，固有値は全て実数であり，固有空間の基底に正規直交基を選べる。\\
                 $\lambda_1 \geq \lambda_2 \geq \dots \geq \lambda_r$を$A^\top A$の固有値とし，$n_i \coloneq \text{dim}\left(W\left(\lambda_i;A\right)\right)$とする。\\
-                $\mbox{\boldmath $b$}_{i1},\mbox{\boldmath $b$}_{i2},\dots,\mbox{\boldmath $b$}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると，
+                $\bm{b}_{i1},\bm{b}_{i2},\dots,\bm{b}_{{in}_i}$を$W\left(\lambda_i;A\right)$の正規直交基とすると，
                 ノルムが1であるような任意のベクトル$\vx \in \realNumbers^n$は適当な実数$c_{ij}$を用いて
-                \[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
+                \[\vx = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\bm{b}_{ij}}}\]
                 と表現できる。但し，$\displaystyle \sum_{ij}{{c_{ij}}^2} = 1 \cdots(\text{i})$。\\
                 よって
-                \[A^\top A\vx = A^\top A\sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}A^\top A\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\lambda_i\mbox{\boldmath $b$}_{ij}}} = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\]
-                となるから，$\mbox{\boldmath $b$}_{ij}$の正規直交性に注意して
-                \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\;\;\;\;,\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\mbox{\boldmath $b$}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
+                \[A^\top A\vx = A^\top A\sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\bm{b}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}A^\top A\bm{b}_{ij}}} = \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\lambda_i\bm{b}_{ij}}} = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\bm{b}_{ij}}}\]
+                となるから，$\bm{b}_{ij}$の正規直交性に注意して
+                \[(A^\top A\vx,\vx) = \left(\sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{c_{ij}\bm{b}_{ij}}}\;\;\;\;,\;\;\; \sum_{i=1}^r{\sum_{j=1}^{n_i}{c_{ij}\bm{b}_{ij}}}\right) = \sum_{i=1}^r{\lambda_i\sum_{j=1}^{n_i}{{c_{ij}}^2}}\cdots(\text{ii})\]
                 条件(i)の下での(ii)の最大値が$\lambda_{\text{max}}(A^\top A)$すなわち$\lambda_1$と等しいことを示せばよい。ラグランジュの未定乗数法を使う。
                 \begin{equation*}
                     \begin{cases}
@@ -139,8 +139,8 @@
             \label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
             \begin{proof}
                 \quad\par
-                $A$の第$i$列ベクトルを$\bm{a}_i$とし，$\bm{x}\in\complexNumbers^n,\norm{\bm{x}}_2=1$とすると
-                \[\norm{A\bm{x}}_2=\norm{x_1\bm{a}_1+\dotsb+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \dotsb + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\dotsb+|x_n|)a\]
+                $A$の第$i$列ベクトルを$\bm{a}_i$とし，$\vx\in\complexNumbers^n,\norm{\vx}_2=1$とすると
+                \[\norm{A\vx}_2=\norm{x_1\bm{a}_1+\dotsb+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \dotsb + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\dotsb+|x_n|)a\]
                 これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\dotsb+|x_n|\leq\sqrt{n}$なので定理が従う。
             \end{proof}
             \subsubsection{系: \texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の全要素の絶対値が\texorpdfstring{$\varepsilon$}{ε}以下であれば\texorpdfstring{$\norm{A}_2\leq \varepsilon\sqrt{mn}$}{||A||\_2 ≦ ε√(mn)}}

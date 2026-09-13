@@ -1,36 +1,36 @@
 \chapter{最適化への応用}
-    \section{\texorpdfstring{$\norm{A\bm{x} + \bm{b}}_2^2$}{||Ax+b||\_2}の最小化条件}
+    \section{\texorpdfstring{$\norm{A\vx + \bm{b}}_2^2$}{||Ax+b||\_2}の最小化条件}
         \subsection{制約なしの場合}
             \begin{shadebox}
-                $A\in\complexNumbers^{m\times n},\bm{b} \in \complexNumbers^m, \bm{x} \in \complexNumbers^n$とする。
-                $f(\bm{x}) \coloneq \norm{A\bm{x} + \bm{b}}_2^2$がある$\mathring{\bm{x}} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
-                \[ \HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b} \]
-                特に$A$が列フルランクであれば$\HerConj{A}A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\bm{x}}$は次式で一意に定まる。
-                \[ \mathring{\bm{x}} = -(\HerConj{A}A)^{-1}\HerConj{A}\bm{b} \]
+                $A\in\complexNumbers^{m\times n},\bm{b} \in \complexNumbers^m, \vx \in \complexNumbers^n$とする。
+                $f(\vx) \coloneq \norm{A\vx + \bm{b}}_2^2$がある$\mathring{\vx} \in \complexNumbers^n$で最小となる必要十分条件は次式である。
+                \[ \HerConj{A}A\mathring{\vx} = -\HerConj{A}\bm{b} \]
+                特に$A$が列フルランクであれば$\HerConj{A}A$は正則(\ref{列フルランク行列を掛けあわせて正則行列を作る})なので$\mathring{\vx}$は次式で一意に定まる。
+                \[ \mathring{\vx} = -(\HerConj{A}A)^{-1}\HerConj{A}\bm{b} \]
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                \ref{複素引数凸関数の例}より$f$は凸であるので，$\mathring{\bm{x}}$が$f$を最小化する必要十分条件は次式である。
-                \[ f(\mathring{\bm{x}} + \mathrm{d}\bm{x}) - f(\mathring{\bm{x}}) = o(\|\mathrm{d}\bm{x}\|) \; (\mathrm{d}\bm{x} \to \bm{0}) \]
-                これは$f(\mathring{\bm{x}} + \mathrm{d}\bm{x})$の$\mathrm{d}\bm{x}$に関する1次の項が0であることと同値である。
-                この1次の項を$g(\mathrm{d}\bm{x})$とすると
+                \ref{複素引数凸関数の例}より$f$は凸であるので，$\mathring{\vx}$が$f$を最小化する必要十分条件は次式である。
+                \[ f(\mathring{\vx} + \itgElem{\vx}) - f(\mathring{\vx}) = o(\|\itgElem{\vx}\|) \; (\itgElem{\vx} \to \bm{0}) \]
+                これは$f(\mathring{\vx} + \itgElem{\vx})$の$\itgElem{\vx}$に関する1次の項が0であることと同値である。
+                この1次の項を$g(\itgElem{\vx})$とすると
                 \begin{align*}
-                    g(\mathrm{d}\bm{x}) &= \HerConj{(A\mathrm{d}\bm{x})}(A\mathring{\bm{x}} + \bm{b}) + \HerConj{(A\mathring{\bm{x}} + \bm{b})}(A\mathrm{d}\bm{x}) = 2\Re{(\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A)\mathrm{d}\bm{x}}
+                    g(\itgElem{\vx}) &= \HerConj{(A\itgElem{\vx})}(A\mathring{\vx} + \bm{b}) + \HerConj{(A\mathring{\vx} + \bm{b})}(A\itgElem{\vx}) = 2\Re{(\HerConj{\mathring{\vx}}\HerConj{A}A + \HerConj{\bm{b}}A)\itgElem{\vx}}
                 \end{align*}
-                であるから，$\mathring{\bm{x}}$に関する条件は$\HerConj{\mathring{\bm{x}}}\HerConj{A}A + \HerConj{\bm{b}}A = O$，すなわち$\HerConj{A}A\mathring{\bm{x}} = -\HerConj{A}\bm{b}$である。
+                であるから，$\mathring{\vx}$に関する条件は$\HerConj{\mathring{\vx}}\HerConj{A}A + \HerConj{\bm{b}}A = O$，すなわち$\HerConj{A}A\mathring{\vx} = -\HerConj{A}\bm{b}$である。
             \end{proof}
         \subsection{線形制約付きの場合}
             \begin{shadebox}
                 $f$の定義は前小節のものとする。
-                $m\in\naturalNumbers,\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,g_i(\bm{x}) \coloneq \bm{c}_i^\top\bm{x}+d_i$とする。
-                ある$\mathring{\bm{x}} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\bm{x}}) = 0\;(i=1,\dotsc,m), \HerConj{(A\mathring{\bm{x}}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき，$f$は制約条件$g_i(\bm{x})=0\;(i=1,\dotsc,m)$の下で$\mathring{\bm{x}}$に於いて最小値をとる。
+                $m\in\naturalNumbers,\bm{c}_i \in \complexNumbers^n, d_i\in\complexNumbers,g_i(\vx) \coloneq \bm{c}_i^\top\vx+d_i$とする。
+                ある$\mathring{\vx} \in \complexNumbers^n, \mathring{\bm{\lambda}} \in\complexNumbers^m$に対して$g_i(\mathring{\vx}) = 0\;(i=1,\dotsc,m), \HerConj{(A\mathring{\vx}+\bm{b})}A = \sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top$であるとき，$f$は制約条件$g_i(\vx)=0\;(i=1,\dotsc,m)$の下で$\mathring{\vx}$に於いて最小値をとる。
             \end{shadebox}
             \begin{proof}
                 \quad\par
-                $\bm{h} \in \complexNumbers^n,g_i(\mathring{\bm{x}} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
-                $g_i(\mathring{\bm{x}} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
+                $\bm{h} \in \complexNumbers^n,g_i(\mathring{\vx} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
+                $g_i(\mathring{\vx} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
                 \begin{align*}
-                    f(\mathring{\bm{x}} + \bm{h}) &= f(\mathring{\bm{x}}) + 2\Re{\HerConj{(A\mathring{\bm{x}}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\bm{x}}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\
-                    &= f(\mathring{\bm{x}}) + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \geq f(\mathring{\bm{x}})
+                    f(\mathring{\vx} + \bm{h}) &= f(\mathring{\vx}) + 2\Re{\HerConj{(A\mathring{\vx}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\vx}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\
+                    &= f(\mathring{\vx}) + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \geq f(\mathring{\vx})
                 \end{align*}
             \end{proof}

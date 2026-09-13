@@ -1,25 +1,25 @@
 \chapter{線形写像}
     \section{表記の規則}
         \subsection{一般のベクトルを要素とする配列と行列の積}
-            $\bm{v}_1,\dotsc,\bm{v}_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
+            $\vv_1,\dotsc,\vv_n$をベクトルとする($\realNumbers^n$や$\complexNumbers^n$の要素とは限らないことに注意)。
             これと$m\times n$行列$A=[a_{ij}]_{m\times n}$, $n\times m$行列$B=[b_{ij}]_{n\times m}$に対して次のように演算を定義する。
             \[
                 A
                 \begin{bmatrix}
-                    \bm{v}_1 \\
+                    \vv_1 \\
                     \vdots \\
-                    \bm{v}_n
+                    \vv_n
                 \end{bmatrix} \coloneq
                 \begin{bmatrix}
-                    \sum_{j=1}^n a_{1j}\bm{v}_j \\
+                    \sum_{j=1}^n a_{1j}\vv_j \\
                     \vdots \\
-                    \sum_{j=1}^n a_{mj}\bm{v}_j
+                    \sum_{j=1}^n a_{mj}\vv_j
                 \end{bmatrix},
                 \qquad
-                [\bm{v}_1,\dotsc,\bm{v}_n]B \coloneq
-                \left[\sum_{i=1}^n b_{i1}\bm{v}_i, \dotsc, \sum_{i=1}^n b_{im}\bm{v}_i \right]
+                [\vv_1,\dotsc,\vv_n]B \coloneq
+                \left[\sum_{i=1}^n b_{i1}\vv_i, \dotsc, \sum_{i=1}^n b_{im}\vv_i \right]
             \]
-            これは$\bm{v}_1,\dotsc,\bm{v}_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
+            これは$\vv_1,\dotsc,\vv_n$を形式的にスカラーと見做して普通の行列同士の積を考えたものである。
         \subsection{一般のベクトルを要素とする行列同士の積}
             ベクトル$\bm{a}_{ij}\;((i,j)\in\{1:l\}\times\{l:m\})$と$\bm{b}_{ij}\;((i,j)\in\{1:m\}\times\{l:n\})$に対して，
             これらを要素とする行列$A\coloneq[\bm{a}_{ij}]_{l\times m},B\coloneq[\bm{b}_{ij}]_{m\times n}$の積$C$を
@@ -36,15 +36,15 @@
             ($\Rightarrow$)
             \par
             $W$の任意のベクトルは$W$の基底の一次結合で表されるから，全射性を言うためには$V$の中から適当な$n$個のベクトルを選んで$f$で送ったものの集合で$W$の基底を構成できることを示せば十分である。
-            $V$の基底を$\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$として$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が$W$の基底を成すことを示す。
-            \[c_1f(\bm{v}_1)+c_2f(\bm{v}_2)+\dotsb+c_nf(\bm{v}_n) = 0,\;\;c_1,c_2,\dots c_n\in\field\]
+            $V$の基底を$\{\vv_1,\vv_2,\dots,\vv_n\}$として$\{f(\vv_1),f(\vv_2),\dots,f(\vv_n)\}$が$W$の基底を成すことを示す。
+            \[c_1f(\vv_1)+c_2f(\vv_2)+\dotsb+c_nf(\vv_n) = 0,\;\;c_1,c_2,\dots c_n\in\field\]
             とおくと$f$の線形性から
-            \[f(c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n) = 0\]
+            \[f(c_1\vv_1+c_2\vv_2+\dotsb+c_n\vv_n) = 0\]
             $f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
-            \[c_1\bm{v}_1+c_2\bm{v}_2+\dotsb+c_n\bm{v}_n = 0\]
-            $\{\bm{v}_1,\bm{v}_2,\dots,\bm{v}_n\}$は$V$の基底なので
+            \[c_1\vv_1+c_2\vv_2+\dotsb+c_n\vv_n = 0\]
+            $\{\vv_1,\vv_2,\dots,\vv_n\}$は$V$の基底なので
             \[c_1=c_2=\dotsb=c_n = 0\]
-            よって$W$の$n=\dim(W)$個のベクトル$\{f(\bm{v}_1),f(\bm{v}_2),\dots,f(\bm{v}_n)\}$が一次独立なのでこれは$W$の基底である。
+            よって$W$の$n=\dim(W)$個のベクトル$\{f(\vv_1),f(\vv_2),\dots,f(\vv_n)\}$が一次独立なのでこれは$W$の基底である。
             \newline\par
             \noindent
             ($\Leftarrow$)
@@ -54,27 +54,27 @@
             $f$は全射であったから$\Img{f}=W$であるので$\dim(\Img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
             (別証)
             \par
-            $f$が全射であるから，$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\bm{v}_1,\dotsc,\bm{v}_n$が存在して
-            $f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
-            ここで$c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n = \bm{0}$とおくと，$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\bm{v}_1 + \dotsb + c_n\bm{v}_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
+            $f$が全射であるから，$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\vv_1,\dotsc,\vv_n$が存在して
+            $f(\vv_i)=\bm{w}_i\;(i=1,\dotsc,n)$を満たす。
+            ここで$c_1\vv_1 + \dotsb + c_n\vv_n = \bm{0}$とおくと，$f$は線形写像なので$f(\bm{0})=\bm{0}$だから$\bm{0} = f(c_1\vv_1 + \dotsb + c_n\vv_n) = c_1f(\bm{v_1}) + \dotsb + c_nf(\bm{v_n}) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n$となる。
             $\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であったから$c_1=\dotsb=c_n=0$である。
-            よって$\{\bm{v}_1,\dotsc,\bm{v}_n\}$は一次独立であり，$\dim{V}=n$よりこれらは$V$の基底である。
+            よって$\{\vv_1,\dotsc,\vv_n\}$は一次独立であり，$\dim{V}=n$よりこれらは$V$の基底である。
             \par
-            $\bm{x}\in V$に対して$f(\bm{x})=\bm{0}$とおく。
-            $\bm{x}$を先程の$V$の基底で展開して$\bm{x}=c_1\bm{v}_1+\dotsb+c_n\bm{v}_n$とすると，
-            \[\bm{0} = f(\bm{x}) = f(c_1\bm{v}_1+\dotsb+c_n\bm{v}_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
-            より$c_1=\dotsb=c_n=0$となるから$\bm{x}=\bm{0}$である。
+            $\vx\in V$に対して$f(\vx)=\bm{0}$とおく。
+            $\vx$を先程の$V$の基底で展開して$\vx=c_1\vv_1+\dotsb+c_n\vv_n$とすると，
+            \[\bm{0} = f(\vx) = f(c_1\vv_1+\dotsb+c_n\vv_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
+            より$c_1=\dotsb=c_n=0$となるから$\vx=\bm{0}$である。
             すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
         \end{proof}
     \section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
         \begin{proof}
             \quad\par
-            $n=\dim{V}=\dim{W}$とし，$\{\bm{v}_1,\dotsc,\bm{v}_n\}$を$V$の基底，$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
-            写像$f:V\to W$を$f(\bm{v}_i)=\bm{w}_i\;(i=1,\dotsc,n),^\forall\bm{x},\bm{y}\in V,\alpha,\beta\in\realNumbers,f(\alpha\bm{x}+\beta\bm{y})=\alpha f(\bm{x})+\beta f(\bm{y})$で定めると$f$は線形写像である。
+            $n=\dim{V}=\dim{W}$とし，$\{\vv_1,\dotsc,\vv_n\}$を$V$の基底，$\{\bm{w}_1,\dotsc,\bm{w}_n\}$を$W$の基底とする。
+            写像$f:V\to W$を$f(\vv_i)=\bm{w}_i\;(i=1,\dotsc,n),^\forall\vx,\vy\in V,\alpha,\beta\in\realNumbers,f(\alpha\vx+\beta\vy)=\alpha f(\vx)+\beta f(\vy)$で定めると$f$は線形写像である。
             さらに単射であることが次のようにして確かめられる。
             \par
-            $\bm{x},\bm{y}\in V$に対して$f(\bm{x})=f(\bm{y})$であるとする。
-            $\bm{x},\bm{y}$を基底で展開して$\bm{x}=\sum_{i=1}^n x_i\bm{v}_i, \bm{y}=\sum_{i=1}^n y_i\bm{v}_i$とすると$\bm{x}=\sum_{i=1}^n x_i\bm{w}_i = \bm{y}=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\bm{x}=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが，$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\dotsc,n)$であるので$\bm{x}=\bm{y}$である。直前の定理より$f$は全射でもあるから全単射である。
+            $\vx,\vy\in V$に対して$f(\vx)=f(\vy)$であるとする。
+            $\vx,\vy$を基底で展開して$\vx=\sum_{i=1}^n x_i\vv_i, \vy=\sum_{i=1}^n y_i\vv_i$とすると$\vx=\sum_{i=1}^n x_i\bm{w}_i = \vy=\sum_{i=1}^n y_i\bm{w}_i$すなわち$\vx=\sum_{i=1}^n (x_i-y_i)\bm{w}_i = \bm{0}$であるが，$\{\bm{w}_1,\dotsc,\bm{w}_n\}$は$W$の基底であり一次独立だから$x_i=y_i\;(i=1,\dotsc,n)$であるので$\vx=\vy$である。直前の定理より$f$は全射でもあるから全単射である。
         \end{proof}
     \section{不変部分空間と表現行列}
         \label{不変部分空間と表現行列}
@@ -126,14 +126,14 @@
         \end{proof}
     \subsection{正規直交基底間での座標変換は直交変換}
         \begin{shadebox}
-            $n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\{\bm{v}_1,\dotsc,\bm{v}_n\}$に対して，$\{\bm{u}_i\}$座標系から$\{\bm{v}_i\}$座標系への座標変換は直交変換である。
+            $n$次元線形空間$V$の2つの正規直交基底$\{\bm{u}_1,\dots,\bm{u}_n\},\{\vv_1,\dotsc,\vv_n\}$に対して，$\{\bm{u}_i\}$座標系から$\{\vv_i\}$座標系への座標変換は直交変換である。
             すなわち座標変換行列$P \coloneq [\inProd{\bm{u}_i}{\bm{u}_j}]_{n\times n}$は直交行列である。
         \end{shadebox}
         \begin{proof}
-            \[ \bm{v}_i = \sum_{k=1}^n \inProd{\bm{v}_i}{\bm{u}_k}\bm{u}_k = \sum_{k=1}^n P[i][k]\bm{u}_k \]
+            \[ \vv_i = \sum_{k=1}^n \inProd{\vv_i}{\bm{u}_k}\bm{u}_k = \sum_{k=1}^n P[i][k]\bm{u}_k \]
             だから
             \begin{align*}
-                \delta_{ij} &= \inProd{\bm{v}_i}{\bm{v}_j} = \inProd{\sum_{k=1}^n P[i][k]\bm{u}_k}{\sum_{l=1}^n P[j][l]\bm{u}_l} = \sum_{k=1}^n\sum_{l=1}^n \inProd{P[i][k]\bm{u}_k}{P[j][l]\bm{u}_l}\\
+                \delta_{ij} &= \inProd{\vv_i}{\vv_j} = \inProd{\sum_{k=1}^n P[i][k]\bm{u}_k}{\sum_{l=1}^n P[j][l]\bm{u}_l} = \sum_{k=1}^n\sum_{l=1}^n \inProd{P[i][k]\bm{u}_k}{P[j][l]\bm{u}_l}\\
                 &= \sum_{k=1}^n\sum_{l=1}^n P[i][k]P[j][l]\delta_{kl} = \sum_{k=1}^n P[i][k]P[j][k] = \sum_{k=1}^n P[i][k]P^\top[k][j] = (PP^\top)[i][j]
             \end{align*}
         \end{proof}

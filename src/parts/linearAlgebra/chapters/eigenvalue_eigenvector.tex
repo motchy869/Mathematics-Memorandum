@@ -14,23 +14,23 @@
         \subsection{相異なる固有値に対応する固有ベクトルは一次独立}
             \label{相異なる固有値に対応する固有ベクトルは一次独立}
             \begin{shadebox}
-                $A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\dotsc,p)$に対応する固有ベクトルを$\bm{v}_i$とすると$\bm{v}_1,\dotsc,\bm{v}_p$は一次独立である。
+                $A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\dotsc,p)$に対応する固有ベクトルを$\vv_i$とすると$\vv_1,\dotsc,\vv_p$は一次独立である。
             \end{shadebox}
             \begin{proof}
                 \quad\par
                 $c_1,\dotsc,c_p$を定数として
-                \[c_1\bm{v}_1 + \dotsb + c_p\bm{v}_p = \bm{0}_n\]
+                \[c_1\vv_1 + \dotsb + c_p\vv_p = \bm{0}_n\]
                 とおいて両辺に左から$A$を掛けると
-                \[\lambda_1 c_1\bm{v}_1 + \dotsb + \lambda_p c_p\bm{v}_p = \bm{0}_n\]
+                \[\lambda_1 c_1\vv_1 + \dotsb + \lambda_p c_p\vv_p = \bm{0}_n\]
                 となる。これを繰り返して
                 \begin{align*}
-                    {\lambda_1}^2 c_1\bm{v}_1 + \dotsb + {\lambda_p}^2 c_p\bm{v}_p &= \bm{0}_n \\
+                    {\lambda_1}^2 c_1\vv_1 + \dotsb + {\lambda_p}^2 c_p\vv_p &= \bm{0}_n \\
                     & \vdots \\
-                    {\lambda_1}^{p-1} c_1\bm{v}_1 + \dotsb + {\lambda_p}^{p-1} c_p\bm{v}_p &= \bm{0}_n
+                    {\lambda_1}^{p-1} c_1\vv_1 + \dotsb + {\lambda_p}^{p-1} c_p\vv_p &= \bm{0}_n
                 \end{align*}
                 を得る。これより
                 \[
-                    [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p]
+                    [c_1\vv_1,\dotsc,c_p\vv_p]
                     \begin{bmatrix}
                         1 & \lambda_1 & \cdots & {\lambda_1}^{p-1} \\
                         1 & \lambda_2 & \cdots & {\lambda_2}^{p-1} \\
@@ -40,8 +40,8 @@
                     = O_{n\times p}
                 \]
                 となるが，$\lambda_i\;(i=1,\dotsc,p)$が相異なることより，上式の等号の左隣の Vandermonde 行列は正則だから
-                \[ [c_1\bm{v}_1,\dotsc,c_p\bm{v}_p] = O_{n\times p} \]
-                となる。$\bm{v}_1,\dotsc,\bm{v}_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
+                \[ [c_1\vv_1,\dotsc,c_p\vv_p] = O_{n\times p} \]
+                となる。$\vv_1,\dotsc,\vv_p\neq\bm{0}_n$より$c_1=\dotsb=c_p=0$である。
             \end{proof}
         \subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
             \begin{proof}
@@ -83,14 +83,14 @@
             \begin{proof}
                 \quad\par
                 $A^{-1}$もまた正則だから0固有値は持たない。
-                $A^{-1}$の固有値の一つを$\lambda'\neq0$とし，それに対する固有ベクトルを$\bm{y}\neq\bm{0}$とおくと
-                $A^{-1}\bm{y} = \lambda'\bm{y}$であり，両辺に左から$A$を掛けて$\bm{y} = \lambda'A\bm{y}\quad\therefore\;A\bm{y} = \frac{1}{\lambda'}\bm{y}$となる。
+                $A^{-1}$の固有値の一つを$\lambda'\neq0$とし，それに対する固有ベクトルを$\vy\neq\bm{0}$とおくと
+                $A^{-1}\vy = \lambda'\vy$であり，両辺に左から$A$を掛けて$\vy = \lambda'A\vy\quad\therefore\;A\vy = \frac{1}{\lambda'}\vy$となる。
                 よって$A^{-1}$の固有値$\lambda'$は$A$の固有値$1/\lambda'$の逆数であり，固有ベクトルは共通である。
             \end{proof}
         \subsection{ユニタリ行列の全ての固有値の絶対値は1である}
             \begin{proof}
                 \quad\par
-                ユニタリ行列$P$とその任意の固有値$\lambda$およびそれに対応する固有ベクトル$\bm{x} \neq \bm{0}$について$P\bm{x} = \lambda\bm{x}$の両辺のノルムをとると$\|\bm{x}\|_2 = \|P\bm{x}\|_2 = |\lambda|\|\bm{x}\|_2$であるからわかる。
+                ユニタリ行列$P$とその任意の固有値$\lambda$およびそれに対応する固有ベクトル$\vx \neq \bm{0}$について$P\vx = \lambda\vx$の両辺のノルムをとると$\|\vx\|_2 = \|P\vx\|_2 = |\lambda|\|\vx\|_2$であるからわかる。
             \end{proof}
         \subsection{随伴行列}
             \subsubsection{定義}
@@ -149,19 +149,19 @@
                 \label{随伴行列の固有ベクトル}
                 \begin{shadebox}
                     \ref{随伴行列の定義} の定義を引き継ぐ。
-                    $\lambda$ は $A$ の固有値であるとする\footnote{$\lambda=0$ も含む。何故ならば $\bm{v}\neq\bm{0}$ が必ず成り立つから。}。
-                    $\bm{v}\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$ は $A$ の固有ベクトルである。
+                    $\lambda$ は $A$ の固有値であるとする\footnote{$\lambda=0$ も含む。何故ならば $\vv\neq\bm{0}$ が必ず成り立つから。}。
+                    $\vv\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$ は $A$ の固有ベクトルである。
                 \end{shadebox}
                 \begin{proof}
                     \quad\par
                     \ref{随伴行列の行列式と固有多項式} より $-a_{n-1}\lambda^{n-1}- a_{n-2}\lambda^{n-2} - \dots - a_1\lambda - a_0 = \lambda^n$ であるから，次式が成り立つ。
-                    \[ A\bm{v} = [\lambda^n,\lambda^{n-1},\dots,\lambda^2,\lambda] = \lambda\bm{v} \]
+                    \[ A\vv = [\lambda^n,\lambda^{n-1},\dots,\lambda^2,\lambda] = \lambda\vv \]
                 \end{proof}
             \subsubsection{対角化}
                 \begin{shadebox}
                     \ref{随伴行列の定義} の定義を引き継ぐ。
                     $A$ の固有値が全て異なるとし，それらを $\lambda_i\;(i=0,1,\dots,n)$ とする。
-                    $\lambda_i$ に対応する固有ベクトルを $\bm{v}_i$ とする。
+                    $\lambda_i$ に対応する固有ベクトルを $\vv_i$ とする。
                     $A$ は $\lambda_i\;(i=0,1,\dots,n)$ に関する Vandermonde 行列 $V$ を用いて次のように対角化できる。
                     \[
                         A = V\Lambda V^{-1}\quad\text{where}\quad\Lambda\coloneq\diag{\lambda_0,\lambda_1,\dots,\lambda_n},\quad V\coloneq\begin{bmatrix}
@@ -225,7 +225,7 @@
                 よって$n=1$のとき定理の主張が成り立つ。
                 \par
                 $n=m$のとき成り立つと仮定して$n=m+1$のとき成り立つことを示す。
-                $H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$とし，固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\bm{v}_m^1,\dotsc,\bm{v}_m^{2^{m-1}}$とする。
+                $H_m$の固有値$2^{m/2}$に対応する相異なる固有ベクトルを$\bm{u}_m^1,\dotsc,\bm{u}_m^{2^{m-1}}$とし，固有値$-2^{m/2}$に対応する相異なる固有ベクトルを$\vv_m^1,\dotsc,\vv_m^{2^{m-1}}$とする。
                 このとき次のことが成り立つ。\\
                 $i=1,\dotsc,2^{m-1}$に対して
                 \begin{equation}
@@ -234,8 +234,8 @@
                         (-1+\sqrt{2})\bm{u}_m^i
                     \end{bmatrix},
                     \begin{bmatrix}
-                        (1-\sqrt{2})\bm{v}_m^i \\
-                        \bm{v}_m^i
+                        (1-\sqrt{2})\vv_m^i \\
+                        \vv_m^i
                     \end{bmatrix}
                     \text{は}H_{m+1}\text{の固有値}2^{(m+1)/2}\text{に対応する固有ベクトルである}
                 \end{equation}
@@ -245,8 +245,8 @@
                         \bm{u}_m^i
                     \end{bmatrix},
                     \begin{bmatrix}
-                        \bm{v}_m^i \\
-                        (-1+\sqrt{2})\bm{v}_m^i
+                        \vv_m^i \\
+                        (-1+\sqrt{2})\vv_m^i
                     \end{bmatrix}
                     \text{は}H_{m+1}\text{の固有値}-2^{(m+1)/2}\text{に対応する固有ベクトルである}
                 \end{equation}
@@ -290,8 +290,8 @@
                 の一次結合と
                 $
                     \begin{bmatrix}
-                        (1-\sqrt{2})\bm{v}_m^i \\
-                        \bm{v}_m^i
+                        (1-\sqrt{2})\vv_m^i \\
+                        \vv_m^i
                     \end{bmatrix}
                     \;(i=1,\dotsc,2^{m-1})
                 $
@@ -389,11 +389,11 @@
             \begin{proof}
                 \quad\par
                 $m=l+1$に対して示す。それ以上の$m$に対しても帰納的に示せる。
-                結論を否定すると，ある$\bm{v}\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\bm{v}=\bm{0}\land(A-\lambda I)^{l+1}\bm{v}\neq\bm{0}$。
-                すなわち$(A-\lambda I)^{l+1}\left[(A-\lambda I)\bm{v}\right]=\bm{0}\land(A-\lambda I)^l\left[(A-\lambda I)\bm{v}\right]\neq\bm{0}$。
-                よって$(A-\lambda I)\bm{v} \in F_{A,l+1}(\lambda)$。
-                これと仮定$F_{A,l+1}(\lambda) = F_{A,l}(\lambda)$より$(A-\lambda I)\bm{v} \in F_{A,l}(\lambda)$。
-                よって$(A-\lambda I)^{l+1}\bm{v}=\bm{0}$となり，矛盾する。
+                結論を否定すると，ある$\vv\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\vv=\bm{0}\land(A-\lambda I)^{l+1}\vv\neq\bm{0}$。
+                すなわち$(A-\lambda I)^{l+1}\left[(A-\lambda I)\vv\right]=\bm{0}\land(A-\lambda I)^l\left[(A-\lambda I)\vv\right]\neq\bm{0}$。
+                よって$(A-\lambda I)\vv \in F_{A,l+1}(\lambda)$。
+                これと仮定$F_{A,l+1}(\lambda) = F_{A,l}(\lambda)$より$(A-\lambda I)\vv \in F_{A,l}(\lambda)$。
+                よって$(A-\lambda I)^{l+1}\vv=\bm{0}$となり，矛盾する。
             \end{proof}
         %\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
         %    \begin{shadebox}
@@ -416,11 +416,11 @@
                 \[A = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\]
                 \par
                 ここで下準備として$A_i$が唯一の固有値$\lambda_i$を持つことを示しておく。
-                まず固有値$\lambda_i$を持つことを示す。$\bm{x}\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り，$F_A(\lambda_i)$の基底で次のように展開する。
-                \[\bm{x} = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
+                まず固有値$\lambda_i$を持つことを示す。$\vx\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り，$F_A(\lambda_i)$の基底で次のように展開する。
+                \[\vx = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
                 これを上式に右から掛けて
                 \begin{align}
-                    A\bm{x} &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
+                    A\vx &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
                     &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
                     &= \Phi\left[
                             \begin{array}{c}
@@ -435,50 +435,50 @@
                         \right]\quad (\mathrm{※}\bm{0}_\nu\mathrm{は}\nu\mathrm{次元の0ベクトル})
                 \end{align}
                 ここで$[d_1,\dotsc,d_{\nu_i}']^\top = A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$とおくと
-                \[A\bm{x} = (1) = \sum_{j=1}^{{\nu_i}'}{d_j\bm{\phi}_{ij}}\]
-                であるが，そもそも$A\bm{x} = \lambda_i\bm{x} = \sum_{j=1}^{{\nu_i}'}{\lambda_ic_j\bm{\phi}_{ij}}$であったから$d_j = \lambda_jc_j$となり，
+                \[A\vx = (1) = \sum_{j=1}^{{\nu_i}'}{d_j\bm{\phi}_{ij}}\]
+                であるが，そもそも$A\vx = \lambda_i\vx = \sum_{j=1}^{{\nu_i}'}{\lambda_ic_j\bm{\phi}_{ij}}$であったから$d_j = \lambda_jc_j$となり，
                 $A_i[c_1,\dotsc,c_{{\nu_i}'}]^\top = \lambda_i[c_1,\dotsc,c_{{\nu_i}'}]^\top$となるから，$A_i$は固有値$\lambda_i$を持つことになる。
                 \par
                 次に$A_i$の固有値が$\lambda_i$のみであることを背理法で示す。
-                $A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し，$\lambda'$に対する固有ベクトルの一つを$\bm{y} = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\bm{y}=\lambda'\bm{y}$)。
-                ベクトル$\bm{x}\in\field^n$を
-                \[\Phi^{-1}\bm{x} = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top\]
+                $A_i$が固有値$\lambda'\notin\{\lambda_1,\dotsc,\lambda_p\}$を持つと仮定し，$\lambda'$に対する固有ベクトルの一つを$\vy = [y_1,\dotsc,y_{{\nu_i}'}]^\top\in\field^{{\nu_i}'}$とする($A_i\vy=\lambda'\vy$)。
+                ベクトル$\vx\in\field^n$を
+                \[\Phi^{-1}\vx = [\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top\]
                 すなわち
-                \[\bm{x} = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
-                で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\bm{x}\in F_A(\lambda_i)$であるので，まず次式が成り立つ。
+                \[\vx = \Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top = \sum_{j=1}^{{\nu_i}'}{y_j\bm{\phi}_{ij}}\]
+                で定めると$\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}$の和で表されているから$\vx\in F_A(\lambda_i)$であるので，まず次式が成り立つ。
                 \begin{equation}
-                    (A-\lambda_iI_n)^{\nu_i}\bm{x} = \bm{0}_n
+                    (A-\lambda_iI_n)^{\nu_i}\vx = \bm{0}_n
                 \end{equation}
                 一方で
                 \begin{align*}
-                    (A-\lambda_iI_n)\bm{x} &= A\bm{x} - \lambda_i\bm{x} = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\bm{x} - \lambda_i\bm{x}\\
-                    &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\bm{x}\\
+                    (A-\lambda_iI_n)\vx &= A\vx - \lambda_i\vx = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\vx - \lambda_i\vx\\
+                    &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx\\
                     &= \Phi\left[
                         \begin{array}{c}
                             \bm{0}_{{\nu_1}'}\\
                             \vdots\\
                             \bm{0}_{{\nu_{i-1}}'}\\
-                            A_i\bm{y}\\
+                            A_i\vy\\
                             \bm{0}_{{\nu_{i+1}}'}\\
                             \vdots\\
                             \bm{0}_{{\nu_p}'}\\
                         \end{array}
-                    \right] - \lambda_i\bm{x} = \Phi\left[
+                    \right] - \lambda_i\vx = \Phi\left[
                         \begin{array}{c}
                             \bm{0}_{{\nu_1}'}\\
                             \vdots\\
                             \bm{0}_{{\nu_{i-1}}'}\\
-                            \lambda'\bm{y}\\
+                            \lambda'\vy\\
                             \bm{0}_{{\nu_{i+1}}'}\\
                             \vdots\\
                             \bm{0}_{{\nu_p}'}\\
                         \end{array}
-                    \right] - \lambda_i\bm{x}\\
-                    &= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\bm{y}^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\bm{x} = \lambda'\bm{x}-\lambda_i\bm{x}\\
-                    &= (\lambda'-\lambda_i)\bm{x}
+                    \right] - \lambda_i\vx\\
+                    &= \lambda'\Phi[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx = \lambda'\vx-\lambda_i\vx\\
+                    &= (\lambda'-\lambda_i)\vx
                 \end{align*}
                 であるから
-                \[(A-\lambda_iI_n)^{\nu_i}\bm{x} = (\lambda'-\lambda_i)^{\nu_i}\bm{x} \neq \bm{0}_n\]
+                \[(A-\lambda_iI_n)^{\nu_i}\vx = (\lambda'-\lambda_i)^{\nu_i}\vx \neq \bm{0}_n\]
                 となるが，これは式(2)に矛盾する。故に背理法の仮定が誤っており，$A_i$は固有値$\lambda'$を持たない。
                 \par
                 以上より$A_i$は唯一の固有値$\lambda_i$を持つことがわかる。
@@ -553,11 +553,11 @@
                     \[
                         J(\lambda,n+1)^{-1} =
                         \begin{bmatrix}
-                            J(\lambda,n)^{-1} & \bm{v} \\
+                            J(\lambda,n)^{-1} & \vv \\
                             \bm{0}_n^\top & 1/\lambda
                         \end{bmatrix}
                         ,\quad
-                        \bm{v} = \frac{-1}{\lambda}J(\lambda,n)^{-1}\bm{b} = \left[\frac{-1}{\lambda}J(\lambda,n)^{-1}[i][n]\right]_{n\times 1} = \left[\frac{(-1)^{(n+1)-i}}{\lambda^{(n+1)-i+1}}\right]_{n\times 1}
+                        \vv = \frac{-1}{\lambda}J(\lambda,n)^{-1}\bm{b} = \left[\frac{-1}{\lambda}J(\lambda,n)^{-1}[i][n]\right]_{n\times 1} = \left[\frac{(-1)^{(n+1)-i}}{\lambda^{(n+1)-i+1}}\right]_{n\times 1}
                     \]
                     よって$n+1$次のときも定理が成り立つ。
                 \end{proof}
@@ -647,11 +647,11 @@
             \[|\lambda||x_i| = \left|\sum_{j=1}^{n}{a_{ij}x_j}\right| \leq \sum_{j=1}^{n}{a_{ij}|x_j|}\]
             という式があるが，$|\lambda|\leq\hat{\lambda}$は既に示されているので，上式に於いて等号が成り立てば$\lambda=\hat{\lambda}$であることを示せばよい。
             \par
-            $A$は正行列だから$a_{ij}>0$である。$\bm{x}$は固有ベクトルであるから$x_j$の少なくともどれか一つは非零である。
+            $A$は正行列だから$a_{ij}>0$である。$\vx$は固有ベクトルであるから$x_j$の少なくともどれか一つは非零である。
             よって等号が成り立つとき$x_j$は全て同じ向きである。
             言い換えれば，ある非零な複素数$z$と$b_1,\dotsc,b_n\geq0$が存在して
             \[
-                \bm{x} = z
+                \vx = z
                 \begin{bmatrix}
                     b_1\\
                     b_2\\

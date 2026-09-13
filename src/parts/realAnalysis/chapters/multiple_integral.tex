@@ -1,20 +1,20 @@
 \chapter{重積分}
     \section{平均値の定理}
         \begin{shadebox}
-            $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\bm{x}'\st\integrate{\Omega}{}{f(\bm{x})}{n}{x} = f(\bm{x}')|\Omega|$
+            $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\vx'\st\integrate{\Omega}{}{f(\vx)}{n}{x} = f(\vx')|\Omega|$
         \end{shadebox}
         \begin{proof}
             \quad\par
             $\Omega$内での$f$の最小値と最大値を各々$m(\Omega),M(\Omega)$とすると
-            \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\bm{x})}{n}{x} \leq M(\Omega)\]
-            であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\bm{x}'\st I(\Omega) = f(\bm{x}')$であり，定理が従う。
+            \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\vx)}{n}{x} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\vx)}{n}{x} \leq M(\Omega)\]
+            であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\vx'\st I(\Omega) = f(\vx')$であり，定理が従う。
         \end{proof}
     \section{重み付き Cauchy-Schwarz の不等式}
         \begin{shadebox}
             $n\in\naturalNumbers, D$ は $\realNumbers^n$ の閉領域であるとする。
             $f,g:D\to\realNumbers,w:D\to\nonNegRealNumbers$ は連続であるとする。
             このとき，次式が成り立つ。
-            \[ \parens*{\integrate{D}{}{w(\bm{x})f(\bm{x})g(\bm{x})}{n}{x}}^2 \leq \parens*{\integrate{D}{}{w(\bm{x})f(\bm{x})^2}{n}{x}} \parens*{\integrate{D}{}{w(\bm{x})g(\bm{x})^2}{n}{x}} \]
+            \[ \parens*{\integrate{D}{}{w(\vx)f(\vx)g(\vx)}{n}{x}}^2 \leq \parens*{\integrate{D}{}{w(\vx)f(\vx)^2}{n}{x}} \parens*{\integrate{D}{}{w(\vx)g(\vx)^2}{n}{x}} \]
         \end{shadebox}
         Riemann 積分に於いて，Riemann 和に対して \ref{discrete_weighted_Cauchy_Schwarz_inequality} を適用して証明できる。
     \section{\texorpdfstring{$C^1$}{C\string^1}級の変換による面積0の集合の像の面積もまた0}
@@ -75,14 +75,14 @@
             証明は割愛する。
             左辺については，$\theta$ の増加に伴って，第 1 象限から第 4 象限にかけて順番に，横長の長方形を $y$ 軸方向に積み重ねてゆく様子を想像すれば納得できる。
             同様に，右辺についても長方形を積み重ねる向きを変えて理解できる。
-        \subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \dotsi \mathrm{d}x_2\mathrm{d}x_1 = a^n/n!\;(a>0)$}{}}
+        \subsection{\texorpdfstring{$n$}{n}次元の単体の体積\texorpdfstring{$\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \dx_n \dotsi \dx_2\dx_1 = a^n/n!\;(a>0)$}{}}
             \begin{proof}
                 \begin{align*}
-                    &\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \mathrm{d}x_n \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
-                    &= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-1}=0}^{a-x_1- \dotsb - x_{n-3}} (a-x_1- \dotsb - x_{n-1}) \mathrm{d}x_{n-1} \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
-                    &= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-2}=0}^{a-x_1-\dotsb-x_{n-4}} (a-x_1- \dotsb - x_{n-2})^2 \mathrm{d}x_{n-2} \dotsi \mathrm{d}x_2\mathrm{d}x_1 \\
+                    &\phantom{=} \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_n=0}^{a-x_1- \dotsb - x_{n-2}} \dx_n \dotsi \dx_2\dx_1 \\
+                    &= \int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-1}=0}^{a-x_1- \dotsb - x_{n-3}} (a-x_1- \dotsb - x_{n-1}) \dx_{n-1} \dotsi \dx_2\dx_1 \\
+                    &= \frac{1}{2}\int_{x_1=0}^a \int_{x_2=0}^{a-x_1} \dotsi \int_{x_{n-2}=0}^{a-x_1-\dotsb-x_{n-4}} (a-x_1- \dotsb - x_{n-2})^2 \dx_{n-2} \dotsi \dx_2\dx_1 \\
                     &= \dotsb \\
-                    &= \frac{1}{2\times 3\times\dotsb(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \mathrm{d}x_1 \\
+                    &= \frac{1}{2\times 3\times\dotsb(n-1)}\int_{x_1=0}^a (a-x_1)^{n-1} \dx_1 \\
                     &= \frac{a^n}{n!}
                 \end{align*}
             \end{proof}

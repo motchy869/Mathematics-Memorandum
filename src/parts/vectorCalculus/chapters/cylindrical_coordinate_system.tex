@@ -42,14 +42,14 @@
     \section{微分演算に関する直交座標系との関係}
         \begin{shadebox}
             \begin{align*}
-                \partDeriv{}{x}{} &= \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\\
-                \partDeriv{}{y}{} &= \sinph\partDeriv{}{r}{} + \frac{\cosph}{r}\partDeriv{}{\varphi}{}
+                \ppx &= \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\ppph\\
+                \ppy &= \sinph\partDeriv{}{r}{} + \frac{\cosph}{r}\ppph
             \end{align*}
         \end{shadebox}
         \begin{proof}
             \quad\par
             スカラー関数$\phi(x,y,z)$を微分することを考える。
-            $d\phi \coloneq \phr dr + \php d\varphi + \phz dz$であるから
+            $\mathrm{d}\phi \coloneq \phr \mathrm{d}r + \php \mathrm{d}\varphi + \phz \dz$であるから
             \begin{align*}
                 \partDeriv{\phi}{x}{} &= \phr\partDeriv{r}{x}{} + \php\partDeriv{\varphi}{x}{} + \phz\partDeriv{z}{x}{}\\
                 &= \phr\ppx{\sqrt{x^2+y^2}} + \php\ppx{\varphi}
@@ -59,6 +59,6 @@
             第2項に関して
             \[\ppx{\varphi} = \ppx\atanEx{x}{y} = \frac{-y}{x^2+y^2} = \frac{-r\sin{\phi}}{r^2} = -\frac{\sin{\phi}}{r}\]
             以上より
-            \[\partDeriv{}{x}{} = \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\partDeriv{}{\varphi}{}\]
+            \[\ppx = \cosph\partDeriv{}{r}{} - \frac{\sinph}{r}\ppph\]
             $y$に関しても全く同様にして導出できる。
         \end{proof}

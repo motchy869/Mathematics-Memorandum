@@ -7,20 +7,20 @@
             $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
             よって$A^{-1}$は対称で固有値が全て正なので正定である。
         \end{proof}
-    \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\bm{x}^\top A\bm{x}=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\bm{x}\in\Ker{A}$}{x∈Ker(A)}}
+    \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\vx^\top A\vx=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\vx\in\Ker{A}$}{x∈Ker(A)}}
         \begin{proof}
             \quad\par
             $A$を$n\times n$実対称行列とする。
             $A$を対角化する実直交行列を$P = [\bm{p}_1,\dotsc,\bm{p}_n]$とし，$\bm{p}_i$に対応する固有値を$\lambda_i$とすると，$A$が半正定だから$\lambda_i\geq 0$である。
-            $\bm{x}$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\bm{x} = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \bm{x}^\top A\bm{x} = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
-            ゆえに$\bm{x}$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
+            $\vx$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\vx = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \vx^\top A\vx = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
+            ゆえに$\vx$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
         \end{proof}
     \section{Gram行列は半正定}
         \begin{proof}
             \quad\par
-            $V$を内積空間とし，$\bm{v}_1,\dotsc,\bm{v}_n\in V$のGram行列を$G=[\inProd{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
-            $\bm{x}\in \complexNumbers^n$に対して
-            \[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inProd{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inProd{x_i\bm{v}_i}{x_j\bm{v}_j} = \inProd{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
+            $V$を内積空間とし，$\vv_1,\dotsc,\vv_n\in V$のGram行列を$G=[\inProd{\vv_i}{\vv_j}]_{n\times n}$とする。
+            $\vx\in \complexNumbers^n$に対して
+            \[ \vx^\top G\vx = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inProd{\vv_i}{\vv_j} = \sum_{i=1}^n\sum_{j=1}^n \inProd{x_i\vv_i}{x_j\vv_j} = \inProd{\sum_{i=1}^n x_i\vv_i}{\sum_{j=1}^n x_j\vv_j} = \norm{\sum_{i=1}^n x_i\vv_i}_2^2 \geq 0 \]
         \end{proof}
     \section{正定値行列同士の積は正定値とは限らない}
         \begin{proof}
@@ -41,7 +41,7 @@
                     \end{array}
                 \right]
             $
-            とすると$x_1=x_2$なる$\bm{x}$に対して$\bm{x}^\top A\bm{x} = -2{x_1}^2 < 0$
+            とすると$x_1=x_2$なる$\vx$に対して$\vx^\top A\vx = -2{x_1}^2 < 0$
         \end{proof}
     \section{非対称行列は固有値が全て正でも正定とは限らない}
         \begin{proof}
@@ -64,17 +64,17 @@
                 = -1
             $
         \end{proof}
-    \section{\texorpdfstring{$A$}{A}: Hermite対称で正定\texorpdfstring{$\Rightarrow (\HerConj{\bm{x}}A\bm{x})(\HerConj{\bm{y}}A^{-1}\bm{y}) \geq |\HerConj{\bm{x}}\bm{y}|^2$}{⇒ (x\string^*Ax)(y\string^*A\string^(-1)y) ≧ |x\string^*y|\string^2}}
+    \section{\texorpdfstring{$A$}{A}: Hermite対称で正定\texorpdfstring{$\Rightarrow (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) \geq |\HerConj{\vx}\vy|^2$}{⇒ (x\string^*Ax)(y\string^*A\string^(-1)y) ≧ |x\string^*y|\string^2}}
         \begin{shadebox}
             $A \in \complexNumbers^{n\times n}$はHermite対称で正定であるとする。
-            このとき，任意の$\bm{x}, \bm{y} \in \complexNumbers^n$に対して次式が成り立つ。
-            \[ (\HerConj{\bm{x}}A\bm{x})(\HerConj{\bm{y}}A^{-1}\bm{y}) \geq \|\HerConj{\bm{x}}\bm{y}\|_2^2 \]
-            等号が成立するのは$\bm{x}$と$\bm{y}$どちらかが$\bm{0}$であるか，そうでなければ$\bm{y}$と$A\bm{x}$が平行であるとき，かつそのときである。
+            このとき，任意の$\vx, \vy \in \complexNumbers^n$に対して次式が成り立つ。
+            \[ (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) \geq \|\HerConj{\vx}\vy\|_2^2 \]
+            等号が成立するのは$\vx$と$\vy$どちらかが$\bm{0}$であるか，そうでなければ$\vy$と$A\vx$が平行であるとき，かつそのときである。
         \end{shadebox}
         \begin{proof}
             \quad\par
             $A$はHermite対称で正定であるから，適当なユニタリ行列で対角化可能であり，固有値が全て正であることに注意すれば，$\sqrt{A},\sqrt{A^{-1}}$を定義できる。
             これを用いると次式を得る。
-            \[ (\HerConj{\bm{x}}A\bm{x})(\HerConj{\bm{y}}A^{-1}\bm{y}) = \norm{\sqrt{A}\bm{x}}_2^2 \norm{\sqrt{A^{-1}}\bm{y}}_2^2 \geq \left|\inProd{\sqrt{A}\bm{x}}{\sqrt{A^{-1}}\bm{y}}\right|^2 = |\HerConj{\bm{x}}\bm{y}|^2 \]
+            \[ (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) = \norm{\sqrt{A}\vx}_2^2 \norm{\sqrt{A^{-1}}\vy}_2^2 \geq \left|\inProd{\sqrt{A}\vx}{\sqrt{A^{-1}}\vy}\right|^2 = |\HerConj{\vx}\vy|^2 \]
             2つ目の不等号はCauchy-Schwarzの不等式より導かれる。
         \end{proof}
