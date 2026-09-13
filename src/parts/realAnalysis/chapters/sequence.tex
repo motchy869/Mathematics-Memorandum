@@ -34,7 +34,7 @@
         %         \end{align*}
         %     \end{proof}
     \section{極限}
-        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = e\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
+        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}\right)^n = \NapierE\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
             \begin{proof}
                 \quad\par
                 \[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\]
@@ -43,12 +43,12 @@
                 \[\left(1+\frac{1-\epsilon}{n}\right)^n \leq \left(1+\frac{1}{n}\left(1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}\right)\right)^n \leq \left(1+\frac{1+\epsilon}{n}\right)^n\]
                 両辺で$n\rightarrow\infty$として従う。
             \end{proof}
-        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+o(1/n)\right)^n = e$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
+        \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\left(1+1/n+o(1/n)\right)^n = \NapierE$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
             \begin{proof}
                 \quad\par
                 $o(1/n)$の部分を$f(n)$とおく。
                 \[ \left(1+\frac{1}{n}+f(n)\right)^n = (1+1/n)^n + \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i \]
-                $\lim_{n\to\infty}(1+1/n)^n = e$の証明より，上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
+                $\lim_{n\to\infty}(1+1/n)^n = \NapierE$の証明より，上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
                 \begin{align*}
                     \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i &\leq 3\sum_{i=1}^n \combi{n}{i}f(n)^i = 3\sum_{i=1}^n \frac{1}{i!}\frac{n(n-1)\dotsm(n-i+1)}{n^i}n^if(n)^i \\
                     &\leq 3\sum_{i=1}^n \frac{1}{i!}(nf(n))^i \leq 3nf(n)\sum_{i=1}^n \frac{1}{i!}(nf(n))^{i-1}
