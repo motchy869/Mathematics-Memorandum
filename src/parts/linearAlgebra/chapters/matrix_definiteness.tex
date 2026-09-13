@@ -18,9 +18,9 @@
     \section{Gram行列は半正定}
         \begin{proof}
             \quad\par
-            $V$を内積空間とし，$\bm{v}_1,\dotsc,\bm{v}_n\in V$のGram行列を$G=[\inprod{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
+            $V$を内積空間とし，$\bm{v}_1,\dotsc,\bm{v}_n\in V$のGram行列を$G=[\inProd{\bm{v}_i}{\bm{v}_j}]_{n\times n}$とする。
             $\bm{x}\in \complexNumbers^n$に対して
-            \[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inprod{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inprod{x_i\bm{v}_i}{x_j\bm{v}_j} = \inprod{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
+            \[ \bm{x}^\top G\bm{x} = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inProd{\bm{v}_i}{\bm{v}_j} = \sum_{i=1}^n\sum_{j=1}^n \inProd{x_i\bm{v}_i}{x_j\bm{v}_j} = \inProd{\sum_{i=1}^n x_i\bm{v}_i}{\sum_{j=1}^n x_j\bm{v}_j} = \norm{\sum_{i=1}^n x_i\bm{v}_i}_2^2 \geq 0 \]
         \end{proof}
     \section{正定値行列同士の積は正定値とは限らない}
         \begin{proof}
@@ -75,6 +75,6 @@
             \quad\par
             $A$はHermite対称で正定であるから，適当なユニタリ行列で対角化可能であり，固有値が全て正であることに注意すれば，$\sqrt{A},\sqrt{A^{-1}}$を定義できる。
             これを用いると次式を得る。
-            \[ (\HerConj{\bm{x}}A\bm{x})(\HerConj{\bm{y}}A^{-1}\bm{y}) = \norm{\sqrt{A}\bm{x}}_2^2 \norm{\sqrt{A^{-1}}\bm{y}}_2^2 \geq \left|\inprod{\sqrt{A}\bm{x}}{\sqrt{A^{-1}}\bm{y}}\right|^2 = |\HerConj{\bm{x}}\bm{y}|^2 \]
+            \[ (\HerConj{\bm{x}}A\bm{x})(\HerConj{\bm{y}}A^{-1}\bm{y}) = \norm{\sqrt{A}\bm{x}}_2^2 \norm{\sqrt{A^{-1}}\bm{y}}_2^2 \geq \left|\inProd{\sqrt{A}\bm{x}}{\sqrt{A^{-1}}\bm{y}}\right|^2 = |\HerConj{\bm{x}}\bm{y}|^2 \]
             2つ目の不等号はCauchy-Schwarzの不等式より導かれる。
         \end{proof}

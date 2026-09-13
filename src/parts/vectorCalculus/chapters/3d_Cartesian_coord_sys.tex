@@ -56,22 +56,22 @@
             $\bm{i}_2, \bm{i}_3$についても同様にして，結局次式を得る。
             \[ \nabla_\bm{r}\times\bigl(\bm{C}\times\bm{A}(\bm{r})\bigr) = (\nabla\cdot\bm{A})\bm{C} - (\bm{C}\cdot\nabla A_1)\bm{i}_1 - (\bm{C}\cdot\nabla A_2)\bm{i}_2 - (\bm{C}\cdot\nabla A_3)\bm{i}_3 = (\nabla\cdot\bm{A}(\bm{r}))\bm{C} - J_\bm{A}\bm{C} \]
         \end{proof}
-    \section{直角座標系に於ける定数ベクトルと勾配の内積の勾配\texorpdfstring{$\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = H(f)\bm{v}$}{∇<∇f,v> = H(f)v}}
+    \section{直角座標系に於ける定数ベクトルと勾配の内積の勾配\texorpdfstring{$\nabla\left(\inProd{\nabla f}{\bm{v}}\right) = H(f)\bm{v}$}{∇<∇f,v> = H(f)v}}
         \begin{shadebox}
             $\bm{v}$を定数ベクトルとするとき次式が成り立つ。$H(f)$は$f$の Hesse 行列である。
-            \[\nabla\left(\inprod{\nabla f}{\bm{v}}\right) = H(f)\bm{v}\]
+            \[\nabla\left(\inProd{\nabla f}{\bm{v}}\right) = H(f)\bm{v}\]
         \end{shadebox}
         \begin{proof}
             \quad\par
-            \[\partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}{}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
+            \[\partDerivLong{\inProd{\nabla f}{\bm{v}}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}{}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
             であるから
             \[
-                \nabla\left(\inprod{\nabla f}{\bm{v}}\right) = \left[
+                \nabla\left(\inProd{\nabla f}{\bm{v}}\right) = \left[
                     \begin{array}{c}
-                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_1}{}\\
-                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_2}{}\\
+                        \partDerivLong{\inProd{\nabla f}{\bm{v}}}{x_1}{}\\
+                        \partDerivLong{\inProd{\nabla f}{\bm{v}}}{x_2}{}\\
                         \vdots\\
-                        \partDerivLong{\inprod{\nabla f}{\bm{v}}}{x_n}{}
+                        \partDerivLong{\inProd{\nabla f}{\bm{v}}}{x_n}{}
                     \end{array}
                 \right] = \left[
                     \begin{array}{c}

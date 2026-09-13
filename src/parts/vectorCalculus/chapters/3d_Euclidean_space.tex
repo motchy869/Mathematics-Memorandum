@@ -214,7 +214,7 @@
             \ref{勾配},\ref{発散}を用いて容易に示せる。
         \end{proof}
     \section{諸公式}
-        \subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inprod{A}{C}B - \inprod{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
+        \subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inProd{A}{C}B - \inProd{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
             \begin{proof}
                 \quad\par
                 直交座標系をとり，単位ベクトルを $\bm{j}_1,\bm{j}_2,\bm{j}_3$ とする。
@@ -233,33 +233,33 @@
                     &= \phantom{+}\bm{j}_1 \left[(A_2 C_2 + A_3 C_3)B_1 - (A_2 B_2 + A_3 B_3)C_1\right] \\
                     &\phantom{=} + \bm{j}_2 \left[(A_1 C_1 + A_3 C_3)B_2 - (A_1 B_1 + A_3 B_3)C_2\right] \\
                     &\phantom{=} + \bm{j}_3 \left[(A_1 C_1 + A_2 C_2)B_3 - (A_1 B_1 + A_2 B_2)C_3\right] \\
-                    &= \phantom{+}\bm{j}_1 \left[(\inprod{A}{C} - A_1 C_1)B_1 - (\inprod{A}{B} - A_1 B_1)C_1\right] \\
-                    &\phantom{=} + \bm{j}_2 \left[(\inprod{A}{C} - A_2 C_2)B_2 - (\inprod{A}{B} - A_2 B_2)C_2\right] \\
-                    &\phantom{=} + \bm{j}_3 \left[(\inprod{A}{C} - A_3 C_3)B_3 - (\inprod{A}{B} - A_3 B_3)C_3\right] \\
-                    &= \phantom{+}\bm{j}_1 \left[\inprod{A}{C}B_1 - \inprod{A}{B}C_1\right] \\
-                    &\phantom{=} + \bm{j}_2 \left[\inprod{A}{C}B_2 - \inprod{A}{B}C_2\right] \\
-                    &\phantom{=} + \bm{j}_3 \left[\inprod{A}{C}B_3 - \inprod{A}{B}C_3\right] \\
-                    &= \inprod{A}{C}B - \inprod{A}{B}C
+                    &= \phantom{+}\bm{j}_1 \left[(\inProd{A}{C} - A_1 C_1)B_1 - (\inProd{A}{B} - A_1 B_1)C_1\right] \\
+                    &\phantom{=} + \bm{j}_2 \left[(\inProd{A}{C} - A_2 C_2)B_2 - (\inProd{A}{B} - A_2 B_2)C_2\right] \\
+                    &\phantom{=} + \bm{j}_3 \left[(\inProd{A}{C} - A_3 C_3)B_3 - (\inProd{A}{B} - A_3 B_3)C_3\right] \\
+                    &= \phantom{+}\bm{j}_1 \left[\inProd{A}{C}B_1 - \inProd{A}{B}C_1\right] \\
+                    &\phantom{=} + \bm{j}_2 \left[\inProd{A}{C}B_2 - \inProd{A}{B}C_2\right] \\
+                    &\phantom{=} + \bm{j}_3 \left[\inProd{A}{C}B_3 - \inProd{A}{B}C_3\right] \\
+                    &= \inProd{A}{C}B - \inProd{A}{B}C
                 \end{align*}
             \end{proof}
-        \subsection{\texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
+        \subsection{\texorpdfstring{$\inProd{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inProd{\bm{a}}{\bm{c}}\inProd{\bm{b}}{\bm{d}} - \inProd{\bm{a}}{\bm{d}}\inProd{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
             \begin{proof}
                 \quad\par
                 ベクトル三重積の公式を利用する。
-                \[ \inprod{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inprod{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inprod{a}{\inprod{\bm{d}}{\bm{b}}\bm{c} - \inprod{\bm{b}}{\bm{c}}\bm{d}} = \inprod{\bm{a}}{\bm{c}}\inprod{\bm{b}}{\bm{d}} - \inprod{\bm{a}}{\bm{d}}\inprod{\bm{b}}{\bm{c}} \]
+                \[ \inProd{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inProd{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inProd{a}{\inProd{\bm{d}}{\bm{b}}\bm{c} - \inProd{\bm{b}}{\bm{c}}\bm{d}} = \inProd{\bm{a}}{\bm{c}}\inProd{\bm{b}}{\bm{d}} - \inProd{\bm{a}}{\bm{d}}\inProd{\bm{b}}{\bm{c}} \]
             \end{proof}
-        \subsection{(系) \texorpdfstring{$\inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}$}{(a×b)・(a×c) = ||a||\string^2(b・c) - (a・b)(a・c)}}
+        \subsection{(系) \texorpdfstring{$\inProd{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} = \norm{\bm{a}}^2\inProd{\bm{b}}{\bm{c}} - \inProd{\bm{a}}{\bm{b}}\inProd{\bm{a}}{\bm{c}}$}{(a×b)・(a×c) = ||a||\string^2(b・c) - (a・b)(a・c)}}
             %実は直前の公式よりもこちらの方を先に思いついた。直前の公式から直ちに導かれるが，当時思いついた証明を書き残しておく。
             \begin{proof}
                 直前の公式から直ちに導ける。
                 % \begin{align*}
-                %     \inprod{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} &= (a_2b_1 - a_1b_2) (a_2c_1 - a_1c_2) + (a_3b_1 - a_1b_3) (a_3c_1 - a_1c_3) + (a_3b_2 - a_2b_3) (a_3c_2 - a_2c_3) \\
+                %     \inProd{\bm{a}\times\bm{b}}{\bm{a}\times\bm{c}} &= (a_2b_1 - a_1b_2) (a_2c_1 - a_1c_2) + (a_3b_1 - a_1b_3) (a_3c_1 - a_1c_3) + (a_3b_2 - a_2b_3) (a_3c_2 - a_2c_3) \\
                 %     &=  {a_1}^2 b_2 c_2 + {a_1}^2 b_3 c_3 - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 + {a_2}^2 b_1 c_1 \\
                 %     &\quad + {a_2}^2 b_3 c_3 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 + {a_3}^2 b_1 c_1 + {a_3}^2 b_2 c_2 \\
                 %     &= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - {a_1}^2b_1c_1 - {a_2}^2b_2c_2 - {a_3}^2b_3c_3 \\
                 %     &\quad - a_1 a_2 b_1 c_2 - a_1 a_2 b_2 c_1 - a_1 a_3 b_1 c_3 - a_1 a_3 b_3 c_1 - a_2 a_3 b_2 c_3 - a_2 a_3 b_3 c_2 \\
                 %     &= ({a_1}^2 + {a_2}^2 + {a_3}^2)(b_1c_1 + b_2c_2 + b_3c_3) - (a_1b_1 + a_2b_2 + a_3b_3)(a_1c_1 + a_2c_2 + a_3c_3) \\
-                %     &= \norm{\bm{a}}^2\inprod{\bm{b}}{\bm{c}} - \inprod{\bm{a}}{\bm{b}}\inprod{\bm{a}}{\bm{c}}
+                %     &= \norm{\bm{a}}^2\inProd{\bm{b}}{\bm{c}} - \inProd{\bm{a}}{\bm{b}}\inProd{\bm{a}}{\bm{c}}
                 % \end{align*}
             \end{proof}
         \subsection{発散の別表現: \texorpdfstring{$\nabla\cdot A = \frac{1}{|V|}\lim_{|V|\to 0} \int_{\partial V} A(\bm{r})\cdot\bm{n}(\bm{r})\mathrm{d}^2 r$}{発散はベクトル場の法線面積分の体積の商の極限である}}
@@ -482,9 +482,9 @@
         \subsection{非負領域の共通部分の非負領域}
             \begin{shadebox}
                 $\realNumbers^n$上で考える。$\bm{v}_1,\dotsc,\bm{v}_m\;(m\leq n)$は一次独立であるとし，$\bm{v}$の非負領域を
-                \[P(\bm{v})\coloneq\left\{\bm{w}|\inprod{\bm{v}}{\bm{w}}\geq0\right\})\]
+                \[P(\bm{v})\coloneq\left\{\bm{w}|\inProd{\bm{v}}{\bm{w}}\geq0\right\})\]
                 で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の非負領域にある，すなわち
-                \[\inprod{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\]
+                \[\inProd{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\]
                 であるとき，$\bm{u}$は適当な定数$a_i\geq0(i=1,\dotsc,m)$によって
                 \[\bm{u} = \sum_{i=1}^{m}{a_i\bm{v}_i}\]
                 と表せる。
@@ -497,19 +497,19 @@
                         \bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i} + \bm{w}_t
                     \end{equation}
                     と表せる。$\bm{p}$を$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$の任意のベクトルとすると
-                    \[\inprod{\bm{v}_i}{\bm{p}}\geq0,\forall\bm{v}_i\in W\]
+                    \[\inProd{\bm{v}_i}{\bm{p}}\geq0,\forall\bm{v}_i\in W\]
                     また，$\bm{w}_{t2}$を$W^\bot$の任意のベクトルとすると
-                    \[\inprod{\bm{v}_i}{\bm{w}_{t2}}=0,\forall\bm{v}_i\in W\]
+                    \[\inProd{\bm{v}_i}{\bm{w}_{t2}}=0,\forall\bm{v}_i\in W\]
                     従って$\bm{p}' \coloneq \bm{p}+\bm{w}_{t2}$とすると
-                    \[\inprod{\bm{v}_i}{\bm{p}'}\geq0,\forall\bm{v}_i\in W\]
-                    であるから$\bm{p'}$もまた$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$のベクトルである。従って$\inprod{\bm{u}}{\bm{p}'}\geq0$であるから
-                    \[0\leq\inprod{\bm{u}}{\bm{p}'} = \inprod{\sum_{i=1}^{m}{c_i\bm{v}_i}}{\bm{p}} + \inprod{\bm{w}_{t1}}{\bm{w}_{t2}}\]
-                    である。然るに$\bm{w}_{t2}\in W^\bot$は任意であるから，$\bm{w}_{t1}=\bm{0}$でない限り$\inprod{\bm{w}_{t1}}{\bm{w}_{t2}}$の値をいくらでも小さくできる。
+                    \[\inProd{\bm{v}_i}{\bm{p}'}\geq0,\forall\bm{v}_i\in W\]
+                    であるから$\bm{p'}$もまた$\bigcap_{i=1}^{m}{P(\bm{v}_i)}$のベクトルである。従って$\inProd{\bm{u}}{\bm{p}'}\geq0$であるから
+                    \[0\leq\inProd{\bm{u}}{\bm{p}'} = \inProd{\sum_{i=1}^{m}{c_i\bm{v}_i}}{\bm{p}} + \inProd{\bm{w}_{t1}}{\bm{w}_{t2}}\]
+                    である。然るに$\bm{w}_{t2}\in W^\bot$は任意であるから，$\bm{w}_{t1}=\bm{0}$でない限り$\inProd{\bm{w}_{t1}}{\bm{w}_{t2}}$の値をいくらでも小さくできる。
                     よって上式が成り立つためには$\bm{w}_{t1}=\bm{0}$でなくてはならならず，式(1)より結局
                     \[\bm{u} = \sum_{i=1}^{m}{c_i\bm{v}_i}\]
                     と表せることになる。
                     \par
-                    次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はKroneckerのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
+                    次に$c_i$が全て非負であることを示す。%そのために$\left(\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}\right)\land\inProd{\bm{v}_j}{\bm{d}_i}=\delta_{ij}\;(\delta_{ij}\text{はKroneckerのデルタ})$なるベクトル$\bm{d}_i$が存在することを示そう。
                     $\bm{v}_1,\dotsc,\bm{v}_m\;(m\leq n)$は一次独立であったから次の行列
                     \[
                         A = \left[
@@ -540,9 +540,9 @@
                             \quad
                         \end{array}
                     \]
-                    は解を持つ。この解を$\bm{d}_i$とすれば$\inprod{\bm{v}_j}{\bm{d}_i}=\delta_{ij}$であるから$\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}$。
+                    は解を持つ。この解を$\bm{d}_i$とすれば$\inProd{\bm{v}_j}{\bm{d}_i}=\delta_{ij}$であるから$\bm{d}_i\in\bigcap_{i=1}^{m}{P(\bm{v}_i)}$。
                     よって
-                    \[0\leq\inprod{\bm{u}}{\bm{d}_i} = c_i\]
+                    \[0\leq\inProd{\bm{u}}{\bm{d}_i} = c_i\]
             \end{proof}
     \subsection{Stokesの定理}
         \begin{shadebox}
