@@ -1,4 +1,4 @@
-﻿% ---------- document information ----------
+% ---------- document information ----------
 % document version number
 \newcommand{\docVerMajor}{0}
 \newcommand{\docVerMinor}{25}
@@ -22,12 +22,15 @@
 \usepackage{arydshln}
 \usepackage{ascmac}
 \usepackage{bbm}
+\usepackage{braket}
 % \usepackage{bytefield} % currently not used
+% \usepackage{cases} % currently not used
 \usepackage{chngcntr} % for counterwithin command
 \usepackage[usenames]{color}
 \usepackage{currfile}
 % \usepackage{datatool} % currently not used
 \usepackage{empheq}
+\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage[T1]{fontenc}
 \usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
@@ -38,11 +41,11 @@
 \usepackage{listingsutf8, jvlisting}
 % \usepackage{ltablex} % [tabularx 環境と longtable 環境を同時に使いたい](https://mrikc.hatenablog.com/entry/2015/09/04/020128)
 % \keepXColumns % needed to use X column type in ltablex environment
-\usepackage{luacode}
+% \usepackage{luacode} % currently not used
 \usepackage{makecell} % [How to add a forced line break inside a table cell](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
-\usepackage{pdflscape}
+% \usepackage{pdflscape} % currently not used
 \usepackage[group-separator={,}]{siunitx}
-\usepackage{tablefootnote}
+% \usepackage{tablefootnote} % currently not used
 \usepackage{tocloft} % to remove paragraph indentation in table of contents
 
 % for \arrayrulecolor command
@@ -51,8 +54,13 @@
 
 \usepackage{ulem} % for \uline etc.
 \usepackage{upgreek} % for upright Greek letters in math mode (\upalpha, \upbeta, \upgamma, ...)
-\usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
+% \usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
 \usepackage{xurl}
+% \usepackage{zref-xr} % currently not used
+
+% cross reference
+% \zxrsetup{toltxlabel} % use normal LaTeX style \ref
+% \zexternaldocument*[1:]{reference/mathematics_memorandum_v0.23.0} % usage: \zexternaldocument*[prefix]{path/to/aux/file/without/extension}[path/to/pdf/file] Only ascii name is allowed.
 
 % ---------- structure settings ----------
 \makeatletter
@@ -91,6 +99,9 @@
 \counterwithin{equation}{section}
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
+
+% longtable settings
+% \setcounter{LTchunksize}{200} % currently not used
 
 % cleveref settings
 % see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
@@ -155,6 +166,7 @@
 \newtheorem*{attention}{注意}
 \newtheorem*{solution}{解法}
 \newtheorem*{definition}{定義}
+\newtheorem*{derivation*}{導出}
 
 % table settings
 \renewcommand\theadfont{} % don't change the font
@@ -164,10 +176,11 @@
 % % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
 % % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
 % \newcommand*{\colorbitbox}[3]{%
-%     \rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
-%     \bitbox{#2}{#3}%
+%      \rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
+%      \bitbox{#2}{#3}%
 % }
 
+% listings settings
 \lstset{
     basicstyle=\ttfamily,
     identifierstyle=\small,
@@ -189,8 +202,8 @@
 }
 % --------------------
 
-\input{cmds/MtyLaTeXCmds/MtyLaTeXCmds}
-\input{cmds/common_cmd}
+\input{cmds/MtyLaTeXCmds/MtyLaTeXCmds.tex}
+\input{cmds/common_cmd.tex}
 
 \begin{document}
     \maketitle
