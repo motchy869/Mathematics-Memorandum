@@ -4,7 +4,6 @@
             $\textup{C}^1$級関数$f(x)$について$\displaystyle \lim_{x\to\infty}{f(x)}$が存在するとき$f'(x) $は$0\sim\infty$で可積分である。すなわち$\displaystyle \integrate{0}{\infty}{f'(x)}{}{x}$が存在する。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\displaystyle f(\infty) \coloneq \lim_{x\to\infty}{f(x)}$とすると任意の$\epsilon>0$に対してある正数$X(\epsilon)$が存在して$x \geq X \Rightarrow |f(x)-f(\infty)| < \epsilon$であるから，$x\geq X$とすると
             \[|[f(x)-f(0)]-[f(\infty)-f(0)]| < \epsilon\]
             \[\therefore \; \abs{\integrate{0}{x}{f'(u)}{}{u}-[f(\infty)-f(0)]} < \epsilon\]
@@ -49,7 +48,6 @@
         \texorpdfstring{$\derivLong{\integrate{s=0}{x}{f(s)g(x-s)}{}{s}}{x}{} = f(x)g(0) + \integrate{s=0}{x}{f(s)\deriv{g}{x}{}(x-s)}{}{s}$}{}
     }
         \begin{proof}
-            \quad\par
             $I(x) \coloneq \integrate{0}{x}{f(s)g(x-s)}{}{s}$とおき，微分の定義に従い$\lim_{\dltx\to 0}\frac{I(x+\dltx)-I(x)}{\dltx}$を計算する。
             \begin{align*}
                 I(x+\dltx)-I(x) &= \parens*{\int_{0}^{x}+\int_{x}^{x+\dltx}}f(s)g(x+\dltx-s)\itgElem{s} - \integrate{s=0}{x}{f(s)g(x-s)}{}{s} \\
@@ -80,7 +78,6 @@
             \quad この定理は2つの独立な非負の確率変数の和の確率密度関数を計算する時に役立つ。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             微分の定義に従い$\lim_{\domega \to 0}\frac{F(\omega+\domega)-F(\omega)}{\domega}$を計算する。
             \begin{align*}
                 F(\omega+\domega) &= \integrate{x_1=0}{\omega}{\dotsi\integrate{x_n=0}{\omega-x_1-\dotsb-x_{n-1}}{f_1(x_1)\dotsm f_n(x_n)}{}{x_n}\dotsi}{}{x_1} \\
@@ -148,6 +145,5 @@
             \quad この定理は2つの独立な確率変数の和の確率密度関数を計算する時に役立つ。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             直前の定理の証明を少し改造するだけで簡単に証明できる。
         \end{proof}

@@ -4,7 +4,6 @@
             $A,B,C$が$l \times m, m \times n, n \times o$行列であるとき$(AB)C = A(BC)$
         \end{shadebox}
         \begin{proof}
-            \quad\par
             まず下準備。
             \[A \coloneq \bracks*{a_{ij}}_{l\times m},\quad B \coloneq \bracks*{b_{ij}}_{m\times n},\quad C \coloneq \bracks*{c_{ij}}_{n\times o}\]
             \[M_{AB} \coloneq \bracks*{m_{{AB}_{ij}}}_{l\times n} = AB,\quad M_{BC} \coloneq [m_{{BC}_{ij}}]_{m\times o} = BC\]
@@ -27,7 +26,6 @@
             下三角行列についても上と同様の定理が成り立つ。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             上三角行列について示す。下三角行列については同様に示せる。\\
             $n=1$のときは明らか。まず$n=2$のときを示す。
             \[A^2[i][j] = \sum_{k=1}^{n}{a_{ik}a_{kj}} = \sum_{i\leq k,k\leq j}{a_{ik}a_{kj}}\quad(\because\;a_{ij}=0\mathrm{ when }i>j)\]
@@ -62,7 +60,6 @@
         \end{proof}
     \section{巡回行列の可換則}
         \begin{proof}
-            \quad\par
             $A=[a_{ij}],B=[b_{ij}]$を$n$次の巡回行列とすると，適当な定数$c_0,\dotsc,c_{n-1},d_0,\dotsc,d_{n-1}$を用いて$a_{ij} = c_{(i-j)\%n},b_{ij} = d_{(i-j)\%n}$と表せる。
             まず
             \[ (AB)[i][j] = \sum_{k=0}^{n-1} a_{ik}b_{kj} = \sum_{k=0}^{n-1} c_{(i-k)\%n}b_{(k-j)\%n} \]
@@ -110,7 +107,6 @@
                 行列$A,B,C,D$を，積$AC, BD$が定義できるものとするとき$(A\otimes B)(C\otimes D) = (AC)\otimes(BD)$が成り立つ。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A$の行数を$m_A$,列数を$n_A$, $C$の列数を$n_C$とする。
                 \begin{align*}
                     (A\otimes B)(C\otimes D) &= \begin{bmatrix}
@@ -143,7 +139,6 @@
                 $\vv_{A,i}\otimes\vv_{A,j}$は$A\otimes B$の固有値$\lambda_{A,i}\lambda_{B,j}$に属する固有ベクトルである。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A,B$のSchur分解をそれぞれ$A = S_A U_A \HerConj{S_A}, B = S_B U_B \HerConj{S_B}$とする。
                 混合積の性質から$A\otimes B = (S_A\otimes S_B)(U_A\otimes U_B)(\HerConj{S_A}\otimes\HerConj{S_B})$である。
                 $S_A\otimes S_B$は正則であり$(S_A\otimes S_B)^{-1} = \HerConj{S_A}\otimes\HerConj{S_B}$であるから，$U_A\otimes U_B$の固有値と$A\otimes B$のそれは等しい。
@@ -157,7 +152,6 @@
                 \[ \det\parens{A\otimes B} = \det\parens{A}^{m_B}\det\parens{B}^{m_A} \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 混合積の性質から次式が成り立つ。
                 \[ A\otimes B = (A I_{m_A})\otimes(I_{m_B} B) = (A\otimes I_{m_B})(I_{m_A}\otimes B) \]
                 ここに$I_{m_A}, I_{m_B}$はそれぞれ$m_A\times m_A, m_B\times m_B$の単位行列である。
@@ -169,7 +163,6 @@
             \end{proof}
             （別解）
             \begin{proof}
-                \quad\par
                 \ref{Kronecker 積の固有値，固有ベクトル}の証明を用いる。
                 \begin{align*}
                     \det\parens{A\otimes B} &= \det\parens{S_A\otimes S_B}\det\parens{U_A\otimes U_B}\det\parens{\HerConj{S_A}\otimes\HerConj{S_B}} \\
@@ -180,7 +173,6 @@
             \end{proof}
         \subsection{ユニタリ行列同士のKronecker積はユニタリ行列である}
             \begin{proof}
-                \quad\par
                 $A\in\complexNumbers^{m\times m}, B\in\complexNumbers^{n\times n}$をユニタリ行列とする。
                 混合積の性質から
                 \[

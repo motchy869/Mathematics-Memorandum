@@ -10,7 +10,6 @@
                 \end{align*}
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 上述の3式が等しいことを示す。
                 第1,2,3式の与える値を$c_1,c_2,c_3$とし，3つの式に対応する集合を3つ定義する。
                 \[S_1 \coloneq \braces*{\frac{\norm{A\vx}_2}{\norm{\vx}_2}:\vx\neq\bm{0}},\quad S_2 \coloneq \{\norm{A\vx}_2:\norm{\vx}_2=1\},\quad S_3 \coloneq \{c>0:\norm{A\vx}_2\leq c\norm{\vx}_2,\vx\in\complexNumbers^n\}\]
@@ -30,7 +29,6 @@
             以降，特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
         \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \norm{[A]_{i,j}}_2 \leq \norm{A}_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
             \begin{proof}
-                \quad\par
                 $\max_{||\vx||=1}||[A]_{i,j}\vx||$を最大にする$\vx$に対して，$\vx' = [\vx[1:j-1]^\top,0,\vx[j:n-1]]^\top$とすると，$||\vx'|| = 1,||A\vx'|| \geq ||[A]_{i,j}\vx||$
             \end{proof}
         \subsection{スペクトル半径の上界}
@@ -38,7 +36,6 @@
                 $A\in\complexNumbers^{n\times n}$について$\rho(A)\leq\norm{A}$
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A$の絶対値最大固有値を$\lambda_{\mathrm{max}}$,その任意の固有ベクトルを$\vx$とすると
                 \[\rho(A) \coloneq |\lambda_\mathrm{max}| = \frac{\norm{A\vx}}{\norm{\vx}} \leq \max_{\vy\neq\bm{0}}\frac{\norm{A\vy}}{\norm{\vy}} =: \norm{A}\]
             \end{proof}
@@ -49,7 +46,6 @@
             \noindent
             (短いが高度な知識を前提とした証明)
             \begin{proof}
-                \quad\par
                 $A$はHermite行列だから固有値は全て実数で，適当なユニタリ行列$U$で対角化できる。
                 $A$の対角化を$A = UDU^\mathrm{H}$とする。
                 ここに$D = \diag{\lambda_1,\dotsc,\lambda_n},|\lambda_1| \geq \dotsb \geq |\lambda_n|$である。
@@ -59,7 +55,6 @@
             \noindent
             (初等的な証明)
             \begin{proof}
-                \quad\par
                 $A$はHermite行列であるから固有値は全て実数で，$A$がユニタリ交行列で対角化できることは既知とする。
                 $A$の異なる固有値を，絶対値が大きい順に$\lambda_1,\lambda_2,\dotsc,\lambda_\sigma\quad(\sigma\leq n)$とし，$\lambda_i$に属する固有空間$W(\lambda_i;A)$の次元を$n_i$とする。
                 $\sum_{i=1}^{\sigma}{n_i} = n$であり，$W(\lambda_i;A)$の正規直交基底を$\{\vx_{1,i},\vx_{2,i},\dotsc,\vx_{n_i,i}\}$とすると
@@ -132,13 +127,11 @@
             \end{proof}
         \subsection{\texorpdfstring{$A \in \complexNumbers^{m\times n}$}{A∈C\string^(m×n)}について\texorpdfstring{$\alpha = \max|A_{ij}|$}{α = max|A\_(i,j)|}とすると\texorpdfstring{$\alpha \leq \norm{A}_2$}{α ≦ ||A||\_2}}
             \begin{proof}
-                \quad\par
                 絶対値最大の列番号を$q$とする。第$q$要素のみ1で他は0の単位ベクトル$\bm{e}_q$に対して$\alpha \leq \norm{A\bm{e}_q}_2 \leq \norm{A}_2$
             \end{proof}
         \subsection{\texorpdfstring{$A\in\complexNumbers^{m\times n}$}{A∈C\string^(m×n)}の各列ベクトルのノルムが高々\texorpdfstring{$a$}{a}ならば\texorpdfstring{$\norm{A}_2\leq a\sqrt{n}$}{||A||\_2 ≦ a√n}}
             \label{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}
             \begin{proof}
-                \quad\par
                 $A$の第$i$列ベクトルを$\bm{a}_i$とし，$\vx\in\complexNumbers^n,\norm{\vx}_2=1$とすると
                 \[\norm{A\vx}_2=\norm{x_1\bm{a}_1+\dotsb+x_n\bm{a}_n}_2 \leq |x_1|\norm{\bm{a}_1}_2 + \dotsb + |x_n|\norm{\bm{a}_n} \leq (|x_1|+\dotsb+|x_n|)a\]
                 これと\ref{th:単位球面上の点の座標の絶対値の総和の最大値}より$|x_1|+\dotsb+|x_n|\leq\sqrt{n}$なので定理が従う。
@@ -149,6 +142,5 @@
                 \end{proof}
             \subsubsection{系: \texorpdfstring{$n$}{n}次確率行列のノルムは高々\texorpdfstring{$\sqrt{n}$}{√n}}
                 \begin{proof}
-                    \quad\par
                     転置してもノルムが変わらないことと，確率ベクトル(の転置)のノルムは高々$1$であることを使えば\ref{th:mxn実行列Aの各列ベクトルのノルムが高々aならなAのノルムは高々a.sqrt(n)}より従う。
                 \end{proof}

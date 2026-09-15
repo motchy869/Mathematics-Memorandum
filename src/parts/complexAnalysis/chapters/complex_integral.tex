@@ -5,7 +5,6 @@
             \[ \integrate{-\infty}{\infty}{\exp(-a(x+b)^2)}{}{x} = \sqrt{\pi/a} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             複素積分を用いて導出する。
             求めたい積分値を$I$とする。
             $b_\mathrm{R} = \Re{b},b_\mathrm{I} = \Im{b}$として変数変換$x+b_\mathrm{R} = u$を施すと次式が成り立つ。
@@ -27,7 +26,6 @@
             \[ \abs{\integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z}} < \frac{\pi}{R}\parens*{1-\NapierE^{-R}} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\dz = iR\NapierE^{i\theta}\mathrm{d}\theta$であるから
             \begin{align*}
                 S &:= \integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z} = \integrate{0}{\pi}{\frac{1}{R\NapierE^{i\theta}}\exp iR(\cos\theta + i\sin\theta) iR\NapierE^{i\theta}}{}{\theta} = i\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta} \\

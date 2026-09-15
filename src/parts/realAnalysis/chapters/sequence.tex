@@ -12,7 +12,6 @@
         \subsection{\texorpdfstring{$\parens*{1-\frac{t}{n}}^n\;(t\in[0,n])$}{(1-t/n)\string^n (t∈[0,n])}は\texorpdfstring{$n$}{n}に関して単調増加}
             \label{(1-t/n)^nは単調増加}
             \begin{proof}
-                \quad\par
                 $a_n \coloneq \parens*{1-\frac{t}{n}}^n$とする。
                 $t=0,n$の場合は単調増加性は明らか。以下$0<t<n$とする。
                 \begin{align*}
@@ -36,7 +35,6 @@
     \section{極限}
         \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\parens*{1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k}}^n = \NapierE\quad(\sum_{k=2}^\infty c_k\;\;\mathrm{converges})$}{lim\_\{n→∞\} (1 + 1/n + Σ\_\{k=2\}\string^∞ c\_k/n\string^k)\string^n = e (Σ\_\{k=2→∞\}c\_k converges)}}
             \begin{proof}
-                \quad\par
                 \[1+1/n+\sum_{k=2}^\infty\frac{c_k}{n^k} = 1+\frac{1}{n}\parens*{1+\sum_{k=2}^\infty\frac{c_k}{n^{k-1}}}\]
                 であるから
                 $\epsilon>0$を任意にとると，十分大きい$n\in\naturalNumbers$に対して
@@ -45,7 +43,6 @@
             \end{proof}
         \subsection{\texorpdfstring{$\lim_{n\rightarrow\infty}\parens*{1+1/n+o(1/n)}^n = \NapierE$}{lim\_\{n→∞\} (1+1/n+o(1/n))\string^n = e}}
             \begin{proof}
-                \quad\par
                 $o(1/n)$の部分を$f(n)$とおく。
                 \[ \parens*{1+\frac{1}{n}+f(n)}^n = (1+1/n)^n + \sum_{i=1}^n \combi{n}{i}(1+1/n)^{n-i}f(n)^i \]
                 $\lim_{n\to\infty}(1+1/n)^n = \NapierE$の証明より，上式において$(1+1/n)^{n-i}\leq 3$であることがわかっているので
@@ -62,7 +59,6 @@
                 第$n$世代のつがいの数を$a_n$とし，そのうち成熟しているものを$m_n$，未成熟のものを$y_n$とすると，$a_{n+1} - a_n = m_n$であり，同時に$m_n = m_{n-1} + y_{n-1}$なので結局$a_{n+1} = a_n + a_{n-1}$となる。
         \subsection{\texorpdfstring{$a_{n+1}=ra_n + p(n),(r\neq1 ,p(n):\;d\text{次多項式})$}{a\_\{n+1\} = ra\_n + p(n) (r≠1, p(n): d次多項式)}の一般項は\texorpdfstring{$a_n = Ar^n + q(n),(A:\text{ 定数},q(n):\;d\text{次多項式})$}{a\_n = Ar\string^n + q(n) (A: 定数, q(n): d次多項式)}}
             \begin{proof}
-                \quad\par
                 $p(n) = b_dn^d + \dotsb + b_1n + b_0n$とする。
                 $a_n = Ar^n + q(n)\;\parens*{q(n) = c_dn^d + \dotsb + c_1n + c_0}$とおいて漸化式に代入すると次式を得る。
                 \[ Ar^{n+1} + q(n+1) = Ar^{n+1} + rq(n) + p(n) \quad \therefore\; q(n+1) = rq(n) + p(n) \]

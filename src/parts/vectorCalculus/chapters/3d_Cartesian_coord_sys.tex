@@ -29,7 +29,6 @@
             \[ \nabla\cdot(\nabla^2\vA) = \Delta(\nabla\cdot\vA) \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             \begin{align*}
                 \nabla\cdot\nabla^2\vA &= \nabla\cdot\parens*{\bm{i}_1 \Delta A_1 + \bm{i}_2 \Delta A_2 + \bm{i}_3 \Delta A_3} = \partDerivLong{\Delta A_1}{r_1}{} + \partDerivLong{\Delta A_2}{r_2}{} + \partDerivLong{\Delta A_3}{r_3}{} \\
                 &= \Delta\parens*{\partDerivLong{A_1}{r_1}{} + \partDerivLong{A_2}{r_2}{} + \partDerivLong{A_3}{r_3}{}} = \Delta(\nabla\cdot\vA)
@@ -62,7 +61,6 @@
             \[\nabla\parens*{\inProd{\nabla f}{\vv}} = H(f)\vv\]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             \[\partDerivLong{\inProd{\nabla f}{\vv}}{x_k}{} = \partDerivLong{\sum_{i=1}^{n}{\partDeriv{f}{x_i}{}v_i}}{x_k}{} = \sum_{i=1}^{n}{\partDerivIIHetero{f}{x_k}{x_i}}v_i\]
             であるから
             \[

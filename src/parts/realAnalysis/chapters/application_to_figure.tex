@@ -12,7 +12,6 @@
         $n=2, \bm{w} = [1,1]^\top, c=0.5, d=0.5$の例を\url{\currfiledir/mathematica/平面上の直線から距離dだけ離れた直線.nb}に示した。
     \section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
         \begin{proof}
-            \quad\par
             $\Omega(n,r)\;(r\in\realNumbers) \coloneq \setComprehension*{\vx\in\realNumbers^n}{\norm{\vx}_{2}\leq r}$とすると
             \begin{align*}
                 V_n &= \integrate{\Omega(n,1)}{}{1}{}{\vx} = \integrate{-1}{1}{\parens*{\integrate{\Omega(n-1,1-{x_n}^2)}{}{1}{}{\vx}}}{}{x_n} = \integrate{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{}{x_n} \\

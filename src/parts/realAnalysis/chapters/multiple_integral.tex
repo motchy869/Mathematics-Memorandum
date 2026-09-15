@@ -4,7 +4,6 @@
             $\Omega\in\realNumbers^n$を体積確定の有界閉領域，$f:\Omega\to\realNumbers$を連続関数とすると，$^\exists\vx'\st\integrate{\Omega}{}{f(\vx)}{n}{x} = f(\vx')|\Omega|$
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\Omega$内での$f$の最小値と最大値を各々$m(\Omega),M(\Omega)$とすると
             \[m(\Omega)|\Omega| \leq \integrate{\Omega}{}{f(\vx)}{n}{x} \leq M(\Omega)|\Omega|\quad\therefore\;m(\Omega) \leq \frac{1}{|\Omega|}\integrate{\Omega}{}{f(\vx)}{n}{x} \leq M(\Omega)\]
             であるから中辺の値を$I(\Omega)$とすれば中間値の定理より$^\exists\vx'\st I(\Omega) = f(\vx')$であり，定理が従う。
@@ -23,7 +22,6 @@
             集合$C\subset\realNumbers^n$の面積が0であるとき，$F(C)\subset\realNumbers^n$の面積もまた0である。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $F$は$R$で$C^1$級なので特にLipschitz連続である。Lipschitz定数を$K$とする。
             $R = [a_1,b_1]\times\dotsb\times[a_n,b_n]$の$m$等分割$\Delta$を考える。
             第$d$軸方向の分割を$\Delta_d : x^{(d)}_i = a_d + \frac{i}{m}(b_d-a_d)\;(i=0,\dotsc,m,d=1,\dotsc,n)$とし，各小超直方体を$R_{i_1,\dotsc,i_n} \coloneq [x^{(1)}_{i_1-1}, x^{(1)}_{i_1}]\times\dotsb\times[x^{(n)}_{i_n-1}, x^{(n)}_{i_n}]$で表す。
@@ -37,7 +35,6 @@
         \end{proof}
     \section{関数\texorpdfstring{$f,g$}{f,g}が\texorpdfstring{$\realNumbers$}{R}上で有界,連続で\texorpdfstring{$\integrate{-\infty}{\infty}{f(x)}{}{x},\integrate{-\infty}{\infty}{g(x)}{}{x}$}{f,gの-∞から+∞に渡る積分}が絶対収束するなら畳み込み\texorpdfstring{$f*g$}{f*g}は\texorpdfstring{$\realNumbers$}{R}上で連続で絶対可積分である。}
         \begin{proof}
-            \quad\\
             (連続であること):
             \par
             $\varepsilon>0,x\in\realNumbers,h\in(-1,1)$を任意にとる。

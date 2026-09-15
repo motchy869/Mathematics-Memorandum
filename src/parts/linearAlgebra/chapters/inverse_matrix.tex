@@ -5,7 +5,6 @@
             $\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$が一次独立であるとき，$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\Phi \coloneq [\bm{\phi}_1,\dotsc,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
             \[[\bm{e}_1,\dotsc,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\dotsc,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\dotsc,\Phi^{-1}\bm{\phi}_n]\]
         \end{proof}
@@ -19,7 +18,6 @@
         \end{shadebox}
     \section{上(下)三角行列が逆行列をもてば，それも上(下)三角行列である}
         \begin{proof}
-            \quad\par
             $A\in \complexNumbers^{n\times n}$を正則な上三角行列とすると，$A$の対角成分は全て非零である(さもなくば$\det{A}=0$となり，正則でない)ので，
             $[A|I_n]$の簡約化による逆行列の計算を考えれば，$A^{-1}$も上三角行列であることが容易にわかる。
             $A$が下三角行列である場合は，$A^\top$について簡約化による逆行列の計算を行えば$(A^\top)^{-1} = (A^{-1})^\top$が上三角行列になり，$A^{-1}$は下三角行列になる。
@@ -27,7 +25,6 @@
     \section{正則行列\texorpdfstring{$A$}{A}の列(行)が直交系を成すとき，\texorpdfstring{$A^{-1}$}{Aの逆行列}の行(列)は直交系を成す}
         \label{行列の列(行)の直交性と逆行列の行(列)の直交性}
         \begin{proof}
-            \quad\par
             $A$の列が直交系を成すとする。
             $A^{-1}\parens*{A^{-1}}^\top = A^{-1}\parens*{A^\top}^{-1} = \parens*{A^\top A}^{-1}$であるが，仮定より$A^\top A$が正則な対角行列であるので$\parens*{A^\top A}^{-1}$は対角行列になり，定理の主張が成り立つ。
             $A$の行が直交系を成すときに$A^{-1}$の列が直交系を成すことも同様にして示せる。
@@ -148,7 +145,6 @@
             正方行列$A$の幾つかの列(行)を入れ替えた行列$A'$の逆行列は，$A^{-1}$の行(列)に対して同じ並べ替えを適用して得られる。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             まず列の置換に関して定理の主張を示す。
             $A$を$n$次正方行列とし，列の置換を表す列置換行列を$\Pi = \Pi_1\Pi_2\dotsm\Pi_c$とする。
             ここに$\Pi_1, \Pi_2, \dotsc\Pi_c$は単位列置換行列である。すると，
@@ -166,7 +162,6 @@
             \[ (I+\bm{u}\HerConj{\vv})^{-1} = I - \frac{1}{1+\HerConj{\vv}\bm{u}}\bm{u}\HerConj{\vv} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             Woodburyの公式の特別な場合として片付けるのが一般的だが，ここではJordan分解を用いて導出してみる。
             $\bm{u}\HerConj{\vv} = O$のときは定理の主張は明らかに成り立つ。
             以下では$\bm{u}\HerConj{\vv} \neq O$とする。
@@ -211,7 +206,6 @@
             \[ (A+\bm{u}\HerConj{\vv})^{-1} = \parens*{ I - \frac{1}{1+\HerConj{\vv}A^{-1}\bm{u}}A^{-1}\bm{u}\HerConj{\vv} }A^{-1} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $A+\bm{u}\HerConj{\vv} = A(I + A^{-1}\bm{u}\HerConj{\vv})$だから$(A+\bm{u}\HerConj{\vv})^{-1} = (I + A^{-1}\bm{u}\HerConj{\vv})^{-1}A^{-1}$であり，2つ目の因子に\ref{Sherman-Morrisonの公式の特別な場合}を適用すればよい。
         \end{proof}
     \section{Woodburyの公式の特別な場合\texorpdfstring{: $(I_n+UV)^{-1} = I_n-U(I_k+VU)^{-1}V$}{}}
@@ -224,7 +218,6 @@
         \end{shadebox}
         \ref{Sherman-Morrisonの公式の特別な場合}からの類推でこの等式が予想され，直接代入することで予想が正しいことが確認される。
         \begin{proof}
-            \quad\par
             直接代入して確認する。
             \begin{align*}
                 &\phantom{=} (I_n+UV)(I_n-U(I_k+VU)^{-1}V) = I_n - U(I_k+VU)^{-1}V + UV - UVU(I_k+VU)^{-1}V \\
@@ -240,7 +233,6 @@
             \[ (A+UCV)^{-1} = \bracks*{I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V}A^{-1} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $A+UCV = A(I_n + A^{-1}UCV)$であるから$(A+UCV)^{-1} = (I_n + A^{-1}UCV)^{-1}A^{-1}$である。
             \ref{Woodburyの公式の特別な場合}で$U$を$A^{-1}U$で，$V$を$CV$で置き換えて上式に適用すると次式を得る。
             \[ (A+UCV)^{-1} = \bracks*{I_n - A^{-1}U(I_k + CVA^{-1}U)^{-1}CV}A^{-1} = \bracks*{I_n - A^{-1}U(C^{-1} + VA^{-1}U)^{-1}V}A^{-1} \]

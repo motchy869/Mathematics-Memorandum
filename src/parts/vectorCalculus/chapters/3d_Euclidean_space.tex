@@ -35,7 +35,6 @@
                 ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $\bm{j}_1,\bm{j}_2,\bm{j}_3$は正規直交基底であるから次式が成り立つ。
                 \[ \bm{i}_i = \sum_{j=1}^3 (\bm{i}_i\cdot\bm{j}_j)\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\partDeriv{\vr}{u_j}{}}\bm{j}_j = \sum_{j=1}^3 \parens*{\bm{i}_i\cdot\frac{1}{h_j}\sum_{k=1}^3\partDeriv{r_k}{u_j}{}\bm{i}_k}\bm{j}_j \\
                 = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \]
@@ -216,7 +215,6 @@
     \section{諸公式}
         \subsection{ベクトル三重積の公式: \texorpdfstring{$A\times(B\times C) = \inProd{A}{C}B - \inProd{A}{B}C$}{A×(B×C) = (A・C)B - (A・B)C}}
             \begin{proof}
-                \quad\par
                 直交座標系をとり，単位ベクトルを$\bm{j}_1,\bm{j}_2,\bm{j}_3$とする。
                 $A,B,C$を次のようにおく。
                 \begin{align*}
@@ -244,7 +242,6 @@
             \end{proof}
         \subsection{\texorpdfstring{$\inProd{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inProd{\bm{a}}{\bm{c}}\inProd{\bm{b}}{\bm{d}} - \inProd{\bm{a}}{\bm{d}}\inProd{\bm{b}}{\bm{c}}$}{(a×b)・(c×d) = (a・c)(b・d) - (a・d)(b・c)}}
             \begin{proof}
-                \quad\par
                 ベクトル三重積の公式を利用する。
                 \[ \inProd{\bm{a}\times\bm{b}}{\bm{c}\times\bm{d}} = \inProd{\bm{a}}{\bm{b}\times(\bm{c}\times\bm{d})} = \inProd{a}{\inProd{\bm{d}}{\bm{b}}\bm{c} - \inProd{\bm{b}}{\bm{c}}\bm{d}} = \inProd{\bm{a}}{\bm{c}}\inProd{\bm{b}}{\bm{d}} - \inProd{\bm{a}}{\bm{d}}\inProd{\bm{b}}{\bm{c}} \]
             \end{proof}
@@ -272,7 +269,6 @@
                 ここに$\bm{n}(\vr)$は$\vr\in\partial V$に於ける外向きの法線ベクトルである。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 発散定理より次式が成り立つ。
                 \[ \integrate{\partial V}{}{A(\vr)\cdot\bm{n}(\vr)}{2}{r} = \integrate{V}{}{(\nabla\cdot A)(\vr)}{3}{r} \]
                 $\varepsilon>0$を任意に小さくとる。
@@ -289,7 +285,6 @@
                 \[ \nabla_\vr\cdot f(\vr)\vA(\vr) = \parens*{\nabla_\vr f(\vr)}\cdot \vA(\vr) + f(\vr)\nabla_\vr\cdot\vA(\vr) \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
                 $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$とする。
                 \begin{align*}
@@ -306,7 +301,6 @@
                 \[ \nabla_\vr\times f(\vr)\vA(\vr) = \parens*{\nabla_\vr f(\vr)}\times \vA(\vr) + f(\vr)\nabla_\vr\times\vA(\vr) \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
                 $\bm{u}\in\realNumbers^3,\vr=T(\bm{u}),\tilde{f}(\bm{u})\coloneq f(\vr),\tilde{A}(\bm{u})\coloneq A(\vr)$とする。
                 \begin{align*}
@@ -321,7 +315,6 @@
                 \[ \nabla_\vr\norm{\vr+\bm{a}}^n = n\norm{\vr+\bm{a}}^{n-2}(\vr+\bm{a}) \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直交座標系上で成立を示せば十分である。
                 $\bm{u}\in\realNumbers^3,\vr=T(\bm{u})$とする。
                 \begin{align*}
@@ -340,7 +333,6 @@
             $\vA:\EuclideanSpace^3\to\EuclideanSpace^3$の発散が0であるとき，適当な$\bm{P}:\EuclideanSpace^3\to\EuclideanSpace^3$が存在して$\nabla\times\bm{P} = \vA$となる。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直角座標系上で成立を示せば十分である。
             次式で構成された$\bm{P}$が$\nabla\times\bm{P} = \vA$を満たすことを示す。
             \begin{align*}
@@ -370,7 +362,6 @@
                     \[ R>0, V(R) \coloneq \setComprehension{\vr\in\realNumbers^3}{\norm{\vr}_2 \leq R} ,\lim_{R\to\infty} \abs{\integrate{V(R)}{}{f(\vr)}{3}{r}} < \infty \]
                 \end{shadebox}
                 \begin{proof}
-                    \quad\par
                     $R>0$は十分大きいものとし，$I(R)$を次式で定義する。
                     \[ I(R) \coloneq \integrate{V(R)}{}{f(\vr)}{3}{r} \]
                     球座標変換$\vr = r[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$を用いて次式を得る。
@@ -398,7 +389,6 @@
             \newcommand*{\vBO}{\vB_\mathrm{O}(\vk)}
             \newcommand*{\vBP}{\vB_\mathrm{P}(\vk)}
             \begin{proof}
-                \quad\par
                 \ref{空間と座標系の関係}の\ref{Euclid 空間上の，座標が陽に現れない関係式が成り立つ必要十分条件}より，直角座標系上で成立を示せば十分である。
                 ベクトル場$\vA:\realNumbers^3\to\complexNumbers^3$は$\mathrm{C}^1$級であるとする。
                 $\vA$のFourier変換を$\vB:\realNumbers^3\to\complexNumbers^3$とする（次式）。
@@ -448,7 +438,6 @@
                 \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 必要なら系全体を回転させ，一般性を失わず$\vr = [0,0,r]^\top\;(r>0)$とする。
                 球座標変換を用いて積分を実行する。
                 $\vr' \coloneq r'[\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta]^\top$とすると
@@ -490,7 +479,6 @@
                 と表せる。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                     まず$\bm{u}$が$\vv_1,\dotsc,\vv_m$の一次結合で表せることを示す。\\
                     $W \coloneq \Span{\vv_1,\dotsc,\vv_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから，適当な定数$c_1,\dotsc,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
                     \begin{equation}
@@ -552,7 +540,6 @@
             \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $S$が$S(x,y)$の如く$x,y$の関数で表せる場合について証明すれば十分である。
             なぜなら，$S$が複雑な場合は$S(s,y),S(y,z),S(z,x)$いずれかの型の2変数関数で表せる曲面に分割して，各部分で，これから証明する$S(x,y)$型の場合と同じ手続きを踏んで最後に合計すれば全体の結果になるからである。
             領域分割を行う場合は分割境界でも線積分を行うことになるが，その回数は2で，互いに逆向きであるから，合計する段階で相殺して0になるため最終的な結果には現れない。

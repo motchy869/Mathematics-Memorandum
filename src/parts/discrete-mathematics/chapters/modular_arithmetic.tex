@@ -10,7 +10,6 @@
     \section{\texorpdfstring{$a,m\in \naturalNumbers$}{自然数a,m}が互いに素であるとき，\texorpdfstring{$0,a,2a,\dotsc,(m-1)a$}{0,a,2a,...,(m-1)a}を\texorpdfstring{$m$}{m}で割った余りは全て異なる}
         \label{a,mが互いに素のとき，0,a,...a(m-1)をmで割った余りは全て異なる}
         \begin{proof}
-            \quad\par
             $b_1,b_2\;(0 \leq b_1 < b_2 \leq m-1)$を任意にとる。$a$と$m$が互いに素であるから$(m/\gcd(b_2-b_1, m)) \nmid (a(b_2-b_1)/\gcd(b_2-b_1, m))$であるので$m \nmid a(b_2-b_1)$，すなわち$ab_1 \not \equiv_m ab_2$である。
         \end{proof}
     \section{和のべき乗を展開}
@@ -21,7 +20,6 @@
             \item $(x+y)^p \equiv_p x^p + y$
         \end{enumerate}
         \begin{proof}
-            \quad\par
             まず1を示す。
             \[(x+y)^p \equiv_p x^p + \sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k + y^p\]
             であるが$\sum_{k=1}^{p-1} \combi{p}{k}x^{p-k}y^k$は$p$の倍数である。何故ならば
@@ -43,7 +41,6 @@
             素数$p$と整数$a$が互いに素であるとき，$a^{p-1} \equiv_p 1$である。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             「\textcolor{red}{任意の}整数$a$に対して$a^p \equiv_p a$」を示し，$a$と$p$が互いに素である場合に限定して両辺を$a$で割れば良いので，これを示す。
             $p=2$のときは$a$の偶奇で場合分けすれば簡単に示せる。以下では$p$は3以上の素数であるとする。
             まず$a=0$のときは明らかに成り立つ。\ref{整数の合同:和のべき乗を展開}を用いると，$a$が自然数のときは

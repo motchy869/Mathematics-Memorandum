@@ -8,7 +8,6 @@
             $\{2,3\}\times\{1,2\}\in Z$であるが$(\{2,3\}\times\{1,2\})^\complement = \{(1,1),(1,2),(1,3),(2,3),(3,3)\} \notin Z$なので$Z$は$\sigma$--加法族ではない。
         \subsection{\texorpdfstring{$X$}{X}を集合とする。\texorpdfstring{$A,B\subset 2^X,A\subset B\Rightarrow\sigma(A)\subset\sigma(B)$}{A,B⊂2\string^X, A⊂B ⇒ σ(A)⊂σ(B)}}
             \begin{proof}
-                \quad\par
                 まず，$\sigma(\cdot)$の定義より$B\subset\sigma(B)$であり，これと$A\subset B$より$A\subset\sigma(B)$である。
                 よって
                 \[ \sigma(A) = A\text{を含む全ての}\sigma\text{--加法族の共通部分} \subset \sigma(B)\;(\supset B \supset A) \]
@@ -26,7 +25,6 @@
                 $A_1,A_2$がJordan可測ならば$A_1\cap A_2,A_1\cup A_2$も可測で$\mJordan{A_1\cup A_2} = \mJordan{A_1} + \mJordan{A_2} - \mJordan{A_1\cap A_2}$
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A_1,A_2$を包含する直方体$E$を考える。
                 $A_1,A_2$がJordan可測だから任意の正数$\varepsilon$に対して$E$のある分割$\Delta$が存在して次式を満たす。
                 \[ S(\ind{A_1}{\cdot},\Delta) - s(\ind{A_1}{\cdot},\Delta), S(\ind{A_2}{\cdot},\Delta) - s(\ind{A_2}{\cdot},\Delta) < \varepsilon/2 \]
@@ -46,14 +44,12 @@
             \end{proof}
         \subsection{\texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)のとき\texorpdfstring{$\mJi{A} = |E| - \mJo{A^\complement\cap E}$}{mJi(A) = |E| - mJo(A\string^∁ ∩ E)}}
             \begin{proof}
-                \quad\par
                 外測度と内測度の定義より任意の正数$\varepsilon$に対して$E$のある分割$\Delta$が存在して$\mJi{A} - s(\ind{A}{\cdot},\Delta),S(\ind{A^\complement\cap E}{\cdot},\Delta) - \mJo{A^\complement\cap E} < \varepsilon/2$
                 であることと$s(\ind{A}{\cdot},\Delta) = |E| - S(\ind{A^\complement\cap E}{\cdot},\Delta)$より従う。
             \end{proof}
         \subsection{系: \texorpdfstring{$A\subset E$}{A⊂E}(\texorpdfstring{$E$}{E}は直方体)がJordan可測のとき\texorpdfstring{$A\complement\cap E$}{A\string^∁ ∩ E}もJordan可測である}
             \label{subsec: Jordan可測集合の補集合もJordan可測}
             \begin{proof}
-                \quad\par
                 直前の定理より
                 \[ \mJi{A^\complement\cap E} = |E| - \mJo{(A^\complement\cap E)^\complement\cap E} = |E| - \mJo{A} = |E| - \mJi{A} = \mJo{A^\complement\cap E} \]
             \end{proof}
@@ -64,21 +60,18 @@
         \end{itemize}
         \subsection{\texorpdfstring{$A\subset B$}{A⊂B}ならば\texorpdfstring{$\mLebO{A}\leq\mLebO{B}$}{mLo(A)<mLo(B)}}
             \begin{proof}
-                \quad\par
                 背理法で示す。仮に$\mLebO{A} > \mLebO{B}$であるとする。
                 任意の$0 < \varepsilon < \mLebO{A} - \mLebO{B}$に対してある直方体領域の集合$R$が存在して$B\subset R,|R| < \mLebO{B} + \varepsilon$となる。
                 $A\subset B\subset R$となるので$\mLebO{A} \leq |R| < \mLebO{B} + \varepsilon < \mLebO{A}$となり矛盾。
             \end{proof}
         \subsection{\texorpdfstring{$\mLebO{A\cup B}\leq\mLebO{A} + \mLebO{B}$}{mLo(A∪B)≦mLo(A)+mLo(B)}}
             \begin{proof}
-                \quad\par
                 背理法で示す。仮に$\mLebO{A\cup B} > \mLebO{A} + \mLebO{B}$とする。
                 任意の$0 < \varepsilon < (\mLebO{A\cup B} - (\mLebO{A} + \mLebO{B}))/2$に対してある直方体領域の集合$R_1,R_2$が存在して$A\subset R_1, B\subset R_2,|R_1|<\mLebO{A} + \varepsilon,|R_2| < \mLebO{B} + \varepsilon$となる。
                 $A\cup B \subset R_1\cup R_2$となるので$\mLebO{A\cup B} \leq |R_1\cup R_2| \leq |R_1|+|R_2| < \mLebO{A} + \mLebO{B} + 2\varepsilon < \mLebO{A\cup B}$となり矛盾。
             \end{proof}
         \subsection{Lebesgue外測度の劣加法性: \texorpdfstring{$\mLebO{\bigcup_{n=1}^\infty A_n} \leq \sum_{n=1}^\infty \mLebO{A_n}$}{}}
             \begin{proof}
-                \quad\par
                 背理法で示す。仮に$\mLebO{\bigcup_{n=1}^\infty A_n} > \sum_{n=1}^\infty \mLebO{A_n}$とし，その差を$d>0$とおく。
                 数列$\{a_n\},a_n = \frac{d}{3}2^{-n+1}\;(n=1,2,\dotsc)$とおくと級数$\sum_{n=1}^\infty a_n = 2d/3$となる。
                 任意の$n\in\naturalNumbers$に対してある直方体領域$R_n$が存在して$A_n\subset R_n,|R_n| < \mLebO{A_n} + a_n$となる。
@@ -87,7 +80,6 @@
         \subsection{有界集合\texorpdfstring{$A$}{A}に対して\texorpdfstring{$\mLebO{A}\leq\mJo{A}$}{Lebesgue外測度≦Jordan外測度}}
             \label{subsec: Lebesgue外測度≦Jordan外測度}
             \begin{proof}
-                \quad\par
                 背理法で示す。仮に$\mLebO{A} > \mJo{A}$とし，$0<\varepsilon<\mLebO{A} - \mJo{A}$とする。
                 $A$を包含する直方体領域を$E$とする。
                 Jordan外測度の定義より$E$のある分割$\Delta$が存在して$S(\ind{A}{\cdot},\Delta) < \mJo{A} + \varepsilon$となる。
@@ -95,7 +87,6 @@
             \end{proof}
         \subsection{有界閉集合\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}に対して\texorpdfstring{$\mLebO{A}=0 \iff \mJordan{A}=0$}{AのLebesgue外測度=0 ⇔ AのJordan外測度}}
             \begin{proof}
-                \quad\par
                 $\Leftarrow$は直前の定理より明らか。$\Rightarrow$を示す。
                 $\mLebO{A}=0$より，任意の$\varepsilon>0$に対してある直方体集合$R=\bigcup_{n=1}^\infty E_n$が存在して$A\subset R,|R|<\varepsilon/2$を満たす。
                 任意の直方体$r$に対して，その中心を保ったまま$k$倍に相似拡大した直方体を$kr$と書くことにする。
@@ -104,7 +95,6 @@
             \end{proof}
         \subsection{\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}とする。任意の直方体\texorpdfstring{$E$}{E}に対して\texorpdfstring{$\mLebO{A\cap E} + \mLebO{A^\complement\cap E} = \mLebO{E} \iff$}{mLo(A∩E) + mLo(A\string^C E) = mLo(E) ⇔}任意の\texorpdfstring{$B\subset\realNumbers^n$}{B⊂R\string^n}に対して\texorpdfstring{$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} = \mLebO{B}$}{mLebo(A∩B) + mLo(A\string^C ∩B)}}
             \begin{proof}
-                \quad\par
                 $\Leftarrow$は明らか。$\Rightarrow$を示す。
                 $(A\cap B)\cup(A^\complement\cap B) = B$なのでまず$\mLebO{A\cap B} + \mLebO{A^\complement\cap B} \geq \mLebO{B}$が成り立つ。
                 $\mLebO{A\cap B} + \mLebO{A^\complement\cap B} > \mLebO{B}$と仮定して矛盾を導く。
@@ -114,7 +104,6 @@
             \end{proof}
         \subsection{有界集合\texorpdfstring{$A\subset\realNumbers^n$}{A⊂R\string^n}がJordan可測ならばLebesgue可測であり，\texorpdfstring{$\mLeb{A}=\mJordan{A}$}{AのLebesgue測度とJordan測度は等しい}}
             \begin{proof}
-                \quad\par
                 $A$を包含する任意の直方体$R$に対して
                 \begin{align*}
                     \mLebO{A} &\geq |R| - \mLebO{A^\complement\cap R} \geq |R| - \mJo{A^\complement\cap R} \quad(\because\text{\ref{subsec: Lebesgue外測度≦Jordan外測度}}) \\
@@ -128,7 +117,6 @@
             \end{proof}
         \subsection{\texorpdfstring{$A_1,A_2\subset\realNumbers^n$}{A1,A2⊂R\string^n}がLebesgue可測なら\texorpdfstring{$A_1\cup A_2$}{A1とA2の和集合}もLebesgue可測}
             \begin{proof}
-                \quad\par
                 $B\in\realNumbers^n$を任意の集合とする。
                 $\mLebO{(A_1\cup A_2)\cap B} + \mLebO{(A_1\cup A_2)^\complement\cap B} = \mLebO{B}$を示せばよい。
                 $\geq$はLebesgue外測度の劣加法性より成り立つので$\leq$を示す。
@@ -146,7 +134,6 @@
             \end{proof}
         \subsection{Lebesgue可測集合\texorpdfstring{$A_1,A_2\subset\realNumbers^n$}{A1,A2⊂R\string^n}が非交差的なら\texorpdfstring{$\mLeb{A_1\sqcup A_2} = \mLeb{A_1} + \mLeb{A_2}$}{A1とA2の和集合のLebesgue測度はそれぞれのLebesgue測度の和に等しい}}
             \begin{proof}
-                \quad\par
                 直前の定理の証明の式の3行目第2項で$A_2\cap A_1^\complement\cap B = A_2\cap B$となるので
                 \begin{align*}
                     \mLebO{B} &\leq \mLebO{(A_1\sqcup A_2)\cap B} + \mLebO{(A_1\sqcup A_2)^\complement\cap B} \\
@@ -165,7 +152,6 @@
         \subsection{Lebesgue測度の\texorpdfstring{$\sigma$}{σ}--加法性}
             Lebesgue可測集合$A_1,A_2,\dotsc\in\realNumbers^n$が非交差的なら$\mLeb{\bigsqcup_{i=1}^\infty A_i} = \sum_{i=1}^\infty \mLeb{A_i}$
             \begin{proof}
-                \quad\par
                 $B_n \coloneq \bigsqcup_{i=1}^n A_i,B \coloneq \bigsqcup_{i=1}^\infty A_i$とする。
                 任意の集合$S\in\realNumbers^n$に対して
                 \[ \mLebO{S\cap B} + \mLebO{S\cap B^\complement} = \mLebO{S} \]
@@ -212,7 +198,6 @@
             \[ \func{\mu}{\bigcup_{i=1}^n A_i} = \sum_{I\in 2^\numset\setminus\braces*{\emptyset}} (-1)^{|I|-1}\func{\mu}{\bigcap_{i\in I}A_i} \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             式(1)を証明する。
             \begin{align*}
                 \textrm{(1)の左辺} &= \LebInteg{S}{\ind{U}{x}}{\mu}{x} \\

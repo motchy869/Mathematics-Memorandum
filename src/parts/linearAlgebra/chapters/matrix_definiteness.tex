@@ -1,7 +1,6 @@
 \chapter{定値性}
     \section{正定値Hermite対称行列の逆行列も正定}
         \begin{proof}
-            \quad\par
             $A\in\complexNumbers^{n\times n}$を正定値Hermite対称行列とし，重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
             $A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\dotsc,\lambda_n}\HerConj{P}$と表せるので
             $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
@@ -9,7 +8,6 @@
         \end{proof}
     \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\vx^\top A\vx=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\vx\in\Ker{A}$}{x∈Ker(A)}}
         \begin{proof}
-            \quad\par
             $A$を$n\times n$実対称行列とする。
             $A$を対角化する実直交行列を$P = [\bm{p}_1,\dotsc,\bm{p}_n]$とし，$\bm{p}_i$に対応する固有値を$\lambda_i$とすると，$A$が半正定だから$\lambda_i\geq 0$である。
             $\vx$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\vx = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \vx^\top A\vx = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
@@ -17,20 +15,17 @@
         \end{proof}
     \section{Gram行列は半正定}
         \begin{proof}
-            \quad\par
             $V$を内積空間とし，$\vv_1,\dotsc,\vv_n\in V$のGram行列を$G=[\inProd{\vv_i}{\vv_j}]_{n\times n}$とする。
             $\vx\in \complexNumbers^n$に対して
             \[ \vx^\top G\vx = \sum_{i=1}^n\sum_{j=1}^n x_i x_j \inProd{\vv_i}{\vv_j} = \sum_{i=1}^n\sum_{j=1}^n \inProd{x_i\vv_i}{x_j\vv_j} = \inProd{\sum_{i=1}^n x_i\vv_i}{\sum_{j=1}^n x_j\vv_j} = \norm{\sum_{i=1}^n x_i\vv_i}_2^2 \geq 0 \]
         \end{proof}
     \section{正定値行列同士の積は正定とは限らない}
         \begin{proof}
-            \quad\par
             (例) : $75^\circ$左回転行列同士の積\\
             (※ :行列が正定値というのは，飛ばす前のベクトルと飛ばしたあとのベクトルの成す角が$90^\circ$未満であることと同値)
         \end{proof}
     \section{対角成分が全て非負の対称行列が半正定とは限らない}
         \begin{proof}
-            \quad\par
             例えば
             $
                 A =
@@ -45,7 +40,6 @@
         \end{proof}
     \section{非対称行列は固有値が全て正でも正定とは限らない}
         \begin{proof}
-            \quad\par
             例えば
             $
                 A =
@@ -72,7 +66,6 @@
             等号が成立するのは$\vx$と$\vy$どちらかが$\bm{0}$であるか，そうでなければ$\vy$と$A\vx$が平行であるとき，かつそのときである。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $A$はHermite対称で正定であるから，適当なユニタリ行列で対角化可能であり，固有値が全て正であることに注意すれば，$\sqrt{A},\sqrt{A^{-1}}$を定義できる。
             これを用いると次式を得る。
             \[ (\HerConj{\vx}A\vx)(\HerConj{\vy}A^{-1}\vy) = \norm{\sqrt{A}\vx}_2^2 \norm{\sqrt{A^{-1}}\vy}_2^2 \geq \abs{\inProd{\sqrt{A}\vx}{\sqrt{A^{-1}}\vy}}^2 = |\HerConj{\vx}\vy|^2 \]

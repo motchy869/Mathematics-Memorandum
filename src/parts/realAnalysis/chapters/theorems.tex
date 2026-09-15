@@ -4,7 +4,6 @@
             連続な1変数関数$f$は連続な偶関数と奇関数に1通りに分解できる
         \end{shadebox}
         \begin{proof}
-            \quad\par
             (分解可能性)\\
             $\fe(x) \coloneq (f(x)+f(-x))/2,\fo(x) \coloneq (f(x)-f(-x))/2$とすれば確かに$f(x)=\fe(x)+\fo(x)$であり$\fe,\fo$はそれぞれ連続な偶関数，奇関数になっている。\\
             \newline
@@ -21,7 +20,6 @@
             \[ \sup_{\vx\in X}(f(\vx)+g(\vx)) \leq \sup_{\vx\in X}f(\vx) + \sup_{\vx\in X}g(\vx),\inf_{\vx\in X}f(\vx) + \inf_{\vx\in X}g(\vx) \leq \inf_{\vx\in X}(f(\vx)+g(\vx)) \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\sup_{\vx\in X}(f(\vx)+g(\vx))$を与える$\vx\in X$の一つを$\vx_1$とすると$\sup_{\vx\in X}(f(\vx)+g(\vx)) = f(\vx_1)+g(\vx_1) \leq \sup_{\vx\in X}f(\vx) + \sup_{\vx\in X}g(\vx)$。
             また，$\inf_{\vx\in X}(f(\vx)+g(\vx))$を与える$\vx\in X$の一つを$\vx_2$とすると$\inf_{\vx\in X}(f(\vx)+g(\vx)) = f(\vx_2)+g(\vx_2) \geq \inf_{\vx\in X}f(\vx) + \inf_{\vx\in X}g(\vx)$
         \end{proof}
@@ -31,7 +29,6 @@
             \[ \sup_{\vx\in X}(-f(\vx)) = -\inf_{\vx\in X}f(\vx), \inf_{\vx\in X}(-f(\vx)) = -\sup_{\vx\in X}f(\vx) \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $^\forall\vy\in X,\inf_{\vx\in X}f(\vx) \leq f(\vy)$なので$^\forall\vy\in X,-\inf_{\vx\in X}f(\vx) \geq -f(\vy)$。
             任意の$\varepsilon>0$に対して$\inf_{\vx\in X}f(\vx) + \varepsilon$は$f$の下界ではないから，適当な$\vx_1\in X$が存在して$f(\vx_1) < \inf_{\vx\in X}f(\vx) + \varepsilon \quad \therefore\; -f(\vx_1) > -\inf_{\vx\in X}f(\vx) - \varepsilon$
             。すなわち$-\inf_{\vx\in X}f(\vx) - \varepsilon$は$-f$の上界ではない。
@@ -43,7 +40,6 @@
             \[\sum_{i=1}^n|x_iy_i|\leq\norm{\vx}_p\norm{\vy}_q\]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\vx,\vy$の少なくとも1つが零ベクトルであるときは明らかに成り立つ。
             以下では両者とも零ベクトルでないとする。
             Youngの不等式より$a,b\geq 0$に対して$ab \leq a^p/p + b^q/q$が成り立つ。

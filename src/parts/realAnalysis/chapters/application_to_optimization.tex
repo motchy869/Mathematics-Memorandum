@@ -8,7 +8,6 @@
             $\vx_0, \bm{\lambda}_0$を$F$の停留点，すなわち$\nabla_\vx F(\vx_0, \bm{\lambda}_0) = \bm{0}$とすると$f$は$g_i(\vx) = 0\;(i=1,\dotsc,m)$なる拘束条件の下，$\vx_0$で最小値をとる。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\bm{h} \in \realNumbers^n \neq \bm{0}$とし，$g_i(\vx + \bm{h}) = 0\;(i=1,\dotsc,m)$を満たすとする。
             このとき$f(\vx_0 + \bm{h}) > f(\vx_0)$であることを示す。
             \[ f(\vx_0 + \bm{h}) = f(\vx_0) + \nabla f(\vx_0)^\top\bm{h} + \bm{h}^\top H(f,\vx_0)\bm{h} + o(\norm{\bm{h}}_2^3) \]
@@ -36,7 +35,6 @@
                 \[ f_0 = \argmin_{f\in\mathcal{F}}I(f) \iff g^{(1,0)}(f_0(x),f_0'(x)) = \partDerivLong{g^{(0,1)(f_0(x),f_0'(x))}}{x}{} \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $\Rightarrow$については$f_0$が変分法のEuler方程式を満たすことが必要条件であるため，直ちに従う。
                 \par
                 以下，$\Leftarrow$を示す。
@@ -71,7 +69,6 @@
             \end{shadebox}
             数理最適化の分野では，この問題は線形制約付き凸最適化問題に分類され，解法はLagrangeの未定乗数法が定石であるが，ここでは敢えて初等的な証明を与えてみる。
             \begin{proof}
-                \quad\par
                 次式が成り立つ。
                 \[ \sum_{i=1}^N x_i^2 = \sum_{i=1}^N (x_i - 1/N)^2 + 1/N \tag{1} \]
                 なぜならば
@@ -90,7 +87,6 @@
             \end{shadebox}
             この問題も\ref{非負かつ総和1の下での2乗和の最小化}と同じくLagrangeの未定乗数法が定石であるが，ここでは敢えて初等的な証明を与えてみる。
             \begin{proof}
-                \quad\par
                 関数$f:x\in\setComprehension{t\in\realNumbers}{t>0} \mapsto 1/x$は 狭義下に凸である。
                 $w_i\geq 0\;(i=1,2,\dots,N),\sum_{i=1}^N w_i = 1$とすると，Jensenの不等式より次式が成り立つ。
                 \[ \sum_{i=1}^N w_i f(x_i) \geq f\parens*{\sum_{i=1}^N w_i x_i} \]

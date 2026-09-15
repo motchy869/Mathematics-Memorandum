@@ -5,7 +5,6 @@
                 $A$を正則な$n$次正方行列とし，特性多項式を$\phi_A(\lambda)$とすると，$\phi_{A^{-1}}(\lambda) = |A|^{-1}(-\lambda)^n\phi_A(1/\lambda)$。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $|A(\lambda I - A^{-1})|$を2通りの方法で評価する。
                 まず$|A(\lambda I - A^{-1})| = |A|\phi_{A^{-1}}(\lambda)$である。
                 次に$|A(\lambda I - A^{-1})| = |\lambda A - I| = |(-\lambda)((1/\lambda)I - A)| = (-\lambda)^n|(1/\lambda)I - A| = (-\lambda)^n\phi_A(1/\lambda)$。
@@ -17,7 +16,6 @@
                 $A\in\complexNumbers^{n\times n}$の相異なる$p$個の固有値$\lambda_i\;(i=1,\dotsc,p)$に対応する固有ベクトルを$\vv_i$とすると$\vv_1,\dotsc,\vv_p$は一次独立である。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $c_1,\dotsc,c_p$を定数として
                 \[c_1\vv_1 + \dotsb + c_p\vv_p = \bm{0}_n\]
                 とおいて両辺に左から$A$を掛けると
@@ -45,7 +43,6 @@
             \end{proof}
         \subsection{\texorpdfstring{$n\times n$}{n×n}行列\texorpdfstring{$A$}{A}の全要素が\texorpdfstring{$a\neq 0$}{a≠0}であるなら非零固有値は\texorpdfstring{$an$}{an}のみ}
             \begin{proof}
-                \quad\par
                 まず，$an$が固有値であり，全ての要素が等しい$n$次元ベクトルが固有値$an$に対応する固有ベクトルであることは，実際に計算してみることで容易に確かめられる。
                 非零固有値がこれ以外に存在しないことを示す。$\lambda\neq 0,an$とし，$\lambda I-A$の第$j$列ベクトルを$\bm{b}_j$とすると，
                 \[
@@ -65,7 +62,6 @@
                 $A\in\field^{n\times n}$について$A^\top$の固有値は$A$と等しく，各固有値$\lambda_i$に対する固有空間の次元も$A$の固有値$\lambda_i$に対するそれと等しい。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A^\top$の特性多項式は
                 \[|sI-A^\top| = |(sI-A)^\top| = |sI-A|\]
                 の如く$A$の特性多項式と等しいから固有値も全て等しい。
@@ -81,7 +77,6 @@
                 正則な行列$A\in\field^{n\times n}$の逆行列の固有値は$A$の固有値の逆数であり，$A$と共通の固有ベクトルをもつ。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $A^{-1}$もまた正則だから0固有値は持たない。
                 $A^{-1}$の固有値の一つを$\lambda'\neq0$とし，それに対する固有ベクトルを$\vy\neq\bm{0}$とおくと
                 $A^{-1}\vy = \lambda'\vy$であり，両辺に左から$A$を掛けて$\vy = \lambda'A\vy\quad\therefore\;A\vy = \frac{1}{\lambda'}\vy$となる。
@@ -89,7 +84,6 @@
             \end{proof}
         \subsection{ユニタリ行列の全ての固有値の絶対値は1である}
             \begin{proof}
-                \quad\par
                 ユニタリ行列$P$とその任意の固有値$\lambda$およびそれに対応する固有ベクトル$\vx \neq \bm{0}$について$P\vx = \lambda\vx$の両辺のノルムをとると$\norm{\vx}_2 = \norm{P\vx}_2 = |\lambda|\norm{\vx}_2$であるからわかる。
             \end{proof}
         \subsection{随伴行列}
@@ -117,7 +111,6 @@
                     よって$A$の固有値は$f_n$の根である。
                 \end{shadebox}
                 \begin{proof}
-                    \quad\par
                     $\det{A}=(-1)^n a_0$については，第1行をバブルソートの要領で$n-1$回の置換により最下行に移動させて下三角行列を作ることで証明できる。
                     \par
                     次に$\det{(\lambda I-A)} = f(\lambda)$を示す。
@@ -153,7 +146,6 @@
                     $\vv\coloneq[\lambda^{n-1},\lambda^{n-2},\dots,\lambda,1]^\top$は$A$の固有ベクトルである。
                 \end{shadebox}
                 \begin{proof}
-                    \quad\par
                     \ref{随伴行列の行列式と固有多項式}より$-a_{n-1}\lambda^{n-1}- a_{n-2}\lambda^{n-2} - \dots - a_1\lambda - a_0 = \lambda^n$であるから，次式が成り立つ。
                     \[ A\vv = [\lambda^n,\lambda^{n-1},\dots,\lambda^2,\lambda] = \lambda\vv \]
                 \end{proof}
@@ -174,7 +166,6 @@
                     \]
                 \end{shadebox}
                 \begin{proof}
-                    \quad\par
                     $\lambda_i\;(i=0,1,\dots,n)$が全て異なるから$V$は正則である。
                     \ref{随伴行列の固有ベクトル}より$AV = V\Lambda$が成り立つ。
                     この式の両辺に$V^{-1}$を右から掛けて$A = V\Lambda V^{-1}$を得る。
@@ -198,7 +189,6 @@
                 \[ \sum_{n=0}^{N-1}\conj{W_{k,n}}a_n \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 \cite{信号処理備忘録}で述べられているDFTの性質を用いる。
                 $\bm{e}_m\in\realNumbers^N$を第$m$要素が1でそれ以外は0のベクトルとする。
                 $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
@@ -219,7 +209,6 @@
                 $2^n\;(n\in\naturalNumbers)$次のHadamard行列の固有値は$2^{n/2}$と$-2^{n/2}$が$2^{n-1}$個ずつである\cite{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n}。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $2^n$次のHadamard行列を$H_n$と書く。$H_0 \coloneq [1]$と定義する。
                 まず，$H_1$の固有値と固有ベクトルの組が$(\pm\sqrt{2},[1\pm\sqrt{2},1]^\top)$(複合同順)であることは容易に導ける。
                 よって$n=1$のとき定理の主張が成り立つ。
@@ -313,7 +302,6 @@
                 任意の正方行列$A\in\field^{n\times n}$につきその最小消去多項式$\psi_{A,\vx}(\lambda)$が$A$の最小多項式$\psi(\lambda)$と一致するベクトル$\vx\in\field^n$が存在する。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 \[\psi(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\mu_i}}\]
                 とする。但し$\lambda_i$は$A$の相異なる$p$個の固有値である。このとき$\field^n$は次のように直和分解できる(\cite{新微分方程式対話}\;P77\;「$\NapierE^{Mt}$と一般固有値問題」)。
                 \[\field^n = \bigoplus_{i=1}^p{\Ker{(A-\lambda I)^{\mu_i}}}\]
@@ -338,7 +326,6 @@
             このとき行列多項式$f(A)$の固有値は重複を含めて$f(\lambda_1),\dotsc,f(\lambda_n)$となる。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $A$は正方行列であるから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$により次のように上三角化できる。
             \[A = PUP^\top\]
             但し$U$は第$i$対角成分が$\lambda_i$である上三角行列である($P$はユニタリだから$A^n = PU^nP^\top$となることに注意せよ)。
@@ -360,7 +347,6 @@
                 $A \in \complexNumbers^{n\times n}$が正規行列であるための必要十分条件は，ある対角行列$\Lambda \in \complexNumbers^{n \times n}$とユニタリ行列$Q \in \complexNumbers^{n \times n}$が存在して$A = Q\Lambda \HerConj{Q}$となることである。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 十分性は容易に示せるので省略し，必要性のみ示す。
                 $A$を正規行列とする。
                 $A$のSchur分解を$A = SU\HerConj{S}$とする。
@@ -387,7 +373,6 @@
                 行列$A$とその固有値$\lambda$の$k$階一般固有空間$F_{A,k}(\lambda)$に対して，もしある自然数$l$が存在して$F_{A,l}(\lambda)=F_{A,l+1}(\lambda)$が成り立てば，任意の$m\geq l+2$に対して$F_{A,m}(\lambda)=F_{A,l}(\lambda)$。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $m=l+1$に対して示す。それ以上の$m$に対しても帰納的に示せる。
                 結論を否定すると，ある$\vv\in F_{A,m}(\lambda)$が存在して$(A-\lambda I)^{l+2}\vv=\bm{0}\land(A-\lambda I)^{l+1}\vv\neq\bm{0}$。
                 すなわち$(A-\lambda I)^{l+1}\bracks*{(A-\lambda I)\vv}=\bm{0}\land(A-\lambda I)^l\bracks*{(A-\lambda I)\vv}\neq\bm{0}$。
@@ -407,7 +392,6 @@
                 \[\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)},\quad \dim{F_A(\lambda_i)} = \nu_i\]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 Cayley-Hamiltonの定理と\cite{システム線形代数}補題2.2より最初の式\;$\field^n = \bigoplus_{i=1}^{p}{F_A(\lambda_i)}$\;が従う。
                 次に${\nu_i}' \coloneq \dim{F_A(\lambda_i)}$が$\nu_i$に等しいことを示す。
                 各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より，
@@ -532,7 +516,6 @@
                 \]
                 \end{shadebox}
                 \begin{proof}
-                    \quad\newline
                     (M演算(\cite{現代線形代数入門} lesson10)を使う方法):
                     \[ J(\lambda,n)^{-1} = M(\lambda)^{-1} = M(1/\lambda) = \bracks*{\indII{i\leq j}\frac{1}{(i-j)!}\derivLong{\frac{1}{\lambda}}{\lambda}{i-j}}_{n\times n} = \bracks*{\indII{i\leq j}\frac{(-1)^{j-i}}{\lambda^{j-i+1}}}_{n\times n} \]
                     \newline
@@ -577,7 +560,6 @@
                 \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $J(\lambda, n)$を次のように対角成分とその一つ上の斜めラインに分ける。
                 \[
                     J(\lambda, n)=\Gamma+U,\quad
@@ -637,7 +619,6 @@
         \end{shadebox}
         Perron-Frobeniusの定理の主張との違いは2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」である。
         \begin{proof}
-            \quad\par
             1.と3.および2.の「$\rho(A)$は$A$の単純固有値の1つと等しく」は\cite{システム線形代数}のPerron-Frobeniusの定理の証明と同じ方法で証明できる。
             2.の「$\rho(A)$は他のどの固有値の絶対値よりも真に大きい」を，\cite{システム線形代数} 170頁 定理6.11のPerron-Frobeniusの定理の証明を利用して示す。
             その証明の中に

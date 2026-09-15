@@ -50,14 +50,12 @@
             行列$A\in\complexNumbers^{m\times n}(m\leq n)$の階数が$m$である(=$A$がフルランク)$\Leftrightarrow$($\vx^\top A=\bm{0}_{1\times n}\Rightarrow\vx=\bm{0}_{m\times1}$)
         \end{shadebox}
         \begin{proof}
-            \quad\par
             まず，$\vx^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
             $A$がフルランクのとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\vx=\bm{0}_{m\times1}$でなくてはならない。逆に$\vx^\top A=\bm{0}_{1\times n}\Rightarrow\vx=\bm{0}_{m\times1}$であるとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
         \end{proof}
     \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
         次元定理を用いる証明
         \begin{proof}
-            \quad\par
             $\vx \in \complexNumbers^n$とする。
             まず主張の左側の等号成立を示す。
             $\vx \in \ker{A}$ならば$\HerConj{A} A\vx = \HerConj{A}\bm{0} = \bm{0}$だから$\ker{A} \subseteq \ker{\HerConj{A} A}$。
@@ -71,7 +69,6 @@
         \end{proof}
         特異値分解を用いる証明
         \begin{proof}
-            \quad\par
             $A$の特異値分解を$U\Sigma \HerConj{V}$とすると，$\rank{A\HerConj{A}} = \rank{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank{U\Sigma^2 \HerConj{U}} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
             同様にして$\rank{\HerConj{A}A} = \rank{A}$も示せる。
         \end{proof}
@@ -109,7 +106,6 @@
             (系)\quad$A\in\field^{m\times n}$が行フルランクならば$AA^\top$は正則
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $B=A^\top$とおき，$B$に対して直前の定理を適用する。
         \end{proof}
     \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$r$}{r}であるなら，ある正則行列\texorpdfstring{$T_x\in\field^{n\times n},\quad T_y\in\field^{m\times m}$}{Tx∈\string^(n×n), Ty∈\string^(m×m)}が存在して...}
@@ -134,7 +130,6 @@
             \]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\Ker{A}$の基底を$\{\vx_{r+1},\vx_{r+2},\dotsc,\vx_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
             これを含む$\field^n$の基底を$\{\vx_1,\vx_2,\dotsc,\vx_r,\vx_{r+1},\dotsc,\vx_n\}$とすると
             \[\mathrm{span}[A\vx_1,A\vx_2,\dotsc,A\vx_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
@@ -161,7 +156,6 @@
             $A,B\in\field^{m\times n}$について$\rank{A}=\rank{B}$であるための必要十分条件は，適当な正則行列が存在して$AT_1=T_2B$となることである。
         \end{shadebox}
         \begin{proof}
-            \quad\\
             (必要)
             \par
             定理\ref{th:Aの階数がrなら適当な正則行列Tx,Tyが存在して...}より，$A,B$それぞれに対して適当な正則行列$T_{x,A},T_{x,B}\in\field^{n\times n},\quad T_{y,B},T_{y,A}\in\field^{m\times m}$が存在して
@@ -178,7 +172,6 @@
         \end{proof}
     \section{優対角正方行列は正則}
         \begin{proof}
-            \quad\par
             $A=[a_{ij}]\in\complexNumbers^{n\times n}$を優対角行列とし，$A\vx=\bm{0}_n,\vx=[x_1,\dotsc,x_n]^\top\in\complexNumbers^n$とおく。
             $A\vx$の第1成分の絶対値について
             \begin{align*}
@@ -204,7 +197,6 @@
             $A$の一次独立な列ベクトルを左から順に集めてできる列フルランクな$m\times r$行列を$B$とし，$A$の簡約化の零行ベクトルを除去した行フルランクな$r\times n$行列を$F$とすると$A = BF$。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             簡約化に用いる行変形行列を$R$とすると
             \[
                 RA = \bracks*{

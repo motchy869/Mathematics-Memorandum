@@ -5,7 +5,6 @@
             \[ S_l = \frac{1}{1-r}\sum_{m=0}^{l-1}(-1)^{l-m+1}\combi{l}{m}(S_m-0^m)\]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $rS_l = \sum_{k=0}^\infty k^l r^{k+1} = \sum_{k=1}^\infty (k-1)^l r^k$より
             \begin{align*}
                 (1-r)S_l &= \sum_{k=1}^\infty \bracks*{ k^l-(k-1)^l }r^k = \sum_{k=1}^{\infty}\sum_{m=0}^{l-1}\combi{l}{m}k^m(-1)^{l-m+1}r^k = \sum_{m=0}^{l-1}\combi{l}{m}(-1)^{l-m+1}\sum_{k=1}^{\infty}k^m r^k \\
@@ -20,7 +19,6 @@
             \[ \sum_{i=1}^n a_ib_i = A_nb_n - \sum_{i=1}^{n-1}A_i(b_{i+1}-b_i) \quad \parens*{ A_i \coloneq \sum_{j=1}^i a_j } \]
         \end{shadebox}
         \begin{proof}
-            \quad\\
             (泥臭い証明)\\
             \begin{minipage}{0.45\hsize}
                 \begin{table}[H]
@@ -61,7 +59,6 @@
             \end{enumerate}
         \end{shadebox}
         \begin{proof}
-            \quad\par
             以下の証明は\url{https://en.wikipedia.org/wiki/Chebyshev%27s_sum_inequality}によるものである。
             \par
             1.を示す。2.は同様にして示せる。
@@ -79,7 +76,6 @@
             \[\lim_{t\to\infty}\sum_{\tau=0}^t{r^{t-\tau}a_\tau}=0\]
         \end{shadebox}
         \begin{proof}
-            \quad\par
             $\lim_{n\to\infty}a_n=0$より$^\exists C\geq 0\st|a_n|\leq C\mathrm{ for }^\forall n\in\{1,2,\dotsc\}$。
             また，$\mathrm{for }^\forall \varepsilon>0,^\exists T\geq 1\st t\geq T\Rightarrow|a_t|\leq\varepsilon$。
             そこで$t\geq T$とすると

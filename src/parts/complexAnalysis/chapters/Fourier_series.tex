@@ -18,7 +18,6 @@
             $f$は区間$[-\pi,\pi]$で連続とする。$f$のFourier係数を$c_k$とすると$\lim_{k\to\infty}c_k = 0$となる。
         \end{shadebox}
         \begin{proof}
-            \quad\par
             まず
             \[ \lim_{k\to\infty}\integrate{-\pi}{\pi}{f(x)\sin kx}{}{x} = 0 \]
             を示す。ここで
@@ -51,7 +50,6 @@
     \section{\texorpdfstring{$\integrate{-\pi}{\pi}{\frac{\sin nx}{2\tan\frac{x}{2}}}{}{x} = \pi\;(n\in\naturalNumbers)$}{sin(nx)/(2 tan(x/2))の[-π,π]での積分はπ}}
         \label{integ{-pi}{pi}{(sin nx)/2tan(x/2)}{x} = pi}
         \begin{proof}
-            \quad\par
             求めたい積分の値を$I_n$とする。
             分子の$\sin nx$について$nx = (n-1/2)x + x/2$として加法定理により展開すると
             \[ I_n = \frac{1}{2}\integrate{-\pi}{\pi}{\frac{\cos^2(x/2)}{\sin(x/2)}\sin(n-1/2)x}{}{x} + \frac{1}{2}\integrate{-\pi}{\pi}{\cos(x/2)\cos(n-1/2)x}{}{x} \]
@@ -74,7 +72,6 @@
     \section{Fourier級数の応用}
         \subsection{\texorpdfstring{$\integrate{0}{\infty}{\frac{\sin x}{x}}{}{x} = \pi/2$}{sin(x)/xの0から∞までの積分はπ/2}}
         \begin{proof}
-            \quad\par
             複素積分を使った導出がよく知られているが，実解析の範囲で導出してみる。
             この積分が収束することは，$(\sin x)/x$が$[0,\pi/2]$で連続であることから$[0,\pi/2]$で積分可能であること，および$\sin x = (-\cos x)'$を用いて部分積分することで$[\pi/2,\infty)$で積分が絶対収束することから示せる。
             よって，
