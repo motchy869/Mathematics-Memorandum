@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - existence of vector potential for divergence-free vector field
   - property: the curl of a vector field is not always orthogonal to the vector field itself.
   - The number of internal nodes in a complete binary tree is equal to the number of leaf nodes minus 1.
+- Changed:
+  - Updated MtyLaTeXCmds submodule.
 
 ## [0.24.0] - 2026-04-25
 

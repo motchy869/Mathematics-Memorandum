@@ -62,7 +62,7 @@
             逆に$\vx \in \ker{\HerConj{A}A}$ならば$\HerConj{A}A\vx = \bm{0}$なので$0 = \HerConj{\vx}\HerConj{A}A\vx = \norm{A\vx}_2^2$より$A\vx = \bm{0}$。
             つまり$\vx \in \ker{A}$だから$\ker{A} \supseteq \ker{\HerConj{A} A}$。
             以上より$\ker{A} = \ker{\HerConj{A} A}$。
-            これと次元定理より$\rank{A} = \dim(\Img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{\HerConj{A}A}) = \dim(\Img{\HerConj{A}A}) = \rank{\HerConj{A}A}$。
+            これと次元定理より$\rank{A} = \dim(\img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{\HerConj{A}A}) = \dim(\img{\HerConj{A}A}) = \rank{\HerConj{A}A}$。
             \par
             この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
             $\rank{A} = \rank{\HerConj{A}} = \rank{\HerConj{(\HerConj{A})}(\HerConj{A})} = \rank{A\HerConj{A}}$。
@@ -130,9 +130,9 @@
             \]
         \end{shadebox}
         \begin{proof}
-            $\Ker{A}$の基底を$\{\vx_{r+1},\vx_{r+2},\dotsc,\vx_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\Img{A})} = n-\rank{A} = n-r$)。
+            $\Ker{A}$の基底を$\{\vx_{r+1},\vx_{r+2},\dotsc,\vx_n\}$とする(次元定理から$\dim{(\Ker{A})} = n-\dim{(\img{A})} = n-\rank{A} = n-r$)。
             これを含む$\field^n$の基底を$\{\vx_1,\vx_2,\dotsc,\vx_r,\vx_{r+1},\dotsc,\vx_n\}$とすると
-            \[\mathrm{span}[A\vx_1,A\vx_2,\dotsc,A\vx_r]=\Im{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
+            \[\mathrm{span}[A\vx_1,A\vx_2,\dotsc,A\vx_r]=\img{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
             である。$\vy_i\coloneq A\vx_i\quad(i=1,2,\dotsc,r)$とし，これらを含む$\field^m$の基底を$\{\vy_1,\vy_2,\dotsc,\vy_r,\vy_{r+1},\dotsc,\vy_m\}$とすると
             $T_x\coloneq[\vx_1,\vx_2,\dotsc,\vx_n],\quad T_y\coloneq[\vy_1,\vy_2,\dotsc,\vy_m]$は正則であり，
             \begin{align*}
