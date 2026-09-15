@@ -52,15 +52,15 @@
         \subsection{正規化sinc関数の正規直交性}
             \begin{shadebox}
                 $n_1,n_2\in\integers$とする。次式が成り立つ。
-                \[ \integrate{-\infty}{\infty}{\nsinc(x-n_1) \nsinc(x-n_2)}{}{x} = \delta_{n1,n2} \]
-                ここに$\nsinc(x) \coloneq \sin(\pi x)/(\pi x)$である。
+                \[ \integrate{-\infty}{\infty}{\nrmSinc(x-n_1) \nrmSinc(x-n_2)}{}{x} = \delta_{n1,n2} \]
+                ここに$\nrmSinc(x) \coloneq \sin(\pi x)/(\pi x)$である。
             \end{shadebox}
             \begin{proof}
                 被積分関数を引数に関して平行移動しても積分結果は保たれるので，次式が成り立つことを示せば十分である。
-                \[ \integrate{-\infty}{\infty}{\nsinc(x)\nsinc(x-n)}{}{x} = \delta_{1,n} \quad (n\in\integers) \]
+                \[ \integrate{-\infty}{\infty}{\nrmSinc(x)\nrmSinc(x-n)}{}{x} = \delta_{1,n} \quad (n\in\integers) \]
                 証明には，積のFourier変換がFourier変換の畳み込みと一致する性質，および矩形関数のFourier変換を用いる。
                 \begin{align*}
-                    &\phantom{=} \integrate{-\infty}{\infty}{\nsinc(x)\nsinc(x-n)}{}{x} = \integrate{-\infty}{\infty}{\sinc(\pi x)\sinc(\pi(n-x))}{}{x} \\
+                    &\phantom{=} \integrate{-\infty}{\infty}{\nrmSinc(x)\nrmSinc(x-n)}{}{x} = \integrate{-\infty}{\infty}{\sinc(\pi x)\sinc(\pi(n-x))}{}{x} \\
                     &= \integrate{-\infty}{\infty}{\psi(x)\psi(n-x)}{}{x} = (\psi*\psi)(n) \tag{1}
                 \end{align*}
                 ここに$\psi: \realNumbers\to\complexNumbers;\;x\mapsto\mathcal{F}\parens*{t\mapsto\frac{1}{\sqrt{2\pi}}\rect\parens*{t/\pi}}(x)$である。
