@@ -190,11 +190,10 @@
             \end{shadebox}
             \begin{proof}
                 \cite{信号処理備忘録}で述べられているDFTの性質を用いる。
-                $\bm{e}_m\in\realNumbers^N$を第$m$要素が1でそれ以外は0のベクトルとする。
                 $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
-                \[ \bm{a}_m = \bm{a}\circledast\bm{e}_m \]
+                \[ \bm{a}_m = \bm{a}\circledast\bm{e}_{N,m} \]
                 巡回畳み込みのDFTの性質より次式が成り立つ。
-                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
+                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_{N,m}} = \sqrt{N}\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
                 これより次式が成り立つ。
                 \begin{align*}
                     \HerConj{W}A &= [\DFT{\bm{a}_0},\DFT{\bm{a}_1},\dots,\DFT{\bm{a}_{N-1}}] \\
@@ -404,7 +403,7 @@
                 \[\vx = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
                 これを上式に右から掛けて
                 \begin{align}
-                    A\vx &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
+                    A\vx &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{n,j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
                     &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
                     &= \Phi\bracks*{
                             \begin{array}{c}

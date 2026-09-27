@@ -1,12 +1,12 @@
 \chapter{逆行列}
-    \section{\texorpdfstring{$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$}{[φ1,...,φn]\string^(-1)φi = ei}}
+    \section{\texorpdfstring{$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_{n,i}$}{[φ1,...,φn]\string^(-1)φi = ei}}
         \label{逆行列にその構成縦ベクトルを掛ける}
         \begin{shadebox}
-            $\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$が一次独立であるとき，$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_i$
+            $\bm{\phi}_1,\dotsc,\bm{\phi}_n\in\field^n$が一次独立であるとき，$[\bm{\phi}_1,\dotsc,\bm{\phi}_n]^{-1}\bm{\phi}_i=\bm{e}_{n,i}$
         \end{shadebox}
         \begin{proof}
             $\Phi \coloneq [\bm{\phi}_1,\dotsc,\bm{\phi}_n]$とする。次式より直ちに定理が証明される。
-            \[[\bm{e}_1,\dotsc,\bm{e}_n] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\dotsc,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\dotsc,\Phi^{-1}\bm{\phi}_n]\]
+            \[[\bm{e}_{n,1},\dotsc,\bm{e}_{n,n}] = I_n = \Phi^{-1}\Phi = \Phi^{-1}[\bm{\phi}_1,\dotsc,\bm{\phi}_n] = [\Phi^{-1}\bm{\phi}_1,\dotsc,\Phi^{-1}\bm{\phi}_n]\]
         \end{proof}
         この定理から直ちに次の系が得られる。
     \section{(系)結合係数の抽出}
@@ -41,7 +41,7 @@
             \end{bmatrix}
             =
             \begin{bmatrix}
-                \bm{e}_1\dotsc\bm{e}_c
+                \bm{e}_{n,1}\dotsc\bm{e}_{n,c}
                 \begin{matrix}
                     p_1 \\
                     \vdots \\
@@ -49,15 +49,15 @@
                     \vdots \\
                     p_n
                 \end{matrix}
-                \bm{e}_{c+1}\cdots\bm{e}_n
+                \bm{e}_{n,c+1}\cdots\bm{e}_{n,n}
             \end{bmatrix}
         \]
         ここで$p_c\neq 0$である(もしそうでなければ$c$列目が他の列の一次結合で表せるので非正則になるが，これは左辺が正則行列同士の積で正則であることに矛盾する)。
-        右辺の$c$列目を$\bm{e}_c$に変形するためには，両辺に次の行基本変形行列を左から掛ければよい。
+        右辺の$c$列目を$\bm{e}_{n,c}$に変形するためには，両辺に次の行基本変形行列を左から掛ければよい。
         \[
             M =
             \begin{bmatrix}
-                \bm{e}_1\cdots\bm{e}_c
+                \bm{e}_{n,1}\cdots\bm{e}_{n,c}
                 \begin{matrix}
                     -p_1/p_c \\
                     \vdots \\
@@ -67,7 +67,7 @@
                     \vdots \\
                     -p_n/p_c
                 \end{matrix}
-                \bm{e}_{c+1}\cdots\bm{e}_n
+                \bm{e}_{n,c+1}\cdots\bm{e}_{n,n}
             \end{bmatrix}
         \]
         そうすると$MA^{-1}A'=I_n$となるので$A'^{-1} = MA^{-1}$である。
@@ -110,31 +110,31 @@
             \end{bmatrix}
             =
             \begin{bmatrix}
-                \bm{e}_1 \\
+                \bm{e}_{n,1} \\
                 \vdots \\
-                \bm{e}_{c-1} \\
+                \bm{e}_{n,c-1} \\
                 \begin{matrix}
                     p_1 & \cdots & p_c & \cdots & p_n
                 \end{matrix} \\
-                \bm{e}_{c+1} \\
+                \bm{e}_{n,c+1} \\
                 \vdots \\
-                \bm{e}_n
+                \bm{e}_{n,n}
             \end{bmatrix}
         \]
         ここで$p_c\neq 0$である(もしそうでなければ第$c$行が他の行の一次結合で表せるので非正則になるが，これは左辺が正則行列同士の積で正則であることに矛盾する)。
-        右辺の第$c$行を$\bm{e}_c$に変形するためには，両辺に次の列基本変形行列を右から掛ければよい。
+        右辺の第$c$行を$\bm{e}_{n,c}$に変形するためには，両辺に次の列基本変形行列を右から掛ければよい。
         \[
             M =
             \begin{bmatrix}
-                \bm{e}_1 \\
+                \bm{e}_{n,1} \\
                 \vdots \\
-                \bm{e}_{c-1} \\
+                \bm{e}_{n,c-1} \\
                 \begin{matrix}
                     -p_1/p_c & \cdots & -p_{c-1}/p_c & 1/p_c & -p_{c+1}/p_c & \cdots & p_n
                 \end{matrix} \\
-                \bm{e}_{c+1} \\
+                \bm{e}_{n,c+1} \\
                 \vdots \\
-                \bm{e}_n
+                \bm{e}_{n,n}
             \end{bmatrix}
         \]
         そうすると
