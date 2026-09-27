@@ -50,9 +50,9 @@
                 以上より$c_1=c_2=c_3$
             \end{proof}
             以降，特に断らない限り$\norm{\cdot}$は2-ノルムを表す。
-        \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \norm{[A]_{i,j}}_2 \leq \norm{A}_2$}{A∈C\string^(n×n), ||A\_(i,j)||\_2 ≦ ||A||\_2}}
+        \subsection{部分行列のノルム: \texorpdfstring{$A\in\complexNumbers^{m\times n}, \norm{\minor{A}{i}{j}}_2 \leq \norm{A}_2$}{A∈C\string^(n×n), ||A[＼i][＼j]||\_2 ≦ ||A||\_2}}
             \begin{proof}
-                $\max_{||\vx||=1}||[A]_{i,j}\vx||$を最大にする$\vx$に対して，$\vx' = [\vx[1:j-1]^\top,0,\vx[j:n-1]]^\top$とすると，$||\vx'|| = 1,||A\vx'|| \geq ||[A]_{i,j}\vx||$
+                $\max_{||\vx||=1}||\minor{A}{i}{j}\vx||$を最大にする$\vx$に対して，$\vx' = [\vx[1:j-1]^\top,0,\vx[j:n-1]]^\top$とすると，$||\vx'|| = 1,||A\vx'|| \geq ||\minor{A}{i}{j}\vx||$
             \end{proof}
         \subsection{スペクトル半径の上界}
             \begin{shadebox}

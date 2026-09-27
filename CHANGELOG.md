@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Frobenius norm of a matrix is equal to the square root of the sum of the squares of its singular values.
 - Changed:
   - Updated MtyLaTeXCmds submodule.
+  - Notation for the submatrix obtained by deleting the $i$-th row and the $j$-th column: `[A]_{i,j}` -> `\minor{A}{i}{j}`.
   - Argument delimiters of local operator macros are now supplied by callers.
 
 ## [0.25.0] - 2026-09-27
