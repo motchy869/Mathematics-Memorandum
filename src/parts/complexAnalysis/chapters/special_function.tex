@@ -1,6 +1,6 @@
 \chapter{特殊関数}
     \section{Gamma関数}
-        \subsection{\texorpdfstring{$\lim_{n\to\infty} \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re{z} > 0)$}{Gamma関数の無限乗積表示}}
+        \subsection{\texorpdfstring{$\lim_{n\to\infty} \integrate{0}{n}{t^{z-1}(1+t/n)^n}{}{t} = \Gamma(z)\;(z\in\complexNumbers, \Re\parens*{z} > 0)$}{Gamma関数の無限乗積表示}}
             Wikipediaで紹介されている無限乗積表示の導出過程でこの主張が使われているが，その根拠が薄かったので自力で証明してみた。
             \begin{proof}
                 $\varepsilon>0$を任意にとる。
@@ -12,7 +12,7 @@
                 \ref{(1-t/n)^nは単調増加}より$(1-t/n)^n$は$n$について単調増加であり，かつ$\lim_{n\to\infty}(1-t/n)^n = \NapierE^{-t}$なので，$n \geq T_1(\varepsilon)$ならば
                 \begin{align*}
                     &\abs{\integrate{T_1(\varepsilon)}{n}{t^{z-1}(1-t/n)^n}{}{t}} \leq \integrate{T_1(\varepsilon)}{n}{\abs{t^{z-1}(1-t/n)^n}}{}{t} \\
-                    &= \integrate{T_1(\varepsilon)}{n}{t^{\Re{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\abs{t^{z-1}\NapierE^{-t}}}{}{t} < \varepsilon/3
+                    &= \integrate{T_1(\varepsilon)}{n}{t^{\Re\parens*{z}-1}(1-t/n)^n}{}{t} \leq \integrate{T_1(\varepsilon)}{\infty}{\abs{t^{z-1}\NapierE^{-t}}}{}{t} < \varepsilon/3
                 \end{align*}
                 また，十分大きい自然数$N_1(\varepsilon,T_1(\varepsilon))$をとると，$n \geq N_1(\varepsilon,T_1(\varepsilon))$ならば次式が成り立つ。
                 \[ \abs{\integrate{0}{T_1(\varepsilon)}{t^{z-1}\{\NapierE^{-t} - (1-t/n)^n\}}{}{t}} < \varepsilon/3 \]

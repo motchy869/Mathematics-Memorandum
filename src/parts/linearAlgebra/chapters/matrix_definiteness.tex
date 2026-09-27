@@ -2,8 +2,8 @@
     \section{正定値Hermite対称行列の逆行列も正定}
         \begin{proof}
             $A\in\complexNumbers^{n\times n}$を正定値Hermite対称行列とし，重複を含めた$n$個の固有値を$\lambda_1,\dotsc,\lambda_n > 0$とする。
-            $A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag{\lambda_1,\dotsc,\lambda_n}\HerConj{P}$と表せるので
-            $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
+            $A$はHermite対称だから適当なユニタリ行列$P\in\complexNumbers^{n\times n}$が存在して$A = P\diag\parens*{\lambda_1,\dotsc,\lambda_n}\HerConj{P}$と表せるので
+            $A^{-1} = P\diag\parens*{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag\parens*{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
             よって$A^{-1}$は対称で固有値が全て正なので正定である。
         \end{proof}
     \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\vx^\top A\vx=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\vx\in\ker(A)$}{x∈Ker(A)}}

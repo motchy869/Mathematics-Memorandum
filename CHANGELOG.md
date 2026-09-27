@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added:
   - numerical example of polar decomposition
   - Frobenius norm of a matrix is equal to the square root of the sum of the squares of its singular values.
+- Changed:
+  - Updated MtyLaTeXCmds submodule.
 
 ## [0.25.0] - 2026-09-27
 

@@ -48,8 +48,8 @@
             ($\Leftarrow$)
             \par
             次元定理から
-            \[\dim(\img{f}) + \dim(\ker(f)) = \dim(V) = \dim(W) = n\]
-            $f$は全射であったから$\img{f}=W$であるので$\dim(\img{f}) = n$。よって上式より$\dim(\ker(f)) = 0$なので$f$は単射である。\\
+            \[\dim(\img\parens*{f}) + \dim(\ker(f)) = \dim(V) = \dim(W) = n\]
+            $f$は全射であったから$\img\parens*{f}=W$であるので$\dim(\img\parens*{f}) = n$。よって上式より$\dim(\ker(f)) = 0$なので$f$は単射である。\\
             (別証)
             \par
             $f$が全射であるから，$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\vv_1,\dotsc,\vv_n$が存在して
@@ -79,23 +79,23 @@
             $A\in\field^{n\times n},\quad W_1,\dotsc,W_m\in\field^n : A$の不変部分空間,\quad$\field^n = W_1\oplus\dotsb\oplus W_m,\quad d_i \coloneq \dim{W_i}$\\
             $\{\bm{w}_{i1},\dotsc,\bm{w}_{id_i}\} : W_i$の基底,\quad$\Phi_i \coloneq [\bm{w}_{i1},\dotsc,\bm{w}_{id_i}],\quad \Phi \coloneq [\Phi_1,\dotsc,\Phi_m]$\\
             以上の設定の下で，次式を満たす適当な正方行列$A_i\in\field^{d_i\times d_i}$が存在する。
-            \[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}\]
+            \[A = \Phi\;\diag\parens*{A_1,\dotsc,A_m}\Phi^{-1}\]
             $A_i$は次式で得られる。
             \[A_i = \parens*{{\Phi_i}^\top\Phi_i}^{-1}{\Phi_i}^\top A\Phi_i\]
             特に$W_i$の基底を正規直交基底にしておけば，より簡単に次式で得られる。
             \[A_i = {\Phi_i}^\top A\Phi_i\]
         \end{shadebox}
         \begin{proof}
-            $A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
+            $A = \Phi\;\diag\parens*{A_1,\dotsc,A_m}\Phi^{-1}$を満たす$A_i$が存在することは\cite{システム線形代数}定理1.20を見ればわかる。
             $\Phi$は$\field$から来る入力ベクトルを$A$の不変部分空間の成分に分解する変換器になっている。
             \par
             $A_i$の構成法を示す。一般の場合を示すのは別に難しくないが，式が煩雑になって無意味に難解になるので，具体的な場合を示す。
             例えば$n=4, m=2, d_1=d_2=2$としてみる。この場合の証明が理解できれば一般の証明は楽勝である。
             まず
-            \[A = \Phi\;\diag{A_1,\dotsc,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
+            \[A = \Phi\;\diag\parens*{A_1,\dotsc,A_m}\Phi^{-1} = [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag\parens*{A_1,A_2}[\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]^{-1}\]
             とおく。まず$A_1$を求めてみる。定理\ref{逆行列にその構成縦ベクトルを掛ける}からヒントを得て両辺に$[\bm{w}_1,\bm{w}_2]$を右から掛けて
             \begin{align*}
-                A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag{A_1,A_2}
+                A[\bm{w}_1,\bm{w}_2] &= [\bm{w}_1,\bm{w}_2,\bm{w}_3,\bm{w}_4]\diag\parens*{A_1,A_2}
                 \bracks*{
                     \begin{array}{c}
                         I_2\\

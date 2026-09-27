@@ -67,8 +67,8 @@
                 の如く$A$の特性多項式と等しいから固有値も全て等しい。
                 各固有値$\lambda_i$に対する固有空間$E_{A^\top}(\lambda_i)$の次元は
                 \begin{align*}
-                    \dim E_{A^\top}(\lambda_i) &= \dim\ker(\lambda_i I-A^\top) = \dim \field^n-\rank{\lambda_i I-A^\top} = n-\rank{(\lambda_i I-A)^\top}\\
-                    &=n-\rank{\lambda_i I-A} = \dim E_A(\lambda_i)
+                    \dim E_{A^\top}(\lambda_i) &= \dim\ker(\lambda_i I-A^\top) = \dim \field^n-\rank\parens*{\lambda_i I-A^\top} = n-\rank\parens*{(\lambda_i I-A)^\top}\\
+                    &=n-\rank\parens*{\lambda_i I-A} = \dim E_A(\lambda_i)
                 \end{align*}
                 の如く$A$の固有値$\lambda_i$に対する固有空間の次元と等しい。
             \end{proof}
@@ -156,7 +156,7 @@
                     $\lambda_i$に対応する固有ベクトルを$\vv_i$とする。
                     $A$は$\lambda_i\;(i=0,1,\dots,n)$に関するVandermonde行列$V$を用いて次のように対角化できる。
                     \[
-                        A = V\Lambda V^{-1}\quad\text{where}\quad\Lambda\coloneq\diag{\lambda_0,\lambda_1,\dots,\lambda_n},\quad V\coloneq\begin{bmatrix}
+                        A = V\Lambda V^{-1}\quad\text{where}\quad\Lambda\coloneq\diag\parens*{\lambda_0,\lambda_1,\dots,\lambda_n},\quad V\coloneq\begin{bmatrix}
                             \lambda_0^{n-1} & \lambda_1^{n-1} & \cdots & \lambda_n^{n-1} \\
                             \lambda_0^{n-2} & \lambda_1^{n-2} & \cdots & \lambda_n^{n-2} \\
                             \vdots \\
@@ -180,11 +180,11 @@
                 $A\in\complexNumbers^{N\times N}$を次式で定義する。
                 \[ A \coloneq [\bm{a}_0,\bm{a}_1,\dots,\bm{a}_{N-1}] \]
                 このとき$A$は次のように対角化可能である。
-                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
+                \[ A = \sqrt{N}W\diag\parens*{\DFT\parens*{\bm{a}}}\HerConj{W} \]
                 ここに$W$は$N\times N$ DFT基底行列であり，第$(n,k)$要素は次式で定義される。
                 \[ W_{n,k} \coloneq \frac{1}{\sqrt{N}}\exp i\frac{nk}{N}2\pi \]
-                $\DFT{\bm{a}}$は$\bm{a}$のDFT(離散Fourier変換)であり，次式で定義される。
-                \[ \DFT{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
+                $\DFT\parens*{\bm{a}}$は$\bm{a}$のDFT(離散Fourier変換)であり，次式で定義される。
+                \[ \DFT\parens*{\bm{a}} \coloneq \HerConj{W}\bm{a} \]
                 すなわち第$k$要素は次式である。
                 \[ \sum_{n=0}^{N-1}\conj{W_{k,n}}a_n \]
             \end{shadebox}
@@ -193,15 +193,15 @@
                 $\bm{a}_m$は巡回畳み込みを用いて次式で表せる。
                 \[ \bm{a}_m = \bm{a}\circledast\bm{e}_{N,m} \]
                 巡回畳み込みのDFTの性質より次式が成り立つ。
-                \[ \DFT{\bm{a}_m} = \sqrt{N}\DFT{\bm{a}}\HadamardProd\DFT{\bm{e}_{N,m}} = \sqrt{N}\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
+                \[ \DFT\parens*{\bm{a}_m} = \sqrt{N}\DFT\parens*{\bm{a}}\HadamardProd\DFT\parens*{\bm{e}_{N,m}} = \sqrt{N}\DFT\parens*{\bm{a}}\HadamardProd \HerConj{W}[:,m] \]
                 これより次式が成り立つ。
                 \begin{align*}
-                    \HerConj{W}A &= [\DFT{\bm{a}_0},\DFT{\bm{a}_1},\dots,\DFT{\bm{a}_{N-1}}] \\
-                    &= \sqrt{N}[\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,0],\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,1],\dots,\DFT{\bm{a}}\HadamardProd \HerConj{W}[:,N-1]] \\
-                    &= \sqrt{N}\diag{\DFT{\bm{a}}}\HerConj{W}
+                    \HerConj{W}A &= [\DFT\parens*{\bm{a}_0},\DFT\parens*{\bm{a}_1},\dots,\DFT\parens*{\bm{a}_{N-1}}] \\
+                    &= \sqrt{N}[\DFT\parens*{\bm{a}}\HadamardProd \HerConj{W}[:,0],\DFT\parens*{\bm{a}}\HadamardProd \HerConj{W}[:,1],\dots,\DFT\parens*{\bm{a}}\HadamardProd \HerConj{W}[:,N-1]] \\
+                    &= \sqrt{N}\diag\parens*{\DFT\parens*{\bm{a}}}\HerConj{W}
                 \end{align*}
                 両辺に左から$W$を掛け，$W$のユニタリ性$W\HerConj{W} = I$を用いて次式を得る。
-                \[ A = \sqrt{N}W\diag{\DFT{\bm{a}}}\HerConj{W} \]
+                \[ A = \sqrt{N}W\diag\parens*{\DFT\parens*{\bm{a}}}\HerConj{W} \]
             \end{proof}
         \subsection{Hadamard行列の固有値}
             \begin{shadebox}
@@ -396,15 +396,15 @@
                 各$F_A(\lambda_i)$が$A$の不変部分空間であること(\cite{システム線形代数}定理2.4)と定理\ref{不変部分空間と表現行列}より，
                 $F_A(\lambda_i)$の基底を$\{\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}\}$とし，$\Phi_i \coloneq [\bm{\phi}_{i1},\dotsc,\bm{\phi}_{i{\nu_i}'}],\quad \Phi \coloneq [\Phi_i,\dotsc,\Phi_p]\in\field^{n\times n}$とすれば，
                 次式を満たす正方行列$A_i\in\field^{{\mu_i}'\times{\mu_i}'}\;(i=1,\dotsc,p)$が存在する。
-                \[A = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\]
+                \[A = \Phi\;\diag\parens*{A_1,\dotsc,A_p}\Phi^{-1}\]
                 \par
                 ここで下準備として$A_i$が唯一の固有値$\lambda_i$を持つことを示しておく。
                 まず固有値$\lambda_i$を持つことを示す。$\vx\in E_A(\lambda_i) \subseteq F_A(\lambda_i)$を任意に取り，$F_A(\lambda_i)$の基底で次のように展開する。
                 \[\vx = \sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}}\]
                 これを上式に右から掛けて
                 \begin{align}
-                    A\vx &= \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{n,j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
-                    &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
+                    A\vx &= \Phi\;\diag\parens*{A_1,\dotsc,A_p}\Phi^{-1}\sum_{j=1}^{{\nu_i}'}{c_j\bm{\phi}_{ij}} = \Phi\;\diag\parens*{A_1,\dotsc,A_p}\sum_{j=1}^{{\nu_i}'}{c_j\bm{e}_{n,j+\sum_{k=1}^{i-1}{{\nu_k}'}}}\quad(\because \mathrm{定理\ref{逆行列にその構成縦ベクトルを掛ける}}) \nonumber\\
+                    &= \Phi\;\diag\parens*{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},c_1,\dotsc,c_{{\nu_i}'},\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top \nonumber\\
                     &= \Phi\bracks*{
                             \begin{array}{c}
                                 \bm{0}_{{\nu_1}'}\\
@@ -434,8 +434,8 @@
                 \end{equation}
                 一方で
                 \begin{align*}
-                    (A-\lambda_iI_n)\vx &= A\vx - \lambda_i\vx = \Phi\;\diag{A_1,\dotsc,A_p}\Phi^{-1}\vx - \lambda_i\vx\\
-                    &= \Phi\;\diag{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx\\
+                    (A-\lambda_iI_n)\vx &= A\vx - \lambda_i\vx = \Phi\;\diag\parens*{A_1,\dotsc,A_p}\Phi^{-1}\vx - \lambda_i\vx\\
+                    &= \Phi\;\diag\parens*{A_1,\dotsc,A_p}[\underbrace{0,\dotsc,0}_{{\nu_1}'+\dotsb+{\nu_{i-1}}'},\vy^\top,\underbrace{0,\dotsc,0}_{{\nu_{i+1}}'+\dotsb+{\nu_p}'}]^\top - \lambda_i\vx\\
                     &= \Phi\bracks*{
                         \begin{array}{c}
                             \bm{0}_{{\nu_1}'}\\

@@ -58,10 +58,10 @@
             しかし数学的に「ちゃんとした」理論を作るためには，既存の枠組みのままでは不可能だと分かり次第，思い切ってルールを拡張し，所望の性質が得られるように理屈を先回りして演算を機械的に定義するようなbreak throughが必要なこともある。
             その際に，既存の理論に矛盾しないように構築しなければならないのは言うまでもない。
     \section{諸公式}
-        \subsection{\texorpdfstring{$x>0,z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^\Re{z}$}{x\string^zの絶対値はx\string^Re(z)}}
+        \subsection{\texorpdfstring{$x>0,z\in\complexNumbers$}{x>0, zは複素数}のとき\texorpdfstring{$|x^z|=x^{\Re\parens*{z}}$}{x\string^zの絶対値はx\string^Re(z)}}
             \begin{proof}
                 $z = a + bi\;(a,b\in\realNumbers)$とする。
-                \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^\Re{z}| |\NapierE^{bi\log{x}}| = x^\Re{z} \]
+                \[ |x^z| = |x^{a+bi}| = |x^a x^{bi}| = |x^a| |x^bi| = |x^{\Re\parens*{z}}| |\NapierE^{bi\log{x}}| = x^{\Re\parens*{z}} \]
             \end{proof}
         \subsection{\texorpdfstring{$^\forall n\nmid k,\sum_{l=1}^n{\exp\parens*{i\frac{k}{n}2\pi l}} = 0$}{kはnの倍数でないとする。exp(ikl2π/n)をl=1,2...,nについて足すと0である。}}
             \label{fml:花びら定理}

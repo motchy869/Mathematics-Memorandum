@@ -1,9 +1,9 @@
 \chapter{2変数関数}
-    \section{4象限逆正接: \texorpdfstring{$\atanEx{x}{y}$}{atan2(y,x)}}
+    \section{4象限逆正接: \texorpdfstring{$\atan\parens*{x,y}$}{atan2(y,x)}}
         \begin{shadebox}
-            4象限逆正接$\atanEx{x}{y}$を次で定義する。
+            4象限逆正接$\atan\parens*{x,y}$を次で定義する。
             \[
-                \atanEx{x}{y} \coloneq
+                \atan\parens*{x,y} \coloneq
                 \begin{cases}
                     \atan\parens*{\frac{y}{x}}+\pi & (\text{領域$1$ : }x<0,y>0)\\
                     \frac{\pi}{2} & (\text{領域$2$ : }x=0,y>0)\\
@@ -12,19 +12,19 @@
                     \atan\parens*{\frac{y}{x}}-\pi & (\text{領域$5$ : }x<0,y<0)
                 \end{cases}
             \]
-            $\atanEx{x}{y}$は原点及び$y$軸の負の領域の領域では定義されない。\\
+            $\atan\parens*{x,y}$は原点及び$y$軸の負の領域の領域では定義されない。\\
         \end{shadebox}
         この関数は定義域で$C^1$級である。
         \begin{proof}
             領域1,3,5では連続であり，偏微分可能であって偏微分係数はいずれも
             \begin{align*}
-                \partDeriv{\atanEx{x}{y}}{x}{} &= \frac{-y}{x^2+y^2} \\
-                \partDeriv{\atanEx{x}{y}}{y}{} &= \frac{x}{x^2+y^2}
+                \partDeriv{\atan\parens*{x,y}}{x}{} &= \frac{-y}{x^2+y^2} \\
+                \partDeriv{\atan\parens*{x,y}}{y}{} &= \frac{x}{x^2+y^2}
             \end{align*}
             であり連続だから$C^1$級である。
             \par
             領域2における連続性を示す。領域2上の点$(a,b)\;(a=0,b>0)$に対して
-            \[d = \abs{\atanEx{a}{b}-\atanEx{a+h}{b+k}\ } = \abs{\frac{\pi}{2}-\atanEx{b+k}{h}}\]
+            \[d = \abs{\atan\parens*{a,b}-\atan\parens*{a+h,b+k}\ } = \abs{\frac{\pi}{2}-\atan\parens*{b+k,h}}\]
             とおくと，$k$を十分小さく取れば$b+k>0$なので
             \[
                 d=
@@ -36,5 +36,5 @@
             であり，領域2における連続性が示せた。領域4における連続性も同様に示せる。
             \par
             さて，先程の偏微分係数をみると，幸運なことにこれは領域2,4においても連続である。
-            以上より結局，領域1,2,3,4,5全域で$\atanEx{x}{y}$は$C^1$級である。
+            以上より結局，領域1,2,3,4,5全域で$\atan\parens*{x,y}$は$C^1$級である。
         \end{proof}

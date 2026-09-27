@@ -10,15 +10,15 @@
         \[ g(\vx) \pm d = 0 \iff f(\vx) \pm d\norm{w}_2 = 0 \]
         \par
         $n=2, \bm{w} = [1,1]^\top, c=0.5, d=0.5$の計算例をMathematicaノートブック``\nolinkurl{平面上の直線から距離dだけ離れた直線.nb}''に示した。
-    \section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\GammaFunc{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
+    \section{\texorpdfstring{$n$}{n}次元単位球の体積\texorpdfstring{$V_n$}{Vn}は\texorpdfstring{$\pi^{n/2}(\Gamma\parens*{1+n/2})^{-1}$}{π\string^(n/2) Γ(1+n/2)\string^(-1)}}
         \begin{proof}
             $\Omega(n,r)\;(r\in\realNumbers) \coloneq \setComprehension*{\vx\in\realNumbers^n}{\norm{\vx}_{2}\leq r}$とすると
             \begin{align*}
                 V_n &= \integrate{\Omega(n,1)}{}{1}{}{\vx} = \integrate{-1}{1}{\parens*{\integrate{\Omega(n-1,1-{x_n}^2)}{}{1}{}{\vx}}}{}{x_n} = \integrate{-1}{1}{(\sqrt{1-{x_n}^2})^{n-1}V_{n-1}}{}{x_n} \\
                     &= V_{n-1}\integrate{-1}{1}{(1-x^2)^{(n-1)/2}}{}{x} = 2V_{n-1} \integrate{0}{1}{(1-x^2)^{(n-1)/2}}{}{x} \\
                     &= V_{n-1}\integrate{0}{1}{y^{-1/2}(1-y)^{(n-1)/2}}{}{y}    \quad (y = x^2\text{とおいた}) \\
-                    &= V_{n-1}\Beta{\frac{1}{2}}{\frac{n+1}{2}} = V_{n-1}\frac{\GammaFunc{\frac{1}{2}}\GammaFunc{\frac{n+1}{2}}}{\GammaFunc{1+\frac{n}{2}}} \\
-                    &= V_{n-1}\frac{\sqrt{\pi}\GammaFunc{\frac{n+1}{2}}}{\GammaFunc{\frac{(n+1)+1}{2}}} \\
-                \therefore\; V_n &= V_1\prod_{i=3}^{n+1}{\sqrt{\pi}\frac{\GammaFunc{i/2}}{\GammaFunc{(i+1)/2}}} = 2\pi^{(n-1)/2}\frac{\GammaFunc{3/2}}{\GammaFunc{1+n/2}} = \frac{\pi^{n/2}}{\GammaFunc{1+n/2}}
+                    &= V_{n-1}\Beta\parens*{\frac{1}{2},\frac{n+1}{2}} = V_{n-1}\frac{\Gamma\parens*{\frac{1}{2}}\Gamma\parens*{\frac{n+1}{2}}}{\Gamma\parens*{1+\frac{n}{2}}} \\
+                    &= V_{n-1}\frac{\sqrt{\pi}\Gamma\parens*{\frac{n+1}{2}}}{\Gamma\parens*{\frac{(n+1)+1}{2}}} \\
+                \therefore\; V_n &= V_1\prod_{i=3}^{n+1}{\sqrt{\pi}\frac{\Gamma\parens*{i/2}}{\Gamma\parens*{(i+1)/2}}} = 2\pi^{(n-1)/2}\frac{\Gamma\parens*{3/2}}{\Gamma\parens*{1+n/2}} = \frac{\pi^{n/2}}{\Gamma\parens*{1+n/2}}
             \end{align*}
         \end{proof}

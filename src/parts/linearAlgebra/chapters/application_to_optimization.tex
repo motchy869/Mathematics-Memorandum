@@ -14,7 +14,7 @@
                 これは$f(\mathring{\vx} + \itgElem{\vx})$の$\itgElem{\vx}$に関する1次の項が0であることと同値である。
                 この1次の項を$g(\itgElem{\vx})$とすると
                 \begin{align*}
-                    g(\itgElem{\vx}) &= \HerConj{(A\itgElem{\vx})}(A\mathring{\vx} + \bm{b}) + \HerConj{(A\mathring{\vx} + \bm{b})}(A\itgElem{\vx}) = 2\Re{(\HerConj{\mathring{\vx}}\HerConj{A}A + \HerConj{\bm{b}}A)\itgElem{\vx}}
+                    g(\itgElem{\vx}) &= \HerConj{(A\itgElem{\vx})}(A\mathring{\vx} + \bm{b}) + \HerConj{(A\mathring{\vx} + \bm{b})}(A\itgElem{\vx}) = 2\Re\parens*{(\HerConj{\mathring{\vx}}\HerConj{A}A + \HerConj{\bm{b}}A)\itgElem{\vx}}
                 \end{align*}
                 であるから，$\mathring{\vx}$に関する条件は$\HerConj{\mathring{\vx}}\HerConj{A}A + \HerConj{\bm{b}}A = O$，すなわち$\HerConj{A}A\mathring{\vx} = -\HerConj{A}\bm{b}$である。
             \end{proof}
@@ -28,7 +28,7 @@
                 $\bm{h} \in \complexNumbers^n,g_i(\mathring{\vx} + \bm{h}) = 0\;(i=1,\dotsc,m)$とする。
                 $g_i(\mathring{\vx} + \bm{h}) = 0 \iff \bm{c}_i^\top\bm{h} = 0$に注意する。
                 \begin{align*}
-                    f(\mathring{\vx} + \bm{h}) &= f(\mathring{\vx}) + 2\Re{\HerConj{(A\mathring{\vx}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\vx}) + 2\Re{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\
+                    f(\mathring{\vx} + \bm{h}) &= f(\mathring{\vx}) + 2\Re\parens*{\HerConj{(A\mathring{\vx}+\bm{b})}A\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} = f(\mathring{\vx}) + 2\Re\parens*{\sum_{i=1}^m \mathring{\lambda}_i\bm{c}_i^\top\bm{h}} + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \\
                     &= f(\mathring{\vx}) + \HerConj{\bm{h}}\HerConj{A}A\bm{h} \geq f(\mathring{\vx})
                 \end{align*}
             \end{proof}

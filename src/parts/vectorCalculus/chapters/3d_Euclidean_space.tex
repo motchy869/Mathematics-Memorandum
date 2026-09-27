@@ -18,7 +18,7 @@
             次式で定める単位ベクトルを$S_T$の$u_i$方向単位ベクトルと呼ぶ。
             \[ \bm{j}_i := \frac{1}{h_i}\partDeriv{\vr}{u_i}{}\in\EuclideanSpace^3 \]
             $T$のJacobi行列の列が互いに直交するため，$\bm{j}_1,\bm{j}_2,\bm{j}_3$は互いに直交する。
-            $H\coloneq\diag{h_1,h_2,h_3}$とすると$J^\top J = H^2$であり，$J^{-1} = H^{-2}J^\top$である。
+            $H\coloneq\diag\parens*{h_1,h_2,h_3}$とすると$J^\top J = H^2$であり，$J^{-1} = H^{-2}J^\top$である。
             つまり次式が成り立つ。
             \begin{equation}
                 \partDeriv{u_i}{r_j}{} = J^{-1}[i,j] = \parens*{H^{-2}J^\top}[i,j] = \frac{1}{h_j^2}J[j,i] = \frac{1}{h_i^2}\partDeriv{r_j}{u_i}{}
@@ -32,7 +32,7 @@
                 \[ \bm{i}_i = \sum_{j=1}^3 \frac{1}{h_j}\partDeriv{r_i}{u_j}{}\bm{j}_j \quad (i=1,2,3) \]
                 つまり行列を用いて次のように表せる。
                 \[ [\bm{i}_1, \bm{i}_2, \bm{i}_3] = [\bm{j}_1, \bm{j}_2, \bm{j}_3]JH^{-1} \]
-                ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
+                ここに$J$は$T$のJacobi行列であり，$H := \diag\parens*{h_1,h_2,h_3}$である。
             \end{shadebox}
             \begin{proof}
                 $\bm{j}_1,\bm{j}_2,\bm{j}_3$は正規直交基底であるから次式が成り立つ。
@@ -45,7 +45,7 @@
                 既出の記号の定義を引き継ぐ。
                 3次元Euclid空間上のベクトル$\vA(\vr) = \bm{i}_1 A_1(\vr) + \bm{i}_2 A_2(\vr) + \bm{i}_3 A_3(\vr)$を$u_1,u_2,u_3$直交座標系で表したものを$\bm{j}_1 \tilde{A}_1(\bm{u}) + \bm{j}_2 \tilde{A}_2(\bm{u}) + \bm{j}_3 \tilde{A}_3(\bm{u})$とするとき，$A_1,A_2,A_3$と$\tilde{A}_1,\tilde{A}_2,\tilde{A}_3$の間には次の関係式が成り立つ。
                 \[ [A_1,A_2,A_3]^\top = JH^{-1}[\tilde{A}_1,\tilde{A}_2,\tilde{A}_3]^\top \]
-                ここに$J$は$T$のJacobi行列であり，$H := \diag{h_1,h_2,h_3}$である。
+                ここに$J$は$T$のJacobi行列であり，$H := \diag\parens*{h_1,h_2,h_3}$である。
             \end{shadebox}
             \begin{proof}
                 \begin{align*}
@@ -70,7 +70,7 @@
                 %     \bm{j}_i = \frac{1}{h_i}\partDeriv{\vr}{u_i}{} = \frac{1}{h_i}\partDerivLong{\sum_{j=1}^3 r_j\bm{i}_j}{u_i}{} = \frac{1}{h_i}[\bm{i}_1,\bm{i}_2,\bm{i}_3]\bracks*{\partDeriv{r_1}{u_i}{},\partDeriv{r_2}{u_i}{},\partDeriv{r_3}{u_i}{}}^\top \\
                 %     \therefore\;[\bm{j}_1,\bm{j}_2,\bm{j}_3] = [\bm{i}_1,\bm{i}_2,\bm{i}_3]\bracks*{\frac{1}{h_j}\partDeriv{r_i}{u_j}{}}_{(i,j)\in\{1,2,3\}^2} = [\bm{i}_1,\bm{i}_2,\bm{i}_3]JH^{-1}
                 % \end{gather*}
-                % ここに$\quad H \coloneq \diag{h_1,h_2,h_3}$であり，$J$は$T$のJacobi行列である。
+                % ここに$\quad H \coloneq \diag\parens*{h_1,h_2,h_3}$であり，$J$は$T$のJacobi行列である。
                 % 以上より次式が成り立つ。
                 % \[ [\bm{i}_1,\bm{i}_2,\bm{i}_3] = [\bm{j}_1,\bm{j}_2,\bm{j}_3]HJ^{-1} \]
                 % $\partDeriv{\phi}{r_i}{}$を評価すると次式を得る。
@@ -480,7 +480,7 @@
             \end{shadebox}
             \begin{proof}
                     まず$\bm{u}$が$\vv_1,\dotsc,\vv_m$の一次結合で表せることを示す。\\
-                    $W \coloneq \vecSpan{\vv_1,\dotsc,\vv_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから，適当な定数$c_1,\dotsc,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
+                    $W \coloneq \vecSpan\bracks*{\vv_1,\dotsc,\vv_m}$とすると$\realNumbers^n = W\oplus W^\bot$であるから，適当な定数$c_1,\dotsc,c_m$及び適当なベクトル$\bm{w}_t\in W^\bot$を用いて
                     \begin{equation}
                         \bm{u} = \sum_{i=1}^{m}{c_i\vv_i} + \bm{w}_t
                     \end{equation}

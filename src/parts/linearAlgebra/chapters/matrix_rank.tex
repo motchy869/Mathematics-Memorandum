@@ -1,6 +1,6 @@
 \chapter{行列の階数}
-    \section{\texorpdfstring{$\rank{AB}=\rank{BA}$}{rank(AB)=rank(BA)}とは限らない}
-        例えば次の例では$\rank{AB} = 2 \neq \rank{BA}=0$。
+    \section{\texorpdfstring{$\rank\parens*{AB}=\rank\parens*{BA}$}{rank(AB)=rank(BA)}とは限らない}
+        例えば次の例では$\rank\parens*{AB} = 2 \neq \rank\parens*{BA}=0$。
         \[
             A =
             \begin{bmatrix}
@@ -14,7 +14,7 @@
                 0 & 0 & 0 & 1
             \end{bmatrix}
         \]
-    \section{\texorpdfstring{$T$}{T}が正則でも\texorpdfstring{$\rank{ATB}=\rank{AB}$}{rank(ATB) = rank(AB)}とは限らない}
+    \section{\texorpdfstring{$T$}{T}が正則でも\texorpdfstring{$\rank\parens*{ATB}=\rank\parens*{AB}$}{rank(ATB) = rank(AB)}とは限らない}
         \begin{proof}
             \[
                 A =
@@ -53,7 +53,7 @@
             まず，$\vx^\top A=\bm{0}_{1\times n}$は$\sum_{i=1}^{m}x_i\bm{a}_i=\bm{0}_{n\times1}$ ($\bm{a}_i$は$A$の第$i$行ベクトル)と同値である。
             $A$がフルランクのとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$\vx=\bm{0}_{m\times1}$でなくてはならない。逆に$\vx^\top A=\bm{0}_{1\times n}\Rightarrow\vx=\bm{0}_{m\times1}$であるとき，$\{\bm{a}_1,\bm{a}_2,\dotsc,\bm{a}_m\}$は一次独立だから$A$はフルランク。
         \end{proof}
-    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\rank{A} = \rank{\HerConj{A} A} = \rank{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
+    \section{\texorpdfstring{$A \in \complexNumbers^{m\times n},\rank\parens*{A} = \rank\parens*{\HerConj{A} A} = \rank\parens*{A\HerConj{A}}$}{A∈C\string^(m×n), rank(A) = rank(A\string^*A) = rank(AA\string^*)}}
         次元定理を用いる証明
         \begin{proof}
             $\vx \in \complexNumbers^n$とする。
@@ -62,15 +62,15 @@
             逆に$\vx \in \ker{\HerConj{A}A}$ならば$\HerConj{A}A\vx = \bm{0}$なので$0 = \HerConj{\vx}\HerConj{A}A\vx = \norm{A\vx}_2^2$より$A\vx = \bm{0}$。
             つまり$\vx \in \ker{A}$だから$\ker{A} \supseteq \ker{\HerConj{A} A}$。
             以上より$\ker{A} = \ker{\HerConj{A} A}$。
-            これと次元定理より$\rank{A} = \dim(\img{A}) = n - \dim(\ker{A}) = n - \dim(\ker{\HerConj{A}A}) = \dim(\img{\HerConj{A}A}) = \rank{\HerConj{A}A}$。
+            これと次元定理より$\rank\parens*{A} = \dim(\img\parens*{A}) = n - \dim(\ker{A}) = n - \dim(\ker{\HerConj{A}A}) = \dim(\img\parens*{\HerConj{A}A}) = \rank\parens*{\HerConj{A}A}$。
             \par
             この結果を使って定理の主張の右側の等号成立は直ちに示される:\;
-            $\rank{A} = \rank{\HerConj{A}} = \rank{\HerConj{(\HerConj{A})}(\HerConj{A})} = \rank{A\HerConj{A}}$。
+            $\rank\parens*{A} = \rank\parens*{\HerConj{A}} = \rank\parens*{\HerConj{(\HerConj{A})}(\HerConj{A})} = \rank\parens*{A\HerConj{A}}$。
         \end{proof}
         特異値分解を用いる証明
         \begin{proof}
-            $A$の特異値分解を$U\Sigma \HerConj{V}$とすると，$\rank{A\HerConj{A}} = \rank{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank{U\Sigma^2 \HerConj{U}} = \rank{\Sigma^2} = \rank{\Sigma} = \rank{A}$。
-            同様にして$\rank{\HerConj{A}A} = \rank{A}$も示せる。
+            $A$の特異値分解を$U\Sigma \HerConj{V}$とすると，$\rank\parens*{A\HerConj{A}} = \rank\parens*{U\Sigma \HerConj{V}V\Sigma \HerConj{U}} = \rank\parens*{U\Sigma^2 \HerConj{U}} = \rank\parens*{\Sigma^2} = \rank\parens*{\Sigma} = \rank\parens*{A}$。
+            同様にして$\rank\parens*{\HerConj{A}A} = \rank\parens*{A}$も示せる。
         \end{proof}
     \section{\texorpdfstring{$A\in\field^{m\times n}$}{A∈F\string^(m×n)}の階数が\texorpdfstring{$n$}{n}ならば\texorpdfstring{$\HerConj{A} A$}{A\string^*A}は正則}
         \label{列フルランク行列を掛けあわせて正則行列を作る}
@@ -92,7 +92,7 @@
             とすれば
             \[AT = P\quad(A = PT^{-1})\]
             であり，$T$は正則である。さらに$\HerConj{P} P = I_{n\times n}$であるから
-            \[\rank{\HerConj{A} A} = \rank{\HerConj{\parens*{T^{-1}}} \HerConj{P} PT^{-1}} = \rank{\HerConj{\parens*{T^{-1}}} I_{n\times n}T^{-1}} = \rank{I_{n\times n}} = n\]
+            \[\rank\parens*{\HerConj{A} A} = \rank\parens*{\HerConj{\parens*{T^{-1}}} \HerConj{P} PT^{-1}} = \rank\parens*{\HerConj{\parens*{T^{-1}}} I_{n\times n}T^{-1}} = \rank\parens*{I_{n\times n}} = n\]
         \end{proof}
         \begin{proof}
             (より簡単な証明)
@@ -130,9 +130,9 @@
             \]
         \end{shadebox}
         \begin{proof}
-            $\ker(A)$の基底を$\{\vx_{r+1},\vx_{r+2},\dotsc,\vx_n\}$とする(次元定理から$\dim{(\ker(A))} = n-\dim{(\img{A})} = n-\rank{A} = n-r$)。
+            $\ker(A)$の基底を$\{\vx_{r+1},\vx_{r+2},\dotsc,\vx_n\}$とする(次元定理から$\dim{(\ker(A))} = n-\dim{(\img\parens*{A})} = n-\rank\parens*{A} = n-r$)。
             これを含む$\field^n$の基底を$\{\vx_1,\vx_2,\dotsc,\vx_r,\vx_{r+1},\dotsc,\vx_n\}$とすると
-            \[\mathrm{span}[A\vx_1,A\vx_2,\dotsc,A\vx_r]=\img{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
+            \[\mathrm{span}[A\vx_1,A\vx_2,\dotsc,A\vx_r]=\img\parens*{A}\subseteq\field^m\quad\mathrm{(証明は次元定理を参照)}\]
             である。$\vy_i\coloneq A\vx_i\quad(i=1,2,\dotsc,r)$とし，これらを含む$\field^m$の基底を$\{\vy_1,\vy_2,\dotsc,\vy_r,\vy_{r+1},\dotsc,\vy_m\}$とすると
             $T_x\coloneq[\vx_1,\vx_2,\dotsc,\vx_n],\quad T_y\coloneq[\vy_1,\vy_2,\dotsc,\vy_m]$は正則であり，
             \begin{align*}
@@ -153,7 +153,7 @@
         \end{proof}
     \section{同じ型の行列の階数が等しいための必要十分条件}
         \begin{shadebox}
-            $A,B\in\field^{m\times n}$について$\rank{A}=\rank{B}$であるための必要十分条件は，適当な正則行列が存在して$AT_1=T_2B$となることである。
+            $A,B\in\field^{m\times n}$について$\rank\parens*{A}=\rank\parens*{B}$であるための必要十分条件は，適当な正則行列が存在して$AT_1=T_2B$となることである。
         \end{shadebox}
         \begin{proof}
             (必要)
@@ -168,7 +168,7 @@
             (十分)
             \par
             ある行列に正則行列を掛けても階数は変化しない。
-            \[\rank{A}=\rank{AT_1}=\rank{T_2B}=\rank{B}\]
+            \[\rank\parens*{A}=\rank\parens*{AT_1}=\rank\parens*{T_2B}=\rank\parens*{B}\]
         \end{proof}
     \section{優対角正方行列は正則}
         \begin{proof}
