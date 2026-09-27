@@ -64,7 +64,7 @@
                 任意の$0 < \varepsilon < \mLebO\parens*{A} - \mLebO\parens*{B}$に対してある直方体領域の集合$R$が存在して$B\subset R,|R| < \mLebO\parens*{B} + \varepsilon$となる。
                 $A\subset B\subset R$となるので$\mLebO\parens*{A} \leq |R| < \mLebO\parens*{B} + \varepsilon < \mLebO\parens*{A}$となり矛盾。
             \end{proof}
-        \subsection{\texorpdfstring{$\mLebO\parens*{A\cup B}\leq\mLebO\parens*{A} + \mLebO\parens*{B}$}{mLo(A∪B)≦mLo(A)+mLo(B)}}
+        \subsection{\texorpdfstring{$\mLebO\parens*{A\cup B}\leq\mLebO\parens*{A} + \mLebO\parens*{B}$}{mLo(A∪B)≤mLo(A)+mLo(B)}}
             \begin{proof}
                 背理法で示す。仮に$\mLebO\parens*{A\cup B} > \mLebO\parens*{A} + \mLebO\parens*{B}$とする。
                 任意の$0 < \varepsilon < (\mLebO\parens*{A\cup B} - (\mLebO\parens*{A} + \mLebO\parens*{B}))/2$に対してある直方体領域の集合$R_1,R_2$が存在して$A\subset R_1, B\subset R_2,|R_1|<\mLebO\parens*{A} + \varepsilon,|R_2| < \mLebO\parens*{B} + \varepsilon$となる。
@@ -77,7 +77,7 @@
                 任意の$n\in\naturalNumbers$に対してある直方体領域$R_n$が存在して$A_n\subset R_n,|R_n| < \mLebO\parens*{A_n} + a_n$となる。
                 $\bigcup_{n=1}^\infty A_n \subset \bigcup_{n=1}^\infty R_n$となるので$\mLebO\parens*{\bigcup_{n=1}^\infty A_n} \leq |\bigcup_{n=1}^\infty R_n| \leq \sum_{n=1}^\infty |R_n| = \sum_{n=1}^\infty \mLebO\parens*{A_n} + \sum_{n=1}^\infty a_n < \sum_{n=1}^\infty \mLebO\parens*{A_n} + d < \mLebO\parens*{\bigcup_{n=1}^\infty A_n}$となり矛盾。
             \end{proof}
-        \subsection{有界集合\texorpdfstring{$A$}{A}に対して\texorpdfstring{$\mLebO\parens*{A}\leq\mJo\parens*{A}$}{Lebesgue外測度≦Jordan外測度}}
+        \subsection{有界集合\texorpdfstring{$A$}{A}に対して\texorpdfstring{$\mLebO\parens*{A}\leq\mJo\parens*{A}$}{Lebesgue外測度≤Jordan外測度}}
             \label{subsec: Lebesgue外測度≦Jordan外測度}
             \begin{proof}
                 背理法で示す。仮に$\mLebO\parens*{A} > \mJo\parens*{A}$とし，$0<\varepsilon<\mLebO\parens*{A} - \mJo\parens*{A}$とする。
