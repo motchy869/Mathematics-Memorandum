@@ -6,12 +6,12 @@
             $A^{-1} = P\diag{\lambda_1,\dotsc,\lambda_n}^{-1}\HerConj{P} = P\diag{1/\lambda_1,\dotsc,1/\lambda_n}\HerConj{P}$である。
             よって$A^{-1}$は対称で固有値が全て正なので正定である。
         \end{proof}
-    \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\vx^\top A\vx=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\vx\in\Ker{A}$}{x∈Ker(A)}}
+    \section{\texorpdfstring{$A$}{A}が半正定で\texorpdfstring{$\vx^\top A\vx=0$}{x\string^⊤Ax = 0}ならば\texorpdfstring{$\vx\in\ker(A)$}{x∈Ker(A)}}
         \begin{proof}
             $A$を$n\times n$実対称行列とする。
             $A$を対角化する実直交行列を$P = [\bm{p}_1,\dotsc,\bm{p}_n]$とし，$\bm{p}_i$に対応する固有値を$\lambda_i$とすると，$A$が半正定だから$\lambda_i\geq 0$である。
             $\vx$を$\realNumbers^n$の正規直交基底$\{\bm{p}_1,\dotsc,\bm{p}_n\}$で展開して$\vx = \sum_{i=1}^n c_i\bm{p}_i$とすると$0 = \vx^\top A\vx = \sum_{i=1}^n \lambda_i {c_i}^2$だから正の固有値に対応する$c_i$は全て0である。
-            ゆえに$\vx$は$A$の固有値$0$の固有空間すなわち$\Ker{A}$に属する。
+            ゆえに$\vx$は$A$の固有値$0$の固有空間すなわち$\ker(A)$に属する。
         \end{proof}
     \section{Gram行列は半正定}
         \begin{proof}

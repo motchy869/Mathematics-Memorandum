@@ -20,10 +20,10 @@
         \end{shadebox}
         \begin{proof}
             $A^\dagger\bm{b}$が解であることと，$A^\dagger = \HerConj{A}(A\HerConj{A})^{-1}$であることは既知とする(特異値分解を用いて確かめられる)。
-            $A\vx = \bm{b}$の任意の解を$\vx$とすると，$A(A^\dagger\bm{b} - \vx) = \bm{0}$だから$A^\dagger\bm{b} - \vx \in \Ker{A}$つまりある適当な$\vv\in\Ker{A}$が存在して$\vx = A^\dagger\bm{b} + \vv$である。
+            $A\vx = \bm{b}$の任意の解を$\vx$とすると，$A(A^\dagger\bm{b} - \vx) = \bm{0}$だから$A^\dagger\bm{b} - \vx \in \ker(A)$つまりある適当な$\vv\in\ker(A)$が存在して$\vx = A^\dagger\bm{b} + \vv$である。
             \begin{align*}
                 \norm{\vx}_2^2 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\vv}_2^2 + 2\Re{\inProd{\vv}{A^\dagger\bm{b}}} = \norm{A^\dagger\bm{b}}_2^2 + \norm{\vv}_2^2 + 2\Re{\HerConj{\vv}\HerConj{A}(A\HerConj{A})^{-1}\bm{b}} \\
-                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\vv}_2^2 + 2\Re{\HerConj{(A\vv)}(A\HerConj{A})^{-1}\bm{b}} \quad (\because \vv \in \Ker{A}) \\
+                &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\vv}_2^2 + 2\Re{\HerConj{(A\vv)}(A\HerConj{A})^{-1}\bm{b}} \quad (\because \vv \in \ker(A)) \\
                 &= \norm{A^\dagger\bm{b}}_2^2 + \norm{\vv}_2^2 \geq \norm{A^\dagger\bm{b}}_2^2
             \end{align*}
         \end{proof}

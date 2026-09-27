@@ -67,7 +67,7 @@
                 の如く$A$の特性多項式と等しいから固有値も全て等しい。
                 各固有値$\lambda_i$に対する固有空間$E_{A^\top}(\lambda_i)$の次元は
                 \begin{align*}
-                    \dim E_{A^\top}(\lambda_i) &= \dim\Ker{\lambda_i I-A^\top} = \dim \field^n-\rank{\lambda_i I-A^\top} = n-\rank{(\lambda_i I-A)^\top}\\
+                    \dim E_{A^\top}(\lambda_i) &= \dim\ker(\lambda_i I-A^\top) = \dim \field^n-\rank{\lambda_i I-A^\top} = n-\rank{(\lambda_i I-A)^\top}\\
                     &=n-\rank{\lambda_i I-A} = \dim E_A(\lambda_i)
                 \end{align*}
                 の如く$A$の固有値$\lambda_i$に対する固有空間の次元と等しい。
@@ -303,9 +303,9 @@
             \begin{proof}
                 \[\psi(\lambda) = \prod_{i=1}^{p}{(\lambda-\lambda_i)^{\mu_i}}\]
                 とする。但し$\lambda_i$は$A$の相異なる$p$個の固有値である。このとき$\field^n$は次のように直和分解できる(\cite{新微分方程式対話}\;P77\;「$\NapierE^{Mt}$と一般固有値問題」)。
-                \[\field^n = \bigoplus_{i=1}^p{\Ker{(A-\lambda I)^{\mu_i}}}\]
+                \[\field^n = \bigoplus_{i=1}^p{\ker((A-\lambda I)^{\mu_i})}\]
                 $\psi(\lambda)$より低次のいかなる多項式によっても消去できない$\vx\in\field^n$を構成しよう。
-                \[\Ker{(A-\lambda_i I)^{\mu_i}}/\Ker{(A-\lambda_i I)^{\mu_i-1}}\supset\{\bm{0}\}\]
+                \[\ker((A-\lambda_i I)^{\mu_i})/\ker((A-\lambda_i I)^{\mu_i-1})\supset\{\bm{0}\}\]
                 である(さもなくば$\psi(\lambda)$が最小多項式であったことに矛盾する!)から，ここからひとつベクトル$\vx_i$をとると自然数$k_i$につき
                 \[
                     (A-\lambda I)^{k_i}\vx_i
@@ -382,7 +382,7 @@
         %\subsection{相異なる固有値に関する一般固有空間同士の共通部分は$\{\bm{0}\}$}
         %    \begin{shadebox}
         %        $\lambda_i \neq \lambda_j$を$A\in\complexNumbers^{n\times n}$の異なる固有値とし，その代数的重複度を$n_i,n_j$とする。
-        %        一般固有空間を$F_i\coloneq\Ker{(A-\lambda_i)^{n_i}},F_j\coloneq\Ker{(A-\lambda_j)^{n_j}}$と表すと，$F_i\cap F_j=\{\bm{0}_n\}$
+        %        一般固有空間を$F_i\coloneq\ker((A-\lambda_i)^{n_i}),F_j\coloneq\ker((A-\lambda_j)^{n_j})$と表すと，$F_i\cap F_j=\{\bm{0}_n\}$
         %    \end{shadebox}
         \subsection{一般固有空間への直和分解}
             \label{一般固有空間への分解}
@@ -477,7 +477,7 @@
             \begin{proof}
                 直前の定理より$\nu_i = \dim{F_A(\lambda)}$であることと，$F_A(\lambda) \supseteq E_A(\lambda)$であることより従う。
             \end{proof}
-        \subsection{\texorpdfstring{$AB=O$}{AB=O}でも\texorpdfstring{$\realNumbers^n = \Ker{A} + \Ker{B}$}{R\string^n = Ker(A) + Ker(B)}とは限らない}
+        \subsection{\texorpdfstring{$AB=O$}{AB=O}でも\texorpdfstring{$\realNumbers^n = \ker(A) + \ker(B)$}{R\string^n = ker(A) + ker(B)}とは限らない}
             \begin{proof}
                 例えば
                 $

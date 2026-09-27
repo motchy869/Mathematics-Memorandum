@@ -1,4 +1,27 @@
 \chapter{行列のノルム}
+    \section{Frobeniusノルム}
+        \subsection{Frobeniusノルムは特異値の2乗和の平方根}
+            \begin{shadebox}
+                $m,n\in\naturalNumbers,q=\min\{m,n\},A\in\complexNumbers^{m\times n}$とする。
+                $\sigma_i\;(i=1,2,\dotsc,q)$を$A$の特異値とすると$\norm{A}_\mathrm{F} = \sqrt{\sum_{i=1}^q \sigma_i^2}$である。
+            \end{shadebox}
+            \noindent
+            （短い証明）
+            \begin{proof}
+                \[ \norm{A}_\mathrm{F}^2=\tr{A^*A}=\sum_{\lambda\in\spec{A^*A}}\lambda=\sum_{i=1}^q\sigma_i^2 \]
+            \end{proof}
+            \noindent
+            （初等的な証明）
+            \begin{proof}
+                $A$の特異値分解を$A=U\Sigma V^*$とする。
+                $\bm{u}_i,\bm{v}_i$をそれぞれ$U$と$V$の第$i$列ベクトルとする。
+                次式が成り立つ。
+                \begin{align*}
+                    \norm{A}_\mathrm{F}^2 &= \sum_{i=1}^m \sum_{j=1}^n \abs{\bm{e}_{m,i}^\top A \bm{e}_{n,j}}^2 = \sum_{i=1}^m \sum_{j=1}^n \abs{\bm{e}_{m,i}^\top \parens*{\sum_{k=1}^q \sigma_k \bm{u}_k \bm{v}_k^*} \bm{e}_{n,j}}^2 = \sum_{i=1}^m \sum_{j=1}^n \abs{\sum_{k=1}^q \sigma_k \bm{e}_{m,i}^\top \bm{u}_k \bm{v}_k^* \bm{e}_{n,j}}^2 \\
+                    &= \sum_{i=1}^m \sum_{j=1}^n \abs{\sum_{k=1}^q \sigma_k \bm{u}_k[i]\conj{\bm{v}_k[j]}}^2 = \sum_{i=1}^m \sum_{j=1}^n \sum_{k=1}^q \sum_{l=1}^q \sigma_k \sigma_l \bm{u}_k[i]\conj{\bm{v}_k[j]}\conj{\bm{u}_l[i]}\bm{v}_l[j] \\
+                    &= \sum_{k=1}^q \sum_{l=1}^q \sigma_k \sigma_l \sum_{i=1}^m \bm{u}_k[i]\conj{\bm{u}_l[i]} \sum_{j=1}^n \conj{\bm{v}_k[j]}\bm{v}_l[j] = \sum_{k=1}^q \sum_{l=1}^q \sigma_k \sigma_l (\bm{u}_l^* \bm{u}_k) (\bm{v}_k^* \bm{v}_l) = \sum_{k=1}^q \sum_{l=1}^q \sigma_k \sigma_l \delta_{k,l} = \sum_{k=1}^q \sigma_k^2
+                \end{align*}
+            \end{proof}
     \section{2-ノルム(2-演算子ノルム)}
         \subsection{定義}
             \begin{shadebox}

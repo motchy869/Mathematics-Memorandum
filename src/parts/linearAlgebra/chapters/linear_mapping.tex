@@ -38,7 +38,7 @@
             \[c_1f(\vv_1)+c_2f(\vv_2)+\dotsb+c_nf(\vv_n) = 0,\;\;c_1,c_2,\dots c_n\in\field\]
             とおくと$f$の線形性から
             \[f(c_1\vv_1+c_2\vv_2+\dotsb+c_n\vv_n) = 0\]
-            $f$は単射であったから$\Ker{f}=\{\bm{0}\}$なので
+            $f$は単射であったから$\ker(f)=\{\bm{0}\}$なので
             \[c_1\vv_1+c_2\vv_2+\dotsb+c_n\vv_n = 0\]
             $\{\vv_1,\vv_2,\dots,\vv_n\}$は$V$の基底なので
             \[c_1=c_2=\dotsb=c_n = 0\]
@@ -48,8 +48,8 @@
             ($\Leftarrow$)
             \par
             次元定理から
-            \[\dim(\img{f}) + \dim(\Ker{f}) = \dim(V) = \dim(W) = n\]
-            $f$は全射であったから$\img{f}=W$であるので$\dim(\img{f}) = n$。よって上式より$\dim(\Ker{f}) = 0$なので$f$は単射である。\\
+            \[\dim(\img{f}) + \dim(\ker(f)) = \dim(V) = \dim(W) = n\]
+            $f$は全射であったから$\img{f}=W$であるので$\dim(\img{f}) = n$。よって上式より$\dim(\ker(f)) = 0$なので$f$は単射である。\\
             (別証)
             \par
             $f$が全射であるから，$W$の任意の基底$\{\bm{w}_1,\dotsc,\bm{w}_n\}$に対して適当な$V$のベクトル$\vv_1,\dotsc,\vv_n$が存在して
@@ -62,7 +62,7 @@
             $\vx$を先程の$V$の基底で展開して$\vx=c_1\vv_1+\dotsb+c_n\vv_n$とすると，
             \[\bm{0} = f(\vx) = f(c_1\vv_1+\dotsb+c_n\vv_n) = c_1\bm{w}_1 + \dotsb + c_n\bm{w}_n\]
             より$c_1=\dotsb=c_n=0$となるから$\vx=\bm{0}$である。
-            すなわち$\Ker{f}=\{\bm{0}\}$なので$f$は単射である。
+            すなわち$\ker(f)=\{\bm{0}\}$なので$f$は単射である。
         \end{proof}
     \section{\texorpdfstring{$\dim{V}=\dim{W}$}{dim(V)=dim(W)}ならば全単射線形写像\texorpdfstring{$f:V\to W$}{f:V→W}が存在する}
         \begin{proof}
