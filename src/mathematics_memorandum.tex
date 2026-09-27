@@ -1,14 +1,14 @@
 ﻿% ---------- document information ----------
 % document version number
 \newcommand{\docVerMajor}{0}
-\newcommand{\docVerMinor}{24}
+\newcommand{\docVerMinor}{25}
 \newcommand{\docVerPatch}{0}
 \newcommand{\docVerWip}{} % -wip for work in progress, empty string for stable version
 \newcommand{\docVer}{\docVerMajor.\docVerMinor.\docVerPatch\docVerWip}
 
 \title{数学備忘録}
 \author{motchy}
-\date{\西暦 2015年5月27日 $\sim$ \today \\ver \docVer}
+\date{\西暦2015年5月27日$\sim$ \today \\ver \docVer}
 % --------------------
 
 \RequirePackage{plautopatch}
@@ -22,12 +22,15 @@
 \usepackage{arydshln}
 \usepackage{ascmac}
 \usepackage{bbm}
+\usepackage{braket}
 % \usepackage{bytefield} % currently not used
+% \usepackage{cases} % currently not used
 \usepackage{chngcntr} % for counterwithin command
 \usepackage[usenames]{color}
 \usepackage{currfile}
 % \usepackage{datatool} % currently not used
 \usepackage{empheq}
+\usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage[T1]{fontenc}
 \usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
@@ -38,11 +41,11 @@
 \usepackage{listingsutf8, jvlisting}
 % \usepackage{ltablex} % [tabularx 環境と longtable 環境を同時に使いたい](https://mrikc.hatenablog.com/entry/2015/09/04/020128)
 % \keepXColumns % needed to use X column type in ltablex environment
-\usepackage{luacode}
+% \usepackage{luacode} % currently not used
 \usepackage{makecell} % [How to add a forced line break inside a table cell](https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell)
-\usepackage{pdflscape}
+% \usepackage{pdflscape} % currently not used
 \usepackage[group-separator={,}]{siunitx}
-\usepackage{tablefootnote}
+% \usepackage{tablefootnote} % currently not used
 \usepackage{tocloft} % to remove paragraph indentation in table of contents
 
 % for \arrayrulecolor command
@@ -50,8 +53,14 @@
 \usepackage[table,x11names]{xcolor}
 
 \usepackage{ulem} % for \uline etc.
-\usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
+\usepackage{upgreek} % for upright Greek letters in math mode (\upalpha, \upbeta, \upgamma, ...)
+% \usepackage{xspace} % [Space after LaTeX commands](https://tex.stackexchange.com/questions/31091/space-after-latex-commands)
 \usepackage{xurl}
+% \usepackage{zref-xr} % currently not used
+
+% cross reference
+% \zxrsetup{toltxlabel} % use normal LaTeX style \ref
+% \zexternaldocument*[1:]{reference/mathematics_memorandum_v0.23.0} % usage: \zexternaldocument*[prefix]{path/to/aux/file/without/extension}[path/to/pdf/file] Only ascii name is allowed.
 
 % ---------- structure settings ----------
 \makeatletter
@@ -90,6 +99,9 @@
 \counterwithin{equation}{section}
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
+
+% longtable settings
+% \setcounter{LTchunksize}{200} % currently not used
 
 % cleveref settings
 % see: [LaTeXの相互参照を賢くする (cleveref)](https://qiita.com/Hdan/items/8c59a7e0a3215ae32d74)
@@ -132,7 +144,8 @@
     \rfoot{}
 
 % Avoids overlap of number and text in table of contents.
-\setlength{\cftchapnumwidth}{4em}
+\setlength{\cftpartnumwidth}{2.0em}
+\setlength{\cftchapnumwidth}{3.0em}
 \setlength{\cftsecnumwidth}{3.0em}
 \setlength{\cftsubsecnumwidth}{4.0em}
 \setlength{\cftsubsubsecnumwidth}{5.0em}
@@ -153,6 +166,7 @@
 \newtheorem*{attention}{注意}
 \newtheorem*{solution}{解法}
 \newtheorem*{definition}{定義}
+\newtheorem*{derivation*}{導出}
 
 % table settings
 \renewcommand\theadfont{} % don't change the font
@@ -162,10 +176,11 @@
 % % 1. [Combining color, bitboxes* and base alignment](https://tex.stackexchange.com/questions/371175/combining-color-bitboxes-and-base-alignment)
 % % 2. [Colored custom bytefield](https://www.latex4technics.com/?note=3c6du2)
 % \newcommand*{\colorbitbox}[3]{%
-%     \rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
-%     \bitbox{#2}{#3}%
+%      \rlap{\bitbox{#2}{\color{#1}\rule{\width}{\height}}}%
+%      \bitbox{#2}{#3}%
 % }
 
+% listings settings
 \lstset{
     basicstyle=\ttfamily,
     identifierstyle=\small,
@@ -187,8 +202,8 @@
 }
 % --------------------
 
-\input{cmds/MtyLaTeXCmds/MtyLaTeXCmds}
-\input{cmds/common_cmd}
+\input{cmds/MtyLaTeXCmds/MtyLaTeXCmds.tex}
+\input{cmds/common_cmd.tex}
 
 \begin{document}
     \maketitle
@@ -205,15 +220,15 @@
     \input{parts/graphTheory/graphTheory}
     \input{parts/misc/misc}
     \begin{thebibliography}{99}
-        \bibitem{現代線形代数入門} 池辺八洲彦，池辺淑子，浅井信吉，宮崎佳典 (2009) 『現代線形代数入門--分解定理を主軸に整理整頓』
-        \bibitem{システム線形代数} 谷野哲三 (2013) 『システム線形代数』 朝倉書店.
-        \bibitem{新微分方程式対話} 笠原晧司 (1995) 『新微分方程式対話』 日本評論社
-        \bibitem{入門線形代数} 三宅敏恒 著 (1991) 『入門線形代数』 培風館
-        \bibitem{マルチエージェントシステムの制御} 東 俊一, 永原 正章 編著, 石井秀明, 林 直樹, 桜間 一徳, 畑中 健志 共著 (2015) 『マルチエージェントシステムの制御』 コロナ社
-        \bibitem{離散数学}Seymour Lipschitz 著, 成嶋 弘 監訳 (2010) 『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
-        \bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey 共著 ``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
-        \bibitem{信号処理備忘録} motchy (2022) 『信号処理備忘録 v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
-        \bibitem{qm3_chap5_j} 『量子力学 第V部 光と物質の相互作用』東京大学\\ \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
-        \bibitem{prim_poly_Wikipedia} 『原始多項式』 Wikipedia \url{https://ja.wikipedia.org/wiki/原始多項式}
+        \bibitem{現代線形代数入門}池辺八洲彦，池辺淑子，浅井信吉，宮崎佳典(2009)『現代線形代数入門--分解定理を主軸に整理整頓』
+        \bibitem{システム線形代数}谷野哲三(2013)『システム線形代数』 朝倉書店.
+        \bibitem{新微分方程式対話}笠原晧司(1995)『新微分方程式対話』 日本評論社
+        \bibitem{入門線形代数}三宅敏恒 著(1991)『入門線形代数』 培風館
+        \bibitem{マルチエージェントシステムの制御}東 俊一,永原 正章 編著,石井秀明,林 直樹,桜間 一徳,畑中 健志 共著(2015)『マルチエージェントシステムの制御』 コロナ社
+        \bibitem{離散数学}Seymour Lipschitz著,成嶋 弘 監訳(2010)『マグロウヒル大学演習 離散数学 コンピュータサイエンスの基礎数学』 オーム社
+        \bibitem{A Note on the Eigenvectors of Hadamard Matrices of Order 2^n} R. Yarlagadda, J. Hershey共著``A Note on the Eigenvectors of Hadamard Matrices of Order $2^n$'' \url{https://core.ac.uk/download/pdf/81967428.pdf}
+        \bibitem{信号処理備忘録} motchy (2022)『信号処理備忘録v0.4.0』\\ \url{https://github.com/motchy869/Signal-Processing-Memorandum/releases/tag/v0.4.0}
+        \bibitem{qm3_chap5_j}『量子力学 第V部 光と物質の相互作用』東京大学\\ \url{https://ocw.u-tokyo.ac.jp/lecture_files/engin_07/5/notes/ja/qm3_chap5_j.pdf}
+        \bibitem{prim_poly_Wikipedia}『原始多項式』Wikipedia \url{https://ja.wikipedia.org/wiki/原始多項式}
     \end{thebibliography}
 \end{document}

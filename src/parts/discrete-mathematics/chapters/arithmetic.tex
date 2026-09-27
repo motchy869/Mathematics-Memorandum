@@ -3,7 +3,6 @@
         \subsection{\texorpdfstring{$a,b,c,d\in\naturalNumbers,ab=cd,\gcd(a,c)=\gcd(b,d)=1 \Rightarrow a=d,b=c$}{a,b,c,dは自然数, ab=cd, gcd(a,c)=gcd(b,d)=1 ⇔ a=d,b=c}}
             \label{互いに素な2組の数と積の関係}
             \begin{proof}
-                \quad\newline
                 (最初に思い付いた証明)
                 \par
                 $p$を，$a$の素因数分解に指数$l\geq1$で現れる任意の素数とする。
@@ -23,9 +22,9 @@
                 以上より$a=d$。これより$b=c$が得られる。
             \end{proof}
     \section{Extended Euclidean Algorithm}
-        Extended Euclidean Algorithm (EEA, 拡張されたユークリッドの互除法)とは，$a,b\in\integers$に対して
+        Extended Euclidean Algorithm (EEA,拡張されたユークリッドの互除法)とは，$a,b\in\integers$に対して
         $as + bt = \gcd(a,b)$となるような$s,t\in\integers$を求める手法である。
-        この手法では次の規則で非負整数列$\{r_i\}$, および整数列$\{q_i\}, \{s_i\}, \{t_i\}$を定める。
+        この手法では次の規則で非負整数列$\{r_i\}$,および整数列$\{q_i\}, \{s_i\}, \{t_i\}$を定める。
         \[ r_0 = a, s_0 = 1, t_0 = 0,\quad r_1 = b, s_1 = 0, t_1 = 1 \]
         \begin{align*}
             r_{i+1} &= r_{i-1} - q_ir_i,0 \leq r_{i+1} < |r_i| \\
@@ -46,7 +45,6 @@
         \end{enumerate}
         項目4は，計算機でEEAを実行する際に，$a$,$b$を表現できるだけの桁数がある数値型を使えば桁溢れしないことを保証する。
         \begin{proof}
-            \quad\\
             \url{https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm}を基に若干改変,加筆した。\\
             (項目1)
             \par
@@ -84,7 +82,7 @@
             $|a|/\gcd(a,b)$と$|b|/\gcd(a,b)$は互いに素であり，前述の通り$|s_{k+1}|$と$|t_{k+1}|$も互いに素だから\ref{互いに素な2組の数と積の関係}より
             \[ |s_{k+1}| = \frac{|b|}{\gcd(a,b)},\quad |t_{k+1}| = \frac{|a|}{\gcd(a,b)} \]
             特に$0 = as_{k+1} + bt_{k+1}$を満たすのは次の組み合わせである。
-            \[ (s_{k+1},t_{k+1}) = \pm\left(\frac{b}{\gcd(a,b)}, -\frac{a}{\gcd(a,b)}\right) \]
+            \[ (s_{k+1},t_{k+1}) = \pm\parens*{\frac{b}{\gcd(a,b)}, -\frac{a}{\gcd(a,b)}} \]
             \newline
             (項目4)
             \par

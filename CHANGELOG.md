@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.25.0] - 2026-09-27
+
+- Fixed:
+  - typos in Helmholtz theorem proof
+- Improved:
+  - Refined preface.
+  - n-dimensional standard unit vector
+  - the area of a region expressed in circular coordinates
+  - Restructured Vector Analysis.
+  - Refined statements in 'metric coefficient and unit vector'.
+- Added:
+  - weighted Cauchy-Schwarz inequality
+  - polar decomposition
+  - relationship between N-dimensional Euclidean space and coordinate systems
+  - existence of vector potential for divergence-free vector field
+  - property: the curl of a vector field is not always orthogonal to the vector field itself.
+  - The number of internal nodes in a complete binary tree is equal to the number of leaf nodes minus 1.
+- Changed:
+  - Updated MtyLaTeXCmds submodule.
+
 ## [0.24.0] - 2026-04-25
 
 - Added:
@@ -221,7 +241,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.3.0] - 2021-07-03
 
 - Fixed wrong letters: Replaced `\mu` with `\theta` in explanation of the posterior distribution of the expectation value of normal distribution.
-- Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwartz' inequality.
+- Added a theorem about the relationship between Hermitian symmetric positive definite matrix and Cauchy-Schwarz' inequality.
 - Added an n-dimensional volume of V: {x_1, ..., x_n >= 0 and x_1+...x_n <= 1}.
 - Added a theorem: tr(AB) is real number when A and B is Hermitian matrices.
 - Added mixed-product property of Kronecker product.

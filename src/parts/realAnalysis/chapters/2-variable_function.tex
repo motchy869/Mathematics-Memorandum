@@ -1,7 +1,7 @@
 \chapter{2変数関数}
-    \section{4象限逆正接 : \texorpdfstring{$\atanEx{x}{y}$}{atan2(y,x)}}
+    \section{4象限逆正接: \texorpdfstring{$\atanEx{x}{y}$}{atan2(y,x)}}
         \begin{shadebox}
-            4象限逆正接 $\atanEx{x}{y}$ を次で定義する。
+            4象限逆正接$\atanEx{x}{y}$を次で定義する。
             \[
                 \atanEx{x}{y} \coloneq
                 \begin{cases}
@@ -16,7 +16,6 @@
         \end{shadebox}
         この関数は定義域で$C^1$級である。
         \begin{proof}
-            \quad\par
             領域1,3,5では連続であり，偏微分可能であって偏微分係数はいずれも
             \begin{align*}
                 \partDeriv{\atanEx{x}{y}}{x}{} &= \frac{-y}{x^2+y^2} \\
@@ -25,13 +24,13 @@
             であり連続だから$C^1$級である。
             \par
             領域2における連続性を示す。領域2上の点$(a,b)\;(a=0,b>0)$に対して
-            \[d = \left|\atanEx{a}{b}-\atanEx{a+h}{b+k}\ \right| = \left|\frac{\pi}{2}-\atanEx{b+k}{h}\right|\]
+            \[d = \abs{\atanEx{a}{b}-\atanEx{a+h}{b+k}\ } = \abs{\frac{\pi}{2}-\atanEx{b+k}{h}}\]
             とおくと，$k$を十分小さく取れば$b+k>0$なので
             \[
                 d=
                 \begin{cases}
                     \frac{\pi}{2}-\atan\parens*{\frac{b+k}{h}}\rightarrow0 & \text{as }h\rightarrow+0,k\rightarrow0 \\
-                    \frac{\pi}{2}-\left(\atan\parens*{\frac{b+k}{h}}+\pi\right) & \text{as }h\rightarrow-0,k\rightarrow0 \\
+                    \frac{\pi}{2}-\parens*{\atan\parens*{\frac{b+k}{h}}+\pi} & \text{as }h\rightarrow-0,k\rightarrow0 \\
                 \end{cases}
             \]
             であり，領域2における連続性が示せた。領域4における連続性も同様に示せる。

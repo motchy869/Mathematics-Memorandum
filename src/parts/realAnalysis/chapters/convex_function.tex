@@ -2,51 +2,48 @@
     \section{諸定理}
         \subsection{一様ノルムの凸性}
             \begin{shadebox}
-                $n\in\naturalNumbers$ とし，$S$ を $\realNumbers^n$ の部分集合とする。
-                $f:S\to\realNumbers$ は有界であるとする。
-                このとき一様ノルム $\norm{\cdot}_{\infty,S}: f\in S\mapsto\sup_{x\in S}\abs{f(x)}$ は凸である。
+                $n\in\naturalNumbers$とし，$S$を$\realNumbers^n$の部分集合とする。
+                $f:S\to\realNumbers$は有界であるとする。
+                このとき一様ノルム$\norm{\cdot}_{\infty,S}: f\in S\mapsto\sup_{x\in S}\abs{f(x)}$は凸である。
             \end{shadebox}
             \begin{proof}
-                \quad\par
-                $f_1,f_2:S\to\realNumbers$ は有界であるとし，$x\in S,t\in[0,1]$ とする。
-                一様ノルムの定義の定義から $\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$ が成り立つので次式が成り立つ。
+                $f_1,f_2:S\to\realNumbers$は有界であるとし，$x\in S,t\in[0,1]$とする。
+                一様ノルムの定義の定義から$\norm{f_1}_{\infty,S}\geq\abs{f_1(x)},\norm{f_2}_{\infty,S}\geq\abs{f_2(x)}$が成り立つので次式が成り立つ。
                 \[ (1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)}\geq (1-t)\abs{f_1(x)} + t\abs{f_2(x)} = \abs{(1-t)f_1(x) + tf_2(x)} \]
-                任意の $x\in S$ について上式が成り立つので $(1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq\norm{(1-t)f_1 + tf_2}_{\infty,S}$ が成り立つ。
+                任意の$x\in S$について上式が成り立つので$(1-t)\norm{f_1}_{\infty,S} + t\norm{f_2}_{\infty,S}\geq\norm{(1-t)f_1 + tf_2}_{\infty,S}$が成り立つ。
             \end{proof}
         \subsection{\texorpdfstring{$f_1,f_2$}{f\_1,f\_2}が凸なら\texorpdfstring{$\max\{f_1,f_2\}$}{max(f\_1,f\_2)}は凸}
         \begin{proof}
-            \quad\par
-            $g(\bm{x}) \coloneq \max\{f_1(\bm{x}), f_2(\bm{x})\}$とする。
-            $g$の定義域内の任意の$\bm{x}_1,\bm{x}_2$と任意の$\theta\in[0,1]$に対して
-            \[ (1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) = (1-\theta)\max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} + \theta\max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \]
+            $g(\vx) \coloneq \max\{f_1(\vx), f_2(\vx)\}$とする。
+            $g$の定義域内の任意の$\vx_1,\vx_2$と任意の$\theta\in[0,1]$に対して
+            \[ (1-\theta)g(\vx_1) + \theta g(\vx_2) = (1-\theta)\max\{f_1(\vx_1), f_2(\vx_1)\} + \theta\max\{f_1(\vx_2), f_2(\vx_2)\} \]
             であるが，maxの性質から
-            \[ \max\{f_1(\bm{x}_1), f_2(\bm{x}_1)\} \geq f_1(\bm{x}_1), f_2(\bm{x}_1) \text{かつ} \max\{f_1(\bm{x}_2), f_2(\bm{x}_2)\} \geq f_1(\bm{x}_2), f_2(\bm{x}_2) \]
+            \[ \max\{f_1(\vx_1), f_2(\vx_1)\} \geq f_1(\vx_1), f_2(\vx_1) \text{かつ} \max\{f_1(\vx_2), f_2(\vx_2)\} \geq f_1(\vx_2), f_2(\vx_2) \]
             であるので
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_1(\bm{x}_1) + \theta f_1(\bm{x}_2) \geq f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq (1-\theta)f_1(\vx_1) + \theta f_1(\vx_2) \geq f_1[(1-\theta)\vx_1 + \theta\vx_2]\]
             かつ
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq (1-\theta)f_2(\bm{x}_1) + \theta f_2(\bm{x}_2) \geq f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq (1-\theta)f_2(\vx_1) + \theta f_2(\vx_2) \geq f_2[(1-\theta)\vx_1 + \theta\vx_2]\]
             である。このことから
-            \[(1-\theta)g(\bm{x}_1) + \theta g(\bm{x}_2) \geq \max\{f_1[(1-\theta)\bm{x}_1 + \theta\bm{x}_2], f_2[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\} = g[(1-\theta)\bm{x}_1 + \theta\bm{x}_2]\]
+            \[(1-\theta)g(\vx_1) + \theta g(\vx_2) \geq \max\{f_1[(1-\theta)\vx_1 + \theta\vx_2], f_2[(1-\theta)\vx_1 + \theta\vx_2]\} = g[(1-\theta)\vx_1 + \theta\vx_2]\]
         \end{proof}
         \subsection{Jensenの不等式}
             \begin{shadebox}
                 $f(x)$を凸関数とし，$w_i\geq 0(i=1,\dotsc,n),\sum_{i=1}^n w_i=1$とするとき，次式が成り立つ。
-                \[ f\left(\sum_{i=1}^n w_i x_i\right) \leq \sum_{i=1}^n w_i f(x_i) \]
+                \[ f\parens*{\sum_{i=1}^n w_i x_i} \leq \sum_{i=1}^n w_i f(x_i) \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $n=1$の時は明らか。
                 $n=2$のときは凸関数の定義より成り立つ。
                 $n=n_0\in\naturalNumbers$のとき成り立つと仮定して$n=n_0+1$のとき成り立つことを示す。
                 $w'_i\coloneq w_i/(1-w_{n_0+1})$とする(最初の$n_0$個の重みを規格化したもの)と$w'_i>0,w'_1+\dotsb+w'_{n_0}=1$だから，仮定より
                 \begin{align*}
-                    f\left(\sum_{i=1}^{n_0}w'_i x_i\right) &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
-                    \therefore\; f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
-                    \therefore\; (1-w_{n_0+1})f\left(\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i\right) &\leq \sum_{i=1}^{n_0} w_i f(x_i) \\
-                    \therefore\; w_{n_0+1}f(x_{n_0+1}) + (1-w_{n_0+1})f\left(X_{n_0}\right) &\leq \sum_{i=1}^{n_0+1} w_i f(x_i) \quad \left(X_{n_0} = \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i \text{とおいた}\right)
+                    f\parens*{\sum_{i=1}^{n_0}w'_i x_i} &\leq \sum_{i=1}^{n_0}w'_i f(x_i) \\
+                    \therefore\; f\parens*{\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i} &\leq \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} f(x_i) \\
+                    \therefore\; (1-w_{n_0+1})f\parens*{\sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i} &\leq \sum_{i=1}^{n_0} w_i f(x_i) \\
+                    \therefore\; w_{n_0+1}f(x_{n_0+1}) + (1-w_{n_0+1})f\parens*{X_{n_0}} &\leq \sum_{i=1}^{n_0+1} w_i f(x_i) \quad \parens*{X_{n_0} = \sum_{i=1}^{n_0}\frac{w_i}{1-w_{n_0+1}} x_i \text{とおいた}}
                 \end{align*}
                 $f$の凸性より
-                \[ \text{左辺} \geq f(w_{n_0+1}x_{n_0+1} + (1-w_{n_0+1})X_{n_0}) = f\left(\sum_{i=1}^{n_0+1}w_i x_i\right)\]
+                \[ \text{左辺} \geq f(w_{n_0+1}x_{n_0+1} + (1-w_{n_0+1})X_{n_0}) = f\parens*{\sum_{i=1}^{n_0+1}w_i x_i}\]
             \end{proof}
         \subsection{重み付き相加,相乗平均の関係とYoungの不等式}
             \label{重み付き相加,相乗平均の関係とYoungの不等式}
@@ -56,7 +53,6 @@
                 この関係は\textbf{重み付き相加,相乗平均の関係}と呼ばれている。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $x_i=0$である$i$が存在するときは明らかに成り立つ。
                 以下では全ての$i$について$x_i>0$とする。
                 対数関数の凹性を利用する。Jensenの不等式より
@@ -76,17 +72,16 @@
             \end{shadebox}
         \subsection{重み付き幾何平均と重み付き調和平均の関係}
             \begin{shadebox}
-                $n\in\naturalNumbers,x_i,w_i>0\;(i=1,\dots,n),\sum_{i=1}^n w_i = 1$ とするとき，$x_1,\dots,x_n$ の重み付き幾何平均は重み付き調和平均を下回ることはない。
+                $n\in\naturalNumbers,x_i,w_i>0\;(i=1,\dots,n),\sum_{i=1}^n w_i = 1$とするとき，$x_1,\dots,x_n$の重み付き幾何平均は重み付き調和平均を下回ることはない。
                 つまり次式が成り立つ。
                 \[ \prod_{i=1}^n {x_i}^{w_i} \geq \frac{1}{\sum_{i=1}^n w_i/x_i} \tag{1} \]
             \end{shadebox}
             \begin{proof}
-                \quad\par
-                式 (1) は次式と等価である。
+                式(1)は次式と等価である。
                 \[ \sum_{i=1}^n w_i/x_i \geq \frac{1}{\prod_{i=1}^n {x_i}^{w_i}} \]
-                ここで $\tilde{x}_i \coloneq x_i$ とすると上式は次式と等価である。
+                ここで$\tilde{x}_i \coloneq x_i$とすると上式は次式と等価である。
                 \[ \sum_{i=1}^n w_i\tilde{x}_i \geq \prod_{i=1}^n {\tilde{x}_i}^{w_i} \]
-                上式の成立は \ref{重み付き相加,相乗平均の関係とYoungの不等式} より明らかである。
+                上式の成立は\ref{重み付き相加,相乗平均の関係とYoungの不等式}より明らかである。
             \end{proof}
         \subsection{2階導関数と凸性の関係}
             \begin{shadebox}
@@ -102,12 +97,11 @@
                 さらに$1\Leftarrow 2$は偽である。
             \end{shadebox}
             \begin{proof}
-                \quad\par
                 $1\Leftarrow 2$が偽であることは反例$f(x) = x^4$から直ちに示される。
                 \par
                 $1\Rightarrow 2$を示す。
                 $x\in I,x\neq x_1$とする。
-                $g(x) \coloneq f(x) - \bigl(f(x_1) - f^{(1)}(x_1)(x-x_1)\bigr)$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
+                $g(x) \coloneq f(x) - \parens*{f(x_1) - f^{(1)}(x_1)(x-x_1)}$とすると$g^{(1)}(x) = f^{(1)}(x) - f^{(1)}(x_1)$なので$g^{(1)}(x_1) = 0$である。
                 さらに$g^{(2)}(x) = f^{(2)}(x) > 0$である。
                 よって$g^{(1)}(x) < 0\;(x<x_1), g^{(1)}(x) > 0\;(x>x_1)$でるので$g(x_2) > 0$であり，2が成り立つ。
                 \par
@@ -117,8 +111,8 @@
                 よって次式が成り立つ。
                 \begin{align*}
                     (1-\lambda)f(x_1) + \lambda f(x_2) &> f(x_3) + (1-\lambda)f^{(1)}(x_3)(x_1-x_3) + \lambda f^{(1)}(x_3)(x_2-x_3) \\
-                    &= f(x_3) + f^{(1)}(x_3)\left[(1-\lambda)(x_1-x_3) + \lambda(x_2-x_3)\right] \\
-                    &= f(x_3) + f^{(1)}(x_3)\left[(1-\lambda)x_1 + \lambda x_2 - x_3\right] \\
+                    &= f(x_3) + f^{(1)}(x_3)\bracks*{(1-\lambda)(x_1-x_3) + \lambda(x_2-x_3)} \\
+                    &= f(x_3) + f^{(1)}(x_3)\bracks*{(1-\lambda)x_1 + \lambda x_2 - x_3} \\
                     &= f(x_3) + f^{(1)}(x_3)(x_3-x_3) = f(x_3)
                 \end{align*}
                 \par
@@ -143,21 +137,20 @@
     \section{Legendre変換}
         \subsection{十分滑らかな狭義凸関数に対してLegendre変換を2回施すと元の関数に戻る}
             \begin{proof}
-                \quad\par
                 $f$を開区間$I$で定義された$C^2$級の狭義凸関数とする。
                 (よって1階導関数$f^{(1)}$は狭義単調増加だから逆関数が存在する。)
                 $\fd$の値域を$I_2$とする。$f$のLegendre変換$f^*$は次のようになる。
-                \[ f^*(p) = p\fd^{-1}(p) - f\left(\fd^{-1}(p)\right) \quad (p \in I_2) \]
+                \[ f^*(p) = p\fd^{-1}(p) - f\parens*{\fd^{-1}(p)} \quad (p \in I_2) \]
                 $f^*$のLegendre変換$f^{**}$を求めるためにまず${f^*}^{(1)}$の値域を調べる。
-                \[ \fStarD(q)\;(q \in I_2) = \fd^{-1}(q) + q\frac{1}{f^{(2)}(q)} - \fd\left(\fd^{-1}(q)\right)\frac{1}{f^{(2)}(q)} = \fd^{-1}(q) \]
+                \[ \fStarD(q)\;(q \in I_2) = \fd^{-1}(q) + q\frac{1}{f^{(2)}(q)} - \fd\parens*{\fd^{-1}(q)}\frac{1}{f^{(2)}(q)} = \fd^{-1}(q) \]
                 より$\fStarD$の値域は$I$である。
                 さらに，$\fd^{-1}$は狭義単調増加なので上式より$\fStarD$の逆関数が存在して$\fStarD^{-1} = \fd$である。
                 $\fStarD^{-1}$の定義域は$I$である。
                 以上より$f^{**}$は次のようになる。
                 \begin{align*}
-                    f^{**}(q)\; (q \in I) &= q\fStarD^{-1}(q) - f^*\left(\fStarD^{-1}(q)\right) \\
+                    f^{**}(q)\; (q \in I) &= q\fStarD^{-1}(q) - f^*\parens*{\fStarD^{-1}(q)} \\
                     &= q\fd(q) - f^*(\fd) \\
-                    &= q\fd(q) - \fd(q)\fd^{-1}\left(\fd(q)\right) + f\left(\fd^{-1}\left(\fd(q)\right)\right) \\
+                    &= q\fd(q) - \fd(q)\fd^{-1}\parens*{\fd(q)} + f\parens*{\fd^{-1}\parens*{\fd(q)}} \\
                     &= f(q)
                 \end{align*}
             \end{proof}

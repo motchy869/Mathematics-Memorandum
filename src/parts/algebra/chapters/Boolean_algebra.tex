@@ -1,9 +1,8 @@
 \chapter{ブール代数}
     \section{双対原理}
         \begin{proof}
-            \quad\par
-            論理式$P(\bm{x})$の双対$P(\bm{x})^\mathrm{d}$は$\overline{P(\overline{\bm{x}})}$で表せる。
-            $P(\bm{x})=Q(\bm{x})$ならば$\overline{P(\overline{\bm{x}})} = \overline{Q(\overline{\bm{x}})}$なので$P(\bm{x})^\mathrm{d} = Q(\bm{x})^\mathrm{d}$である。
+            論理式$P(\vx)$の双対$P(\vx)^\mathrm{d}$は$\overline{P(\overline{\vx})}$で表せる。
+            $P(\vx)=Q(\vx)$ならば$\overline{P(\overline{\vx})} = \overline{Q(\overline{\vx})}$なので$P(\vx)^\mathrm{d} = Q(\vx)^\mathrm{d}$である。
         \end{proof}
     \section{応用}
         \subsection{2進Grayコードへの変換}
@@ -13,7 +12,7 @@
             Grayコードへの変換操作を乱暴に言うと，$b_{n-1}$から$b_0$に向かって見ながら，$b_{n-1}$はそのままで，以降は1と0が交互に現れる箇所を1，そうでない箇所を0に置き換える。
             この操作で$x$と$x+1$のGrayコードのハミング距離が1になることを示す。
             \\\newline
-            (1) 最下位桁が0である場合
+            (1)最下位桁が0である場合
             \par
             \[
                 \begin{matrix}
@@ -24,7 +23,7 @@
             \]
             両者のGrayコードは最下位桁のみが異なっている。
             \\\newline
-            (2) 最下位桁が1である場合
+            (2)最下位桁が1である場合
             \par
             $x$の下位$k$桁が1の連続であるとする。
             \[
