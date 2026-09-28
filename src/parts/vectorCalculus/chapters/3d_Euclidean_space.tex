@@ -468,11 +468,12 @@
                 \[ \vA(\vr) = -2\pi\bm{i}_3\derivLong{\integrate{0}{R}{2r'}{}{r'}}{r}{} = \bm{0} \]
             \end{proof}
             Mathematicaノートブック``\nolinkurl{shell_theorem.nb}''に計算例を示した。
-        \subsection{非負領域の共通部分の非負領域}
+        \subsection{相対錐の共通部分の相対錐}
             \begin{shadebox}
-                $\realNumbers^n$上で考える。$\vv_1,\dotsc,\vv_m\;(m\leq n)$は一次独立であるとし，$\vv$の非負領域を
+                $\vv_1,\dotsc,\vv_m\in\realNumbers^n \;(m\leq n)$は一次独立であるする。
+                $\vv\in\realNumbers^n$の相対錐は次式で定義される。
                 \[P(\vv)\coloneq\braces*{\bm{w}|\inProd{\vv}{\bm{w}}\geq0})\]
-                で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\vv_i)}$の非負領域にある，すなわち
+                で定義する。あるベクトル$\bm{u}$が$\bigcap_{i=1}^{m}{P(\vv_i)}$の相対錐にある，すなわち
                 \[\inProd{\bm{u}}{\bm{w}}\geq0,\forall\bm{w}\in\bigcap_{i=1}^{m}{P(\vv_i)}\]
                 であるとき，$\bm{u}$は適当な定数$a_i\geq0(i=1,\dotsc,m)$によって
                 \[\bm{u} = \sum_{i=1}^{m}{a_i\vv_i}\]
