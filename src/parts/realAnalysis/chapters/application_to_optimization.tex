@@ -41,7 +41,7 @@
                 $I$の狭義凸性から，$I$の極小点が存在すれば，それは最小点である。
                 よって$f_0$が極小点であることを示せば十分である。
                 今，$\eta:[a,b]\to\Omega_1$が$\Omega_1$上で$\mathrm{C}^1$級かつ$\eta(a)=\eta(b)=0$であるとする。
-                さらに$\norm{\eta}_2 := \sqrt{\integrate{a}{b}{[\eta(x)^2+\eta'(x)^2]}{}{x}}$は十分小さく，$f_0+\eta\in\mathcal{F}_1$であるとする。
+                さらに$\norm{\eta}_2 \coloneq \sqrt{\integrate{a}{b}{[\eta(x)^2+\eta'(x)^2]}{}{x}}$は十分小さく，$f_0+\eta\in\mathcal{F}_1$であるとする。
                 $\norm{\eta}_2>0$である任意の$\eta$について$I(f_0+\eta) > I(f_0)$であることを示す。
                 \begin{align*}
                     I(f_0+\eta) &= \integrate{a}{b}{g(f_0(x)+\eta(x),f_0'(x)+\eta'(x))}{}{x} \\
@@ -50,7 +50,7 @@
                 \end{align*}
                 ここに$H(g):\Omega_1\times\Omega_1'\to\realNumbers^2$は$g$のHesse行列から構成され，次式で定義される。
                 \[
-                    H(g)(x_1,x_2) :=
+                    H(g)(x_1,x_2) \coloneq
                     \begin{bmatrix}
                         g^{(2,0)}(x_1,x_2) & g^{(1,1)}(x_1,x_2) \\
                         g^{(1,1)}(x_1,x_2) & g^{(0,2)}(x_1,x_2)

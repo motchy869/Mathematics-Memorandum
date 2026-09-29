@@ -28,7 +28,7 @@
         \begin{proof}
             $\dz = iR\NapierE^{i\theta}\mathrm{d}\theta$であるから
             \begin{align*}
-                S &:= \integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z} = \integrate{0}{\pi}{\frac{1}{R\NapierE^{i\theta}}\exp iR(\cos\theta + i\sin\theta) iR\NapierE^{i\theta}}{}{\theta} = i\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta} \\
+                S &\coloneq \integrate{C}{}{\frac{\NapierE^{iz}}{z}}{}{z} = \integrate{0}{\pi}{\frac{1}{R\NapierE^{i\theta}}\exp iR(\cos\theta + i\sin\theta) iR\NapierE^{i\theta}}{}{\theta} = i\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta} \\
                 |S| &= \abs{\integrate{0}{\pi}{\exp (iR\cos\theta - R\sin\theta)}{}{\theta}} \leq \integrate{0}{\pi}{\abs{\exp (iR\cos\theta - R\sin\theta)}}{}{\theta} \\
                 &= \integrate{0}{\pi}{\NapierE^{-R\sin\theta}}{}{\theta} = 2\integrate{0}{\pi/2}{\NapierE^{-R\sin\theta}}{}{\theta}
             \end{align*}
