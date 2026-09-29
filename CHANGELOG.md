@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Argument delimiters of local operator macros are now supplied by callers.
   - PDF bookmarks for set difference and inequalities now use the standard Unicode characters (`∖`, `≤`, `≥`) instead of the CJK substitutes.
 - Added:
+  - Farkas's lemma for column full-rank matrices
   - numerical example of polar decomposition
   - Frobenius norm of a matrix is equal to the square root of the sum of the squares of its singular values.
 

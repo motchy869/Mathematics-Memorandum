@@ -1,4 +1,46 @@
 \chapter{最適化への応用}
+    \section{Farkasの補題}
+        ここでは簡単のために後述の$A\in\realNumbers^{m\times n}$は列フルランクであるとする。
+        そうでない場合についても成り立つことが知られている。
+        \begin{shadebox}
+            $A\in\realNumbers^{m\times n}$は列フルランクであるとする。
+            $\bm{b}\in\realNumbers^m$とする。
+            次の2条件は同値である。
+            \begin{enumerate}
+                \item $\bm{x}\in\realNumbers^n$であって$A\bm{x}=\bm{b}$かつ$\bm{x}\geq\bm{0}$を満たすものが存在する。
+                \item $\bm{y}\in\realNumbers^m$について$A^\top\bm{y}\leq\bm{0}$ならば$\bm{b}^\top\bm{y}\leq 0$である。
+            \end{enumerate}
+        \end{shadebox}
+        \begin{commentary}
+            この定理は次の等価な形で述べられることが多い。
+            非線形最適化に於けるKKT条件の導出に有用である。
+            \par\noindent
+            【言い換え】（記号の定義や$A$の列フルランク性は同様とする）次のいずれか一方のみが成り立つ。
+            \begin{enumerate}
+                \item $\bm{x}\in\realNumbers^n$であって$A\bm{x}=\bm{b}$かつ$\bm{x}\geq\bm{0}$を満たすものが存在する。
+                \item $\bm{y}\in\realNumbers^m$であって$A^\top\bm{y}\leq\bm{0}$かつ$\bm{b}^\top\bm{y}>0$を満たすものが存在する
+            \end{enumerate}
+        \end{commentary}
+        \begin{proof}
+            ($1\Rightarrow 2$)極めて容易である。$\bm{x}\in\realNumbers^n,A\bm{x}=\bm{b},\bm{x}\geq\bm{0}$とすると$\bm{b}^\top\bm{y} = \bm{x}^\top A^\top\bm{y} = (\bm{x}^\top)(A^\top\bm{y})\leq 0$。
+            \par\noindent
+            ($2\Rightarrow 1$)まず(★1)「$\bm{x}\in\realNumbers^n$であって$A\bm{x}=\bm{b}$を満たすものが存在する」ことを背理法で示す。
+            存在しないと仮定すると，$A$の列ベクトルの集合と$\bm{b}$は一次独立であるから，$\rank(A)<m$であり，$\img(A)$の直交補空間$\ker(A^\top)$の次元は1以上である。
+            $\bm{b}$は$\bm{b}=\bm{b}_1+\bm{b}_2\;(\bm{b}_1\in\img(A),\bm{b}_2\in \ker(A^\top),\bm{b}_2\neq\bm{0})$と一意に分解できる。
+            そこで$\bm{y}=\bm{b}_2$とすると$A^\top\bm{y}=\bm{0}$かつ$\bm{b}^\top\bm{y} = \bm{b}_2^\top\bm{b}_2 > 0$であり，条件2に矛盾する。
+            よって，(★1)が成り立つ。
+            $A$は列フルランクであるから，この$\bm{x}$は一意である。
+            \par
+            次に(★1)の$\bm{x}$は必ず$\bm{x}\geq\bm{0}$であることを背理法で示す。
+            $\bm{a}_i$を$A$の第$i$列ベクトルとする。
+            仮に$\bm{x}$の少なくとも一つの成分が負であるとすると，ある$k\in S_\mathrm{idx}\;(S_\mathrm{idx}\coloneq\{1,2,\dots,n\})$が存在して$x_k<0$である。
+            $U\coloneq\vecSpan\bracks*{\{\bm{a}_i \mid i\in S_\mathrm{idx}\setminus\{k\}\}}$とし，$U_\mathrm{c}$を$U$の直交補空間とする。
+            $\bm{v}\in U_\mathrm{c}$であって$\bm{a}_k^\top\bm{v}\neq\bm{0}$を満たす$\bm{v}$が必ず存在する。
+            なぜならば，もしそのような$\bm{v}$が存在しなければ，$\bm{a}_k$は$U_\mathrm{c}$の直交補空間，すなわち$U$に属することになり，$A$が列フルランクである前提に矛盾するからである。
+            $\bm{v}$の符号を適当に選べば，$\bm{a}_k^\top\bm{v}<0$となる。
+            そこで$\bm{y}=\bm{v}$とすると$A^\top\bm{y}$は第$k$成分が負であり，他は0である。
+            そして（$\bm{a}_i^\top\bm{y}=0\;(i\in S_\mathrm{idx}\setminus\{k\})$に留意して）$\bm{b}^\top\bm{y} = (x_k\bm{a}_k)^\top\bm{v} = x_k(\bm{a}_k^\top\bm{v}) > 0$であり，条件2に矛盾する。
+        \end{proof}
     \section{\texorpdfstring{$\norm{A\vx + \bm{b}}_2^2$}{||Ax+b||\_2}の最小化条件}
         \subsection{制約なしの場合}
             \begin{shadebox}
