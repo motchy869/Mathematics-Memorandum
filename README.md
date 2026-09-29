@@ -1,7 +1,10 @@
 # Mathematics Memorandum
 
-This is my note for mathematics.
-I hope this helps some students and engineers.
+This book is a collection of notes recording the conclusions I have reached regarding mathematical problems I’ve been compelled to consider, from my student days to my current career.
+I am publishing it in the hope that it may be of some use to students and professionals in science and engineering.
+I work primarily in the signal processing industry and do not study mathematics for its own sake, but rather as a tool.
+Furthermore, I consider my mathematical ability to be quite ordinary.
+Therefore, this book likely contains many errors, so readers are advised to proceed with caution.
 
 ## 1. Definitions
 
