@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- fixed:
+  - minor typos
 - Changed:
   - 「非負領域」→ "dual cone"
   - Notation for the submatrix obtained by deleting the $i$-th row and the $j$-th column: `[A]_{i,j}` -> `\minor{A}{i}{j}`.
