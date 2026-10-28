@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Farkas's lemma for column full-rank matrices
   - numerical example of polar decomposition
   - Frobenius norm of a matrix is equal to the square root of the sum of the squares of its singular values.
+  - The integral of the vector surface element over a piecewise smooth closed surface is zero.
 
 ## [0.25.0] - 2026-09-27
 
