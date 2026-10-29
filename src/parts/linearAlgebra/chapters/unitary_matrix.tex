@@ -3,3 +3,56 @@
         \begin{proof}
             $U$をユニタリ行列とすると$\HerConj{\parens*{\conj{U}}}\conj{U} = \conj{(\HerConj{U})}\;\conj{U} = \conj{\HerConj{U}U} = \conj{I} = I$
         \end{proof}
+    \section{Eulerの回転定理}
+        \begin{shadebox}
+            $R$を任意の3次直交行列であって$\det(R)=1$であるとする。
+            このとき，適当な単位ベクトル$\bm{a}\in\realNumbers^3$と$\theta\in\realNumbers$が存在して，$R$は$\bm{a}$周りの角度$\theta$の回転を表す。
+        \end{shadebox}
+        \begin{proof}
+            まず，次式より$\det(I_3-R) = 0$だから$R$は固有値1をもつ。
+            \begin{align*}
+                \det(I_3-R) &= \det(RR^\top-R) = \det(R(R^\top-I_3)) = \det(R)\det(R^\top-I_3) = \det(R^\top-I_3)\quad(\text{by }\det(R)=1)\\
+                &= \det\parens{(R^\top-I_3)^\top} = \det(R-I_3) = (-1)^3 \det(I_3-R)
+            \end{align*}
+            $R$の固有値1に対応する単位ベクトルを$\bm{u}_3$とする。
+            これを含む$\realNumbers^3$の正規直交基底$(\bm{u}_1,\bm{u}_2,\bm{u}_3)$を作る。
+            但しこれら3つのベクトルが右手系を成すように選ぶ。
+            $R\bm{u}_1$と$\bm{u}_3$は直交する。
+            何故ならば$(R\bm{u}_1)^\top\bm{u}_3 = (R\bm{u}_1)^\top R\bm{u}_3 = \bm{u}_1^\top \bm{u}_3 = 0$だからである。
+            同様に$R\bm{u}_2$と$\bm{u}_3$も直交する。
+            このことから，直交行列$U$を$U\coloneq[\bm{u}_1,\bm{u}_2,\bm{u}_3]$とすると次式が成り立つ。
+            \[
+                RU = U\begin{bmatrix}
+                    \multicolumn{2}{c}{\multirow{2}{*}{\Large $\tilde{R}$}} & 0 \\
+                    \multicolumn{2}{c}{} & 0 \\
+                    0 & 0 & 1
+                \end{bmatrix}
+                \quad\therefore
+                U^\top RU = \begin{bmatrix}
+                    \multicolumn{2}{c}{\multirow{2}{*}{\Large $\tilde{R}$}} & 0 \\
+                    \multicolumn{2}{c}{} & 0 \\
+                    0 & 0 & 1
+                \end{bmatrix}
+                \tag{1}
+            \]
+            上式の$U$の右側の行列の第(3,1)および(3,2)成分が0であることに留意すべし（もしそうでなければ$R\bm{u}_1$と$\bm{u}_3$、または$R\bm{u}_2$と$\bm{u}_3$が直交せず，前記の議論に矛盾する）。
+            $(U^\top RU)(U^\top RU)^\top = I_3,(U^\top RU)^\top (U^\top RU) = I_3$より$\tilde{R}$も直交行列である。
+            $\abs{\det(U)}=1$に留意して式(1)の両辺の行列式を計算して$\det(\tilde{R})=1$を得る。
+            $2\times 2$直交行列であって行列式が1であるものは良く知られているように回転行列であり，適当な$\theta\in\realNumbers$が存在して
+            \[
+                \tilde{R} = \begin{bmatrix}
+                    \cos\theta & -\sin\theta \\
+                    \sin\theta & \cos\theta
+                \end{bmatrix}
+            \]
+            と表せる。
+            結局
+            \[
+                R = U\begin{bmatrix}
+                    \cos\theta & -\sin\theta & 0 \\
+                    \sin\theta & \cos\theta & 0 \\
+                    0 & 0 & 1
+                \end{bmatrix}U^\top
+            \]
+            であり，$\bm{u}_3$が回転軸$\bm{a}$を表し，$\theta$は$\bm{u}_1,\bm{u}_2$が張る平面内での回転角である。
+        \end{proof}
